@@ -13,6 +13,7 @@ f.close()
 
 
 directories = glob.glob("./*")
+dic = {}
 
 for directory in directories:
     if os.path.isdir(f"./{directory}"):
@@ -56,14 +57,9 @@ for directory in directories:
 
         currentData.sort(key=lambda x: x[0])
 
-        # Dump JSON
+        # Save dict to work with JSON
         dataStructureType = currentData[0][1]
-        dic = {dataStructureType: currentData}
-        json_object = json.dumps(dic, indent=4)
-
-        # Writing to sample.json
-        with open("data.json", "w") as outfile:
-            outfile.write(json_object)
+        dic[dataStructureType] = currentData
 
         # Create CSV
         for (
@@ -79,3 +75,8 @@ for directory in directories:
                 f"{dataStructureType},{problemStatement},{link},{difficulty},{code}\n"
             )
             f.close()
+
+# Dump JSON
+json_object = json.dumps(dic, indent=4)
+with open("data.json", "w") as outfile:
+    outfile.write(json_object)
