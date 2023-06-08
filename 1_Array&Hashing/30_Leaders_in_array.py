@@ -44,7 +44,7 @@ class Solution:
 
 # Optimal
 # T.C. -> O(n)+O(n)
-# S.C. -> O(n)
+# S.C. -> O(1)
 
 
 class Solution:
