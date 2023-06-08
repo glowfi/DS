@@ -279,6 +279,86 @@
             "https://leetcode.com/problems/spiral-matrix/description/",
             "Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/34_Spiral_Matrix.py"
+        ],
+        [
+            35,
+            "Array&Hashing",
+            "Pascals Triangle",
+            "https://leetcode.com/problems/pascals-triangle/",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/35_Pascals_Triangle.py"
+        ],
+        [
+            36,
+            "Array&Hashing",
+            "Majority Element II",
+            "https://leetcode.com/problems/majority-element-ii/description/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/36_Majority_Element_II.py"
+        ],
+        [
+            37,
+            "Array&Hashing",
+            "3 Sum",
+            "https://leetcode.com/problems/3sum/description/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/37_3_Sum.py"
+        ],
+        [
+            38,
+            "Array&Hashing",
+            "4 Sum",
+            "https://leetcode.com/problems/4sum/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/38_4_Sum.py"
+        ],
+        [
+            39,
+            "Array&Hashing",
+            "Merge Overlapping Intervals",
+            "https://leetcode.com/problems/merge-intervals/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/39_Merge_Overlapping_Intervals.py"
+        ],
+        [
+            40,
+            "Array&Hashing",
+            "Merge Sorted Arrays Without Extra Space",
+            "https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/40_Merge_Sorted_Arrays_Without_Extra_Space.py"
+        ],
+        [
+            41,
+            "Array&Hashing",
+            "Find the Missing Repeating Number",
+            "https://www.codingninjas.com/codestudio/problems/missing-and-repeating-numbers_6828164",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/41_Find_the_Missing_Repeating_Number.py"
+        ],
+        [
+            42,
+            "Array&Hashing",
+            "Count Inversions",
+            "https://www.codingninjas.com/codestudio/problems/number-of-inversions_6840276",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/42_Count_Inversions.py"
+        ],
+        [
+            43,
+            "Array&Hashing",
+            "Reverse Pairs",
+            "https://leetcode.com/problems/reverse-pairs/description/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/43_Reverse_Pairs.py"
+        ],
+        [
+            44,
+            "Array&Hashing",
+            "Maximum Product Subarray",
+            "https://leetcode.com/problems/maximum-product-subarray/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/44_Maximum_Product_Subarray.py"
         ]
     ]
 }

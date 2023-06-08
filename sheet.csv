@@ -35,3 +35,13 @@ Array&Hashing,Longest Consecutive Sequence,https://leetcode.com/problems/longest
 Array&Hashing,Set Matrix Zeroes,https://leetcode.com/problems/set-matrix-zeroes/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/32_Set_Matrix_Zeroes.py
 Array&Hashing,Rotate Image 90,https://leetcode.com/problems/rotate-image/description/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/33_Rotate_Image_90.py
 Array&Hashing,Spiral Matrix,https://leetcode.com/problems/spiral-matrix/description/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/34_Spiral_Matrix.py
+Array&Hashing,Pascals Triangle,https://leetcode.com/problems/pascals-triangle/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/35_Pascals_Triangle.py
+Array&Hashing,Majority Element II,https://leetcode.com/problems/majority-element-ii/description/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/36_Majority_Element_II.py
+Array&Hashing,3 Sum,https://leetcode.com/problems/3sum/description/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/37_3_Sum.py
+Array&Hashing,4 Sum,https://leetcode.com/problems/4sum/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/38_4_Sum.py
+Array&Hashing,Merge Overlapping Intervals,https://leetcode.com/problems/merge-intervals/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/39_Merge_Overlapping_Intervals.py
+Array&Hashing,Merge Sorted Arrays Without Extra Space,https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/40_Merge_Sorted_Arrays_Without_Extra_Space.py
+Array&Hashing,Find the Missing Repeating Number,https://www.codingninjas.com/codestudio/problems/missing-and-repeating-numbers_6828164, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/41_Find_the_Missing_Repeating_Number.py
+Array&Hashing,Count Inversions,https://www.codingninjas.com/codestudio/problems/number-of-inversions_6840276, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/42_Count_Inversions.py
+Array&Hashing,Reverse Pairs,https://leetcode.com/problems/reverse-pairs/description/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/43_Reverse_Pairs.py
+Array&Hashing,Maximum Product Subarray,https://leetcode.com/problems/maximum-product-subarray/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/44_Maximum_Product_Subarray.py
