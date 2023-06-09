@@ -17,7 +17,7 @@ class Solution:
         return c
 
 
-# Brute
+# Optimal
 # T.C. -> O(nlog(n))+O(n+m)
 # S.C. -> O(n)
 
