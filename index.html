@@ -237,12 +237,23 @@
         console.log(res);
     });
 
+    function escape(htmlStr) {
+        return htmlStr
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
     async function printCode(url) {
         const response = await fetch(url);
         const data = await response.text();
         document.getElementById(
             'modbody'
-        ).innerHTML = `<pre><code class="language-python">${data}</code></pre>`;
+        ).innerHTML = `<pre><code class="language-python">${escape(
+            data
+        )}</code></pre>`;
         Prism.highlightAllUnder($('#modbody')[0]);
         return 'Fetched Code!';
     }
