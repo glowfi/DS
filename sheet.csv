@@ -45,3 +45,13 @@ Array&Hashing,Find the Missing Repeating Number,https://www.codingninjas.com/cod
 Array&Hashing,Count Inversions,https://www.codingninjas.com/codestudio/problems/number-of-inversions_6840276, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/42_Count_Inversions.py
 Array&Hashing,Reverse Pairs,https://leetcode.com/problems/reverse-pairs/description/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/43_Reverse_Pairs.py
 Array&Hashing,Maximum Product Subarray,https://leetcode.com/problems/maximum-product-subarray/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/44_Maximum_Product_Subarray.py
+Binary,Binary Search,https://leetcode.com/problems/binary-search/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/1_Binary_Search.py
+Binary,Lower Bound,https://www.codingninjas.com/codestudio/problems/lower-bound_8165382,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/2_Lower_Bound.py
+Binary,Upper Bound,https://www.codingninjas.com/codestudio/problems/implement-upper-bound_8165383,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/3_Upper_Bound.py
+Binary,Search Insert Position,https://leetcode.com/problems/search-insert-position/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/4_Search_Insert_Position.py
+Binary,Floor Ceil Sorted Array,https://www.codingninjas.com/codestudio/problems/ceiling-in-a-sorted-array_1825401,Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/5_Floor_Ceil_Sorted_Array.py
+Binary,First Last Occurence Of Element Sorted Array,https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/6_First_Last_Occurence_Of_Element_Sorted_Array.py
+Binary,Count Number of Occurences,https://www.codingninjas.com/codestudio/problems/occurrence-of-x-in-a-sorted-array_630456, Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/7_Count_Number_of_Occurences.py
+Binary,Binary Search Descending,NA,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/8_Binary_Search_Descending.py
+Binary,Order Not Known Search,NA,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/9_Order_Not_Known_Search.py
+Binary,Search in Rotated Sorted Array,https://leetcode.com/problems/search-in-rotated-sorted-array/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/10_Search_in_Rotated_Sorted_Array.py

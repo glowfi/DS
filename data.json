@@ -360,5 +360,87 @@
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/44_Maximum_Product_Subarray.py"
         ]
+    ],
+    "Binary": [
+        [
+            1,
+            "Binary",
+            "Binary Search",
+            "https://leetcode.com/problems/binary-search/",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/1_Binary_Search.py"
+        ],
+        [
+            2,
+            "Binary",
+            "Lower Bound",
+            "https://www.codingninjas.com/codestudio/problems/lower-bound_8165382",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/2_Lower_Bound.py"
+        ],
+        [
+            3,
+            "Binary",
+            "Upper Bound",
+            "https://www.codingninjas.com/codestudio/problems/implement-upper-bound_8165383",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/3_Upper_Bound.py"
+        ],
+        [
+            4,
+            "Binary",
+            "Search Insert Position",
+            "https://leetcode.com/problems/search-insert-position/",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/4_Search_Insert_Position.py"
+        ],
+        [
+            5,
+            "Binary",
+            "Floor Ceil Sorted Array",
+            "https://www.codingninjas.com/codestudio/problems/ceiling-in-a-sorted-array_1825401",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/5_Floor_Ceil_Sorted_Array.py"
+        ],
+        [
+            6,
+            "Binary",
+            "First Last Occurence Of Element Sorted Array",
+            "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/6_First_Last_Occurence_Of_Element_Sorted_Array.py"
+        ],
+        [
+            7,
+            "Binary",
+            "Count Number of Occurences",
+            "https://www.codingninjas.com/codestudio/problems/occurrence-of-x-in-a-sorted-array_630456",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/7_Count_Number_of_Occurences.py"
+        ],
+        [
+            8,
+            "Binary",
+            "Binary Search Descending",
+            "NA",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/8_Binary_Search_Descending.py"
+        ],
+        [
+            9,
+            "Binary",
+            "Order Not Known Search",
+            "NA",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/9_Order_Not_Known_Search.py"
+        ],
+        [
+            10,
+            "Binary",
+            "Search in Rotated Sorted Array",
+            "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/10_Search_in_Rotated_Sorted_Array.py"
+        ]
     ]
 }
