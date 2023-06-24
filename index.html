@@ -156,7 +156,10 @@
         </nav>
 
         <div class="container" id="parent">
-            <!-- Modal -->
+            <div
+                class="accordion accordion-flush"
+                id="accordionFlushExample"
+            ></div>
         </div>
 
         <script
@@ -174,38 +177,42 @@
         );
 
         const json = await response.json();
+
+        var c = 1;
         for (types in json) {
-            html = `<div class="accordion accordion-flush my-3" id="accordionFlushExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            ${types}
-                        </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <table class="table table-striped table-dark">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Problem</th>
-                                        <th scope="col">Difficulty</th>
-                                        <th scope="col">Code</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="${types}">
-                                </tbody>
+            html = `
+              <div class="accordion-item my-3">
+    <h2 class="accordion-header" id="flush-heading${ntw(c)}">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${ntw(
+          c
+      )}" aria-expanded="false" aria-controls="flush-collapse${ntw(c)}">
+        ${types}
+      </button>
+    </h2>
+    <div id="flush-collapse${ntw(
+        c
+    )}" class="accordion-collapse collapse" aria-labelledby="flush-heading${ntw(
+                c
+            )}" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Problem</th>
+                        <th scope="col">Difficulty</th>
+                        <th scope="col">Code</th>
+                    </tr>
+                </thead>
+                <tbody id="${types}"></tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+            `;
+            const parent = document.getElementById('accordionFlushExample');
+            parent.innerHTML += html;
 
-                            </table>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-            document.getElementById('parent').innerHTML = html;
             var required = '';
             for (question of json[types]) {
                 number = question[0];
@@ -214,20 +221,20 @@
                 difficulty = question[4];
                 code = question[5];
                 required += `
-
-        <tr>
-                        <th scope="row">${number}</th>
-                        <td><a href="${problemLink}" target="_blank">${problemStatement}</a></td>
-                        <td>${difficulty}</td>
-            <td>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                                                                     id="${number}-${types}-${code}" onclick="showCode(this.id)">
-                    Code
-                </button>
-            </td>
-        </tr>
-                    `;
+            <tr>
+                            <th scope="row">${number}</th>
+                            <td><a href="${problemLink}" target="_blank">${problemStatement}</a></td>
+                            <td>${difficulty}</td>
+                <td>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                                                         id="${number}-${types}-${code}" onclick="showCode(this.id)">
+                        Code
+                    </button>
+                </td>
+            </tr>
+                        `;
             }
+            c += 1;
             document.getElementById(`${types}`).innerHTML = required;
         }
         return 'Processed JSON!';
@@ -264,4 +271,88 @@
             console.log(res);
         });
     };
+
+    function ntw(num) {
+        const ones = [
+            '',
+            'one',
+            'two',
+            'three',
+            'four',
+            'five',
+            'six',
+            'seven',
+            'eight',
+            'nine'
+        ];
+        const tens = [
+            '',
+            '',
+            'twenty',
+            'thirty',
+            'forty',
+            'fifty',
+            'sixty',
+            'seventy',
+            'eighty',
+            'ninety'
+        ];
+        const teens = [
+            'ten',
+            'eleven',
+            'twelve',
+            'thirteen',
+            'fourteen',
+            'fifteen',
+            'sixteen',
+            'seventeen',
+            'eighteen',
+            'nineteen'
+        ];
+        const thousands = ['', 'thousand', 'million', 'billion', 'trillion'];
+
+        if (num === 0) {
+            return 'zero';
+        }
+
+        let words = '';
+
+        for (let i = thousands.length - 1; i >= 0; i--) {
+            const divisor = Math.pow(10, 3 * i);
+
+            if (num >= divisor) {
+                const quotient = Math.floor(num / divisor);
+                num -= quotient * divisor;
+
+                const hundreds = Math.floor(quotient / 100);
+                const tensAndOnes = quotient % 100;
+
+                if (hundreds > 0) {
+                    words += ones[hundreds] + ' hundred ';
+                }
+
+                if (tensAndOnes > 0) {
+                    if (tensAndOnes < 10) {
+                        words += ones[tensAndOnes] + ' ';
+                    } else if (tensAndOnes < 20) {
+                        words += teens[tensAndOnes - 10] + ' ';
+                    } else {
+                        const tensDigit = Math.floor(tensAndOnes / 10);
+                        const onesDigit = tensAndOnes % 10;
+
+                        words += tens[tensDigit] + ' ';
+                        if (onesDigit > 0) {
+                            words += ones[onesDigit] + ' ';
+                        }
+                    }
+                }
+
+                if (quotient > 0) {
+                    words += thousands[i] + ' ';
+                }
+            }
+        }
+
+        return words.trim().charAt(0).toUpperCase() + words.slice(1).trim();
+    }
 </script>

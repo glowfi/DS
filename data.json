@@ -361,86 +361,86 @@
             "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/44_Maximum_Product_Subarray.py"
         ]
     ],
-    "Binary": [
+    "BinarySearch": [
         [
             1,
-            "Binary",
+            "BinarySearch",
             "Binary Search",
             "https://leetcode.com/problems/binary-search/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/1_Binary_Search.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/1_Binary_Search.py"
         ],
         [
             2,
-            "Binary",
+            "BinarySearch",
             "Lower Bound",
             "https://www.codingninjas.com/codestudio/problems/lower-bound_8165382",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/2_Lower_Bound.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/2_Lower_Bound.py"
         ],
         [
             3,
-            "Binary",
+            "BinarySearch",
             "Upper Bound",
             "https://www.codingninjas.com/codestudio/problems/implement-upper-bound_8165383",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/3_Upper_Bound.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/3_Upper_Bound.py"
         ],
         [
             4,
-            "Binary",
+            "BinarySearch",
             "Search Insert Position",
             "https://leetcode.com/problems/search-insert-position/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/4_Search_Insert_Position.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/4_Search_Insert_Position.py"
         ],
         [
             5,
-            "Binary",
+            "BinarySearch",
             "Floor Ceil Sorted Array",
             "https://www.codingninjas.com/codestudio/problems/ceiling-in-a-sorted-array_1825401",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/5_Floor_Ceil_Sorted_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/5_Floor_Ceil_Sorted_Array.py"
         ],
         [
             6,
-            "Binary",
+            "BinarySearch",
             "First Last Occurence Of Element Sorted Array",
             "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/6_First_Last_Occurence_Of_Element_Sorted_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/6_First_Last_Occurence_Of_Element_Sorted_Array.py"
         ],
         [
             7,
-            "Binary",
+            "BinarySearch",
             "Count Number of Occurences",
             "https://www.codingninjas.com/codestudio/problems/occurrence-of-x-in-a-sorted-array_630456",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/7_Count_Number_of_Occurences.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/7_Count_Number_of_Occurences.py"
         ],
         [
             8,
-            "Binary",
+            "BinarySearch",
             "Binary Search Descending",
             "NA",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/8_Binary_Search_Descending.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/8_Binary_Search_Descending.py"
         ],
         [
             9,
-            "Binary",
+            "BinarySearch",
             "Order Not Known Search",
             "NA",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/9_Order_Not_Known_Search.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/9_Order_Not_Known_Search.py"
         ],
         [
             10,
-            "Binary",
+            "BinarySearch",
             "Search in Rotated Sorted Array",
             "https://leetcode.com/problems/search-in-rotated-sorted-array/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_Binary_Search/10_Search_in_Rotated_Sorted_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/10_Search_in_Rotated_Sorted_Array.py"
         ]
     ]
 }
