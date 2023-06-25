@@ -55,3 +55,4 @@ BinarySearch,Count Number of Occurences,https://www.codingninjas.com/codestudio/
 BinarySearch,Binary Search Descending,NA,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/8_Binary_Search_Descending.py
 BinarySearch,Order Not Known Search,NA,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/9_Order_Not_Known_Search.py
 BinarySearch,Search in Rotated Sorted Array,https://leetcode.com/problems/search-in-rotated-sorted-array/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/10_Search_in_Rotated_Sorted_Array.py
+BinarySearch,Search in Rotated Sorted Array II,https://leetcode.com/problems/search-in-rotated-sorted-array-ii/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/11_Search_in_Rotated_Sorted_Array_II.py
