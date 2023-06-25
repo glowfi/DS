@@ -441,6 +441,14 @@
             "https://leetcode.com/problems/search-in-rotated-sorted-array/",
             "Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/10_Search_in_Rotated_Sorted_Array.py"
+        ],
+        [
+            11,
+            "BinarySearch",
+            "Search in Rotated Sorted Array II",
+            "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/11_Search_in_Rotated_Sorted_Array_II.py"
         ]
     ]
 }
