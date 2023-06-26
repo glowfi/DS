@@ -25,30 +25,33 @@ class Solution(object):
         while st <= en:
             mid = (st + en) // 2
 
+            # If target found
             if nums[mid] == target:
                 return True
 
-            if nums[mid] == nums[en] and nums[mid] == nums[st]:
+            # Check if element at st,mid,en are equal or not
+            if nums[st] == nums[mid] == nums[en]:
                 st += 1
                 en -= 1
                 continue
 
-            # Find the sorted Part
+            # Identify Sorted Part
+            # Check if target exists in the sorted part and eliminate the part not conatining the target
 
-            # If right Half is sorted
-            if nums[mid] <= nums[en]:
-                # if target lies in right part proceed
-                if nums[mid] <= target and target <= nums[en]:
-                    st = mid + 1
-                else:
-                    en = mid - 1
-
-            # If left Half is sorted
-            else:
-                # if target lies in right part proceed
+            # If left half is sorted
+            elif nums[st] <= nums[mid]:
+                # Target is in left half
                 if nums[st] <= target and target <= nums[mid]:
                     en = mid - 1
                 else:
                     st = mid + 1
+
+            # If right half is sorted
+            else:
+                # Target is in right half
+                if nums[mid] <= target and target <= nums[en]:
+                    st = mid + 1
+                else:
+                    en = mid - 1
 
         return False
