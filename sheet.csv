@@ -45,6 +45,8 @@ Array&Hashing,Find the Missing Repeating Number,https://www.codingninjas.com/cod
 Array&Hashing,Count Inversions,https://www.codingninjas.com/codestudio/problems/number-of-inversions_6840276, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/42_Count_Inversions.py
 Array&Hashing,Reverse Pairs,https://leetcode.com/problems/reverse-pairs/description/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/43_Reverse_Pairs.py
 Array&Hashing,Maximum Product Subarray,https://leetcode.com/problems/maximum-product-subarray/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/44_Maximum_Product_Subarray.py
+Array&Hashing,All Pairs Minimum Absolute Difference,https://leetcode.com/problems/minimum-absolute-difference/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/45_All_Pairs_Minimum_Absolute_Difference.py
+Array&Hashing,Absolute Difference Between any pair,https://practice.geeksforgeeks.org/problems/minimum-difference-pair5444/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/46_Absolute_Difference_Between_any_pair.py
 BinarySearch,Binary Search,https://leetcode.com/problems/binary-search/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/1_Binary_Search.py
 BinarySearch,Lower Bound,https://www.codingninjas.com/codestudio/problems/lower-bound_8165382,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/2_Lower_Bound.py
 BinarySearch,Upper Bound,https://www.codingninjas.com/codestudio/problems/implement-upper-bound_8165383,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/3_Upper_Bound.py
@@ -56,3 +58,13 @@ BinarySearch,Binary Search Descending,NA,Easy,https://raw.githubusercontent.com/
 BinarySearch,Order Not Known Search,NA,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/9_Order_Not_Known_Search.py
 BinarySearch,Search in Rotated Sorted Array,https://leetcode.com/problems/search-in-rotated-sorted-array/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/10_Search_in_Rotated_Sorted_Array.py
 BinarySearch,Search in Rotated Sorted Array II,https://leetcode.com/problems/search-in-rotated-sorted-array-ii/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/11_Search_in_Rotated_Sorted_Array_II.py
+BinarySearch,Minimum Rotated Sorted Array,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/12_Minimum_Rotated_Sorted_Array.py
+BinarySearch,Find Times Array Rotated,https://practice.geeksforgeeks.org/problems/rotation4723/1,Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/13_Find_Times_Array_Rotated.py
+BinarySearch,Find Single Element in a Sorted Array,https://leetcode.com/problems/single-element-in-a-sorted-numsay/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/14_Find_Single_Element_in_a_Sorted_Array.py
+BinarySearch,Find Peak Element,https://leetcode.com/problems/find-peak-element/description/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/15_Find_Peak_Element.py
+BinarySearch,Next Alphabet,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/16_Next_Alphabet.py
+BinarySearch,Position of an element in infinite Sorted Array,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/17_Position_of_an_element_in_infinite_Sorted_Array.py
+BinarySearch,Index of First 1 Binary Infinte Array,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/18_Index_of_First_1_Binary_Infinte_Array.py
+BinarySearch,Minimum Difference Element in a Sorted Array,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/19_Minimum Difference Element in a Sorted Array.py
+BinarySearch,Find Maximum Bitonic Arary,https://practice.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/20_Find_Maximum_Bitonic_Arary.py
+BinarySearch,Search in Bitonic Array,https://practice.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/21_Search_in_Bitonic_Array.py
