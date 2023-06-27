@@ -3,6 +3,7 @@
 import glob
 import os
 import json
+import pandas as pd
 
 # Create Sheet
 os.remove("./sheet.csv")
@@ -80,3 +81,10 @@ for directory in directories:
 json_object = json.dumps(dic, indent=4)
 with open("data.json", "w") as outfile:
     outfile.write(json_object)
+
+# Dump Readme
+df = pd.read_csv("sheet.csv")
+df = df.drop(0)
+markdown_table = df.to_markdown()
+with open("README.md", "w") as rf:
+    rf.write(f"# DS\n\nA repo of solved DS Question\n\n{markdown_table}")
