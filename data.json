@@ -545,6 +545,46 @@
             "https://practice.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1",
             " Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/21_Search_in_Bitonic_Array.py"
+        ],
+        [
+            22,
+            "BinarySearch",
+            "Find Square Root of Number",
+            "https://practice.geeksforgeeks.org/problems/square-root/0",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/22_Find_Square_Root_of_Number.py"
+        ],
+        [
+            23,
+            "BinarySearch",
+            "Find Nth Square root of Number",
+            "https://practice.geeksforgeeks.org/problems/find-nth-root-of-m5843/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/23_Find_Nth_Square_root_of_Number.py"
+        ],
+        [
+            24,
+            "BinarySearch",
+            "Koko Eating Bananas",
+            "https://leetcode.com/problems/koko-eating-bananas/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/24_Koko_Eating_Bananas.py"
+        ],
+        [
+            25,
+            "BinarySearch",
+            "Minimum Number of Days to Make m Bouquets",
+            "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/25_Minimum_Number_of_Days_to_Make_m_Bouquets.py"
+        ],
+        [
+            26,
+            "BinarySearch",
+            "Find the Smallest Divisor Given a Threshold",
+            "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/description/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/26_Find_the_Smallest_Divisor_Given_a_Threshold.py"
         ]
     ]
 }
