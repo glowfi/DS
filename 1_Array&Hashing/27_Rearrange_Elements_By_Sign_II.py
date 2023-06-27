@@ -1,4 +1,4 @@
-# NOLINK,Medium
+# NA,Medium
 
 # Optimal
 # T.C. -> O(n)+O(min(pos,neg))+O(leftover)=O(n)+o(n)

@@ -1,4 +1,4 @@
-# NoLINK,Easy
+# NA,Easy
 
 # Optimal
 # T.C. -> O(n)
