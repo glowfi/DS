@@ -486,7 +486,7 @@
             14,
             "BinarySearch",
             "Find Single Element in a Sorted Array",
-            "https://leetcode.com/problems/single-element-in-a-sorted-numsay/",
+            "https://leetcode.com/problems/single-element-in-a-sorted-array/",
             "Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/14_Find_Single_Element_in_a_Sorted_Array.py"
         ],
@@ -542,8 +542,8 @@
             21,
             "BinarySearch",
             "Search in Bitonic Array",
-            "https://practice.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1",
-            " Easy",
+            "NA",
+            " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/21_Search_in_Bitonic_Array.py"
         ],
         [
