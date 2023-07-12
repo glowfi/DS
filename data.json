@@ -585,6 +585,22 @@
             "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/description/",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/26_Find_the_Smallest_Divisor_Given_a_Threshold.py"
+        ],
+        [
+            27,
+            "BinarySearch",
+            "Capacity to Ship Packages Within D Days",
+            "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/27_Capacity_to_Ship_Packages_Within_D_Days.py"
+        ],
+        [
+            28,
+            "BinarySearch",
+            "Kth Missing Positive Number",
+            "https://leetcode.com/problems/kth-missing-positive-number/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/28_Kth_Missing_Positive_Number.py"
         ]
     ]
 }
