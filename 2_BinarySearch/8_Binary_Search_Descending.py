@@ -5,23 +5,22 @@
 # S.C. -> O(1)
 
 
-class Solution(object):
-    def search(self, nums, target):
-        lo, hi = 0, len(nums) - 1
+def bsDesc(nums, X):
+    st, en = 0, len(nums) - 1
 
-        while lo <= hi:
-            mid = (lo + hi) // 2
+    while st <= en:
+        mid = st + ((en - st) // 2)
 
-            if nums[mid] < target:
-                hi = mid - 1
+        if nums[mid] == X:
+            return mid
 
-            elif nums[mid] > target:
-                lo = mid + 1
+        elif nums[mid] > X:
+            st = mid + 1
 
-            else:
-                return mid
+        else:
+            en = mid - 1
 
-        return -1
+    return -1
 
 
 # Optimal (Recursive)
@@ -29,21 +28,33 @@ class Solution(object):
 # S.C. -> O(1)
 
 
-class Solution(object):
-    def bs(self, st, en, nums, target):
-        if st > en:
-            return -1
+def _bsDesc(nums, X, st, en):
+    if st > en:
+        return -1
 
-        mid = (st + en) // 2
+    mid = st + ((en - st) // 2)
 
-        if nums[mid] == target:
-            return mid
+    if nums[mid] == X:
+        return mid
 
-        elif nums[mid] > target:
-            return self.bs(mid + 1, en, nums, target)
+    elif nums[mid] > X:
+        return _bsDesc(nums, X, mid + 1, en)
 
-        else:
-            return self.bs(st, mid - 1, nums, target)
+    else:
+        return _bsDesc(nums, X, st, mid - 1)
 
-    def search(self, nums, target):
-        return self.bs(0, len(nums) - 1, nums, target)
+
+# List
+ls = [9, 8, 7, 6, 5]
+
+# Iterative
+pos1 = bsDesc(ls, 8)
+pos2 = bsDesc(ls, 0)
+print(pos1)
+print(pos2)
+
+# Recursive
+pos1 = _bsDesc(ls, 9, 0, len(ls) - 1)
+pos2 = _bsDesc(ls, 0, 0, len(ls) - 1)
+print(pos1)
+print(pos2)

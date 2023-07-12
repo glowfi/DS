@@ -8,13 +8,11 @@
 class Solution:
     def floorSqrt(self, x):
         ans = 1
-
-        for i in range(1, x + 1):
-            if i**2 <= x:
+        for i in range(1, x):
+            if i * i <= x:
                 ans = i
-            elif i**2 > x:
+            else:
                 break
-
         return ans
 
 
@@ -25,11 +23,11 @@ class Solution:
 
 class Solution:
     def floorSqrt(self, x):
-        st, en = 0, x
+        st, en = 1, x
         ans = 1
 
         while st <= en:
-            mid = (st + en) // 2
+            mid = st + ((en - st) // 2)
 
             if mid * mid <= x:
                 ans = mid

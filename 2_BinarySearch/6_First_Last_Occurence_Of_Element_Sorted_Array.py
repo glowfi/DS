@@ -7,7 +7,7 @@
 
 
 class Solution(object):
-    def findOccurence(self, nums, target):
+    def searchRange(self, nums, target):
         first, last = -1, -1
         c = 0
 
@@ -15,16 +15,14 @@ class Solution(object):
             if nums[i] == target:
                 last = i
                 c += 1
-            elif nums[i] > target:
+            if nums[i] > target and nums[i] != target:
                 break
 
-        if last == -1:
+        if c == 0:
             return [-1, -1]
-        else:
-            return [last - c + 1, last]
 
-    def searchRange(self, nums, target):
-        return self.findOccurence(nums, target)
+        first = last - c + 1
+        return [first, last]
 
 
 # Optimal
@@ -33,29 +31,31 @@ class Solution(object):
 
 
 class Solution(object):
-    def findOccurence(self, nums, target, type):
+    def getPosition(self, nums, target, type):
         st, en = 0, len(nums) - 1
         ans = -1
 
         while st <= en:
-            mid = (st + en) // 2
+            mid = st + ((en - st) // 2)
 
-            if nums[mid] > target:
-                en = mid - 1
-
-            elif nums[mid] < target:
-                st = mid + 1
-
-            else:
+            if nums[mid] == target:
                 ans = mid
 
                 if type == "first":
                     en = mid - 1
-                else:
+                elif type == "last":
                     st = mid + 1
+
+            elif nums[mid] > target:
+                en = mid - 1
+
+            else:
+                st = mid + 1
         return ans
 
     def searchRange(self, nums, target):
-        first = self.findOccurence(nums, target, "first")
-        last = self.findOccurence(nums, target, "last")
+        first = self.getPosition(nums, target, "first")
+        if first == -1:
+            return [-1, -1]
+        last = self.getPosition(nums, target, "last")
         return [first, last]

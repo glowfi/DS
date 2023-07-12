@@ -14,45 +14,57 @@ class Solution(object):
 
 
 # Better
-# T.C. -> O(log(n))+O(n)
+# T.C. -> O(log(n))+O(log(n))
 # S.C. -> O(1)
 
 
 class Solution(object):
-    def bs(self, arr, x, st, en):
+    def bs(self, arr, X, st, en):
         while st <= en:
-            mid = (st + en) // 2
+            mid = st + ((en - st) // 2)
 
-            if arr[mid] == x:
+            if arr[mid] == X:
                 return mid
 
-            elif arr[mid] > x:
+            elif arr[mid] > X:
                 en = mid - 1
 
             else:
                 st = mid + 1
-
         return -1
 
-    def breakPoint(self, arr):
-        breakPoint = -1
-        for i in range(1, len(arr)):
-            if arr[i] < arr[i - 1]:
-                breakPoint = i
-                break
-        return breakPoint
+    def findMin(self, nums):
+        n = len(nums)
+        st, en = 1, n - 2
+
+        while st <= en:
+            mid = st + ((en - st) // 2)
+
+            if nums[mid] < nums[mid - 1] and nums[mid] < nums[mid + 1]:
+                return mid
+
+            # Identify the unsorted part as the minimum elemeny will be present in the unsorted part (By Observation)
+
+            # Right Half is sorted and left half is unsorted
+            elif nums[mid] < nums[en]:
+                en = mid - 1
+
+            # Left Half is sorted and right half is unsorted
+            else:
+                st = mid + 1
+
+        if nums[0] < nums[n - 1]:
+            return 0
+        return n - 1
 
     def search(self, nums, target):
-        getBreakPoint = self.breakPoint(nums)
+        getMin = self.findMin(nums)
+        print(getMin)
 
-        if getBreakPoint == -1:
-            return self.bs(nums, target, 0, len(nums) - 1)
-
-        firstHalf = self.bs(nums, target, 0, getBreakPoint - 1)
-        if firstHalf != -1:
-            return firstHalf
-        secHalf = self.bs(nums, target, getBreakPoint, len(nums) - 1)
-        return secHalf
+        first = self.bs(nums, target, 0, getMin - 1)
+        if first != -1:
+            return first
+        return self.bs(nums, target, getMin, len(nums) - 1)
 
 
 # Optimal
@@ -65,29 +77,27 @@ class Solution(object):
         st, en = 0, len(nums) - 1
 
         while st <= en:
-            mid = (st + en) // 2
+            mid = st + ((en - st) // 2)
 
-            # If target found
+            # Found the element
             if nums[mid] == target:
                 return mid
 
-            # Identify Sorted Part
-            # Check if target exists in the sorted part and eliminate the part not conatining the target
+            ### Identify the sorted part and check whether the element is present in the sorted part or not
 
-            # If left half is sorted
-            elif nums[st] <= nums[mid]:
-                # Target is in left half
-                if nums[st] <= target and target <= nums[mid]:
-                    en = mid - 1
-                else:
-                    st = mid + 1
-
-            # If right half is sorted
-            else:
+            ## Right half is sorted
+            elif nums[mid] <= nums[en]:
                 # Target is in right half
                 if nums[mid] <= target and target <= nums[en]:
                     st = mid + 1
                 else:
                     en = mid - 1
 
+            ## Left half is sorted
+            else:
+                # Target is in left half
+                if nums[st] <= target and target <= nums[mid]:
+                    en = mid - 1
+                else:
+                    st = mid + 1
         return -1

@@ -1,5 +1,6 @@
 # https://leetcode.com/problems/search-insert-position/,Easy
 
+# Find Lower Bound
 
 # Brute
 # T.C. -> O(n)
@@ -8,12 +9,10 @@
 
 class Solution(object):
     def searchInsert(self, nums, target):
-        ans = len(nums)
         for i in range(len(nums)):
             if nums[i] >= target:
-                ans = i
-                break
-        return ans
+                return i
+        return len(nums)
 
 
 # Optimal
@@ -23,17 +22,16 @@ class Solution(object):
 
 class Solution(object):
     def searchInsert(self, nums, target):
-        ans = len(nums)
         st, en = 0, len(nums) - 1
+        ans = len(nums)
 
         while st <= en:
-            mid = (st + en) // 2
+            mid = st + ((en - st) // 2)
 
-            if nums[mid] < target:
-                st = mid + 1
-
-            elif nums[mid] >= target:
+            if nums[mid] >= target:
                 ans = mid
                 en = mid - 1
+            else:
+                st = mid + 1
 
         return ans

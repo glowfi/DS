@@ -10,12 +10,10 @@
 
 
 def upperBound(arr: [int], x: int, n: int) -> int:
-    ans = n
     for i in range(len(arr)):
         if arr[i] > x:
-            ans = i
-            break
-    return ans
+            return i
+    return n
 
 
 # Optimal
@@ -24,16 +22,15 @@ def upperBound(arr: [int], x: int, n: int) -> int:
 
 
 def upperBound(arr: [int], x: int, n: int) -> int:
-    ans = n
     st, en = 0, len(arr) - 1
+    ans = n
 
     while st <= en:
-        mid = (st + en) // 2
+        mid = st + ((en - st) // 2)
 
-        if arr[mid] <= x:
-            st = mid + 1
-
-        elif arr[mid] > x:
-            ans = mid
+        if arr[mid] > x:
             en = mid - 1
+            ans = mid
+        else:
+            st = mid + 1
     return ans

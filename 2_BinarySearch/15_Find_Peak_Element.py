@@ -11,15 +11,13 @@ class Solution(object):
         if len(nums) == 1:
             return 0
 
-        for i in range(len(nums)):
-            if i == 0:
-                if nums[i] > nums[i + 1]:
-                    return i
+        if nums[0] > nums[1]:
+            return 0
 
-            if i == len(nums) - 1:
-                if nums[i] > nums[i - 1]:
-                    return i
+        if nums[-1] > nums[-2]:
+            return len(nums) - 1
 
+        for i in range(1, len(nums) - 1):
             if nums[i] > nums[i - 1] and nums[i] > nums[i + 1]:
                 return i
 
@@ -34,29 +32,26 @@ class Solution(object):
         if len(nums) == 1:
             return 0
 
-        st, en = 0, len(nums) - 1
+        if nums[0] > nums[1]:
+            return 0
+
+        if nums[-1] > nums[-2]:
+            return len(nums) - 1
+
+        st, en = 1, len(nums) - 2
 
         while st <= en:
-            mid = (st + en) // 2
+            mid = st + ((en - st) // 2)
 
-            if mid > 0 and mid < len(nums) - 1:
-                if nums[mid] > nums[mid - 1] and nums[mid] > nums[mid + 1]:
-                    return mid
+            if nums[mid] > nums[mid - 1] and nums[mid] > nums[mid + 1]:
+                return mid
 
-                # If Left Half is Promising
-                elif nums[mid - 1] > nums[mid] and nums[mid - 1] > nums[mid + 1]:
-                    en = mid - 1
+            ### Find Most promising Candidate among left and right neighbour
 
-                # If Right Half is Promising
-                else:
-                    st = mid + 1
+            # Left Neighbour can be peak
+            elif nums[mid - 1] > nums[mid] and nums[mid - 1] > nums[mid + 1]:
+                en = mid - 1
 
-            elif mid == 0:
-                if nums[0] > nums[1]:
-                    return 0
-                return 1
-
-            elif mid == len(nums) - 1:
-                if nums[len(nums) - 1] > nums[len(nums) - 2]:
-                    return len(nums) - 1
-                return len(nums) - 2
+            # Right Neighbour can be peak
+            else:
+                st = mid + 1

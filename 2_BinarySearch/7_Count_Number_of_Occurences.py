@@ -6,26 +6,14 @@
 # S.C. -> O(1)
 
 
-def findOccurence(nums, target):
-    first, last = -1, -1
-    c = 0
-
-    for i in range(len(nums)):
-        if nums[i] == target:
-            last = i
-            c += 1
-        elif nums[i] > target:
-            break
-
-    if last == -1:
-        return 0
-    else:
-        first = last - c + 1
-        return last - first + 1
-
-
 def count(arr: [int], n: int, x: int) -> int:
-    return findOccurence(arr, x)
+    count = 0
+
+    for i in range(len(arr)):
+        if arr[i] == x:
+            count += 1
+
+    return count
 
 
 # Optimal
@@ -33,34 +21,32 @@ def count(arr: [int], n: int, x: int) -> int:
 # S.C. -> O(1)
 
 
-def findOccurence(nums, target, type):
+def getPosition(nums, target, type):
     st, en = 0, len(nums) - 1
     ans = -1
 
     while st <= en:
-        mid = (st + en) // 2
+        mid = st + ((en - st) // 2)
 
-        if nums[mid] > target:
-            en = mid - 1
-
-        elif nums[mid] < target:
-            st = mid + 1
-
-        else:
+        if nums[mid] == target:
             ans = mid
 
             if type == "first":
                 en = mid - 1
-            else:
+            elif type == "last":
                 st = mid + 1
+
+        elif nums[mid] > target:
+            en = mid - 1
+
+        else:
+            st = mid + 1
     return ans
 
 
 def count(arr: [int], n: int, x: int) -> int:
-    first = findOccurence(arr, x, "first")
-
+    first = getPosition(arr, x, "first")
     if first == -1:
         return 0
-    last = findOccurence(arr, x, "last")
-
+    last = getPosition(arr, x, "last")
     return last - first + 1

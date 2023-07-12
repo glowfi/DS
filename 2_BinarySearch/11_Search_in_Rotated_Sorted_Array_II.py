@@ -23,35 +23,34 @@ class Solution(object):
         st, en = 0, len(nums) - 1
 
         while st <= en:
-            mid = (st + en) // 2
+            mid = st + ((en - st) // 2)
 
-            # If target found
+            # If element is Found
             if nums[mid] == target:
                 return True
 
-            # Check if element at st,mid,en are equal or not
-            if nums[st] == nums[mid] == nums[en]:
+            # Remove Duplicate elements cases
+            if nums[st] == nums[mid] and nums[mid] == nums[en]:
                 st += 1
                 en -= 1
                 continue
 
-            # Identify Sorted Part
-            # Check if target exists in the sorted part and eliminate the part not conatining the target
+            ### Idenify the part that is sorted and check the target is present in sorted part or not
 
-            # If left half is sorted
-            elif nums[st] <= nums[mid]:
-                # Target is in left half
-                if nums[st] <= target and target <= nums[mid]:
-                    en = mid - 1
-                else:
-                    st = mid + 1
-
-            # If right half is sorted
-            else:
-                # Target is in right half
+            ## Right Half is sorted
+            elif nums[mid] <= nums[en]:
+                # Check if target is present
                 if nums[mid] <= target and target <= nums[en]:
                     st = mid + 1
                 else:
                     en = mid - 1
+
+            ## Left Half is sorted
+            else:
+                # Check if target is present
+                if nums[st] <= target and target <= nums[mid]:
+                    en = mid - 1
+                else:
+                    st = mid + 1
 
         return False
