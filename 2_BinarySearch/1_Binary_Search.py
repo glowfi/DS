@@ -10,7 +10,6 @@ class Solution(object):
         for i in range(len(nums)):
             if nums[i] == target:
                 return i
-
         return -1
 
 
@@ -21,19 +20,19 @@ class Solution(object):
 
 class Solution(object):
     def search(self, nums, target):
-        lo, hi = 0, len(nums) - 1
+        st, en = 0, len(nums) - 1
 
-        while lo <= hi:
-            mid = (lo + hi) // 2
+        while st <= en:
+            mid = st + ((en - st) // 2)
 
-            if nums[mid] < target:
-                lo = mid + 1
+            if nums[mid] == target:
+                return mid
 
             elif nums[mid] > target:
-                hi = mid - 1
+                en = mid - 1
 
             else:
-                return mid
+                st = mid + 1
 
         return -1
 
@@ -44,20 +43,22 @@ class Solution(object):
 
 
 class Solution(object):
-    def bs(self, st, en, nums, target):
-        if st > en:
-            return -1
-
-        mid = (st + en) // 2
-
-        if nums[mid] == target:
-            return mid
-
-        elif nums[mid] > target:
-            return self.bs(st, mid - 1, nums, target)
-
-        else:
-            return self.bs(mid + 1, en, nums, target)
-
     def search(self, nums, target):
-        return self.bs(0, len(nums) - 1, nums, target)
+        def bs(st, en):
+            if st > en:
+                return -1
+
+            mid = st + ((en - st) // 2)
+
+            if nums[mid] == target:
+                return mid
+
+            # Go Left
+            elif nums[mid] > target:
+                return bs(st, mid - 1)
+
+            # Go Right
+            else:
+                return bs(mid + 1, en)
+
+        return bs(0, len(nums) - 1)

@@ -2,39 +2,36 @@
 
 
 # Optimal
-# T.C. -> O(log(n))
-# S.C. -> O(1)
+# T.C. -> O(infinity)+log(k)
+# S.C. -> O(infinity)
 
 # ls=[0,0,0,0,.......,1,1,1,.....]
 # key=Postion of 1st 1
 
 
-def bs(st, en, nums, target):
-    ans = -1
+def BS(st, en, arr, X):
     while st <= en:
-        mid = (st + en) // 2
-        if nums[mid] >= target:
-            ans = mid
+        mid = st + ((en - st) // 2)
+
+        if arr[mid] == X:
             en = mid - 1
         else:
             st = mid + 1
-    return ans
+    return st
 
 
-def search(target, nums):
+def getPos(arr):
     st, en = 0, 1
-    pos = -1
+    X = 1
 
     while True:
-        mid = (st + en) // 2
+        mid = st + ((en - st) // 2)
 
-        if nums[mid] == 1:
-            pos = mid
+        if arr[mid] == 1:
             break
 
-        elif nums[mid] < 1:
+        elif arr[mid] < X:
             st = en
             en *= 2
 
-    # Calcualte Lower Bound
-    bs(st, pos, nums, target)
+    return BS(st, en, arr, X)

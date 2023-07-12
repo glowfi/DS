@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/single-element-in-a-sorted-numsay/,Medium
+# https://leetcode.com/problems/single-element-in-a-sorted-array/,Medium
 
 
 # Brute
@@ -35,20 +35,28 @@ class Solution(object):
         st, en = 1, len(nums) - 2
 
         while st <= en:
-            mid = (st + en) // 2
+            mid = st + ((en - st) // 2)
 
-            if nums[mid] != nums[mid - 1] and nums[mid] != nums[mid + 1]:
+            if nums[mid - 1] != nums[mid] and nums[mid + 1] != nums[mid]:
                 return nums[mid]
 
-            # Left Half -> (even,odd)
-            # Right Half -> (odd,even)
+            # Elements in Left Half -> (even,odd)
+            # Elements in Right Half -> (odd,even)
 
-            if (
-                mid % 2 == 0
-                and nums[mid + 1] == nums[mid]
-                or mid % 2 == 1
-                and nums[mid] == nums[mid - 1]
-            ):
-                st = mid + 1
+            # Identify in which half we are in
+
+            # If index is even
+            if mid % 2 == 0:
+                # if we are in Left Half then next element will be equal
+                if nums[mid] == nums[mid + 1]:
+                    st = mid + 1
+                else:
+                    en = mid - 1
+
+            # If index is odd
             else:
-                en = mid - 1
+                # if we are in Right Half then next element will be equal
+                if nums[mid] == nums[mid + 1]:
+                    en = mid - 1
+                else:
+                    st = mid + 1

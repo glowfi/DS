@@ -9,11 +9,8 @@
 class Solution(object):
     def findMin(self, nums):
         mn = float("inf")
-
         for i in range(len(nums)):
-            if nums[i] < mn:
-                mn = nums[i]
-
+            mn = min(mn, nums[i])
         return mn
 
 
@@ -24,24 +21,23 @@ class Solution(object):
 
 class Solution(object):
     def findMin(self, nums):
-        st, en = 0, len(nums) - 1
-        N = len(nums)
+        n = len(nums)
+        st, en = 1, n - 2
 
         while st <= en:
-            mid = (st + en) // 2
+            mid = st + ((en - st) // 2)
 
-            prev = (mid + N - 1) % N
-            nxt = (mid + 1) % N
-
-            # Minimum element is smaller than both of its neighbour
-            if nums[mid] <= nums[prev] and nums[mid] <= nums[nxt]:
+            if nums[mid] < nums[mid - 1] and nums[mid] < nums[mid + 1]:
                 return nums[mid]
 
-            # Identify Unsorted part as minimum element will always lie there (By observation)
+            # Identify the unsorted part as the minimum elemeny will be present in the unsorted part (By Observation)
 
-            # Right is Unsorted
-            elif nums[mid] >= nums[en]:
+            # Right Half is sorted and left half is unsorted
+            elif nums[mid] < nums[en]:
+                en = mid - 1
+
+            # Left Half is sorted and right half is unsorted
+            else:
                 st = mid + 1
 
-            else:
-                en = mid - 1
+        return min(nums[0], nums[n - 1])

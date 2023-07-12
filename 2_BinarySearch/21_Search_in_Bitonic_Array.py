@@ -1,76 +1,79 @@
-# https://practice.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1, Easy
+# NA, Medium
 
-
-# Optimal
-# T.C. -> O(log(n))
+# Brute
+# T.C. -> O(n)
 # S.C. -> O(1)
 
 
 class Solution:
-    def bsAsc(self, st, en, arr, x):
-        while st <= en:
-            mid = (st + en) // 2
-
-            if arr[mid] == x:
-                return mid
-            elif arr[mid] > x:
-                en = mid - 1
-            else:
-                st = mid + 1
+    def searchBitonic(self, arr, n, X):
+        for i in range(n):
+            if arr[i] == X:
+                return i
         return -1
 
-    def bsDesc(self, st, en, arr, x):
-        while st <= en:
-            mid = (st + en) // 2
 
-            if arr[mid] == x:
+# Optimal
+# T.C. -> O(log(n))+O(log(n))
+# S.C. -> O(1)
+
+
+class Solution:
+    def bsAsc(self, st, en, arr, X):
+        while st <= en:
+            mid = st + ((en - st) // 2)
+
+            if arr[mid] == X:
                 return mid
-            elif arr[mid] > x:
+
+            elif arr[mid] < X:
                 st = mid + 1
+
             else:
                 en = mid - 1
+
         return -1
 
-    def bitonicPoint(self, arr, n):
-        if len(arr) == 1:
+    def bsDsc(self, st, en, arr, X):
+        while st <= en:
+            mid = st + ((en - st) // 2)
+
+            if arr[mid] == X:
+                return mid
+
+            elif arr[mid] > X:
+                st = mid + 1
+
+            else:
+                en = mid - 1
+
+        return -1
+
+    def getBitonic(self, arr, n):
+        if arr[0] > arr[1]:
             return 0
 
-        st, en = 0, len(arr) - 1
+        if arr[n - 1] > arr[n - 2]:
+            return arr[n - 1]
 
+        st, en = 1, len(arr) - 2
         while st <= en:
-            mid = (st + en) // 2
+            mid = st + ((en - st) // 2)
 
-            if mid > 0 and mid < n - 1:
-                if arr[mid] > arr[mid - 1] and arr[mid] > arr[mid + 1]:
-                    return mid
+            if arr[mid] > arr[mid + 1] and arr[mid] > arr[mid - 1]:
+                return mid
 
-                # Left is Promising
-                elif arr[mid - 1] > arr[mid]:
-                    en = mid - 1
-                # Right is Promising
-                else:
-                    st = mid + 1
+            elif arr[mid - 1] > arr[mid] and arr[mid - 1] > arr[mid + 1]:
+                en = mid - 1
 
-            elif mid == 0:
-                if arr[0] > arr[1]:
-                    return 0
-                return 1
+            else:
+                st = mid + 1
 
-            elif mid == len(arr) - 1:
-                if arr[n - 1] > arr[n - 2]:
-                    return n - 1
-                return n - 2
+    def searchBitonic(self, arr, n, X):
+        point = self.getBitonic(arr, n)
+        if point:
+            k = self.bsAsc(0, point - 1, arr, X)
 
-    def search(self, arr, x):
-        findPoint = self.bitonicPoint(arr, len(arr))
-
-        firstHalf = self.bsAsc(0, findPoint - 1, arr, x)
-        if firstHalf != -1:
-            return firstHalf
-        return self.bsDesc(findPoint, len(arr) - 1, arr, x)
-
-
-ls = [-3, 9, 18, 20, 17, 5, 1]
-key = -3
-obj = Solution()
-print(obj.search(ls, key))
+            if k != -1:
+                return k
+            return self.bsDsc(point + 1, n - 1, arr, X)
