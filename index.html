@@ -109,7 +109,6 @@
                             class="btn-close"
                             data-bs-dismiss="modal"
                             aria-label="Close"
-                            onclick="refresh()"
                         ></button>
                     </div>
                     <div class="modal-body" id="modbody">...</div>
@@ -118,7 +117,6 @@
                             type="button"
                             class="btn btn-danger"
                             data-bs-dismiss="modal"
-                            onclick="refresh()"
                         >
                             Close
                         </button>
@@ -245,6 +243,8 @@
 </html>
 
 <script>
+    var alreadySearchInitiated = 0;
+
     const refresh = () => {
         window.location.reload();
     };
@@ -261,10 +261,8 @@
         for (i = 0; i < li.length; i++) {
             a = li[i];
             txtValue = a.textContent || a.innerText;
-            console.log(txtValue);
 
             if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                console.log(li[i].parentNode.parentNode.parentNode);
                 li[i].parentNode.style.display = 'block';
             } else {
                 li[i].parentNode.style.display = 'none';
@@ -377,9 +375,14 @@
         return 'Processed JSON!';
     }
     const popu = () => {
-        getAll().then((res) => {
-            console.log(res);
-        });
+        if (alreadySearchInitiated == 1) {
+        } else {
+            alreadySearchInitiated = 1;
+
+            getAll().then((res) => {
+                console.log(res);
+            });
+        }
     };
 
     getData().then((res) => {
