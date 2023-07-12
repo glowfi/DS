@@ -142,6 +142,7 @@
                             type="button"
                             class="btn-close"
                             data-bs-dismiss="modal"
+                            id="klose1"
                             aria-label="Close"
                         ></button>
                     </div>
@@ -164,6 +165,7 @@
                             type="button"
                             class="btn btn-danger"
                             data-bs-dismiss="modal"
+                            id="klose2"
                         >
                             Close
                         </button>
@@ -196,23 +198,33 @@
                 >
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a
-                                class="nav-link active"
-                                aria-current="page"
-                                href="https://github.com/glowfi/DS"
-                                >Source Code</a
+                            <button
+                                type="button"
+                                class="btn btn-info mx-2 my-2"
+                                onclick="sourceCode()"
                             >
+                                Source Code
+                            </button>
                         </li>
                         <li class="nav-item">
                             <button
                                 type="button"
-                                class="btn btn-success mx-3"
+                                class="btn btn-success mx-2 my-2"
                                 data-bs-toggle="modal"
                                 data-bs-target="#exampleModal1"
                                 id="search"
                                 onclick="popu()"
                             >
                                 Search
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button
+                                type="button"
+                                class="btn btn-secondary mx-2 my-2"
+                                id="nprog"
+                            >
+                                X
                             </button>
                         </li>
                     </ul>
@@ -244,10 +256,16 @@
 
 <script>
     var alreadySearchInitiated = 0;
+    var totalPrograms = 0;
 
     const refresh = () => {
         window.location.reload();
     };
+
+    const sourceCode = () => {
+        window.location.href = 'https://github.com/glowfi/DS';
+    };
+
     const filterData = () => {
         // Declare variables
         var input, filter, ul, li, a, i, txtValue;
@@ -368,10 +386,15 @@
                       </td>
                   </tr>
                               `;
+                totalPrograms += 1;
             }
             c += 1;
             document.getElementById(`${types}`).innerHTML = required;
         }
+        document.getElementById(
+            `nprog`
+        ).innerText = `Total Codes : ${totalPrograms}`;
+
         return 'Processed JSON!';
     }
     const popu = () => {
@@ -411,6 +434,7 @@
     }
 
     showCode = (k) => {
+        document.getElementById('klose1').click();
         url = k.split('-')[2];
         printCode(url).then((res) => {
             console.log(res);
