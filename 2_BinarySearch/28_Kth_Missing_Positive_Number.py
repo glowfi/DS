@@ -8,16 +8,32 @@
 class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
         st = set(arr)
-        num = 1
-
-        while True:
-            if num not in st:
+        for i in range(1, arr[-1] + k + 1):
+            if i not in st:
                 k -= 1
-
             if k == 0:
+                return i
+
+
+# Better
+# T.C. -> O(n)
+# S.C. -> O(1)
+
+
+class Solution:
+    def missingTillCurrIndex(self, arr, idx):
+        return arr[idx] - (idx + 1)
+
+    def findKthPositive(self, arr: List[int], k: int) -> int:
+        ans = -1
+        for i in range(len(arr)):
+            m = self.missingTillCurrIndex(arr, i)
+            if m < k:
+                ans = i
+            else:
                 break
-            num += 1
-        return num
+        more = k - self.missingTillCurrIndex(arr, ans)
+        return arr[ans] + more
 
 
 # Optimal
