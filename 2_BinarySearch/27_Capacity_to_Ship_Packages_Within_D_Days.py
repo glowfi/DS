@@ -10,11 +10,11 @@ class Solution:
         quota = 0
         d = 1
         for i in range(len(arr)):
-            if quota + arr[i] > currCap:
+            quota += arr[i]
+
+            if quota > currCap:
                 d += 1
                 quota = arr[i]
-            else:
-                quota += arr[i]
 
         return d <= days
 
@@ -35,11 +35,11 @@ class Solution:
         quota = 0
         d = 1
         for i in range(len(arr)):
-            if quota + arr[i] > currCap:
+            quota += arr[i]
+
+            if quota > currCap:
                 d += 1
                 quota = arr[i]
-            else:
-                quota += arr[i]
 
         return d <= days
 
