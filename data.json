@@ -601,6 +601,24 @@
             "https://leetcode.com/problems/kth-missing-positive-number/",
             " Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/28_Kth_Missing_Positive_Number.py"
+        ],
+        [
+            29,
+            "BinarySearch",
+            "Aggressive Cows",
+            "https://www.codingninjas.com/studio/problems/aggressive-cows_1082559",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/29_Aggressive_Cows.py"
+        ]
+    ],
+    "String": [
+        [
+            1,
+            "String",
+            "Remove outermost Paranthesis",
+            "https://leetcode.com/problems/remove-outermost-parentheses/",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/1_Remove_outermost_Paranthesis.py"
         ]
     ]
 }
