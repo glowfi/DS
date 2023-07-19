@@ -621,14 +621,14 @@
             "https://raw.githubusercontent.com/glowfi/DS/main/3_String/1_Remove_outermost_Paranthesis.py"
         ]
     ],
-    "Linked": [
+    "LinkedList": [
         [
             1,
-            "Linked",
+            "LinkedList",
             "Construct Linked List",
             "https://www.codingninjas.com/studio/problems/introduction-to-linked-list_8144737",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_Linked_List/1_Construct_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/1_Construct_Linked_List.py"
         ]
     ]
 }
