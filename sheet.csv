@@ -78,3 +78,24 @@ BinarySearch,Kth Missing Positive Number,https://leetcode.com/problems/kth-missi
 BinarySearch,Aggressive Cows,https://www.codingninjas.com/studio/problems/aggressive-cows_1082559, Hard,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/29_Aggressive_Cows.py
 String,Remove outermost Paranthesis,https://leetcode.com/problems/remove-outermost-parentheses/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/3_String/1_Remove_outermost_Paranthesis.py
 LinkedList,Construct Linked List,https://www.codingninjas.com/studio/problems/introduction-to-linked-list_8144737,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/1_Construct_Linked_List.py
+LinkedList,Insert Node At the Beginning Linked List,https://www.codingninjas.com/studio/problems/insert-node-at-the-beginning_8144739,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/2_Insert_Node_At_the_Beginning_Linked_List.py
+LinkedList,Delete Node Linked List,https://leetcode.com/problems/delete-node-in-a-linked-list/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/3_Delete_Node_Linked_List.py
+LinkedList,Find Length Linked List,https://www.codingninjas.com/studio/problems/count-nodes-of-linked-list_5884,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/4_Find_Length_Linked_List.py
+LinkedList,Search in LinkedList,https://www.codingninjas.com/studio/problems/search-in-a-linked-list_975381,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/5_Search_in_LinkedList.py
+LinkedList,Construct Doubly Linked List,https://www.codingninjas.com/studio/problems/introduction-to-doubly-linked-list_8160413,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/6_Construct_Doubly_Linked_List.py
+LinkedList,Insert at the end of DLL,https://www.codingninjas.com/studio/problems/insert-at-end-of-doubly-linked-list_8160464,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/7_Insert_at_the_end_of_DLL.py
+LinkedList,Delete Tail Node DLL,https://www.codingninjas.com/studio/problems/delete-last-node-of-a-doubly-linked-list_8160469,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/8_Delete_Tail_Node_DLL.py
+LinkedList,Reverse DLL,https://www.codingninjas.com/studio/problems/reverse-a-doubly-linked-list_1116098,Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/9_Reverse_DLL.py
+LinkedList,Middle Linked List,https://leetcode.com/problems/middle-of-the-linked-list/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/10_Middle_Linked_List.py
+LinkedList,Reverse Linked List,https://leetcode.com/problems/reverse-linked-list/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/11_Reverse_Linked_List.py
+LinkedList,Linked List Cycle,https://leetcode.com/problems/linked-list-cycle/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/12_Linked_List_Cycle.py
+LinkedList,Linked List Cycle II,https://leetcode.com/problems/linked-list-cycle-ii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/13_Linked_List_Cycle_II.py
+LinkedList,Find length of Loop,https://www.codingninjas.com/studio/problems/find-length-of-loop_8160455, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/14_Find_length_of_Loop.py
+LinkedList,Find Duplicate Number,https://leetcode.com/problems/find-the-duplicate-number/description/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/15_Find_Duplicate_Number.py
+LinkedList,Check Palindromic LL,https://leetcode.com/problems/palindrome-linked-list/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/16_Check_Palindromic_LL.py
+LinkedList,Segragate Odd Even Nodes in LL,https://leetcode.com/problems/odd-even-linked-list/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/17_Segragate_Odd_Even_Nodes_in_LL.py
+LinkedList,Remove Nth Node from Linked List,https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/18_Remove_Nth_Node_from_Linked_List.py
+LinkedList,Delete Middle Node LL,https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/19_Delete_Middle_Node_LL.py
+LinkedList,Sort LL,https://leetcode.com/problems/sort-list/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/20_Sort_LL.py
+LinkedList,Sort LL 0s 1s 2s,https://www.codingninjas.com/studio/problems/sort-linked-list-of-0s-1s-2s_1071937, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/21_Sort_LL_0s_1s_2s.py
+LinkedList,Intersection of Two Linked Lists,https://leetcode.com/problems/intersection-of-two-linked-lists/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/22_Intersection_of_Two_Linked_Lists.py
