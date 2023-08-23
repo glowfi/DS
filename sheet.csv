@@ -77,6 +77,20 @@ BinarySearch,Capacity to Ship Packages Within D Days,https://leetcode.com/proble
 BinarySearch,Kth Missing Positive Number,https://leetcode.com/problems/kth-missing-positive-number/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/28_Kth_Missing_Positive_Number.py
 BinarySearch,Aggressive Cows,https://www.codingninjas.com/studio/problems/aggressive-cows_1082559, Hard,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/29_Aggressive_Cows.py
 String,Remove outermost Paranthesis,https://leetcode.com/problems/remove-outermost-parentheses/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/3_String/1_Remove_outermost_Paranthesis.py
+String,Reverse Words in a String,https://leetcode.com/problems/reverse-words-in-a-string/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/3_String/2_Reverse_Words_in_a_String.py
+String,Largest odd number in a string,https://leetcode.com/problems/largest-odd-number-in-string/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/3_String/3_Largest_odd_number_in_a_string.py
+String,Longest Common Prefix,https://leetcode.com/problems/longest-common-prefix/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/3_String/4_Longest_Common_Prefix.py
+String,Isomorphic String,https://leetcode.com/problems/isomorphic-strings/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/3_String/5_Isomorphic_String.py
+String,Rotate String,https://leetcode.com/problems/rotate-string/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/3_String/6_Rotate_String.py
+String,Valid Anagram,https://leetcode.com/problems/valid-anagram/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/3_String/7_Valid_Anagram.py
+String,Sort Character By Frequency,https://leetcode.com/problems/sort-characters-by-frequency/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/3_String/8_Sort_Character_By_Frequency.py
+String,Maximum Nesting Depth of the Parentheses,https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/3_String/9_Maximum_Nesting_Depth_of_the_Parentheses.py
+String,Roman to Integer,https://leetcode.com/problems/roman-to-integer/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/3_String/10_Roman_to_Integer.py
+String,Implement atoi,https://leetcode.com/problems/string-to-integer-atoi/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/3_String/11_Implement_atoi.py
+String,Count number of substring k different characters,https://www.codingninjas.com/studio/problems/count-with-k-different-characters_1214627, Medium,https://raw.githubusercontent.com/glowfi/DS/main/3_String/12_Count_number_of_substring_k_different_characters.py
+String,Longest Palindromic Substring,https://leetcode.com/problems/longest-palindromic-substring/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/3_String/13_Longest_Palindromic_Substring.py
+String,Count number of palindrome substrings,https://leetcode.com/problems/palindromic-substrings/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/3_String/15_Count_number_of_palindrome_substrings.py
+String,Sum of Beauty of all substrings,https://leetcode.com/problems/sum-of-beauty-of-all-substrings/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/3_String/16_Sum_of_Beauty_of_all_substrings.py
 LinkedList,Construct Linked List,https://www.codingninjas.com/studio/problems/introduction-to-linked-list_8144737,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/1_Construct_Linked_List.py
 LinkedList,Insert Node At the Beginning Linked List,https://www.codingninjas.com/studio/problems/insert-node-at-the-beginning_8144739,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/2_Insert_Node_At_the_Beginning_Linked_List.py
 LinkedList,Delete Node Linked List,https://leetcode.com/problems/delete-node-in-a-linked-list/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/3_Delete_Node_Linked_List.py
