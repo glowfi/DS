@@ -44,24 +44,5 @@ class Solution:
 
 
 # Optimal
-# T.C. -> O(n)
-# S.C. -> O(1)
-
-
-class Solution:
-    def reverseLL(self, start, end):
-        prev = None
-
-        while start != end:
-            nx = start.next
-            start.next = prev
-            prev = start
-            start = nx
-
-        return prev
-
-    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        if head is None or k == 1:
-            return head
-
-        start = end = head
+# T.C. -> O()
+# S.C. -> O()
