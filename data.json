@@ -909,6 +909,94 @@
             "https://leetcode.com/problems/intersection-of-two-linked-lists/",
             " Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/22_Intersection_of_Two_Linked_Lists.py"
+        ],
+        [
+            23,
+            "LinkedList",
+            "Add 2 Numbers in LL",
+            " https://leetcode.com/problems/add-two-numbers/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/23_Add_2_Numbers_in_LL.py"
+        ],
+        [
+            24,
+            "LinkedList",
+            "Add one to a number",
+            " https://www.codingninjas.com/studio/problems/add-one-to-a-number-represented-as-linked-list_920557",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/24_Add_one_to_a_number.py"
+        ],
+        [
+            25,
+            "LinkedList",
+            "Delete all occurrences of a given key in a DLL",
+            " https://www.codingninjas.com/studio/problems/delete-all-occurrences-of-a-given-key-in-a-doubly-linked-list_8160461",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/25_Delete_all_occurrences_of_a_given_key_in_a_DLL.py"
+        ],
+        [
+            26,
+            "LinkedList",
+            "Find Pairs with given sum DLL",
+            " https://www.codingninjas.com/studio/problems/find-pairs-with-given-sum-in-doubly-linked-list_1164172",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/26_Find_Pairs_with_given_sum_DLL.py"
+        ],
+        [
+            27,
+            "LinkedList",
+            "Remove Duplicates from sorted DLL",
+            " https://www.codingninjas.com/studio/problems/remove-duplicates-from-a-sorted-doubly-linked-list_2420283",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/27_Remove_Duplicates_from_sorted_DLL.py"
+        ],
+        [
+            28,
+            "LinkedList",
+            "Merge 2 Sorted Linked List",
+            "https://leetcode.com/problems/merge-two-sorted-lists/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/28_Merge_2_Sorted_Linked_List.py"
+        ],
+        [
+            29,
+            "LinkedList",
+            "Merge K Sorted LL",
+            "https://leetcode.com/problems/merge-k-sorted-lists/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/29_Merge_K_Sorted_LL.py"
+        ],
+        [
+            30,
+            "LinkedList",
+            "Reverse LL in K groups",
+            " https://leetcode.com/problems/reverse-nodes-in-k-group/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/30_Reverse_LL_in_K_groups.py"
+        ],
+        [
+            31,
+            "LinkedList",
+            "Flatten LL",
+            " https://www.codingninjas.com/studio/problems/flatten-a-linked-list_1112655",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/31_Flatten_LL.py"
+        ],
+        [
+            32,
+            "LinkedList",
+            "Clone LL Random Pointers",
+            "https://leetcode.com/problems/copy-list-with-random-pointer/description/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/32_Clone_LL_Random_Pointers.py"
+        ],
+        [
+            33,
+            "LinkedList",
+            "Rotate LL",
+            " https://leetcode.com/problems/rotate-list/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/33_Rotate_LL.py"
         ]
     ]
 }
