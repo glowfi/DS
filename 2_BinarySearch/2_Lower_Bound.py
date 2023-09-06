@@ -26,10 +26,12 @@ def lowerBound(arr: [int], n: int, x: int) -> int:
     ans = n
 
     while st <= en:
-        mid = st + ((en - st) // 2)
+        mid = st + (en - st) // 2
+
         if arr[mid] >= x:
             ans = mid
             en = mid - 1
         else:
             st = mid + 1
+
     return ans

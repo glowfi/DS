@@ -21,32 +21,35 @@ def count(arr: [int], n: int, x: int) -> int:
 # S.C. -> O(1)
 
 
-def getPosition(nums, target, type):
-    st, en = 0, len(nums) - 1
+def search(arr, X, _type):
+    st, en = 0, len(arr) - 1
     ans = -1
 
     while st <= en:
-        mid = st + ((en - st) // 2)
+        mid = st + (en - st) // 2
 
-        if nums[mid] == target:
+        if arr[mid] == X:
             ans = mid
-
-            if type == "first":
+            if _type == "first":
                 en = mid - 1
-            elif type == "last":
+            else:
                 st = mid + 1
 
-        elif nums[mid] > target:
-            en = mid - 1
+        elif arr[mid] < X:
+            st = mid + 1
 
         else:
-            st = mid + 1
+            en = mid - 1
+
     return ans
 
 
 def count(arr: [int], n: int, x: int) -> int:
-    first = getPosition(arr, x, "first")
+    first = search(arr, x, "first")
+
     if first == -1:
         return 0
-    last = getPosition(arr, x, "last")
-    return last - first + 1
+
+    else:
+        last = search(arr, x, "last")
+        return last - first + 1

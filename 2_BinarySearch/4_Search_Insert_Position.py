@@ -20,14 +20,13 @@ class Solution(object):
 # S.C. -> O(1)
 
 
-class Solution(object):
-    def searchInsert(self, nums, target):
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
         st, en = 0, len(nums) - 1
         ans = len(nums)
 
         while st <= en:
-            mid = st + ((en - st) // 2)
-
+            mid = st + (en - st) // 2
             if nums[mid] >= target:
                 ans = mid
                 en = mid - 1

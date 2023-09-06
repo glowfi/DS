@@ -10,30 +10,30 @@
 # S.C. -> O(1)
 
 
-def floor(arr, X):
+def floor(arr, x):
     st, en = 0, len(arr) - 1
     ans = -1
 
     while st <= en:
-        mid = st + ((en - st) // 2)
+        mid = st + (en - st) // 2
 
-        if arr[mid] <= X:
-            ans = mid
+        if arr[mid] <= x:
+            ans = arr[mid]
             st = mid + 1
         else:
             en = mid - 1
     return ans
 
 
-def ceil(arr, X):
+def ceil(arr, x):
     st, en = 0, len(arr) - 1
     ans = -1
 
     while st <= en:
-        mid = st + ((en - st) // 2)
+        mid = st + (en - st) // 2
 
-        if arr[mid] >= X:
-            ans = mid
+        if arr[mid] >= x:
+            ans = arr[mid]
             en = mid - 1
         else:
             st = mid + 1
@@ -42,12 +42,9 @@ def ceil(arr, X):
 
 def ceilingInSortedArray(n, x, arr):
     arr.sort()
-
     fl = floor(arr, x)
     cl = ceil(arr, x)
-    ans = [arr[fl], arr[cl]]
-    if fl == -1:
-        ans[0] = -1
-    elif cl == -1:
-        ans[1] = -1
-    return ans
+    ans = [fl, cl]
+
+    print(fl, end=" ")
+    return cl

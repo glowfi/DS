@@ -26,11 +26,12 @@ def upperBound(arr: [int], x: int, n: int) -> int:
     ans = n
 
     while st <= en:
-        mid = st + ((en - st) // 2)
+        mid = st + (en - st) // 2
 
         if arr[mid] > x:
-            en = mid - 1
             ans = mid
+            en = mid - 1
         else:
             st = mid + 1
+
     return ans
