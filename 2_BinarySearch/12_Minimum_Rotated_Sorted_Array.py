@@ -19,25 +19,27 @@ class Solution(object):
 # S.C. -> O(1)
 
 
-class Solution(object):
-    def findMin(self, nums):
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
         n = len(nums)
         st, en = 1, n - 2
 
         while st <= en:
-            mid = st + ((en - st) // 2)
+            mid = st + (en - st) // 2
 
             if nums[mid] < nums[mid - 1] and nums[mid] < nums[mid + 1]:
                 return nums[mid]
 
-            # Identify the unsorted part as the minimum elemeny will be present in the unsorted part (By Observation)
+            # Identify the unsorted part as the min element will always lie in the unsorted half for a given mid idex
 
-            # Right Half is sorted and left half is unsorted
+            # Right half is sorted
             elif nums[mid] < nums[en]:
                 en = mid - 1
 
-            # Left Half is sorted and right half is unsorted
+            # Left half is sorted
             else:
                 st = mid + 1
 
-        return min(nums[0], nums[n - 1])
+        if nums[0] < nums[n - 1]:
+            return nums[0]
+        return nums[n - 1]

@@ -28,10 +28,8 @@ def getPos(arr):
         mid = st + ((en - st) // 2)
 
         if arr[mid] == 1:
-            break
+            return BS(st, mid, arr, X)
 
         elif arr[mid] < X:
             st = en
             en *= 2
-
-    return BS(st, en, arr, X)

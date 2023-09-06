@@ -30,32 +30,32 @@ class Solution(object):
 # S.C. -> O(1)
 
 
-class Solution(object):
-    def getPosition(self, nums, target, type):
-        st, en = 0, len(nums) - 1
+class Solution:
+    def search(self, arr, X, _type):
+        st, en = 0, len(arr) - 1
         ans = -1
 
         while st <= en:
-            mid = st + ((en - st) // 2)
+            mid = st + (en - st) // 2
 
-            if nums[mid] == target:
+            if arr[mid] == X:
                 ans = mid
-
-                if type == "first":
+                if _type == "first":
                     en = mid - 1
-                elif type == "last":
+                else:
                     st = mid + 1
 
-            elif nums[mid] > target:
+            elif arr[mid] < X:
+                st = mid + 1
+
+            elif arr[mid] > X:
                 en = mid - 1
 
-            else:
-                st = mid + 1
         return ans
 
-    def searchRange(self, nums, target):
-        first = self.getPosition(nums, target, "first")
-        if first == -1:
-            return [-1, -1]
-        last = self.getPosition(nums, target, "last")
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        first, last = self.search(nums, target, "first"), self.search(
+            nums, target, "last"
+        )
+
         return [first, last]

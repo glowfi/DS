@@ -10,17 +10,19 @@
 
 class Solution:
     def findKRotation(self, arr, n):
+        # Array not rotated
         if arr[0] < arr[-1]:
             return 0
 
+        times = 0
         mn = float("inf")
-        K = -1
-        for i in range(len(arr)):
-            if arr[i] < mn:
-                mn = arr[i]
-                K = i
 
-        return K
+        for idx in range(n):
+            if arr[idx] < mn:
+                mn = arr[idx]
+                times = idx
+
+        return times
 
 
 # Optimal
@@ -30,30 +32,25 @@ class Solution:
 
 class Solution:
     def findKRotation(self, arr, n):
-        if arr[0] <= arr[-1]:
+        if arr[0] < arr[-1]:
             return 0
 
-        K = -1
-        st, en = 0, len(arr) - 1
-        N = len(arr)
+        st, en = 1, n - 2
 
         while st <= en:
-            mid = st + ((en - st) // 2)
+            mid = st + (en - st) // 2
 
-            prev = (mid + N - 1) % N
-            nxt = (mid + 1) % N
+            if arr[mid] < arr[mid - 1] and arr[mid] < arr[mid + 1]:
+                return mid
 
-            # Minimum elemnt will be in unsorted part (By Observation).Identify the unsorted part.
-            if arr[mid] <= arr[prev] and arr[mid] <= arr[nxt]:
-                K = mid
-                break
-
-            # Right Half is sorted
-            elif arr[mid] <= arr[en]:
+            # Right half is sorted
+            if arr[mid] < arr[en]:
                 en = mid - 1
 
-            # Left Half is sorted
+            # Left half is sorted
             else:
                 st = mid + 1
 
-        return K
+        if arr[0] < arr[n - 1]:
+            return 0
+        return n - 1
