@@ -857,26 +857,26 @@
         [
             7,
             "LinkedList",
-            "Insert at the end of DLL",
+            "Insert at the end of Double Linked List",
             "https://www.codingninjas.com/studio/problems/insert-at-end-of-doubly-linked-list_8160464",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/7_Insert_at_the_end_of_DLL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/7_Insert_at_the_end_of_Double_Linked_List.py"
         ],
         [
             8,
             "LinkedList",
-            "Delete Tail Node DLL",
+            "Delete Tail Node Double Linked List",
             "https://www.codingninjas.com/studio/problems/delete-last-node-of-a-doubly-linked-list_8160469",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/8_Delete_Tail_Node_DLL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/8_Delete_Tail_Node_Double_Linked_List.py"
         ],
         [
             9,
             "LinkedList",
-            "Reverse DLL",
+            "Reverse Double Linked List",
             "https://www.codingninjas.com/studio/problems/reverse-a-doubly-linked-list_1116098",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/9_Reverse_DLL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/9_Reverse_Double_Linked_List.py"
         ],
         [
             10,
@@ -929,18 +929,18 @@
         [
             16,
             "LinkedList",
-            "Check Palindromic LL",
+            "Check Palindromic Linked List",
             "https://leetcode.com/problems/palindrome-linked-list/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/16_Check_Palindromic_LL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/16_Check_Palindromic_Linked_List.py"
         ],
         [
             17,
             "LinkedList",
-            "Segragate Odd Even Nodes in LL",
+            "Segragate Odd Even Nodes in Linked List",
             "https://leetcode.com/problems/odd-even-linked-list/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/17_Segragate_Odd_Even_Nodes_in_LL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/17_Segragate_Odd_Even_Nodes_in_Linked_List.py"
         ],
         [
             18,
@@ -953,26 +953,26 @@
         [
             19,
             "LinkedList",
-            "Delete Middle Node LL",
+            "Delete Middle Node Linked List",
             "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/19_Delete_Middle_Node_LL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/19_Delete_Middle_Node_Linked_List.py"
         ],
         [
             20,
             "LinkedList",
-            "Sort LL",
+            "Sort Linked List",
             "https://leetcode.com/problems/sort-list/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/20_Sort_LL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/20_Sort_Linked_List.py"
         ],
         [
             21,
             "LinkedList",
-            "Sort LL 0s 1s 2s",
+            "Sort Linked List 0s 1s 2s",
             "https://www.codingninjas.com/studio/problems/sort-linked-list-of-0s-1s-2s_1071937",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/21_Sort_LL_0s_1s_2s.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/21_Sort_Linked_List_0s_1s_2s.py"
         ],
         [
             22,
@@ -985,10 +985,10 @@
         [
             23,
             "LinkedList",
-            "Add 2 Numbers in LL",
+            "Add 2 Numbers in Linked List",
             " https://leetcode.com/problems/add-two-numbers/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/23_Add_2_Numbers_in_LL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/23_Add_2_Numbers_in_Linked_List.py"
         ],
         [
             24,
@@ -1001,26 +1001,26 @@
         [
             25,
             "LinkedList",
-            "Delete all occurrences of a given key in a DLL",
+            "Delete all occurrences of a given key in a Double Linked List",
             " https://www.codingninjas.com/studio/problems/delete-all-occurrences-of-a-given-key-in-a-doubly-linked-list_8160461",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/25_Delete_all_occurrences_of_a_given_key_in_a_DLL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/25_Delete_all_occurrences_of_a_given_key_in_a_Double_Linked_List.py"
         ],
         [
             26,
             "LinkedList",
-            "Find Pairs with given sum DLL",
+            "Find Pairs with given sum Double Linked List",
             " https://www.codingninjas.com/studio/problems/find-pairs-with-given-sum-in-doubly-linked-list_1164172",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/26_Find_Pairs_with_given_sum_DLL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/26_Find_Pairs_with_given_sum_Double_Linked_List.py"
         ],
         [
             27,
             "LinkedList",
-            "Remove Duplicates from sorted DLL",
+            "Remove Duplicates from sorted Double Linked List",
             " https://www.codingninjas.com/studio/problems/remove-duplicates-from-a-sorted-doubly-linked-list_2420283",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/27_Remove_Duplicates_from_sorted_DLL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/27_Remove_Duplicates_from_sorted_Double_Linked_List.py"
         ],
         [
             28,
@@ -1033,42 +1033,42 @@
         [
             29,
             "LinkedList",
-            "Merge K Sorted LL",
+            "Merge K Sorted Linked List",
             "https://leetcode.com/problems/merge-k-sorted-lists/",
             " Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/29_Merge_K_Sorted_LL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/29_Merge_K_Sorted_Linked_List.py"
         ],
         [
             30,
             "LinkedList",
-            "Reverse LL in K groups",
+            "Reverse Linked List in K groups",
             " https://leetcode.com/problems/reverse-nodes-in-k-group/",
             " Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/30_Reverse_LL_in_K_groups.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/30_Reverse_Linked_List_in_K_groups.py"
         ],
         [
             31,
             "LinkedList",
-            "Flatten LL",
+            "Flatten Linked List",
             " https://www.codingninjas.com/studio/problems/flatten-a-linked-list_1112655",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/31_Flatten_LL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/31_Flatten_Linked_List.py"
         ],
         [
             32,
             "LinkedList",
-            "Clone LL Random Pointers",
+            "Clone Linked List Random Pointers",
             "https://leetcode.com/problems/copy-list-with-random-pointer/description/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/32_Clone_LL_Random_Pointers.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/32_Clone_Linked_List_Random_Pointers.py"
         ],
         [
             33,
             "LinkedList",
-            "Rotate LL",
+            "Rotate Linked List",
             " https://leetcode.com/problems/rotate-list/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/33_Rotate_LL.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/33_Rotate_Linked_List.py"
         ]
     ]
 }
