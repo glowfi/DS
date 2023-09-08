@@ -1,52 +1,52 @@
 Type,Problem,Link,Difficulty,Code
 ,,,,
-Array&Hashing,Merge Sort,https://practice.geeksforgeeks.org/problems/merge-sort/1,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/0_Merge_Sort.py
-Array&Hashing,Largest Element in Array,https://practice.geeksforgeeks.org/problems/largest-element-in-array4009/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/1_Largest_Element_in_Array.py
-Array&Hashing,Second Largest Second Smallest,https://practice.geeksforgeeks.org/problems/second-largest3735/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/2_Second_Largest_Second_Smallest.py
-Array&Hashing,Check Array Sorted Rotated,https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/3_Check_Array_Sorted_Rotated.py
-Array&Hashing,Check Array Sorted,https://practice.geeksforgeeks.org/problems/check-if-an-array-is-sorted0701/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/4_Check_Array_Sorted.py
-Array&Hashing,Remove Duplicates Sorted Array,https://leetcode.com/problems/remove-duplicates-from-sorted-array/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/5_Remove_Duplicates_Sorted_Array.py
-Array&Hashing,Left Right rotate an array one place,NA,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/6_Left_Right_rotate_an_array_one_place.py
-Array&Hashing,Rotate Left K places,https://practice.geeksforgeeks.org/problems/reversal-algorithm5340/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/7_Rotate_Left_K_places.py
-Array&Hashing,Rotate Right K Places,https://leetcode.com/problems/rotate-array/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/8_Rotate_Right_K_Places.py
-Array&Hashing,Move Zeroes At the end,https://leetcode.com/problems/move-zeroes/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/9_Move_Zeroes_At_the_end.py
-Array&Hashing,Linear Search,https://practice.geeksforgeeks.org/problems/who-will-win-1587115621/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/10_Linear_Search.py
-Array&Hashing,Union Two Arrays,https://www.codingninjas.com/codestudio/problems/sorted-array_6613259,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/11_Union_Two_Arrays.py
-Array&Hashing,Intersection of 2 sorted arrays,https://www.codingninjas.com/codestudio/problems/intersection-of-2-arrays_1082149,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/12_Intersection_of_2_sorted_arrays.py
-Array&Hashing,Missing Number,https://www.codingninjas.com/codestudio/problems/missing-number_6680467,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/13_Missing_Number.py
-Array&Hashing,Max Consective Ones,https://www.codingninjas.com/codestudio/problems/maximum-consecutive-ones_3843993,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/14_Max_Consective_Ones.py
-Array&Hashing,Find element that appears once,https://www.codingninjas.com/codestudio/problems/find-the-single-element_6680465,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/15_Find_element_that_appears_once.py
-Array&Hashing,2 Sum I,https://leetcode.com/problems/two-sum/description/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/16_2_Sum_I.py
-Array&Hashing,2 Sum II,https://www.codingninjas.com/codestudio/problems/reading_6845742,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/17_2_Sum_II.py
-Array&Hashing,Sort an array of 0's 1's & 2's,https://leetcode.com/problems/sort-colors/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/18_Sort_an_array_of_0's_1's_&_2's.py
-Array&Hashing,Longest Subarray 0 Sum,https://practice.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/19_Longest_Subarray_0_Sum.py
-Array&Hashing,Longest Subarry with Sum K,https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/20_Longest_Subarry_with_Sum_K.py
-Array&Hashing,Longest Subarray Sum Divisible K,https://practice.geeksforgeeks.org/problems/longest-subarray-with-sum-divisible-by-k1259/1,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/21_Longest_Subarray_Sum_Divisible_K.py
-Array&Hashing,Count of Subarray K Sum,https://leetcode.com/problems/subarray-sum-equals-k/description/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/22_Count_of_Subarray_K_Sum.py
-Array&Hashing,Count of Subarray K XOR,https://www.codingninjas.com/codestudio/problems/count-subarrays-with-given-xor_1115652,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/23_Count_of_Subarray_K_XOR.py
-Array&Hashing,Maximum Subarray Sum,https://leetcode.com/problems/maximum-subarray/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/24_Maximum_Subarray_Sum.py
-Array&Hashing,Majority Element,https://leetcode.com/problems/majority-element/description/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/25_Majority_Element.py
-Array&Hashing,Rearrange Elements By Sign I,https://leetcode.com/problems/rearrange-array-elements-by-sign/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/26_Rearrange_Elements_By_Sign_I.py
-Array&Hashing,Rearrange Elements By Sign II,NA,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/27_Rearrange_Elements_By_Sign_II.py
-Array&Hashing,Best Time To Buy and Sell Stock,https://leetcode.com/problems/best-time-to-buy-and-sell-stock/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/28_Best_Time_To_Buy_and_Sell_Stock.py
-Array&Hashing,Next Permutation,https://leetcode.com/problems/next-permutation/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/29_Next_Permutation.py
-Array&Hashing,Leaders in array,https://practice.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/30_Leaders_in_array.py
-Array&Hashing,Longest Consecutive Sequence,https://leetcode.com/problems/longest-consecutive-sequence/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/31_Longest_Consecutive_Sequence.py
-Array&Hashing,Set Matrix Zeroes,https://leetcode.com/problems/set-matrix-zeroes/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/32_Set_Matrix_Zeroes.py
-Array&Hashing,Rotate Image 90,https://leetcode.com/problems/rotate-image/description/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/33_Rotate_Image_90.py
-Array&Hashing,Spiral Matrix,https://leetcode.com/problems/spiral-matrix/description/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/34_Spiral_Matrix.py
-Array&Hashing,Pascals Triangle,https://leetcode.com/problems/pascals-triangle/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/35_Pascals_Triangle.py
-Array&Hashing,Majority Element II,https://leetcode.com/problems/majority-element-ii/description/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/36_Majority_Element_II.py
-Array&Hashing,3 Sum,https://leetcode.com/problems/3sum/description/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/37_3_Sum.py
-Array&Hashing,4 Sum,https://leetcode.com/problems/4sum/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/38_4_Sum.py
-Array&Hashing,Merge Overlapping Intervals,https://leetcode.com/problems/merge-intervals/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/39_Merge_Overlapping_Intervals.py
-Array&Hashing,Merge Sorted Arrays Without Extra Space,https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/40_Merge_Sorted_Arrays_Without_Extra_Space.py
-Array&Hashing,Find the Missing Repeating Number,https://www.codingninjas.com/codestudio/problems/missing-and-repeating-numbers_6828164, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/41_Find_the_Missing_Repeating_Number.py
-Array&Hashing,Count Inversions,https://www.codingninjas.com/codestudio/problems/number-of-inversions_6840276, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/42_Count_Inversions.py
-Array&Hashing,Reverse Pairs,https://leetcode.com/problems/reverse-pairs/description/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/43_Reverse_Pairs.py
-Array&Hashing,Maximum Product Subarray,https://leetcode.com/problems/maximum-product-subarray/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/44_Maximum_Product_Subarray.py
-Array&Hashing,All Pairs Minimum Absolute Difference,https://leetcode.com/problems/minimum-absolute-difference/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/45_All_Pairs_Minimum_Absolute_Difference.py
-Array&Hashing,Absolute Difference Between any pair,https://practice.geeksforgeeks.org/problems/minimum-difference-pair5444/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/46_Absolute_Difference_Between_any_pair.py
+Array&Hashing,Merge Sort,https://practice.geeksforgeeks.org/problems/merge-sort/1,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/1_Merge_Sort.py
+Array&Hashing,Largest Element in Array,https://practice.geeksforgeeks.org/problems/largest-element-in-array4009/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/2_Largest_Element_in_Array.py
+Array&Hashing,Second Largest Second Smallest,https://practice.geeksforgeeks.org/problems/second-largest3735/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/3_Second_Largest_Second_Smallest.py
+Array&Hashing,Check Array Sorted Rotated,https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/4_Check_Array_Sorted_Rotated.py
+Array&Hashing,Check Array Sorted,https://practice.geeksforgeeks.org/problems/check-if-an-array-is-sorted0701/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/5_Check_Array_Sorted.py
+Array&Hashing,Remove Duplicates Sorted Array,https://leetcode.com/problems/remove-duplicates-from-sorted-array/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/6_Remove_Duplicates_Sorted_Array.py
+Array&Hashing,Left Right rotate an array one place,NA,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/7_Left_Right_rotate_an_array_one_place.py
+Array&Hashing,Rotate Left K places,https://practice.geeksforgeeks.org/problems/reversal-algorithm5340/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/8_Rotate_Left_K_places.py
+Array&Hashing,Rotate Right K Places,https://leetcode.com/problems/rotate-array/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/9_Rotate_Right_K_Places.py
+Array&Hashing,Move Zeroes At the end,https://leetcode.com/problems/move-zeroes/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/10_Move_Zeroes_At_the_end.py
+Array&Hashing,Linear Search,https://practice.geeksforgeeks.org/problems/who-will-win-1587115621/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/11_Linear_Search.py
+Array&Hashing,Union Two Arrays,https://www.codingninjas.com/codestudio/problems/sorted-array_6613259,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/12_Union_Two_Arrays.py
+Array&Hashing,Intersection of 2 sorted arrays,https://www.codingninjas.com/codestudio/problems/intersection-of-2-arrays_1082149,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/13_Intersection_of_2_sorted_arrays.py
+Array&Hashing,Missing Number,https://www.codingninjas.com/codestudio/problems/missing-number_6680467,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/14_Missing_Number.py
+Array&Hashing,Max Consective Ones,https://www.codingninjas.com/codestudio/problems/maximum-consecutive-ones_3843993,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/15_Max_Consective_Ones.py
+Array&Hashing,Find element that appears once,https://www.codingninjas.com/codestudio/problems/find-the-single-element_6680465,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/16_Find_element_that_appears_once.py
+Array&Hashing,2 Sum I,https://leetcode.com/problems/two-sum/description/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/17_2_Sum_I.py
+Array&Hashing,2 Sum II,https://www.codingninjas.com/codestudio/problems/reading_6845742,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/18_2_Sum_II.py
+Array&Hashing,Sort an array of 0's 1's & 2's,https://leetcode.com/problems/sort-colors/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/19_Sort_an_array_of_0's_1's_&_2's.py
+Array&Hashing,Longest Subarray 0 Sum,https://practice.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/20_Longest_Subarray_0_Sum.py
+Array&Hashing,Longest Subarry with Sum K,https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/21_Longest_Subarry_with_Sum_K.py
+Array&Hashing,Longest Subarray Sum Divisible K,https://practice.geeksforgeeks.org/problems/longest-subarray-with-sum-divisible-by-k1259/1,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/22_Longest_Subarray_Sum_Divisible_K.py
+Array&Hashing,Count of Subarray K Sum,https://leetcode.com/problems/subarray-sum-equals-k/description/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/23_Count_of_Subarray_K_Sum.py
+Array&Hashing,Count of Subarray K XOR,https://www.codingninjas.com/codestudio/problems/count-subarrays-with-given-xor_1115652,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/24_Count_of_Subarray_K_XOR.py
+Array&Hashing,Maximum Subarray Sum,https://leetcode.com/problems/maximum-subarray/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/25_Maximum_Subarray_Sum.py
+Array&Hashing,Majority Element,https://leetcode.com/problems/majority-element/description/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/26_Majority_Element.py
+Array&Hashing,Rearrange Elements By Sign I,https://leetcode.com/problems/rearrange-array-elements-by-sign/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/27_Rearrange_Elements_By_Sign_I.py
+Array&Hashing,Rearrange Elements By Sign II,NA,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/28_Rearrange_Elements_By_Sign_II.py
+Array&Hashing,Best Time To Buy and Sell Stock,https://leetcode.com/problems/best-time-to-buy-and-sell-stock/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/29_Best_Time_To_Buy_and_Sell_Stock.py
+Array&Hashing,Next Permutation,https://leetcode.com/problems/next-permutation/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/30_Next_Permutation.py
+Array&Hashing,Leaders in array,https://practice.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/31_Leaders_in_array.py
+Array&Hashing,Longest Consecutive Sequence,https://leetcode.com/problems/longest-consecutive-sequence/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/32_Longest_Consecutive_Sequence.py
+Array&Hashing,Set Matrix Zeroes,https://leetcode.com/problems/set-matrix-zeroes/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/33_Set_Matrix_Zeroes.py
+Array&Hashing,Rotate Image 90,https://leetcode.com/problems/rotate-image/description/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/34_Rotate_Image_90.py
+Array&Hashing,Spiral Matrix,https://leetcode.com/problems/spiral-matrix/description/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/35_Spiral_Matrix.py
+Array&Hashing,Pascals Triangle,https://leetcode.com/problems/pascals-triangle/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/36_Pascals_Triangle.py
+Array&Hashing,Majority Element II,https://leetcode.com/problems/majority-element-ii/description/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/37_Majority_Element_II.py
+Array&Hashing,3 Sum,https://leetcode.com/problems/3sum/description/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/38_3_Sum.py
+Array&Hashing,4 Sum,https://leetcode.com/problems/4sum/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/39_4_Sum.py
+Array&Hashing,Merge Overlapping Intervals,https://leetcode.com/problems/merge-intervals/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/40_Merge_Overlapping_Intervals.py
+Array&Hashing,Merge Sorted Arrays Without Extra Space,https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/41_Merge_Sorted_Arrays_Without_Extra_Space.py
+Array&Hashing,Find the Missing Repeating Number,https://www.codingninjas.com/codestudio/problems/missing-and-repeating-numbers_6828164, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/42_Find_the_Missing_Repeating_Number.py
+Array&Hashing,Count Inversions,https://www.codingninjas.com/codestudio/problems/number-of-inversions_6840276, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/43_Count_Inversions.py
+Array&Hashing,Reverse Pairs,https://leetcode.com/problems/reverse-pairs/description/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/44_Reverse_Pairs.py
+Array&Hashing,Maximum Product Subarray,https://leetcode.com/problems/maximum-product-subarray/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/45_Maximum_Product_Subarray.py
+Array&Hashing,All Pairs Minimum Absolute Difference,https://leetcode.com/problems/minimum-absolute-difference/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/46_All_Pairs_Minimum_Absolute_Difference.py
+Array&Hashing,Absolute Difference Between any pair,https://practice.geeksforgeeks.org/problems/minimum-difference-pair5444/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/47_Absolute_Difference_Between_any_pair.py
 BinarySearch,Binary Search,https://leetcode.com/problems/binary-search/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/1_Binary_Search.py
 BinarySearch,Lower Bound,https://www.codingninjas.com/codestudio/problems/lower-bound_8165382,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/2_Lower_Bound.py
 BinarySearch,Upper Bound,https://www.codingninjas.com/codestudio/problems/implement-upper-bound_8165383,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/3_Upper_Bound.py
