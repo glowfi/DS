@@ -7,12 +7,23 @@
 
 class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
+        # Convert the original array to set for O(1) lookups
         st = set(arr)
-        for i in range(1, arr[-1] + k + 1):
-            if i not in st:
+
+        # Initialize num with 1 and keep incrementing it in the below while loop till we get our result
+        num = 1
+
+        while True:
+            # Whenever you see a number is not present in the original array decrement k by one
+            if num not in st:
                 k -= 1
+
+            # When k becomes zero its an indicator that we have reach our kth positive element
+            # which is not present in the original array
             if k == 0:
-                return i
+                return num
+
+            num += 1
 
 
 # Better
@@ -21,19 +32,19 @@ class Solution:
 
 
 class Solution:
-    def missingTillCurrIndex(self, arr, idx):
+    def getMissing(self, idx, arr):
         return arr[idx] - (idx + 1)
 
     def findKthPositive(self, arr: List[int], k: int) -> int:
-        ans = -1
+        idx = -1
         for i in range(len(arr)):
-            m = self.missingTillCurrIndex(arr, i)
-            if m < k:
-                ans = i
+            if self.getMissing(i, arr) < k:
+                idx = i
             else:
                 break
-        more = k - self.missingTillCurrIndex(arr, ans)
-        return arr[ans] + more
+
+        more = k - self.getMissing(idx, arr)
+        return arr[idx] + more
 
 
 # Optimal
@@ -42,19 +53,20 @@ class Solution:
 
 
 class Solution:
-    def missingTillCurrIndex(self, arr, idx):
+    def getMissing(self, idx, arr):
         return arr[idx] - (idx + 1)
 
     def findKthPositive(self, arr: List[int], k: int) -> int:
         st, en = 0, len(arr) - 1
 
         while st <= en:
-            mid = st + ((en - st) // 2)
+            mid = st + (en - st) // 2
 
-            if self.missingTillCurrIndex(arr, mid) < k:
+            if self.getMissing(mid, arr) < k:
                 st = mid + 1
             else:
                 en = mid - 1
 
-        more = k - self.missingTillCurrIndex(arr, en)
+        more = k - self.getMissing(en, arr)
+
         return arr[en] + more

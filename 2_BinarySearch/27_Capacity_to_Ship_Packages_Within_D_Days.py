@@ -6,22 +6,21 @@
 
 
 class Solution:
-    def canShip(self, arr, currCap, days):
-        quota = 0
+    def canShip(self, warr, days, maxCapacity):
+        cap = 0
         d = 1
-        for i in range(len(arr)):
-            quota += arr[i]
-
-            if quota > currCap:
+        for i in range(len(warr)):
+            if cap + warr[i] <= maxCapacity:
+                cap += warr[i]
+            else:
                 d += 1
-                quota = arr[i]
-
+                cap = warr[i]
         return d <= days
 
     def shipWithinDays(self, weights: List[int], days: int) -> int:
-        for i in range(max(weights), sum(weights) + 1):
-            if self.canShip(weights, i, days):
-                return i
+        for capacity in range(max(weights), sum(weights) + 1):
+            if self.canShip(weights, days, capacity):
+                return capacity
         return -1
 
 
@@ -31,26 +30,26 @@ class Solution:
 
 
 class Solution:
-    def canShip(self, arr, currCap, days):
-        quota = 0
+    def canShip(self, warr, days, maxCapacity):
+        cap = 0
         d = 1
-        for i in range(len(arr)):
-            quota += arr[i]
-
-            if quota > currCap:
+        for i in range(len(warr)):
+            if cap + warr[i] <= maxCapacity:
+                cap += warr[i]
+            else:
                 d += 1
-                quota = arr[i]
-
+                cap = warr[i]
         return d <= days
 
     def shipWithinDays(self, weights: List[int], days: int) -> int:
         st, en = max(weights), sum(weights)
 
         while st <= en:
-            mid = st + ((en - st) // 2)
+            mid = st + (en - st) // 2
 
-            if self.canShip(weights, mid, days):
+            if self.canShip(weights, days, mid):
                 en = mid - 1
             else:
                 st = mid + 1
+
         return st

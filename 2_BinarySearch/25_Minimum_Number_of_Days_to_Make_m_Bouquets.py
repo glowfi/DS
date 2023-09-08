@@ -6,32 +6,31 @@
 
 
 class Solution:
-    def canMake(self, arr, m, k, currDay):
-        ad = 0
-        bouq = 0
-        for i in range(len(arr)):
-            if arr[i] <= currDay:
-                ad += 1
+    def canMake(self, barr, m, k, day):
+        count = 0
 
-            elif arr[i] > currDay:
-                ad = 0
+        for i in range(len(barr)):
+            if barr[i] <= day:
+                count += 1
+            else:
+                count = 0
 
-            if ad == k:
-                ad = 0
-                bouq += 1
+            if count == k:
+                count = 0
+                m -= 1
 
-            if bouq == m:
+            if m == 0:
                 return True
-        return False
+
+        return m == 0
 
     def minDays(self, bloomDay: List[int], m: int, k: int) -> int:
         if len(bloomDay) < m * k:
             return -1
 
-        for i in range(min(bloomDay), max(bloomDay) + 1):
-            if self.canMake(bloomDay, m, k, i):
-                return i
-
+        for day in range(min(bloomDay), max(bloomDay) + 1):
+            if self.canMake(bloomDay, m, k, day):
+                return day
         return -1
 
 
@@ -41,36 +40,33 @@ class Solution:
 
 
 class Solution:
-    def canMake(self, arr, m, k, currDay):
-        ad = 0
-        bouq = 0
-        for i in range(len(arr)):
-            if arr[i] <= currDay:
-                ad += 1
+    def canMake(self, barr, m, k, day):
+        count = 0
 
-            elif arr[i] > currDay:
-                ad = 0
+        for i in range(len(barr)):
+            if barr[i] <= day:
+                count += 1
+            else:
+                count = 0
 
-            if ad == k:
-                ad = 0
-                bouq += 1
+            if count == k:
+                count = 0
+                m -= 1
 
-            if bouq == m:
+            if m == 0:
                 return True
-        return False
+
+        return m == 0
 
     def minDays(self, bloomDay: List[int], m: int, k: int) -> int:
         if len(bloomDay) < m * k:
             return -1
 
         st, en = min(bloomDay), max(bloomDay)
-
         while st <= en:
-            mid = st + ((en - st) // 2)
-
+            mid = st + (en - st) // 2
             if self.canMake(bloomDay, m, k, mid):
                 en = mid - 1
             else:
                 st = mid + 1
-
         return st

@@ -607,8 +607,48 @@
             "BinarySearch",
             "Aggressive Cows",
             "https://www.codingninjas.com/studio/problems/aggressive-cows_1082559",
-            " Hard",
+            " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/29_Aggressive_Cows.py"
+        ],
+        [
+            30,
+            "BinarySearch",
+            "Allocate Books",
+            "https://www.codingninjas.com/studio/problems/allocate-books_1090540",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/30_Allocate_Books.py"
+        ],
+        [
+            31,
+            "BinarySearch",
+            "Painters Partition",
+            "https://www.codingninjas.com/studio/problems/painter-s-partition-problem_1089557",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/31_Painters_Partition.py"
+        ],
+        [
+            32,
+            "BinarySearch",
+            "Split Array Largest Sum",
+            "https://leetcode.com/problems/split-array-largest-sum/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/32_Split_Array_Largest_Sum.py"
+        ],
+        [
+            33,
+            "BinarySearch",
+            "Minimize Max Distance to Gas Stations",
+            "https://www.codingninjas.com/studio/problems/minimise-max-distance_7541449",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/33_Minimize_Max_Distance_to_Gas_Stations.py"
+        ],
+        [
+            34,
+            "BinarySearch",
+            "Median of 2 Sorted Arrays",
+            "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/34_Median_of_2_Sorted_Arrays.py"
         ]
     ],
     "String": [

@@ -25,36 +25,32 @@ for directory in directories:
                 first_line = f.readline()
                 data = first_line.split(",")
 
-                dataStructureType = file.split("/")[2].split("_")[1]
-                link = data[0].strip(" ").replace("# ", "")
-                difficulty = data[1].strip("\n")
+                try:
+                    if data[1]:
+                        dataStructureType = file.split("/")[2].split("_")[1]
+                        link = data[0].strip(" ").replace("# ", "")
+                        difficulty = data[1].strip("\n")
 
-                tmp = file.split("/")[-1].strip(" ").replace(".py", "")
-                extractNumber = tmp.split("_")[0]
-                problemStatement = " ".join(tmp.split("_")[1:])
+                        tmp = file.split("/")[-1].strip(" ").replace(".py", "")
+                        extractNumber = tmp.split("_")[0]
+                        problemStatement = " ".join(tmp.split("_")[1:])
 
-                loc = "/".join(file.split("/")[2:])
-                code = f"https://raw.githubusercontent.com/glowfi/DS/main/{loc}"
+                        loc = "/".join(file.split("/")[2:])
+                        code = f"https://raw.githubusercontent.com/glowfi/DS/main/{loc}"
 
-                # print(
-                #     extractNumber,
-                #     dataStructureType,
-                #     problemStatement,
-                #     link,
-                #     difficulty,
-                #     code
-                # )
-
-                currentData.append(
-                    [
-                        int(extractNumber),
-                        dataStructureType,
-                        problemStatement,
-                        link,
-                        difficulty,
-                        code,
-                    ]
-                )
+                        currentData.append(
+                            [
+                                int(extractNumber),
+                                dataStructureType,
+                                problemStatement,
+                                link,
+                                difficulty,
+                                code,
+                            ]
+                        )
+                except Exception as e:
+                    name = file.split("./")[-1]
+                    print(f"Exception Handled for {name}!")
 
         currentData.sort(key=lambda x: x[0])
 
