@@ -45,14 +45,12 @@
             color: white;
         }
 
-        /* .accordion-button.collapsed { */
-        /* color: white; */
-        /* background: #556e69; */
-        /* } */
+        /* Navbar */
 
         .navbar {
-            background: #fff;
             box-shadow: 0 4px 6px rgba(22, 22, 26, 0.18);
+            border: 0.5px solid antiquewhite;
+            background-color: #282828;
         }
 
         .navbar .navbar-nav .nav-link {
@@ -65,6 +63,64 @@
 
         .btn-outline-dark:focus {
             box-shadow: none;
+        }
+
+        #nprog {
+            color: #fff;
+            background-color: #af753c;
+            border-color: #af753c;
+        }
+
+        #person {
+            color: #fff;
+            background-color: #212529;
+            border-color: wheat;
+        }
+
+        /* Accoridan */
+
+        .accordion-item .accordion-button.collapsed {
+            background-color: #282828;
+            color: wheat;
+            border: 1px solid antiquewhite;
+        }
+
+        .accordion-flush .accordion-item .accordion-button {
+            background-color: #282828;
+            color: wheat;
+            border: 1px solid antiquewhite;
+        }
+
+        .accordion-button::after {
+            background-color: antiquewhite;
+        }
+
+        .accordion-body {
+            background-color: #282828;
+        }
+
+        /* Modal */
+
+        .list-group-item-dark {
+            color: #141619;
+            background-color: #282828;
+            border: 1px solid white;
+        }
+
+        .modal-dialog-scrollable .modal-content {
+            max-height: 100%;
+            overflow: hidden;
+            background-color: #282828;
+            color: wheat;
+        }
+
+        .list-group-item-dark span a {
+            color: wheat;
+            text-decoration: none;
+        }
+
+        .btn-close {
+            background-color: #ffb200;
         }
 
         @media screen and (max-width: 768px) {
@@ -174,11 +230,12 @@
             </div>
         </div>
 
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a
                     class="navbar-brand fw-bold"
                     href="https://glowfi.github.io/DS/"
+                    target="_blank"
                     >SDE Sheet</a
                 >
                 <button
@@ -200,7 +257,16 @@
                         <li class="nav-item">
                             <button
                                 type="button"
-                                class="btn btn-info mx-2 my-2"
+                                class="btn btn-danger mx-2 my-2"
+                                id="nprog"
+                            >
+                                X
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button
+                                type="button"
+                                class="btn btn-light mx-2 my-2"
                                 onclick="sourceCode()"
                             >
                                 Source Code
@@ -218,20 +284,12 @@
                                 Search
                             </button>
                         </li>
-                        <li class="nav-item">
-                            <button
-                                type="button"
-                                class="btn btn-secondary mx-2 my-2"
-                                id="nprog"
-                            >
-                                X
-                            </button>
-                        </li>
                     </ul>
 
                     <button
-                        class="btn btn-outline-dark fw-bold"
-                        onclick="window.location.href='https://github.com/glowfi/'"
+                        class="btn btn-dark btn-outline-dark fw-bold"
+                        id="person"
+                        onclick="window.open('https://github.com/glowfi/','_blank')"
                     >
                         glowfi
                     </button>
@@ -263,18 +321,20 @@
     };
 
     const sourceCode = () => {
-        window.location.href = 'https://github.com/glowfi/DS';
+        let a = document.createElement('a');
+        a.target = '_blank';
+        a.href = 'https://github.com/glowfi/DS';
+        a.click();
+        // window.location.href = '';
     };
 
     const filterData = () => {
-        // Declare variables
         var input, filter, ul, li, a, i, txtValue;
         input = document.getElementById('search');
         filter = input.value.toLowerCase();
 
         ul = document.getElementById('results');
         li = ul.getElementsByTagName('span');
-        // console.log(ul);
 
         for (i = 0; i < li.length; i++) {
             a = li[i];
@@ -317,9 +377,6 @@
             }
 
             document.getElementById('results').innerHTML += required;
-            // document.getElementById(
-            //     'modbody'
-            // ).innerHTML + = required
             c += 1;
         }
     }
