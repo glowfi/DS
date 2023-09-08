@@ -5,22 +5,22 @@
 # S.C. -> O(1)
 
 
-class Solution(object):
-    def getTimeTaken(self, arr, k, h):
-        c = 0
+class Solution:
+    def canEat(self, k, arr, h):
+        timeTaken = 0
         for i in range(len(arr)):
-            c += arr[i] // k
+            timeTaken = arr[i] // k
             if arr[i] % k != 0:
-                c += 1
-            if c > h:
-                break
-        return c
+                timeTaken += 1
+            h -= timeTaken
+            if h < 0:
+                return False
+        return h >= 0
 
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        for i in range(1, max(piles) + 1):
-            time = self.getTimeTaken(piles, i, h)
-            if time <= h:
-                return i
+        for speed in range(1, max(piles) + 1):
+            if self.canEat(speed, piles, h):
+                return speed
         return -1
 
 
@@ -30,27 +30,25 @@ class Solution(object):
 
 
 class Solution:
-    def getTimeTaken(self, arr, k, h):
-        c = 0
+    def canEat(self, k, arr, h):
+        timeTaken = 0
         for i in range(len(arr)):
-            c += arr[i] // k
+            timeTaken = arr[i] // k
             if arr[i] % k != 0:
-                c += 1
-            if c > h:
-                break
-        return c
+                timeTaken += 1
+            h -= timeTaken
+            if h < 0:
+                return False
+        return h >= 0
 
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
         st, en = 1, max(piles)
 
         while st <= en:
-            mid = st + ((en - st) // 2)
-            time = self.getTimeTaken(piles, mid, h)
+            mid = st + (en - st) // 2
 
-            # Increase number of bananas if time take is more
-            if time > h:
-                st = mid + 1
-            # Else move towards as left as possible as we require minimum no of bananas whick KOKO will able to eat within the given time limit
-            else:
+            if self.canEat(mid, piles, h):
                 en = mid - 1
+            else:
+                st = mid + 1
         return st

@@ -6,18 +6,18 @@
 
 
 class Solution:
-    def getVal(self, arr, currDivisor):
-        s = 0
+    def iswithinThreshold(self, arr, threshold, divisor):
+        sm = 0
         for i in range(len(arr)):
-            s += arr[i] // currDivisor
-            if arr[i] % currDivisor != 0:
-                s += 1
-        return s
+            sm += arr[i] // divisor
+            if arr[i] % divisor != 0:
+                sm += 1
+        return sm <= threshold
 
     def smallestDivisor(self, nums: List[int], threshold: int) -> int:
-        for i in range(1, max(nums) + 1):
-            if self.getVal(nums, i) <= threshold:
-                return i
+        for divisor in range(1, max(nums) + 1):
+            if self.iswithinThreshold(nums, threshold, divisor):
+                return divisor
         return -1
 
 
@@ -27,19 +27,21 @@ class Solution:
 
 
 class Solution:
-    def getVal(self, arr, currDivisor):
-        s = 0
+    def iswithinThreshold(self, arr, threshold, divisor):
+        sm = 0
         for i in range(len(arr)):
-            s += arr[i] // currDivisor
-            if arr[i] % currDivisor != 0:
-                s += 1
-        return s
+            sm += arr[i] // divisor
+            if arr[i] % divisor != 0:
+                sm += 1
+        return sm <= threshold
 
     def smallestDivisor(self, nums: List[int], threshold: int) -> int:
         st, en = 1, max(nums)
+
         while st <= en:
-            mid = st + ((en - st) // 2)
-            if self.getVal(nums, mid) <= threshold:
+            mid = st + (en - st) // 2
+
+            if self.iswithinThreshold(nums, threshold, mid):
                 en = mid - 1
             else:
                 st = mid + 1
