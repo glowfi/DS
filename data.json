@@ -649,6 +649,38 @@
             "https://leetcode.com/problems/median-of-two-sorted-arrays/",
             " Hard",
             "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/34_Median_of_2_Sorted_Arrays.py"
+        ],
+        [
+            35,
+            "BinarySearch",
+            "Kth Elements of 2 sorted arrays",
+            "https://www.codingninjas.com/studio/problems/k-th-element-of-2-sorted-array_1164159",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/35_Kth_Elements_of_2_sorted_arrays.py"
+        ],
+        [
+            36,
+            "BinarySearch",
+            "Rows with max number of 1s",
+            "https://www.codingninjas.com/studio/problems/row-of-a-matrix-with-maximum-ones_982768",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/36_Rows_with_max_number_of_1s.py"
+        ],
+        [
+            37,
+            "BinarySearch",
+            "Search in 2d matrix i",
+            "https://leetcode.com/problems/search-a-2d-matrix/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/37_Search_in_2d_matrix_i.py"
+        ],
+        [
+            38,
+            "BinarySearch",
+            "Search in 2d matrix ii rowise columnwise sorted",
+            "https://leetcode.com/problems/search-a-2d-matrix-ii/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/38_Search_in_2d_matrix_ii_rowise_columnwise_sorted.py"
         ]
     ],
     "String": [

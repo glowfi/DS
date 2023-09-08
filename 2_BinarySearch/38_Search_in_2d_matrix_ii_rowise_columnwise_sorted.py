@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/search-a-2d-matrix/ , Medium
+# https://leetcode.com/problems/search-a-2d-matrix-ii/ , Medium
 
 
 # Brute
@@ -16,7 +16,7 @@ class Solution:
 
 
 # Better
-# T.C. -> O(m)+O(log(n))
+# T.C. -> O(m*log(n))
 # S.C. -> O(1)
 
 
@@ -41,34 +41,28 @@ class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         for i in range(len(matrix)):
             for j in range(len(matrix[0])):
-                if matrix[i][0] <= target and target <= matrix[i][-1]:
-                    return self.search(matrix[i], target)
+                if self.search(matrix[i], target):
+                    return True
         return False
 
 
 # Optimal
-# T.C. -> O(log(m*n))
+# T.C. -> O(n+m)
 # S.C. -> O(1)
 
 
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        m, n = len(matrix), len(matrix[0])
-        st, en = 0, (m * n) - 1
+        ro, co = 0, len(matrix[0]) - 1
 
-        while st <= en:
-            mid = st + (en - st) // 2
-
-            ro = mid // n
-            co = mid % n
-
+        while co >= 0 and ro < len(matrix):
             if matrix[ro][co] == target:
                 return True
 
-            elif matrix[ro][co] < target:
-                st = mid + 1
+            elif target > matrix[ro][co]:
+                ro += 1
 
             else:
-                en = mid - 1
+                co -= 1
 
         return False
