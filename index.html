@@ -344,6 +344,7 @@
         </nav>
 
         <div class="container" id="parent">
+            <div id="loading"></div>
             <div
                 class="accordion accordion-flush"
                 id="accordionFlushExample"
@@ -428,6 +429,9 @@
     }
 
     async function getData() {
+        const parent = document.getElementById('loading');
+        parent.innerHTML += `<h1 style="color: wheat">Loading .....</h1>`;
+
         const response = await fetch(
             'https://raw.githubusercontent.com/glowfi/DS/main/data.json'
         );
@@ -524,6 +528,9 @@
     };
 
     getData().then((res) => {
+        const parent = document.getElementById('loading');
+        parent.innerHTML = ``;
+
         console.log(res);
     });
 
