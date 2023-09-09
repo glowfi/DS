@@ -106,5 +106,44 @@ class Solution:
 
 
 class Solution:
+    def getnumofElements(self, n1, n2):
+        return (n1 + n2 + 1) // 2
+
+    def getMedian(self, a, b):
+        n1, n2 = len(a), len(b)
+
+        st, en = 0, len(a)
+
+        while st <= en:
+            totalElements = self.getnumofElements(n1, n2)
+
+            partA = st + (en - st) // 2
+            partB = totalElements - partA
+
+            l1 = float("-inf") if partA == 0 else a[partA - 1]
+            r1 = float("inf") if partA == n1 else a[partA]
+
+            l2 = float("-inf") if partB == 0 else b[partB - 1]
+            r2 = float("inf") if partB == n2 else b[partB]
+
+            if l1 > r2:
+                en = partA - 1
+            elif l2 > r1:
+                st = partA + 1
+            elif l1 <= r2 and l2 <= r1:
+                if (n1 + n2) % 2 == 0:
+                    return (max(l1, l2) + min(r1, r2)) / 2
+                else:
+                    return max(l1, l2)
+        return 0
+
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        pass
+        n1, n2 = len(nums1), len(nums2)
+
+        # Means nums 2 is smaller
+        if n1 > n2:
+            return self.getMedian(nums2, nums1)
+
+        # Means nums 1 is smaller
+        else:
+            return self.getMedian(nums1, nums2)

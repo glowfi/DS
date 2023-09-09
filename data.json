@@ -681,6 +681,22 @@
             "https://leetcode.com/problems/search-a-2d-matrix-ii/",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/38_Search_in_2d_matrix_ii_rowise_columnwise_sorted.py"
+        ],
+        [
+            39,
+            "BinarySearch",
+            "Peak Element in 2D Matrix",
+            "https://leetcode.com/problems/find-a-peak-element-ii/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/39_Peak_Element_in_2D_Matrix.py"
+        ],
+        [
+            40,
+            "BinarySearch",
+            "Matrix Median",
+            "https://www.codingninjas.com/studio/problems/median-of-a-row-wise-sorted-matrix_1115473",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/40_Matrix_Median.py"
         ]
     ],
     "String": [

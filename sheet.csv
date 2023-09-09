@@ -85,6 +85,8 @@ BinarySearch,Kth Elements of 2 sorted arrays,https://www.codingninjas.com/studio
 BinarySearch,Rows with max number of 1s,https://www.codingninjas.com/studio/problems/row-of-a-matrix-with-maximum-ones_982768, Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/36_Rows_with_max_number_of_1s.py
 BinarySearch,Search in 2d matrix i,https://leetcode.com/problems/search-a-2d-matrix/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/37_Search_in_2d_matrix_i.py
 BinarySearch,Search in 2d matrix ii rowise columnwise sorted,https://leetcode.com/problems/search-a-2d-matrix-ii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/38_Search_in_2d_matrix_ii_rowise_columnwise_sorted.py
+BinarySearch,Peak Element in 2D Matrix,https://leetcode.com/problems/find-a-peak-element-ii/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/39_Peak_Element_in_2D_Matrix.py
+BinarySearch,Matrix Median,https://www.codingninjas.com/studio/problems/median-of-a-row-wise-sorted-matrix_1115473, Medium,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/40_Matrix_Median.py
 String,Remove outermost Paranthesis,https://leetcode.com/problems/remove-outermost-parentheses/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/3_String/1_Remove_outermost_Paranthesis.py
 String,Reverse Words in a String,https://leetcode.com/problems/reverse-words-in-a-string/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/3_String/2_Reverse_Words_in_a_String.py
 String,Largest odd number in a string,https://leetcode.com/problems/largest-odd-number-in-string/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/3_String/3_Largest_odd_number_in_a_string.py
