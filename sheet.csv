@@ -135,3 +135,11 @@ LinkedList,Reverse Linked List in K groups, https://leetcode.com/problems/revers
 LinkedList,Flatten Linked List, https://www.codingninjas.com/studio/problems/flatten-a-linked-list_1112655, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/31_Flatten_Linked_List.py
 LinkedList,Clone Linked List Random Pointers,https://leetcode.com/problems/copy-list-with-random-pointer/description/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/32_Clone_Linked_List_Random_Pointers.py
 LinkedList,Rotate Linked List, https://leetcode.com/problems/rotate-list/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/33_Rotate_Linked_List.py
+Recursion,1 to N with recursion,https://www.codingninjas.com/studio/problems/print-1-to-n_628290,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/1_1_to_N_with_recursion.py
+Recursion,N to 1 Recursion,https://www.codingninjas.com/studio/problems/n-to-1-without-loop_8357243,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/2_N_to_1_Recursion.py
+Recursion,Sum of first n numbers,https://www.codingninjas.com/studio/problems/sum-of-first-n-numbers_8876068,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/3_Sum_of_first_n_numbers.py
+Recursion,Factorial Numbers not greater than N,https://www.codingninjas.com/studio/problems/factorial-numbers-not-greater-than-n_8365435,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/4_Factorial_Numbers_not_greater_than_N.py
+Recursion,Reverse an array,https://www.codingninjas.com/studio/problems/reverse-an-array_8365444,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/5_Reverse_an_array.py
+Recursion,Check Palindrome,https://www.codingninjas.com/studio/problems/check-palindrome-recursive_624386,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/6_Check_Palindrome.py
+Recursion,Fibonacci Number,https://www.codingninjas.com/studio/problems/print-fibonacci-series_7421617,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/7_Fibonacci_Number.py
+Recursion,Recursive atoi,https://leetcode.com/problems/string-to-integer-atoi/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/8_Recursive_atoi.py
