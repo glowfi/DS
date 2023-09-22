@@ -143,3 +143,7 @@ Recursion,Reverse an array,https://www.codingninjas.com/studio/problems/reverse-
 Recursion,Check Palindrome,https://www.codingninjas.com/studio/problems/check-palindrome-recursive_624386,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/6_Check_Palindrome.py
 Recursion,Fibonacci Number,https://www.codingninjas.com/studio/problems/print-fibonacci-series_7421617,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/7_Fibonacci_Number.py
 Recursion,Recursive atoi,https://leetcode.com/problems/string-to-integer-atoi/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/8_Recursive_atoi.py
+Recursion,Pow x n,https://leetcode.com/problems/powx-n/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/9_Pow_x_n.py
+Recursion,Count Good Numbers,https://leetcode.com/problems/count-good-numbers/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/10_Count_Good_Numbers.py
+Recursion,Reverse a stack using recursion,https://www.codingninjas.com/studio/problems/reverse-stack-using-recursion_631875, Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/11_Reverse_a_stack_using_recursion.py
+Recursion,Sort Stack using recursion,https://www.codingninjas.com/studio/problems/sort-stack_1229505, Medium,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/12_Sort_Stack_using_recursion.py
