@@ -1151,6 +1151,38 @@
             "https://leetcode.com/problems/string-to-integer-atoi/",
             "Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/8_Recursive_atoi.py"
+        ],
+        [
+            9,
+            "Recursion",
+            "Pow x n",
+            "https://leetcode.com/problems/powx-n/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/9_Pow_x_n.py"
+        ],
+        [
+            10,
+            "Recursion",
+            "Count Good Numbers",
+            "https://leetcode.com/problems/count-good-numbers/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/10_Count_Good_Numbers.py"
+        ],
+        [
+            11,
+            "Recursion",
+            "Reverse a stack using recursion",
+            "https://www.codingninjas.com/studio/problems/reverse-stack-using-recursion_631875",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/11_Reverse_a_stack_using_recursion.py"
+        ],
+        [
+            12,
+            "Recursion",
+            "Sort Stack using recursion",
+            "https://www.codingninjas.com/studio/problems/sort-stack_1229505",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/12_Sort_Stack_using_recursion.py"
         ]
     ]
 }
