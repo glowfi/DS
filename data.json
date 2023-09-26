@@ -375,6 +375,62 @@
             "https://practice.geeksforgeeks.org/problems/minimum-difference-pair5444/1",
             "Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/47_Absolute_Difference_Between_any_pair.py"
+        ],
+        [
+            48,
+            "Array&Hashing",
+            "Cyclic Sort",
+            "NA",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/48_Cyclic_Sort.py"
+        ],
+        [
+            49,
+            "Array&Hashing",
+            "Missing Number",
+            "https://leetcode.com/problems/missing-number/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/49_Missing_Number.py"
+        ],
+        [
+            50,
+            "Array&Hashing",
+            "Find All Numbers Disappeared in an Array",
+            "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/50_Find_All_Numbers_Disappeared_in_an_Array.py"
+        ],
+        [
+            51,
+            "Array&Hashing",
+            "Find Duplicate Number",
+            "https://leetcode.com/problems/find-the-duplicate-number/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/51_Find_Duplicate_Number.py"
+        ],
+        [
+            52,
+            "Array&Hashing",
+            "Find All Duplicates in an Array",
+            "https://leetcode.com/problems/find-all-duplicates-in-an-array/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/52_Find_All_Duplicates_in_an_Array.py"
+        ],
+        [
+            53,
+            "Array&Hashing",
+            "Find set Missmatch",
+            "https://leetcode.com/problems/set-mismatch/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/53_Find_set_Missmatch.py"
+        ],
+        [
+            54,
+            "Array&Hashing",
+            "First Missing Positive",
+            "https://leetcode.com/problems/first-missing-positive/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/54_First_Missing_Positive.py"
         ]
     ],
     "BinarySearch": [
@@ -1085,6 +1141,38 @@
             " https://leetcode.com/problems/rotate-list/",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/33_Rotate_Linked_List.py"
+        ],
+        [
+            34,
+            "LinkedList",
+            "Design Hashmap",
+            "https://leetcode.com/problems/design-hashmap/",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/34_Design_Hashmap.py"
+        ],
+        [
+            35,
+            "LinkedList",
+            "Design Hashset",
+            "https://leetcode.com/problems/design-hashset/description/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/35_Design_Hashset.py"
+        ],
+        [
+            36,
+            "LinkedList",
+            "Design Browser History",
+            "https://leetcode.com/problems/design-browser-history/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/36_Design_Browser_History.py"
+        ],
+        [
+            37,
+            "LinkedList",
+            "Design LRU Cache",
+            "https://leetcode.com/problems/lru-cache/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/37_Design_LRU_Cache.py"
         ]
     ],
     "Recursion": [
@@ -1183,6 +1271,48 @@
             "https://www.codingninjas.com/studio/problems/sort-stack_1229505",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/12_Sort_Stack_using_recursion.py"
+        ]
+    ],
+    "Stack": [
+        [
+            1,
+            "Stack",
+            "Custom Stack",
+            "https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/1_Custom_Stack.py"
+        ],
+        [
+            2,
+            "Stack",
+            "Dynamic Stack",
+            "NA",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/2_Dynamic_Stack.py"
+        ],
+        [
+            3,
+            "Stack",
+            "Custom Queue",
+            "https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/3_Custom_Queue.py"
+        ],
+        [
+            4,
+            "Stack",
+            "Circular Queue",
+            "https://www.codingninjas.com/studio/problems/circular-queue_1170058",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/4_Circular_Queue.py"
+        ],
+        [
+            5,
+            "Stack",
+            "Dynamic Circular Queue",
+            "NA",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py"
         ]
     ]
 }

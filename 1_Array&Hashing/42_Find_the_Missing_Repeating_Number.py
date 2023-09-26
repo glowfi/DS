@@ -83,3 +83,23 @@ def findMissingRepeatingNumbers(a: [int]) -> [int]:
     miss = rep - K1
 
     return [rep, miss]
+
+
+# Optimal
+# T.C -> O(2n)
+# T.C -> O(1)
+
+
+def findMissingRepeatingNumbers(a: [int]) -> [int]:
+    idx = 0
+    while idx < len(a):
+        actualPos = a[idx] - 1
+
+        if a[actualPos] != a[idx]:
+            a[actualPos], a[idx] = a[idx], a[actualPos]
+        else:
+            idx += 1
+
+    for i in range(len(a)):
+        if i + 1 != a[i]:
+            return [a[i], i + 1]
