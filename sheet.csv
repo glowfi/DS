@@ -47,6 +47,13 @@ Array&Hashing,Reverse Pairs,https://leetcode.com/problems/reverse-pairs/descript
 Array&Hashing,Maximum Product Subarray,https://leetcode.com/problems/maximum-product-subarray/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/45_Maximum_Product_Subarray.py
 Array&Hashing,All Pairs Minimum Absolute Difference,https://leetcode.com/problems/minimum-absolute-difference/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/46_All_Pairs_Minimum_Absolute_Difference.py
 Array&Hashing,Absolute Difference Between any pair,https://practice.geeksforgeeks.org/problems/minimum-difference-pair5444/1,Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/47_Absolute_Difference_Between_any_pair.py
+Array&Hashing,Cyclic Sort,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/48_Cyclic_Sort.py
+Array&Hashing,Missing Number,https://leetcode.com/problems/missing-number/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/49_Missing_Number.py
+Array&Hashing,Find All Numbers Disappeared in an Array,https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/50_Find_All_Numbers_Disappeared_in_an_Array.py
+Array&Hashing,Find Duplicate Number,https://leetcode.com/problems/find-the-duplicate-number/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/51_Find_Duplicate_Number.py
+Array&Hashing,Find All Duplicates in an Array,https://leetcode.com/problems/find-all-duplicates-in-an-array/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/52_Find_All_Duplicates_in_an_Array.py
+Array&Hashing,Find set Missmatch,https://leetcode.com/problems/set-mismatch/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/53_Find_set_Missmatch.py
+Array&Hashing,First Missing Positive,https://leetcode.com/problems/first-missing-positive/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/54_First_Missing_Positive.py
 BinarySearch,Binary Search,https://leetcode.com/problems/binary-search/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/1_Binary_Search.py
 BinarySearch,Lower Bound,https://www.codingninjas.com/codestudio/problems/lower-bound_8165382,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/2_Lower_Bound.py
 BinarySearch,Upper Bound,https://www.codingninjas.com/codestudio/problems/implement-upper-bound_8165383,Easy,https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/3_Upper_Bound.py
@@ -135,6 +142,10 @@ LinkedList,Reverse Linked List in K groups, https://leetcode.com/problems/revers
 LinkedList,Flatten Linked List, https://www.codingninjas.com/studio/problems/flatten-a-linked-list_1112655, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/31_Flatten_Linked_List.py
 LinkedList,Clone Linked List Random Pointers,https://leetcode.com/problems/copy-list-with-random-pointer/description/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/32_Clone_Linked_List_Random_Pointers.py
 LinkedList,Rotate Linked List, https://leetcode.com/problems/rotate-list/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/33_Rotate_Linked_List.py
+LinkedList,Design Hashmap,https://leetcode.com/problems/design-hashmap/,Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/34_Design_Hashmap.py
+LinkedList,Design Hashset,https://leetcode.com/problems/design-hashset/description/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/35_Design_Hashset.py
+LinkedList,Design Browser History,https://leetcode.com/problems/design-browser-history/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/36_Design_Browser_History.py
+LinkedList,Design LRU Cache,https://leetcode.com/problems/lru-cache/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/37_Design_LRU_Cache.py
 Recursion,1 to N with recursion,https://www.codingninjas.com/studio/problems/print-1-to-n_628290,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/1_1_to_N_with_recursion.py
 Recursion,N to 1 Recursion,https://www.codingninjas.com/studio/problems/n-to-1-without-loop_8357243,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/2_N_to_1_Recursion.py
 Recursion,Sum of first n numbers,https://www.codingninjas.com/studio/problems/sum-of-first-n-numbers_8876068,Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/3_Sum_of_first_n_numbers.py
@@ -147,3 +158,8 @@ Recursion,Pow x n,https://leetcode.com/problems/powx-n/, Medium,https://raw.gith
 Recursion,Count Good Numbers,https://leetcode.com/problems/count-good-numbers/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/10_Count_Good_Numbers.py
 Recursion,Reverse a stack using recursion,https://www.codingninjas.com/studio/problems/reverse-stack-using-recursion_631875, Easy,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/11_Reverse_a_stack_using_recursion.py
 Recursion,Sort Stack using recursion,https://www.codingninjas.com/studio/problems/sort-stack_1229505, Medium,https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/12_Sort_Stack_using_recursion.py
+Stack,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/1_Custom_Stack.py
+Stack,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/2_Dynamic_Stack.py
+Stack,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/3_Custom_Queue.py
+Stack,Circular Queue,https://www.codingninjas.com/studio/problems/circular-queue_1170058, Easy,https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/4_Circular_Queue.py
+Stack,Dynamic Circular Queue,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py
