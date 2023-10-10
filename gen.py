@@ -13,6 +13,7 @@ f.write(f",,,,\n")
 f.close()
 
 
+PROGRAM_LOCATION = "https://raw.githubusercontent.com/glowfi/DS/main/Programs"
 directories = sorted(glob.glob("./Programs/*"))
 dic = {}
 
@@ -37,7 +38,7 @@ for directory in directories:
                         problemStatement = " ".join(tmp.split("_")[1:])
 
                         loc = "/".join(file.split("/")[2:])
-                        code = f"https://raw.githubusercontent.com/glowfi/DS/main/{loc}"
+                        code = f"{PROGRAM_LOCATION}/{loc}"
 
                         currentData.append(
                             [

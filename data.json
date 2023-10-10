@@ -6,7 +6,7 @@
             "Merge Sort",
             "https://practice.geeksforgeeks.org/problems/merge-sort/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/1_Merge_Sort.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/1_Merge_Sort.py"
         ],
         [
             2,
@@ -14,7 +14,7 @@
             "Largest Element in Array",
             "https://practice.geeksforgeeks.org/problems/largest-element-in-array4009/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/2_Largest_Element_in_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/2_Largest_Element_in_Array.py"
         ],
         [
             3,
@@ -22,7 +22,7 @@
             "Second Largest Second Smallest",
             "https://practice.geeksforgeeks.org/problems/second-largest3735/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/3_Second_Largest_Second_Smallest.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/3_Second_Largest_Second_Smallest.py"
         ],
         [
             4,
@@ -30,7 +30,7 @@
             "Check Array Sorted Rotated",
             "https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/4_Check_Array_Sorted_Rotated.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/4_Check_Array_Sorted_Rotated.py"
         ],
         [
             5,
@@ -38,7 +38,7 @@
             "Check Array Sorted",
             "https://practice.geeksforgeeks.org/problems/check-if-an-array-is-sorted0701/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/5_Check_Array_Sorted.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/5_Check_Array_Sorted.py"
         ],
         [
             6,
@@ -46,7 +46,7 @@
             "Remove Duplicates Sorted Array",
             "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/6_Remove_Duplicates_Sorted_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/6_Remove_Duplicates_Sorted_Array.py"
         ],
         [
             7,
@@ -54,7 +54,7 @@
             "Left Right rotate an array one place",
             "NA",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/7_Left_Right_rotate_an_array_one_place.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/7_Left_Right_rotate_an_array_one_place.py"
         ],
         [
             8,
@@ -62,7 +62,7 @@
             "Rotate Left K places",
             "https://practice.geeksforgeeks.org/problems/reversal-algorithm5340/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/8_Rotate_Left_K_places.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/8_Rotate_Left_K_places.py"
         ],
         [
             9,
@@ -70,7 +70,7 @@
             "Rotate Right K Places",
             "https://leetcode.com/problems/rotate-array/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/9_Rotate_Right_K_Places.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/9_Rotate_Right_K_Places.py"
         ],
         [
             10,
@@ -78,7 +78,7 @@
             "Move Zeroes At the end",
             "https://leetcode.com/problems/move-zeroes/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/10_Move_Zeroes_At_the_end.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/10_Move_Zeroes_At_the_end.py"
         ],
         [
             11,
@@ -86,7 +86,7 @@
             "Linear Search",
             "https://practice.geeksforgeeks.org/problems/who-will-win-1587115621/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/11_Linear_Search.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/11_Linear_Search.py"
         ],
         [
             12,
@@ -94,7 +94,7 @@
             "Union Two Arrays",
             "https://www.codingninjas.com/codestudio/problems/sorted-array_6613259",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/12_Union_Two_Arrays.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/12_Union_Two_Arrays.py"
         ],
         [
             13,
@@ -102,7 +102,7 @@
             "Intersection of 2 sorted arrays",
             "https://www.codingninjas.com/codestudio/problems/intersection-of-2-arrays_1082149",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/13_Intersection_of_2_sorted_arrays.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/13_Intersection_of_2_sorted_arrays.py"
         ],
         [
             14,
@@ -110,7 +110,7 @@
             "Missing Number",
             "https://www.codingninjas.com/codestudio/problems/missing-number_6680467",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/14_Missing_Number.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/14_Missing_Number.py"
         ],
         [
             15,
@@ -118,7 +118,7 @@
             "Max Consective Ones",
             "https://www.codingninjas.com/codestudio/problems/maximum-consecutive-ones_3843993",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/15_Max_Consective_Ones.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/15_Max_Consective_Ones.py"
         ],
         [
             16,
@@ -126,7 +126,7 @@
             "Find element that appears once",
             "https://www.codingninjas.com/codestudio/problems/find-the-single-element_6680465",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/16_Find_element_that_appears_once.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/16_Find_element_that_appears_once.py"
         ],
         [
             17,
@@ -134,7 +134,7 @@
             "2 Sum I",
             "https://leetcode.com/problems/two-sum/description/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/17_2_Sum_I.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/17_2_Sum_I.py"
         ],
         [
             18,
@@ -142,7 +142,7 @@
             "2 Sum II",
             "https://www.codingninjas.com/codestudio/problems/reading_6845742",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/18_2_Sum_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/18_2_Sum_II.py"
         ],
         [
             19,
@@ -150,7 +150,7 @@
             "Sort an array of 0's 1's & 2's",
             "https://leetcode.com/problems/sort-colors/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/19_Sort_an_array_of_0's_1's_&_2's.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/19_Sort_an_array_of_0's_1's_&_2's.py"
         ],
         [
             20,
@@ -158,7 +158,7 @@
             "Longest Subarray 0 Sum",
             "https://practice.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/20_Longest_Subarray_0_Sum.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/20_Longest_Subarray_0_Sum.py"
         ],
         [
             21,
@@ -166,7 +166,7 @@
             "Longest Subarry with Sum K",
             "https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/21_Longest_Subarry_with_Sum_K.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/21_Longest_Subarry_with_Sum_K.py"
         ],
         [
             22,
@@ -174,7 +174,7 @@
             "Longest Subarray Sum Divisible K",
             "https://practice.geeksforgeeks.org/problems/longest-subarray-with-sum-divisible-by-k1259/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/22_Longest_Subarray_Sum_Divisible_K.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/22_Longest_Subarray_Sum_Divisible_K.py"
         ],
         [
             23,
@@ -182,7 +182,7 @@
             "Count of Subarray K Sum",
             "https://leetcode.com/problems/subarray-sum-equals-k/description/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/23_Count_of_Subarray_K_Sum.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/23_Count_of_Subarray_K_Sum.py"
         ],
         [
             24,
@@ -190,7 +190,7 @@
             "Count of Subarray K XOR",
             "https://www.codingninjas.com/codestudio/problems/count-subarrays-with-given-xor_1115652",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/24_Count_of_Subarray_K_XOR.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/24_Count_of_Subarray_K_XOR.py"
         ],
         [
             25,
@@ -198,7 +198,7 @@
             "Maximum Subarray Sum",
             "https://leetcode.com/problems/maximum-subarray/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/25_Maximum_Subarray_Sum.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/25_Maximum_Subarray_Sum.py"
         ],
         [
             26,
@@ -206,7 +206,7 @@
             "Majority Element",
             "https://leetcode.com/problems/majority-element/description/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/26_Majority_Element.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/26_Majority_Element.py"
         ],
         [
             27,
@@ -214,7 +214,7 @@
             "Rearrange Elements By Sign I",
             "https://leetcode.com/problems/rearrange-array-elements-by-sign/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/27_Rearrange_Elements_By_Sign_I.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/27_Rearrange_Elements_By_Sign_I.py"
         ],
         [
             28,
@@ -222,7 +222,7 @@
             "Rearrange Elements By Sign II",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/28_Rearrange_Elements_By_Sign_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/28_Rearrange_Elements_By_Sign_II.py"
         ],
         [
             29,
@@ -230,7 +230,7 @@
             "Best Time To Buy and Sell Stock",
             "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/29_Best_Time_To_Buy_and_Sell_Stock.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/29_Best_Time_To_Buy_and_Sell_Stock.py"
         ],
         [
             30,
@@ -238,7 +238,7 @@
             "Next Permutation",
             "https://leetcode.com/problems/next-permutation/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/30_Next_Permutation.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/30_Next_Permutation.py"
         ],
         [
             31,
@@ -246,7 +246,7 @@
             "Leaders in array",
             "https://practice.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/31_Leaders_in_array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/31_Leaders_in_array.py"
         ],
         [
             32,
@@ -254,7 +254,7 @@
             "Longest Consecutive Sequence",
             "https://leetcode.com/problems/longest-consecutive-sequence/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/32_Longest_Consecutive_Sequence.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/32_Longest_Consecutive_Sequence.py"
         ],
         [
             33,
@@ -262,7 +262,7 @@
             "Set Matrix Zeroes",
             "https://leetcode.com/problems/set-matrix-zeroes/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/33_Set_Matrix_Zeroes.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/33_Set_Matrix_Zeroes.py"
         ],
         [
             34,
@@ -270,7 +270,7 @@
             "Rotate Image 90",
             "https://leetcode.com/problems/rotate-image/description/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/34_Rotate_Image_90.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/34_Rotate_Image_90.py"
         ],
         [
             35,
@@ -278,7 +278,7 @@
             "Spiral Matrix",
             "https://leetcode.com/problems/spiral-matrix/description/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/35_Spiral_Matrix.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/35_Spiral_Matrix.py"
         ],
         [
             36,
@@ -286,7 +286,7 @@
             "Pascals Triangle",
             "https://leetcode.com/problems/pascals-triangle/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/36_Pascals_Triangle.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/36_Pascals_Triangle.py"
         ],
         [
             37,
@@ -294,7 +294,7 @@
             "Majority Element II",
             "https://leetcode.com/problems/majority-element-ii/description/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/37_Majority_Element_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/37_Majority_Element_II.py"
         ],
         [
             38,
@@ -302,7 +302,7 @@
             "3 Sum",
             "https://leetcode.com/problems/3sum/description/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/38_3_Sum.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/38_3_Sum.py"
         ],
         [
             39,
@@ -310,7 +310,7 @@
             "4 Sum",
             "https://leetcode.com/problems/4sum/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/39_4_Sum.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/39_4_Sum.py"
         ],
         [
             40,
@@ -318,7 +318,7 @@
             "Merge Overlapping Intervals",
             "https://leetcode.com/problems/merge-intervals/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/40_Merge_Overlapping_Intervals.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/40_Merge_Overlapping_Intervals.py"
         ],
         [
             41,
@@ -326,7 +326,7 @@
             "Merge Sorted Arrays Without Extra Space",
             "https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/41_Merge_Sorted_Arrays_Without_Extra_Space.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/41_Merge_Sorted_Arrays_Without_Extra_Space.py"
         ],
         [
             42,
@@ -334,7 +334,7 @@
             "Find the Missing Repeating Number",
             "https://www.codingninjas.com/codestudio/problems/missing-and-repeating-numbers_6828164",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/42_Find_the_Missing_Repeating_Number.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/42_Find_the_Missing_Repeating_Number.py"
         ],
         [
             43,
@@ -342,7 +342,7 @@
             "Count Inversions",
             "https://www.codingninjas.com/codestudio/problems/number-of-inversions_6840276",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/43_Count_Inversions.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/43_Count_Inversions.py"
         ],
         [
             44,
@@ -350,7 +350,7 @@
             "Reverse Pairs",
             "https://leetcode.com/problems/reverse-pairs/description/",
             " Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/44_Reverse_Pairs.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/44_Reverse_Pairs.py"
         ],
         [
             45,
@@ -358,7 +358,7 @@
             "Maximum Product Subarray",
             "https://leetcode.com/problems/maximum-product-subarray/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/45_Maximum_Product_Subarray.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/45_Maximum_Product_Subarray.py"
         ],
         [
             46,
@@ -366,7 +366,7 @@
             "All Pairs Minimum Absolute Difference",
             "https://leetcode.com/problems/minimum-absolute-difference/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/46_All_Pairs_Minimum_Absolute_Difference.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/46_All_Pairs_Minimum_Absolute_Difference.py"
         ],
         [
             47,
@@ -374,7 +374,7 @@
             "Absolute Difference Between any pair",
             "https://practice.geeksforgeeks.org/problems/minimum-difference-pair5444/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/47_Absolute_Difference_Between_any_pair.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/47_Absolute_Difference_Between_any_pair.py"
         ],
         [
             48,
@@ -382,7 +382,7 @@
             "Cyclic Sort",
             "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/48_Cyclic_Sort.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/48_Cyclic_Sort.py"
         ],
         [
             49,
@@ -390,7 +390,7 @@
             "Missing Number",
             "https://leetcode.com/problems/missing-number/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/49_Missing_Number.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/49_Missing_Number.py"
         ],
         [
             50,
@@ -398,7 +398,7 @@
             "Find All Numbers Disappeared in an Array",
             "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/50_Find_All_Numbers_Disappeared_in_an_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/50_Find_All_Numbers_Disappeared_in_an_Array.py"
         ],
         [
             51,
@@ -406,7 +406,7 @@
             "Find Duplicate Number",
             "https://leetcode.com/problems/find-the-duplicate-number/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/51_Find_Duplicate_Number.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/51_Find_Duplicate_Number.py"
         ],
         [
             52,
@@ -414,7 +414,7 @@
             "Find All Duplicates in an Array",
             "https://leetcode.com/problems/find-all-duplicates-in-an-array/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/52_Find_All_Duplicates_in_an_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/52_Find_All_Duplicates_in_an_Array.py"
         ],
         [
             53,
@@ -422,7 +422,7 @@
             "Find set Missmatch",
             "https://leetcode.com/problems/set-mismatch/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/53_Find_set_Missmatch.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/53_Find_set_Missmatch.py"
         ],
         [
             54,
@@ -430,7 +430,7 @@
             "First Missing Positive",
             "https://leetcode.com/problems/first-missing-positive/",
             " Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/1_Array&Hashing/54_First_Missing_Positive.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/54_First_Missing_Positive.py"
         ]
     ],
     "BinarySearch": [
@@ -440,7 +440,7 @@
             "Binary Search",
             "https://leetcode.com/problems/binary-search/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/1_Binary_Search.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/1_Binary_Search.py"
         ],
         [
             2,
@@ -448,7 +448,7 @@
             "Lower Bound",
             "https://www.codingninjas.com/codestudio/problems/lower-bound_8165382",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/2_Lower_Bound.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/2_Lower_Bound.py"
         ],
         [
             3,
@@ -456,7 +456,7 @@
             "Upper Bound",
             "https://www.codingninjas.com/codestudio/problems/implement-upper-bound_8165383",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/3_Upper_Bound.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/3_Upper_Bound.py"
         ],
         [
             4,
@@ -464,7 +464,7 @@
             "Search Insert Position",
             "https://leetcode.com/problems/search-insert-position/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/4_Search_Insert_Position.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/4_Search_Insert_Position.py"
         ],
         [
             5,
@@ -472,7 +472,7 @@
             "Floor Ceil Sorted Array",
             "https://www.codingninjas.com/codestudio/problems/ceiling-in-a-sorted-array_1825401",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/5_Floor_Ceil_Sorted_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/5_Floor_Ceil_Sorted_Array.py"
         ],
         [
             6,
@@ -480,7 +480,7 @@
             "First Last Occurence Of Element Sorted Array",
             "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/6_First_Last_Occurence_Of_Element_Sorted_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/6_First_Last_Occurence_Of_Element_Sorted_Array.py"
         ],
         [
             7,
@@ -488,7 +488,7 @@
             "Count Number of Occurences",
             "https://www.codingninjas.com/codestudio/problems/occurrence-of-x-in-a-sorted-array_630456",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/7_Count_Number_of_Occurences.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/7_Count_Number_of_Occurences.py"
         ],
         [
             8,
@@ -496,7 +496,7 @@
             "Binary Search Descending",
             "NA",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/8_Binary_Search_Descending.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/8_Binary_Search_Descending.py"
         ],
         [
             9,
@@ -504,7 +504,7 @@
             "Order Not Known Search",
             "NA",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/9_Order_Not_Known_Search.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/9_Order_Not_Known_Search.py"
         ],
         [
             10,
@@ -512,7 +512,7 @@
             "Search in Rotated Sorted Array",
             "https://leetcode.com/problems/search-in-rotated-sorted-array/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/10_Search_in_Rotated_Sorted_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/10_Search_in_Rotated_Sorted_Array.py"
         ],
         [
             11,
@@ -520,7 +520,7 @@
             "Search in Rotated Sorted Array II",
             "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/11_Search_in_Rotated_Sorted_Array_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/11_Search_in_Rotated_Sorted_Array_II.py"
         ],
         [
             12,
@@ -528,7 +528,7 @@
             "Minimum Rotated Sorted Array",
             "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/12_Minimum_Rotated_Sorted_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/12_Minimum_Rotated_Sorted_Array.py"
         ],
         [
             13,
@@ -536,7 +536,7 @@
             "Find Times Array Rotated",
             "https://practice.geeksforgeeks.org/problems/rotation4723/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/13_Find_Times_Array_Rotated.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/13_Find_Times_Array_Rotated.py"
         ],
         [
             14,
@@ -544,7 +544,7 @@
             "Find Single Element in a Sorted Array",
             "https://leetcode.com/problems/single-element-in-a-sorted-array/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/14_Find_Single_Element_in_a_Sorted_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/14_Find_Single_Element_in_a_Sorted_Array.py"
         ],
         [
             15,
@@ -552,7 +552,7 @@
             "Find Peak Element",
             "https://leetcode.com/problems/find-peak-element/description/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/15_Find_Peak_Element.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/15_Find_Peak_Element.py"
         ],
         [
             16,
@@ -560,7 +560,7 @@
             "Next Alphabet",
             "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/16_Next_Alphabet.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/16_Next_Alphabet.py"
         ],
         [
             17,
@@ -568,7 +568,7 @@
             "Position of an element in infinite Sorted Array",
             "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/17_Position_of_an_element_in_infinite_Sorted_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/17_Position_of_an_element_in_infinite_Sorted_Array.py"
         ],
         [
             18,
@@ -576,7 +576,7 @@
             "Index of First 1 Binary Infinte Array",
             "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/18_Index_of_First_1_Binary_Infinte_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/18_Index_of_First_1_Binary_Infinte_Array.py"
         ],
         [
             19,
@@ -584,7 +584,7 @@
             "Minimum Difference Element in a Sorted Array",
             "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/19_Minimum_Difference_Element_in_a_Sorted_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/19_Minimum_Difference_Element_in_a_Sorted_Array.py"
         ],
         [
             20,
@@ -592,7 +592,7 @@
             "Find Maximum Bitonic Arary",
             "https://practice.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/20_Find_Maximum_Bitonic_Arary.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/20_Find_Maximum_Bitonic_Arary.py"
         ],
         [
             21,
@@ -600,7 +600,7 @@
             "Search in Bitonic Array",
             "NA",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/21_Search_in_Bitonic_Array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/21_Search_in_Bitonic_Array.py"
         ],
         [
             22,
@@ -608,7 +608,7 @@
             "Find Square Root of Number",
             "https://practice.geeksforgeeks.org/problems/square-root/0",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/22_Find_Square_Root_of_Number.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/22_Find_Square_Root_of_Number.py"
         ],
         [
             23,
@@ -616,7 +616,7 @@
             "Find Nth Square root of Number",
             "https://practice.geeksforgeeks.org/problems/find-nth-root-of-m5843/1",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/23_Find_Nth_Square_root_of_Number.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/23_Find_Nth_Square_root_of_Number.py"
         ],
         [
             24,
@@ -624,7 +624,7 @@
             "Koko Eating Bananas",
             "https://leetcode.com/problems/koko-eating-bananas/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/24_Koko_Eating_Bananas.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/24_Koko_Eating_Bananas.py"
         ],
         [
             25,
@@ -632,7 +632,7 @@
             "Minimum Number of Days to Make m Bouquets",
             "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/25_Minimum_Number_of_Days_to_Make_m_Bouquets.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/25_Minimum_Number_of_Days_to_Make_m_Bouquets.py"
         ],
         [
             26,
@@ -640,7 +640,7 @@
             "Find the Smallest Divisor Given a Threshold",
             "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/description/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/26_Find_the_Smallest_Divisor_Given_a_Threshold.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/26_Find_the_Smallest_Divisor_Given_a_Threshold.py"
         ],
         [
             27,
@@ -648,7 +648,7 @@
             "Capacity to Ship Packages Within D Days",
             "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/27_Capacity_to_Ship_Packages_Within_D_Days.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/27_Capacity_to_Ship_Packages_Within_D_Days.py"
         ],
         [
             28,
@@ -656,7 +656,7 @@
             "Kth Missing Positive Number",
             "https://leetcode.com/problems/kth-missing-positive-number/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/28_Kth_Missing_Positive_Number.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/28_Kth_Missing_Positive_Number.py"
         ],
         [
             29,
@@ -664,7 +664,7 @@
             "Aggressive Cows",
             "https://www.codingninjas.com/studio/problems/aggressive-cows_1082559",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/29_Aggressive_Cows.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/29_Aggressive_Cows.py"
         ],
         [
             30,
@@ -672,7 +672,7 @@
             "Allocate Books",
             "https://www.codingninjas.com/studio/problems/allocate-books_1090540",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/30_Allocate_Books.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/30_Allocate_Books.py"
         ],
         [
             31,
@@ -680,7 +680,7 @@
             "Painters Partition",
             "https://www.codingninjas.com/studio/problems/painter-s-partition-problem_1089557",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/31_Painters_Partition.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/31_Painters_Partition.py"
         ],
         [
             32,
@@ -688,7 +688,7 @@
             "Split Array Largest Sum",
             "https://leetcode.com/problems/split-array-largest-sum/",
             " Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/32_Split_Array_Largest_Sum.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/32_Split_Array_Largest_Sum.py"
         ],
         [
             33,
@@ -696,7 +696,7 @@
             "Minimize Max Distance to Gas Stations",
             "https://www.codingninjas.com/studio/problems/minimise-max-distance_7541449",
             " Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/33_Minimize_Max_Distance_to_Gas_Stations.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/33_Minimize_Max_Distance_to_Gas_Stations.py"
         ],
         [
             34,
@@ -704,7 +704,7 @@
             "Median of 2 Sorted Arrays",
             "https://leetcode.com/problems/median-of-two-sorted-arrays/",
             " Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/34_Median_of_2_Sorted_Arrays.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/34_Median_of_2_Sorted_Arrays.py"
         ],
         [
             35,
@@ -712,7 +712,7 @@
             "Kth Elements of 2 sorted arrays",
             "https://www.codingninjas.com/studio/problems/k-th-element-of-2-sorted-array_1164159",
             " Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/35_Kth_Elements_of_2_sorted_arrays.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/35_Kth_Elements_of_2_sorted_arrays.py"
         ],
         [
             36,
@@ -720,7 +720,7 @@
             "Rows with max number of 1s",
             "https://www.codingninjas.com/studio/problems/row-of-a-matrix-with-maximum-ones_982768",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/36_Rows_with_max_number_of_1s.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/36_Rows_with_max_number_of_1s.py"
         ],
         [
             37,
@@ -728,7 +728,7 @@
             "Search in 2d matrix i",
             "https://leetcode.com/problems/search-a-2d-matrix/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/37_Search_in_2d_matrix_i.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/37_Search_in_2d_matrix_i.py"
         ],
         [
             38,
@@ -736,7 +736,7 @@
             "Search in 2d matrix ii rowise columnwise sorted",
             "https://leetcode.com/problems/search-a-2d-matrix-ii/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/38_Search_in_2d_matrix_ii_rowise_columnwise_sorted.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/38_Search_in_2d_matrix_ii_rowise_columnwise_sorted.py"
         ],
         [
             39,
@@ -744,7 +744,7 @@
             "Peak Element in 2D Matrix",
             "https://leetcode.com/problems/find-a-peak-element-ii/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/39_Peak_Element_in_2D_Matrix.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/39_Peak_Element_in_2D_Matrix.py"
         ],
         [
             40,
@@ -752,7 +752,7 @@
             "Matrix Median",
             "https://www.codingninjas.com/studio/problems/median-of-a-row-wise-sorted-matrix_1115473",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/2_BinarySearch/40_Matrix_Median.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/40_Matrix_Median.py"
         ]
     ],
     "String": [
@@ -762,7 +762,7 @@
             "Remove outermost Paranthesis",
             "https://leetcode.com/problems/remove-outermost-parentheses/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/1_Remove_outermost_Paranthesis.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/1_Remove_outermost_Paranthesis.py"
         ],
         [
             2,
@@ -770,7 +770,7 @@
             "Reverse Words in a String",
             "https://leetcode.com/problems/reverse-words-in-a-string/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/2_Reverse_Words_in_a_String.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/2_Reverse_Words_in_a_String.py"
         ],
         [
             3,
@@ -778,7 +778,7 @@
             "Largest odd number in a string",
             "https://leetcode.com/problems/largest-odd-number-in-string/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/3_Largest_odd_number_in_a_string.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/3_Largest_odd_number_in_a_string.py"
         ],
         [
             4,
@@ -786,7 +786,7 @@
             "Longest Common Prefix",
             "https://leetcode.com/problems/longest-common-prefix/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/4_Longest_Common_Prefix.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/4_Longest_Common_Prefix.py"
         ],
         [
             5,
@@ -794,7 +794,7 @@
             "Isomorphic String",
             "https://leetcode.com/problems/isomorphic-strings/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/5_Isomorphic_String.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/5_Isomorphic_String.py"
         ],
         [
             6,
@@ -802,7 +802,7 @@
             "Rotate String",
             "https://leetcode.com/problems/rotate-string/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/6_Rotate_String.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/6_Rotate_String.py"
         ],
         [
             7,
@@ -810,7 +810,7 @@
             "Valid Anagram",
             "https://leetcode.com/problems/valid-anagram/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/7_Valid_Anagram.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/7_Valid_Anagram.py"
         ],
         [
             8,
@@ -818,7 +818,7 @@
             "Sort Character By Frequency",
             "https://leetcode.com/problems/sort-characters-by-frequency/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/8_Sort_Character_By_Frequency.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/8_Sort_Character_By_Frequency.py"
         ],
         [
             9,
@@ -826,7 +826,7 @@
             "Maximum Nesting Depth of the Parentheses",
             "https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/9_Maximum_Nesting_Depth_of_the_Parentheses.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/9_Maximum_Nesting_Depth_of_the_Parentheses.py"
         ],
         [
             10,
@@ -834,7 +834,7 @@
             "Roman to Integer",
             "https://leetcode.com/problems/roman-to-integer/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/10_Roman_to_Integer.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/10_Roman_to_Integer.py"
         ],
         [
             11,
@@ -842,7 +842,7 @@
             "Implement atoi",
             "https://leetcode.com/problems/string-to-integer-atoi/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/11_Implement_atoi.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/11_Implement_atoi.py"
         ],
         [
             12,
@@ -850,7 +850,7 @@
             "Count number of substring k different characters",
             "https://www.codingninjas.com/studio/problems/count-with-k-different-characters_1214627",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/12_Count_number_of_substring_k_different_characters.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/12_Count_number_of_substring_k_different_characters.py"
         ],
         [
             13,
@@ -858,7 +858,7 @@
             "Longest Palindromic Substring",
             "https://leetcode.com/problems/longest-palindromic-substring/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/13_Longest_Palindromic_Substring.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/13_Longest_Palindromic_Substring.py"
         ],
         [
             15,
@@ -866,7 +866,7 @@
             "Count number of palindrome substrings",
             "https://leetcode.com/problems/palindromic-substrings/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/15_Count_number_of_palindrome_substrings.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/15_Count_number_of_palindrome_substrings.py"
         ],
         [
             16,
@@ -874,7 +874,7 @@
             "Sum of Beauty of all substrings",
             "https://leetcode.com/problems/sum-of-beauty-of-all-substrings/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/3_String/16_Sum_of_Beauty_of_all_substrings.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/3_String/16_Sum_of_Beauty_of_all_substrings.py"
         ]
     ],
     "LinkedList": [
@@ -884,7 +884,7 @@
             "Construct Linked List",
             "https://www.codingninjas.com/studio/problems/introduction-to-linked-list_8144737",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/1_Construct_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/1_Construct_Linked_List.py"
         ],
         [
             2,
@@ -892,7 +892,7 @@
             "Insert Node At the Beginning Linked List",
             "https://www.codingninjas.com/studio/problems/insert-node-at-the-beginning_8144739",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/2_Insert_Node_At_the_Beginning_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/2_Insert_Node_At_the_Beginning_Linked_List.py"
         ],
         [
             3,
@@ -900,7 +900,7 @@
             "Delete Node Linked List",
             "https://leetcode.com/problems/delete-node-in-a-linked-list/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/3_Delete_Node_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/3_Delete_Node_Linked_List.py"
         ],
         [
             4,
@@ -908,7 +908,7 @@
             "Find Length Linked List",
             "https://www.codingninjas.com/studio/problems/count-nodes-of-linked-list_5884",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/4_Find_Length_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/4_Find_Length_Linked_List.py"
         ],
         [
             5,
@@ -916,7 +916,7 @@
             "Search in LinkedList",
             "https://www.codingninjas.com/studio/problems/search-in-a-linked-list_975381",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/5_Search_in_LinkedList.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/5_Search_in_LinkedList.py"
         ],
         [
             6,
@@ -924,7 +924,7 @@
             "Construct Doubly Linked List",
             "https://www.codingninjas.com/studio/problems/introduction-to-doubly-linked-list_8160413",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/6_Construct_Doubly_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/6_Construct_Doubly_Linked_List.py"
         ],
         [
             7,
@@ -932,7 +932,7 @@
             "Insert at the end of Double Linked List",
             "https://www.codingninjas.com/studio/problems/insert-at-end-of-doubly-linked-list_8160464",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/7_Insert_at_the_end_of_Double_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/7_Insert_at_the_end_of_Double_Linked_List.py"
         ],
         [
             8,
@@ -940,7 +940,7 @@
             "Delete Tail Node Double Linked List",
             "https://www.codingninjas.com/studio/problems/delete-last-node-of-a-doubly-linked-list_8160469",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/8_Delete_Tail_Node_Double_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/8_Delete_Tail_Node_Double_Linked_List.py"
         ],
         [
             9,
@@ -948,7 +948,7 @@
             "Reverse Double Linked List",
             "https://www.codingninjas.com/studio/problems/reverse-a-doubly-linked-list_1116098",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/9_Reverse_Double_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/9_Reverse_Double_Linked_List.py"
         ],
         [
             10,
@@ -956,7 +956,7 @@
             "Middle Linked List",
             "https://leetcode.com/problems/middle-of-the-linked-list/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/10_Middle_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/10_Middle_Linked_List.py"
         ],
         [
             11,
@@ -964,7 +964,7 @@
             "Reverse Linked List",
             "https://leetcode.com/problems/reverse-linked-list/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/11_Reverse_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/11_Reverse_Linked_List.py"
         ],
         [
             12,
@@ -972,7 +972,7 @@
             "Linked List Cycle",
             "https://leetcode.com/problems/linked-list-cycle/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/12_Linked_List_Cycle.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/12_Linked_List_Cycle.py"
         ],
         [
             13,
@@ -980,7 +980,7 @@
             "Linked List Cycle II",
             "https://leetcode.com/problems/linked-list-cycle-ii/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/13_Linked_List_Cycle_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/13_Linked_List_Cycle_II.py"
         ],
         [
             14,
@@ -988,7 +988,7 @@
             "Find length of Loop",
             "https://www.codingninjas.com/studio/problems/find-length-of-loop_8160455",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/14_Find_length_of_Loop.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/14_Find_length_of_Loop.py"
         ],
         [
             15,
@@ -996,7 +996,7 @@
             "Find Duplicate Number",
             "https://leetcode.com/problems/find-the-duplicate-number/description/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/15_Find_Duplicate_Number.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/15_Find_Duplicate_Number.py"
         ],
         [
             16,
@@ -1004,7 +1004,7 @@
             "Check Palindromic Linked List",
             "https://leetcode.com/problems/palindrome-linked-list/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/16_Check_Palindromic_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/16_Check_Palindromic_Linked_List.py"
         ],
         [
             17,
@@ -1012,7 +1012,7 @@
             "Segragate Odd Even Nodes in Linked List",
             "https://leetcode.com/problems/odd-even-linked-list/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/17_Segragate_Odd_Even_Nodes_in_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/17_Segragate_Odd_Even_Nodes_in_Linked_List.py"
         ],
         [
             18,
@@ -1020,7 +1020,7 @@
             "Remove Nth Node from Linked List",
             "https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/18_Remove_Nth_Node_from_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/18_Remove_Nth_Node_from_Linked_List.py"
         ],
         [
             19,
@@ -1028,7 +1028,7 @@
             "Delete Middle Node Linked List",
             "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/19_Delete_Middle_Node_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/19_Delete_Middle_Node_Linked_List.py"
         ],
         [
             20,
@@ -1036,7 +1036,7 @@
             "Sort Linked List",
             "https://leetcode.com/problems/sort-list/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/20_Sort_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/20_Sort_Linked_List.py"
         ],
         [
             21,
@@ -1044,7 +1044,7 @@
             "Sort Linked List 0s 1s 2s",
             "https://www.codingninjas.com/studio/problems/sort-linked-list-of-0s-1s-2s_1071937",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/21_Sort_Linked_List_0s_1s_2s.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/21_Sort_Linked_List_0s_1s_2s.py"
         ],
         [
             22,
@@ -1052,7 +1052,7 @@
             "Intersection of Two Linked Lists",
             "https://leetcode.com/problems/intersection-of-two-linked-lists/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/22_Intersection_of_Two_Linked_Lists.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/22_Intersection_of_Two_Linked_Lists.py"
         ],
         [
             23,
@@ -1060,7 +1060,7 @@
             "Add 2 Numbers in Linked List",
             " https://leetcode.com/problems/add-two-numbers/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/23_Add_2_Numbers_in_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/23_Add_2_Numbers_in_Linked_List.py"
         ],
         [
             24,
@@ -1068,7 +1068,7 @@
             "Add one to a number",
             " https://www.codingninjas.com/studio/problems/add-one-to-a-number-represented-as-linked-list_920557",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/24_Add_one_to_a_number.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/24_Add_one_to_a_number.py"
         ],
         [
             25,
@@ -1076,7 +1076,7 @@
             "Delete all occurrences of a given key in a Double Linked List",
             " https://www.codingninjas.com/studio/problems/delete-all-occurrences-of-a-given-key-in-a-doubly-linked-list_8160461",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/25_Delete_all_occurrences_of_a_given_key_in_a_Double_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/25_Delete_all_occurrences_of_a_given_key_in_a_Double_Linked_List.py"
         ],
         [
             26,
@@ -1084,7 +1084,7 @@
             "Find Pairs with given sum Double Linked List",
             " https://www.codingninjas.com/studio/problems/find-pairs-with-given-sum-in-doubly-linked-list_1164172",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/26_Find_Pairs_with_given_sum_Double_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/26_Find_Pairs_with_given_sum_Double_Linked_List.py"
         ],
         [
             27,
@@ -1092,7 +1092,7 @@
             "Remove Duplicates from sorted Double Linked List",
             " https://www.codingninjas.com/studio/problems/remove-duplicates-from-a-sorted-doubly-linked-list_2420283",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/27_Remove_Duplicates_from_sorted_Double_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/27_Remove_Duplicates_from_sorted_Double_Linked_List.py"
         ],
         [
             28,
@@ -1100,7 +1100,7 @@
             "Merge 2 Sorted Linked List",
             "https://leetcode.com/problems/merge-two-sorted-lists/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/28_Merge_2_Sorted_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/28_Merge_2_Sorted_Linked_List.py"
         ],
         [
             29,
@@ -1108,7 +1108,7 @@
             "Merge K Sorted Linked List",
             "https://leetcode.com/problems/merge-k-sorted-lists/",
             " Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/29_Merge_K_Sorted_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/29_Merge_K_Sorted_Linked_List.py"
         ],
         [
             30,
@@ -1116,7 +1116,7 @@
             "Reverse Linked List in K groups",
             " https://leetcode.com/problems/reverse-nodes-in-k-group/",
             " Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/30_Reverse_Linked_List_in_K_groups.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/30_Reverse_Linked_List_in_K_groups.py"
         ],
         [
             31,
@@ -1124,7 +1124,7 @@
             "Flatten Linked List",
             " https://www.codingninjas.com/studio/problems/flatten-a-linked-list_1112655",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/31_Flatten_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/31_Flatten_Linked_List.py"
         ],
         [
             32,
@@ -1132,7 +1132,7 @@
             "Clone Linked List Random Pointers",
             "https://leetcode.com/problems/copy-list-with-random-pointer/description/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/32_Clone_Linked_List_Random_Pointers.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/32_Clone_Linked_List_Random_Pointers.py"
         ],
         [
             33,
@@ -1140,7 +1140,7 @@
             "Rotate Linked List",
             " https://leetcode.com/problems/rotate-list/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/33_Rotate_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/33_Rotate_Linked_List.py"
         ],
         [
             34,
@@ -1148,7 +1148,7 @@
             "Design Hashmap",
             "https://leetcode.com/problems/design-hashmap/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/34_Design_Hashmap.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/34_Design_Hashmap.py"
         ],
         [
             35,
@@ -1156,7 +1156,7 @@
             "Design Hashset",
             "https://leetcode.com/problems/design-hashset/description/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/35_Design_Hashset.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/35_Design_Hashset.py"
         ],
         [
             36,
@@ -1164,7 +1164,7 @@
             "Design Browser History",
             "https://leetcode.com/problems/design-browser-history/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/36_Design_Browser_History.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/36_Design_Browser_History.py"
         ],
         [
             37,
@@ -1172,7 +1172,7 @@
             "Design LRU Cache",
             "https://leetcode.com/problems/lru-cache/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/4_LinkedList/37_Design_LRU_Cache.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/37_Design_LRU_Cache.py"
         ]
     ],
     "Recursion": [
@@ -1182,7 +1182,7 @@
             "1 to N with recursion",
             "https://www.codingninjas.com/studio/problems/print-1-to-n_628290",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/1_1_to_N_with_recursion.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/1_1_to_N_with_recursion.py"
         ],
         [
             2,
@@ -1190,7 +1190,7 @@
             "N to 1 Recursion",
             "https://www.codingninjas.com/studio/problems/n-to-1-without-loop_8357243",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/2_N_to_1_Recursion.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/2_N_to_1_Recursion.py"
         ],
         [
             3,
@@ -1198,7 +1198,7 @@
             "Sum of first n numbers",
             "https://www.codingninjas.com/studio/problems/sum-of-first-n-numbers_8876068",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/3_Sum_of_first_n_numbers.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/3_Sum_of_first_n_numbers.py"
         ],
         [
             4,
@@ -1206,7 +1206,7 @@
             "Factorial Numbers not greater than N",
             "https://www.codingninjas.com/studio/problems/factorial-numbers-not-greater-than-n_8365435",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/4_Factorial_Numbers_not_greater_than_N.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/4_Factorial_Numbers_not_greater_than_N.py"
         ],
         [
             5,
@@ -1214,7 +1214,7 @@
             "Reverse an array",
             "https://www.codingninjas.com/studio/problems/reverse-an-array_8365444",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/5_Reverse_an_array.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/5_Reverse_an_array.py"
         ],
         [
             6,
@@ -1222,7 +1222,7 @@
             "Check Palindrome",
             "https://www.codingninjas.com/studio/problems/check-palindrome-recursive_624386",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/6_Check_Palindrome.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/6_Check_Palindrome.py"
         ],
         [
             7,
@@ -1230,7 +1230,7 @@
             "Fibonacci Number",
             "https://www.codingninjas.com/studio/problems/print-fibonacci-series_7421617",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/7_Fibonacci_Number.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/7_Fibonacci_Number.py"
         ],
         [
             8,
@@ -1238,7 +1238,7 @@
             "Recursive atoi",
             "https://leetcode.com/problems/string-to-integer-atoi/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/8_Recursive_atoi.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/8_Recursive_atoi.py"
         ],
         [
             9,
@@ -1246,7 +1246,7 @@
             "Pow x n",
             "https://leetcode.com/problems/powx-n/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/9_Pow_x_n.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/9_Pow_x_n.py"
         ],
         [
             10,
@@ -1254,7 +1254,7 @@
             "Count Good Numbers",
             "https://leetcode.com/problems/count-good-numbers/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/10_Count_Good_Numbers.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/10_Count_Good_Numbers.py"
         ],
         [
             11,
@@ -1262,7 +1262,7 @@
             "Reverse a stack using recursion",
             "https://www.codingninjas.com/studio/problems/reverse-stack-using-recursion_631875",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/11_Reverse_a_stack_using_recursion.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/11_Reverse_a_stack_using_recursion.py"
         ],
         [
             12,
@@ -1270,7 +1270,7 @@
             "Sort Stack using recursion",
             "https://www.codingninjas.com/studio/problems/sort-stack_1229505",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/5_Recursion/12_Sort_Stack_using_recursion.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/12_Sort_Stack_using_recursion.py"
         ]
     ],
     "Stack": [
@@ -1280,7 +1280,7 @@
             "Custom Stack",
             "https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/1_Custom_Stack.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py"
         ],
         [
             2,
@@ -1288,7 +1288,7 @@
             "Dynamic Stack",
             "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/2_Dynamic_Stack.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py"
         ],
         [
             3,
@@ -1296,7 +1296,7 @@
             "Custom Queue",
             "https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/3_Custom_Queue.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py"
         ],
         [
             4,
@@ -1304,7 +1304,7 @@
             "Circular Queue",
             "https://www.codingninjas.com/studio/problems/circular-queue_1170058",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/4_Circular_Queue.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/4_Circular_Queue.py"
         ],
         [
             5,
@@ -1312,7 +1312,7 @@
             "Dynamic Circular Queue",
             "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py"
         ]
     ]
 }
