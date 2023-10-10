@@ -16,3 +16,4 @@ npm run build
 cp -r ./dist/* .
 rm -rf dist
 sed -i 's/\/assets/\.\/assets/g' index.html
+sed -i 's/\/icon/\.\/icon/g' index.html
