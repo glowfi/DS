@@ -13,12 +13,13 @@ f.write(f",,,,\n")
 f.close()
 
 
-directories = glob.glob("./*")
+directories = sorted(glob.glob("./Programs/*"))
 dic = {}
 
 for directory in directories:
+    print(f"Parsing {directory} ....")
     if os.path.isdir(f"./{directory}"):
-        files = glob.glob(f"./{directory}/*")
+        files = glob.glob(f"{directory}/*")
         currentData = []
         for file in files:
             with open(f"{file}") as f:
