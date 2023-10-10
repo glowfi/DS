@@ -15,3 +15,4 @@ npm run build
 ### Copying Files
 cp -r ./dist/* .
 rm -rf dist
+sed -i 's/\/assets/\.\/assets/g' index.html
