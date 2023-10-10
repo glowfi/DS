@@ -1,0 +1,193 @@
+/* Body */
+
+body {
+    background-color: #202020;
+    font-family: 'Brush Script MT', cursive;
+}
+
+/* Generic */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: wheat;
+}
+
+/* Navbar */
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(22, 22, 26, 0.18);
+    border: 0.5px solid antiquewhite;
+    background-color: #282828;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #000;
+}
+
+.btn-outline-dark {
+    border-radius: 0;
+}
+
+.btn-outline-dark:focus {
+    box-shadow: none;
+}
+
+#nprog {
+    color: black;
+    background-color: #fe8019;
+    border-color: #fe8019;
+}
+
+#person {
+    color: wheat;
+    background-color: #212529;
+    border-color: wheat;
+}
+
+#person:hover,
+#nprog:hover,
+#sourcecode:hover {
+    opacity: 0.8;
+}
+
+.navbar-dark .navbar-toggler {
+    color: rgba(255, 255, 255, 0.55);
+    border-color: rgba(255, 255, 255, 0.1);
+    border: 3px solid wheat;
+}
+
+/* Accordian + Code List Table */
+
+td a:link,
+td a:visited {
+    background-color: none;
+    color: wheat;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+td a:link {
+    background-color: #3c3836;
+    color: wheat;
+}
+
+td a:hover,
+td a:active {
+    /* background-color: #198754; */
+    opacity: 0.6;
+    color: white;
+    font-weight: bolder;
+}
+
+.accordion-item .accordion-button.collapsed {
+    background-color: #282828;
+    color: wheat;
+    border: 1px solid antiquewhite;
+}
+
+.accordion-flush .accordion-item .accordion-button {
+    background-color: #282828;
+    color: wheat;
+    border: 1px solid antiquewhite;
+}
+
+.accordion-button::after {
+    background-color: #83a598;
+}
+
+.accordion-body {
+    background-color: #282828;
+}
+
+.table > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem;
+    background-color: #282828;
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px #282828;
+    border: 1px solid wheat;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transform: rotate(-180deg);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #282828;
+    color: wheat;
+}
+
+/* Modal */
+
+.list-group-item-dark {
+    color: #141619;
+    background-color: #282828;
+    border: 1px solid white;
+}
+
+.modal-dialog-scrollable .modal-content {
+    max-height: 100%;
+    overflow: hidden;
+    background-color: #282828;
+    color: wheat;
+}
+
+.list-group-item-dark span a {
+    color: wheat;
+    text-decoration: none;
+}
+
+.btn-close {
+    background-color: #fb4934;
+}
+
+/* Misc */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.bg-warning {
+    color: black;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #282828;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 1px solid wheat;
+}
+
+@media screen and (max-width: 768px) {
+    .btn-outline-dark {
+        border: none;
+        padding: 0;
+        outline: none;
+    }
+
+    .btn-outline-dark:hover {
+        background: none;
+        color: gray;
+    }
+}
