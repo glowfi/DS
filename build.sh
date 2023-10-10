@@ -11,3 +11,7 @@ npm install
 ### Build production ready app
 echo -e "\n\n\nBuilding the app ..."
 npm run build
+
+### Copying Files
+cp -r ./dist/* .
+rm -rf dist
