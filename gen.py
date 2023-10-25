@@ -9,13 +9,13 @@ import pandas as pd
 os.remove("./sheet.csv")
 f = open("sheet.csv", "a", encoding="utf-8")
 f.write(f"Type,Problem,Link,Difficulty,Code\n")
-f.write(f",,,,\n")
 f.close()
 
 
 PROGRAM_LOCATION = "https://raw.githubusercontent.com/glowfi/DS/main/Programs"
 directories = sorted(glob.glob("./Programs/*"))
 dic = {}
+idx = 0
 
 for directory in directories:
     print(f"Parsing {directory} ....")
@@ -42,6 +42,7 @@ for directory in directories:
 
                         currentData.append(
                             [
+                                idx,
                                 int(extractNumber),
                                 dataStructureType,
                                 problemStatement,
@@ -50,6 +51,7 @@ for directory in directories:
                                 code,
                             ]
                         )
+                        idx += 1
                 except Exception as e:
                     name = file.split("./")[-1]
                     print(f"Exception Handled for {name}!")
@@ -62,6 +64,7 @@ for directory in directories:
 
         # Create CSV
         for (
+            idx,
             extractNumber,
             dataStructureType,
             problemStatement,
@@ -71,7 +74,7 @@ for directory in directories:
         ) in currentData:
             f = open("sheet.csv", "a", encoding="utf-8")
             f.write(
-                f"{dataStructureType},{problemStatement},{link},{difficulty},{code}\n"
+                f"{idx},{dataStructureType},{problemStatement},{link},{difficulty},{code}\n"
             )
             f.close()
 
