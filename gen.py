@@ -8,7 +8,7 @@ import pandas as pd
 # Create Sheet
 os.remove("./sheet.csv")
 f = open("sheet.csv", "a", encoding="utf-8")
-f.write(f"Type,Problem,Link,Difficulty,Code\n")
+f.write(f"#,Type,Problem,Link,Difficulty,Code\n")
 f.close()
 
 
@@ -42,7 +42,6 @@ for directory in directories:
 
                         currentData.append(
                             [
-                                idx,
                                 int(extractNumber),
                                 dataStructureType,
                                 problemStatement,
@@ -51,7 +50,6 @@ for directory in directories:
                                 code,
                             ]
                         )
-                        idx += 1
                 except Exception as e:
                     name = file.split("./")[-1]
                     print(f"Exception Handled for {name}!")
@@ -64,7 +62,6 @@ for directory in directories:
 
         # Create CSV
         for (
-            idx,
             extractNumber,
             dataStructureType,
             problemStatement,
@@ -76,6 +73,7 @@ for directory in directories:
             f.write(
                 f"{idx},{dataStructureType},{problemStatement},{link},{difficulty},{code}\n"
             )
+            idx += 1
             f.close()
 
 # Dump JSON
