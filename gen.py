@@ -83,7 +83,6 @@ with open("data.json", "w") as outfile:
 
 # Dump Readme
 df = pd.read_csv("sheet.csv")
-df = df.drop(0)
 markdown_table = df.to_markdown()
 with open("README.md", "w") as rf:
     rf.write(f"# DS\n\n> A repo of solved DS Question\n\n{markdown_table}")
