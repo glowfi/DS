@@ -431,6 +431,22 @@
             "https://leetcode.com/problems/first-missing-positive/",
             " Hard",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/54_First_Missing_Positive.py"
+        ],
+        [
+            55,
+            "Array&Hashing",
+            "Bubble Sort",
+            "https://practice.geeksforgeeks.org/problems/bubble-sort/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/55_Bubble_Sort.py"
+        ],
+        [
+            56,
+            "Array&Hashing",
+            "Selection Sort",
+            "https://practice.geeksforgeeks.org/problems/bubble-sort/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/56_Selection_Sort.py"
         ]
     ],
     "BinarySearch": [
@@ -1179,98 +1195,10 @@
         [
             1,
             "Recursion",
-            "1 to N with recursion",
-            "https://www.codingninjas.com/studio/problems/print-1-to-n_628290",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/1_1_to_N_with_recursion.py"
-        ],
-        [
-            2,
-            "Recursion",
-            "N to 1 Recursion",
-            "https://www.codingninjas.com/studio/problems/n-to-1-without-loop_8357243",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/2_N_to_1_Recursion.py"
-        ],
-        [
-            3,
-            "Recursion",
-            "Sum of first n numbers",
-            "https://www.codingninjas.com/studio/problems/sum-of-first-n-numbers_8876068",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/3_Sum_of_first_n_numbers.py"
-        ],
-        [
-            4,
-            "Recursion",
-            "Factorial Numbers not greater than N",
-            "https://www.codingninjas.com/studio/problems/factorial-numbers-not-greater-than-n_8365435",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/4_Factorial_Numbers_not_greater_than_N.py"
-        ],
-        [
-            5,
-            "Recursion",
-            "Reverse an array",
-            "https://www.codingninjas.com/studio/problems/reverse-an-array_8365444",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/5_Reverse_an_array.py"
-        ],
-        [
-            6,
-            "Recursion",
-            "Check Palindrome",
-            "https://www.codingninjas.com/studio/problems/check-palindrome-recursive_624386",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/6_Check_Palindrome.py"
-        ],
-        [
-            7,
-            "Recursion",
-            "Fibonacci Number",
-            "https://www.codingninjas.com/studio/problems/print-fibonacci-series_7421617",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/7_Fibonacci_Number.py"
-        ],
-        [
-            8,
-            "Recursion",
-            "Recursive atoi",
-            "https://leetcode.com/problems/string-to-integer-atoi/",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/8_Recursive_atoi.py"
-        ],
-        [
-            9,
-            "Recursion",
-            "Pow x n",
-            "https://leetcode.com/problems/powx-n/",
-            " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/9_Pow_x_n.py"
-        ],
-        [
-            10,
-            "Recursion",
-            "Count Good Numbers",
-            "https://leetcode.com/problems/count-good-numbers/",
-            " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/10_Count_Good_Numbers.py"
-        ],
-        [
-            11,
-            "Recursion",
-            "Reverse a stack using recursion",
-            "https://www.codingninjas.com/studio/problems/reverse-stack-using-recursion_631875",
-            " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/11_Reverse_a_stack_using_recursion.py"
-        ],
-        [
-            12,
-            "Recursion",
-            "Sort Stack using recursion",
-            "https://www.codingninjas.com/studio/problems/sort-stack_1229505",
-            " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/12_Sort_Stack_using_recursion.py"
+            "test program",
+            "<Question Link>",
+            " <Difficulty>",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/1_test_program.py"
         ]
     ],
     "Stack": [
