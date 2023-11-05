@@ -147,11 +147,11 @@
 145,LinkedList,Design Hashset,https://leetcode.com/problems/design-hashset/description/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/35_Design_Hashset.py
 146,LinkedList,Design Browser History,https://leetcode.com/problems/design-browser-history/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/36_Design_Browser_History.py
 147,LinkedList,Design LRU Cache,https://leetcode.com/problems/lru-cache/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/37_Design_LRU_Cache.py
-148,Recursion,Skip a character,NA, NA,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/1_Skip_a_character.py
-149,Recursion,Skip string,NA, NA,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/2_Skip_string.py
-150,Recursion,Subsequences,NA, NA,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/3_Subsequences.py
-151,Recursion,Subsequences ASCII,NA, NA,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/3_Subsequences_ASCII.py
-152,Recursion,Iterative Subsequence,NA, NA,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/4_Iterative_Subsequence.py
+148,Recursion,Skip a character,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/1_Skip_a_character.py
+149,Recursion,Skip string,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/2_Skip_string.py
+150,Recursion,Subsequences,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/3_Subsequences.py
+151,Recursion,Subsequences ASCII,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/4_Subsequences_ASCII.py
+152,Recursion,Iterative Subsequence,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/5_Iterative_Subsequence.py
 153,Stack,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py
 154,Stack,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py
 155,Stack,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py
