@@ -1,4 +1,4 @@
-# NA , NA
+# NA , Easy
 
 # Imagine st = "bcdappledef" output="bcddef" [Skip apple]
 

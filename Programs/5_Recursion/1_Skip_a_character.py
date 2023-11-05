@@ -1,4 +1,4 @@
-# NA , NA
+# NA , Easy
 
 
 # Imagine string s="basdasa" output="bsds" [Remove all a character]

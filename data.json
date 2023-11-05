@@ -1197,7 +1197,7 @@
             "Recursion",
             "Skip a character",
             "NA",
-            " NA",
+            " Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/1_Skip_a_character.py"
         ],
         [
@@ -1205,7 +1205,7 @@
             "Recursion",
             "Skip string",
             "NA",
-            " NA",
+            " Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/2_Skip_string.py"
         ],
         [
@@ -1213,24 +1213,24 @@
             "Recursion",
             "Subsequences",
             "NA",
-            " NA",
+            " Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/3_Subsequences.py"
-        ],
-        [
-            3,
-            "Recursion",
-            "Subsequences ASCII",
-            "NA",
-            " NA",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/3_Subsequences_ASCII.py"
         ],
         [
             4,
             "Recursion",
+            "Subsequences ASCII",
+            "NA",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/4_Subsequences_ASCII.py"
+        ],
+        [
+            5,
+            "Recursion",
             "Iterative Subsequence",
             "NA",
-            " NA",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/4_Iterative_Subsequence.py"
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/5_Iterative_Subsequence.py"
         ]
     ],
     "Stack": [

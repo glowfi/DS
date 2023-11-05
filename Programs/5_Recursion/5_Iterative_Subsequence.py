@@ -1,4 +1,6 @@
-# NA , NA
+# NA , Easy
+
+# Generate Subsequences iteratively
 
 # Brute
 # T.C. - O(N*2**N)
@@ -14,6 +16,8 @@ def iterativeSubsequence(arr):
 
     print(outer)
 
+
+# Generate Subsequences iteratively remove duplicate subsequences
 
 # Brute
 # T.C. - O(N*2**N)

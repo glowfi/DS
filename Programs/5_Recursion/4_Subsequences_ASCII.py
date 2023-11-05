@@ -1,4 +1,4 @@
-# NA , NA
+# NA , Easy
 
 # Brute [Ans in argument]
 # T.C. - O(2**n)
