@@ -1231,6 +1231,46 @@
             "NA",
             " Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/5_Iterative_Subsequence.py"
+        ],
+        [
+            6,
+            "Recursion",
+            "Generate Permutation",
+            "NA",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/6_Generate_Permutation.py"
+        ],
+        [
+            7,
+            "Recursion",
+            "Count Permutation",
+            "NA",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/7_Count_Permutation.py"
+        ],
+        [
+            8,
+            "Recursion",
+            "Letter Combination of Phone Number",
+            "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/8_Letter_Combination_of_Phone_Number.py"
+        ],
+        [
+            9,
+            "Recursion",
+            "Number of Dice Rolls With Target Sum",
+            "https://leetcode.com/problems/number-of-dice-rolls-with-target-sum",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/9_Number_of_Dice_Rolls_With_Target_Sum.py"
+        ],
+        [
+            10,
+            "Recursion",
+            "Generate Parentheses",
+            "https://leetcode.com/problems/generate-parentheses/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/10_Generate_Parentheses.py"
         ]
     ],
     "Stack": [
