@@ -152,8 +152,13 @@
 150,Recursion,Subsequences,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/3_Subsequences.py
 151,Recursion,Subsequences ASCII,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/4_Subsequences_ASCII.py
 152,Recursion,Iterative Subsequence,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/5_Iterative_Subsequence.py
-153,Stack,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py
-154,Stack,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py
-155,Stack,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py
-156,Stack,Circular Queue,https://www.codingninjas.com/studio/problems/circular-queue_1170058, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/4_Circular_Queue.py
-157,Stack,Dynamic Circular Queue,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py
+153,Recursion,Generate Permutation,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/6_Generate_Permutation.py
+154,Recursion,Count Permutation,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/7_Count_Permutation.py
+155,Recursion,Letter Combination of Phone Number,https://leetcode.com/problems/letter-combinations-of-a-phone-number/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/8_Letter_Combination_of_Phone_Number.py
+156,Recursion,Number of Dice Rolls With Target Sum,https://leetcode.com/problems/number-of-dice-rolls-with-target-sum, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/9_Number_of_Dice_Rolls_With_Target_Sum.py
+157,Recursion,Generate Parentheses,https://leetcode.com/problems/generate-parentheses/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/10_Generate_Parentheses.py
+158,Stack,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py
+159,Stack,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py
+160,Stack,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py
+161,Stack,Circular Queue,https://www.codingninjas.com/studio/problems/circular-queue_1170058, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/4_Circular_Queue.py
+162,Stack,Dynamic Circular Queue,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py
