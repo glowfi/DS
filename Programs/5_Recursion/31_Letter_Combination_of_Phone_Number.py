@@ -1,6 +1,5 @@
 # https://leetcode.com/problems/letter-combinations-of-a-phone-number/ , Medium
 
-# https://0x0.st/Ht1D.799.png
 
 # Brute
 # T.C. - O(4^n)
