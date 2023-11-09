@@ -1,8 +1,8 @@
 # https://leetcode.com/problems/generate-parentheses/ , Medium
 
 # Brute
-# T.C. -O(N*2^N)
-# S.C  -O(N)
+# T.C. - O(N*2^N)
+# S.C  - O(N)
 
 
 class Solution:

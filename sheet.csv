@@ -77,7 +77,7 @@
 75,BinarySearch,Find Maximum Bitonic Arary,https://practice.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/20_Find_Maximum_Bitonic_Arary.py
 76,BinarySearch,Search in Bitonic Array,NA, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/21_Search_in_Bitonic_Array.py
 77,BinarySearch,Find Square Root of Number,https://practice.geeksforgeeks.org/problems/square-root/0, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/22_Find_Square_Root_of_Number.py
-78,BinarySearch,Find Nth Square root of Number,https://practice.geeksforgeeks.org/problems/find-nth-root-of-m5843/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/23_Find_Nth_Square_root_of_Number.py
+78,BinarySearch,Find Nth root of Number,https://practice.geeksforgeeks.org/problems/find-nth-root-of-m5843/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/23_Find_Nth_root_of_Number.py
 79,BinarySearch,Koko Eating Bananas,https://leetcode.com/problems/koko-eating-bananas/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/24_Koko_Eating_Bananas.py
 80,BinarySearch,Minimum Number of Days to Make m Bouquets,https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/25_Minimum_Number_of_Days_to_Make_m_Bouquets.py
 81,BinarySearch,Find the Smallest Divisor Given a Threshold,https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/description/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/2_BinarySearch/26_Find_the_Smallest_Divisor_Given_a_Threshold.py
@@ -147,18 +147,40 @@
 145,LinkedList,Design Hashset,https://leetcode.com/problems/design-hashset/description/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/35_Design_Hashset.py
 146,LinkedList,Design Browser History,https://leetcode.com/problems/design-browser-history/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/36_Design_Browser_History.py
 147,LinkedList,Design LRU Cache,https://leetcode.com/problems/lru-cache/,Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/37_Design_LRU_Cache.py
-148,Recursion,Skip a character,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/1_Skip_a_character.py
-149,Recursion,Skip string,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/2_Skip_string.py
-150,Recursion,Subsequences,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/3_Subsequences.py
-151,Recursion,Subsequences ASCII,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/4_Subsequences_ASCII.py
-152,Recursion,Iterative Subsequence,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/5_Iterative_Subsequence.py
-153,Recursion,Generate Permutation,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/6_Generate_Permutation.py
-154,Recursion,Count Permutation,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/7_Count_Permutation.py
-155,Recursion,Letter Combination of Phone Number,https://leetcode.com/problems/letter-combinations-of-a-phone-number/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/8_Letter_Combination_of_Phone_Number.py
-156,Recursion,Number of Dice Rolls With Target Sum,https://leetcode.com/problems/number-of-dice-rolls-with-target-sum, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/9_Number_of_Dice_Rolls_With_Target_Sum.py
-157,Recursion,Generate Parentheses,https://leetcode.com/problems/generate-parentheses/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/10_Generate_Parentheses.py
-158,Stack,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py
-159,Stack,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py
-160,Stack,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py
-161,Stack,Circular Queue,https://www.codingninjas.com/studio/problems/circular-queue_1170058, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/4_Circular_Queue.py
-162,Stack,Dynamic Circular Queue,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py
+148,Recursion,Print n times,https://www.codingninjas.com/studio/problems/-print-n-times_8380707, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/1_Print_n_times.py
+149,Recursion,1 to N Without Loop,https://www.codingninjas.com/studio/problems/print-1-to-n_628290, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/2_1_to N Without Loop.py
+150,Recursion,N to 1 Without Loop,https://www.codingninjas.com/studio/problems/print-1-to-n_628290, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/3_N_to_1_Without_Loop.py
+151,Recursion,Sum Of First N Numbers,https://www.codingninjas.com/studio/problems/sum-of-first-n-numbers_8876068, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/4_Sum Of First N Numbers.py
+152,Recursion,Factorial Numbers Not Greater Than N,https://www.codingninjas.com/studio/problems/factorial-numbers-not-greater-than-n_8365435, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/5_Factorial Numbers Not Greater Than N.py
+153,Recursion,Sum of digits,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/6_Sum_of_digits.py
+154,Recursion,Product of digits,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/7_Product_of_digits.py
+155,Recursion,Reverse a number,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/8_Reverse_a_number.py
+156,Recursion,Palindrome Number,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/9_Palindrome_Number.py
+157,Recursion,Count Zeroes in a number,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/10_Count_Zeroes_in_a_number.py
+158,Recursion,Number of Steps to reduce to zero,https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/11_Number_of_Steps_to_reduce_to_zero.py
+159,Recursion,Reverse an Array,https://www.codingninjas.com/studio/problems/reverse-an-array_8365444, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/12_Reverse an Array.py
+160,Recursion,Valid Palindrome,https://leetcode.com/problems/valid-palindrome/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/13_Valid Palindrome.py
+161,Recursion,Fibonacci Number,https://leetcode.com/problems/fibonacci-number/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/14_Fibonacci_Number.py
+162,Recursion,Check Array Sorted,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/15_Check_Array_Sorted.py
+163,Recursion,Linear Search,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/16_Linear_Search.py
+164,Recursion,Linear Search Multi Occurences,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/17_Linear_Search_Multi_Occurences.py
+165,Recursion,Search in a rotated sorted array,https://leetcode.com/problems/search-in-rotated-sorted-array/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/18_Search_in_a_rotated_sorted_array.py
+166,Recursion,Pow x n Binary Exponentiation,https://leetcode.com/problems/powx-n/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/19_Pow_x_n_Binary_Exponentiation.py
+167,Recursion,Count Good Numbers,https://leetcode.com/problems/count-good-numbers/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/20_Count_Good_Numbers.py
+168,Recursion,Merge Sort,NA, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/21_Merge_Sort.py
+169,Recursion,Quick Sort,https://www.codingninjas.com/studio/problems/quick-sort_5844, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/22_Quick_Sort.py
+170,Recursion,Skip a character,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/23_Skip_a_character.py
+171,Recursion,Skip string,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/24_Skip_string.py
+172,Recursion,Subsequences,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/25_Subsequences.py
+173,Recursion,Subsequences ASCII,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/26_Subsequences_ASCII.py
+174,Recursion,Iterative Subsequence,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/27_Iterative_Subsequence.py
+175,Recursion,Generate Permutation,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/28_Generate_Permutation.py
+176,Recursion,Count Permutation,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/29_Count_Permutation.py
+177,Recursion,Letter Combination of Phone Number,https://leetcode.com/problems/letter-combinations-of-a-phone-number/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/30_Letter_Combination_of_Phone_Number.py
+178,Recursion,Number of Dice Rolls With Target Sum,https://leetcode.com/problems/number-of-dice-rolls-with-target-sum, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/31_Number_of_Dice_Rolls_With_Target_Sum.py
+179,Recursion,Generate Parentheses,https://leetcode.com/problems/generate-parentheses/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/32_Generate_Parentheses.py
+180,Stack,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py
+181,Stack,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py
+182,Stack,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py
+183,Stack,Circular Queue,https://www.codingninjas.com/studio/problems/circular-queue_1170058, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/4_Circular_Queue.py
+184,Stack,Dynamic Circular Queue,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py
