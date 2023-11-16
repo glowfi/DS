@@ -1,4 +1,4 @@
-# NA , Easy
+# https://leetcode.com/problems/permutations/ , Easy
 
 # Recursive Tree
 # https://0x0.st/HtUm.763.png
@@ -8,22 +8,22 @@
 # S.C  - O(n)
 
 
-def generatePermutation_I(idx: int, proc: str, res: list[str], s: str):
-    if idx == len(s):
-        res.append(proc)
-        return
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        res = []
 
-    tmp = []
+        def helper(idx: int, proc: list[int], res: list[str]) -> None:
+            if idx == len(nums):
+                res.append(proc)
+                return
 
-    for i in range(len(proc) + 1):
-        newString = proc[:i] + s[idx] + proc[i:]
-        val = generatePermutation_I(idx + 1, newString, res, s)
+            for i in range(len(proc) + 1):
+                newArrangement = [*proc[:i], nums[idx], *proc[i:]]
+                helper(idx + 1, newArrangement, res)
 
+        helper(0, [], res)
 
-s = "abc"
-res = []
-generatePermutation_I(0, "", res, s)
-print(res)
+        return res
 
 
 # Brute [Ans in body]
@@ -31,19 +31,20 @@ print(res)
 # S.C  - O(n)
 
 
-def generatePermutation_II(idx: int, proc: str, s: str) -> list[str]:
-    if idx == len(s):
-        return [proc]
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        def helper(idx: int, proc: list[int]) -> list[list[int]]:
+            if idx == len(nums):
+                return [proc]
 
-    tmp = []
-    for i in range(len(proc) + 1):
-        newString = proc[:i] + s[idx] + proc[i:]
-        val = generatePermutation_II(idx + 1, newString, s)
-        for i in val:
-            tmp.append(i)
+            tmp = []
 
-    return tmp
+            for i in range(len(proc) + 1):
+                newArrangement = [*proc[:i], nums[idx], *proc[i:]]
+                val = helper(idx + 1, newArrangement)
+                for i in val:
+                    tmp.append(i)
 
+            return tmp
 
-s = "abc"
-print(generatePermutation_II(0, "", s))
+        return helper(0, [])

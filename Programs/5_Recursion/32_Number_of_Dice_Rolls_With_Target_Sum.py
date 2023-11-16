@@ -1,5 +1,7 @@
 # https://leetcode.com/problems/number-of-dice-rolls-with-target-sum , Medium
 
+# Recursive Tree
+# https://0x0.st/Htdi.520.png
 
 # Brute [Ans in Body]
 # T.C. - O(k ^ n)
@@ -8,15 +10,19 @@
 
 class Solution:
     @lru_cache(maxsize=None)
-    def numRollsToTarget(self, n: int, k: int, target: int) -> int:
-        if n == 0:
+    def helper(self, idx, faces, target, turns) -> int:
+        if idx == turns:
             if target == 0:
                 return 1
             return 0
 
-        c = 0
+        count = 0
         MOD = (10**9) + 7
-        for i in range(1, min(k, target) + 1):
-            c += self.numRollsToTarget(n - 1, k, target - i)
 
-        return c % MOD
+        for i in range(1, min(faces, target) + 1):
+            count += self.helper(idx + 1, faces, target - i, turns)
+
+        return count % MOD
+
+    def numRollsToTarget(self, n: int, k: int, target: int) -> int:
+        return self.helper(0, k, target, n)
