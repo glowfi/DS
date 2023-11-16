@@ -1420,7 +1420,7 @@
             29,
             "Recursion",
             "Generate Permutation",
-            "NA",
+            "https://leetcode.com/problems/permutations/",
             " Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/29_Generate_Permutation.py"
         ],
@@ -1455,6 +1455,54 @@
             "https://leetcode.com/problems/generate-parentheses/",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/33_Generate_Parentheses.py"
+        ],
+        [
+            34,
+            "Recursion",
+            "Generate Binary Strings",
+            "https://practice.geeksforgeeks.org/problems/generate-all-binary-strings/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/34_Generate_Binary_Strings.py"
+        ],
+        [
+            35,
+            "Recursion",
+            "Given 2 strings return string with more distinct subsequences",
+            "https://practice.geeksforgeeks.org/problems/better-string/1",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/35_Given_2_strings_return_string_with_more_distinct_subsequences.py"
+        ],
+        [
+            36,
+            "Recursion",
+            "Count all Subsequences with Sum K",
+            "https://practice.geeksforgeeks.org/problems/perfect-sum-problem5633/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/36_Count_all_Subsequences_with_Sum_K.py"
+        ],
+        [
+            37,
+            "Recursion",
+            "Check If a Subset exists with given sum k",
+            "https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/37_Check_If_a Subset_exists_with_given_sum_k.py"
+        ],
+        [
+            38,
+            "Recursion",
+            "Combination Sum",
+            "https://leetcode.com/problems/combination-sum/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/38_Combination_Sum.py"
+        ],
+        [
+            39,
+            "Recursion",
+            "Combination Sum II",
+            "https://leetcode.com/problems/combination-sum-ii/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/39_Combination_Sum_II.py"
         ]
     ],
     "Stack": [
