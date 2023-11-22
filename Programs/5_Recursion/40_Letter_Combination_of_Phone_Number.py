@@ -9,22 +9,19 @@
 
 
 class Solution:
-    def helper(self, idx: int, proc: str, s: str, mp: dict[str], res: list[str]):
-        if idx == len(s):
-            res.append(proc)
+    def getAllCombi(self, idx, tmp, digits, ans, mp):
+        if idx == len(digits):
+            ans.append(tmp)
             return
 
-        combiString = mp[s[idx]]
+        getCharCombi = mp[digits[idx]]
 
-        for char in combiString:
-            newString = proc + char
-            self.helper(idx + 1, newString, s, mp, res)
+        for char in getCharCombi:
+            self.getAllCombi(idx + 1, tmp + char, digits, ans, mp)
 
     def letterCombinations(self, digits: str) -> List[str]:
         if not digits:
             return []
-
-        res = []
 
         mp = {
             "2": "abc",
@@ -36,10 +33,11 @@ class Solution:
             "8": "tuv",
             "9": "wxyz",
         }
+        ans = []
 
-        self.helper(0, "", digits, mp, res)
+        self.getAllCombi(0, "", digits, ans, mp)
 
-        return res
+        return ans
 
 
 # Optimal [ans in body]
@@ -48,20 +46,20 @@ class Solution:
 
 
 class Solution:
-    def helper(self, idx: int, proc: str, s: str, mp: dict[str]):
-        if idx == len(s):
-            return [proc]
+    def getAllCombi(self, idx, tmp, digits, mp):
+        if idx == len(digits):
+            return [tmp]
 
-        combiString = mp[s[idx]]
-        tmp = []
+        getCharCombi = mp[digits[idx]]
 
-        for char in combiString:
-            newString = proc + char
-            val = self.helper(idx + 1, newString, s, mp)
-            for i in val:
-                tmp.append(i)
+        ans = []
 
-        return tmp
+        for char in getCharCombi:
+            vals = self.getAllCombi(idx + 1, tmp + char, digits, mp)
+            for val in vals:
+                ans.append(val)
+
+        return ans
 
     def letterCombinations(self, digits: str) -> List[str]:
         if not digits:
@@ -78,4 +76,4 @@ class Solution:
             "9": "wxyz",
         }
 
-        return self.helper(0, "", digits, mp)
+        return self.getAllCombi(0, "", digits, mp)

@@ -31,9 +31,7 @@ class Solution:
             0, "", str2
         )
 
-        if len(count1) > len(count2):
+        if len(count1) >= len(count2):
             return str1
         elif len(count2) > len(count1):
             return str2
-        else:
-            return str1

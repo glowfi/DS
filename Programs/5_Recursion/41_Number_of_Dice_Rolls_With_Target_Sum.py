@@ -10,8 +10,8 @@
 
 class Solution:
     @lru_cache(maxsize=None)
-    def helper(self, idx, faces, target, turns) -> int:
-        if idx == turns:
+    def numRollsToTarget(self, n: int, k: int, target: int) -> int:
+        if n == 0:
             if target == 0:
                 return 1
             return 0
@@ -19,10 +19,8 @@ class Solution:
         count = 0
         MOD = (10**9) + 7
 
-        for i in range(1, min(faces, target) + 1):
-            count += self.helper(idx + 1, faces, target - i, turns)
+        for num in range(1, min(target, k) + 1):
+            val = self.numRollsToTarget(n - 1, k, target - num)
+            count += val % MOD
 
         return count % MOD
-
-    def numRollsToTarget(self, n: int, k: int, target: int) -> int:
-        return self.helper(0, k, target, n)
