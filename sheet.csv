@@ -176,18 +176,27 @@
 174,Recursion,Subsequences ASCII,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/27_Subsequences_ASCII.py
 175,Recursion,Iterative Subsequence,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/28_Iterative_Subsequence.py
 176,Recursion,Generate Permutation,https://leetcode.com/problems/permutations/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/29_Generate_Permutation.py
-177,Recursion,Count Permutation,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/30_Count_Permutation.py
-178,Recursion,Letter Combination of Phone Number,https://leetcode.com/problems/letter-combinations-of-a-phone-number/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/31_Letter_Combination_of_Phone_Number.py
-179,Recursion,Number of Dice Rolls With Target Sum,https://leetcode.com/problems/number-of-dice-rolls-with-target-sum, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/32_Number_of_Dice_Rolls_With_Target_Sum.py
-180,Recursion,Generate Parentheses,https://leetcode.com/problems/generate-parentheses/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/33_Generate_Parentheses.py
-181,Recursion,Generate Binary Strings,https://practice.geeksforgeeks.org/problems/generate-all-binary-strings/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/34_Generate_Binary_Strings.py
-182,Recursion,Given 2 strings return string with more distinct subsequences,https://practice.geeksforgeeks.org/problems/better-string/1, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/35_Given_2_strings_return_string_with_more_distinct_subsequences.py
-183,Recursion,Count all Subsequences with Sum K,https://practice.geeksforgeeks.org/problems/perfect-sum-problem5633/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/36_Count_all_Subsequences_with_Sum_K.py
-184,Recursion,Check If a Subset exists with given sum k,https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/37_Check_If_a Subset_exists_with_given_sum_k.py
-185,Recursion,Combination Sum,https://leetcode.com/problems/combination-sum/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/38_Combination_Sum.py
-186,Recursion,Combination Sum II,https://leetcode.com/problems/combination-sum-ii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/39_Combination_Sum_II.py
-187,Stack,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py
-188,Stack,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py
-189,Stack,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py
-190,Stack,Circular Queue,https://www.codingninjas.com/studio/problems/circular-queue_1170058, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/4_Circular_Queue.py
-191,Stack,Dynamic Circular Queue,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py
+177,Recursion,Generate Permutation optimized,https://leetcode.com/problems/permutations/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/30_Generate_Permutation_optimized.py
+178,Recursion,Count Permutations,NA, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/31_Count_Permutations.py
+179,Recursion,Generate Combinations,NA, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/32_Generate_Combinations.py
+180,Recursion,Combinations,https://leetcode.com/problems/combinations/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/33_Combinations.py
+181,Recursion,Combination Sum I,https://leetcode.com/problems/combination-sum/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/34_Combination_Sum_I.py
+182,Recursion,Combination Sum II,https://leetcode.com/problems/combination-sum-ii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/35_Combination_Sum_II.py
+183,Recursion,Combination Sum III,https://leetcode.com/problems/combination-sum-iii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/36_Combination_Sum_III.py
+184,Recursion,Combination Sum IV,https://leetcode.com/problems/combination-sum-iv/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/37_Combination_Sum_IV.py
+185,Recursion,Subset Sum I,https://practice.geeksforgeeks.org/problems/subset-sums2234/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/38_Subset_Sum_I.py
+186,Recursion,Subsets II,https://leetcode.com/problems/subsets-ii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/39_Subsets_II.py
+187,Recursion,Letter Combination of Phone Number,https://leetcode.com/problems/letter-combinations-of-a-phone-number/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/40_Letter_Combination_of_Phone_Number.py
+188,Recursion,Number of Dice Rolls With Target Sum,https://leetcode.com/problems/number-of-dice-rolls-with-target-sum, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/41_Number_of_Dice_Rolls_With_Target_Sum.py
+189,Recursion,Given 2 strings return string with more distinct subsequences,https://practice.geeksforgeeks.org/problems/better-string/1, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/42_Given_2_strings_return_string_with_more_distinct_subsequences.py
+190,Recursion,Count and say,https://leetcode.com/problems/count-and-say/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/43_Count_and_say.py
+191,Recursion,Kth Symbol in Grammar,https://leetcode.com/problems/k-th-symbol-in-grammar/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/44_Kth_Symbol_in_Grammar.py
+192,Recursion,Generate Parentheses,https://leetcode.com/problems/generate-parentheses/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/45_Generate_Parentheses.py
+193,Recursion,Generate Binary Strings,https://practice.geeksforgeeks.org/problems/generate-all-binary-strings/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/46_Generate_Binary_Strings.py
+194,Recursion,Count all Subsequences with Sum K,https://practice.geeksforgeeks.org/problems/perfect-sum-problem5633/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/47_Count_all_Subsequences_with_Sum_K.py
+195,Recursion,Check If a Subset exists with given sum k,https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/48_Check_If_a Subset_exists_with_given_sum_k.py
+196,Stack,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py
+197,Stack,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py
+198,Stack,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py
+199,Stack,Circular Queue,https://www.codingninjas.com/studio/problems/circular-queue_1170058, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/4_Circular_Queue.py
+200,Stack,Dynamic Circular Queue,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py
