@@ -1575,6 +1575,102 @@
             "https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/48_Check_If_a Subset_exists_with_given_sum_k.py"
+        ],
+        [
+            49,
+            "Recursion",
+            "Sort array using recursion",
+            "NA",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/49_Sort_array_using_recursion.py"
+        ],
+        [
+            50,
+            "Recursion",
+            "Delete Middle Element of Stack using recursion",
+            "NA",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/50_Delete_Middle_Element_of_Stack_using_recursion.py"
+        ],
+        [
+            51,
+            "Recursion",
+            "Reverse a  Stack using recursion",
+            "NA",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/51_Reverse_a _Stack_using_recursion.py"
+        ],
+        [
+            52,
+            "Recursion",
+            "Tower of Hanoi",
+            "https://www.geeksforgeeks.org/problems/tower-of-hanoi-1587115621/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/52_Tower_of_Hanoi.py"
+        ],
+        [
+            53,
+            "Recursion",
+            "Permutation with spaces",
+            "https://practice.geeksforgeeks.org/problems/permutation-with-spaces3627/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/53_Permutation_with_spaces.py"
+        ],
+        [
+            54,
+            "Recursion",
+            "Permutation with case change",
+            "NA",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/54_Permutation_with_case_change.py"
+        ],
+        [
+            55,
+            "Recursion",
+            "Letter case Permutation",
+            "https://leetcode.com/problems/letter-case-permutation/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/55_Letter_case_Permutation.py"
+        ],
+        [
+            56,
+            "Recursion",
+            "Print N bit binary with more ones than 0",
+            "https://practice.geeksforgeeks.org/problems/print-n-bit-binary-numbers-having-more-1s-than-0s0252/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/56_Print_N_bit_binary_with_more_ones_than_0.py"
+        ],
+        [
+            58,
+            "Recursion",
+            "Count Paths to reach the end in a maze",
+            "https://leetcode.com/problems/unique-paths/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/58_Count_Paths_to_reach_the_end_in_a_maze.py"
+        ],
+        [
+            59,
+            "Recursion",
+            "Print Paths to reach the end in a maze",
+            "NA",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/59_Print_Paths_to_reach_the_end_in_a_maze.py"
+        ],
+        [
+            60,
+            "Recursion",
+            "Maze with Obstacles",
+            "https://leetcode.com/problems/unique-paths-ii/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/60_Maze_with_Obstacles.py"
+        ],
+        [
+            61,
+            "Recursion",
+            "Rat in a Maze include all path to reach the end",
+            "https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/61_Rat_in_a_Maze_include_all_path_to_reach_the_end.py"
         ]
     ],
     "Stack": [
