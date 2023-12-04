@@ -1641,6 +1641,14 @@
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/56_Print_N_bit_binary_with_more_ones_than_0.py"
         ],
         [
+            57,
+            "Recursion",
+            "Josephus Problem",
+            "https://leetcode.com/problems/find-the-winner-of-the-circular-game/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/57_Josephus_Problem.py"
+        ],
+        [
             58,
             "Recursion",
             "Count Paths to reach the end in a maze",
@@ -1671,6 +1679,70 @@
             "https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/61_Rat_in_a_Maze_include_all_path_to_reach_the_end.py"
+        ],
+        [
+            62,
+            "Recursion",
+            "N QUEEN",
+            "https://leetcode.com/problems/n-queens/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/62_N_QUEEN.py"
+        ],
+        [
+            63,
+            "Recursion",
+            "N Knights",
+            "https://practice.geeksforgeeks.org/problems/save-knights2718/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/63_N_Knights.py"
+        ],
+        [
+            64,
+            "Recursion",
+            "Palindrome Partitioning",
+            "https://leetcode.com/problems/palindrome-partitioning/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/64_Palindrome_Partitioning.py"
+        ],
+        [
+            65,
+            "Recursion",
+            "Word Search",
+            "https://leetcode.com/problems/word-search/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/65_Word_Search.py"
+        ],
+        [
+            66,
+            "Recursion",
+            "Word Break",
+            "https://leetcode.com/problems/word-break/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/66_Word_Break.py"
+        ],
+        [
+            67,
+            "Recursion",
+            "M Coloring Problem",
+            "https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/67_M_Coloring_Problem.py"
+        ],
+        [
+            68,
+            "Recursion",
+            "Sudoku Solver",
+            "https://leetcode.com/problems/sudoku-solver/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/68_Sudoku_Solver.py"
+        ],
+        [
+            69,
+            "Recursion",
+            "Expresion Add Operators",
+            "https://leetcode.com/problems/expression-add-operators/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/69_Expresion_Add_Operators.py"
         ]
     ],
     "Stack": [

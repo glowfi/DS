@@ -203,12 +203,21 @@
 201,Recursion,Permutation with case change,NA, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/54_Permutation_with_case_change.py
 202,Recursion,Letter case Permutation,https://leetcode.com/problems/letter-case-permutation/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/55_Letter_case_Permutation.py
 203,Recursion,Print N bit binary with more ones than 0,https://practice.geeksforgeeks.org/problems/print-n-bit-binary-numbers-having-more-1s-than-0s0252/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/56_Print_N_bit_binary_with_more_ones_than_0.py
-204,Recursion,Count Paths to reach the end in a maze,https://leetcode.com/problems/unique-paths/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/58_Count_Paths_to_reach_the_end_in_a_maze.py
-205,Recursion,Print Paths to reach the end in a maze,NA, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/59_Print_Paths_to_reach_the_end_in_a_maze.py
-206,Recursion,Maze with Obstacles,https://leetcode.com/problems/unique-paths-ii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/60_Maze_with_Obstacles.py
-207,Recursion,Rat in a Maze include all path to reach the end,https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/61_Rat_in_a_Maze_include_all_path_to_reach_the_end.py
-208,Stack,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py
-209,Stack,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py
-210,Stack,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py
-211,Stack,Circular Queue,https://www.codingninjas.com/studio/problems/circular-queue_1170058, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/4_Circular_Queue.py
-212,Stack,Dynamic Circular Queue,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py
+204,Recursion,Josephus Problem,https://leetcode.com/problems/find-the-winner-of-the-circular-game/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/57_Josephus_Problem.py
+205,Recursion,Count Paths to reach the end in a maze,https://leetcode.com/problems/unique-paths/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/58_Count_Paths_to_reach_the_end_in_a_maze.py
+206,Recursion,Print Paths to reach the end in a maze,NA, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/59_Print_Paths_to_reach_the_end_in_a_maze.py
+207,Recursion,Maze with Obstacles,https://leetcode.com/problems/unique-paths-ii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/60_Maze_with_Obstacles.py
+208,Recursion,Rat in a Maze include all path to reach the end,https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/61_Rat_in_a_Maze_include_all_path_to_reach_the_end.py
+209,Recursion,N QUEEN,https://leetcode.com/problems/n-queens/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/62_N_QUEEN.py
+210,Recursion,N Knights,https://practice.geeksforgeeks.org/problems/save-knights2718/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/63_N_Knights.py
+211,Recursion,Palindrome Partitioning,https://leetcode.com/problems/palindrome-partitioning/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/64_Palindrome_Partitioning.py
+212,Recursion,Word Search,https://leetcode.com/problems/word-search/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/65_Word_Search.py
+213,Recursion,Word Break,https://leetcode.com/problems/word-break/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/66_Word_Break.py
+214,Recursion,M Coloring Problem,https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/67_M_Coloring_Problem.py
+215,Recursion,Sudoku Solver,https://leetcode.com/problems/sudoku-solver/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/68_Sudoku_Solver.py
+216,Recursion,Expresion Add Operators,https://leetcode.com/problems/expression-add-operators/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/69_Expresion_Add_Operators.py
+217,Stack,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py
+218,Stack,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py
+219,Stack,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py
+220,Stack,Circular Queue,https://www.codingninjas.com/studio/problems/circular-queue_1170058, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/4_Circular_Queue.py
+221,Stack,Dynamic Circular Queue,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py
