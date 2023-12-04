@@ -3,6 +3,7 @@
 import glob
 import os
 import json
+from numpy import prod
 import pandas as pd
 
 # Create Sheet
@@ -83,7 +84,7 @@ with open("data.json", "w") as outfile:
 
 # Dump Readme
 df = pd.read_csv("sheet.csv")
-markdown_table = df.to_markdown()
+markdown_table = df.to_markdown(index=False)
 title = "A collection of data-structures and algorithms"
 img = "\n![LOGO](./logo.jpg)\n"
 siteLink = "\n### Hosted Site : https://glowfi.github.io/DS/"
