@@ -86,5 +86,7 @@ df = pd.read_csv("sheet.csv")
 markdown_table = df.to_markdown()
 title = "A collection of data-structures and algorithms"
 img = "\n![LOGO](./logo.jpg)\n"
+siteLink = "\n### Hosted Site : https://glowfi.github.io/DS/"
+subHeading = "\n### Questions\n"
 with open("README.md", "w") as rf:
-    rf.write(f"# DS\n\n> {title}\n{img}\n{markdown_table}")
+    rf.write(f"# DS\n\n> {title}\n{img}{siteLink}\n{subHeading}\n{markdown_table}")
