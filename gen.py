@@ -84,6 +84,7 @@ with open("data.json", "w") as outfile:
 # Dump Readme
 df = pd.read_csv("sheet.csv")
 markdown_table = df.to_markdown()
+title = "A collection of data-structures and algorithms"
 img = "\n![LOGO](./logo.jpg)\n"
 with open("README.md", "w") as rf:
-    rf.write(f"# DS\n\n> A repo of solved DS Question{img}\n\n{markdown_table}")
+    rf.write(f"# DS\n\n> {title}\n{img}\n{markdown_table}")
