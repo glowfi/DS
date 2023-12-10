@@ -1786,5 +1786,255 @@
             " Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py"
         ]
+    ],
+    "Trees": [
+        [
+            1,
+            "Trees",
+            "Preorder",
+            "https://practice.geeksforgeeks.org/problems/preorder-traversal/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/1_Preorder.py"
+        ],
+        [
+            2,
+            "Trees",
+            "Inorder",
+            "https://practice.geeksforgeeks.org/problems/inorder-traversal/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/2_Inorder.py"
+        ],
+        [
+            3,
+            "Trees",
+            "Post Order",
+            "https://www.geeksforgeeks.org/problems/postorder-traversal/1",
+            " easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/3_Post_Order.py"
+        ],
+        [
+            4,
+            "Trees",
+            "All traversal in one pass",
+            "NA",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/4_All_traversal_in_one_pass.py"
+        ],
+        [
+            5,
+            "Trees",
+            "Max Depth in Binary Tree",
+            "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/5_Max_Depth_in_Binary_Tree.py"
+        ],
+        [
+            6,
+            "Trees",
+            "Check 2 nodes siblings or not",
+            "NA",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/6_Check_2_nodes_siblings_or_not.py"
+        ],
+        [
+            7,
+            "Trees",
+            "Check 2 nodes cousins or not",
+            "https://practice.geeksforgeeks.org/problems/check-if-two-nodes-are-cousins/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/7_Check_2_nodes_cousins_or_not.py"
+        ],
+        [
+            8,
+            "Trees",
+            "Same tree",
+            "https://leetcode.com/problems/same-tree/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/8_Same_tree.py"
+        ],
+        [
+            9,
+            "Trees",
+            "Symmetric Tree",
+            "https://leetcode.com/problems/symmetric-tree/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/9_Symmetric_Tree.py"
+        ],
+        [
+            10,
+            "Trees",
+            "Balanced Binary Tree",
+            "https://leetcode.com/problems/balanced-binary-tree/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/10_Balanced_Binary_Tree.py"
+        ],
+        [
+            11,
+            "Trees",
+            "Path Sum",
+            "https://leetcode.com/problems/path-sum",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/11_Path_Sum.py"
+        ],
+        [
+            12,
+            "Trees",
+            "Sum Root to Leaf",
+            "https://leetcode.com/problems/sum-root-to-leaf-numbers/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/12_Sum_Root_to_Leaf.py"
+        ],
+        [
+            13,
+            "Trees",
+            "Diameter of Binary Tree",
+            "https://leetcode.com/problems/diameter-of-binary-tree/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/13_Diameter_of_Binary_Tree.py"
+        ],
+        [
+            14,
+            "Trees",
+            "Binary Tree max path sum",
+            "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/14_Binary_Tree_max_path_sum.py"
+        ],
+        [
+            15,
+            "Trees",
+            "Print root to any node path",
+            "NA",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/15_Print_root_to_any_node_path.py"
+        ],
+        [
+            16,
+            "Trees",
+            "Print root to leaf all Paths",
+            "https://www.geeksforgeeks.org/problems/root-to-leaf-paths/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/16_Print_root_to_leaf_all_Paths.py"
+        ],
+        [
+            17,
+            "Trees",
+            "Path Exists from root to leaf",
+            "NA",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/17_Path_Exists_from_root_to_leaf.py"
+        ],
+        [
+            18,
+            "Trees",
+            "Print All Paths with required Sum",
+            "NA",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/18_Print_All_Paths_with_required_Sum.py"
+        ],
+        [
+            19,
+            "Trees",
+            "Binary Tree Level Order Traversal",
+            "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/19_Binary_Tree_Level_Order_Traversal.py"
+        ],
+        [
+            20,
+            "Trees",
+            "Binary Tree Level Order Traversal II",
+            "https://leetcode.com/problems/binary-tree-level-order-traversal-ii/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/20_Binary_Tree_Level_Order_Traversal_II.py"
+        ],
+        [
+            21,
+            "Trees",
+            "Average of levels in a Binary Tree",
+            "https://leetcode.com/problems/average-of-levels-in-binary-tree/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/21_Average_of_levels_in_a_Binary_Tree.py"
+        ],
+        [
+            22,
+            "Trees",
+            "Level Order Succesor of node",
+            "NA",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/22_Level_Order_Succesor_of_node.py"
+        ],
+        [
+            23,
+            "Trees",
+            "Level Order Predecessor of node",
+            "NA",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/23_Level_Order_Predecessor_of_node.py"
+        ],
+        [
+            24,
+            "Trees",
+            "Zig Zag Traversal",
+            "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/24_Zig_Zag_Traversal.py"
+        ],
+        [
+            25,
+            "Trees",
+            "Populating Next Right Pointers in Each Node",
+            "https://leetcode.com/problems/populating-next-right-pointers-in-each-node/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/25_Populating_Next_Right_Pointers_in_Each_Node.py"
+        ],
+        [
+            26,
+            "Trees",
+            "Boundary Traversal of a Binary Tree",
+            "https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/26_Boundary_Traversal_of_a_Binary_Tree.py"
+        ],
+        [
+            27,
+            "Trees",
+            "Vertical Order Traversal of a Binary Tree",
+            "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/27_Vertical_Order_Traversal_of_a_Binary_Tree.py"
+        ],
+        [
+            28,
+            "Trees",
+            "Top View of a Binary Tree",
+            "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/28_Top_View_of_a_Binary_Tree.py"
+        ],
+        [
+            29,
+            "Trees",
+            "Bottom View of a Binary Tree",
+            "https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/29_Bottom_View_of_a_Binary_Tree.py"
+        ],
+        [
+            30,
+            "Trees",
+            "Right View of a Binary Tree",
+            "https://leetcode.com/problems/binary-tree-right-side-view/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/30_Right_View_of_a_Binary_Tree.py"
+        ],
+        [
+            31,
+            "Trees",
+            "Left View of a Binary Tree",
+            "https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/31_Left_View_of_a_Binary_Tree.py"
+        ]
     ]
 }
