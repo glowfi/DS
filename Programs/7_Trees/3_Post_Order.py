@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/postorder-traversal/1 , easy
+# https://www.geeksforgeeks.org/problems/postorder-traversal/1 , Easy
 
 # Optimal [Recursive]
 # T.C. - O(n)
