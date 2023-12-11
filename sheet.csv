@@ -252,3 +252,12 @@
 250,Trees,Bottom View of a Binary Tree,https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/29_Bottom_View_of_a_Binary_Tree.py
 251,Trees,Right View of a Binary Tree,https://leetcode.com/problems/binary-tree-right-side-view/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/30_Right_View_of_a_Binary_Tree.py
 252,Trees,Left View of a Binary Tree,https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/31_Left_View_of_a_Binary_Tree.py
+253,Trees,Count good nodes in Binary Tree,https://leetcode.com/problems/count-good-nodes-in-binary-tree/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/32_Count_good_nodes_in_Binary_Tree.py
+254,Trees,Search in BST,https://leetcode.com/problems/search-in-a-binary-search-tree/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/33_Search_in_BST.py
+255,Trees,Ceil in BST,https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/34_Ceil_in_BST.py
+256,Trees,Floor in BST,https://practice.geeksforgeeks.org/problems/floor-in-bst/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/35_Floor_in_BST.py
+257,Trees,Insert a given node in A BST,https://leetcode.com/problems/insert-into-a-binary-search-tree/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/36_Insert_a_given_node_in_A_BST.py
+258,Trees,Delete a given node in A BST, https://leetcode.com/problems/delete-node-in-a-bst/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/37_Delete_a_given_node_in_A_BST.py
+259,Trees,Kth Smallest in BST,https://leetcode.com/problems/kth-smallest-element-in-a-bst/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/38_Kth_Smallest_in_BST.py
+260,Trees,Kth Largest in BST,https://www.geeksforgeeks.org/problems/kth-largest-element-in-bst/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/39_Kth_Largest_in_BST.py
+261,Trees,Validate BST,https://leetcode.com/problems/validate-binary-search-tree/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/40_Validate_BST.py
