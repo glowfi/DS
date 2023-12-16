@@ -2047,66 +2047,258 @@
         [
             33,
             "Trees",
-            "Search in BST",
-            "https://leetcode.com/problems/search-in-a-binary-search-tree/",
-            " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/33_Search_in_BST.py"
+            "LCA I",
+            "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/33_LCA_I.py"
         ],
         [
             34,
             "Trees",
-            "Ceil in BST",
-            "https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1",
+            "LCA II",
+            "https://practice.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/34_Ceil_in_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/34_LCA_II.py"
         ],
         [
             35,
             "Trees",
-            "Floor in BST",
-            "https://practice.geeksforgeeks.org/problems/floor-in-bst/1",
+            "LCA III",
+            "NA",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/35_Floor_in_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/35_LCA_III.py"
         ],
         [
             36,
             "Trees",
-            "Insert a given node in A BST",
-            "https://leetcode.com/problems/insert-into-a-binary-search-tree/",
+            "LCA IV",
+            "NA",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/36_Insert_a_given_node_in_A_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/36_LCA_IV.py"
         ],
         [
             37,
             "Trees",
-            "Delete a given node in A BST",
-            " https://leetcode.com/problems/delete-node-in-a-bst/",
+            "LCA of Deepes Leaves",
+            "https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/37_Delete_a_given_node_in_A_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/37_LCA_of_Deepes_Leaves.py"
         ],
         [
             38,
             "Trees",
-            "Kth Smallest in BST",
-            "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+            "Max width of a Binary Tree",
+            "https://leetcode.com/problems/maximum-width-of-binary-tree/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/38_Kth_Smallest_in_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/38_Max_width_of_a_Binary_Tree.py"
         ],
         [
             39,
             "Trees",
-            "Kth Largest in BST",
-            "https://www.geeksforgeeks.org/problems/kth-largest-element-in-bst/1",
+            "All nodes at k distance",
+            "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/39_Kth_Largest_in_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/39_All_nodes_at_k_distance.py"
         ],
         [
             40,
             "Trees",
+            "Time Taken to burn tree from any nodes",
+            "https://practice.geeksforgeeks.org/problems/burning-tree/1",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/40_Time_Taken_to_burn_tree_from_any_nodes.py"
+        ],
+        [
+            41,
+            "Trees",
+            "Construct Tree from preorder inorder",
+            "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/41_Construct_Tree_from_preorder_inorder.py"
+        ],
+        [
+            42,
+            "Trees",
+            "Construct Tree from postorder inorder",
+            "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/42_Construct_Tree_from_postorder_inorder.py"
+        ],
+        [
+            43,
+            "Trees",
+            "Serialize Deserialize Tree",
+            "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/43_Serialize_Deserialize_Tree.py"
+        ],
+        [
+            44,
+            "Trees",
+            "Morris Traversal Inorder",
+            "https://leetcode.com/problems/binary-tree-inorder-traversal/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/44_Morris_Traversal_Inorder.py"
+        ],
+        [
+            45,
+            "Trees",
+            "Morris Traversal Preorder",
+            "https://leetcode.com/problems/binary-tree-preorder-traversal/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/45_Morris_Traversal_Preorder.py"
+        ],
+        [
+            46,
+            "Trees",
+            "Flatten Binary Tree to Linked List",
+            "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/46_Flatten_Binary_Tree_to_Linked_List.py"
+        ],
+        [
+            47,
+            "Trees",
+            "Subtree of another tree",
+            "https://leetcode.com/problems/subtree-of-another-tree/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/47_Subtree_of_another_tree.py"
+        ],
+        [
+            48,
+            "Trees",
+            "Invert Binary Tree",
+            "https://leetcode.com/problems/invert-binary-tree/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/48_Invert_Binary_Tree.py"
+        ],
+        [
+            49,
+            "Trees",
+            "Search in BST",
+            "https://leetcode.com/problems/search-in-a-binary-search-tree/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/49_Search_in_BST.py"
+        ],
+        [
+            50,
+            "Trees",
+            "Ceil in BST",
+            "https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/50_Ceil_in_BST.py"
+        ],
+        [
+            51,
+            "Trees",
+            "Floor in BST",
+            "https://practice.geeksforgeeks.org/problems/floor-in-bst/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/51_Floor_in_BST.py"
+        ],
+        [
+            52,
+            "Trees",
+            "Insert a given node in A BST",
+            "https://leetcode.com/problems/insert-into-a-binary-search-tree/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/52_Insert_a_given_node_in_A_BST.py"
+        ],
+        [
+            53,
+            "Trees",
+            "Delete a given node in A BST",
+            " https://leetcode.com/problems/delete-node-in-a-bst/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/53_Delete_a_given_node_in_A_BST.py"
+        ],
+        [
+            54,
+            "Trees",
+            "Kth Smallest in BST",
+            "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/54_Kth_Smallest_in_BST.py"
+        ],
+        [
+            55,
+            "Trees",
+            "Kth Largest in BST",
+            "https://www.geeksforgeeks.org/problems/kth-largest-element-in-bst/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/55_Kth_Largest_in_BST.py"
+        ],
+        [
+            56,
+            "Trees",
             "Validate BST",
             "https://leetcode.com/problems/validate-binary-search-tree/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/40_Validate_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/56_Validate_BST.py"
+        ],
+        [
+            57,
+            "Trees",
+            "LCA in BST",
+            "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/57_LCA_in_BST.py"
+        ],
+        [
+            58,
+            "Trees",
+            "Construct BST from preorder",
+            "https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/58_Construct_BST_from_preorder.py"
+        ],
+        [
+            59,
+            "Trees",
+            "Inorder Successor BST",
+            "https://www.geeksforgeeks.org/problems/inorder-successor-in-bst/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/59_Inorder_Successor_BST.py"
+        ],
+        [
+            60,
+            "Trees",
+            "Inorder Predecessor BST",
+            "NA",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/60_Inorder_Predecessor_BST.py"
+        ],
+        [
+            61,
+            "Trees",
+            "BST Iterator",
+            "https://leetcode.com/problems/binary-search-tree-iterator/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/61_BST_Iterator.py"
+        ],
+        [
+            62,
+            "Trees",
+            "Two Sum IV BST",
+            "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/62_Two_Sum_IV_BST.py"
+        ],
+        [
+            63,
+            "Trees",
+            "Recover BST with 2 nodes swapped",
+            "https://leetcode.com/problems/recover-binary-search-tree/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/63_Recover_BST_with_2_nodes_swapped.py"
+        ],
+        [
+            64,
+            "Trees",
+            "Largest BST in Binary Tree",
+            "https://www.geeksforgeeks.org/problems/largest-bst/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/64_Largest_BST_in_Binary_Tree.py"
         ]
     ]
 }
