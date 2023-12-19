@@ -285,3 +285,20 @@
 283,Trees,Two Sum IV BST,https://leetcode.com/problems/two-sum-iv-input-is-a-bst/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/62_Two_Sum_IV_BST.py
 284,Trees,Recover BST with 2 nodes swapped,https://leetcode.com/problems/recover-binary-search-tree/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/63_Recover_BST_with_2_nodes_swapped.py
 285,Trees,Largest BST in Binary Tree,https://www.geeksforgeeks.org/problems/largest-bst/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/64_Largest_BST_in_Binary_Tree.py
+286,Trees,Linked List in Binary Tree,https://leetcode.com/problems/linked-list-in-binary-tree/description/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/65_Linked_List_in_Binary_Tree.py
+287,Graphs,DFS Graph,https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/1_DFS_Graph.py
+288,Graphs,BFS Graph,https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/2_BFS_Graph.py
+289,Graphs,Number of Provinces,https://leetcode.com/problems/number-of-provinces/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/3_Number_of_Provinces.py
+290,Graphs,Number of Islands,https://leetcode.com/problems/number-of-islands/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/4_Number_of_Islands.py
+291,Graphs,Flood Fill,https://leetcode.com/problems/flood-fill/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/5_Flood_Fill.py
+292,Graphs,Rotten Oranges,https://leetcode.com/problems/rotting-oranges/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/6_Rotten_Oranges.py
+293,Graphs,Detect Cycle in Undirected Graph BFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/7_Detect_Cycle_in_Undirected_Graph_BFS.py
+294,Graphs,Detect Cycle in Udirected Graph DFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/8_Detect_Cycle_in_Udirected_Graph.py_DFS.py
+295,Graphs,Distance of nearest cell having 1,https://leetcode.com/problems/01-matrix/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/9_Distance_of_nearest_cell_having_1.py
+296,Graphs,Surrounded Regions Replace Os with X,https://leetcode.com/problems/surrounded-regions/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/10_Surrounded_Regions_Replace_Os_with_X.py
+297,Graphs,Number of Enclaves,https://leetcode.com/problems/number-of-enclaves/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/11_Number_of_Enclaves.py
+298,Graphs,Number of Distinct Islands,https://www.geeksforgeeks.org/problems/number-of-distinct-islands/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/12_Number_of_Distinct_Islands.py
+299,Graphs,Bipartite graph BFS,https://leetcode.com/problems/is-graph-bipartite/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/13_Bipartite_graph_BFS.py
+300,Graphs,Bipartite Graph DFS,https://leetcode.com/problems/is-graph-bipartite/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/13_Bipartite_Graph_DFS.py
+301,Graphs,Detect Cycle in directed graph,https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/14_Detect_Cycle_in_directed_graph.py
+302,Graphs,Find Eventual Safe States DFS,https://leetcode.com/problems/find-eventual-safe-states/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/15_Find_Eventual_Safe_States_DFS.py
