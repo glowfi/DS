@@ -7,27 +7,26 @@
 
 
 class Solution:
-    def dfs(self, graph, color, src_node):
-        node_color = color[src_node]
-        for currNode in graph[src_node]:
-            # Check if currNode colored
-            if color[currNode] != -1:
-                if color[currNode] == node_color:
-                    return False
+    def dfs(self, col, adj, src_node):
+        for node in adj[src_node]:
+            # If colored check colored with parent/source node
+            if col[node] != -1 and col[src_node] == col[node]:
+                return False
 
             # Else color the node
-            else:
-                color[currNode] = int(not node_color)
-                if not self.dfs(graph, color, currNode):
+            elif col[node] == -1:
+                col[node] = int(not col[src_node])
+                if not self.dfs(col, adj, node):
                     return False
-
         return True
 
     def isBipartite(self, graph: List[List[int]]) -> bool:
-        color = [-1 for i in range(len(graph))]
+        col = [-1 for i in range(len(graph))]
 
-        for i in range(len(graph)):
-            if color[i] == -1:
-                if not self.dfs(graph, color, i):
+        for node in range(len(graph)):
+            if col[node] == -1:
+                col[node] = 0
+                if not self.dfs(col, graph, node):
                     return False
+
         return True

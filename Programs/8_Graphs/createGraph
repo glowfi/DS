@@ -3,49 +3,56 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# # Input Data
-# txt = """
-# 6 5
-# 5 3
-# 3 1
-# 1 2
-# 2 4
-# 4 0
-# """
-
-# # Sanitize Data
-# data = txt.split("\n")
-# data.pop(0)
-# data.pop(-1)
-
-# # Find Vertex and create edgelist
-# vertex = len(data)
-# edge_list = [[int(j) for j in i.strip("\n").split(" ")] for i in data]
-
+### Undirected
 
 # Input Data
-graph = [[1, 2], [2, 3], [5], [0], [5], [], []]
-
+txt = """
+1 5
+1 6
+2 0
+3 3
+4 0
+4 6
+5 3
+5 4
+6 5
+6 6
+"""
 
 # Sanitize Data
-def adj2edgeList(graph):
-    edge_list = []
-    for i in range(len(graph)):
-        node = i
-        for edge_node in graph[i]:
-            edge_list.append([node, edge_node])
-
-    return edge_list
-
+data = txt.split("\n")
+data.pop(0)
+data.pop(-1)
 
 # Find Vertex and create edgelist
-vertex = len(graph)
-edge_list = adj2edgeList(graph)
+vertex = len(data)
+edge_list = [[int(j) for j in i.strip("\n").split(" ")] for i in data]
 
+
+### Directed
+
+# # Input Data
+# graph = [[1, 2], [2, 3], [5], [0], [5], [], []]
+
+
+# # Sanitize Data
+# def adj2edgeList(graph):
+#     edge_list = []
+#     for i in range(len(graph)):
+#         node = i
+#         for edge_node in graph[i]:
+#             edge_list.append([node, edge_node])
+
+#     return edge_list
+
+
+# # Find Vertex and create edgelist
+# vertex = len(graph)
+# edge_list = adj2edgeList(graph)
 
 # Plot Graph
-# G = nx.Graph()
-G = nx.DiGraph()
+G = nx.Graph()
+# G = nx.DiGraph()
 
 G.add_edges_from(edge_list)
 pos = nx.spring_layout(G)

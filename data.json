@@ -2409,18 +2409,18 @@
         [
             13,
             "Graphs",
-            "Bipartite graph BFS",
-            "https://leetcode.com/problems/is-graph-bipartite/",
-            " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/13_Bipartite_graph_BFS.py"
-        ],
-        [
-            13,
-            "Graphs",
             "Bipartite Graph DFS",
             "https://leetcode.com/problems/is-graph-bipartite/",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/13_Bipartite_Graph_DFS.py"
+        ],
+        [
+            13,
+            "Graphs",
+            "Bipartite graph BFS",
+            "https://leetcode.com/problems/is-graph-bipartite/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/13_Bipartite_graph_BFS.py"
         ],
         [
             14,
@@ -2437,6 +2437,70 @@
             "https://leetcode.com/problems/find-eventual-safe-states/",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/15_Find_Eventual_Safe_States_DFS.py"
+        ],
+        [
+            16,
+            "Graphs",
+            "Topological Sort DFS",
+            "https://practice.geeksforgeeks.org/problems/topological-sort/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/16_Topological_Sort_DFS.py"
+        ],
+        [
+            17,
+            "Graphs",
+            "Topological Sort BFS Kahns Algorithm",
+            "https://practice.geeksforgeeks.org/problems/topological-sort/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/17_Topological_Sort_BFS_Kahns_Algorithm.py"
+        ],
+        [
+            18,
+            "Graphs",
+            "Detect Cycle in Directed Graph Topo Sort",
+            "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/18_Detect_Cycle_in_Directed_Graph_Topo_Sort.py"
+        ],
+        [
+            19,
+            "Graphs",
+            "Course Schedule I",
+            "https://leetcode.com/problems/course-schedule/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/19_Course_Schedule_I.py"
+        ],
+        [
+            20,
+            "Graphs",
+            "Course Schedule II",
+            "https://leetcode.com/problems/course-schedule/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/20_Course_Schedule_II.py"
+        ],
+        [
+            21,
+            "Graphs",
+            "Alien Dictionary",
+            "https://www.geeksforgeeks.org/problems/alien-dictionary/1",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/21_Alien_Dictionary.py"
+        ],
+        [
+            22,
+            "Graphs",
+            "Shortest Path in Directed Acyclic Graph",
+            "https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/22_Shortest_Path_in_Directed_Acyclic_Graph.py"
+        ],
+        [
+            23,
+            "Graphs",
+            "Shortest Path in Undirected Graph unit distance",
+            "https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/23_Shortest_Path_in_Undirected_Graph_unit_distance.py"
         ]
     ]
 }
