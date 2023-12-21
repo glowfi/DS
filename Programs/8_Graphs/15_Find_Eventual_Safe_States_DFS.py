@@ -41,27 +41,34 @@ class Solution:
     def dfs(self, seen, path, safe, adj, src_node):
         seen[src_node] = 1
         path[src_node] = 1
-        for currNode in adj[src_node]:
-            if path[currNode] and seen[currNode]:
+
+        for node in adj[src_node]:
+            if path[node] and seen[node]:
+                safe[node] = 0
                 return True
-            elif not seen[currNode]:
-                if self.dfs(seen, path, safe, adj, currNode):
+
+            elif not seen[node]:
+                if self.dfs(seen, path, safe, adj, node):
                     return True
 
-        safe[src_node] = 1
         path[src_node] = 0
+        safe[src_node] = 1
+
         return False
 
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
-        V = len(graph)
-        safe = [0 for _ in range(V)]
-        path = [0 for _ in range(V)]
-        seen = [0 for _ in range(V)]
+        vertex = len(graph)
+
+        seen, path, safe = (
+            [0 for i in range(vertex)],
+            [0 for i in range(vertex)],
+            [0 for i in range(vertex)],
+        )
         ans = []
 
-        for i in range(V):
-            if not seen[i]:
-                self.dfs(seen, path, safe, graph, i)
+        for node in range(vertex):
+            if not seen[node]:
+                self.dfs(seen, path, safe, graph, node)
 
         for i in range(len(safe)):
             if safe[i] == 1:
