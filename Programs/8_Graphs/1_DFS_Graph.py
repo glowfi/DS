@@ -76,9 +76,6 @@ class Solution:
 # S.C  - O(n)
 
 
-# User function Template for python3
-
-
 class Solution:
     def dfs(self, adj, source_node, ans, seen):
         stk = [source_node]
