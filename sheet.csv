@@ -310,3 +310,5 @@
 308,Graphs,Alien Dictionary,https://www.geeksforgeeks.org/problems/alien-dictionary/1, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/21_Alien_Dictionary.py
 309,Graphs,Shortest Path in Directed Acyclic Graph,https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/22_Shortest_Path_in_Directed_Acyclic_Graph.py
 310,Graphs,Shortest Path in Undirected Graph unit distance,https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/23_Shortest_Path_in_Undirected_Graph_unit_distance.py
+311,Graphs,Word Ladder I,https://leetcode.com/problems/word-ladder/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/24_Word_Ladder_I.py
+312,Graphs,Word Ladder II,https://leetcode.com/problems/word-ladder-ii/description/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/25_Word_Ladder_II.py
