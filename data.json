@@ -2517,6 +2517,182 @@
             "https://leetcode.com/problems/word-ladder-ii/description/",
             " Hard",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/25_Word_Ladder_II.py"
+        ],
+        [
+            26,
+            "Graphs",
+            "Dijkstras Algorithm Min Heap Priority Queue",
+            "https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/26_Dijkstras_Algorithm_Min_Heap_Priority_Queue.py"
+        ],
+        [
+            27,
+            "Graphs",
+            "Dijkstras Algorithm Sets",
+            "https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/27_Dijkstras_Algorithm_Sets.py"
+        ],
+        [
+            28,
+            "Graphs",
+            "Print Shortest Path",
+            "NA",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/28_Print_Shortest_Path.py"
+        ],
+        [
+            29,
+            "Graphs",
+            "Shortest Path in Binary Matrix",
+            "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/29_Shortest_Path_in_Binary_Matrix.py"
+        ],
+        [
+            30,
+            "Graphs",
+            "Path with min effort",
+            "https://leetcode.com/problems/path-with-minimum-effort/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/30_Path_with_min_effort.py"
+        ],
+        [
+            31,
+            "Graphs",
+            "Cheapest Flights with K Stops",
+            "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/31_Cheapest_Flights_with_K_Stops.py"
+        ],
+        [
+            32,
+            "Graphs",
+            "Minimum Multiplication to reach end",
+            "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/32_Minimum_Multiplication_to_reach_end.py"
+        ],
+        [
+            33,
+            "Graphs",
+            "Number of ways to Arrive at Destination",
+            "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/33_Number_of_ways_to_Arrive_at_Destination.py"
+        ],
+        [
+            34,
+            "Graphs",
+            "Bellman Ford Algorithm",
+            "https://practice.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/34_Bellman_Ford_Algorithm.py"
+        ],
+        [
+            35,
+            "Graphs",
+            "Floyd Warshall Algorithm",
+            "https://practice.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/35_Floyd_Warshall_Algorithm.py"
+        ],
+        [
+            36,
+            "Graphs",
+            "Cities with Smallest Number of Neighbours at a threshold distance",
+            "https://practice.geeksforgeeks.org/problems/city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/36_Cities_with_Smallest_Number_of_Neighbours_at_a_threshold_distance.py"
+        ],
+        [
+            37,
+            "Graphs",
+            "Prims MST",
+            "https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/37_Prims_MST.py"
+        ],
+        [
+            38,
+            "Graphs",
+            "Disjoint Set Union By Rank Union By Size Path Compression",
+            "NA",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/38_Disjoint_Set_Union_By_Rank_Union_By_Size_Path_Compression.py"
+        ],
+        [
+            39,
+            "Graphs",
+            "Kruskal MST",
+            "https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/39_Kruskal_MST.py"
+        ],
+        [
+            40,
+            "Graphs",
+            "Number of Provinces",
+            "https://practice.geeksforgeeks.org/problems/number-of-provinces/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/40_Number_of_Provinces.py"
+        ],
+        [
+            41,
+            "Graphs",
+            "Accounts Merge",
+            "https://leetcode.com/problems/accounts-merge/description/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/41_Accounts_Merge.py"
+        ],
+        [
+            42,
+            "Graphs",
+            "Number of Islands II",
+            "https://practice.geeksforgeeks.org/problems/number-of-islands/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/42_Number_of_Islands_II.py"
+        ],
+        [
+            43,
+            "Graphs",
+            "Making a Large Island",
+            "https://leetcode.com/problems/making-a-large-island/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/43_Making_a_Large_Island.py"
+        ],
+        [
+            44,
+            "Graphs",
+            "Most Stones Removed with same row or column",
+            "https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/44_Most_Stones_Removed_with_same_row_or_column.py"
+        ],
+        [
+            45,
+            "Graphs",
+            "Strongly Connected Components Kosarajus Algorithm",
+            "https://practice.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/45_Strongly_Connected_Components_Kosarajus_Algorithm.py"
+        ],
+        [
+            50,
+            "Graphs",
+            "Bridges in Graph",
+            "https://leetcode.com/problems/critical-connections-in-a-network/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/50_Bridges_in_Graph.py"
+        ],
+        [
+            51,
+            "Graphs",
+            "Articulation Point in Graph",
+            "https://practice.geeksforgeeks.org/problems/articulation-point-1/1",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/51_Articulation_Point_in_Graph.py"
         ]
     ]
 }
