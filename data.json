@@ -1745,46 +1745,46 @@
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/69_Expresion_Add_Operators.py"
         ]
     ],
-    "Stack": [
+    "Stack&Queues": [
         [
             1,
-            "Stack",
+            "Stack&Queues",
             "Custom Stack",
             "https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/1_Custom_Stack.py"
         ],
         [
             2,
-            "Stack",
+            "Stack&Queues",
             "Dynamic Stack",
             "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/2_Dynamic_Stack.py"
         ],
         [
             3,
-            "Stack",
+            "Stack&Queues",
             "Custom Queue",
             "https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/3_Custom_Queue.py"
         ],
         [
             4,
-            "Stack",
+            "Stack&Queues",
             "Circular Queue",
             "https://www.codingninjas.com/studio/problems/circular-queue_1170058",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/4_Circular_Queue.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/4_Circular_Queue.py"
         ],
         [
             5,
-            "Stack",
+            "Stack&Queues",
             "Dynamic Circular Queue",
             "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/5_Dynamic_Circular_Queue.py"
         ]
     ],
     "Trees": [
@@ -2695,86 +2695,86 @@
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/51_Articulation_Point_in_Graph.py"
         ]
     ],
-    "Dynamic": [
+    "DynamicProgramming": [
         [
             1,
-            "Dynamic",
+            "DynamicProgramming",
             "Fibonacci",
             "https://leetcode.com/problems/fibonacci-number/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/1_Fibonacci.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/1_Fibonacci.py"
         ],
         [
             2,
-            "Dynamic",
+            "DynamicProgramming",
             "Climbing Stairs",
             "https://leetcode.com/problems/climbing-stairs/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/2_Climbing_Stairs.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/2_Climbing_Stairs.py"
         ],
         [
             3,
-            "Dynamic",
+            "DynamicProgramming",
             "Geek Jump",
             "https://www.geeksforgeeks.org/problems/geek-jump/1",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/3_Geek_Jump.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/3_Geek_Jump.py"
         ],
         [
             4,
-            "Dynamic",
+            "DynamicProgramming",
             "House Robber",
             "https://leetcode.com/problems/house-robber/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/4_House_Robber.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/4_House_Robber.py"
         ],
         [
             5,
-            "Dynamic",
+            "DynamicProgramming",
             "House Robber II",
             "https://leetcode.com/problems/house-robber-ii/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/5_House_Robber_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/5_House_Robber_II.py"
         ],
         [
             6,
-            "Dynamic",
+            "DynamicProgramming",
             "Geeks Training",
             "https://www.geeksforgeeks.org/problems/geeks-training/1",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/6_Geeks_Training.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/6_Geeks_Training.py"
         ],
         [
             7,
-            "Dynamic",
+            "DynamicProgramming",
             "Unique Paths",
             "https://leetcode.com/problems/unique-paths/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/7_Unique_Paths.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/7_Unique_Paths.py"
         ],
         [
             8,
-            "Dynamic",
+            "DynamicProgramming",
             "Unique Paths II",
             "https://leetcode.com/problems/unique-paths-ii/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/8_Unique_Paths_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/8_Unique_Paths_II.py"
         ],
         [
             9,
-            "Dynamic",
+            "DynamicProgramming",
             "Minimum Path Sum in grid",
             "https://leetcode.com/problems/minimum-path-sum/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/9_Minimum_Path_Sum_in_grid.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/9_Minimum_Path_Sum_in_grid.py"
         ],
         [
             10,
-            "Dynamic",
+            "DynamicProgramming",
             "Triangle Grid Min Path Sum",
             "https://leetcode.com/problems/triangle/",
             " Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/10_Triangle_Grid_Min_Path_Sum.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/10_Triangle_Grid_Min_Path_Sum.py"
         ]
     ]
 }

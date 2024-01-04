@@ -216,11 +216,11 @@
 214,Recursion,M Coloring Problem,https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/67_M_Coloring_Problem.py
 215,Recursion,Sudoku Solver,https://leetcode.com/problems/sudoku-solver/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/68_Sudoku_Solver.py
 216,Recursion,Expresion Add Operators,https://leetcode.com/problems/expression-add-operators/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/5_Recursion/69_Expresion_Add_Operators.py
-217,Stack,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/1_Custom_Stack.py
-218,Stack,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/2_Dynamic_Stack.py
-219,Stack,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/3_Custom_Queue.py
-220,Stack,Circular Queue,https://www.codingninjas.com/studio/problems/circular-queue_1170058, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/4_Circular_Queue.py
-221,Stack,Dynamic Circular Queue,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack_n_Queues/5_Dynamic_Circular_Queue.py
+217,Stack&Queues,Custom Stack,https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/1_Custom_Stack.py
+218,Stack&Queues,Dynamic Stack,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/2_Dynamic_Stack.py
+219,Stack&Queues,Custom Queue,https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/3_Custom_Queue.py
+220,Stack&Queues,Circular Queue,https://www.codingninjas.com/studio/problems/circular-queue_1170058, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/4_Circular_Queue.py
+221,Stack&Queues,Dynamic Circular Queue,NA, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/5_Dynamic_Circular_Queue.py
 222,Trees,Preorder,https://practice.geeksforgeeks.org/problems/preorder-traversal/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/1_Preorder.py
 223,Trees,Inorder,https://practice.geeksforgeeks.org/problems/inorder-traversal/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/2_Inorder.py
 224,Trees,Post Order,https://www.geeksforgeeks.org/problems/postorder-traversal/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/3_Post_Order.py
@@ -334,13 +334,13 @@
 332,Graphs,Strongly Connected Components Kosarajus Algorithm,https://practice.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/45_Strongly_Connected_Components_Kosarajus_Algorithm.py
 333,Graphs,Bridges in Graph,https://leetcode.com/problems/critical-connections-in-a-network/, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/50_Bridges_in_Graph.py
 334,Graphs,Articulation Point in Graph,https://practice.geeksforgeeks.org/problems/articulation-point-1/1, Hard,https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/51_Articulation_Point_in_Graph.py
-335,Dynamic,Fibonacci,https://leetcode.com/problems/fibonacci-number/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/1_Fibonacci.py
-336,Dynamic,Climbing Stairs,https://leetcode.com/problems/climbing-stairs/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/2_Climbing_Stairs.py
-337,Dynamic,Geek Jump,https://www.geeksforgeeks.org/problems/geek-jump/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/3_Geek_Jump.py
-338,Dynamic,House Robber,https://leetcode.com/problems/house-robber/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/4_House_Robber.py
-339,Dynamic,House Robber II,https://leetcode.com/problems/house-robber-ii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/5_House_Robber_II.py
-340,Dynamic,Geeks Training,https://www.geeksforgeeks.org/problems/geeks-training/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/6_Geeks_Training.py
-341,Dynamic,Unique Paths,https://leetcode.com/problems/unique-paths/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/7_Unique_Paths.py
-342,Dynamic,Unique Paths II,https://leetcode.com/problems/unique-paths-ii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/8_Unique_Paths_II.py
-343,Dynamic,Minimum Path Sum in grid,https://leetcode.com/problems/minimum-path-sum/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/9_Minimum_Path_Sum_in_grid.py
-344,Dynamic,Triangle Grid Min Path Sum,https://leetcode.com/problems/triangle/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/10_Triangle_Grid_Min_Path_Sum.py
+335,DynamicProgramming,Fibonacci,https://leetcode.com/problems/fibonacci-number/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/1_Fibonacci.py
+336,DynamicProgramming,Climbing Stairs,https://leetcode.com/problems/climbing-stairs/, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/2_Climbing_Stairs.py
+337,DynamicProgramming,Geek Jump,https://www.geeksforgeeks.org/problems/geek-jump/1, Easy,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/3_Geek_Jump.py
+338,DynamicProgramming,House Robber,https://leetcode.com/problems/house-robber/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/4_House_Robber.py
+339,DynamicProgramming,House Robber II,https://leetcode.com/problems/house-robber-ii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/5_House_Robber_II.py
+340,DynamicProgramming,Geeks Training,https://www.geeksforgeeks.org/problems/geeks-training/1, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/6_Geeks_Training.py
+341,DynamicProgramming,Unique Paths,https://leetcode.com/problems/unique-paths/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/7_Unique_Paths.py
+342,DynamicProgramming,Unique Paths II,https://leetcode.com/problems/unique-paths-ii/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/8_Unique_Paths_II.py
+343,DynamicProgramming,Minimum Path Sum in grid,https://leetcode.com/problems/minimum-path-sum/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/9_Minimum_Path_Sum_in_grid.py
+344,DynamicProgramming,Triangle Grid Min Path Sum,https://leetcode.com/problems/triangle/, Medium,https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/10_Triangle_Grid_Min_Path_Sum.py
