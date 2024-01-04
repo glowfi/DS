@@ -2694,5 +2694,87 @@
             " Hard",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/51_Articulation_Point_in_Graph.py"
         ]
+    ],
+    "Dynamic": [
+        [
+            1,
+            "Dynamic",
+            "Fibonacci",
+            "https://leetcode.com/problems/fibonacci-number/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/1_Fibonacci.py"
+        ],
+        [
+            2,
+            "Dynamic",
+            "Climbing Stairs",
+            "https://leetcode.com/problems/climbing-stairs/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/2_Climbing_Stairs.py"
+        ],
+        [
+            3,
+            "Dynamic",
+            "Geek Jump",
+            "https://www.geeksforgeeks.org/problems/geek-jump/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/3_Geek_Jump.py"
+        ],
+        [
+            4,
+            "Dynamic",
+            "House Robber",
+            "https://leetcode.com/problems/house-robber/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/4_House_Robber.py"
+        ],
+        [
+            5,
+            "Dynamic",
+            "House Robber II",
+            "https://leetcode.com/problems/house-robber-ii/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/5_House_Robber_II.py"
+        ],
+        [
+            6,
+            "Dynamic",
+            "Geeks Training",
+            "https://www.geeksforgeeks.org/problems/geeks-training/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/6_Geeks_Training.py"
+        ],
+        [
+            7,
+            "Dynamic",
+            "Unique Paths",
+            "https://leetcode.com/problems/unique-paths/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/7_Unique_Paths.py"
+        ],
+        [
+            8,
+            "Dynamic",
+            "Unique Paths II",
+            "https://leetcode.com/problems/unique-paths-ii/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/8_Unique_Paths_II.py"
+        ],
+        [
+            9,
+            "Dynamic",
+            "Minimum Path Sum in grid",
+            "https://leetcode.com/problems/minimum-path-sum/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/9_Minimum_Path_Sum_in_grid.py"
+        ],
+        [
+            10,
+            "Dynamic",
+            "Triangle Grid Min Path Sum",
+            "https://leetcode.com/problems/triangle/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Dynamic_Programming/10_Triangle_Grid_Min_Path_Sum.py"
+        ]
     ]
 }
