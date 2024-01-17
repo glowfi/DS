@@ -2775,6 +2775,62 @@
             "https://leetcode.com/problems/triangle/",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/10_Triangle_Grid_Min_Path_Sum.py"
+        ],
+        [
+            11,
+            "DynamicProgramming",
+            "Minimum Falling Path Sum",
+            "https://leetcode.com/problems/minimum-falling-path-sum/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/11_Minimum_Falling_Path_Sum.py"
+        ],
+        [
+            12,
+            "DynamicProgramming",
+            "Cherry Pickup I",
+            "https://leetcode.com/problems/cherry-pickup/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/12_Cherry_Pickup_I.py"
+        ],
+        [
+            13,
+            "DynamicProgramming",
+            "Cherry Pickup II",
+            "https://leetcode.com/problems/cherry-pickup-ii/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/13_Cherry_Pickup_II.py"
+        ],
+        [
+            15,
+            "DynamicProgramming",
+            "0 1 Knapsack",
+            "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/15_0_1_Knapsack.py"
+        ],
+        [
+            16,
+            "DynamicProgramming",
+            "Target Sum with Symbols + -",
+            "https://leetcode.com/problems/target-sum/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/16_Target_Sum_with_Symbols_+_-.py"
+        ],
+        [
+            17,
+            "DynamicProgramming",
+            "Target Sum Equals to Target",
+            "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/17_Target_Sum_Equals_to_Target.py"
+        ],
+        [
+            18,
+            "DynamicProgramming",
+            "Equal Sum Partition Problem",
+            "https://leetcode.com/problems/partition-equal-subset-sum/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/18_Equal_Sum_Partition_Problem.py"
         ]
     ]
 }
