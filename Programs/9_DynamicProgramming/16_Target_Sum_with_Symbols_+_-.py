@@ -7,19 +7,22 @@
 
 
 class Solution:
-    def solve(self, idx, sm, nums, target):
-        if idx == len(nums):
-            if sm == target:
-                return 1
-            return 0
+    def solve(self, idx, sm, nums):
+        if idx == 0:
+            c = 0
+            if sm + (nums[idx] * 1) == 0:
+                c += 1
+            if sm + (nums[idx] * -1) == 0:
+                c += 1
+            return c
 
-        l = self.solve(idx + 1, sm + nums[idx] * 1, nums, target)
-        r = self.solve(idx + 1, sm + (nums[idx] * -1), nums, target)
+        l = self.solve(idx - 1, sm + nums[idx] * 1, nums)
+        r = self.solve(idx - 1, sm + (nums[idx] * -1), nums)
 
         return l + r
 
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
-        return self.solve(0, 0, nums, target)
+        return self.solve(len(nums) - 1, target, nums)
 
 
 # Memoization
@@ -28,17 +31,20 @@ class Solution:
 
 
 class Solution:
-    def solve(self, idx, sm, nums, target, dp):
+    def solve(self, idx, sm, nums, dp):
         if (idx, sm) in dp:
             return dp[(idx, sm)]
 
-        if idx == len(nums):
-            if sm == target:
-                return 1
-            return 0
+        if idx == 0:
+            c = 0
+            if sm + (nums[idx] * 1) == 0:
+                c += 1
+            if sm + (nums[idx] * -1) == 0:
+                c += 1
+            return c
 
-        l = self.solve(idx + 1, sm + nums[idx] * 1, nums, target, dp)
-        r = self.solve(idx + 1, sm + (nums[idx] * -1), nums, target, dp)
+        l = self.solve(idx - 1, sm + nums[idx] * 1, nums, dp)
+        r = self.solve(idx - 1, sm + (nums[idx] * -1), nums, dp)
 
         dp[(idx, sm)] = l + r
 
@@ -46,7 +52,7 @@ class Solution:
 
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         dp = {}
-        return self.solve(0, 0, nums, target, dp)
+        return self.solve(len(nums) - 1, target, nums, dp)
 
 
 # Tabulation

@@ -2831,6 +2831,110 @@
             "https://leetcode.com/problems/partition-equal-subset-sum/",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/18_Equal_Sum_Partition_Problem.py"
+        ],
+        [
+            19,
+            "DynamicProgramming",
+            "Minimum Sum Partition",
+            "https://www.geeksforgeeks.org/problems/minimum-sum-partition3317/1",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/19_Minimum_Sum_Partition.py"
+        ],
+        [
+            20,
+            "DynamicProgramming",
+            "Count Subsets with given difference",
+            "https://www.geeksforgeeks.org/problems/partitions-with-given-difference/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/20_Count_Subsets_with_given_difference.py"
+        ],
+        [
+            21,
+            "DynamicProgramming",
+            "Unbound Knapsack",
+            "https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/21_Unbound_Knapsack.py"
+        ],
+        [
+            22,
+            "DynamicProgramming",
+            "Rod Cutting",
+            "https://www.geeksforgeeks.org/problems/rod-cutting0840/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/22_Rod_Cutting.py"
+        ],
+        [
+            23,
+            "DynamicProgramming",
+            "Coin Change I",
+            "https://leetcode.com/problems/coin-change/description/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/23_Coin_Change_I.py"
+        ],
+        [
+            24,
+            "DynamicProgramming",
+            "Coin Change II",
+            "https://leetcode.com/problems/coin-change-ii/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/24_Coin_Change_II.py"
+        ],
+        [
+            25,
+            "DynamicProgramming",
+            "Longest Common Subsequence",
+            "https://leetcode.com/problems/longest-common-subsequence/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/25_Longest_Common_Subsequence.py"
+        ],
+        [
+            26,
+            "DynamicProgramming",
+            "Print All LCS",
+            "https://www.geeksforgeeks.org/problems/print-all-lcs-sequences3413/1",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/26_Print_All_LCS.py"
+        ],
+        [
+            27,
+            "DynamicProgramming",
+            "Longest Common Substring",
+            "https://www.geeksforgeeks.org/problems/longest-common-substring1452/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/27_Longest_Common_Substring.py"
+        ],
+        [
+            28,
+            "DynamicProgramming",
+            "Maximum Length of Repeated Subarray",
+            "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/28_Maximum_Length_of_Repeated_Subarray.py"
+        ],
+        [
+            29,
+            "DynamicProgramming",
+            "Longest Palindromic Subsequence",
+            "https://leetcode.com/problems/longest-palindromic-subsequence/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/29_Longest_Palindromic_Subsequence.py"
+        ],
+        [
+            30,
+            "DynamicProgramming",
+            "Minimum Insertions to make string palindrome",
+            "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/30_Minimum_Insertions_to_make_string_palindrome.py"
+        ],
+        [
+            31,
+            "DynamicProgramming",
+            "Minimun Insertions Deletions to Convert String A to String B",
+            "https://www.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/31_Minimun_Insertions_Deletions_to_Convert_String_A_to_String_B.py"
         ]
     ]
 }
