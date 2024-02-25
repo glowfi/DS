@@ -2935,6 +2935,150 @@
             "https://www.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/31_Minimun_Insertions_Deletions_to_Convert_String_A_to_String_B.py"
+        ],
+        [
+            32,
+            "DynamicProgramming",
+            "Length of Shortest Common Supersequence",
+            "https://www.geeksforgeeks.org/problems/shortest-common-supersequence0322/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/32_Length_of_Shortest_Common_Supersequence.py"
+        ],
+        [
+            33,
+            "DynamicProgramming",
+            "Print Shortest Common Supersequence",
+            "https://leetcode.com/problems/shortest-common-supersequence/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/33_Print_Shortest_Common_Supersequence.py"
+        ],
+        [
+            34,
+            "DynamicProgramming",
+            "Longest Palindromic Substring",
+            "https://leetcode.com/problems/longest-palindromic-substring/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/34_Longest_Palindromic_Substring.py"
+        ],
+        [
+            35,
+            "DynamicProgramming",
+            "Distinct Subsequences",
+            "https://leetcode.com/problems/distinct-subsequences/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/35_Distinct_Subsequences.py"
+        ],
+        [
+            36,
+            "DynamicProgramming",
+            "Wildcard Matching",
+            "https://leetcode.com/problems/wildcard-matching/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/36_Wildcard_Matching.py"
+        ],
+        [
+            37,
+            "DynamicProgramming",
+            "Regular Expression",
+            "https://leetcode.com/problems/regular-expression-matching/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/37_Regular_Expression.py"
+        ],
+        [
+            38,
+            "DynamicProgramming",
+            "Edit Distance",
+            "https://leetcode.com/problems/edit-distance/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/38_Edit_Distance.py"
+        ],
+        [
+            39,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock 1 Transaction",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/39_Best_Time_to_Buy_and_Sell_Stock_1_Transaction.py.py"
+        ],
+        [
+            40,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock II Unlimited Transaction",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/40_Best_Time_to_Buy_and_Sell_Stock II_Unlimited_Transaction.py"
+        ],
+        [
+            41,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock III 2 Transactions",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/41_Best_Time_to_Buy_and_Sell_Stock_III_2_Transactions.py"
+        ],
+        [
+            42,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock IV k Transactions",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/42_Best_Time_to_Buy_and_Sell_Stock_IV_k_Transactions.py"
+        ],
+        [
+            43,
+            "DynamicProgramming",
+            "Best Time To Buy and Sell Stock with Cooldown",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+            " Mediun",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/43_Best_Time_To_Buy_and_Sell_Stock_with_Cooldown.py"
+        ],
+        [
+            44,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock with Transaction Fee",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/44_Best_Time_to_Buy_and_Sell_Stock_with_Transaction_Fee.py"
+        ],
+        [
+            45,
+            "DynamicProgramming",
+            "Maximum Alternating Subsequence Sum",
+            "https://leetcode.com/problems/maximum-alternating-subsequence-sum/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/45_Maximum Alternating Subsequence Sum.py"
+        ],
+        [
+            46,
+            "DynamicProgramming",
+            "Longest Increasing Subsequence",
+            "https://leetcode.com/problems/longest-increasing-subsequence/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/46_Longest_Increasing_Subsequence.py"
+        ],
+        [
+            47,
+            "DynamicProgramming",
+            "Maximum Length of Pair Chain",
+            "https://leetcode.com/problems/maximum-length-of-pair-chain/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/47_Maximum_Length_of_Pair_Chain.py"
+        ],
+        [
+            48,
+            "DynamicProgramming",
+            "Longest String Chain",
+            "https://leetcode.com/problems/longest-string-chain/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/48_Longest_String_Chain.py"
+        ],
+        [
+            49,
+            "DynamicProgramming",
+            "Longest Increasing Path in a Matrix",
+            "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/49_Longest_Increasing_Path_in_a_Matrix.py"
         ]
     ]
 }
