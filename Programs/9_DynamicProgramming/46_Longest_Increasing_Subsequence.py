@@ -100,3 +100,34 @@ class Solution:
             dp = tmp
 
         return dp[-1 + 1]
+
+
+# Optimal (V1)
+# T.C  - O(n^2)
+# S.C. - O(n)
+
+# Note :Keep checking whether previous elemnts can become part of the longest-increasing-subsequence
+
+
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        dp = [1 for _ in range(len(nums))]
+        ans = 1
+
+        for idx in range(len(nums)):
+            for prevIdx in range(idx):
+                if nums[prevIdx] < nums[idx]:
+                    dp[idx] = max(dp[idx], 1 + dp[prevIdx])
+                    ans = max(dp[idx], ans)
+
+        return ans
+
+
+# Optimal (V2)
+# T.C  - O(nlog(n))
+# S.C. - O(n)
+
+
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        pass
