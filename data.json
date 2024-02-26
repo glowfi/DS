@@ -3079,6 +3079,30 @@
             "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
             " Hard",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/49_Longest_Increasing_Path_in_a_Matrix.py"
+        ],
+        [
+            50,
+            "DynamicProgramming",
+            "Print LIS",
+            "https://www.geeksforgeeks.org/problems/printing-longest-increasing-subsequence/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/50_Print_LIS.py"
+        ],
+        [
+            51,
+            "DynamicProgramming",
+            "Largest Divisible Subset",
+            "https://leetcode.com/problems/largest-divisible-subset/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/51_Largest_Divisible_Subset.py"
+        ],
+        [
+            52,
+            "DynamicProgramming",
+            "Longest Bitonic Subsequences",
+            "https://www.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/52_Longest_Bitonic_Subsequences.py"
         ]
     ]
 }
