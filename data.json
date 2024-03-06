@@ -3103,6 +3103,22 @@
             "https://www.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1",
             " Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/52_Longest_Bitonic_Subsequences.py"
+        ],
+        [
+            53,
+            "DynamicProgramming",
+            "Matrix Chain Multiplication",
+            "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/53_Matrix_Chain_Multiplication.py"
+        ],
+        [
+            54,
+            "DynamicProgramming",
+            "Palindrome Partitioning II",
+            "https://leetcode.com/problems/palindrome-partitioning-ii/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/54_Palindrome_Partitioning_II.py"
         ]
     ]
 }
