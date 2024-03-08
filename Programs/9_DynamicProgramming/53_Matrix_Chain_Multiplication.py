@@ -1,5 +1,12 @@
 # https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1 , Hard
 
+# Rules
+# 1. Find i and j
+# 2. Find Base Condition
+# 3. Find valid loop scheme for k
+# 4. Use the temp funciton calls
+
+
 # Recursion
 # T.C. - O(2**n)
 # S.C  - O(N)

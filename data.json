@@ -3119,6 +3119,14 @@
             "https://leetcode.com/problems/palindrome-partitioning-ii/",
             " Hard",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/54_Palindrome_Partitioning_II.py"
+        ],
+        [
+            56,
+            "DynamicProgramming",
+            "Evaluate Expression to True Boolean Parenthesization",
+            "https://www.geeksforgeeks.org/problems/boolean-parenthesization5610/1",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/56_Evaluate_Expression_to_True_Boolean_Parenthesization.py"
         ]
     ]
 }
