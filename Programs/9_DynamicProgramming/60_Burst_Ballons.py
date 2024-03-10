@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/boolean-parenthesization5610/1 , Hard
+# https://leetcode.com/problems/burst-balloons/description/ , Hard
 
 # Recursion
 # T.C. -

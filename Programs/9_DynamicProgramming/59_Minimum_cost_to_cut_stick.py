@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/boolean-parenthesization5610/1 , Hard
+# https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/ , Hard
 
 # Recursion
 # T.C. -

@@ -127,6 +127,46 @@ class Solution:
         return self.solve(0, len(s) - 1, s, {})
 
 
+# Memoization
+# T.C. - O(N^2)
+# S.C  - O(N)+O(N)
+
+
+class Solution:
+    def checkPalindrome(self, i, j, s):
+        while i < j:
+            if s[i] != s[j]:
+                return False
+            else:
+                i += 1
+                j -= 1
+        return True
+
+    def solve(self, i, s, dp):
+        if self.checkPalindrome(i, len(s) - 1, s):
+            return 0
+
+        if i == len(s):
+            return 0
+
+        if i in dp:
+            return dp[i]
+
+        mn_cut = float("inf")
+        for k in range(i, len(s)):
+            if self.checkPalindrome(i, k, s):
+                curr = 1 + self.solve(k + 1, s, dp)
+                if curr < mn_cut:
+                    mn_cut = curr
+
+        dp[i] = mn_cut
+
+        return mn_cut
+
+    def minCut(self, s: str) -> int:
+        return self.solve(0, s, {})
+
+
 # Tabulation
 # T.C. - O(N^3)
 # S.C  - O(N^3)
@@ -159,3 +199,26 @@ class Solution:
                     dp[i][j] = mn_cut
 
         return dp[0][len(s) - 1]
+
+
+# Tabulation
+# T.C. - O(N^2)
+# S.C  - O(N)
+
+
+class Solution:
+    def minCut(self, s: str) -> int:
+        dp = [0 for _ in range(len(s) + 1)]
+
+        for i in range(len(s) - 1, -1, -1):
+            mn_cut = float("inf")
+            tmp = ""
+            for k in range(i, len(s)):
+                tmp += s[k]
+                if tmp == tmp[::-1]:
+                    curr = 1 + dp[k + 1]
+                    if curr < mn_cut:
+                        mn_cut = curr
+            dp[i] = mn_cut
+
+        return dp[0] - 1

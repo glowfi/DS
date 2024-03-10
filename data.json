@@ -3121,12 +3121,52 @@
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/54_Palindrome_Partitioning_II.py"
         ],
         [
+            55,
+            "DynamicProgramming",
+            "Partition Array for Maximum Sum",
+            "https://leetcode.com/problems/partition-array-for-maximum-sum/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/55_Partition_Array_for_Maximum_Sum.py"
+        ],
+        [
             56,
             "DynamicProgramming",
             "Evaluate Expression to True Boolean Parenthesization",
             "https://www.geeksforgeeks.org/problems/boolean-parenthesization5610/1",
             " Hard",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/56_Evaluate_Expression_to_True_Boolean_Parenthesization.py"
+        ],
+        [
+            57,
+            "DynamicProgramming",
+            "Scrambled String",
+            "https://leetcode.com/problems/scramble-string/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/57_Scrambled_String.py"
+        ],
+        [
+            58,
+            "DynamicProgramming",
+            "Egg Dropping",
+            "https://www.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/58_Egg_Dropping.py"
+        ],
+        [
+            59,
+            "DynamicProgramming",
+            "Minimum cost to cut stick",
+            "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/59_Minimum_cost_to_cut_stick.py"
+        ],
+        [
+            60,
+            "DynamicProgramming",
+            "Burst Ballons",
+            "https://leetcode.com/problems/burst-balloons/description/",
+            " Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/60_Burst_Ballons.py"
         ]
     ]
 }
