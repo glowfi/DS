@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/boolean-parenthesization5610/1 , Hard
+# https://www.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1 , Medium
 
 # Recursion
 # T.C. -
