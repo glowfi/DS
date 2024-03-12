@@ -1749,42 +1749,90 @@
         [
             1,
             "Stack&Queues",
-            "Custom Stack",
-            "https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1",
+            "Implement Stack using Arrays",
+            "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/1_Custom_Stack.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/1_Implement_Stack_using_Arrays.py"
         ],
         [
             2,
             "Stack&Queues",
-            "Dynamic Stack",
+            "Implement Queue Using Array",
             "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/2_Dynamic_Stack.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/2_Implement_Queue_Using_Array.py"
         ],
         [
             3,
             "Stack&Queues",
-            "Custom Queue",
-            "https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1",
+            "Implement Circular Queue using Array",
+            "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/3_Custom_Queue.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/3_Implement_Circular_Queue_using_Array.py"
         ],
         [
             4,
             "Stack&Queues",
-            "Circular Queue",
-            "https://www.codingninjas.com/studio/problems/circular-queue_1170058",
+            "Implement Stack using Queues",
+            "https://leetcode.com/problems/implement-queue-using-stacks/",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/4_Circular_Queue.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/4_Implement Stack using Queues.py"
         ],
         [
             5,
             "Stack&Queues",
-            "Dynamic Circular Queue",
+            "Implement Queue using Stacks",
+            "https://leetcode.com/problems/implement-queue-using-stacks/",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/5_Implement_Queue_using_Stacks.py"
+        ],
+        [
+            6,
+            "Stack&Queues",
+            "Implement Stack using linked list",
+            "https://www.geeksforgeeks.org/problems/implement-stack-using-linked-list/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/6_Implement_Stack_using_linked_list.py"
+        ],
+        [
+            7,
+            "Stack&Queues",
+            "Implement Queue using linked list",
+            "https://www.geeksforgeeks.org/problems/implement-queue-using-linked-list/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/7_Implement_Queue_using_linked_list.py"
+        ],
+        [
+            8,
+            "Stack&Queues",
+            "Min Stack",
+            "https://leetcode.com/problems/min-stack/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/8_Min_Stack.py"
+        ],
+        [
+            9,
+            "Stack&Queues",
+            "Check for balanced paranthesis",
+            "https://leetcode.com/problems/valid-parentheses/description/",
+            " Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/9_Check for balanced paranthesis.py"
+        ],
+        [
+            10,
+            "Stack&Queues",
+            "Previous Greater Element",
             "NA",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/5_Dynamic_Circular_Queue.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/10_Previous_Greater_Element.py"
+        ],
+        [
+            11,
+            "Stack&Queues",
+            "Next Greates Element",
+            "https://www.geeksforgeeks.org/problems/greater-on-right-side4305/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/11_Next_Greates_Element.py"
         ]
     ],
     "Trees": [
