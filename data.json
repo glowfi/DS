@@ -1819,20 +1819,36 @@
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/9_Check for balanced paranthesis.py"
         ],
         [
-            10,
-            "Stack&Queues",
-            "Previous Greater Element",
-            "NA",
-            " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/10_Previous_Greater_Element.py"
-        ],
-        [
             11,
             "Stack&Queues",
-            "Next Greates Element",
-            "https://www.geeksforgeeks.org/problems/greater-on-right-side4305/1",
+            "Next Greatest Element to Right",
+            "https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1",
             " Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/11_Next_Greates_Element.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/11_Next_Greatest_Element_to_Right.py"
+        ],
+        [
+            12,
+            "Stack&Queues",
+            "Next Greatest Element to Left",
+            "NA",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/12_Next_Greatest_Element_to_Left.py"
+        ],
+        [
+            13,
+            "Stack&Queues",
+            "Next Smaller Element to Right",
+            "https://www.geeksforgeeks.org/problems/help-classmates--141631/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/13_Next_Smaller_Element_to_Right.py"
+        ],
+        [
+            14,
+            "Stack&Queues",
+            "Next Smaller Element to Left",
+            "https://www.geeksforgeeks.org/problems/smallest-number-on-left3403/1",
+            " Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/14_Next_Smaller_Element_to_Left.py"
         ]
     ],
     "Trees": [
