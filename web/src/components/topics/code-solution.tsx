@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '../../components/ui/button';
 import {
     Dialog,
     DialogContent,
@@ -8,7 +8,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger
-} from '@/components/ui/dialog';
+} from '../../components/ui/dialog';
 import { useTheme } from 'next-themes';
 import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';

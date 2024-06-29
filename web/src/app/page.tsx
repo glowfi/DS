@@ -1,5 +1,5 @@
-import Topics from '@/components/topics/topics';
 import React from 'react';
+import Topics from '../components/topics/topics';
 
 const Page = () => {
     return (
