@@ -34,7 +34,7 @@ for directory in directories:
                         if data[1]:
                             dataStructureType = file.split("/")[2].split("_")[1]
                             link = data[0].strip(" ").replace("# ", "")
-                            difficulty = data[1].strip("\n")
+                            difficulty = data[1].strip("\n").lstrip(" ").rstrip(" ")
 
                             tmp = file.split("/")[-1].strip(" ").replace(".py", "")
                             extractNumber = tmp.split("_")[0]
