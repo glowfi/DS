@@ -1,4 +1,3 @@
-import { getColor } from '@/lib/utils';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
@@ -6,18 +5,17 @@ import { Badge } from '../ui/badge';
 import {
     Table,
     TableBody,
-    TableCaption,
     TableCell,
     TableHead,
     TableHeader,
     TableRow
 } from '../ui/table';
 import CodeSolution from './code-solution';
+import { getColor } from '../../lib/utils';
 
 const TopicTable = ({ currTopic, data }: any) => {
     return (
         <Table>
-            <TableCaption>A list of your recent invoices.</TableCaption>
             <TableHeader>
                 <TableRow>
                     <TableHead>Problem</TableHead>

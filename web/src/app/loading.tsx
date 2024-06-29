@@ -1,8 +1,8 @@
-import LoadingSpinner from '@/components/loadingspinners/loadingspinner';
+import LoadingSpinner from '../components/loadingspinners/loadingspinner';
 
 const loading = () => {
     return (
-        <div className="flex h-dvh">
+        <div className="flex justify-center items-center h-dvh">
             <LoadingSpinner name="page" />
         </div>
     );
