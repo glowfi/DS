@@ -1,7 +1,7 @@
-import React from 'react';
 import { getColor } from '@/lib/utils';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
+import React from 'react';
 import { Badge } from '../ui/badge';
 import {
     Table,
@@ -83,4 +83,5 @@ const TopicTable = ({ currTopic, data }: any) => {
     );
 };
 
+// export default TopicTable;
 export default React.memo(TopicTable);

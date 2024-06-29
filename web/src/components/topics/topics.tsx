@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
+import LoadingSpinner from '../loadingspinners/loadingspinner';
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger
 } from '../ui/accordion';
-import LoadingSpinner from '../loadingspinners/loadingspinner';
 import TopicTable from './topic-table';
 import useFetch from './useFetch';
 
@@ -38,3 +38,4 @@ const Topics = () => {
 };
 
 export default React.memo(Topics);
+// export default Topics;
