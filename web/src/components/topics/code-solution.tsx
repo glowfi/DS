@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { Button } from '@/components/ui/button';
 import {
     Dialog,
@@ -11,12 +10,13 @@ import {
     DialogTrigger
 } from '@/components/ui/dialog';
 import { useTheme } from 'next-themes';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {
     gruvboxDark,
     gruvboxLight
 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import LoadingSpinner from '../loadingspinners/loadingspinner';
 
 const CodeSolution = ({
     solution_link,
@@ -27,6 +27,7 @@ const CodeSolution = ({
 }) => {
     const [content, setContent] = useState('');
     const { theme } = useTheme();
+    const [isloading, setIsloading] = useState(false);
 
     return (
         <Dialog>
@@ -34,11 +35,15 @@ const CodeSolution = ({
                 <Button
                     variant="default"
                     onClick={async () => {
+                        setIsloading(true);
                         try {
                             const text = await fetch(solution_link);
                             const data = await text.text();
                             setContent(() => data);
-                        } catch (err) {}
+                            setIsloading(false);
+                        } catch (err) {
+                            setIsloading(false);
+                        }
                     }}
                 >
                     See code
@@ -49,15 +54,20 @@ const CodeSolution = ({
                     <DialogTitle>{problem_name}</DialogTitle>
                     <DialogDescription>Code Solution</DialogDescription>
                 </DialogHeader>
-                <SyntaxHighlighter
-                    language="python"
-                    style={theme === 'light' ? gruvboxLight : gruvboxDark}
-                >
-                    {content}
-                </SyntaxHighlighter>
+                {isloading ? (
+                    <LoadingSpinner name="solution" />
+                ) : (
+                    <SyntaxHighlighter
+                        language="python"
+                        style={theme === 'light' ? gruvboxLight : gruvboxDark}
+                    >
+                        {content}
+                    </SyntaxHighlighter>
+                )}
             </DialogContent>
         </Dialog>
     );
 };
 
 export default React.memo(CodeSolution);
+// export default CodeSolution;
