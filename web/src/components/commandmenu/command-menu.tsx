@@ -1,42 +1,78 @@
 'use client';
 
-import * as React from 'react';
-
+import React from 'react';
+import { DialogProps } from '@radix-ui/react-dialog';
+import { cn, getColor } from '../../lib/utils';
 import {
     CommandDialog,
     CommandEmpty,
     CommandGroup,
     CommandInput,
     CommandItem,
-    CommandList,
-    CommandSeparator
-} from '@/components/ui/command';
-import { cn } from '@/lib/utils';
-import { DialogProps } from '@radix-ui/react-dialog';
+    CommandList
+} from '../ui/command';
 
-import { LaptopIcon, MoonIcon, SunIcon } from '@radix-ui/react-icons';
-import { useTheme } from 'next-themes';
-import { useRouter } from 'next/navigation';
+import { SquareArrowOutUpRight } from 'lucide-react';
+import Link from 'next/link';
+import LoadingSpinner from '../loadingspinners/loadingspinner';
+import { data_location } from '../topics/constants';
+import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
+import { Input } from '../ui/input';
+import { useDebounce } from './hooks/useDebounce';
+import CodeSolution from '../topics/code-solution';
 
-export function CommandMenu({ ...props }: DialogProps) {
-    const router = useRouter();
+const CommandMenu = ({ ...props }: DialogProps) => {
     const [open, setOpen] = React.useState(false);
-    const { setTheme } = useTheme();
+    const [searchTerm, setSearchTerm] = React.useState<string>('');
+    const [debouncedText, isloadingtxt, setIsloadingtxt] =
+        useDebounce(searchTerm);
+
+    const [data, setData] = React.useState([]);
+    const [isloading, setIsloading] = React.useState(true);
+    const [showData, setShowData] = React.useState([]);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await fetch(data_location);
+                const json = await data.json();
+                // @ts-ignore
+                setData(() => [...structuredClone(Object.values(json).flat())]);
+                setIsloading(false);
+            } catch (err) {
+                console.log('Error Occured', err);
+                setIsloading(false);
+            }
+        };
+        console.log('First');
+        fetchData();
+    }, []);
+
+    React.useEffect(() => {
+        console.log(debouncedText);
+        // @ts-ignore
+        setShowData(() => {
+            // @ts-ignore
+            let newData = [];
+            for (let index = 0; index < data.length; index++) {
+                if (
+                    JSON.stringify(
+                        // @ts-ignore
+                        data[index].includes(debouncedText.toLowerCase())
+                    )
+                ) {
+                    newData.push(data[index]);
+                }
+            }
+            // @ts-ignore
+            return [...newData];
+        });
+    }, [debouncedText, data]);
 
     React.useEffect(() => {
         const down = (e: KeyboardEvent) => {
             if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || e.key === '/') {
-                if (
-                    (e.target instanceof HTMLElement &&
-                        e.target.isContentEditable) ||
-                    e.target instanceof HTMLInputElement ||
-                    e.target instanceof HTMLTextAreaElement ||
-                    e.target instanceof HTMLSelectElement
-                ) {
-                    return;
-                }
-
                 e.preventDefault();
                 setOpen((open) => !open);
             }
@@ -46,13 +82,12 @@ export function CommandMenu({ ...props }: DialogProps) {
         return () => document.removeEventListener('keydown', down);
     }, []);
 
-    const runCommand = React.useCallback((command: () => unknown) => {
-        setOpen(false);
-        command();
-    }, []);
+    if (isloading) {
+        return <LoadingSpinner name="data" />;
+    }
 
     return (
-        <div className="w-full">
+        <>
             <Button
                 variant="outline"
                 className={cn(
@@ -61,79 +96,79 @@ export function CommandMenu({ ...props }: DialogProps) {
                 onClick={() => setOpen(true)}
                 {...props}
             >
-                <span className="hidden lg:inline-flex text-center">
-                    Search codes ...
-                </span>
-                <span className="inline-flex lg:hidden text-center">
-                    Search codes...
-                </span>
+                <span className="hidden lg:inline-flex">Search codes...</span>
+                <span className="inline-flex lg:hidden">Search...</span>
                 <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
                     <span className="text-xs">⌘</span>K
                 </kbd>
             </Button>
             <CommandDialog open={open} onOpenChange={setOpen}>
-                <CommandInput placeholder="Type a command or search..." />
+                <CommandInput
+                    placeholder="Type a command or search..."
+                    value={searchTerm}
+                    onChangeCapture={(e) => {
+                        // @ts-ignore
+                        setSearchTerm(e?.target?.value);
+                    }}
+                />
                 <CommandList>
                     <CommandEmpty>No results found.</CommandEmpty>
-                    {/* <CommandGroup heading="Links"> */}
-                    {/*   {docsConfig.mainNav */}
-                    {/*     .filter((navitem) => !navitem.external) */}
-                    {/*     .map((navItem) => ( */}
-                    {/*       <CommandItem */}
-                    {/*         key={navItem.href} */}
-                    {/*         value={navItem.title} */}
-                    {/*         onSelect={() => { */}
-                    {/*           runCommand(() => router.push(navItem.href as string)) */}
-                    {/*         }} */}
-                    {/*       > */}
-                    {/*         <FileIcon className="mr-2 h-4 w-4" /> */}
-                    {/*         {navItem.title} */}
-                    {/*       </CommandItem> */}
-                    {/*     ))} */}
-                    {/* </CommandGroup> */}
-                    {/* {docsConfig.sidebarNav.map((group) => ( */}
-                    {/*   <CommandGroup key={group.title} heading={group.title}> */}
-                    {/*     {group.items.map((navItem) => ( */}
-                    {/*       <CommandItem */}
-                    {/*         key={navItem.href} */}
-                    {/*         value={navItem.title} */}
-                    {/*         onSelect={() => { */}
-                    {/*           runCommand(() => router.push(navItem.href as string)) */}
-                    {/*         }} */}
-                    {/*       > */}
-                    {/*         <div className="mr-2 flex h-4 w-4 items-center justify-center"> */}
-                    {/*           <CircleIcon className="h-3 w-3" /> */}
-                    {/*         </div> */}
-                    {/*         {navItem.title} */}
-                    {/*       </CommandItem> */}
-                    {/*     ))} */}
-                    {/*   </CommandGroup> */}
-                    {/* ))} */}
-                    <CommandSeparator />
-                    <CommandGroup heading="Theme">
-                        <CommandItem
-                            onSelect={() => runCommand(() => setTheme('light'))}
-                        >
-                            <SunIcon className="mr-2 h-4 w-4" />
-                            Light
-                        </CommandItem>
-                        <CommandItem
-                            onSelect={() => runCommand(() => setTheme('dark'))}
-                        >
-                            <MoonIcon className="mr-2 h-4 w-4" />
-                            Dark
-                        </CommandItem>
-                        <CommandItem
-                            onSelect={() =>
-                                runCommand(() => setTheme('system'))
+
+                    <CommandGroup heading="Codes">
+                        {showData.map(
+                            (
+                                [
+                                    id,
+                                    topic,
+                                    problem_name,
+                                    problem_link,
+                                    difficulty,
+                                    solution_link
+                                ]: [
+                                    id: number,
+                                    topic: string,
+                                    problem_name: string,
+                                    problem_link: string,
+                                    difficulty: string,
+                                    solution_link: string
+                                ],
+                                idx: number
+                            ) => {
+                                return (
+                                    <CommandItem className="w-full" key={idx}>
+                                        <div className="flex items-center gap-1 justify-between w-full">
+                                            <Link
+                                                target="_blank"
+                                                href={problem_link}
+                                                className="font-bold flex-col gap-1 hover:underline"
+                                            >
+                                                {problem_name}
+                                                <SquareArrowOutUpRight className="h-4 w-4" />
+                                            </Link>
+                                            <div className="flex gap-1">
+                                                <Badge>{topic}</Badge>
+                                                <Badge
+                                                    style={{
+                                                        backgroundColor: `${getColor(difficulty)}`
+                                                    }}
+                                                >
+                                                    {difficulty}
+                                                </Badge>
+                                            </div>
+                                            <CodeSolution
+                                                solution_link={solution_link}
+                                                problem_name={problem_name}
+                                            />
+                                        </div>
+                                    </CommandItem>
+                                );
                             }
-                        >
-                            <LaptopIcon className="mr-2 h-4 w-4" />
-                            System
-                        </CommandItem>
+                        )}
                     </CommandGroup>
                 </CommandList>
             </CommandDialog>
-        </div>
+        </>
     );
-}
+};
+
+export default React.memo(CommandMenu);
