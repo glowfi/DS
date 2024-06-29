@@ -3,11 +3,11 @@
 import glob
 import os
 import json
-from numpy import prod
 import pandas as pd
 
 # Create Sheet
-os.remove("./sheet.csv")
+if os.path.exists("./sheet.csv"):
+    os.remove("./sheet.csv")
 f = open("sheet.csv", "a", encoding="utf-8")
 f.write(f"#,Type,Problem,Link,Difficulty,Code\n")
 f.close()
