@@ -1,22 +1,23 @@
 'use client';
 
-import { cn } from '@/lib/utils';
+import React from 'react';
+import { cn } from '../../lib/utils';
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
-import { CommandMenu } from '../commandmenu/command-menu';
 import { MainNav } from '../navbar/main-nav';
 import { MobileNav } from '../navbar/mobile-nav';
 import { ModeToggle } from '../themetoggle/mode-toggle';
 import { buttonVariants } from '../ui/button';
+import CommandMenu from '../commandmenu/command-menu';
 
-export function SiteHeader() {
+const SiteHeader = () => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="flex h-14 max-w-screen-2xl items-center container">
+            <div className="container flex h-14 max-w-screen-2xl items-center">
                 <MainNav />
                 <MobileNav />
-                <div className="flex items-center justify-between space-x-2 w-full">
-                    <div className="w-full flex-1 md:flex-none overflow-hidden">
+                <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+                    <div className="w-full flex-1 md:w-auto md:flex-none">
                         <CommandMenu />
                     </div>
                     <nav className="flex items-center">
@@ -43,4 +44,6 @@ export function SiteHeader() {
             </div>
         </header>
     );
-}
+};
+
+export default React.memo(SiteHeader);
