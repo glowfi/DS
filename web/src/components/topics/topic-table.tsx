@@ -53,7 +53,7 @@ const TopicTable = ({ currTopic, data }: any) => {
                                         href={problem_link}
                                         className="hover:underline"
                                     >
-                                        <div className="flex gap-1 w-fit">
+                                        <div className="flex-row md:flex gap-2">
                                             {problem_name}
                                             <SquareArrowOutUpRight className="h-4 w-4" />
                                         </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { ThemeProvider } from '@/components/themetoggle/theme-provider';
-import SiteHeader from '@/components/header/site-header';
+import SiteHeader from '../components/header/site-header';
+import { ThemeProvider } from '../components/themetoggle/theme-provider';
 
 export const metadata: Metadata = {
     title: 'Data structures and algorithms',
