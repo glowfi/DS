@@ -1,22 +1,16 @@
-'use client';
-
+import React, { useState } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 import { Button } from '../../components/ui/button';
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
     DialogHeader,
-    DialogTitle,
     DialogTrigger
 } from '../../components/ui/dialog';
-import { useTheme } from 'next-themes';
-import React, { useState } from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import {
-    gruvboxDark,
-    gruvboxLight
-} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { getThemeIndex } from '../../lib/utils';
 import LoadingSpinner from '../loadingspinners/loadingspinner';
+import { useThemeCtx } from './code-theme-context';
+import { ThemeDropdown } from './theme-dropdown';
 
 const CodeSolution = ({
     solution_link,
@@ -26,8 +20,8 @@ const CodeSolution = ({
     problem_name: string;
 }) => {
     const [content, setContent] = useState('');
-    const { theme } = useTheme();
     const [isloading, setIsloading] = useState(false);
+    const { codetheme, setCodetheme } = useThemeCtx();
 
     return (
         <Dialog>
@@ -40,6 +34,16 @@ const CodeSolution = ({
                             const text = await fetch(solution_link);
                             const data = await text.text();
                             setContent(() => data);
+                            if (localStorage.getItem('code-theme')) {
+                                setCodetheme(
+                                    //@ts-ignore
+                                    getThemeIndex(
+                                        //@ts-ignore
+                                        localStorage.getItem('code-theme')
+                                    )
+                                );
+                            }
+
                             setIsloading(false);
                         } catch (err) {
                             setIsloading(false);
@@ -51,16 +55,17 @@ const CodeSolution = ({
             </DialogTrigger>
             <DialogContent className="sm:max-w-full overflow-y-auto">
                 <DialogHeader>
-                    <DialogTitle>{problem_name}</DialogTitle>
-                    <DialogDescription>Code Solution</DialogDescription>
+                    <div className="flex items-center justify-center">
+                        <ThemeDropdown
+                            //@ts-ignore
+                            setCodetheme={setCodetheme}
+                        />
+                    </div>
                 </DialogHeader>
                 {isloading ? (
                     <LoadingSpinner name="solution" />
                 ) : (
-                    <SyntaxHighlighter
-                        language="python"
-                        style={theme === 'light' ? gruvboxLight : gruvboxDark}
-                    >
+                    <SyntaxHighlighter language="python" style={codetheme}>
                         {content}
                     </SyntaxHighlighter>
                 )}

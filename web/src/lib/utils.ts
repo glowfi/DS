@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { _THEME, THEME } from '../components/topics/code-themes';
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
@@ -53,4 +54,14 @@ export const getColor = (difficulty: string) => {
     } else {
         return 'red';
     }
+};
+
+export const getThemeIndex = (theme: string) => {
+    for (let index = 0; index < THEME.length; index++) {
+        if (theme === THEME[index]) {
+            console.log('YEs');
+            return _THEME[index];
+        }
+    }
+    return -1;
 };
