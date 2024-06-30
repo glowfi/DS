@@ -17,9 +17,9 @@ export function ThemeDropdown({ setCodetheme }: any) {
         : 'gruvboxDark';
 
     return (
-        <DropdownMenu modal={false}>
+        <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="outline">Theme</Button>
+                <Button variant="outline">{currTheme}</Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
                 {/* @ts-ignore */}
