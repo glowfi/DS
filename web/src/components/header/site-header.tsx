@@ -8,7 +8,6 @@ import Icon from '../../app/icon.svg';
 import { cn } from '../../lib/utils';
 import CommandMenu from '../commandmenu/command-menu';
 import { MainNav } from '../navbar/main-nav';
-import { MobileNav } from '../navbar/mobile-nav';
 import { ModeToggle } from '../themetoggle/mode-toggle';
 import { buttonVariants } from '../ui/button';
 
