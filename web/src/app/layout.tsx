@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import SiteHeader from '../components/header/site-header';
 import { ThemeProvider } from '../components/themetoggle/theme-provider';
+import GlobalContextProvider from './globalContextProvider';
 
 export const metadata: Metadata = {
     title: 'Data structures and algorithms',
@@ -22,8 +23,10 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <SiteHeader />
-                    {children}
+                    <GlobalContextProvider>
+                        <SiteHeader />
+                        {children}
+                    </GlobalContextProvider>
                 </ThemeProvider>
             </body>
         </html>
