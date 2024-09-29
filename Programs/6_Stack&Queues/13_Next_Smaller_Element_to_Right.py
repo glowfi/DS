@@ -7,39 +7,34 @@
 
 class Solution:
     def help_classmate(self, arr, n):
-        out = [-1 for _ in range(n)]
-
+        nsr = [-1] * n
         for i in range(n):
             for j in range(i + 1, n):
                 if arr[j] < arr[i]:
-                    out[i] = arr[j]
+                    nsr[i] = arr[j]
                     break
+        return nsr
 
-        return out
 
-
-# Optimal
+# Optimal [take monotonically strictly increasing from bottom to top  for R to L iteration storing the right array]
 # T.C. - O(n)
 # S.C  - O(n)
 
 
-from collections import deque
-
-
 class Solution:
     def help_classmate(self, arr, n):
-        out = [-1 for _ in range(n)]
-
-        # Take monotonically increasing stack [Bottom-Top increasing Stack storing the right of the array.]
-        stk = deque([])
+        nsr = [-1] * n
+        stk = []
 
         for i in range(n - 1, -1, -1):
-            curr = arr[i]
-            while stk and stk[-1] >= curr:
-                stk.pop()
+            while stk and arr[stk[-1]] >= arr[i]:
+                stk.pop(-1)
 
             if stk:
-                out[i] = stk[-1]
-            stk.append(curr)
+                nsr[i] = arr[stk[-1]]
+            else:
+                nsr[i] = -1
 
-        return out
+            stk.append(i)
+
+        return nsr

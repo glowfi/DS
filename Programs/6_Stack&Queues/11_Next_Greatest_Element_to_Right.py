@@ -7,41 +7,38 @@
 
 class Solution:
     def nextLargerElement(self, arr, n):
-        out = [-1 for _ in range(n)]
-
+        ngr = [-1 for _ in range(n)]
         for i in range(n):
             for j in range(i + 1, n):
                 if arr[j] > arr[i]:
-                    out[i] = arr[j]
+                    ngr[i] = arr[j]
                     break
 
-        return out
+        return ngr
 
 
-# Optimal
+# Optimal [take monotonically strictly decreasing from bottom to top  for R to L iteration storing the right array]
 # T.C. - O(N)
 # S.C  - O(N)
-
-from collections import deque
 
 
 class Solution:
     def nextLargerElement(self, arr, n):
-        out = [-1 for _ in range(n)]
-
-        # Take monotonically decreasing stack [Bottom-Top decreasing Stack storing the right of the array.]
-        stk = deque([])
+        ngr = [-1 for _ in range(n)]
+        stk = []
 
         for i in range(n - 1, -1, -1):
-            curr = arr[i]
-            while stk and stk[-1] <= curr:
-                stk.pop()
+            while stk and arr[stk[-1]] <= arr[i]:
+                stk.pop(-1)
 
             if stk:
-                out[i] = stk[-1]
-            stk.append(curr)
+                ngr[i] = arr[stk[-1]]
+            else:
+                ngr[i] = -1
 
-        return out
+            stk.append(i)
+
+        return ngr
 
 
 arr = [16, 17, 4, 3, 5, 2]
