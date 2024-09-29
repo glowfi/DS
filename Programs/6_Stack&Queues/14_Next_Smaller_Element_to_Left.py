@@ -19,28 +19,25 @@ class Solution:
         return out
 
 
-# Optimal
+# Optimal [take monotonically strictly increasing from bottom to top  for R to L iteration storing the right array]
 # T.C. - O(n)
 # S.C  - O(n)
 
 
-from collections import deque
-
-
 class Solution:
     def leftSmaller(self, n, a):
-        out = [-1 for _ in range(n)]
-
-        # Take monotonically increasing stack [Bottom-Top increasing Stack storing the left of the array.]
-        stk = deque([])
+        nsr = [-1] * n
+        stk = []
 
         for i in range(n):
-            curr = a[i]
-            while stk and stk[-1] >= curr:
-                stk.pop()
+            while stk and a[stk[-1]] >= a[i]:
+                stk.pop(-1)
 
             if stk:
-                out[i] = stk[-1]
-            stk.append(curr)
+                nsr[i] = a[stk[-1]]
+            else:
+                nsr[i] = -1
 
-        return out
+            stk.append(i)
+
+        return nsr

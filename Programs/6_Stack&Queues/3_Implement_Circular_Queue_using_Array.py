@@ -5,76 +5,61 @@
 # S.C  - O(maxCapacity)
 
 
-class MyCircularQueue:
+class CQueue:
+    def __init__(self, size):
+        self.maxCapacity = size
+        self.queue = [None for _ in range(size)]
+        self.start, self.end = -1, -1
+        self.currsize = 0
 
-    def __init__(self, maxCapacity) -> None:
-        self.maxCapacity = maxCapacity
-        self.arr = [None] * self.maxCapacity
-        self.rear = -1
-        self.front = -1
-        self.currSize = 0
-
-    # Function to push an element x in a queue.
     def enqueue(self, x):
-        if self.isFull():
-            return "Queue is full!"
+        if self.size() == self.maxCapacity:
+            return
+        if self.start == -1 and self.start == -1:
+            self.start, self.end = 0, 0
+        else:
+            self.end = (self.end + 1) % self.maxCapacity
 
-        self.arr[(self.rear + 1) % self.maxCapacity] = x
-        self.rear += 1
-        self.currSize += 1
-        return self.arr
+        self.queue[self.end] = x
+        self.currsize += 1
 
-    # Function to pop an element from queue and return that element.
     def dequeue(self):
-        if self.isEmpty():
-            return "Queue is empty!"
-
-        self.arr[(self.front + 1) % self.maxCapacity] = None
-        self.front += 1
-        self.currSize -= 1
-        return self.arr
-
-    # Function to get the front element
-    def peek(self):
-        if not self.isEmpty():
-            return self.arr[(self.front + 1) % self.maxCapacity]
-        else:
+        if self.size() == 0:
             return -1
 
-    # Function to get the rear-end element
-    def _rear(self):
-        if not self.isEmpty():
-            return self.arr[self.rear % self.maxCapacity]
+        x = self.queue[self.start]
+        if self.currsize == 1:
+            self.start, self.end = -1, -1
         else:
-            return -1
+            self.start = (self.start + 1) % self.maxCapacity
+        self.currsize -= 1
+        return x
 
-    # Function to check queue full
-    def isFull(self):
-        return self.currSize == self.maxCapacity
+    def top(self):
+        if self.size() > 0:
+            return self.queue[self.start]
+        return -1
 
-    # Function to check queue empty
-    def isEmpty(self):
-        return self.currSize == 0
+    def size(self):
+        return self.currsize
 
 
-obj = MyCircularQueue(5)
-print(obj.enqueue(1))
-print(obj.enqueue(2))
-print(obj.enqueue(3))
-print(obj.enqueue(4))
-print(obj.enqueue(5))
-print(obj.enqueue(1))
-print(obj.enqueue(6))
-print(obj.dequeue())
-print(obj.dequeue())
-print(obj.enqueue(6))
-print(obj.dequeue())
-print(obj.dequeue())
-print(obj.dequeue())
-print(obj.dequeue())
-print(obj.dequeue())
-print(obj.enqueue(7))
-print(obj.enqueue(8))
-print(obj.enqueue(8))
-print(obj.peek())
-print(obj._rear())
+obj = CQueue(5)
+
+obj.enqueue(1)
+obj.enqueue(2)
+obj.enqueue(3)
+print(obj.top())
+obj.enqueue(4)
+obj.enqueue(5)
+print(obj.top())
+obj.dequeue()
+obj.dequeue()
+obj.dequeue()
+print(obj.end, obj.currsize)
+obj.enqueue(12)
+print(obj.queue)
+print(obj.top())
+obj.dequeue()
+obj.dequeue()
+print(obj.top())

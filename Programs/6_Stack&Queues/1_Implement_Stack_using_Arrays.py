@@ -2,74 +2,54 @@
 
 
 # Optimal
-# T.C. - O(1) [push,pop,peek]
-# S.C  - O(cap)
+# T.C. - O(1) [push,pop,peek,size]
+# S.C  - O(maxCapacity)
 
 
-class MyStack:
-
-    def __init__(self, cap):
-        self.capacity = cap
-        self.arr = [None] * self.capacity
+class Stack:
+    def __init__(self, size):
+        self.maxCapacity = size
+        self.stack = [None for _ in range(size)]
         self.top = -1
 
-    # Function to push an integer into the stack.
-    def push(self, data):
-        if self.isFull():
-            return "Stack is Full!"
-
+    def push(self, x):
+        if self.size() >= self.maxCapacity:
+            return
         self.top += 1
-        self.arr[self.top] = data
-        return self.printStack()
+        self.stack[self.top] = x
 
-    # Function to remove an item from top of the stack.
     def pop(self):
-        if self.isEmpty():
-            return "Stack is Empty!"
-        else:
-            removedData = self.arr[self.top]
-            self.top -= 1
-            return self.printStack(), f"Removed: {removedData}"
-
-    # Check Stack Empty
-    def isEmpty(self) -> bool:
-        return self.top == -1
-
-    # Check Stack Full
-    def isFull(self) -> bool:
-        return self.top == len(self.arr) - 1
-
-    # Get Stack top element
-    def peek(self) -> int:
-        if self.top != -1:
-            return self.arr[self.top]
-        else:
+        if self.size() == 0:
             return -1
 
-    def printStack(self) -> list[int]:
-        ls = []
-        for i in range(0, self.top + 1):
-            ls.append(self.arr[i])
-        return ls
+        x = self.stack[self.top]
+        self.top -= 1
+        return x
+
+    def peek(self):
+        if self.size() > 0:
+            return self.stack[self.top]
+        return -1
+
+    def size(self):
+        return self.top + 1
+
+    def printStack(self):
+        print(self.stack)
 
 
-obj = MyStack(5)
-print(obj.push(1))
-print(obj.push(2))
-print(obj.push(3))
-print(obj.pop())
-print(obj.pop())
-print(obj.push(4))
-print(obj.push(4))
-print(obj.push(4))
-print(obj.push(4))
-print(obj.pop())
-print(obj.pop())
-print(obj.pop())
-print(obj.pop())
-print(obj.pop())
-print(obj.pop())
-print(obj.push(4))
-print(obj.push(6))
-print(obj.push(7))
+obj = Stack(5)
+obj.push(1)
+obj.push(2)
+obj.push(3)
+obj.push(4)
+obj.push(5)
+obj.push(6)
+print(obj.peek())
+obj.printStack()
+obj.pop()
+obj.pop()
+obj.pop()
+obj.pop()
+obj.pop()
 print(obj.peek())

@@ -1,79 +1,61 @@
 # NA , Easy
 
 # Optimal
-# T.C. - O(1) [push,pop,top] [We cannot insert elements in the front of the queue even we have some free space left in the front of the queue]
-# S.C  - O(cap)
+# T.C. - O(1) [enqueue,dequeue,top,size] [We cannot insert elements in the front of the queue even we have some free space left in the front of the queue]
+# S.C  - O(maxCapacity)
 
 
-class MyQueue:
+class Queue:
+    def __init__(self, size):
+        self.maxCapacity = size
+        self.queue = [None for _ in range(size)]
+        self.start, self.end = -1, -1
+        self.currsize = 0
 
-    def __init__(self, cap) -> None:
-        self.cap = cap
-        self.arr = [None] * self.cap
-        self.rear = -1
-        self.front = -1
-
-    # Function to push an element x in a queue.
     def enqueue(self, x):
-        if self.isFull():
-            return "Queue is Full!"
+        if self.end == self.maxCapacity - 1 or self.size() == self.maxCapacity:
+            return
+        if self.start == -1 and self.start == -1:
+            self.start, self.end = 0, 0
+        else:
+            self.end += 1
 
-        self.rear += 1
-        self.arr[self.rear] = x
-        return self.printQueue()
+        self.queue[self.end] = x
+        self.currsize += 1
 
-    # Function to pop an element from queue and return that element.
     def dequeue(self):
-        if self.isEmpty():
-            return "Queue is Empty!"
-
-        self.front += 1
-        removedData = self.arr[self.front]
-        return self.printQueue(), f"Removed: {removedData}"
-
-    # Function to get the front element
-    def peek(self):
-        if not self.isEmpty():
-            return self.arr[self.front + 1]
-        else:
+        if self.size() == 0:
             return -1
 
-    # Function to get the rear-end element
-    def _rear(self):
-        if not self.isEmpty():
-            return self.arr[self.rear]
-        else:
-            return -1
+        x = self.queue[self.start]
+        self.start += 1
+        self.currsize -= 1
+        return x
 
-    # Function to check queue full
-    def isFull(self):
-        return self.rear == self.cap - 1
+    def top(self):
+        if self.size() > 0:
+            return self.queue[self.start]
+        return -1
 
-    # Function to check queue empty
-    def isEmpty(self):
-        return self.front == self.rear
-
-    # Print Queue
-    def printQueue(self) -> list[int]:
-        ls = []
-        for i in range(self.front + 1, self.rear + 1):
-            ls.append(self.arr[i])
-        return ls
+    def size(self):
+        return self.currsize
 
 
-obj = MyQueue(5)
-print(obj.enqueue(1))
-print(obj.enqueue(2))
-print(obj.enqueue(3))
-print(obj.enqueue(4))
-print(obj._rear())
-print(obj.peek())
-print(obj.enqueue(5))
-print(obj.enqueue(6))
-print(obj.dequeue())
-print(obj.dequeue())
-print(obj.dequeue())
-print(obj.dequeue())
-print(obj.dequeue())
-print(obj.enqueue(6))
-print(obj.enqueue(7))
+obj = Queue(5)
+
+obj.enqueue(1)
+obj.enqueue(2)
+obj.enqueue(3)
+print(obj.top())
+obj.enqueue(4)
+obj.enqueue(5)
+print(obj.top())
+obj.dequeue()
+obj.dequeue()
+obj.dequeue()
+print(obj.end, obj.currsize)
+obj.enqueue(12)
+print(obj.top())
+obj.dequeue()
+obj.dequeue()
+print(obj.top())
