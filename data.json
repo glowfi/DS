@@ -1873,6 +1873,14 @@
             "https://leetcode.com/problems/next-greater-element-ii/",
             "Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/16_Next_Greater_Element_II.py"
+        ],
+        [
+            17,
+            "Stack&Queues",
+            "Online Stock span",
+            "https://leetcode.com/problems/online-stock-span",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/17_Online_Stock_span.py"
         ]
     ],
     "Trees": [
