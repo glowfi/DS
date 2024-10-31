@@ -26,7 +26,7 @@ class Solution:
 
 class Solution:
     def leftSmaller(self, n, a):
-        nsr = [-1] * n
+        nsl = [-1] * n
         stk = []
 
         for i in range(n):
@@ -34,10 +34,10 @@ class Solution:
                 stk.pop(-1)
 
             if stk:
-                nsr[i] = a[stk[-1]]
+                nsl[i] = a[stk[-1]]
             else:
-                nsr[i] = -1
+                nsl[i] = -1
 
             stk.append(i)
 
-        return nsr
+        return nsl

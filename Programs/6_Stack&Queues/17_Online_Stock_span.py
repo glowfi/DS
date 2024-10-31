@@ -1,9 +1,9 @@
 # https://leetcode.com/problems/online-stock-span , Medium
 
 
-# Optimal
+# Optimal [with 2d array]
 # T.C. - O(n)
-# S.C  - O(n)
+# S.C  - O(n^2)
 
 
 class StockSpanner:
@@ -24,6 +24,36 @@ class StockSpanner:
 
         self.stk.append([self.currIdx, price])
         self.currIdx += 1
+        return ans
+
+
+# Optimal [without 2d array]
+# T.C. - O(n)
+# S.C  - O(n)+O(n)
+
+
+class StockSpanner:
+
+    def __init__(self):
+        self.stk = []
+        self.currIdx = 0
+        self.arr = []
+
+    def next(self, price: int) -> int:
+        ans = 0
+        self.arr.append(price)
+        while self.stk and self.arr[self.stk[-1]] <= price:
+            self.stk.pop(-1)
+
+        if self.stk:
+            ans += self.currIdx - self.stk[-1]
+        else:
+            ans = self.currIdx + 1
+
+        self.stk.append(self.currIdx)
+
+        self.currIdx += 1
+
         return ans
 
 

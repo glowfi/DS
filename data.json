@@ -1881,6 +1881,86 @@
             "https://leetcode.com/problems/online-stock-span",
             "Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/17_Online_Stock_span.py"
+        ],
+        [
+            18,
+            "Stack&Queues",
+            "Max Area Histogram",
+            "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/18_Max_Area_Histogram.py"
+        ],
+        [
+            19,
+            "Stack&Queues",
+            "Maximal Rectangle",
+            "https://leetcode.com/problems/maximal-rectangle/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/19_Maximal_Rectangle.py"
+        ],
+        [
+            20,
+            "Stack&Queues",
+            "Trapping Rainwater",
+            "https://leetcode.com/problems/trapping-rain-water/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/20_Trapping_Rainwater.py"
+        ],
+        [
+            21,
+            "Stack&Queues",
+            "Asteroid Collision",
+            "https://leetcode.com/problems/asteroid-collision",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/21_Asteroid_Collision.py"
+        ],
+        [
+            22,
+            "Stack&Queues",
+            "Sum of Subarray Minimums",
+            "https://leetcode.com/problems/sum-of-subarray-minimums",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/22_Sum_of_Subarray_Minimums.py"
+        ],
+        [
+            23,
+            "Stack&Queues",
+            "Sum of Subarray Ranges",
+            "https://leetcode.com/problems/sum-of-subarray-ranges",
+            "Mediume",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/23_Sum_of_Subarray_Ranges.py"
+        ],
+        [
+            24,
+            "Stack&Queues",
+            "Remove K Digits",
+            "https://leetcode.com/problems/remove-k-digits/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/24_Remove_K_Digits.py"
+        ],
+        [
+            25,
+            "Stack&Queues",
+            "Sliding Window Maximum",
+            "https://leetcode.com/problems/sliding-window-maximum/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/25_Sliding_Window_Maximum.py"
+        ],
+        [
+            26,
+            "Stack&Queues",
+            "Celebrity Problem",
+            "https://www.geeksforgeeks.org/problems/the-celebrity-problem/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/26_Celebrity_Problem.py"
+        ],
+        [
+            27,
+            "Stack&Queues",
+            "LRU Cache",
+            "https://leetcode.com/problems/lru-cache/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/27_LRU_Cache.py"
         ]
     ],
     "Trees": [
