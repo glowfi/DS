@@ -30,7 +30,7 @@ const Topics = () => {
                                 <div className="flex gap-3 justify-between items-center">
                                     {topic}
                                     <Badge variant="default">
-                                        {data[topic].length}
+                                        {data[topic] ? data[topic].length : 0}
                                     </Badge>
                                 </div>
                             </AccordionTrigger>
