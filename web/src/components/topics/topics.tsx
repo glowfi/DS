@@ -30,6 +30,7 @@ const Topics = () => {
                                 <div className="flex gap-3 justify-between items-center">
                                     {topic}
                                     <Badge variant="default">
+                                        {/* eslint-disable-next-line no-use-before-define */}
                                         {data[topic] ? data[topic].length : 0}
                                     </Badge>
                                 </div>
