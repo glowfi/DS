@@ -59,7 +59,6 @@ export const getColor = (difficulty: string) => {
 export const getThemeIndex = (theme: string) => {
     for (let index = 0; index < THEME.length; index++) {
         if (theme === THEME[index]) {
-            console.log('YEs');
             return _THEME[index];
         }
     }

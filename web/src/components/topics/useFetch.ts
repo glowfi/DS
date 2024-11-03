@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { data_location } from './constants';
 
 const useFetch = () => {
-    
     const [isloading, setIsloading] = useState(true);
 
     const [topics, setTopics] = useState<string[]>([]);
@@ -19,7 +18,6 @@ const useFetch = () => {
                 setData(json);
                 setIsloading(false);
             } catch (err) {
-                
                 setIsloading(false);
             }
         };

@@ -8,6 +8,7 @@ import {
     AccordionItem,
     AccordionTrigger
 } from '../ui/accordion';
+import { Badge } from '../ui/badge';
 import TopicTable from './topic-table';
 import useFetch from './useFetch';
 
@@ -25,7 +26,14 @@ const Topics = () => {
                 {topics.map((topic: string, idx: number) => {
                     return (
                         <AccordionItem value={`item-${idx + 1}`} key={idx}>
-                            <AccordionTrigger>{topic}</AccordionTrigger>
+                            <AccordionTrigger>
+                                <div className="flex gap-3 justify-between items-center">
+                                    {topic}
+                                    <Badge variant="default">
+                                        {data[topic].length}
+                                    </Badge>
+                                </div>
+                            </AccordionTrigger>
                             <AccordionContent>
                                 <TopicTable data={data} currTopic={topic} />
                             </AccordionContent>

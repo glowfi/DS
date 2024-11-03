@@ -32,7 +32,6 @@ const CommandMenu = ({ ...props }: DialogProps) => {
     const [showData, setShowData] = React.useState<any[]>([]);
 
     React.useEffect(() => {
-        console.log('Initial Render!');
         const fetchData = async () => {
             try {
                 const data = await fetch(data_location);
@@ -50,7 +49,6 @@ const CommandMenu = ({ ...props }: DialogProps) => {
     React.useEffect(() => {
         if (data) {
             const newData = searchInListOfLists(data, debouncedText);
-            console.log(newData);
             setShowData(() => [...JSON.parse(JSON.stringify(newData))]);
         }
     }, [debouncedText, data]);
