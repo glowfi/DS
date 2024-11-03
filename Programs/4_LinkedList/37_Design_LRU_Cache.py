@@ -7,66 +7,88 @@
 
 
 class Node:
-    def __init__(self, prev=None, next=None, data=[-1, -1]):
-        self.prev = prev
-        self.next = next
-        self.data = data
+    def __init__(self, data: list[int]):
+        self.next: Node | None = None
+        self.prev: Node | None = None
+        self.data: list[int] = data
 
 
 class LRUCache:
+
     def __init__(self, capacity: int):
-        self.mp = {}
-        self.currcap = 0
-        self.cap = 0
-        self.head = Node()
+        self.maxSize: int = capacity
+        self.currsize: int = 0
+        self.nodesMap: dict[int, Node] = {}
+        self.head: Node = Node([-1, -1])
+        self.tail: Node = Node([-1, -1])
+
+        self.head.next = self.tail
+        self.tail.prev = self.head
+
+    def delete(self, node: Node):
+        val = node.data[0]
+
+        if node.prev:
+            node.prev.next = node.next
+        if node.next:
+            node.next.prev = node.prev
+
+        node.next = None
+        node.prev = None
+
+        del self.nodesMap[val]
+        self.currsize -= 1
 
     def get(self, key: int) -> int:
-        ptr = self.head
-        while ptr:
-            if ptr.data[0] == key:
-                # Tail node
-                if ptr.next is None:
-                    ptr.prev.next = None
-                    ptr.next = self.head
-                    ptr.prev = None
-                    self.head = ptr
-                    return self.mp[ptr.data[0]]
+        if key in self.nodesMap:
+            node_to_move = self.nodesMap[key]
 
-                # Normal node
-                else:
-                    ptr.prev.next = ptr.next
-                    ptr.next.prev = ptr.prev
-                    ptr.prev = None
-                    ptr.next = self.head
-                    self.head = ptr
-                    return self.mp[ptr.data[0]]
-            ptr = ptr.next
+            if node_to_move.prev:
+                node_to_move.prev.next = node_to_move.next
+            if node_to_move.next:
+                node_to_move.next.prev = node_to_move.prev
+
+            node_to_move.next = None
+            node_to_move.prev = None
+
+            nextVal = self.head.next
+            self.head.next = node_to_move
+            node_to_move.prev = self.head
+            node_to_move.next = nextVal
+            nextVal.prev = node_to_move
+
+            return node_to_move.data[1]
 
         return -1
 
-    def put(self, key: int, value: int) -> None:
-        if self.get(key) != -1:
-            self.mp[key] = value
-            return
-
-        if self.currcap > self.cap:
-            ptr = self.head
-            while True:
-                if ptr.next is None:
-                    del self.mp[ptr.data[0]]
-                    ptr.prev.next = None
-                    self.currcap -= 1
-                    break
-                ptr = ptr.next
-
-        ptr = self.head
-
-        if ptr.next is None:
-            ptr.next = Node(ptr, None, [key, value])
+    def insert(self, key: int, value: int):
+        newNode = Node([key, value])
+        # if inserting for first time
+        if self.head.next == self.tail:
+            self.head.next = newNode
+            newNode.prev = self.head
+            newNode.next = self.tail
+            self.tail.prev = newNode
         else:
-            while True:
-                if ptr.next is None:
-                    ptr.next = Node(ptr, None, [key, value])
-                    self.mp[key] = value
-                    break
-                ptr = ptr.next
+            nextVal = self.head.next
+            self.head.next = newNode
+            newNode.prev = self.head
+            newNode.next = nextVal
+            nextVal.prev = newNode
+
+        self.nodesMap[key] = newNode
+        self.currsize += 1
+
+    def put(self, key: int, value: int) -> None:
+        # if key exists already
+        if key in self.nodesMap:
+            oldNode = self.nodesMap[key]
+            oldNode.data = [key, value]
+            self.nodesMap[key] = oldNode
+            self.get(key)
+            return
+        else:
+            if self.currsize == self.maxSize:
+                # evict node before tail
+                self.delete(self.tail.prev)
+            self.insert(key, value)

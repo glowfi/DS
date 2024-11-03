@@ -19,7 +19,7 @@ dic = {}
 idx = 0
 
 for directory in directories:
-    print(f"Parsing {directory} ....")
+    print(f"Parsing {directory} ...")
     if os.path.isdir(f"./{directory}"):
         files = glob.glob(f"{directory}/*")
         currentData = []

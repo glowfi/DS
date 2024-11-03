@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/sum-of-subarray-ranges , Mediume
+# https://leetcode.com/problems/sum-of-subarray-ranges , Medium
 
 # Brute
 # T.C. - O(N^2)

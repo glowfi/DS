@@ -1,4 +1,478 @@
 {
+    "DynamicProgramming": [
+        [
+            1,
+            "DynamicProgramming",
+            "Fibonacci",
+            "https://leetcode.com/problems/fibonacci-number/",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/1_Fibonacci.py"
+        ],
+        [
+            2,
+            "DynamicProgramming",
+            "Climbing Stairs",
+            "https://leetcode.com/problems/climbing-stairs/",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/2_Climbing_Stairs.py"
+        ],
+        [
+            3,
+            "DynamicProgramming",
+            "Geek Jump",
+            "https://www.geeksforgeeks.org/problems/geek-jump/1",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/3_Geek_Jump.py"
+        ],
+        [
+            4,
+            "DynamicProgramming",
+            "House Robber",
+            "https://leetcode.com/problems/house-robber/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/4_House_Robber.py"
+        ],
+        [
+            5,
+            "DynamicProgramming",
+            "House Robber II",
+            "https://leetcode.com/problems/house-robber-ii/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/5_House_Robber_II.py"
+        ],
+        [
+            6,
+            "DynamicProgramming",
+            "Geeks Training",
+            "https://www.geeksforgeeks.org/problems/geeks-training/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/6_Geeks_Training.py"
+        ],
+        [
+            7,
+            "DynamicProgramming",
+            "Unique Paths",
+            "https://leetcode.com/problems/unique-paths/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/7_Unique_Paths.py"
+        ],
+        [
+            8,
+            "DynamicProgramming",
+            "Unique Paths II",
+            "https://leetcode.com/problems/unique-paths-ii/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/8_Unique_Paths_II.py"
+        ],
+        [
+            9,
+            "DynamicProgramming",
+            "Minimum Path Sum in grid",
+            "https://leetcode.com/problems/minimum-path-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/9_Minimum_Path_Sum_in_grid.py"
+        ],
+        [
+            10,
+            "DynamicProgramming",
+            "Triangle Grid Min Path Sum",
+            "https://leetcode.com/problems/triangle/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/10_Triangle_Grid_Min_Path_Sum.py"
+        ],
+        [
+            11,
+            "DynamicProgramming",
+            "Minimum Falling Path Sum",
+            "https://leetcode.com/problems/minimum-falling-path-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/11_Minimum_Falling_Path_Sum.py"
+        ],
+        [
+            12,
+            "DynamicProgramming",
+            "Cherry Pickup I",
+            "https://leetcode.com/problems/cherry-pickup/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/12_Cherry_Pickup_I.py"
+        ],
+        [
+            13,
+            "DynamicProgramming",
+            "Cherry Pickup II",
+            "https://leetcode.com/problems/cherry-pickup-ii/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/13_Cherry_Pickup_II.py"
+        ],
+        [
+            15,
+            "DynamicProgramming",
+            "0 1 Knapsack",
+            "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/15_0_1_Knapsack.py"
+        ],
+        [
+            16,
+            "DynamicProgramming",
+            "Target Sum with Symbols + -",
+            "https://leetcode.com/problems/target-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/16_Target_Sum_with_Symbols_+_-.py"
+        ],
+        [
+            17,
+            "DynamicProgramming",
+            "Target Sum Equals to Target",
+            "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/17_Target_Sum_Equals_to_Target.py"
+        ],
+        [
+            18,
+            "DynamicProgramming",
+            "Equal Sum Partition Problem",
+            "https://leetcode.com/problems/partition-equal-subset-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/18_Equal_Sum_Partition_Problem.py"
+        ],
+        [
+            19,
+            "DynamicProgramming",
+            "Minimum Sum Partition",
+            "https://www.geeksforgeeks.org/problems/minimum-sum-partition3317/1",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/19_Minimum_Sum_Partition.py"
+        ],
+        [
+            20,
+            "DynamicProgramming",
+            "Count Subsets with given difference",
+            "https://www.geeksforgeeks.org/problems/partitions-with-given-difference/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/20_Count_Subsets_with_given_difference.py"
+        ],
+        [
+            21,
+            "DynamicProgramming",
+            "Unbound Knapsack",
+            "https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/21_Unbound_Knapsack.py"
+        ],
+        [
+            22,
+            "DynamicProgramming",
+            "Rod Cutting",
+            "https://www.geeksforgeeks.org/problems/rod-cutting0840/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/22_Rod_Cutting.py"
+        ],
+        [
+            23,
+            "DynamicProgramming",
+            "Coin Change I",
+            "https://leetcode.com/problems/coin-change/description/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/23_Coin_Change_I.py"
+        ],
+        [
+            24,
+            "DynamicProgramming",
+            "Coin Change II",
+            "https://leetcode.com/problems/coin-change-ii/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/24_Coin_Change_II.py"
+        ],
+        [
+            25,
+            "DynamicProgramming",
+            "Longest Common Subsequence",
+            "https://leetcode.com/problems/longest-common-subsequence/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/25_Longest_Common_Subsequence.py"
+        ],
+        [
+            26,
+            "DynamicProgramming",
+            "Print All LCS",
+            "https://www.geeksforgeeks.org/problems/print-all-lcs-sequences3413/1",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/26_Print_All_LCS.py"
+        ],
+        [
+            27,
+            "DynamicProgramming",
+            "Longest Common Substring",
+            "https://www.geeksforgeeks.org/problems/longest-common-substring1452/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/27_Longest_Common_Substring.py"
+        ],
+        [
+            28,
+            "DynamicProgramming",
+            "Maximum Length of Repeated Subarray",
+            "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/28_Maximum_Length_of_Repeated_Subarray.py"
+        ],
+        [
+            29,
+            "DynamicProgramming",
+            "Longest Palindromic Subsequence",
+            "https://leetcode.com/problems/longest-palindromic-subsequence/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/29_Longest_Palindromic_Subsequence.py"
+        ],
+        [
+            30,
+            "DynamicProgramming",
+            "Minimum Insertions to make string palindrome",
+            "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/30_Minimum_Insertions_to_make_string_palindrome.py"
+        ],
+        [
+            31,
+            "DynamicProgramming",
+            "Minimun Insertions Deletions to Convert String A to String B",
+            "https://www.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/31_Minimun_Insertions_Deletions_to_Convert_String_A_to_String_B.py"
+        ],
+        [
+            32,
+            "DynamicProgramming",
+            "Length of Shortest Common Supersequence",
+            "https://www.geeksforgeeks.org/problems/shortest-common-supersequence0322/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/32_Length_of_Shortest_Common_Supersequence.py"
+        ],
+        [
+            33,
+            "DynamicProgramming",
+            "Print Shortest Common Supersequence",
+            "https://leetcode.com/problems/shortest-common-supersequence/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/33_Print_Shortest_Common_Supersequence.py"
+        ],
+        [
+            34,
+            "DynamicProgramming",
+            "Longest Palindromic Substring",
+            "https://leetcode.com/problems/longest-palindromic-substring/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/34_Longest_Palindromic_Substring.py"
+        ],
+        [
+            35,
+            "DynamicProgramming",
+            "Distinct Subsequences",
+            "https://leetcode.com/problems/distinct-subsequences/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/35_Distinct_Subsequences.py"
+        ],
+        [
+            36,
+            "DynamicProgramming",
+            "Wildcard Matching",
+            "https://leetcode.com/problems/wildcard-matching/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/36_Wildcard_Matching.py"
+        ],
+        [
+            37,
+            "DynamicProgramming",
+            "Regular Expression",
+            "https://leetcode.com/problems/regular-expression-matching/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/37_Regular_Expression.py"
+        ],
+        [
+            38,
+            "DynamicProgramming",
+            "Edit Distance",
+            "https://leetcode.com/problems/edit-distance/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/38_Edit_Distance.py"
+        ],
+        [
+            39,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock 1 Transaction",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/39_Best_Time_to_Buy_and_Sell_Stock_1_Transaction.py.py"
+        ],
+        [
+            40,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock II Unlimited Transaction",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/40_Best_Time_to_Buy_and_Sell_Stock II_Unlimited_Transaction.py"
+        ],
+        [
+            41,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock III 2 Transactions",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/41_Best_Time_to_Buy_and_Sell_Stock_III_2_Transactions.py"
+        ],
+        [
+            42,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock IV k Transactions",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/42_Best_Time_to_Buy_and_Sell_Stock_IV_k_Transactions.py"
+        ],
+        [
+            43,
+            "DynamicProgramming",
+            "Best Time To Buy and Sell Stock with Cooldown",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+            "Mediun",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/43_Best_Time_To_Buy_and_Sell_Stock_with_Cooldown.py"
+        ],
+        [
+            44,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock with Transaction Fee",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/44_Best_Time_to_Buy_and_Sell_Stock_with_Transaction_Fee.py"
+        ],
+        [
+            45,
+            "DynamicProgramming",
+            "Maximum Alternating Subsequence Sum",
+            "https://leetcode.com/problems/maximum-alternating-subsequence-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/45_Maximum Alternating Subsequence Sum.py"
+        ],
+        [
+            46,
+            "DynamicProgramming",
+            "Longest Increasing Subsequence",
+            "https://leetcode.com/problems/longest-increasing-subsequence/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/46_Longest_Increasing_Subsequence.py"
+        ],
+        [
+            47,
+            "DynamicProgramming",
+            "Maximum Length of Pair Chain",
+            "https://leetcode.com/problems/maximum-length-of-pair-chain/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/47_Maximum_Length_of_Pair_Chain.py"
+        ],
+        [
+            48,
+            "DynamicProgramming",
+            "Longest String Chain",
+            "https://leetcode.com/problems/longest-string-chain/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/48_Longest_String_Chain.py"
+        ],
+        [
+            49,
+            "DynamicProgramming",
+            "Longest Increasing Path in a Matrix",
+            "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/49_Longest_Increasing_Path_in_a_Matrix.py"
+        ],
+        [
+            50,
+            "DynamicProgramming",
+            "Print LIS",
+            "https://www.geeksforgeeks.org/problems/printing-longest-increasing-subsequence/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/50_Print_LIS.py"
+        ],
+        [
+            51,
+            "DynamicProgramming",
+            "Largest Divisible Subset",
+            "https://leetcode.com/problems/largest-divisible-subset/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/51_Largest_Divisible_Subset.py"
+        ],
+        [
+            52,
+            "DynamicProgramming",
+            "Longest Bitonic Subsequences",
+            "https://www.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/52_Longest_Bitonic_Subsequences.py"
+        ],
+        [
+            53,
+            "DynamicProgramming",
+            "Matrix Chain Multiplication",
+            "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/53_Matrix_Chain_Multiplication.py"
+        ],
+        [
+            54,
+            "DynamicProgramming",
+            "Palindrome Partitioning II",
+            "https://leetcode.com/problems/palindrome-partitioning-ii/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/54_Palindrome_Partitioning_II.py"
+        ],
+        [
+            55,
+            "DynamicProgramming",
+            "Partition Array for Maximum Sum",
+            "https://leetcode.com/problems/partition-array-for-maximum-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/55_Partition_Array_for_Maximum_Sum.py"
+        ],
+        [
+            56,
+            "DynamicProgramming",
+            "Evaluate Expression to True Boolean Parenthesization",
+            "https://www.geeksforgeeks.org/problems/boolean-parenthesization5610/1",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/56_Evaluate_Expression_to_True_Boolean_Parenthesization.py"
+        ],
+        [
+            57,
+            "DynamicProgramming",
+            "Scrambled String",
+            "https://leetcode.com/problems/scramble-string/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/57_Scrambled_String.py"
+        ],
+        [
+            58,
+            "DynamicProgramming",
+            "Egg Dropping",
+            "https://www.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/58_Egg_Dropping.py"
+        ],
+        [
+            59,
+            "DynamicProgramming",
+            "Minimum cost to cut stick",
+            "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/59_Minimum_cost_to_cut_stick.py"
+        ],
+        [
+            60,
+            "DynamicProgramming",
+            "Burst Ballons",
+            "https://leetcode.com/problems/burst-balloons/description/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/60_Burst_Ballons.py"
+        ]
+    ],
     "Array&Hashing": [
         [
             1,
@@ -1189,6 +1663,14 @@
             "https://leetcode.com/problems/lru-cache/",
             "Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/37_Design_LRU_Cache.py"
+        ],
+        [
+            38,
+            "LinkedList",
+            "Split Linked List in k parts",
+            "https://leetcode.com/problems/split-linked-list-in-parts/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/4_LinkedList/38_Split_Linked_List_in_k_parts.py"
         ]
     ],
     "Recursion": [
@@ -1927,7 +2409,7 @@
             "Stack&Queues",
             "Sum of Subarray Ranges",
             "https://leetcode.com/problems/sum-of-subarray-ranges",
-            "Mediume",
+            "Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/23_Sum_of_Subarray_Ranges.py"
         ],
         [
@@ -1963,6 +2445,16 @@
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/6_Stack&Queues/27_LRU_Cache.py"
         ]
     ],
+    "Sliding": [
+        [
+            1,
+            "Sliding",
+            "Longest Subarray with sum less than k",
+            "<Question Link>",
+            "<Difficulty>",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Sliding_Window & 2_Pointer/1_Longest_Subarray_with_sum_less_than_k.py"
+        ]
+    ],
     "Trees": [
         [
             1,
@@ -1970,7 +2462,7 @@
             "Preorder",
             "https://practice.geeksforgeeks.org/problems/preorder-traversal/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/1_Preorder.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/1_Preorder.py"
         ],
         [
             2,
@@ -1978,7 +2470,7 @@
             "Inorder",
             "https://practice.geeksforgeeks.org/problems/inorder-traversal/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/2_Inorder.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/2_Inorder.py"
         ],
         [
             3,
@@ -1986,7 +2478,7 @@
             "Post Order",
             "https://www.geeksforgeeks.org/problems/postorder-traversal/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/3_Post_Order.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/3_Post_Order.py"
         ],
         [
             4,
@@ -1994,7 +2486,7 @@
             "All traversal in one pass",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/4_All_traversal_in_one_pass.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/4_All_traversal_in_one_pass.py"
         ],
         [
             5,
@@ -2002,7 +2494,7 @@
             "Max Depth in Binary Tree",
             "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/5_Max_Depth_in_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/5_Max_Depth_in_Binary_Tree.py"
         ],
         [
             6,
@@ -2010,7 +2502,7 @@
             "Check 2 nodes siblings or not",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/6_Check_2_nodes_siblings_or_not.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/6_Check_2_nodes_siblings_or_not.py"
         ],
         [
             7,
@@ -2018,7 +2510,7 @@
             "Check 2 nodes cousins or not",
             "https://practice.geeksforgeeks.org/problems/check-if-two-nodes-are-cousins/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/7_Check_2_nodes_cousins_or_not.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/7_Check_2_nodes_cousins_or_not.py"
         ],
         [
             8,
@@ -2026,7 +2518,7 @@
             "Same tree",
             "https://leetcode.com/problems/same-tree/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/8_Same_tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/8_Same_tree.py"
         ],
         [
             9,
@@ -2034,7 +2526,7 @@
             "Symmetric Tree",
             "https://leetcode.com/problems/symmetric-tree/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/9_Symmetric_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/9_Symmetric_Tree.py"
         ],
         [
             10,
@@ -2042,7 +2534,7 @@
             "Balanced Binary Tree",
             "https://leetcode.com/problems/balanced-binary-tree/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/10_Balanced_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/10_Balanced_Binary_Tree.py"
         ],
         [
             11,
@@ -2050,7 +2542,7 @@
             "Path Sum",
             "https://leetcode.com/problems/path-sum",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/11_Path_Sum.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/11_Path_Sum.py"
         ],
         [
             12,
@@ -2058,7 +2550,7 @@
             "Sum Root to Leaf",
             "https://leetcode.com/problems/sum-root-to-leaf-numbers/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/12_Sum_Root_to_Leaf.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/12_Sum_Root_to_Leaf.py"
         ],
         [
             13,
@@ -2066,7 +2558,7 @@
             "Diameter of Binary Tree",
             "https://leetcode.com/problems/diameter-of-binary-tree/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/13_Diameter_of_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/13_Diameter_of_Binary_Tree.py"
         ],
         [
             14,
@@ -2074,7 +2566,7 @@
             "Binary Tree max path sum",
             "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
             "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/14_Binary_Tree_max_path_sum.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/14_Binary_Tree_max_path_sum.py"
         ],
         [
             15,
@@ -2082,7 +2574,7 @@
             "Print root to any node path",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/15_Print_root_to_any_node_path.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/15_Print_root_to_any_node_path.py"
         ],
         [
             16,
@@ -2090,7 +2582,7 @@
             "Print root to leaf all Paths",
             "https://www.geeksforgeeks.org/problems/root-to-leaf-paths/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/16_Print_root_to_leaf_all_Paths.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/16_Print_root_to_leaf_all_Paths.py"
         ],
         [
             17,
@@ -2098,7 +2590,7 @@
             "Path Exists from root to leaf",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/17_Path_Exists_from_root_to_leaf.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/17_Path_Exists_from_root_to_leaf.py"
         ],
         [
             18,
@@ -2106,7 +2598,7 @@
             "Print All Paths with required Sum",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/18_Print_All_Paths_with_required_Sum.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/18_Print_All_Paths_with_required_Sum.py"
         ],
         [
             19,
@@ -2114,7 +2606,7 @@
             "Binary Tree Level Order Traversal",
             "https://leetcode.com/problems/binary-tree-level-order-traversal/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/19_Binary_Tree_Level_Order_Traversal.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/19_Binary_Tree_Level_Order_Traversal.py"
         ],
         [
             20,
@@ -2122,7 +2614,7 @@
             "Binary Tree Level Order Traversal II",
             "https://leetcode.com/problems/binary-tree-level-order-traversal-ii/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/20_Binary_Tree_Level_Order_Traversal_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/20_Binary_Tree_Level_Order_Traversal_II.py"
         ],
         [
             21,
@@ -2130,7 +2622,7 @@
             "Average of levels in a Binary Tree",
             "https://leetcode.com/problems/average-of-levels-in-binary-tree/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/21_Average_of_levels_in_a_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/21_Average_of_levels_in_a_Binary_Tree.py"
         ],
         [
             22,
@@ -2138,7 +2630,7 @@
             "Level Order Succesor of node",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/22_Level_Order_Succesor_of_node.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/22_Level_Order_Succesor_of_node.py"
         ],
         [
             23,
@@ -2146,7 +2638,7 @@
             "Level Order Predecessor of node",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/23_Level_Order_Predecessor_of_node.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/23_Level_Order_Predecessor_of_node.py"
         ],
         [
             24,
@@ -2154,7 +2646,7 @@
             "Zig Zag Traversal",
             "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/24_Zig_Zag_Traversal.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/24_Zig_Zag_Traversal.py"
         ],
         [
             25,
@@ -2162,7 +2654,7 @@
             "Populating Next Right Pointers in Each Node",
             "https://leetcode.com/problems/populating-next-right-pointers-in-each-node/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/25_Populating_Next_Right_Pointers_in_Each_Node.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/25_Populating_Next_Right_Pointers_in_Each_Node.py"
         ],
         [
             26,
@@ -2170,7 +2662,7 @@
             "Boundary Traversal of a Binary Tree",
             "https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/26_Boundary_Traversal_of_a_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/26_Boundary_Traversal_of_a_Binary_Tree.py"
         ],
         [
             27,
@@ -2178,7 +2670,7 @@
             "Vertical Order Traversal of a Binary Tree",
             "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
             "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/27_Vertical_Order_Traversal_of_a_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/27_Vertical_Order_Traversal_of_a_Binary_Tree.py"
         ],
         [
             28,
@@ -2186,7 +2678,7 @@
             "Top View of a Binary Tree",
             "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/28_Top_View_of_a_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/28_Top_View_of_a_Binary_Tree.py"
         ],
         [
             29,
@@ -2194,7 +2686,7 @@
             "Bottom View of a Binary Tree",
             "https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/29_Bottom_View_of_a_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/29_Bottom_View_of_a_Binary_Tree.py"
         ],
         [
             30,
@@ -2202,7 +2694,7 @@
             "Right View of a Binary Tree",
             "https://leetcode.com/problems/binary-tree-right-side-view/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/30_Right_View_of_a_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/30_Right_View_of_a_Binary_Tree.py"
         ],
         [
             31,
@@ -2210,7 +2702,7 @@
             "Left View of a Binary Tree",
             "https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/31_Left_View_of_a_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/31_Left_View_of_a_Binary_Tree.py"
         ],
         [
             32,
@@ -2218,7 +2710,7 @@
             "Count good nodes in Binary Tree",
             "https://leetcode.com/problems/count-good-nodes-in-binary-tree/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/32_Count_good_nodes_in_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/32_Count_good_nodes_in_Binary_Tree.py"
         ],
         [
             33,
@@ -2226,7 +2718,7 @@
             "LCA I",
             "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/33_LCA_I.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/33_LCA_I.py"
         ],
         [
             34,
@@ -2234,7 +2726,7 @@
             "LCA II",
             "https://practice.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/34_LCA_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/34_LCA_II.py"
         ],
         [
             35,
@@ -2242,7 +2734,7 @@
             "LCA III",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/35_LCA_III.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/35_LCA_III.py"
         ],
         [
             36,
@@ -2250,7 +2742,7 @@
             "LCA IV",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/36_LCA_IV.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/36_LCA_IV.py"
         ],
         [
             37,
@@ -2258,7 +2750,7 @@
             "LCA of Deepes Leaves",
             "https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/37_LCA_of_Deepes_Leaves.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/37_LCA_of_Deepes_Leaves.py"
         ],
         [
             38,
@@ -2266,7 +2758,7 @@
             "Max width of a Binary Tree",
             "https://leetcode.com/problems/maximum-width-of-binary-tree/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/38_Max_width_of_a_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/38_Max_width_of_a_Binary_Tree.py"
         ],
         [
             39,
@@ -2274,7 +2766,7 @@
             "All nodes at k distance",
             "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/39_All_nodes_at_k_distance.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/39_All_nodes_at_k_distance.py"
         ],
         [
             40,
@@ -2282,7 +2774,7 @@
             "Time Taken to burn tree from any nodes",
             "https://practice.geeksforgeeks.org/problems/burning-tree/1",
             "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/40_Time_Taken_to_burn_tree_from_any_nodes.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/40_Time_Taken_to_burn_tree_from_any_nodes.py"
         ],
         [
             41,
@@ -2290,7 +2782,7 @@
             "Construct Tree from preorder inorder",
             "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/41_Construct_Tree_from_preorder_inorder.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/41_Construct_Tree_from_preorder_inorder.py"
         ],
         [
             42,
@@ -2298,7 +2790,7 @@
             "Construct Tree from postorder inorder",
             "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/42_Construct_Tree_from_postorder_inorder.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/42_Construct_Tree_from_postorder_inorder.py"
         ],
         [
             43,
@@ -2306,7 +2798,7 @@
             "Serialize Deserialize Tree",
             "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
             "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/43_Serialize_Deserialize_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/43_Serialize_Deserialize_Tree.py"
         ],
         [
             44,
@@ -2314,7 +2806,7 @@
             "Morris Traversal Inorder",
             "https://leetcode.com/problems/binary-tree-inorder-traversal/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/44_Morris_Traversal_Inorder.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/44_Morris_Traversal_Inorder.py"
         ],
         [
             45,
@@ -2322,7 +2814,7 @@
             "Morris Traversal Preorder",
             "https://leetcode.com/problems/binary-tree-preorder-traversal/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/45_Morris_Traversal_Preorder.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/45_Morris_Traversal_Preorder.py"
         ],
         [
             46,
@@ -2330,7 +2822,7 @@
             "Flatten Binary Tree to Linked List",
             "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/46_Flatten_Binary_Tree_to_Linked_List.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/46_Flatten_Binary_Tree_to_Linked_List.py"
         ],
         [
             47,
@@ -2338,7 +2830,7 @@
             "Subtree of another tree",
             "https://leetcode.com/problems/subtree-of-another-tree/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/47_Subtree_of_another_tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/47_Subtree_of_another_tree.py"
         ],
         [
             48,
@@ -2346,7 +2838,7 @@
             "Invert Binary Tree",
             "https://leetcode.com/problems/invert-binary-tree/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/48_Invert_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/48_Invert_Binary_Tree.py"
         ],
         [
             49,
@@ -2354,7 +2846,7 @@
             "Search in BST",
             "https://leetcode.com/problems/search-in-a-binary-search-tree/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/49_Search_in_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/49_Search_in_BST.py"
         ],
         [
             50,
@@ -2362,7 +2854,7 @@
             "Ceil in BST",
             "https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/50_Ceil_in_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/50_Ceil_in_BST.py"
         ],
         [
             51,
@@ -2370,7 +2862,7 @@
             "Floor in BST",
             "https://practice.geeksforgeeks.org/problems/floor-in-bst/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/51_Floor_in_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/51_Floor_in_BST.py"
         ],
         [
             52,
@@ -2378,7 +2870,7 @@
             "Insert a given node in A BST",
             "https://leetcode.com/problems/insert-into-a-binary-search-tree/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/52_Insert_a_given_node_in_A_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/52_Insert_a_given_node_in_A_BST.py"
         ],
         [
             53,
@@ -2386,7 +2878,7 @@
             "Delete a given node in A BST",
             " https://leetcode.com/problems/delete-node-in-a-bst/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/53_Delete_a_given_node_in_A_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/53_Delete_a_given_node_in_A_BST.py"
         ],
         [
             54,
@@ -2394,7 +2886,7 @@
             "Kth Smallest in BST",
             "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/54_Kth_Smallest_in_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/54_Kth_Smallest_in_BST.py"
         ],
         [
             55,
@@ -2402,7 +2894,7 @@
             "Kth Largest in BST",
             "https://www.geeksforgeeks.org/problems/kth-largest-element-in-bst/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/55_Kth_Largest_in_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/55_Kth_Largest_in_BST.py"
         ],
         [
             56,
@@ -2410,7 +2902,7 @@
             "Validate BST",
             "https://leetcode.com/problems/validate-binary-search-tree/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/56_Validate_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/56_Validate_BST.py"
         ],
         [
             57,
@@ -2418,7 +2910,7 @@
             "LCA in BST",
             "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/57_LCA_in_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/57_LCA_in_BST.py"
         ],
         [
             58,
@@ -2426,7 +2918,7 @@
             "Construct BST from preorder",
             "https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/58_Construct_BST_from_preorder.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/58_Construct_BST_from_preorder.py"
         ],
         [
             59,
@@ -2434,7 +2926,7 @@
             "Inorder Successor BST",
             "https://www.geeksforgeeks.org/problems/inorder-successor-in-bst/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/59_Inorder_Successor_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/59_Inorder_Successor_BST.py"
         ],
         [
             60,
@@ -2442,7 +2934,7 @@
             "Inorder Predecessor BST",
             "NA",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/60_Inorder_Predecessor_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/60_Inorder_Predecessor_BST.py"
         ],
         [
             61,
@@ -2450,7 +2942,7 @@
             "BST Iterator",
             "https://leetcode.com/problems/binary-search-tree-iterator/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/61_BST_Iterator.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/61_BST_Iterator.py"
         ],
         [
             62,
@@ -2458,7 +2950,7 @@
             "Two Sum IV BST",
             "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/62_Two_Sum_IV_BST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/62_Two_Sum_IV_BST.py"
         ],
         [
             63,
@@ -2466,7 +2958,7 @@
             "Recover BST with 2 nodes swapped",
             "https://leetcode.com/problems/recover-binary-search-tree/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/63_Recover_BST_with_2_nodes_swapped.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/63_Recover_BST_with_2_nodes_swapped.py"
         ],
         [
             64,
@@ -2474,7 +2966,7 @@
             "Largest BST in Binary Tree",
             "https://www.geeksforgeeks.org/problems/largest-bst/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/64_Largest_BST_in_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/64_Largest_BST_in_Binary_Tree.py"
         ],
         [
             65,
@@ -2482,7 +2974,7 @@
             "Linked List in Binary Tree",
             "https://leetcode.com/problems/linked-list-in-binary-tree/description/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_Trees/65_Linked_List_in_Binary_Tree.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Trees/65_Linked_List_in_Binary_Tree.py"
         ]
     ],
     "Graphs": [
@@ -2492,7 +2984,7 @@
             "DFS Graph",
             "https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/1_DFS_Graph.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/1_DFS_Graph.py"
         ],
         [
             2,
@@ -2500,7 +2992,7 @@
             "BFS Graph",
             "https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/2_BFS_Graph.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/2_BFS_Graph.py"
         ],
         [
             3,
@@ -2508,7 +3000,7 @@
             "Number of Provinces",
             "https://leetcode.com/problems/number-of-provinces/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/3_Number_of_Provinces.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/3_Number_of_Provinces.py"
         ],
         [
             4,
@@ -2516,7 +3008,7 @@
             "Number of Islands",
             "https://leetcode.com/problems/number-of-islands/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/4_Number_of_Islands.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/4_Number_of_Islands.py"
         ],
         [
             5,
@@ -2524,7 +3016,7 @@
             "Flood Fill",
             "https://leetcode.com/problems/flood-fill/",
             "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/5_Flood_Fill.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/5_Flood_Fill.py"
         ],
         [
             6,
@@ -2532,7 +3024,7 @@
             "Rotten Oranges",
             "https://leetcode.com/problems/rotting-oranges/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/6_Rotten_Oranges.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/6_Rotten_Oranges.py"
         ],
         [
             7,
@@ -2540,7 +3032,7 @@
             "Detect Cycle in Undirected Graph BFS",
             "https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/7_Detect_Cycle_in_Undirected_Graph_BFS.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/7_Detect_Cycle_in_Undirected_Graph_BFS.py"
         ],
         [
             8,
@@ -2548,7 +3040,7 @@
             "Detect Cycle in Udirected Graph DFS",
             "https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/8_Detect_Cycle_in_Udirected_Graph.py_DFS.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/8_Detect_Cycle_in_Udirected_Graph.py_DFS.py"
         ],
         [
             9,
@@ -2556,7 +3048,7 @@
             "Distance of nearest cell having 1",
             "https://leetcode.com/problems/01-matrix/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/9_Distance_of_nearest_cell_having_1.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/9_Distance_of_nearest_cell_having_1.py"
         ],
         [
             10,
@@ -2564,7 +3056,7 @@
             "Surrounded Regions Replace Os with X",
             "https://leetcode.com/problems/surrounded-regions/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/10_Surrounded_Regions_Replace_Os_with_X.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/10_Surrounded_Regions_Replace_Os_with_X.py"
         ],
         [
             11,
@@ -2572,7 +3064,7 @@
             "Number of Enclaves",
             "https://leetcode.com/problems/number-of-enclaves/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/11_Number_of_Enclaves.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/11_Number_of_Enclaves.py"
         ],
         [
             12,
@@ -2580,7 +3072,7 @@
             "Number of Distinct Islands",
             "https://www.geeksforgeeks.org/problems/number-of-distinct-islands/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/12_Number_of_Distinct_Islands.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/12_Number_of_Distinct_Islands.py"
         ],
         [
             13,
@@ -2588,7 +3080,7 @@
             "Bipartite Graph DFS",
             "https://leetcode.com/problems/is-graph-bipartite/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/13_Bipartite_Graph_DFS.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/13_Bipartite_Graph_DFS.py"
         ],
         [
             13,
@@ -2596,7 +3088,7 @@
             "Bipartite graph BFS",
             "https://leetcode.com/problems/is-graph-bipartite/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/13_Bipartite_graph_BFS.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/13_Bipartite_graph_BFS.py"
         ],
         [
             14,
@@ -2604,7 +3096,7 @@
             "Detect Cycle in directed graph",
             "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/14_Detect_Cycle_in_directed_graph.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/14_Detect_Cycle_in_directed_graph.py"
         ],
         [
             15,
@@ -2612,7 +3104,7 @@
             "Find Eventual Safe States DFS",
             "https://leetcode.com/problems/find-eventual-safe-states/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/15_Find_Eventual_Safe_States_DFS.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/15_Find_Eventual_Safe_States_DFS.py"
         ],
         [
             16,
@@ -2620,7 +3112,7 @@
             "Topological Sort DFS",
             "https://practice.geeksforgeeks.org/problems/topological-sort/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/16_Topological_Sort_DFS.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/16_Topological_Sort_DFS.py"
         ],
         [
             17,
@@ -2628,7 +3120,7 @@
             "Topological Sort BFS Kahns Algorithm",
             "https://practice.geeksforgeeks.org/problems/topological-sort/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/17_Topological_Sort_BFS_Kahns_Algorithm.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/17_Topological_Sort_BFS_Kahns_Algorithm.py"
         ],
         [
             18,
@@ -2636,7 +3128,7 @@
             "Detect Cycle in Directed Graph Topo Sort",
             "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/18_Detect_Cycle_in_Directed_Graph_Topo_Sort.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/18_Detect_Cycle_in_Directed_Graph_Topo_Sort.py"
         ],
         [
             19,
@@ -2644,7 +3136,7 @@
             "Course Schedule I",
             "https://leetcode.com/problems/course-schedule/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/19_Course_Schedule_I.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/19_Course_Schedule_I.py"
         ],
         [
             20,
@@ -2652,7 +3144,7 @@
             "Course Schedule II",
             "https://leetcode.com/problems/course-schedule/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/20_Course_Schedule_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/20_Course_Schedule_II.py"
         ],
         [
             21,
@@ -2660,7 +3152,7 @@
             "Alien Dictionary",
             "https://www.geeksforgeeks.org/problems/alien-dictionary/1",
             "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/21_Alien_Dictionary.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/21_Alien_Dictionary.py"
         ],
         [
             22,
@@ -2668,7 +3160,7 @@
             "Shortest Path in Directed Acyclic Graph",
             "https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/22_Shortest_Path_in_Directed_Acyclic_Graph.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/22_Shortest_Path_in_Directed_Acyclic_Graph.py"
         ],
         [
             23,
@@ -2676,7 +3168,7 @@
             "Shortest Path in Undirected Graph unit distance",
             "https://practice.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/23_Shortest_Path_in_Undirected_Graph_unit_distance.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/23_Shortest_Path_in_Undirected_Graph_unit_distance.py"
         ],
         [
             24,
@@ -2684,7 +3176,7 @@
             "Word Ladder I",
             "https://leetcode.com/problems/word-ladder/",
             "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/24_Word_Ladder_I.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/24_Word_Ladder_I.py"
         ],
         [
             25,
@@ -2692,7 +3184,7 @@
             "Word Ladder II",
             "https://leetcode.com/problems/word-ladder-ii/description/",
             "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/25_Word_Ladder_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/25_Word_Ladder_II.py"
         ],
         [
             26,
@@ -2700,7 +3192,7 @@
             "Dijkstras Algorithm Min Heap Priority Queue",
             "https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/26_Dijkstras_Algorithm_Min_Heap_Priority_Queue.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/26_Dijkstras_Algorithm_Min_Heap_Priority_Queue.py"
         ],
         [
             27,
@@ -2708,7 +3200,7 @@
             "Dijkstras Algorithm Sets",
             "https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/27_Dijkstras_Algorithm_Sets.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/27_Dijkstras_Algorithm_Sets.py"
         ],
         [
             28,
@@ -2716,7 +3208,7 @@
             "Print Shortest Path",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/28_Print_Shortest_Path.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/28_Print_Shortest_Path.py"
         ],
         [
             29,
@@ -2724,7 +3216,7 @@
             "Shortest Path in Binary Matrix",
             "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/29_Shortest_Path_in_Binary_Matrix.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/29_Shortest_Path_in_Binary_Matrix.py"
         ],
         [
             30,
@@ -2732,7 +3224,7 @@
             "Path with min effort",
             "https://leetcode.com/problems/path-with-minimum-effort/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/30_Path_with_min_effort.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/30_Path_with_min_effort.py"
         ],
         [
             31,
@@ -2740,7 +3232,7 @@
             "Cheapest Flights with K Stops",
             "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/31_Cheapest_Flights_with_K_Stops.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/31_Cheapest_Flights_with_K_Stops.py"
         ],
         [
             32,
@@ -2748,7 +3240,7 @@
             "Minimum Multiplication to reach end",
             "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/32_Minimum_Multiplication_to_reach_end.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/32_Minimum_Multiplication_to_reach_end.py"
         ],
         [
             33,
@@ -2756,7 +3248,7 @@
             "Number of ways to Arrive at Destination",
             "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/33_Number_of_ways_to_Arrive_at_Destination.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/33_Number_of_ways_to_Arrive_at_Destination.py"
         ],
         [
             34,
@@ -2764,7 +3256,7 @@
             "Bellman Ford Algorithm",
             "https://practice.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/34_Bellman_Ford_Algorithm.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/34_Bellman_Ford_Algorithm.py"
         ],
         [
             35,
@@ -2772,7 +3264,7 @@
             "Floyd Warshall Algorithm",
             "https://practice.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/35_Floyd_Warshall_Algorithm.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/35_Floyd_Warshall_Algorithm.py"
         ],
         [
             36,
@@ -2780,7 +3272,7 @@
             "Cities with Smallest Number of Neighbours at a threshold distance",
             "https://practice.geeksforgeeks.org/problems/city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/36_Cities_with_Smallest_Number_of_Neighbours_at_a_threshold_distance.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/36_Cities_with_Smallest_Number_of_Neighbours_at_a_threshold_distance.py"
         ],
         [
             37,
@@ -2788,7 +3280,7 @@
             "Prims MST",
             "https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/37_Prims_MST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/37_Prims_MST.py"
         ],
         [
             38,
@@ -2796,7 +3288,7 @@
             "Disjoint Set Union By Rank Union By Size Path Compression",
             "NA",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/38_Disjoint_Set_Union_By_Rank_Union_By_Size_Path_Compression.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/38_Disjoint_Set_Union_By_Rank_Union_By_Size_Path_Compression.py"
         ],
         [
             39,
@@ -2804,7 +3296,7 @@
             "Kruskal MST",
             "https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/39_Kruskal_MST.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/39_Kruskal_MST.py"
         ],
         [
             40,
@@ -2812,7 +3304,7 @@
             "Number of Provinces",
             "https://practice.geeksforgeeks.org/problems/number-of-provinces/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/40_Number_of_Provinces.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/40_Number_of_Provinces.py"
         ],
         [
             41,
@@ -2820,7 +3312,7 @@
             "Accounts Merge",
             "https://leetcode.com/problems/accounts-merge/description/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/41_Accounts_Merge.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/41_Accounts_Merge.py"
         ],
         [
             42,
@@ -2828,7 +3320,7 @@
             "Number of Islands II",
             "https://practice.geeksforgeeks.org/problems/number-of-islands/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/42_Number_of_Islands_II.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/42_Number_of_Islands_II.py"
         ],
         [
             43,
@@ -2836,7 +3328,7 @@
             "Making a Large Island",
             "https://leetcode.com/problems/making-a-large-island/",
             "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/43_Making_a_Large_Island.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/43_Making_a_Large_Island.py"
         ],
         [
             44,
@@ -2844,7 +3336,7 @@
             "Most Stones Removed with same row or column",
             "https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/44_Most_Stones_Removed_with_same_row_or_column.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/44_Most_Stones_Removed_with_same_row_or_column.py"
         ],
         [
             45,
@@ -2852,7 +3344,7 @@
             "Strongly Connected Components Kosarajus Algorithm",
             "https://practice.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1",
             "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/45_Strongly_Connected_Components_Kosarajus_Algorithm.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/45_Strongly_Connected_Components_Kosarajus_Algorithm.py"
         ],
         [
             50,
@@ -2860,7 +3352,7 @@
             "Bridges in Graph",
             "https://leetcode.com/problems/critical-connections-in-a-network/",
             "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/50_Bridges_in_Graph.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/50_Bridges_in_Graph.py"
         ],
         [
             51,
@@ -2868,481 +3360,7 @@
             "Articulation Point in Graph",
             "https://practice.geeksforgeeks.org/problems/articulation-point-1/1",
             "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/8_Graphs/51_Articulation_Point_in_Graph.py"
-        ]
-    ],
-    "DynamicProgramming": [
-        [
-            1,
-            "DynamicProgramming",
-            "Fibonacci",
-            "https://leetcode.com/problems/fibonacci-number/",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/1_Fibonacci.py"
-        ],
-        [
-            2,
-            "DynamicProgramming",
-            "Climbing Stairs",
-            "https://leetcode.com/problems/climbing-stairs/",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/2_Climbing_Stairs.py"
-        ],
-        [
-            3,
-            "DynamicProgramming",
-            "Geek Jump",
-            "https://www.geeksforgeeks.org/problems/geek-jump/1",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/3_Geek_Jump.py"
-        ],
-        [
-            4,
-            "DynamicProgramming",
-            "House Robber",
-            "https://leetcode.com/problems/house-robber/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/4_House_Robber.py"
-        ],
-        [
-            5,
-            "DynamicProgramming",
-            "House Robber II",
-            "https://leetcode.com/problems/house-robber-ii/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/5_House_Robber_II.py"
-        ],
-        [
-            6,
-            "DynamicProgramming",
-            "Geeks Training",
-            "https://www.geeksforgeeks.org/problems/geeks-training/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/6_Geeks_Training.py"
-        ],
-        [
-            7,
-            "DynamicProgramming",
-            "Unique Paths",
-            "https://leetcode.com/problems/unique-paths/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/7_Unique_Paths.py"
-        ],
-        [
-            8,
-            "DynamicProgramming",
-            "Unique Paths II",
-            "https://leetcode.com/problems/unique-paths-ii/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/8_Unique_Paths_II.py"
-        ],
-        [
-            9,
-            "DynamicProgramming",
-            "Minimum Path Sum in grid",
-            "https://leetcode.com/problems/minimum-path-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/9_Minimum_Path_Sum_in_grid.py"
-        ],
-        [
-            10,
-            "DynamicProgramming",
-            "Triangle Grid Min Path Sum",
-            "https://leetcode.com/problems/triangle/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/10_Triangle_Grid_Min_Path_Sum.py"
-        ],
-        [
-            11,
-            "DynamicProgramming",
-            "Minimum Falling Path Sum",
-            "https://leetcode.com/problems/minimum-falling-path-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/11_Minimum_Falling_Path_Sum.py"
-        ],
-        [
-            12,
-            "DynamicProgramming",
-            "Cherry Pickup I",
-            "https://leetcode.com/problems/cherry-pickup/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/12_Cherry_Pickup_I.py"
-        ],
-        [
-            13,
-            "DynamicProgramming",
-            "Cherry Pickup II",
-            "https://leetcode.com/problems/cherry-pickup-ii/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/13_Cherry_Pickup_II.py"
-        ],
-        [
-            15,
-            "DynamicProgramming",
-            "0 1 Knapsack",
-            "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/15_0_1_Knapsack.py"
-        ],
-        [
-            16,
-            "DynamicProgramming",
-            "Target Sum with Symbols + -",
-            "https://leetcode.com/problems/target-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/16_Target_Sum_with_Symbols_+_-.py"
-        ],
-        [
-            17,
-            "DynamicProgramming",
-            "Target Sum Equals to Target",
-            "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/17_Target_Sum_Equals_to_Target.py"
-        ],
-        [
-            18,
-            "DynamicProgramming",
-            "Equal Sum Partition Problem",
-            "https://leetcode.com/problems/partition-equal-subset-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/18_Equal_Sum_Partition_Problem.py"
-        ],
-        [
-            19,
-            "DynamicProgramming",
-            "Minimum Sum Partition",
-            "https://www.geeksforgeeks.org/problems/minimum-sum-partition3317/1",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/19_Minimum_Sum_Partition.py"
-        ],
-        [
-            20,
-            "DynamicProgramming",
-            "Count Subsets with given difference",
-            "https://www.geeksforgeeks.org/problems/partitions-with-given-difference/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/20_Count_Subsets_with_given_difference.py"
-        ],
-        [
-            21,
-            "DynamicProgramming",
-            "Unbound Knapsack",
-            "https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/21_Unbound_Knapsack.py"
-        ],
-        [
-            22,
-            "DynamicProgramming",
-            "Rod Cutting",
-            "https://www.geeksforgeeks.org/problems/rod-cutting0840/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/22_Rod_Cutting.py"
-        ],
-        [
-            23,
-            "DynamicProgramming",
-            "Coin Change I",
-            "https://leetcode.com/problems/coin-change/description/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/23_Coin_Change_I.py"
-        ],
-        [
-            24,
-            "DynamicProgramming",
-            "Coin Change II",
-            "https://leetcode.com/problems/coin-change-ii/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/24_Coin_Change_II.py"
-        ],
-        [
-            25,
-            "DynamicProgramming",
-            "Longest Common Subsequence",
-            "https://leetcode.com/problems/longest-common-subsequence/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/25_Longest_Common_Subsequence.py"
-        ],
-        [
-            26,
-            "DynamicProgramming",
-            "Print All LCS",
-            "https://www.geeksforgeeks.org/problems/print-all-lcs-sequences3413/1",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/26_Print_All_LCS.py"
-        ],
-        [
-            27,
-            "DynamicProgramming",
-            "Longest Common Substring",
-            "https://www.geeksforgeeks.org/problems/longest-common-substring1452/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/27_Longest_Common_Substring.py"
-        ],
-        [
-            28,
-            "DynamicProgramming",
-            "Maximum Length of Repeated Subarray",
-            "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/28_Maximum_Length_of_Repeated_Subarray.py"
-        ],
-        [
-            29,
-            "DynamicProgramming",
-            "Longest Palindromic Subsequence",
-            "https://leetcode.com/problems/longest-palindromic-subsequence/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/29_Longest_Palindromic_Subsequence.py"
-        ],
-        [
-            30,
-            "DynamicProgramming",
-            "Minimum Insertions to make string palindrome",
-            "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/30_Minimum_Insertions_to_make_string_palindrome.py"
-        ],
-        [
-            31,
-            "DynamicProgramming",
-            "Minimun Insertions Deletions to Convert String A to String B",
-            "https://www.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/31_Minimun_Insertions_Deletions_to_Convert_String_A_to_String_B.py"
-        ],
-        [
-            32,
-            "DynamicProgramming",
-            "Length of Shortest Common Supersequence",
-            "https://www.geeksforgeeks.org/problems/shortest-common-supersequence0322/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/32_Length_of_Shortest_Common_Supersequence.py"
-        ],
-        [
-            33,
-            "DynamicProgramming",
-            "Print Shortest Common Supersequence",
-            "https://leetcode.com/problems/shortest-common-supersequence/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/33_Print_Shortest_Common_Supersequence.py"
-        ],
-        [
-            34,
-            "DynamicProgramming",
-            "Longest Palindromic Substring",
-            "https://leetcode.com/problems/longest-palindromic-substring/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/34_Longest_Palindromic_Substring.py"
-        ],
-        [
-            35,
-            "DynamicProgramming",
-            "Distinct Subsequences",
-            "https://leetcode.com/problems/distinct-subsequences/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/35_Distinct_Subsequences.py"
-        ],
-        [
-            36,
-            "DynamicProgramming",
-            "Wildcard Matching",
-            "https://leetcode.com/problems/wildcard-matching/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/36_Wildcard_Matching.py"
-        ],
-        [
-            37,
-            "DynamicProgramming",
-            "Regular Expression",
-            "https://leetcode.com/problems/regular-expression-matching/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/37_Regular_Expression.py"
-        ],
-        [
-            38,
-            "DynamicProgramming",
-            "Edit Distance",
-            "https://leetcode.com/problems/edit-distance/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/38_Edit_Distance.py"
-        ],
-        [
-            39,
-            "DynamicProgramming",
-            "Best Time to Buy and Sell Stock 1 Transaction",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/39_Best_Time_to_Buy_and_Sell_Stock_1_Transaction.py.py"
-        ],
-        [
-            40,
-            "DynamicProgramming",
-            "Best Time to Buy and Sell Stock II Unlimited Transaction",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/40_Best_Time_to_Buy_and_Sell_Stock II_Unlimited_Transaction.py"
-        ],
-        [
-            41,
-            "DynamicProgramming",
-            "Best Time to Buy and Sell Stock III 2 Transactions",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/41_Best_Time_to_Buy_and_Sell_Stock_III_2_Transactions.py"
-        ],
-        [
-            42,
-            "DynamicProgramming",
-            "Best Time to Buy and Sell Stock IV k Transactions",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/42_Best_Time_to_Buy_and_Sell_Stock_IV_k_Transactions.py"
-        ],
-        [
-            43,
-            "DynamicProgramming",
-            "Best Time To Buy and Sell Stock with Cooldown",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
-            "Mediun",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/43_Best_Time_To_Buy_and_Sell_Stock_with_Cooldown.py"
-        ],
-        [
-            44,
-            "DynamicProgramming",
-            "Best Time to Buy and Sell Stock with Transaction Fee",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/44_Best_Time_to_Buy_and_Sell_Stock_with_Transaction_Fee.py"
-        ],
-        [
-            45,
-            "DynamicProgramming",
-            "Maximum Alternating Subsequence Sum",
-            "https://leetcode.com/problems/maximum-alternating-subsequence-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/45_Maximum Alternating Subsequence Sum.py"
-        ],
-        [
-            46,
-            "DynamicProgramming",
-            "Longest Increasing Subsequence",
-            "https://leetcode.com/problems/longest-increasing-subsequence/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/46_Longest_Increasing_Subsequence.py"
-        ],
-        [
-            47,
-            "DynamicProgramming",
-            "Maximum Length of Pair Chain",
-            "https://leetcode.com/problems/maximum-length-of-pair-chain/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/47_Maximum_Length_of_Pair_Chain.py"
-        ],
-        [
-            48,
-            "DynamicProgramming",
-            "Longest String Chain",
-            "https://leetcode.com/problems/longest-string-chain/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/48_Longest_String_Chain.py"
-        ],
-        [
-            49,
-            "DynamicProgramming",
-            "Longest Increasing Path in a Matrix",
-            "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/49_Longest_Increasing_Path_in_a_Matrix.py"
-        ],
-        [
-            50,
-            "DynamicProgramming",
-            "Print LIS",
-            "https://www.geeksforgeeks.org/problems/printing-longest-increasing-subsequence/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/50_Print_LIS.py"
-        ],
-        [
-            51,
-            "DynamicProgramming",
-            "Largest Divisible Subset",
-            "https://leetcode.com/problems/largest-divisible-subset/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/51_Largest_Divisible_Subset.py"
-        ],
-        [
-            52,
-            "DynamicProgramming",
-            "Longest Bitonic Subsequences",
-            "https://www.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/52_Longest_Bitonic_Subsequences.py"
-        ],
-        [
-            53,
-            "DynamicProgramming",
-            "Matrix Chain Multiplication",
-            "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/53_Matrix_Chain_Multiplication.py"
-        ],
-        [
-            54,
-            "DynamicProgramming",
-            "Palindrome Partitioning II",
-            "https://leetcode.com/problems/palindrome-partitioning-ii/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/54_Palindrome_Partitioning_II.py"
-        ],
-        [
-            55,
-            "DynamicProgramming",
-            "Partition Array for Maximum Sum",
-            "https://leetcode.com/problems/partition-array-for-maximum-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/55_Partition_Array_for_Maximum_Sum.py"
-        ],
-        [
-            56,
-            "DynamicProgramming",
-            "Evaluate Expression to True Boolean Parenthesization",
-            "https://www.geeksforgeeks.org/problems/boolean-parenthesization5610/1",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/56_Evaluate_Expression_to_True_Boolean_Parenthesization.py"
-        ],
-        [
-            57,
-            "DynamicProgramming",
-            "Scrambled String",
-            "https://leetcode.com/problems/scramble-string/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/57_Scrambled_String.py"
-        ],
-        [
-            58,
-            "DynamicProgramming",
-            "Egg Dropping",
-            "https://www.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/58_Egg_Dropping.py"
-        ],
-        [
-            59,
-            "DynamicProgramming",
-            "Minimum cost to cut stick",
-            "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/59_Minimum_cost_to_cut_stick.py"
-        ],
-        [
-            60,
-            "DynamicProgramming",
-            "Burst Ballons",
-            "https://leetcode.com/problems/burst-balloons/description/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_DynamicProgramming/60_Burst_Ballons.py"
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/51_Articulation_Point_in_Graph.py"
         ]
     ]
 }
