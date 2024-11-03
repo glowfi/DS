@@ -1,478 +1,4 @@
 {
-    "DynamicProgramming": [
-        [
-            1,
-            "DynamicProgramming",
-            "Fibonacci",
-            "https://leetcode.com/problems/fibonacci-number/",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/1_Fibonacci.py"
-        ],
-        [
-            2,
-            "DynamicProgramming",
-            "Climbing Stairs",
-            "https://leetcode.com/problems/climbing-stairs/",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/2_Climbing_Stairs.py"
-        ],
-        [
-            3,
-            "DynamicProgramming",
-            "Geek Jump",
-            "https://www.geeksforgeeks.org/problems/geek-jump/1",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/3_Geek_Jump.py"
-        ],
-        [
-            4,
-            "DynamicProgramming",
-            "House Robber",
-            "https://leetcode.com/problems/house-robber/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/4_House_Robber.py"
-        ],
-        [
-            5,
-            "DynamicProgramming",
-            "House Robber II",
-            "https://leetcode.com/problems/house-robber-ii/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/5_House_Robber_II.py"
-        ],
-        [
-            6,
-            "DynamicProgramming",
-            "Geeks Training",
-            "https://www.geeksforgeeks.org/problems/geeks-training/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/6_Geeks_Training.py"
-        ],
-        [
-            7,
-            "DynamicProgramming",
-            "Unique Paths",
-            "https://leetcode.com/problems/unique-paths/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/7_Unique_Paths.py"
-        ],
-        [
-            8,
-            "DynamicProgramming",
-            "Unique Paths II",
-            "https://leetcode.com/problems/unique-paths-ii/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/8_Unique_Paths_II.py"
-        ],
-        [
-            9,
-            "DynamicProgramming",
-            "Minimum Path Sum in grid",
-            "https://leetcode.com/problems/minimum-path-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/9_Minimum_Path_Sum_in_grid.py"
-        ],
-        [
-            10,
-            "DynamicProgramming",
-            "Triangle Grid Min Path Sum",
-            "https://leetcode.com/problems/triangle/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/10_Triangle_Grid_Min_Path_Sum.py"
-        ],
-        [
-            11,
-            "DynamicProgramming",
-            "Minimum Falling Path Sum",
-            "https://leetcode.com/problems/minimum-falling-path-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/11_Minimum_Falling_Path_Sum.py"
-        ],
-        [
-            12,
-            "DynamicProgramming",
-            "Cherry Pickup I",
-            "https://leetcode.com/problems/cherry-pickup/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/12_Cherry_Pickup_I.py"
-        ],
-        [
-            13,
-            "DynamicProgramming",
-            "Cherry Pickup II",
-            "https://leetcode.com/problems/cherry-pickup-ii/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/13_Cherry_Pickup_II.py"
-        ],
-        [
-            15,
-            "DynamicProgramming",
-            "0 1 Knapsack",
-            "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/15_0_1_Knapsack.py"
-        ],
-        [
-            16,
-            "DynamicProgramming",
-            "Target Sum with Symbols + -",
-            "https://leetcode.com/problems/target-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/16_Target_Sum_with_Symbols_+_-.py"
-        ],
-        [
-            17,
-            "DynamicProgramming",
-            "Target Sum Equals to Target",
-            "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/17_Target_Sum_Equals_to_Target.py"
-        ],
-        [
-            18,
-            "DynamicProgramming",
-            "Equal Sum Partition Problem",
-            "https://leetcode.com/problems/partition-equal-subset-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/18_Equal_Sum_Partition_Problem.py"
-        ],
-        [
-            19,
-            "DynamicProgramming",
-            "Minimum Sum Partition",
-            "https://www.geeksforgeeks.org/problems/minimum-sum-partition3317/1",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/19_Minimum_Sum_Partition.py"
-        ],
-        [
-            20,
-            "DynamicProgramming",
-            "Count Subsets with given difference",
-            "https://www.geeksforgeeks.org/problems/partitions-with-given-difference/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/20_Count_Subsets_with_given_difference.py"
-        ],
-        [
-            21,
-            "DynamicProgramming",
-            "Unbound Knapsack",
-            "https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/21_Unbound_Knapsack.py"
-        ],
-        [
-            22,
-            "DynamicProgramming",
-            "Rod Cutting",
-            "https://www.geeksforgeeks.org/problems/rod-cutting0840/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/22_Rod_Cutting.py"
-        ],
-        [
-            23,
-            "DynamicProgramming",
-            "Coin Change I",
-            "https://leetcode.com/problems/coin-change/description/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/23_Coin_Change_I.py"
-        ],
-        [
-            24,
-            "DynamicProgramming",
-            "Coin Change II",
-            "https://leetcode.com/problems/coin-change-ii/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/24_Coin_Change_II.py"
-        ],
-        [
-            25,
-            "DynamicProgramming",
-            "Longest Common Subsequence",
-            "https://leetcode.com/problems/longest-common-subsequence/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/25_Longest_Common_Subsequence.py"
-        ],
-        [
-            26,
-            "DynamicProgramming",
-            "Print All LCS",
-            "https://www.geeksforgeeks.org/problems/print-all-lcs-sequences3413/1",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/26_Print_All_LCS.py"
-        ],
-        [
-            27,
-            "DynamicProgramming",
-            "Longest Common Substring",
-            "https://www.geeksforgeeks.org/problems/longest-common-substring1452/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/27_Longest_Common_Substring.py"
-        ],
-        [
-            28,
-            "DynamicProgramming",
-            "Maximum Length of Repeated Subarray",
-            "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/28_Maximum_Length_of_Repeated_Subarray.py"
-        ],
-        [
-            29,
-            "DynamicProgramming",
-            "Longest Palindromic Subsequence",
-            "https://leetcode.com/problems/longest-palindromic-subsequence/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/29_Longest_Palindromic_Subsequence.py"
-        ],
-        [
-            30,
-            "DynamicProgramming",
-            "Minimum Insertions to make string palindrome",
-            "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/30_Minimum_Insertions_to_make_string_palindrome.py"
-        ],
-        [
-            31,
-            "DynamicProgramming",
-            "Minimun Insertions Deletions to Convert String A to String B",
-            "https://www.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/31_Minimun_Insertions_Deletions_to_Convert_String_A_to_String_B.py"
-        ],
-        [
-            32,
-            "DynamicProgramming",
-            "Length of Shortest Common Supersequence",
-            "https://www.geeksforgeeks.org/problems/shortest-common-supersequence0322/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/32_Length_of_Shortest_Common_Supersequence.py"
-        ],
-        [
-            33,
-            "DynamicProgramming",
-            "Print Shortest Common Supersequence",
-            "https://leetcode.com/problems/shortest-common-supersequence/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/33_Print_Shortest_Common_Supersequence.py"
-        ],
-        [
-            34,
-            "DynamicProgramming",
-            "Longest Palindromic Substring",
-            "https://leetcode.com/problems/longest-palindromic-substring/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/34_Longest_Palindromic_Substring.py"
-        ],
-        [
-            35,
-            "DynamicProgramming",
-            "Distinct Subsequences",
-            "https://leetcode.com/problems/distinct-subsequences/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/35_Distinct_Subsequences.py"
-        ],
-        [
-            36,
-            "DynamicProgramming",
-            "Wildcard Matching",
-            "https://leetcode.com/problems/wildcard-matching/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/36_Wildcard_Matching.py"
-        ],
-        [
-            37,
-            "DynamicProgramming",
-            "Regular Expression",
-            "https://leetcode.com/problems/regular-expression-matching/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/37_Regular_Expression.py"
-        ],
-        [
-            38,
-            "DynamicProgramming",
-            "Edit Distance",
-            "https://leetcode.com/problems/edit-distance/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/38_Edit_Distance.py"
-        ],
-        [
-            39,
-            "DynamicProgramming",
-            "Best Time to Buy and Sell Stock 1 Transaction",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
-            "Easy",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/39_Best_Time_to_Buy_and_Sell_Stock_1_Transaction.py.py"
-        ],
-        [
-            40,
-            "DynamicProgramming",
-            "Best Time to Buy and Sell Stock II Unlimited Transaction",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/40_Best_Time_to_Buy_and_Sell_Stock II_Unlimited_Transaction.py"
-        ],
-        [
-            41,
-            "DynamicProgramming",
-            "Best Time to Buy and Sell Stock III 2 Transactions",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/41_Best_Time_to_Buy_and_Sell_Stock_III_2_Transactions.py"
-        ],
-        [
-            42,
-            "DynamicProgramming",
-            "Best Time to Buy and Sell Stock IV k Transactions",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/42_Best_Time_to_Buy_and_Sell_Stock_IV_k_Transactions.py"
-        ],
-        [
-            43,
-            "DynamicProgramming",
-            "Best Time To Buy and Sell Stock with Cooldown",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
-            "Mediun",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/43_Best_Time_To_Buy_and_Sell_Stock_with_Cooldown.py"
-        ],
-        [
-            44,
-            "DynamicProgramming",
-            "Best Time to Buy and Sell Stock with Transaction Fee",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/44_Best_Time_to_Buy_and_Sell_Stock_with_Transaction_Fee.py"
-        ],
-        [
-            45,
-            "DynamicProgramming",
-            "Maximum Alternating Subsequence Sum",
-            "https://leetcode.com/problems/maximum-alternating-subsequence-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/45_Maximum Alternating Subsequence Sum.py"
-        ],
-        [
-            46,
-            "DynamicProgramming",
-            "Longest Increasing Subsequence",
-            "https://leetcode.com/problems/longest-increasing-subsequence/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/46_Longest_Increasing_Subsequence.py"
-        ],
-        [
-            47,
-            "DynamicProgramming",
-            "Maximum Length of Pair Chain",
-            "https://leetcode.com/problems/maximum-length-of-pair-chain/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/47_Maximum_Length_of_Pair_Chain.py"
-        ],
-        [
-            48,
-            "DynamicProgramming",
-            "Longest String Chain",
-            "https://leetcode.com/problems/longest-string-chain/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/48_Longest_String_Chain.py"
-        ],
-        [
-            49,
-            "DynamicProgramming",
-            "Longest Increasing Path in a Matrix",
-            "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/49_Longest_Increasing_Path_in_a_Matrix.py"
-        ],
-        [
-            50,
-            "DynamicProgramming",
-            "Print LIS",
-            "https://www.geeksforgeeks.org/problems/printing-longest-increasing-subsequence/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/50_Print_LIS.py"
-        ],
-        [
-            51,
-            "DynamicProgramming",
-            "Largest Divisible Subset",
-            "https://leetcode.com/problems/largest-divisible-subset/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/51_Largest_Divisible_Subset.py"
-        ],
-        [
-            52,
-            "DynamicProgramming",
-            "Longest Bitonic Subsequences",
-            "https://www.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/52_Longest_Bitonic_Subsequences.py"
-        ],
-        [
-            53,
-            "DynamicProgramming",
-            "Matrix Chain Multiplication",
-            "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/53_Matrix_Chain_Multiplication.py"
-        ],
-        [
-            54,
-            "DynamicProgramming",
-            "Palindrome Partitioning II",
-            "https://leetcode.com/problems/palindrome-partitioning-ii/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/54_Palindrome_Partitioning_II.py"
-        ],
-        [
-            55,
-            "DynamicProgramming",
-            "Partition Array for Maximum Sum",
-            "https://leetcode.com/problems/partition-array-for-maximum-sum/",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/55_Partition_Array_for_Maximum_Sum.py"
-        ],
-        [
-            56,
-            "DynamicProgramming",
-            "Evaluate Expression to True Boolean Parenthesization",
-            "https://www.geeksforgeeks.org/problems/boolean-parenthesization5610/1",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/56_Evaluate_Expression_to_True_Boolean_Parenthesization.py"
-        ],
-        [
-            57,
-            "DynamicProgramming",
-            "Scrambled String",
-            "https://leetcode.com/problems/scramble-string/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/57_Scrambled_String.py"
-        ],
-        [
-            58,
-            "DynamicProgramming",
-            "Egg Dropping",
-            "https://www.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1",
-            "Medium",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/58_Egg_Dropping.py"
-        ],
-        [
-            59,
-            "DynamicProgramming",
-            "Minimum cost to cut stick",
-            "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/59_Minimum_cost_to_cut_stick.py"
-        ],
-        [
-            60,
-            "DynamicProgramming",
-            "Burst Ballons",
-            "https://leetcode.com/problems/burst-balloons/description/",
-            "Hard",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/60_Burst_Ballons.py"
-        ]
-    ],
     "Array&Hashing": [
         [
             1,
@@ -3361,6 +2887,480 @@
             "https://practice.geeksforgeeks.org/problems/articulation-point-1/1",
             "Hard",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/9_Graphs/51_Articulation_Point_in_Graph.py"
+        ]
+    ],
+    "DynamicProgramming": [
+        [
+            1,
+            "DynamicProgramming",
+            "Fibonacci",
+            "https://leetcode.com/problems/fibonacci-number/",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/1_Fibonacci.py"
+        ],
+        [
+            2,
+            "DynamicProgramming",
+            "Climbing Stairs",
+            "https://leetcode.com/problems/climbing-stairs/",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/2_Climbing_Stairs.py"
+        ],
+        [
+            3,
+            "DynamicProgramming",
+            "Geek Jump",
+            "https://www.geeksforgeeks.org/problems/geek-jump/1",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/3_Geek_Jump.py"
+        ],
+        [
+            4,
+            "DynamicProgramming",
+            "House Robber",
+            "https://leetcode.com/problems/house-robber/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/4_House_Robber.py"
+        ],
+        [
+            5,
+            "DynamicProgramming",
+            "House Robber II",
+            "https://leetcode.com/problems/house-robber-ii/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/5_House_Robber_II.py"
+        ],
+        [
+            6,
+            "DynamicProgramming",
+            "Geeks Training",
+            "https://www.geeksforgeeks.org/problems/geeks-training/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/6_Geeks_Training.py"
+        ],
+        [
+            7,
+            "DynamicProgramming",
+            "Unique Paths",
+            "https://leetcode.com/problems/unique-paths/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/7_Unique_Paths.py"
+        ],
+        [
+            8,
+            "DynamicProgramming",
+            "Unique Paths II",
+            "https://leetcode.com/problems/unique-paths-ii/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/8_Unique_Paths_II.py"
+        ],
+        [
+            9,
+            "DynamicProgramming",
+            "Minimum Path Sum in grid",
+            "https://leetcode.com/problems/minimum-path-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/9_Minimum_Path_Sum_in_grid.py"
+        ],
+        [
+            10,
+            "DynamicProgramming",
+            "Triangle Grid Min Path Sum",
+            "https://leetcode.com/problems/triangle/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/10_Triangle_Grid_Min_Path_Sum.py"
+        ],
+        [
+            11,
+            "DynamicProgramming",
+            "Minimum Falling Path Sum",
+            "https://leetcode.com/problems/minimum-falling-path-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/11_Minimum_Falling_Path_Sum.py"
+        ],
+        [
+            12,
+            "DynamicProgramming",
+            "Cherry Pickup I",
+            "https://leetcode.com/problems/cherry-pickup/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/12_Cherry_Pickup_I.py"
+        ],
+        [
+            13,
+            "DynamicProgramming",
+            "Cherry Pickup II",
+            "https://leetcode.com/problems/cherry-pickup-ii/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/13_Cherry_Pickup_II.py"
+        ],
+        [
+            15,
+            "DynamicProgramming",
+            "0 1 Knapsack",
+            "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/15_0_1_Knapsack.py"
+        ],
+        [
+            16,
+            "DynamicProgramming",
+            "Target Sum with Symbols + -",
+            "https://leetcode.com/problems/target-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/16_Target_Sum_with_Symbols_+_-.py"
+        ],
+        [
+            17,
+            "DynamicProgramming",
+            "Target Sum Equals to Target",
+            "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/17_Target_Sum_Equals_to_Target.py"
+        ],
+        [
+            18,
+            "DynamicProgramming",
+            "Equal Sum Partition Problem",
+            "https://leetcode.com/problems/partition-equal-subset-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/18_Equal_Sum_Partition_Problem.py"
+        ],
+        [
+            19,
+            "DynamicProgramming",
+            "Minimum Sum Partition",
+            "https://www.geeksforgeeks.org/problems/minimum-sum-partition3317/1",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/19_Minimum_Sum_Partition.py"
+        ],
+        [
+            20,
+            "DynamicProgramming",
+            "Count Subsets with given difference",
+            "https://www.geeksforgeeks.org/problems/partitions-with-given-difference/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/20_Count_Subsets_with_given_difference.py"
+        ],
+        [
+            21,
+            "DynamicProgramming",
+            "Unbound Knapsack",
+            "https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/21_Unbound_Knapsack.py"
+        ],
+        [
+            22,
+            "DynamicProgramming",
+            "Rod Cutting",
+            "https://www.geeksforgeeks.org/problems/rod-cutting0840/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/22_Rod_Cutting.py"
+        ],
+        [
+            23,
+            "DynamicProgramming",
+            "Coin Change I",
+            "https://leetcode.com/problems/coin-change/description/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/23_Coin_Change_I.py"
+        ],
+        [
+            24,
+            "DynamicProgramming",
+            "Coin Change II",
+            "https://leetcode.com/problems/coin-change-ii/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/24_Coin_Change_II.py"
+        ],
+        [
+            25,
+            "DynamicProgramming",
+            "Longest Common Subsequence",
+            "https://leetcode.com/problems/longest-common-subsequence/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/25_Longest_Common_Subsequence.py"
+        ],
+        [
+            26,
+            "DynamicProgramming",
+            "Print All LCS",
+            "https://www.geeksforgeeks.org/problems/print-all-lcs-sequences3413/1",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/26_Print_All_LCS.py"
+        ],
+        [
+            27,
+            "DynamicProgramming",
+            "Longest Common Substring",
+            "https://www.geeksforgeeks.org/problems/longest-common-substring1452/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/27_Longest_Common_Substring.py"
+        ],
+        [
+            28,
+            "DynamicProgramming",
+            "Maximum Length of Repeated Subarray",
+            "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/28_Maximum_Length_of_Repeated_Subarray.py"
+        ],
+        [
+            29,
+            "DynamicProgramming",
+            "Longest Palindromic Subsequence",
+            "https://leetcode.com/problems/longest-palindromic-subsequence/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/29_Longest_Palindromic_Subsequence.py"
+        ],
+        [
+            30,
+            "DynamicProgramming",
+            "Minimum Insertions to make string palindrome",
+            "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/30_Minimum_Insertions_to_make_string_palindrome.py"
+        ],
+        [
+            31,
+            "DynamicProgramming",
+            "Minimun Insertions Deletions to Convert String A to String B",
+            "https://www.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/31_Minimun_Insertions_Deletions_to_Convert_String_A_to_String_B.py"
+        ],
+        [
+            32,
+            "DynamicProgramming",
+            "Length of Shortest Common Supersequence",
+            "https://www.geeksforgeeks.org/problems/shortest-common-supersequence0322/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/32_Length_of_Shortest_Common_Supersequence.py"
+        ],
+        [
+            33,
+            "DynamicProgramming",
+            "Print Shortest Common Supersequence",
+            "https://leetcode.com/problems/shortest-common-supersequence/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/33_Print_Shortest_Common_Supersequence.py"
+        ],
+        [
+            34,
+            "DynamicProgramming",
+            "Longest Palindromic Substring",
+            "https://leetcode.com/problems/longest-palindromic-substring/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/34_Longest_Palindromic_Substring.py"
+        ],
+        [
+            35,
+            "DynamicProgramming",
+            "Distinct Subsequences",
+            "https://leetcode.com/problems/distinct-subsequences/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/35_Distinct_Subsequences.py"
+        ],
+        [
+            36,
+            "DynamicProgramming",
+            "Wildcard Matching",
+            "https://leetcode.com/problems/wildcard-matching/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/36_Wildcard_Matching.py"
+        ],
+        [
+            37,
+            "DynamicProgramming",
+            "Regular Expression",
+            "https://leetcode.com/problems/regular-expression-matching/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/37_Regular_Expression.py"
+        ],
+        [
+            38,
+            "DynamicProgramming",
+            "Edit Distance",
+            "https://leetcode.com/problems/edit-distance/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/38_Edit_Distance.py"
+        ],
+        [
+            39,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock 1 Transaction",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/39_Best_Time_to_Buy_and_Sell_Stock_1_Transaction.py.py"
+        ],
+        [
+            40,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock II Unlimited Transaction",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/40_Best_Time_to_Buy_and_Sell_Stock II_Unlimited_Transaction.py"
+        ],
+        [
+            41,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock III 2 Transactions",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/41_Best_Time_to_Buy_and_Sell_Stock_III_2_Transactions.py"
+        ],
+        [
+            42,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock IV k Transactions",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/42_Best_Time_to_Buy_and_Sell_Stock_IV_k_Transactions.py"
+        ],
+        [
+            43,
+            "DynamicProgramming",
+            "Best Time To Buy and Sell Stock with Cooldown",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+            "Mediun",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/43_Best_Time_To_Buy_and_Sell_Stock_with_Cooldown.py"
+        ],
+        [
+            44,
+            "DynamicProgramming",
+            "Best Time to Buy and Sell Stock with Transaction Fee",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/44_Best_Time_to_Buy_and_Sell_Stock_with_Transaction_Fee.py"
+        ],
+        [
+            45,
+            "DynamicProgramming",
+            "Maximum Alternating Subsequence Sum",
+            "https://leetcode.com/problems/maximum-alternating-subsequence-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/45_Maximum Alternating Subsequence Sum.py"
+        ],
+        [
+            46,
+            "DynamicProgramming",
+            "Longest Increasing Subsequence",
+            "https://leetcode.com/problems/longest-increasing-subsequence/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/46_Longest_Increasing_Subsequence.py"
+        ],
+        [
+            47,
+            "DynamicProgramming",
+            "Maximum Length of Pair Chain",
+            "https://leetcode.com/problems/maximum-length-of-pair-chain/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/47_Maximum_Length_of_Pair_Chain.py"
+        ],
+        [
+            48,
+            "DynamicProgramming",
+            "Longest String Chain",
+            "https://leetcode.com/problems/longest-string-chain/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/48_Longest_String_Chain.py"
+        ],
+        [
+            49,
+            "DynamicProgramming",
+            "Longest Increasing Path in a Matrix",
+            "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/49_Longest_Increasing_Path_in_a_Matrix.py"
+        ],
+        [
+            50,
+            "DynamicProgramming",
+            "Print LIS",
+            "https://www.geeksforgeeks.org/problems/printing-longest-increasing-subsequence/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/50_Print_LIS.py"
+        ],
+        [
+            51,
+            "DynamicProgramming",
+            "Largest Divisible Subset",
+            "https://leetcode.com/problems/largest-divisible-subset/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/51_Largest_Divisible_Subset.py"
+        ],
+        [
+            52,
+            "DynamicProgramming",
+            "Longest Bitonic Subsequences",
+            "https://www.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/52_Longest_Bitonic_Subsequences.py"
+        ],
+        [
+            53,
+            "DynamicProgramming",
+            "Matrix Chain Multiplication",
+            "https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/53_Matrix_Chain_Multiplication.py"
+        ],
+        [
+            54,
+            "DynamicProgramming",
+            "Palindrome Partitioning II",
+            "https://leetcode.com/problems/palindrome-partitioning-ii/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/54_Palindrome_Partitioning_II.py"
+        ],
+        [
+            55,
+            "DynamicProgramming",
+            "Partition Array for Maximum Sum",
+            "https://leetcode.com/problems/partition-array-for-maximum-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/55_Partition_Array_for_Maximum_Sum.py"
+        ],
+        [
+            56,
+            "DynamicProgramming",
+            "Evaluate Expression to True Boolean Parenthesization",
+            "https://www.geeksforgeeks.org/problems/boolean-parenthesization5610/1",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/56_Evaluate_Expression_to_True_Boolean_Parenthesization.py"
+        ],
+        [
+            57,
+            "DynamicProgramming",
+            "Scrambled String",
+            "https://leetcode.com/problems/scramble-string/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/57_Scrambled_String.py"
+        ],
+        [
+            58,
+            "DynamicProgramming",
+            "Egg Dropping",
+            "https://www.geeksforgeeks.org/problems/egg-dropping-puzzle-1587115620/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/58_Egg_Dropping.py"
+        ],
+        [
+            59,
+            "DynamicProgramming",
+            "Minimum cost to cut stick",
+            "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/59_Minimum_cost_to_cut_stick.py"
+        ],
+        [
+            60,
+            "DynamicProgramming",
+            "Burst Ballons",
+            "https://leetcode.com/problems/burst-balloons/description/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/10_DynamicProgramming/60_Burst_Ballons.py"
         ]
     ]
 }

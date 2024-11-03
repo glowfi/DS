@@ -3,6 +3,7 @@
 import glob
 import os
 import json
+import re
 import pandas as pd
 
 # Create Sheet
@@ -13,8 +14,15 @@ f.write(f"#,Type,Problem,Link,Difficulty,Code\n")
 f.close()
 
 
+def sorted_alphanumeric(data):
+    convert = lambda text: int(text) if text.isdigit() else text.lower()
+    alphanum_key = lambda key: [convert(c) for c in re.split("([0-9]+)", key)]
+    return sorted(data, key=alphanum_key)
+
+
 PROGRAM_LOCATION = "https://raw.githubusercontent.com/glowfi/DS/main/Programs"
-directories = sorted(glob.glob("./Programs/*"))
+directories = sorted_alphanumeric(glob.glob("./Programs/*"))
+print(directories)
 dic = {}
 idx = 0
 
