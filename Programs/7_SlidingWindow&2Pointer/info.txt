@@ -48,3 +48,28 @@ def fixed(arr, k):
                 # Slide Window
                 i += 1
             j += 1
+
+
+# Fixed sliding window FormatV2 [maxSum with a window size of k]
+
+
+def fixed_slidingWindow(k):
+    l, r = 0, -1
+    sm = 0
+
+    for i in range(k):
+        sm += arr[i]
+        r += 1
+    mxsm = max(float("-inf"), sm)
+
+    while r < n - 1:
+        # Remove Calculations
+        l += 1
+        sm -= arr[l]
+
+        # Do work
+        r += 1
+        sm += arr[i]
+
+        # Find ans
+        mxsm = max(mxsm, sm)

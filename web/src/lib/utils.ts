@@ -6,6 +6,12 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
+export const DifficultyMap = {
+    Easy: 0,
+    Medium: 1,
+    Hard: 2
+};
+
 export function searchInListOfLists(listOfLists: any, searchTerm: any) {
     const results: any = [];
 

@@ -53,7 +53,7 @@ const CodeSolution = ({
                     See code
                 </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-full overflow-y-auto">
+            <DialogContent className="overflow-y-auto">
                 <DialogHeader>
                     <div className="flex items-center justify-center">
                         <ThemeDropdown

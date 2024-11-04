@@ -1975,10 +1975,26 @@
         [
             1,
             "SlidingWindow&2Pointer",
-            "Longest Subarray with sum less than k",
-            "<Question Link>",
-            "<Difficulty>",
-            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/1_Longest_Subarray_with_sum_less_than_k.py"
+            "Max Sum Subarray of Size k",
+            "https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1",
+            "Easy",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/1_Max_Sum_Subarray_of_Size_k.py"
+        ],
+        [
+            2,
+            "SlidingWindow&2Pointer",
+            "First negative in every window of size k",
+            "https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/2_First_negative_in_every_window_of_size_k.py"
+        ],
+        [
+            3,
+            "SlidingWindow&2Pointer",
+            "Count Occurences of Anagrams",
+            "https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/3_Count_Occurences_of_Anagrams.py"
         ]
     ],
     "Trees": [

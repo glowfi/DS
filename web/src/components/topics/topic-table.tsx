@@ -1,7 +1,7 @@
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
-import React from 'react';
-import { getColor } from '../../lib/utils';
+import React, { useState } from 'react';
+import { DifficultyMap, getColor } from '../../lib/utils';
 import { Badge } from '../ui/badge';
 import {
     Table,
@@ -12,6 +12,7 @@ import {
     TableRow
 } from '../ui/table';
 import CodeSolution from './code-solution';
+import { FaSort, FaSortDown, FaSortUp } from 'react-icons/fa';
 
 type theme = {
     [key: string]: React.CSSProperties;
@@ -28,18 +29,98 @@ export interface Itheme {
     setCodetheme: setTheme;
 }
 
+interface sortOrder {
+    order: string;
+    icon: React.JSX.Element;
+}
+
+const ALLOWED_SORT_ORDER = {
+    0: 'ORIG',
+    1: 'ASC',
+    2: 'DESC'
+};
+
 const TopicTable = ({ currTopic, data }: any) => {
+    const [currTopicData, setCurrTopicData] = useState(data[currTopic]);
+    const [sortOrder, setSortOrder] = useState<sortOrder>({
+        order: 'ASC',
+        icon: <FaSort />
+    });
+    const [originalData, setOriginalData] = useState(
+        structuredClone(data[currTopic])
+    );
+
+    function sortData(currData) {
+        let oldData = structuredClone(currData);
+
+        if (
+            sortOrder.order === ALLOWED_SORT_ORDER[1] ||
+            sortOrder.order === ALLOWED_SORT_ORDER[2]
+        ) {
+            oldData.sort(function (a, b) {
+                let a_difficulty = a[4];
+                let b_difficulty = b[4];
+
+                if (sortOrder.order == ALLOWED_SORT_ORDER[1]) {
+                    setSortOrder(() => {
+                        return {
+                            order: ALLOWED_SORT_ORDER[2],
+                            icon: <FaSortDown />
+                        };
+                    });
+                    return (
+                        DifficultyMap[a_difficulty] -
+                        DifficultyMap[b_difficulty]
+                    );
+                } else if (sortOrder.order == ALLOWED_SORT_ORDER[2]) {
+                    setSortOrder(() => {
+                        return {
+                            order: ALLOWED_SORT_ORDER[0],
+                            icon: <FaSortUp />
+                        };
+                    });
+                    return (
+                        DifficultyMap[b_difficulty] -
+                        DifficultyMap[a_difficulty]
+                    );
+                }
+            });
+        } else {
+            setSortOrder(() => {
+                return {
+                    order: ALLOWED_SORT_ORDER[1],
+                    icon: <FaSort />
+                };
+            });
+            return originalData;
+        }
+        return oldData;
+    }
+
     return (
         <Table>
             <TableHeader>
                 <TableRow>
+                    <TableHead>#</TableHead>
                     <TableHead>Problem</TableHead>
-                    <TableHead>Difficulty</TableHead>
+                    <TableHead
+                        className="hover:cursor-pointer"
+                        onClick={() => {
+                            setCurrTopicData((currData) => {
+                                return sortData(currData);
+                            });
+                        }}
+                    >
+                        <div className="flex gap-3 justify-start items-center">
+                            <p>Difficulty</p>
+                            {sortOrder.icon}
+                        </div>
+                    </TableHead>
                     <TableHead>Code</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {data[currTopic].map(
+                {currTopicData.map(
                     (
                         [
                             id,
@@ -60,6 +141,7 @@ const TopicTable = ({ currTopic, data }: any) => {
                     ) => {
                         return (
                             <TableRow key={idx}>
+                                <TableCell>{idx}</TableCell>
                                 <TableCell>
                                     <Link
                                         target="_blank"
