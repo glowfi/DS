@@ -74,6 +74,7 @@ const TopicTable = ({ currTopic, data }: any) => {
                     return (
                         // @ts-ignore
                         DifficultyMap[a_difficulty] -
+                        // @ts-ignore
                         DifficultyMap[b_difficulty]
                     );
                 } else if (sortOrder.order == ALLOWED_SORT_ORDER[2]) {
@@ -86,6 +87,7 @@ const TopicTable = ({ currTopic, data }: any) => {
                     return (
                         // @ts-ignore
                         DifficultyMap[b_difficulty] -
+                        // @ts-ignore
                         DifficultyMap[a_difficulty]
                     );
                 }
