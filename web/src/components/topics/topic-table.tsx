@@ -72,6 +72,7 @@ const TopicTable = ({ currTopic, data }: any) => {
                         };
                     });
                     return (
+                        // @ts-ignore
                         DifficultyMap[a_difficulty] -
                         DifficultyMap[b_difficulty]
                     );
@@ -83,6 +84,7 @@ const TopicTable = ({ currTopic, data }: any) => {
                         };
                     });
                     return (
+                        // @ts-ignore
                         DifficultyMap[b_difficulty] -
                         DifficultyMap[a_difficulty]
                     );
