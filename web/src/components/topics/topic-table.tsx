@@ -46,10 +46,12 @@ const TopicTable = ({ currTopic, data }: any) => {
         order: 'ASC',
         icon: <FaSort />
     });
+    // @ts-ignore
     const [originalData, setOriginalData] = useState(
         structuredClone(data[currTopic])
     );
 
+    // @ts-ignore
     function sortData(currData) {
         let oldData = structuredClone(currData);
 
@@ -57,6 +59,7 @@ const TopicTable = ({ currTopic, data }: any) => {
             sortOrder.order === ALLOWED_SORT_ORDER[1] ||
             sortOrder.order === ALLOWED_SORT_ORDER[2]
         ) {
+            // @ts-ignore
             oldData.sort(function (a, b) {
                 let a_difficulty = a[4];
                 let b_difficulty = b[4];
@@ -106,6 +109,7 @@ const TopicTable = ({ currTopic, data }: any) => {
                     <TableHead
                         className="hover:cursor-pointer"
                         onClick={() => {
+                            // @ts-ignore
                             setCurrTopicData((currData) => {
                                 return sortData(currData);
                             });
