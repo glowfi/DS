@@ -1995,6 +1995,30 @@
             "https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1",
             "Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/3_Count_Occurences_of_Anagrams.py"
+        ],
+        [
+            4,
+            "SlidingWindow&2Pointer",
+            "Longest Subarray with sum less than k",
+            "NA",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/4_Longest_Subarray_with_sum_less_than_k.py"
+        ],
+        [
+            5,
+            "SlidingWindow&2Pointer",
+            "Max Points You can Obtain from Cards",
+            "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/5_Max_Points_You_can_Obtain_from_Cards.py"
+        ],
+        [
+            6,
+            "SlidingWindow&2Pointer",
+            "Longest Substring Without Repeating Characters",
+            "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/6_Longest_Substring_Without_Repeating_Characters.py"
         ]
     ],
     "Trees": [
