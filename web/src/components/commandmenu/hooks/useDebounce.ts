@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useDebounce = (value: string, delay = 500) => {
+export const useDebounce = (value: string, delay = 300) => {
     const [debouncedText, setDebouncedText] = useState('');
     const [isloadingtxt, setIsloadingtxt] = useState(true);
 
