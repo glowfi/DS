@@ -2019,6 +2019,30 @@
             "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
             "Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/6_Longest_Substring_Without_Repeating_Characters.py"
+        ],
+        [
+            7,
+            "SlidingWindow&2Pointer",
+            "Max Consecutive Ones iii",
+            "https://leetcode.com/problems/max-consecutive-ones-iii/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/7_Max_Consecutive_Ones_iii.py"
+        ],
+        [
+            8,
+            "SlidingWindow&2Pointer",
+            "Fruits into the basket",
+            "https://leetcode.com/problems/fruit-into-baskets/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/8_Fruits_into_the_basket.py"
+        ],
+        [
+            9,
+            "SlidingWindow&2Pointer",
+            "Longest Substring With At Most K Distinct Characters",
+            "https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/9_Longest_Substring_With_At_Most_K_Distinct_Characters.py"
         ]
     ],
     "Trees": [
