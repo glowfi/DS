@@ -17,7 +17,7 @@ class Solution:
         return mx
 
 
-# Optimal
+# Better
 # T.C. -> O(n)
 # S.C. -> O(n)
 
@@ -39,3 +39,30 @@ class Solution:
                 h[pref] = i
 
         return mx
+
+
+# Optimal
+# T.C. -> O(2n)
+# S.C. -> O(1)
+
+
+class Solution:
+    def lenOfLongestSubarr(self, arr, k):
+        l, r = 0, 0
+        n = len(arr)
+        sm = 0
+        mx_len = 0
+
+        while r < n:
+            sm += arr[r]
+
+            while sm > k:
+                sm -= arr[l]
+                l += 1
+
+            if sm == k:
+                mx_len = max(mx_len, r - l + 1)
+
+            r += 1
+
+        return mx_len

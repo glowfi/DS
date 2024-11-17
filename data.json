@@ -447,6 +447,22 @@
             "https://practice.geeksforgeeks.org/problems/bubble-sort/1",
             "Easy",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/56_Selection_Sort.py"
+        ],
+        [
+            57,
+            "Array&Hashing",
+            "Game of Life",
+            "https://leetcode.com/problems/game-of-life/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/57_Game_of_Life.py"
+        ],
+        [
+            58,
+            "Array&Hashing",
+            "Subarray Sums Divisble By K",
+            " https://leetcode.com/problems/subarray-sums-divisible-by-k/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/1_Array&Hashing/58_Subarray_Sums_Divisble_By_K.py"
         ]
     ],
     "BinarySearch": [
@@ -2043,6 +2059,30 @@
             "https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1",
             "Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/9_Longest_Substring_With_At_Most_K_Distinct_Characters.py"
+        ],
+        [
+            10,
+            "SlidingWindow&2Pointer",
+            "Contiguous Array",
+            "https://leetcode.com/problems/contiguous-array/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/10_Contiguous_Array.py"
+        ],
+        [
+            11,
+            "SlidingWindow&2Pointer",
+            "Number of Substrings Containing All Three  Characters",
+            "https://leetcode.com/problems/number-of-substrings-containing-all-three-characters",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/11_Number_of_Substrings_Containing_All_Three_ Characters.py"
+        ],
+        [
+            12,
+            "SlidingWindow&2Pointer",
+            "Longest Repeating Character Replacement",
+            "https://leetcode.com/problems/longest-repeating-character-replacement/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/12_Longest Repeating Character Replacement.py"
         ]
     ],
     "Trees": [
