@@ -2083,6 +2083,38 @@
             "https://leetcode.com/problems/longest-repeating-character-replacement/",
             "Medium",
             "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/12_Longest Repeating Character Replacement.py"
+        ],
+        [
+            13,
+            "SlidingWindow&2Pointer",
+            "Binary Subarrays With Sum",
+            "https://leetcode.com/problems/binary-subarrays-with-sum/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/13_Binary_Subarrays_With_Sum.py"
+        ],
+        [
+            14,
+            "SlidingWindow&2Pointer",
+            "Count Number of Nice Subarrays",
+            "https://leetcode.com/problems/count-number-of-nice-subarrays/",
+            "Medium",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/14_Count_Number_of_Nice_Subarrays.py"
+        ],
+        [
+            15,
+            "SlidingWindow&2Pointer",
+            "Subarrays with K Different Integers",
+            "https://leetcode.com/problems/subarrays-with-k-different-integers",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/15_Subarrays_with_K_Different_Integers.py"
+        ],
+        [
+            16,
+            "SlidingWindow&2Pointer",
+            "Minimum Window Substring",
+            "https://leetcode.com/problems/minimum-window-substring/",
+            "Hard",
+            "https://raw.githubusercontent.com/glowfi/DS/main/Programs/7_SlidingWindow&2Pointer/16_Minimum_Window_Substring.py"
         ]
     ],
     "Trees": [
