@@ -37,7 +37,18 @@ for directory in directories:
             if file_ext_allowed != -1:
                 name = os.path.basename(file)
                 with open(f"{directory}/{name}", "r") as fp:
-                    data = fp.readlines()
 
-                    with open(f"{topic_directory}/{name}", "w") as fp:
-                        fp.write(data[0])
+                    if name.split(".")[-1] == base_lang_ext:
+                        data = fp.readlines()
+                        with open(
+                            f"{topic_directory}/{name.split('.')[0]}.{new_lang_ext}",
+                            "w",
+                        ) as fp:
+                            fp.write(data[0])
+                    else:
+                        data = fp.read()
+                        with open(
+                            f"{topic_directory}/{name.split('.')[0]}.{name.split('.')[-1]}",
+                            "w",
+                        ) as fp:
+                            fp.write(data)

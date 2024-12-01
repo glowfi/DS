@@ -1,0 +1,28 @@
+#### Binary Trees ####
+
++ Parent Node -> Root node
++ Childe Node -> Childe node
++ Lead Node -> Node with no children
++ Each node can have at max 2 children
+
+#### Types of Binary Trees ####
+
+1. Full Binary Tree: Each node can have 0 or 2 children.
+
+2. Complete Binary Tree: All levels are full execpt the last level.
+Last level should be full from left to right.
+
+3. Perfect Binary Tree: All levels are full.Leaf nodes at same level.
+
+4. Balanced Binary Tree: The difference in height of left tree and right tree for any node should 
+be less than equal to 1. Left should also be Balanced and right should also be Balanced.
+
+5. Degenerate Tree [Skew Tree]: Entire tree will have only right child or left child.
+
+
+flatten binary tree to linked list
+flatten binary tree to double linked list
+morris traversal inorder,preorder
+log(n) complete binary tree 
+bst from preorder
+Minimum Absolute Difference in BST

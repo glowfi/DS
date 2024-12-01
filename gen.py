@@ -10,7 +10,7 @@ import pandas as pd
 if os.path.exists("./sheet.csv"):
     os.remove("./sheet.csv")
 f = open("sheet.csv", "a", encoding="utf-8")
-f.write(f"#,Type,Problem,Link,Difficulty,Code\n")
+f.write(f"#,Type,Problem,Link,Difficulty,Code,Language\n")
 f.close()
 
 
@@ -20,74 +20,84 @@ def sorted_alphanumeric(data):
     return sorted(data, key=alphanum_key)
 
 
-PROGRAM_LOCATION = "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python"
-directories = sorted_alphanumeric(glob.glob("./Programs/python/*"))
-print(directories)
+langs = ["python", "go"]
+allowed_exts = ["py", "go"]
 dic = {}
-idx = 0
 
-for directory in directories:
-    print(f"Parsing {directory} ...")
-    if os.path.isdir(f"./{directory}"):
-        files = glob.glob(f"{directory}/*")
-        currentData = []
-        for file in files:
-            file_ext_allowed = file.find("py")
-            if file_ext_allowed != -1:
-                with open(f"{file}") as f:
-                    first_line = f.readline()
-                    data = first_line.split(",")
+for index, language in enumerate(langs):
+    PROGRAM_LOCATION = (
+        f"https://raw.githubusercontent.com/glowfi/DS/main/Programs/{language}"
+    )
+    directories = sorted_alphanumeric(glob.glob(f"./Programs/{language}/*"))
+    print(directories)
+    idx = 0
 
-                    try:
-                        if data[1]:
-                            dataStructureType = (
-                                os.path.dirname(file).split("/")[-1].split("_")[-1]
-                            )
-                            link = data[0].strip(" ").replace("# ", "")
-                            difficulty = data[1].strip("\n").lstrip(" ").rstrip(" ")
+    for directory in directories:
+        print(f"Parsing {directory} ...")
+        if os.path.isdir(f"./{directory}"):
+            files = glob.glob(f"{directory}/*")
+            currentData = []
+            for file in files:
+                file_ext_allowed = file.find(allowed_exts[index])
+                if file_ext_allowed != -1:
+                    with open(f"{file}") as f:
+                        first_line = f.readline()
+                        data = first_line.split(",")
 
-                            tmp = file.split("/")[-1].strip(" ").replace(".py", "")
-                            extractNumber = tmp.split("_")[0]
-                            problemStatement = " ".join(tmp.split("_")[1:])
+                        try:
+                            if data[1]:
+                                dataStructureType = (
+                                    os.path.dirname(file).split("/")[-1].split("_")[-1]
+                                )
+                                link = data[0].strip(" ").replace("# ", "")
+                                difficulty = data[1].strip("\n").lstrip(" ").rstrip(" ")
 
-                            loc = "/".join(file.split("/")[3:])
-                            code = f"{PROGRAM_LOCATION}/{loc}"
+                                tmp = file.split("/")[-1].strip(" ").replace(".py", "")
+                                extractNumber = tmp.split("_")[0]
+                                problemStatement = " ".join(tmp.split("_")[1:])
 
-                            currentData.append(
-                                [
-                                    int(extractNumber),
-                                    dataStructureType,
-                                    problemStatement,
-                                    link,
-                                    difficulty,
-                                    code,
-                                ]
-                            )
-                    except Exception as e:
-                        name = file.split("./")[-1]
-                        print(f"Exception Handled for {name}!", e)
+                                loc = "/".join(file.split("/")[3:])
+                                code = f"{PROGRAM_LOCATION}/{loc}"
 
-        currentData.sort(key=lambda x: x[0])
+                                currentData.append(
+                                    [
+                                        int(extractNumber),
+                                        dataStructureType,
+                                        problemStatement,
+                                        link,
+                                        difficulty,
+                                        code,
+                                        language,
+                                    ]
+                                )
+                        except Exception as e:
+                            name = file.split("./")[-1]
+                            print(f"Exception Handled for {name}!", e)
 
-        # Save dict to work with JSON
-        dataStructureType = currentData[0][1]
-        dic[dataStructureType] = currentData
+            # Save dict to work with JSON
+            currentData.sort(key=lambda x: x[0])
+            dataStructureType = currentData[0][1]
+            if dataStructureType not in dic:
+                dic[dataStructureType] = currentData
+            else:
+                dic[dataStructureType] = [*dic[dataStructureType], *currentData]
 
-        # Create CSV
-        for (
-            extractNumber,
-            dataStructureType,
-            problemStatement,
-            link,
-            difficulty,
-            code,
-        ) in currentData:
-            f = open("sheet.csv", "a", encoding="utf-8")
-            f.write(
-                f"{idx},{dataStructureType},{problemStatement},{link},{difficulty},{code}\n"
-            )
-            idx += 1
-            f.close()
+            # Create CSV
+            for (
+                extractNumber,
+                dataStructureType,
+                problemStatement,
+                link,
+                difficulty,
+                code,
+                lang,
+            ) in currentData:
+                f = open("sheet.csv", "a", encoding="utf-8")
+                f.write(
+                    f"{idx},{dataStructureType},{problemStatement},{link},{difficulty},{code},{lang}\n"
+                )
+                idx += 1
+                f.close()
 
 # Dump Custom JSON
 final_list = []
@@ -101,6 +111,7 @@ for topic in dic:
             "problem_link": dic[topic][idx][3],
             "difficulty": dic[topic][idx][4],
             "solution_link": dic[topic][idx][5],
+            "language": dic[topic][idx][6],
         }
         final_list.append(dic[topic][idx])
         idx += 1
