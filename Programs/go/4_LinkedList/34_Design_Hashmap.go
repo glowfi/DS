@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/design-hashmap/ ,Easy
+// https://leetcode.com/problems/design-hashmap/ ,Easy
+
+package main

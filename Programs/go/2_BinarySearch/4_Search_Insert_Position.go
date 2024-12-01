@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/search-insert-position/,Easy
+// https://leetcode.com/problems/search-insert-position/,Easy
+
+package main

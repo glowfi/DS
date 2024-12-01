@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/n-queens/ , Hard
+// https://leetcode.com/problems/n-queens/ , Hard
+
+package main

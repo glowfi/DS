@@ -1,1 +1,3 @@
-# https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1 , Medium
+// https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1 , Medium
+
+package main

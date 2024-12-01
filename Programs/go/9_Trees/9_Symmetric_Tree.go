@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/symmetric-tree/ , Easy
+// https://leetcode.com/problems/symmetric-tree/ , Easy
+
+package main

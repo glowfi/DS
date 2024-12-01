@@ -1,1 +1,3 @@
-# https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1 , Medium
+// https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1 , Medium
+
+package main

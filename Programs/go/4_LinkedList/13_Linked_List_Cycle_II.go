@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/linked-list-cycle-ii/ , Medium
+// https://leetcode.com/problems/linked-list-cycle-ii/ , Medium
+
+package main

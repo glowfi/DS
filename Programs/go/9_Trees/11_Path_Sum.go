@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/path-sum, Easy
+// https://leetcode.com/problems/path-sum, Easy
+
+package main

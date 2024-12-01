@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/flood-fill/ , Easy
+// https://leetcode.com/problems/flood-fill/ , Easy
+
+package main

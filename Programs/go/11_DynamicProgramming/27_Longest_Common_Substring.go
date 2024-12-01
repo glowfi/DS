@@ -1,1 +1,3 @@
-# https://www.geeksforgeeks.org/problems/longest-common-substring1452/1 , Medium
+// https://www.geeksforgeeks.org/problems/longest-common-substring1452/1 , Medium
+
+package main

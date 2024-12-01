@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/isomorphic-strings/ , Easy
+// https://leetcode.com/problems/isomorphic-strings/ , Easy
+
+package main

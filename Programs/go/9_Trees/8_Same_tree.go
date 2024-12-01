@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/same-tree/ , Easy
+// https://leetcode.com/problems/same-tree/ , Easy
+
+package main

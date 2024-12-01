@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/distinct-subsequences/ , Hard
+// https://leetcode.com/problems/distinct-subsequences/ , Hard
+
+package main

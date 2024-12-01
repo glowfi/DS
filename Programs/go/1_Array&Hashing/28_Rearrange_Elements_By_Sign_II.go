@@ -1,1 +1,3 @@
-# NA,Medium
+// NA,Medium
+
+package main

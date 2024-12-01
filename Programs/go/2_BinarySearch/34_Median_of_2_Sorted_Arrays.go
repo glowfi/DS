@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/median-of-two-sorted-arrays/ , Hard
+// https://leetcode.com/problems/median-of-two-sorted-arrays/ , Hard
+
+package main

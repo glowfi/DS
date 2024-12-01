@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/binary-search-tree-iterator/ , Medium
+// https://leetcode.com/problems/binary-search-tree-iterator/ , Medium
+
+package main

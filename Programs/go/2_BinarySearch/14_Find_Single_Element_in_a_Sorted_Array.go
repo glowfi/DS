@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/single-element-in-a-sorted-array/,Medium
+// https://leetcode.com/problems/single-element-in-a-sorted-array/,Medium
+
+package main

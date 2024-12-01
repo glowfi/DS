@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/merge-k-sorted-lists/ , Hard
+// https://leetcode.com/problems/merge-k-sorted-lists/ , Hard
+
+package main

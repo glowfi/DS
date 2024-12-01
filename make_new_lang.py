@@ -14,10 +14,13 @@ def sorted_alphanumeric(data):
 base_lang = "python"
 base_dir_base_lang = os.path.abspath(f"./Programs/{base_lang}")
 base_lang_ext = "py"
+base_lang_comment = "#"
 
 new_lang = "go"
 base_dir_new_lang = os.path.abspath(f"./Programs/{new_lang}")
 new_lang_ext = "go"
+new_lang_comment = "//"
+add_text = "\npackage main"
 
 
 # Create base directory for new lang
@@ -44,7 +47,10 @@ for directory in directories:
                             f"{topic_directory}/{name.split('.')[0]}.{new_lang_ext}",
                             "w",
                         ) as fp:
-                            fp.write(data[0])
+                            fp.write(
+                                data[0].replace(base_lang_comment, new_lang_comment)
+                                + add_text
+                            )
                     else:
                         data = fp.read()
                         with open(

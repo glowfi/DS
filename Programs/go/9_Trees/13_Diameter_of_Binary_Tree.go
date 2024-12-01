@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/diameter-of-binary-tree/ , Easy
+// https://leetcode.com/problems/diameter-of-binary-tree/ , Easy
+
+package main

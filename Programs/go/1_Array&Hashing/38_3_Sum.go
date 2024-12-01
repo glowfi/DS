@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/3sum/description/ , Medium
+// https://leetcode.com/problems/3sum/description/ , Medium
+
+package main

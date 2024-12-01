@@ -1,1 +1,3 @@
-#  https://leetcode.com/problems/next-greater-element-i/ , Easy
+//  https://leetcode.com/problems/next-greater-element-i/ , Easy
+
+package main

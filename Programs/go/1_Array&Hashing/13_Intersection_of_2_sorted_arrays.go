@@ -1,1 +1,3 @@
-# https://www.codingninjas.com/codestudio/problems/intersection-of-2-arrays_1082149,Easy
+// https://www.codingninjas.com/codestudio/problems/intersection-of-2-arrays_1082149,Easy
+
+package main

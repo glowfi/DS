@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/climbing-stairs/ , Easy
+// https://leetcode.com/problems/climbing-stairs/ , Easy
+
+package main

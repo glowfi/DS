@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/maximum-subarray/,Medium
+// https://leetcode.com/problems/maximum-subarray/,Medium
+
+package main

@@ -1,1 +1,3 @@
-# NA,Easy
+// NA,Easy
+
+package main

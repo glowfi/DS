@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/palindromic-substrings/ , Medium
+// https://leetcode.com/problems/palindromic-substrings/ , Medium
+
+package main

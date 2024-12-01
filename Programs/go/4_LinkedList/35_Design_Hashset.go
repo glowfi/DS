@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/design-hashset/description/ , Easy
+// https://leetcode.com/problems/design-hashset/description/ , Easy
+
+package main

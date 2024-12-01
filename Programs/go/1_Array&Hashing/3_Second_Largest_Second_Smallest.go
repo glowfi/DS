@@ -1,1 +1,3 @@
-# https://practice.geeksforgeeks.org/problems/second-largest3735/1,Easy
+// https://practice.geeksforgeeks.org/problems/second-largest3735/1,Easy
+
+package main

@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/ , Hard
+// https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/ , Hard
+
+package main

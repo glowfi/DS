@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/fruit-into-baskets/ , Medium
+// https://leetcode.com/problems/fruit-into-baskets/ , Medium
+
+package main

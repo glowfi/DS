@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/middle-of-the-linked-list/,Medium
+// https://leetcode.com/problems/middle-of-the-linked-list/,Medium
+
+package main

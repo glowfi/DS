@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/shortest-common-supersequence/ , Hard
+// https://leetcode.com/problems/shortest-common-supersequence/ , Hard
+
+package main

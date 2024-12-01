@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/cherry-pickup-ii/ , Hard
+// https://leetcode.com/problems/cherry-pickup-ii/ , Hard
+
+package main

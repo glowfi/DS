@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/minimum-absolute-difference/,Easy
+// https://leetcode.com/problems/minimum-absolute-difference/,Easy
+
+package main

@@ -1,1 +1,3 @@
-# https://www.geeksforgeeks.org/problems/geek-jump/1 , Easy
+// https://www.geeksforgeeks.org/problems/geek-jump/1 , Easy
+
+package main

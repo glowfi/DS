@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/average-of-levels-in-binary-tree/ , Easy
+// https://leetcode.com/problems/average-of-levels-in-binary-tree/ , Easy
+
+package main

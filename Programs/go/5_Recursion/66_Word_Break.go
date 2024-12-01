@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/word-break/ , Medium
+// https://leetcode.com/problems/word-break/ , Medium
+
+package main

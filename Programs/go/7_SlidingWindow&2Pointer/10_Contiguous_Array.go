@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/contiguous-array/ , Medium
+// https://leetcode.com/problems/contiguous-array/ , Medium
+
+package main

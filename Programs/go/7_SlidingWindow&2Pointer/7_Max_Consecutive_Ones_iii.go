@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/max-consecutive-ones-iii/ , Medium
+// https://leetcode.com/problems/max-consecutive-ones-iii/ , Medium
+
+package main

@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/number-of-enclaves/ , Medium
+// https://leetcode.com/problems/number-of-enclaves/ , Medium
+
+package main

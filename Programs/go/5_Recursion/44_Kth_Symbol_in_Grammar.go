@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/k-th-symbol-in-grammar/ , Medium
+// https://leetcode.com/problems/k-th-symbol-in-grammar/ , Medium
+
+package main

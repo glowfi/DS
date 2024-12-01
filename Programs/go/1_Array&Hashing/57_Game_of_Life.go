@@ -1,1 +1,3 @@
-# https://leetcode.com/problems/game-of-life/ , Medium
+// https://leetcode.com/problems/game-of-life/ , Medium
+
+package main
