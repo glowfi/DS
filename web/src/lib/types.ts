@@ -5,4 +5,5 @@ export interface Question {
     problem_link: string;
     difficulty: string;
     solution_link: string;
+    language: string;
 }

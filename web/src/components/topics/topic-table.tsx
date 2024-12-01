@@ -43,9 +43,13 @@ const ALLOWED_SORT_ORDER = {
 
 interface TopicTableProps {
     data: Question[];
+    changeLangauge: (language: string) => void;
 }
 
-const TopicTable: React.FunctionComponent<TopicTableProps> = ({ data }) => {
+const TopicTable: React.FunctionComponent<TopicTableProps> = ({
+    data,
+    changeLangauge
+}) => {
     const [currTopicData, setCurrTopicData] = useState(data);
     const [sortOrder, setSortOrder] = useState<sortOrder>({
         order: 'ASC',
@@ -167,6 +171,7 @@ const TopicTable: React.FunctionComponent<TopicTableProps> = ({ data }) => {
                                 </TableCell>
                                 <TableCell>
                                     <CodeSolution
+                                        changeLangauge={changeLangauge}
                                         problem_name={problem_name}
                                         solution_link={solution_link}
                                     />

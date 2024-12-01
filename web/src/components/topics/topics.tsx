@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Accordion,
     AccordionContent,
@@ -17,6 +17,14 @@ interface TopicsProps {
 }
 
 const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
+    const [language, setLanguage] = useState<{ lang: string }>({
+        lang: 'python'
+    });
+
+    function changeLangauge(language: string) {
+        setLanguage((old) => ({ ...old, lang: language }));
+    }
+
     return (
         <div className="flex-col justify-center items-center w-full mt-3">
             <Accordion type="single" collapsible className="w-full">
@@ -32,7 +40,9 @@ const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
                                         {/* @ts-ignore */}
                                         {
                                             data.filter(
-                                                (p) => p.topic === topic
+                                                (p) =>
+                                                    p.topic === topic &&
+                                                    p.language === language.lang
                                             ).length
                                         }
                                     </Badge>
@@ -40,7 +50,12 @@ const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
                             </AccordionTrigger>
                             <AccordionContent>
                                 <TopicTable
-                                    data={data.filter((p) => p.topic === topic)}
+                                    changeLangauge={changeLangauge}
+                                    data={data.filter(
+                                        (p) =>
+                                            p.topic === topic &&
+                                            p.language === language.lang
+                                    )}
                                 />
                             </AccordionContent>
                         </AccordionItem>
@@ -51,7 +66,9 @@ const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
                 <h6 className="scroll-m-20  font-semibold tracking-tight">
                     Total Code(s)
                 </h6>
-                <Badge>{data.length}</Badge>
+                <Badge>
+                    {data.filter((p) => p.language === language.lang).length}
+                </Badge>
             </div>
         </div>
     );

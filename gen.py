@@ -54,7 +54,9 @@ for index, language in enumerate(langs):
 
                                 tmp = file.split("/")[-1].strip(" ").replace(".py", "")
                                 extractNumber = tmp.split("_")[0]
-                                problemStatement = " ".join(tmp.split("_")[1:])
+                                problemStatement = " ".join(tmp.split("_")[1:]).replace(
+                                    f".{allowed_exts[index]}", ""
+                                )
 
                                 loc = "/".join(file.split("/")[3:])
                                 code = f"{PROGRAM_LOCATION}/{loc}"
