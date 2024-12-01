@@ -20,8 +20,8 @@ def sorted_alphanumeric(data):
     return sorted(data, key=alphanum_key)
 
 
-PROGRAM_LOCATION = "https://raw.githubusercontent.com/glowfi/DS/main/Programs"
-directories = sorted_alphanumeric(glob.glob("./Programs/*"))
+PROGRAM_LOCATION = "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python"
+directories = sorted_alphanumeric(glob.glob("./Programs/python/*"))
 print(directories)
 dic = {}
 idx = 0
@@ -40,7 +40,9 @@ for directory in directories:
 
                     try:
                         if data[1]:
-                            dataStructureType = file.split("/")[2].split("_")[1]
+                            dataStructureType = (
+                                os.path.dirname(file).split("/")[-1].split("_")[-1]
+                            )
                             link = data[0].strip(" ").replace("# ", "")
                             difficulty = data[1].strip("\n").lstrip(" ").rstrip(" ")
 
@@ -63,7 +65,7 @@ for directory in directories:
                             )
                     except Exception as e:
                         name = file.split("./")[-1]
-                        print(f"Exception Handled for {name}!")
+                        print(f"Exception Handled for {name}!", e)
 
         currentData.sort(key=lambda x: x[0])
 
