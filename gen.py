@@ -87,8 +87,22 @@ for directory in directories:
             idx += 1
             f.close()
 
-# Dump JSON
-json_object = json.dumps(dic, indent=4)
+# Dump Custom JSON
+final_list = []
+for topic in dic:
+    idx = 0
+    for k in dic[topic]:
+        dic[topic][idx] = {
+            "id": dic[topic][idx][0],
+            "topic": dic[topic][idx][1],
+            "problem_name": dic[topic][idx][2],
+            "problem_link": dic[topic][idx][3],
+            "difficulty": dic[topic][idx][4],
+            "solution_link": dic[topic][idx][5],
+        }
+        final_list.append(dic[topic][idx])
+        idx += 1
+json_object = json.dumps(final_list, indent=4)
 with open("data.json", "w") as outfile:
     outfile.write(json_object)
 

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import LoadingSpinner from '../loadingspinners/loadingspinner';
 import {
     Accordion,
     AccordionContent,
@@ -10,17 +9,15 @@ import {
 } from '../ui/accordion';
 import { Badge } from '../ui/badge';
 import TopicTable from './topic-table';
-import useFetch from './useFetch';
 import { deFlatten } from '../../lib/utils';
+import { Question } from '../../lib/types';
 
-const Topics = () => {
-    const { topics, setTopics, data, setData, isloading, setIsloading } =
-        useFetch();
+interface TopicsProps {
+    topics: string[];
+    data: Question[];
+}
 
-    if (isloading) {
-        return <LoadingSpinner name="codes" />;
-    }
-
+const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
     return (
         <div className="flex-col justify-center items-center w-full mt-3">
             <Accordion type="single" collapsible className="w-full">

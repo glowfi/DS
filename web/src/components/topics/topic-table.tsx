@@ -13,6 +13,7 @@ import {
 } from '../ui/table';
 import CodeSolution from './code-solution';
 import { FaSort, FaSortDown, FaSortUp } from 'react-icons/fa';
+import { Question } from '../../lib/types';
 
 type theme = {
     [key: string]: React.CSSProperties;
@@ -40,8 +41,16 @@ const ALLOWED_SORT_ORDER = {
     2: 'DESC'
 };
 
-const TopicTable = ({ currTopic, data }: any) => {
-    const [currTopicData, setCurrTopicData] = useState(data[currTopic]);
+interface TopicTableProps {
+    currTopic: string;
+    data: Question[];
+}
+
+const TopicTable: React.FunctionComponent<TopicTableProps> = ({
+    currTopic,
+    data
+}) => {
+    const [currTopicData, setCurrTopicData] = useState(data);
     const [sortOrder, setSortOrder] = useState<sortOrder>({
         order: 'ASC',
         icon: <FaSort />
@@ -52,7 +61,7 @@ const TopicTable = ({ currTopic, data }: any) => {
     );
 
     // @ts-ignore
-    function sortData(currData) {
+    function sortData(currData: Question[]) {
         let oldData = structuredClone(currData);
 
         if (
@@ -60,9 +69,9 @@ const TopicTable = ({ currTopic, data }: any) => {
             sortOrder.order === ALLOWED_SORT_ORDER[2]
         ) {
             // @ts-ignore
-            oldData.sort(function (a, b) {
-                let a_difficulty = a[4];
-                let b_difficulty = b[4];
+            oldData.sort(function (a: Question, b: Question) {
+                let a_difficulty = a.difficulty;
+                let b_difficulty = b.difficulty;
 
                 if (sortOrder.order == ALLOWED_SORT_ORDER[1]) {
                     setSortOrder(() => {
@@ -130,21 +139,12 @@ const TopicTable = ({ currTopic, data }: any) => {
             <TableBody>
                 {currTopicData.map(
                     (
-                        [
-                            id,
-                            topic,
+                        {
                             problem_name,
                             problem_link,
                             difficulty,
                             solution_link
-                        ]: [
-                            id: number,
-                            topic: string,
-                            problem_name: string,
-                            problem_link: string,
-                            difficulty: string,
-                            solution_link: string
-                        ],
+                        },
                         idx: number
                     ) => {
                         return (
