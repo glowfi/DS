@@ -3,7 +3,7 @@ import Topics from '../components/topics/topics';
 
 const Page = () => {
     return (
-        <div className="container mt-6 w-full h-fit flex justify-center items-start">
+        <div className="container mt-6 w-full h-dvh flex justify-center items-start">
             <Topics />
         </div>
     );
