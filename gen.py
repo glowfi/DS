@@ -50,7 +50,7 @@ for directory in directories:
                             extractNumber = tmp.split("_")[0]
                             problemStatement = " ".join(tmp.split("_")[1:])
 
-                            loc = "/".join(file.split("/")[2:])
+                            loc = "/".join(file.split("/")[3:])
                             code = f"{PROGRAM_LOCATION}/{loc}"
 
                             currentData.append(
