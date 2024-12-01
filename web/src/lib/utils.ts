@@ -70,11 +70,3 @@ export const getThemeIndex = (theme: string) => {
     }
     return -1;
 };
-
-export function deFlatten(object: any) {
-    const result = Object.keys(object).reduce(function (r, k) {
-        // @ts-ignore
-        return r.concat(k, object[k]);
-    }, []);
-    return result;
-}

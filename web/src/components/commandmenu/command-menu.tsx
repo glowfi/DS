@@ -20,6 +20,7 @@ import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { useDebounce } from './hooks/useDebounce';
+import { Question } from '../../lib/types';
 
 const CommandMenu = ({ ...props }: DialogProps) => {
     const [open, setOpen] = React.useState(false);
@@ -28,15 +29,16 @@ const CommandMenu = ({ ...props }: DialogProps) => {
         useDebounce(searchTerm);
 
     const [isloading, setIsloading] = React.useState(true);
-    const [data, setData] = React.useState<any[]>([]);
-    const [showData, setShowData] = React.useState<any[]>([]);
+    const [data, setData] = React.useState<Question[]>([]);
+    const [showData, setShowData] = React.useState<Question[]>([]);
 
     React.useEffect(() => {
         const fetchData = async () => {
             try {
                 const data = await fetch(data_location);
-                const json = await data.json();
-                setData(() => [...Object.values(json).flat()]);
+                const json: Question[] = await data.json();
+                setData(json);
+                // setData(() => [...Object.values(json).flat()]);
                 setIsloading(false);
             } catch (err) {
                 setIsloading(false);
@@ -104,21 +106,13 @@ const CommandMenu = ({ ...props }: DialogProps) => {
                         <CommandGroup heading="Codes">
                             {showData.map(
                                 (
-                                    [
-                                        id,
+                                    {
                                         topic,
-                                        problem_name,
-                                        problem_link,
                                         difficulty,
+                                        problem_link,
+                                        problem_name,
                                         solution_link
-                                    ]: [
-                                        id: number,
-                                        topic: string,
-                                        problem_name: string,
-                                        problem_link: string,
-                                        difficulty: string,
-                                        solution_link: string
-                                    ],
+                                    },
                                     idx: number
                                 ) => {
                                     return (

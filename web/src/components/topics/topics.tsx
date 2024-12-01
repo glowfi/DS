@@ -9,7 +9,6 @@ import {
 } from '../ui/accordion';
 import { Badge } from '../ui/badge';
 import TopicTable from './topic-table';
-import { deFlatten } from '../../lib/utils';
 import { Question } from '../../lib/types';
 
 interface TopicsProps {
@@ -31,12 +30,19 @@ const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
                                     </h6>
                                     <Badge variant="default">
                                         {/* @ts-ignore */}
-                                        {data[topic] ? data[topic].length : 0}
+                                        {
+                                            data.filter(
+                                                (p) => p.topic === topic
+                                            ).length
+                                        }
                                     </Badge>
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent>
-                                <TopicTable data={data} currTopic={topic} />
+                                <TopicTable
+                                    data={data.filter((p) => p.topic === topic)}
+                                    currTopic={topic}
+                                />
                             </AccordionContent>
                         </AccordionItem>
                     );
@@ -46,7 +52,7 @@ const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
                 <h6 className="scroll-m-20  font-semibold tracking-tight">
                     Total Code(s)
                 </h6>
-                <Badge>{deFlatten(data).length}</Badge>
+                <Badge>{data.length}</Badge>
             </div>
         </div>
     );
