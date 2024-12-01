@@ -42,23 +42,17 @@ const ALLOWED_SORT_ORDER = {
 };
 
 interface TopicTableProps {
-    currTopic: string;
     data: Question[];
 }
 
-const TopicTable: React.FunctionComponent<TopicTableProps> = ({
-    currTopic,
-    data
-}) => {
+const TopicTable: React.FunctionComponent<TopicTableProps> = ({ data }) => {
     const [currTopicData, setCurrTopicData] = useState(data);
     const [sortOrder, setSortOrder] = useState<sortOrder>({
         order: 'ASC',
         icon: <FaSort />
     });
     // @ts-ignore
-    const [originalData, setOriginalData] = useState(
-        structuredClone(data[currTopic])
-    );
+    const [originalData, setOriginalData] = useState(data);
 
     // @ts-ignore
     function sortData(currData: Question[]) {

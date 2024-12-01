@@ -41,7 +41,6 @@ const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
                             <AccordionContent>
                                 <TopicTable
                                     data={data.filter((p) => p.topic === topic)}
-                                    currTopic={topic}
                                 />
                             </AccordionContent>
                         </AccordionItem>
