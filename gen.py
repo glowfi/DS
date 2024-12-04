@@ -1,132 +1,135 @@
 #!/bin/python
 
-import glob
-import os
 import json
 import re
-import pandas as pd
-
-# Create Sheet
-if os.path.exists("./sheet.csv"):
-    os.remove("./sheet.csv")
-f = open("sheet.csv", "a", encoding="utf-8")
-f.write(f"#,Type,Problem,Link,Difficulty,Code,Language\n")
-f.close()
+import glob
+import os
+from typing import TypedDict
 
 
-def sorted_alphanumeric(data):
-    convert = lambda text: int(text) if text.isdigit() else text.lower()
-    alphanum_key = lambda key: [convert(c) for c in re.split("([0-9]+)", key)]
+# Question type
+class Question(TypedDict):
+    id: int
+    topic: str
+    problem_name: str
+    problem_link: str
+    difficulty: str
+    solution_link: str
+    language: str
+
+
+class Language(TypedDict):
+    name: str
+    comment_string_single_line: str
+    extension: str
+    location: str
+    extra_text_after_first_line: str
+
+
+def getProblemName(filename: str) -> str:
+    idx = -1
+    for i, char in enumerate(filename):
+        if char == "_":
+            idx = i
+            break
+
+    if idx != -1:
+        return filename[idx + 1 :].replace("_", " ")
+    return ""
+
+
+def sort_file_folders(data: list[str]) -> list[str]:
+    """
+    Sorts a list of directory names alphabetically, considering numeric prefixes.
+
+    Args:
+        data (list[str]): A list of directory names.
+
+    Returns:
+        list[str]: The sorted list of directory names.
+    """
+
+    def convert(text):
+        """Converts a character to its integer value if it's a digit, otherwise converts it to lowercase."""
+        return int(text) if text.isdigit() else text.lower()
+
+    def alphanum_key(key):
+        """Creates a tuple of tuples where each inner tuple contains a string and its corresponding integer value."""
+        return [convert(c) for c in re.split("([0-9]+)", key)]
+
+    # Use the custom sorting key to sort the directories
     return sorted(data, key=alphanum_key)
 
 
-langs = ["python", "go"]
-allowed_exts = ["py", "go"]
-dic = {}
+def extensionExists(languages: list[Language], extension: str):
+    for language in languages:
+        if language["extension"] == extension:
+            return True
+    return False
 
-for index, language in enumerate(langs):
-    PROGRAM_LOCATION = (
-        f"https://raw.githubusercontent.com/glowfi/DS/main/Programs/{language}"
-    )
-    directories = sorted_alphanumeric(glob.glob(f"./Programs/{language}/*"))
-    print(directories)
-    idx = 0
 
+def buildSolutionLink(language: str, file: str):
+    base_git_url = "https://raw.githubusercontent.com/glowfi/DS/main/Programs"
+    return f"{base_git_url}/{language}/{file}"
+
+
+languages: list[Language] = [
+    {
+        "name": "python",
+        "comment_string_single_line": "#",
+        "extension": ".py",
+        "location": os.path.abspath("./Programs/python"),
+        "extra_text_after_first_line": "",
+    },
+    {
+        "name": "go",
+        "comment_string_single_line": "//",
+        "extension": ".go",
+        "location": os.path.abspath("./Programs/go"),
+        "extra_text_after_first_line": "\npackage main",
+    },
+]
+final_data: list[Question] = []
+
+
+for language in languages:
+    base_lang: str = language["name"]
+    base_dir_new_lang: str = os.path.abspath(f"./Programs/{base_lang}")
+    directories: list[str] = sort_file_folders(glob.glob(f"{base_dir_new_lang}/*"))
     for directory in directories:
-        print(f"Parsing {directory} ...")
-        if os.path.isdir(f"./{directory}"):
-            files = glob.glob(f"{directory}/*")
-            currentData = []
-            for file in files:
-                file_ext_allowed = file.find(allowed_exts[index])
-                if file_ext_allowed != -1:
-                    with open(f"{file}") as f:
-                        first_line = f.readline()
-                        data = first_line.split(",")
+        topic: str = os.path.basename(directory).split("_")[1]
+        directoryPath: str = f"{base_dir_new_lang}/{topic}"
+        files: list[str] = sort_file_folders(glob.glob(f"{directory}/*"))
+        questionCount: int = 1
+        for file in files:
+            name, extension = os.path.splitext(file)
+            filename = os.path.basename(name)
+            if extensionExists(languages, extension):
+                with open(f"{file}") as fp:
+                    first_line = fp.readline()
+                    data = (
+                        first_line.replace(language["comment_string_single_line"], "")
+                        .strip(" ")
+                        .strip("\n")
+                    ).split(",")
+                    if len(data) < 2:
+                        print(f"Skipping {file}")
+                        continue
+                    else:
+                        problem_link, difficulty = data
+                        newQuestion: Question = {
+                            "id": questionCount,
+                            "topic": topic,
+                            "language": language["name"],
+                            "difficulty": difficulty,
+                            "problem_name": getProblemName(filename),
+                            "problem_link": problem_link,
+                            "solution_link": buildSolutionLink(
+                                language["name"], name + extension
+                            ),
+                        }
+                        final_data.append(newQuestion)
+                        questionCount += 1
 
-                        try:
-                            if data[1]:
-                                dataStructureType = (
-                                    os.path.dirname(file).split("/")[-1].split("_")[-1]
-                                )
-                                link = data[0].strip(" ").replace("# ", "")
-                                difficulty = data[1].strip("\n").lstrip(" ").rstrip(" ")
-
-                                tmp = file.split("/")[-1].strip(" ").replace(".py", "")
-                                extractNumber = tmp.split("_")[0]
-                                problemStatement = " ".join(tmp.split("_")[1:]).replace(
-                                    f".{allowed_exts[index]}", ""
-                                )
-
-                                loc = "/".join(file.split("/")[3:])
-                                code = f"{PROGRAM_LOCATION}/{loc}"
-
-                                currentData.append(
-                                    [
-                                        int(extractNumber),
-                                        dataStructureType,
-                                        problemStatement,
-                                        link,
-                                        difficulty,
-                                        code,
-                                        language,
-                                    ]
-                                )
-                        except Exception as e:
-                            name = file.split("./")[-1]
-                            print(f"Exception Handled for {name}!", e)
-
-            # Save dict to work with JSON
-            currentData.sort(key=lambda x: x[0])
-            dataStructureType = currentData[0][1]
-            if dataStructureType not in dic:
-                dic[dataStructureType] = currentData
-            else:
-                dic[dataStructureType] = [*dic[dataStructureType], *currentData]
-
-            # Create CSV
-            for (
-                extractNumber,
-                dataStructureType,
-                problemStatement,
-                link,
-                difficulty,
-                code,
-                lang,
-            ) in currentData:
-                f = open("sheet.csv", "a", encoding="utf-8")
-                f.write(
-                    f"{idx},{dataStructureType},{problemStatement},{link},{difficulty},{code},{lang}\n"
-                )
-                idx += 1
-                f.close()
-
-# Dump Custom JSON
-final_list = []
-for topic in dic:
-    idx = 0
-    for k in dic[topic]:
-        dic[topic][idx] = {
-            "id": dic[topic][idx][0],
-            "topic": dic[topic][idx][1],
-            "problem_name": dic[topic][idx][2],
-            "problem_link": dic[topic][idx][3],
-            "difficulty": dic[topic][idx][4],
-            "solution_link": dic[topic][idx][5],
-            "language": dic[topic][idx][6],
-        }
-        final_list.append(dic[topic][idx])
-        idx += 1
-json_object = json.dumps(final_list, indent=4)
-with open("data.json", "w") as outfile:
-    outfile.write(json_object)
-
-# Dump Readme
-df = pd.read_csv("sheet.csv")
-markdown_table = df.to_markdown(index=False)
-title = "A collection of data-structures and algorithms"
-img = "\n![LOGO](./logo.jpg)\n"
-siteLink = "\n### Hosted Site : https://dssheet.vercel.app"
-subHeading = "\n### Questions\n"
-with open("README.md", "w") as rf:
-    rf.write(f"# DS\n\n> {title}\n{img}{siteLink}\n{subHeading}\n{markdown_table}")
+with open("data.json", "w") as data:
+    data.write(json.dumps(final_data, indent=4))
