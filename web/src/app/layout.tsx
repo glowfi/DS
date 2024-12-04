@@ -1,12 +1,22 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import './globals.css';
-import SiteHeader from '../components/header/site-header';
-import { ThemeProvider } from '../components/themetoggle/theme-provider';
-import GlobalContextProvider from './globalContextProvider';
+import { ThemeProvider } from '@/components/theme-provider';
+
+const geistSans = localFont({
+    src: './fonts/GeistVF.woff',
+    variable: '--font-geist-sans',
+    weight: '100 900'
+});
+const geistMono = localFont({
+    src: './fonts/GeistMonoVF.woff',
+    variable: '--font-geist-mono',
+    weight: '100 900'
+});
 
 export const metadata: Metadata = {
-    title: 'Data structures and algorithms',
-    description: 'DSA sheet'
+    title: 'DSSheet',
+    description: 'A collection of data structures and algorithms'
 };
 
 export default function RootLayout({
@@ -15,18 +25,17 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body>
+        <html lang="en" suppressHydrationWarning>
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            >
+                {' '}
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="system"
-                    enableSystem
+                    defaultTheme="dark"
                     disableTransitionOnChange
                 >
-                    <GlobalContextProvider>
-                        <SiteHeader />
-                        {children}
-                    </GlobalContextProvider>
+                    {children}
                 </ThemeProvider>
             </body>
         </html>
