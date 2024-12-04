@@ -97,7 +97,7 @@ for language in languages:
     base_dir_new_lang: str = os.path.abspath(f"./Programs/{base_lang}")
     directories: list[str] = sort_file_folders(glob.glob(f"{base_dir_new_lang}/*"))
     for directory in directories:
-        topic: str = os.path.basename(directory).split("_")[1]
+        topic: str = os.path.basename(directory)
         directoryPath: str = f"{base_dir_new_lang}/{topic}"
         files: list[str] = sort_file_folders(glob.glob(f"{directory}/*"))
         questionCount: int = 1
@@ -119,13 +119,14 @@ for language in languages:
                         problem_link, difficulty = data
                         newQuestion: Question = {
                             "id": questionCount,
-                            "topic": topic,
+                            "topic": topic.split("_")[1],
                             "language": language["name"],
                             "difficulty": difficulty,
                             "problem_name": getProblemName(filename),
                             "problem_link": problem_link,
                             "solution_link": buildSolutionLink(
-                                language["name"], name + extension
+                                language["name"],
+                                f"{topic}/{filename}{language["extension"]}",
                             ),
                         }
                         final_data.append(newQuestion)
