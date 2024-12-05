@@ -125,7 +125,7 @@ for language in languages.keys():
                             "id": questionCount,
                             "topic": topic.split("_")[1],
                             "language": languages[language]["name"],
-                            "difficulty": difficulty,
+                            "difficulty": difficulty.strip(" "),
                             "problem_name": getProblemName(filename),
                             "problem_link": problem_link,
                             "solution_link": buildSolutionLink(
