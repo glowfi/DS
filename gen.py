@@ -18,6 +18,7 @@ class Question(TypedDict):
     language: str
 
 
+# Language type
 class Language(TypedDict):
     name: str
     comment_string_single_line: str
@@ -61,9 +62,9 @@ def sort_file_folders(data: list[str]) -> list[str]:
     return sorted(data, key=alphanum_key)
 
 
-def extensionExists(languages: list[Language], extension: str):
+def extensionExists(languages: dict[str, Language], extension: str):
     for language in languages:
-        if language["extension"] == extension:
+        if languages[language]["extension"] == extension:
             return True
     return False
 
@@ -73,27 +74,28 @@ def buildSolutionLink(language: str, file: str):
     return f"{base_git_url}/{language}/{file}"
 
 
-languages: list[Language] = [
-    {
+languages: dict[str, Language] = {
+    "python": {
         "name": "python",
         "comment_string_single_line": "#",
         "extension": ".py",
         "location": os.path.abspath("./Programs/python"),
         "extra_text_after_first_line": "",
     },
-    {
+    "go": {
         "name": "go",
         "comment_string_single_line": "//",
         "extension": ".go",
         "location": os.path.abspath("./Programs/go"),
         "extra_text_after_first_line": "\npackage main",
     },
-]
+}
+
 final_data: list[Question] = []
 
 
-for language in languages:
-    base_lang: str = language["name"]
+for language in languages.keys():
+    base_lang: str = languages[language]["name"]
     base_dir_new_lang: str = os.path.abspath(f"./Programs/{base_lang}")
     directories: list[str] = sort_file_folders(glob.glob(f"{base_dir_new_lang}/*"))
     for directory in directories:
@@ -108,7 +110,9 @@ for language in languages:
                 with open(f"{file}") as fp:
                     first_line = fp.readline()
                     data = (
-                        first_line.replace(language["comment_string_single_line"], "")
+                        first_line.replace(
+                            languages[language]["comment_string_single_line"], ""
+                        )
                         .strip(" ")
                         .strip("\n")
                     ).split(",")
@@ -120,13 +124,13 @@ for language in languages:
                         newQuestion: Question = {
                             "id": questionCount,
                             "topic": topic.split("_")[1],
-                            "language": language["name"],
+                            "language": languages[language]["name"],
                             "difficulty": difficulty,
                             "problem_name": getProblemName(filename),
                             "problem_link": problem_link,
                             "solution_link": buildSolutionLink(
-                                language["name"],
-                                f"{topic}/{filename}{language["extension"]}",
+                                languages[language]["name"],
+                                f"{topic}/{filename}{languages[language]["extension"]}",
                             ),
                         }
                         final_data.append(newQuestion)

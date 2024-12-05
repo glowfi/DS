@@ -2,44 +2,21 @@
 
 import glob
 import os
-import re
 import shutil
 from gen import languages as lang
+from gen import sort_file_folders
 
 
-base_lang = lang[0]["name"]
-base_dir_base_lang = lang[0]["location"]
-base_lang_ext = lang[0]["extension"]
-base_lang_comment = lang[0]["comment_string_single_line"]
+base_lang = lang["python"]["name"]
+base_dir_base_lang = lang["python"]["location"]
+base_lang_ext = lang["python"]["extension"]
+base_lang_comment = lang["python"]["comment_string_single_line"]
 
-new_lang = lang[1]["name"]
-base_dir_new_lang = lang[1]["location"]
-new_lang_ext = lang[1]["extension"]
-new_lang_comment = lang[1]["comment_string_single_line"]
-extra_text_after_first_line = lang[1]["extra_text_after_first_line"]
-
-
-def sort_directories(data: list[str]) -> list[str]:
-    """
-    Sorts a list of directory names alphabetically, considering numeric prefixes.
-
-    Args:
-        data (list[str]): A list of directory names.
-
-    Returns:
-        list[str]: The sorted list of directory names.
-    """
-
-    def convert(text):
-        """Converts a character to its integer value if it's a digit, otherwise converts it to lowercase."""
-        return int(text) if text.isdigit() else text.lower()
-
-    def alphanum_key(key):
-        """Creates a tuple of tuples where each inner tuple contains a string and its corresponding integer value."""
-        return [convert(c) for c in re.split("([0-9]+)", key)]
-
-    # Use the custom sorting key to sort the directories
-    return sorted(data, key=alphanum_key)
+new_lang = lang["go"]["name"]
+base_dir_new_lang = lang["go"]["location"]
+new_lang_ext = lang["go"]["extension"]
+new_lang_comment = lang["go"]["comment_string_single_line"]
+extra_text_after_first_line = lang["go"]["extra_text_after_first_line"]
 
 
 # Create base directory for new lang
@@ -49,13 +26,13 @@ os.mkdir(base_dir_new_lang)
 
 
 # Create files corresponding to topics
-directories = sort_directories(glob.glob(f"./Programs/{base_lang}/*"))
+directories = sort_file_folders(glob.glob(f"./Programs/{base_lang}/*"))
 
 for directory in directories:
     topic = os.path.basename(directory)
     directoryPath = f"{base_dir_new_lang}/{topic}"
     os.mkdir(directoryPath)
-    files = glob.glob(f"{directory}/*")
+    files = sort_file_folders(glob.glob(f"{directory}/*"))
     for file in files:
         name, extension = os.path.splitext(file)
         filename = os.path.basename(name)
