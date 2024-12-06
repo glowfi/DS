@@ -1,11 +1,13 @@
 import { Loader2 } from 'lucide-react';
 import React from 'react';
 
-interface props {
+interface LoadingSpinnerProps {
     name?: string;
 }
 
-const LoadingSpinner = ({ name }: props) => {
+const LoadingSpinner: React.FunctionComponent<LoadingSpinnerProps> = ({
+    name
+}) => {
     return (
         <div className="flex justify-center items-center min-h-fit">
             <div className="flex gap-3 items-center justify-center">
