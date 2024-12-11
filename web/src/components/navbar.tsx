@@ -8,14 +8,13 @@ import { cn } from '@/lib/utils';
 import { buttonVariants } from './ui/button';
 import { ModeToggle } from './mode-toggle';
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
-import SearchBar from './searchbar';
 import { Question } from '@/lib/types';
 
 interface SiteHeaderProps {
     data: Question[];
 }
 
-const SiteHeader: React.FunctionComponent<SiteHeaderProps> = ({ data }) => {
+const SiteHeader: React.FunctionComponent<SiteHeaderProps> = () => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-14 max-w-screen-2xl items-center">
@@ -40,9 +39,6 @@ const SiteHeader: React.FunctionComponent<SiteHeaderProps> = ({ data }) => {
                     </Link>
                 </div>
                 <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-                    <div className="w-full flex-1 md:w-auto md:flex-none">
-                        <SearchBar data={data} />
-                    </div>
                     <nav className="flex items-center">
                         <Link
                             href={process.env.GITHUB_LINK as string}

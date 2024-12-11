@@ -72,9 +72,9 @@ const CodeTheme: React.FunctionComponent<CodeThemeProps> = ({
                                             );
                                             if (theme) {
                                                 changeTheme(theme.theme);
-                                                // setThemeToLocalStorage(
-                                                //     theme.value
-                                                // );
+                                                setThemeToLocalStorage(
+                                                    theme.value
+                                                );
                                             }
                                         }
                                         setOpen(false);

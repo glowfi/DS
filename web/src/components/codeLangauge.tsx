@@ -79,7 +79,10 @@ const CodeLangauage: React.FunctionComponent<CodeLangauageProps> = ({
                                                 (t) => t.value === currentValue
                                             );
                                             if (lang) {
-                                                changeLangauge(language.value);
+                                                console.log(
+                                                    'trying',
+                                                    language.value
+                                                );
                                                 const p = data.find(
                                                     (d) =>
                                                         d.language ===
@@ -91,9 +94,12 @@ const CodeLangauage: React.FunctionComponent<CodeLangauageProps> = ({
                                                     await fetchCode(
                                                         p.solution_link
                                                     );
-                                                    // setLangaugeToLocalStorage(
-                                                    //     language.value
-                                                    // );
+                                                    changeLangauge(
+                                                        language.value
+                                                    );
+                                                    setLangaugeToLocalStorage(
+                                                        language.value
+                                                    );
                                                 }
                                             }
                                         }
