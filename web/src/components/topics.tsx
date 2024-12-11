@@ -146,7 +146,7 @@ function getThemeFromLocalStorage(): theme {
     if (t === undefined) {
         return DEFAULT_THEME;
     }
-    
+
     return t.theme;
 }
 function setThemeToLocalStorage(theme: string): void {
@@ -205,7 +205,6 @@ const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
 
     const filteredData = useCallback(
         (topic: string): Question[] => {
-            
             return sortData(
                 state.data,
                 topic,
@@ -225,212 +224,234 @@ const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
     }, []);
 
     return (
-        <Accordion
-            type="single"
-            collapsible
-            className="flex-col justify-center items-center w-full h-full"
-        >
-            {topics.map((topic, idx) => {
-                return (
-                    <AccordionItem value={`item-${idx}`} key={idx}>
-                        <AccordionTrigger>
-                            <div className="flex justify-between items-center w-full mr-6">
-                                <h6 className="scroll-m-20  font-semibold tracking-tight">
-                                    {topic}
-                                </h6>
-                                <Badge>
-                                    {
-                                        data.filter(
-                                            (d) =>
-                                                d.topic === topic &&
-                                                d.language === state.language
-                                        ).length
-                                    }
-                                </Badge>
-                            </div>
-                        </AccordionTrigger>
-                        <AccordionContent>
-                            <Table>
-                                <TableHeader>
-                                    <TableRow>
-                                        <TableHead>#</TableHead>
-                                        <TableHead>Problem</TableHead>
-                                        <TableHead
-                                            className="hover:cursor-pointer"
-                                            onClick={() => {
-                                                setState((oldstate) => {
-                                                    const n = sortOrders.length;
-                                                    const newIdx =
-                                                        (oldstate.sort.idx +
-                                                            1) %
-                                                        n;
-                                                    return {
-                                                        ...oldstate,
-                                                        sort: sortOrders[newIdx]
-                                                    };
-                                                });
-                                            }}
-                                        >
-                                            <div className="flex gap-3 justify-start items-center">
-                                                <p>Difficulty</p>
-                                                {state.sort.icon}
-                                            </div>
-                                        </TableHead>
-                                        <TableHead>Solution</TableHead>
-                                    </TableRow>
-                                </TableHeader>
-                                <TableBody>
-                                    {filteredData(topic).map((d, idx) => {
-                                        return (
-                                            <TableRow key={idx}>
-                                                <TableCell className="font-medium">
-                                                    {idx + 1}
-                                                </TableCell>
-                                                <TableCell>
-                                                    <Link
-                                                        target="_blank"
-                                                        href={d.problem_link}
-                                                        className="hover:underline"
-                                                    >
-                                                        <div className="flex-wrap md:flex items-center gap-1">
-                                                            <span>
-                                                                {d.problem_name}
-                                                            </span>
-                                                            <SquareArrowOutUpRight className="h-4 w-4" />
-                                                        </div>
-                                                    </Link>
-                                                </TableCell>
-                                                <TableCell>
-                                                    <Badge
-                                                        style={{
-                                                            backgroundColor: `${getColor(d.difficulty.trim())}`
-                                                        }}
-                                                    >
-                                                        {d.difficulty}
-                                                    </Badge>
-                                                </TableCell>
-                                                <TableCell>
-                                                    <Sheet modal>
-                                                        <SheetTrigger
-                                                            onClick={async () => {
-                                                                
-                                                                await fetchCode(
-                                                                    d.solution_link
-                                                                );
-                                                            }}
-                                                            asChild
+        <>
+            <Accordion
+                type="single"
+                collapsible
+                className="flex-col justify-center items-center w-full h-full"
+            >
+                {topics.map((topic, idx) => {
+                    return (
+                        <AccordionItem value={`item-${idx}`} key={idx}>
+                            <AccordionTrigger>
+                                <div className="flex justify-between items-center w-full mr-6">
+                                    <h6 className="scroll-m-20  font-semibold tracking-tight">
+                                        {topic}
+                                    </h6>
+                                    <Badge>
+                                        {
+                                            data.filter(
+                                                (d) =>
+                                                    d.topic === topic &&
+                                                    d.language ===
+                                                        state.language
+                                            ).length
+                                        }
+                                    </Badge>
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent>
+                                <Table>
+                                    <TableHeader>
+                                        <TableRow>
+                                            <TableHead>#</TableHead>
+                                            <TableHead>Problem</TableHead>
+                                            <TableHead
+                                                className="hover:cursor-pointer"
+                                                onClick={() => {
+                                                    setState((oldstate) => {
+                                                        const n =
+                                                            sortOrders.length;
+                                                        const newIdx =
+                                                            (oldstate.sort.idx +
+                                                                1) %
+                                                            n;
+                                                        return {
+                                                            ...oldstate,
+                                                            sort: sortOrders[
+                                                                newIdx
+                                                            ]
+                                                        };
+                                                    });
+                                                }}
+                                            >
+                                                <div className="flex gap-3 justify-start items-center">
+                                                    <p>Difficulty</p>
+                                                    {state.sort.icon}
+                                                </div>
+                                            </TableHead>
+                                            <TableHead>Solution</TableHead>
+                                        </TableRow>
+                                    </TableHeader>
+                                    <TableBody>
+                                        {filteredData(topic).map((d, idx) => {
+                                            return (
+                                                <TableRow key={idx}>
+                                                    <TableCell className="font-medium">
+                                                        {idx + 1}
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Link
+                                                            target="_blank"
+                                                            href={
+                                                                d.problem_link
+                                                            }
+                                                            className="hover:underline"
                                                         >
-                                                            <Button variant="default">
-                                                                See Code
-                                                            </Button>
-                                                        </SheetTrigger>
-                                                        <SheetContent className="w-full overflow-auto">
-                                                            <SheetHeader>
-                                                                <SheetTitle>
+                                                            <div className="flex-wrap md:flex items-center gap-1">
+                                                                <span>
                                                                     {
                                                                         d.problem_name
                                                                     }
-                                                                </SheetTitle>
-                                                                <SheetDescription>
-                                                                    Code
-                                                                    Solution
-                                                                </SheetDescription>
-                                                            </SheetHeader>
-                                                            <div className="flex mt-3 gap-3">
-                                                                <CodeTheme
-                                                                    changeTheme={
-                                                                        changeTheme
-                                                                    }
-                                                                    setThemeToLocalStorage={
-                                                                        setThemeToLocalStorage
-                                                                    }
-                                                                    deafulttheme={
-                                                                        themes.find(
-                                                                            (
-                                                                                t
-                                                                            ) =>
-                                                                                t.theme ===
-                                                                                state.theme
-                                                                        )
-                                                                            ?.label ||
-                                                                        DEFAULT_THEME_STR
-                                                                    }
-                                                                />
-                                                                <CodeLangauage
-                                                                    fetchCode={
-                                                                        fetchCode
-                                                                    }
-                                                                    changeLangauge={
-                                                                        changeLangauge
-                                                                    }
-                                                                    setLangaugeToLocalStorage={
-                                                                        setLangaugeToLocalStorage
-                                                                    }
-                                                                    data={data}
-                                                                    problem_name={
-                                                                        d.problem_name
-                                                                    }
-                                                                    language={
-                                                                        state.language
-                                                                    }
-                                                                />
+                                                                </span>
+                                                                <SquareArrowOutUpRight className="h-4 w-4" />
                                                             </div>
-                                                            <div className="grid gap-4 py-4">
-                                                                {state.isLoading ? (
-                                                                    <LoadingSpinner name="solution" />
-                                                                ) : (
-                                                                    <>
-                                                                        {state
-                                                                            .codeText
-                                                                            .length >
-                                                                            0 && (
-                                                                            <SyntaxHighlighter
-                                                                                language={
-                                                                                    d.language
-                                                                                }
-                                                                                style={
-                                                                                    state.theme
-                                                                                }
-                                                                            >
-                                                                                {
-                                                                                    state.codeText
-                                                                                }
-                                                                            </SyntaxHighlighter>
-                                                                        )}
-                                                                    </>
-                                                                )}
-                                                                {state.error
-                                                                    .length >
-                                                                    0 && (
-                                                                    <div className="text-lg font-semibold text-red-500">
+                                                        </Link>
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Badge
+                                                            style={{
+                                                                backgroundColor: `${getColor(d.difficulty.trim())}`
+                                                            }}
+                                                        >
+                                                            {d.difficulty}
+                                                        </Badge>
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Sheet modal>
+                                                            <SheetTrigger
+                                                                onClick={async () => {
+                                                                    await fetchCode(
+                                                                        d.solution_link
+                                                                    );
+                                                                }}
+                                                                asChild
+                                                            >
+                                                                <Button variant="default">
+                                                                    See Code
+                                                                </Button>
+                                                            </SheetTrigger>
+                                                            <SheetContent className="w-full overflow-auto">
+                                                                <SheetHeader>
+                                                                    <SheetTitle>
                                                                         {
-                                                                            state.error
+                                                                            d.problem_name
                                                                         }
-                                                                    </div>
-                                                                )}
-                                                            </div>
-                                                            <SheetFooter>
-                                                                <SheetClose
-                                                                    asChild
-                                                                >
-                                                                    <Button type="submit">
-                                                                        Close
-                                                                    </Button>
-                                                                </SheetClose>
-                                                            </SheetFooter>
-                                                        </SheetContent>
-                                                    </Sheet>
-                                                </TableCell>
-                                            </TableRow>
-                                        );
-                                    })}
-                                </TableBody>
-                            </Table>
-                        </AccordionContent>
-                    </AccordionItem>
-                );
-            })}
-        </Accordion>
+                                                                    </SheetTitle>
+                                                                    <SheetDescription>
+                                                                        Code
+                                                                        Solution
+                                                                    </SheetDescription>
+                                                                </SheetHeader>
+                                                                <div className="flex mt-3 gap-3">
+                                                                    <CodeTheme
+                                                                        changeTheme={
+                                                                            changeTheme
+                                                                        }
+                                                                        setThemeToLocalStorage={
+                                                                            setThemeToLocalStorage
+                                                                        }
+                                                                        deafulttheme={
+                                                                            themes.find(
+                                                                                (
+                                                                                    t
+                                                                                ) =>
+                                                                                    t.theme ===
+                                                                                    state.theme
+                                                                            )
+                                                                                ?.label ||
+                                                                            DEFAULT_THEME_STR
+                                                                        }
+                                                                    />
+                                                                    <CodeLangauage
+                                                                        fetchCode={
+                                                                            fetchCode
+                                                                        }
+                                                                        changeLangauge={
+                                                                            changeLangauge
+                                                                        }
+                                                                        setLangaugeToLocalStorage={
+                                                                            setLangaugeToLocalStorage
+                                                                        }
+                                                                        data={
+                                                                            data
+                                                                        }
+                                                                        problem_name={
+                                                                            d.problem_name
+                                                                        }
+                                                                        language={
+                                                                            state.language
+                                                                        }
+                                                                    />
+                                                                </div>
+                                                                <div className="grid gap-4 py-4">
+                                                                    {state.isLoading ? (
+                                                                        <LoadingSpinner name="solution" />
+                                                                    ) : (
+                                                                        <>
+                                                                            {state
+                                                                                .codeText
+                                                                                .length >
+                                                                                0 && (
+                                                                                <SyntaxHighlighter
+                                                                                    language={
+                                                                                        d.language
+                                                                                    }
+                                                                                    style={
+                                                                                        state.theme
+                                                                                    }
+                                                                                >
+                                                                                    {
+                                                                                        state.codeText
+                                                                                    }
+                                                                                </SyntaxHighlighter>
+                                                                            )}
+                                                                        </>
+                                                                    )}
+                                                                    {state.error
+                                                                        .length >
+                                                                        0 && (
+                                                                        <div className="text-lg font-semibold text-red-500">
+                                                                            {
+                                                                                state.error
+                                                                            }
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                                <SheetFooter>
+                                                                    <SheetClose
+                                                                        asChild
+                                                                    >
+                                                                        <Button type="submit">
+                                                                            Close
+                                                                        </Button>
+                                                                    </SheetClose>
+                                                                </SheetFooter>
+                                                            </SheetContent>
+                                                        </Sheet>
+                                                    </TableCell>
+                                                </TableRow>
+                                            );
+                                        })}
+                                    </TableBody>
+                                </Table>
+                            </AccordionContent>
+                        </AccordionItem>
+                    );
+                })}
+                <div className="flex justify-between items-center mt-3 mr-9">
+                    <h6 className="scroll-m-20  font-semibold tracking-tight">
+                        Total Code(s)
+                    </h6>
+                    <Badge>
+                        {
+                            data.filter((p) => p.language === state.language)
+                                .length
+                        }
+                    </Badge>
+                </div>
+            </Accordion>
+        </>
     );
 };
 
