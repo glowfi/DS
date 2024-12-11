@@ -3,7 +3,6 @@ import {
     CommandDialog,
     CommandEmpty,
     CommandGroup,
-    CommandInput,
     CommandItem,
     CommandList
 } from '@/components/ui/command';
@@ -53,7 +52,7 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({ data }) => {
                           d.language === getLangaugeFromLocalStorage()
                   )
         );
-    }, [debouncedSearchTerm]);
+    }, [debouncedSearchTerm, data]); // eslint-disable-line react-hooks/exhaustive-deps
 
     React.useEffect(() => {
         const down = (e: KeyboardEvent) => {
@@ -120,7 +119,7 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({ data }) => {
                                             href={d.solution_link}
                                             className="font-bold flex-col gap-1 hover:underline"
                                         >
-                                            Solution
+                                            Solution ({d.language})
                                             <SquareArrowOutUpRight className="h-4 w-4" />
                                         </Link>
                                     </div>
