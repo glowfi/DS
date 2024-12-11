@@ -68,7 +68,7 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({ data }) => {
     return (
         <>
             <p
-                className="text-sm text-muted-foreground hover:opacity-70 hover:cursor-pointer"
+                className="hidden md:block text-sm text-muted-foreground hover:opacity-70 hover:cursor-pointer"
                 onClick={() => {
                     setOpen(true);
                 }}
@@ -77,6 +77,14 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({ data }) => {
                 <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
                     <span className="text-xs">⌘</span>K
                 </kbd>
+            </p>
+            <p
+                className="md:hidden text-sm text-muted-foreground hover:opacity-70 hover:cursor-pointer"
+                onClick={() => {
+                    setOpen(true);
+                }}
+            >
+                Click to start searching
             </p>
             <CommandDialog open={open} onOpenChange={setOpen}>
                 <Input
@@ -92,37 +100,35 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({ data }) => {
                     <CommandGroup heading="Suggestions">
                         {filteredData.map((d, idx) => {
                             return (
-                                <CommandItem key={idx}>
-                                    <div className="flex justify-between items-start w-full">
-                                        <Link
-                                            target="_blank"
-                                            href={d.problem_link}
-                                            className="font-bold flex-col gap-1 hover:underline"
+                                <CommandItem key={idx} className="w-full">
+                                    <Link
+                                        target="_blank"
+                                        href={d.problem_link}
+                                        className="font-bold flex-col hover:underline w-auto"
+                                    >
+                                        <span>{d.problem_name}</span>
+                                        <SquareArrowOutUpRight className="h-4 w-4" />
+                                    </Link>
+                                    <div className="flex items-start justify-start gap-1 m-1 w-fit">
+                                        <Badge className="text-center">
+                                            {d.topic}
+                                        </Badge>
+                                        <Badge
+                                            style={{
+                                                backgroundColor: `${getColor(d.difficulty)}`
+                                            }}
                                         >
-                                            {d.problem_name}
-                                            <SquareArrowOutUpRight className="h-4 w-4" />
-                                        </Link>
-                                        <div className="flex items-start justify-start gap-1 m-1 w-fit">
-                                            <Badge className="text-center">
-                                                {d.topic}
-                                            </Badge>
-                                            <Badge
-                                                style={{
-                                                    backgroundColor: `${getColor(d.difficulty)}`
-                                                }}
-                                            >
-                                                {d.difficulty}
-                                            </Badge>
-                                        </div>
-                                        <Link
-                                            target="_blank"
-                                            href={d.solution_link}
-                                            className="font-bold flex-col gap-1 hover:underline"
-                                        >
-                                            Solution ({d.language})
-                                            <SquareArrowOutUpRight className="h-4 w-4" />
-                                        </Link>
+                                            {d.difficulty}
+                                        </Badge>
                                     </div>
+                                    <Link
+                                        target="_blank"
+                                        href={d.solution_link}
+                                        className="font-bold flex-col gap-1 hover:underline"
+                                    >
+                                        Solution ({d.language})
+                                        <SquareArrowOutUpRight className="h-4 w-4" />
+                                    </Link>
                                 </CommandItem>
                             );
                         })}
