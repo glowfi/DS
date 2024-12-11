@@ -146,7 +146,7 @@ function getThemeFromLocalStorage(): theme {
     if (t === undefined) {
         return DEFAULT_THEME;
     }
-    console.log(t, 'YES');
+    
     return t.theme;
 }
 function setThemeToLocalStorage(theme: string): void {
@@ -205,7 +205,7 @@ const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
 
     const filteredData = useCallback(
         (topic: string): Question[] => {
-            console.log('newlang', state.language);
+            
             return sortData(
                 state.data,
                 topic,
@@ -313,9 +313,7 @@ const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
                                                     <Sheet modal>
                                                         <SheetTrigger
                                                             onClick={async () => {
-                                                                console.log(
-                                                                    state.language
-                                                                );
+                                                                
                                                                 await fetchCode(
                                                                     d.solution_link
                                                                 );

@@ -79,10 +79,7 @@ const CodeLangauage: React.FunctionComponent<CodeLangauageProps> = ({
                                                 (t) => t.value === currentValue
                                             );
                                             if (lang) {
-                                                console.log(
-                                                    'trying',
-                                                    language.value
-                                                );
+                                                
                                                 const p = data.find(
                                                     (d) =>
                                                         d.language ===

@@ -28,17 +28,18 @@ const SiteHeader: React.FunctionComponent<SiteHeaderProps> = () => {
                         />
                     </Link>
                 </div>
-                <div className="mr-4 hidden md:flex">
+                <div>
                     <Link
                         href="/"
                         className="mr-6 flex justify-center items-center space-x-2"
                     >
-                        <span className="hidden font-bold sm:inline-block">
+                        <span className="hidden md:inline-block font-bold">
                             {process.env.SITE_NAME}
                         </span>
+                        <span className="md:hidden font-bold">DSA</span>
                     </Link>
                 </div>
-                <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+                <div className="flex flex-1 items-center space-x-2 justify-end">
                     <nav className="flex items-center">
                         <Link
                             href={process.env.GITHUB_LINK as string}

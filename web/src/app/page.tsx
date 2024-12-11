@@ -27,12 +27,10 @@ const Home = async () => {
         new Set()
     );
     return (
-        <>
-            <div className="container flex-col mt-6 w-full h-dvh flex justify-center items-center mx-auto">
-                <SiteHeader data={json} />
-                <Topics topics={Array.from(topics)} data={json} />
-            </div>
-        </>
+        <div className="container flex-col mt-6 w-full h-dvh flex justify-center items-center mx-auto p-12 md:p-6">
+            <SiteHeader data={json} />
+            <Topics topics={Array.from(topics)} data={json} />
+        </div>
     );
 };
 
