@@ -126,7 +126,7 @@ const DEFAULT_LANG: string = 'python';
 const DEFAULT_THEME: theme = gruvboxDark;
 const DEFAULT_THEME_STR: string = 'gruvboxDark';
 
-function getLangaugeFromLocalStorage(): string {
+export function getLangaugeFromLocalStorage(): string {
     const data = localStorage.getItem('code-lang');
     if (data === null || data === undefined) {
         return DEFAULT_LANG;
