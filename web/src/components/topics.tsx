@@ -394,6 +394,9 @@ const Topics: React.FunctionComponent<TopicsProps> = ({ topics, data }) => {
                                                                                 .length >
                                                                                 0 && (
                                                                                 <SyntaxHighlighter
+                                                                                    wrapLines={
+                                                                                        true
+                                                                                    }
                                                                                     language={
                                                                                         d.language
                                                                                     }
