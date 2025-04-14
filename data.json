@@ -2398,18 +2398,18 @@
         "topic": "Heaps",
         "language": "python",
         "difficulty": "Medium",
-        "problem_name": "Implement Min Heap",
+        "problem_name": "Implement Max Heap",
         "problem_link": "NA ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/1_Implement_Min_Heap.py"
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/1_Implement_Max_Heap.py"
     },
     {
         "id": 2,
         "topic": "Heaps",
         "language": "python",
         "difficulty": "Medium",
-        "problem_name": "Binary Heap Operations",
-        "problem_link": "https://www.geeksforgeeks.org/problems/operations-on-binary-min-heap/1 ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/2_Binary_Heap_Operations.py"
+        "problem_name": "Implement Min Heap",
+        "problem_link": "NA ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/2_Implement_Min_Heap.py"
     },
     {
         "id": 3,
@@ -2425,9 +2425,18 @@
         "topic": "Heaps",
         "language": "python",
         "difficulty": "Medium",
+        "problem_name": "Binary Heap Operations",
+        "problem_link": "https://www.geeksforgeeks.org/problems/operations-on-binary-min-heap/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/4_Binary_Heap_Operations.py"
+    },
+    {
+        "id": 5,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Medium",
         "problem_name": "Convert Min Heap to Max Heap",
         "problem_link": "https://www.geeksforgeeks.org/problems/convert-min-heap-to-max-heap-1666385109/1 ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/4_Convert_Min_Heap_to_Max_Heap.py"
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/5_Convert_Min_Heap_to_Max_Heap.py"
     },
     {
         "id": 1,
@@ -6343,6 +6352,33 @@
         "problem_name": "Minimum Window Substring",
         "problem_link": "https:leetcode.com/problems/minimum-window-substring/ ",
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/go/7_SlidingWindow and Two Pointers/16_Minimum_Window_Substring.go"
+    },
+    {
+        "id": 1,
+        "topic": "Greedy",
+        "language": "go",
+        "difficulty": "Easy",
+        "problem_name": "Meetings Rooms I",
+        "problem_link": "https:www.geeksforgeeks.org/problems/attend-all-meetings/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/go/8_Greedy/7_Meetings_Rooms_I.go"
+    },
+    {
+        "id": 2,
+        "topic": "Greedy",
+        "language": "go",
+        "difficulty": "Medium",
+        "problem_name": "Meeting Rooms II",
+        "problem_link": "https:www.geeksforgeeks.org/problems/attend-all-meetings-ii/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/go/8_Greedy/8_Meeting_Rooms_II.go"
+    },
+    {
+        "id": 3,
+        "topic": "Greedy",
+        "language": "go",
+        "difficulty": "Hard",
+        "problem_name": "Meeting Rooms III",
+        "problem_link": "https:leetcode.com/problems/meeting-rooms-iii/ ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/go/8_Greedy/9_Meeting_Rooms_III.go"
     },
     {
         "id": 1,

@@ -8,18 +8,21 @@
 
 class Solution:
     def isMaxHeap(self, arr, n):
-        def dfs(i):
-            if i >= n:
+        def dfs(arr, idx):
+            if idx >= n:
                 return True
-            lcIdx, rcIdx = (2 * i) + 1, (2 * i) + 2
-            if lcIdx < n and arr[i] < arr[lcIdx]:
-                return False
-            if rcIdx < n and arr[i] < arr[rcIdx]:
+
+            lcIdx, rcIdx = 2 * idx + 1, 2 * idx + 2
+
+            if lcIdx < n and arr[idx] < arr[lcIdx]:
                 return False
 
-            return dfs(lcIdx) and dfs(rcIdx)
+            if rcIdx < n and arr[idx] < arr[rcIdx]:
+                return False
 
-        return dfs(0)
+            return dfs(arr, lcIdx) and dfs(arr, rcIdx)
+
+        return dfs(arr, 0)
 
 
 # Optimal
@@ -29,12 +32,13 @@ class Solution:
 
 class Solution:
     def isMaxHeap(self, arr, n):
-        for i in range(n // 2):
-            lcIdx, rcIdx = (2 * i) + 1, (2 * i) + 2
-
-            if lcIdx < n and arr[i] < arr[lcIdx]:
+        for idx in range(0, n // 2):
+            lcIdx = 2 * idx + 1
+            if lcIdx < n and arr[idx] < arr[lcIdx]:
                 return False
-            if rcIdx < n and arr[i] < arr[rcIdx]:
+
+            rcIdx = 2 * idx + 2
+            if rcIdx < n and arr[idx] < arr[rcIdx]:
                 return False
 
         return True
