@@ -66,7 +66,7 @@ class MaxHeap:
             idx (int): The index of the element to be percolated up.
         """
         if idx > 0:
-            parent_idx = math.floor((idx - 1) / 2)
+            parent_idx = math.ceil((idx / 2) - 1)
             if self.heap_arr[parent_idx] < self.heap_arr[idx]:
                 self.heap_arr[parent_idx], self.heap_arr[idx] = (
                     self.heap_arr[idx],

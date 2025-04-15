@@ -17,7 +17,7 @@ heap = []
 
 def percolate_up(idx):
     if idx > 0:
-        pidx = math.floor((idx - 1) / 2)
+        pidx = math.ceil((idx / 2) - 1)
         if heap[idx] < heap[pidx]:
             heap[idx], heap[pidx] = heap[pidx], heap[idx]
             percolate_up(pidx)
