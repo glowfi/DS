@@ -2439,6 +2439,60 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/5_Convert_Min_Heap_to_Max_Heap.py"
     },
     {
+        "id": 6,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Kth smallest element",
+        "problem_link": "https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/5_Kth_smallest_element.py"
+    },
+    {
+        "id": 7,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Kth largest element",
+        "problem_link": "https://leetcode.com/problems/kth-largest-element-in-an-array/ ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/6_Kth_largest_element.py"
+    },
+    {
+        "id": 8,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Nearly Sorted",
+        "problem_link": "https://www.geeksforgeeks.org/problems/nearly-sorted-1587115620/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/7_Nearly_Sorted.py"
+    },
+    {
+        "id": 9,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Last Stone Weight",
+        "problem_link": "https://leetcode.com/problems/last-stone-weight/description/ ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/8_Last_Stone_Weight.py"
+    },
+    {
+        "id": 10,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "K Closest Unsorted",
+        "problem_link": "https://www.geeksforgeeks.org/problems/lucys-neighbours--141631/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/9_K_Closest_Unsorted.py"
+    },
+    {
+        "id": 11,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "K Closest Sorted",
+        "problem_link": "https://leetcode.com/problems/find-k-closest-elements ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/10_K_Closest_Sorted.py"
+    },
+    {
         "id": 1,
         "topic": "Trees",
         "language": "python",

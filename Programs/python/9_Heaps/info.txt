@@ -11,3 +11,16 @@ Binary Heap -> Complete Binary Tree all nodes filled except last where last leve
 + Range of internal nodes (non leaf node with atleast one child) -> 0 to floor(n/2)-1
 + Height -> log2(n)
 + n-> total no of nodes
+
+
+Identification :
+
+Must have combination of below keywords:
++ must have K
++ smallest/largest
+
+k+smallest -> Max Heap
+k+largest  -> Min Heap
+
++ simplest sol achieved by sorting
++ nlogn -> nlog(k)

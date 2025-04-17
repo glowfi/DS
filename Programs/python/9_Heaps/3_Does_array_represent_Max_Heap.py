@@ -29,10 +29,12 @@ class Solution:
 # T.C. - O(log(n))
 # S.C  - O(1)
 
+import math
+
 
 class Solution:
     def isMaxHeap(self, arr, n):
-        for idx in range(0, n // 2):
+        for idx in range(0, (math.floor(n / 2) - 1) + 1):
             lcIdx = 2 * idx + 1
             if lcIdx < n and arr[idx] < arr[lcIdx]:
                 return False
