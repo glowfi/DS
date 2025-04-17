@@ -1,54 +1,22 @@
 # https://leetcode.com/problems/find-k-closest-elements , Medium
 
-# Better
-# T.C. -  O(log N + k log k)
+# Brute
+# T.C. -  O(nlog(n))+O(nlog(k))
 # S.C  - O(1)
 
 
 class Solution:
-    def lowerBound(self, arr: list[int], n: int, x: int) -> int:
-        low = 0
-        high = n - 1
-        ans = n
-
-        while low <= high:
-            mid = (low + high) // 2
-            # maybe an answer
-            if arr[mid] >= x:
-                ans = mid
-                # look for smaller index on the left
-                high = mid - 1
-            else:
-                low = mid + 1  # look on the right
-
-        return ans
-
     def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
-        idx = self.lowerBound(arr, len(arr), x)
-        l, r = idx - 1, idx
-        res = []
+        # First, sort the array based on the absolute difference with x
+        sorted_arr = sorted(arr, key=lambda num: abs(num - x))
 
-        while l >= 0 and r < len(arr) and k > 0:
-            if abs(arr[l] - x) <= abs(arr[r] - x):
-                res.append(arr[l])
-                l -= 1
-            else:
-                res.append(arr[r])
-                r += 1
-            k -= 1
+        # Select the k closest elements
+        closest_k = sorted_arr[:k]
 
-        # Either l or r ends
-        while k > 0 and l >= 0:
-            res.append(arr[l])
-            l -= 1
-            k -= 1
+        # Sort the k closest elements in ascending order
+        result = sorted(closest_k)
 
-        while k > 0 and r < len(arr):
-            res.append(arr[r])
-            r += 1
-            k -= 1
-
-        return sorted(res)
+        return result
 
 
 # Better
@@ -91,3 +59,49 @@ class Solution:
                     heapq.heappop(max_heap)
                     heapq.heappush(max_heap, (-abs(num - x), num))
         return sorted([num for _, num in max_heap])
+
+
+# Optimal
+# T.C. -  O(log N) + O(k)
+# S.C  - O(1)
+
+
+class Solution:
+    def lowerBound(self, arr: list[int], n: int, x: int) -> int:
+        low = 0
+        high = n - 1
+        ans = n
+
+        while low <= high:
+            mid = (low + high) // 2
+            # maybe an answer
+            if arr[mid] >= x:
+                ans = mid
+                # look for smaller index on the left
+                high = mid - 1
+            else:
+                low = mid + 1  # look on the right
+
+        return ans
+
+    def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
+        idx = self.lowerBound(arr, len(arr), x)  # floor can be used with idx,idx+1
+        l, r = idx - 1, idx
+
+        while l >= 0 and r < len(arr) and k > 0:
+            if abs(arr[l] - x) <= abs(arr[r] - x):
+                l -= 1
+            else:
+                r += 1
+            k -= 1
+
+        # Either l or r ends
+        while k > 0 and l >= 0:
+            l -= 1
+            k -= 1
+
+        while k > 0 and r < len(arr):
+            r += 1
+            k -= 1
+
+        return arr[l + 1 : r]
