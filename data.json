@@ -2445,7 +2445,7 @@
         "difficulty": "Medium",
         "problem_name": "Kth smallest element",
         "problem_link": "https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1 ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/5_Kth_smallest_element.py"
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/6_Kth_smallest_element.py"
     },
     {
         "id": 7,
@@ -2454,7 +2454,7 @@
         "difficulty": "Medium",
         "problem_name": "Kth largest element",
         "problem_link": "https://leetcode.com/problems/kth-largest-element-in-an-array/ ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/6_Kth_largest_element.py"
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/7_Kth_largest_element.py"
     },
     {
         "id": 8,
@@ -2463,7 +2463,7 @@
         "difficulty": "Medium",
         "problem_name": "Nearly Sorted",
         "problem_link": "https://www.geeksforgeeks.org/problems/nearly-sorted-1587115620/1 ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/7_Nearly_Sorted.py"
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/8_Nearly_Sorted.py"
     },
     {
         "id": 9,
@@ -2472,7 +2472,7 @@
         "difficulty": "Easy",
         "problem_name": "Last Stone Weight",
         "problem_link": "https://leetcode.com/problems/last-stone-weight/description/ ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/8_Last_Stone_Weight.py"
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/9_Last_Stone_Weight.py"
     },
     {
         "id": 10,
@@ -2481,7 +2481,7 @@
         "difficulty": "Medium",
         "problem_name": "K Closest Unsorted",
         "problem_link": "https://www.geeksforgeeks.org/problems/lucys-neighbours--141631/1 ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/9_K_Closest_Unsorted.py"
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/10_K_Closest_Unsorted.py"
     },
     {
         "id": 11,
@@ -2490,7 +2490,7 @@
         "difficulty": "Medium",
         "problem_name": "K Closest Sorted",
         "problem_link": "https://leetcode.com/problems/find-k-closest-elements ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/10_K_Closest_Sorted.py"
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/11_K_Closest_Sorted.py"
     },
     {
         "id": 12,
@@ -2499,7 +2499,7 @@
         "difficulty": "Medium",
         "problem_name": "Total Cost to Hire K workers",
         "problem_link": "https://leetcode.com/problems/total-cost-to-hire-k-workers ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/11_Total_Cost_to_Hire_K_workers.py"
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/12_Total_Cost_to_Hire_K_workers.py"
     },
     {
         "id": 13,
@@ -2508,7 +2508,7 @@
         "difficulty": "Medium",
         "problem_name": "Heap Sort",
         "problem_link": "https://www.geeksforgeeks.org/problems/heap-sort/1 ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/12_Heap_Sort.py"
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/13_Heap_Sort.py"
     },
     {
         "id": 1,
