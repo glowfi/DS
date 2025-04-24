@@ -1,3 +1,0 @@
-// NA, Easy
-
-package main

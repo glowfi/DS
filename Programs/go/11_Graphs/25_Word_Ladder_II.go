@@ -1,3 +1,0 @@
-// https://leetcode.com/problems/word-ladder-ii/description/ , Hard
-
-package main

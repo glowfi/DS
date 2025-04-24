@@ -1,3 +1,0 @@
-// NA,Medium
-
-package main
