@@ -51,14 +51,20 @@ import heapq
 class Solution:
     def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
         max_heap = []
+
         for num in arr:
             if len(max_heap) < k:
-                heapq.heappush(max_heap, (-abs(num - x), num))
+                heapq.heappush(max_heap, [abs(x - num) * -1, num])
             else:
-                if abs(num - x) < -max_heap[0][0]:
+                if abs(x - num) < -max_heap[0][0]:
+                    heapq.heappush(max_heap, [abs(x - num) * -1, num])
                     heapq.heappop(max_heap)
-                    heapq.heappush(max_heap, (-abs(num - x), num))
-        return sorted([num for _, num in max_heap])
+
+        ans = []
+        while max_heap:
+            ans.append(heapq.heappop(max_heap)[-1])
+
+        return sorted(ans)
 
 
 # Optimal

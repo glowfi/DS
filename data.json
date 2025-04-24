@@ -2471,7 +2471,7 @@
         "language": "python",
         "difficulty": "Easy",
         "problem_name": "Last Stone Weight",
-        "problem_link": "https://leetcode.com/problems/last-stone-weight/description/ ",
+        "problem_link": "https://leetcode.com/problems/last-stone-weight/ ",
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/9_Last_Stone_Weight.py"
     },
     {
@@ -2554,6 +2554,78 @@
         "problem_name": "Sum of elements between k1'th and k2'th smallest elements",
         "problem_link": "https://www.geeksforgeeks.org/problems/sum-of-elements-between-k1th-and-k2th-smallest-elements3133/1 ",
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/18_Sum_of_elements_between_k1'th_and_k2'th_smallest_elements.py"
+    },
+    {
+        "id": 19,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Hard",
+        "problem_name": "Merge K Sorted Lists",
+        "problem_link": "https://leetcode.com/problems/merge-k-sorted-lists/ ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/19_Merge_K_Sorted_Lists.py"
+    },
+    {
+        "id": 20,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Replace elements by its rank in the array",
+        "problem_link": "https://www.geeksforgeeks.org/problems/replace-elements-by-its-rank-in-the-array/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/20_Replace_elements_by_its_rank_in_the_array.py"
+    },
+    {
+        "id": 21,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Kth Largest Element in a Stream",
+        "problem_link": "https://leetcode.com/problems/kth-largest-element-in-a-stream ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/21_Kth_Largest_Element_in_a_Stream.py"
+    },
+    {
+        "id": 22,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Hand of Straights",
+        "problem_link": "https://leetcode.com/problems/hand-of-straights ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/22_Hand_of_Straights.py"
+    },
+    {
+        "id": 23,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Task Scheduler",
+        "problem_link": "https://leetcode.com/problems/task-scheduler/ ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/23_Task_Scheduler.py"
+    },
+    {
+        "id": 24,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Design Twitter",
+        "problem_link": "https://leetcode.com/problems/design-twitter ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/24_Design_Twitter.py"
+    },
+    {
+        "id": 25,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Maximum Sum Combination",
+        "problem_link": "https://www.geeksforgeeks.org/problems/maximum-sum-combination/0 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/25_Maximum_Sum_Combination.py"
+    },
+    {
+        "id": 26,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Hard",
+        "problem_name": "Median of data stream",
+        "problem_link": "https://leetcode.com/problems/find-median-from-data-stream/ ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/9_Heaps/26_Median_of_data_stream.py"
     },
     {
         "id": 1,

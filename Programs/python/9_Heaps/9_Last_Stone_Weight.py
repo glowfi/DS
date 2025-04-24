@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/last-stone-weight/description/ , Easy
+# https://leetcode.com/problems/last-stone-weight/ , Easy
 
 
 # Brute
