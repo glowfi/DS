@@ -41,6 +41,9 @@ class MedianFinder:
 import heapq
 
 
+import heapq
+
+
 class MedianFinder:
 
     def __init__(self):
@@ -48,22 +51,24 @@ class MedianFinder:
         self.right_min_heap = []
 
     def addNum(self, num: int) -> None:
-        # Put element
-        if not self.left_max_heap or num < -self.left_max_heap[0]:
-            heapq.heappush(self.left_max_heap, -num)
+        # insert element
+        if len(self.left_max_heap) == 0 or num < -self.left_max_heap[0]:
+            heapq.heappush(
+                self.left_max_heap, num * -1
+            )  # only insert if we get a promising value as a number lesser than the top element in max heap will stay below it
         else:
             heapq.heappush(self.right_min_heap, num)
 
-        # Maintain diff
+        # Maintain a diff of 1
         if len(self.left_max_heap) - len(self.right_min_heap) > 1:
-            heapq.heappush(self.right_min_heap, -heapq.heappop(self.left_max_heap))
+            heapq.heappush(self.right_min_heap, heapq.heappop(self.left_max_heap) * -1)
         elif len(self.left_max_heap) < len(self.right_min_heap):
-            heapq.heappush(self.left_max_heap, -heapq.heappop(self.right_min_heap))
+            heapq.heappush(self.left_max_heap, heapq.heappop(self.right_min_heap) * -1)
 
     def findMedian(self) -> float:
-        # if even
         n = len(self.left_max_heap) + len(self.right_min_heap)
         if n % 2 == 0:
-            a, b = -self.left_max_heap[0], self.right_min_heap[0]
-            return (a + b) / 2
-        return -self.left_max_heap[0]
+            mid = n // 2
+            sm = (self.left_max_heap[0] * -1) + self.right_min_heap[0]
+            return sm / 2
+        return self.left_max_heap[0] * -1
