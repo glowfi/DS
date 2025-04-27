@@ -34,12 +34,9 @@ class MedianFinder:
 # we want max from left and min from right for finding median
 # if we have odd size array either the left or right can have one extra element
 # we need to make sure the diff of size between 2 array must be <=1
-# element coming to use gets placed to left if its smaller than lefts top
-# element coming to use gets placed to right if its greater than lefts top
-# After pushing try maintaing the property of diff 1
-
-import heapq
-
+# element coming to us gets placed to left if its smaller than lefts top
+# element coming to us gets placed to right if its greater than lefts top
+# After pushing try maintaing the property of diff 1 [make sure more elements in left,diff 1 b/2 left and right]
 
 import heapq
 
@@ -51,24 +48,21 @@ class MedianFinder:
         self.right_min_heap = []
 
     def addNum(self, num: int) -> None:
-        # insert element
+        # Insert element
         if len(self.left_max_heap) == 0 or num < -self.left_max_heap[0]:
-            heapq.heappush(
-                self.left_max_heap, num * -1
-            )  # only insert if we get a promising value as a number lesser than the top element in max heap will stay below it
+            heapq.heappush(self.left_max_heap, -num)
         else:
             heapq.heappush(self.right_min_heap, num)
 
-        # Maintain a diff of 1
+        # Maintain diff
         if len(self.left_max_heap) - len(self.right_min_heap) > 1:
-            heapq.heappush(self.right_min_heap, heapq.heappop(self.left_max_heap) * -1)
+            heapq.heappush(self.right_min_heap, -heapq.heappop(self.left_max_heap))
         elif len(self.left_max_heap) < len(self.right_min_heap):
-            heapq.heappush(self.left_max_heap, heapq.heappop(self.right_min_heap) * -1)
+            heapq.heappush(self.left_max_heap, -heapq.heappop(self.right_min_heap))
 
     def findMedian(self) -> float:
         n = len(self.left_max_heap) + len(self.right_min_heap)
         if n % 2 == 0:
-            mid = n // 2
-            sm = (self.left_max_heap[0] * -1) + self.right_min_heap[0]
-            return sm / 2
-        return self.left_max_heap[0] * -1
+            a, b = -self.left_max_heap[0], self.right_min_heap[0]
+            return (a + b) / 2
+        return -self.left_max_heap[0]

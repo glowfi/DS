@@ -2655,6 +2655,24 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/6_Job_Sequencing_Problem.py"
     },
     {
+        "id": 7,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Single Threaded CPU",
+        "problem_link": "https://leetcode.com/problems/single-threaded-cpu/ ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/7_Single_Threaded_CPU.py"
+    },
+    {
+        "id": 8,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Fractional Knapsack",
+        "problem_link": "https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/8_Fractional_Knapsack.py"
+    },
+    {
         "id": 1,
         "topic": "Trees",
         "language": "python",
