@@ -2637,6 +2637,24 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/4_Minimum_rotations_to_unlock_a_circular_lock.py"
     },
     {
+        "id": 5,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "N Meetings in one room",
+        "problem_link": "https://www.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/5_N_Meetings_in_one_room.py"
+    },
+    {
+        "id": 6,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Job Sequencing Problem",
+        "problem_link": "https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/6_Job_Sequencing_Problem.py"
+    },
+    {
         "id": 1,
         "topic": "Trees",
         "language": "python",
