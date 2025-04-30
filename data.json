@@ -2673,6 +2673,42 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/8_Fractional_Knapsack.py"
     },
     {
+        "id": 9,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Non-overlapping Intervals",
+        "problem_link": "https://leetcode.com/problems/non-overlapping-intervals ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/9_Non-overlapping_Intervals.py"
+    },
+    {
+        "id": 10,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Merge Inerval",
+        "problem_link": "https://leetcode.com/problems/merge-intervals ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/10_Merge_Inerval.py"
+    },
+    {
+        "id": 11,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Insert Interval",
+        "problem_link": "https://leetcode.com/problems/insert-interval ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/11_Insert_Interval.py"
+    },
+    {
+        "id": 12,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Remove Interval",
+        "problem_link": "https://leetcode.com/problems/remove-interval ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/12_Remove_Interval.py"
+    },
+    {
         "id": 1,
         "topic": "Trees",
         "language": "python",

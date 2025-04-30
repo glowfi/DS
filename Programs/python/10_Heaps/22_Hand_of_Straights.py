@@ -5,6 +5,9 @@
 # T.C. - O(n) +O(nlog(n)) O(n*k)
 # S.C  - O(n)
 
+# Intuition : It is observed that to form a group, the minimum value should be the starting value of the group.
+# Sorting ensures we start with the smallest available value, while the hash map helps track element availability using frequency counts.
+
 
 class Solution:
     def getFirstEntryInMap(self, map: dict[int, int]) -> int:
@@ -65,8 +68,11 @@ class Solution:
 
                 freq_map[i] -= 1
                 if freq_map[i] == 0:
-                    if min_heap[0] != i:  # Not super intutive requires dry run
+                    if (
+                        min_heap[0] != i
+                    ):  # Not super intutive requires dry run ,element trying to pop not our min element
                         return False
+                    del freq_map[i]
                     heapq.heappop(min_heap)
 
         return True
