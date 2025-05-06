@@ -2601,6 +2601,24 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/10_Heaps/26_Median_of_data_stream.py"
     },
     {
+        "id": 27,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Find K Pairs with Smallest Sums",
+        "problem_link": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/?envType=study-plan-v2&envId=top-interview-150 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/10_Heaps/27_Find_K_Pairs_with_Smallest_Sums.py"
+    },
+    {
+        "id": 28,
+        "topic": "Heaps",
+        "language": "python",
+        "difficulty": "Hard",
+        "problem_name": "IPO",
+        "problem_link": "https://leetcode.com/problems/ipo",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/10_Heaps/28_IPO.py"
+    },
+    {
         "id": 1,
         "topic": "Greedy",
         "language": "python",
@@ -2707,6 +2725,123 @@
         "problem_name": "Remove Interval",
         "problem_link": "https://leetcode.com/problems/remove-interval ",
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/12_Remove_Interval.py"
+    },
+    {
+        "id": 13,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Assign Cookies",
+        "problem_link": "https://leetcode.com/problems/assign-cookies/ ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/13_Assign_Cookies.py"
+    },
+    {
+        "id": 14,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Jump Game I",
+        "problem_link": "https://leetcode.com/problems/jump-game/ ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/14_Jump_Game_I.py"
+    },
+    {
+        "id": 15,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Jump Game II",
+        "problem_link": "https://leetcode.com/problems/jump-game-ii ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/14_Jump_Game_II.py"
+    },
+    {
+        "id": 16,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Lemonade Change",
+        "problem_link": "https://leetcode.com/problems/lemonade-change ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/15_Lemonade_Change.py"
+    },
+    {
+        "id": 17,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Shortest Job First (SJF)",
+        "problem_link": "https://www.geeksforgeeks.org/problems/shortest-job-first/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/16_Shortest_Job_First_(SJF).py"
+    },
+    {
+        "id": 18,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "<Difficulty>",
+        "problem_name": "Merge Triplets to Form Target Triplet",
+        "problem_link": "<Question Link> ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/17_Merge_Triplets_to_Form_Target_Triplet.py"
+    },
+    {
+        "id": 19,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Partition Labels",
+        "problem_link": "https://neetcode.io/problems/partition-labels ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/18_Partition_Labels.py"
+    },
+    {
+        "id": 20,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Gas Station",
+        "problem_link": "https://leetcode.com/problems/gas-station ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/19_Gas_Station.py"
+    },
+    {
+        "id": 21,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Meetings Rooms I",
+        "problem_link": "https://www.geeksforgeeks.org/problems/attend-all-meetings/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/20_Meetings_Rooms_I.py"
+    },
+    {
+        "id": 22,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Meeting Rooms II",
+        "problem_link": "https://www.geeksforgeeks.org/problems/attend-all-meetings-ii/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/21_Meeting_Rooms_II.py"
+    },
+    {
+        "id": 23,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Hard",
+        "problem_name": "Candy",
+        "problem_link": "https://leetcode.com/problems/candy ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/22_Candy.py"
+    },
+    {
+        "id": 24,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Valid Parenthesis String",
+        "problem_link": "https://leetcode.com/problems/valid-parenthesis-string ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/23_Valid_Parenthesis_String.py"
+    },
+    {
+        "id": 25,
+        "topic": "Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Minimum Platforms",
+        "problem_link": "https://www.geeksforgeeks.org/problems/minimum-platforms-1587115620/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/11_Greedy/24_Minimum_Platforms.py"
     },
     {
         "id": 1,
