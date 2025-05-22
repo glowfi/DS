@@ -1,8 +1,0 @@
-Keywords : min/max longest/shortest largest/smallest
-
-We keep making optimal choices at each step which leads
-to the global optimal solution
-
-
-+ Identify
-+ Determine the selection criteria
