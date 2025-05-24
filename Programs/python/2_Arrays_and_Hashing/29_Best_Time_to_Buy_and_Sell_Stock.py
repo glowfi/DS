@@ -35,18 +35,20 @@
 # Suppose you are at index i just ask yourself
 # can i sell this stock on this day if i have
 # the minimum stock cost from left side of the index
+# buy in less price and sell in high price
 
 
 from typing import List
+import sys
 
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        min_purchase_day_cost = prices[0]
-        max_profit = float("-inf")
+        min_cp_till_now = prices[0]
+        max_profit = -sys.maxsize
 
         for i in range(len(prices)):
-            max_profit = max(max_profit, prices[i] - min_purchase_day_cost)
-            min_purchase_day_cost = min(min_purchase_day_cost, prices[i])
+            max_profit = max(max_profit, prices[i] - min_cp_till_now)
+            min_cp_till_now = min(min_cp_till_now, prices[i])
 
         return max_profit

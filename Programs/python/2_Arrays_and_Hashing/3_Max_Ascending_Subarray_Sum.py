@@ -40,11 +40,12 @@
 
 
 from typing import List
+import sys
 
 
 class Solution:
     def maxAscendingSum(self, nums: List[int]) -> int:
-        max_sum = float("-inf")
+        max_sum = -sys.maxsize
         curr_sum = nums[0]
 
         for i in range(1, len(nums)):

@@ -372,13 +372,22 @@
         "id": 35,
         "topic": "Arrays",
         "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Pascals's Triangle",
+        "problem_link": "https://leetcode.com/problems/pascals-triangle ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/36_Pascals's_Triangle.py"
+    },
+    {
+        "id": 36,
+        "topic": "Arrays",
+        "language": "python",
         "difficulty": "Medium",
         "problem_name": "Longest Subarray 0 Sum",
         "problem_link": "https://www.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1 ",
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/38_Longest_Subarray_0_Sum.py"
     },
     {
-        "id": 36,
+        "id": 37,
         "topic": "Arrays",
         "language": "python",
         "difficulty": "Medium",
@@ -387,7 +396,7 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/39_Longest_Subarray_K_Sum.py"
     },
     {
-        "id": 37,
+        "id": 38,
         "topic": "Arrays",
         "language": "python",
         "difficulty": "Medium",
@@ -396,7 +405,7 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/40_Longest_Subarray_Sum_Divisible_by_K.py"
     },
     {
-        "id": 38,
+        "id": 39,
         "topic": "Arrays",
         "language": "python",
         "difficulty": "Medium",
@@ -405,7 +414,7 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/41_Count_Subarray_K_Sum.py"
     },
     {
-        "id": 39,
+        "id": 40,
         "topic": "Arrays",
         "language": "python",
         "difficulty": "Medium",
@@ -414,7 +423,7 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/42_Count_Subarray_Sum_Divisible_by_K.py"
     },
     {
-        "id": 40,
+        "id": 41,
         "topic": "Arrays",
         "language": "python",
         "difficulty": "Medium",
@@ -423,7 +432,7 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/43_Count_Subarray_K_XOR.py"
     },
     {
-        "id": 41,
+        "id": 42,
         "topic": "Arrays",
         "language": "python",
         "difficulty": "Medium",
@@ -432,7 +441,43 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/44_Longest_Consecutive_Sequence.py"
     },
     {
-        "id": 42,
+        "id": 43,
+        "topic": "Arrays",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Maximum Sum Subarray",
+        "problem_link": "https://leetcode.com/problems/maximum-subarray ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/45_Maximum_Sum_Subarray.py"
+    },
+    {
+        "id": 44,
+        "topic": "Arrays",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Maximum Circular Subarray Sum",
+        "problem_link": "https://leetcode.com/problems/maximum-sum-circular-subarray ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/46_Maximum_Circular_Subarray_Sum.py"
+    },
+    {
+        "id": 45,
+        "topic": "Arrays",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Maximum Product Subarray",
+        "problem_link": "https://leetcode.com/problems/maximum-sum-circular-subarray ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/47_Maximum_Product_Subarray.py"
+    },
+    {
+        "id": 46,
+        "topic": "Arrays",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Product of array except itself",
+        "problem_link": "https://leetcode.com/problems/product-of-array-except-self ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/48_Product_of_array_except_itself.py"
+    },
+    {
+        "id": 47,
         "topic": "Arrays",
         "language": "python",
         "difficulty": "Medium",
@@ -441,12 +486,48 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/49_Merge_Sorted_Array_Without_Extra_Space.py"
     },
     {
-        "id": 43,
+        "id": 48,
+        "topic": "Arrays",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Count Inversions",
+        "problem_link": "https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/50_Count_Inversions.py"
+    },
+    {
+        "id": 49,
+        "topic": "Arrays",
+        "language": "python",
+        "difficulty": "Hard",
+        "problem_name": "Reverse Pairs",
+        "problem_link": "https://leetcode.com/problems/reverse-pairs ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/51_Reverse_Pairs.py"
+    },
+    {
+        "id": 50,
         "topic": "Arrays",
         "language": "python",
         "difficulty": "Medium",
         "problem_name": "Game of Life",
         "problem_link": "https://leetcode.com/problems/game-of-life ",
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/52_Game_of_Life.py"
+    },
+    {
+        "id": 51,
+        "topic": "Arrays",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "H Index",
+        "problem_link": "https://leetcode.com/problems/h-index ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/53_H_Index.py"
+    },
+    {
+        "id": 52,
+        "topic": "Arrays",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Insert Delete GetRandom O(1)",
+        "problem_link": "https://leetcode.com/problems/insert-delete-getrandom-o1 ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/54_Insert_Delete_GetRandom_O(1).py"
     }
 ]
