@@ -529,5 +529,14 @@
         "problem_name": "Insert Delete GetRandom O(1)",
         "problem_link": "https://leetcode.com/problems/insert-delete-getrandom-o1 ",
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Arrays_and_Hashing/54_Insert_Delete_GetRandom_O(1).py"
+    },
+    {
+        "id": 1,
+        "topic": "String",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Remove Outermost Parentheses",
+        "problem_link": "https://leetcode.com/problems/remove-outermost-parentheses ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_String/1_Remove_Outermost_Parentheses.py"
     }
 ]
