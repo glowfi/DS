@@ -538,5 +538,14 @@
         "problem_name": "Remove Outermost Parentheses",
         "problem_link": "https://leetcode.com/problems/remove-outermost-parentheses ",
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_String/1_Remove_Outermost_Parentheses.py"
+    },
+    {
+        "id": 2,
+        "topic": "String",
+        "language": "python",
+        "difficulty": "Medium",
+        "problem_name": "Reverse words in a given string",
+        "problem_link": "https://leetcode.com/problems/reverse-words-in-a-string ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_String/2_Reverse_words_in_a_given_string.py"
     }
 ]
