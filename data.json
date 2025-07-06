@@ -543,9 +543,63 @@
         "id": 2,
         "topic": "String",
         "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Maximum Nesting Depth of the Parentheses",
+        "problem_link": "https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_String/2_Maximum_Nesting_Depth_of_the_Parentheses.py"
+    },
+    {
+        "id": 3,
+        "topic": "String",
+        "language": "python",
         "difficulty": "Medium",
         "problem_name": "Reverse words in a given string",
         "problem_link": "https://leetcode.com/problems/reverse-words-in-a-string ",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_String/2_Reverse_words_in_a_given_string.py"
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_String/3_Reverse_words_in_a_given_string.py"
+    },
+    {
+        "id": 4,
+        "topic": "String",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Largest Odd Number in string",
+        "problem_link": "https://leetcode.com/problems/largest-odd-number-in-string ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_String/4_Largest_Odd_Number_in_string.py"
+    },
+    {
+        "id": 5,
+        "topic": "String",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Longest Common Prefix",
+        "problem_link": "https://leetcode.com/problems/longest-common-prefix ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_String/5_Longest_Common_Prefix.py"
+    },
+    {
+        "id": 6,
+        "topic": "String",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Isomorphic Strings",
+        "problem_link": "https://leetcode.com/problems/isomorphic-strings ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_String/6_Isomorphic_Strings.py"
+    },
+    {
+        "id": 7,
+        "topic": "String",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Valid Anagram",
+        "problem_link": "https://leetcode.com/problems/valid-anagram ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_String/7_Valid_Anagram.py"
+    },
+    {
+        "id": 8,
+        "topic": "String",
+        "language": "python",
+        "difficulty": "Easy",
+        "problem_name": "Rotate String",
+        "problem_link": "https://leetcode.com/problems/rotate-string ",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_String/8_Rotate_String.py"
     }
 ]
