@@ -17,7 +17,7 @@ class Question(TypedDict):
     difficulty: str
     solution_link: str
     language: str
-    approaches: dict[str, Approach]
+    approaches: list[Approach]
 
 
 # Language type
