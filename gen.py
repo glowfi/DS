@@ -123,7 +123,7 @@ for language in languages.keys():
                         continue
                     else:
                         problem_link, difficulty = data
-                        approach = parse_file(file)
+                        approaches = parse_file(file)
                         newQuestion: Question = {
                             "id": questionCount,
                             "topic": topic.split("_")[1],
@@ -135,6 +135,7 @@ for language in languages.keys():
                                 languages[language]["name"],
                                 f"{topic}/{filename}{languages[language]["extension"]}",
                             ),
+                            "approaches": approaches,
                         }
                         final_data.append(newQuestion)
                         questionCount += 1
