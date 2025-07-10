@@ -27,8 +27,8 @@
 
 
 # Optimal
-# T.C. -
-# S.C  -
+# T.C. - O(S)
+# S.C  - O(S)+O(T)
 
 # Intuition
 # Just compare the frequency map of
