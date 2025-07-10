@@ -5,6 +5,7 @@ import re
 import glob
 import os
 from typing import TypedDict
+from parse import Approach, parse_file
 
 
 # Question type
@@ -16,6 +17,7 @@ class Question(TypedDict):
     difficulty: str
     solution_link: str
     language: str
+    approaches: dict[str, Approach]
 
 
 # Language type
@@ -121,6 +123,7 @@ for language in languages.keys():
                         continue
                     else:
                         problem_link, difficulty = data
+                        approach = parse_file(file)
                         newQuestion: Question = {
                             "id": questionCount,
                             "topic": topic.split("_")[1],
