@@ -54,8 +54,8 @@ class Solution:
 
 
 # Optimal
-# T.C. -
-# S.C  -
+# T.C. - O(NlogN)
+# S.C  - O(N)
 
 # Intuition
 # use merge sort to solve this
