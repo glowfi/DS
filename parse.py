@@ -1,16 +1,23 @@
-import json
+from typing import TypedDict
 
 
-def parse_file(filename):
+class Approach(TypedDict):
+    question: str
+    tc: str
+    sc: str
+    intuition: str
+    code: str
+
+
+def parse_file(filename: str) -> dict[str, Approach]:
     with open(filename, "r") as file:
         lines = file.readlines()
 
-    difficulty = ""
     question_lines = []
-    approaches = {}
+    approaches: dict[str, Approach] = {}
 
     current_approach = None
-    current_data = {}
+    current_data: Approach = {}
     code_lines = []
     intuition_lines = []
     in_question = False
@@ -29,12 +36,6 @@ def parse_file(filename):
 
     for _, line in enumerate(lines):
         stripped = line.strip()
-
-        # Get difficulty
-        if stripped.startswith("#") and any(
-            d in stripped for d in ["Easy", "Medium", "Hard"]
-        ):
-            difficulty = stripped.replace("#", "").strip()
 
         # Start capturing question
         if stripped == "# Question":
@@ -60,7 +61,7 @@ def parse_file(filename):
 
             # Reset for new approach
             current_approach = stripped.replace("#", "").strip()
-            current_data = {}
+            current_data: Approach = {}
             code_lines = []
             intuition_lines = []
             in_intuition = False
@@ -96,27 +97,9 @@ def parse_file(filename):
 
     # Save last approach
     if current_approach:
-        current_data["intuition"] = " ".join(intuition_lines).strip()
+        current_data["question"] = " ".join(question_lines).strip()
+        current_data["intuition"] = "\n".join(intuition_lines).strip()
         current_data["code"] = "\n".join(code_lines).strip()
         approaches[current_approach] = current_data
 
-    # Final structured output
-    result = {
-        "difficulty": difficulty,
-        "question": " ".join(question_lines).strip(),
-        "approaches": approaches,
-    }
-
-    return result
-
-
-# Example usage
-parsed_data = parse_file(
-    "/home/ayush/cdx/DS/Programs/python/3_String/2_Reverse_words_in_a_given_string.py"
-)
-
-# Save to JSON file
-with open("output.json", "w") as f:
-    json.dump(parsed_data, f, indent=4)
-
-print("✅ Fixed and saved to output.json")
+    return approaches
