@@ -1,7 +1,26 @@
 from typing import TypedDict
+from enum import Enum
+
+
+class ApproachType(Enum):
+    BRUTE = "Brute"
+    BETTER = "Better"
+    OPTIMAL = "Optimal"
+    RECURSION = "Recursion"
+    MEMOIZATION = "Memoization"
+    TABULATION = "Tabulation"
+    SPACEOPTIMIZED = "Space Optimized"
+
+
+def string_to_enum(value: str) -> ApproachType:
+    for enum_member in ApproachType:
+        if enum_member.value == value:
+            return enum_member
+    raise Exception(f"{value} does not exist in ApproachType")
 
 
 class Approach(TypedDict):
+    type: str
     question: str
     tc: str
     sc: str
@@ -9,12 +28,12 @@ class Approach(TypedDict):
     code: str
 
 
-def parse_file(filename: str) -> dict[str, Approach]:
+def parse_file(filename: str) -> list[Approach]:
     with open(filename, "r") as file:
         lines = file.readlines()
 
     question_lines = []
-    approaches: dict[str, Approach] = {}
+    approaches: list[Approach] = []
 
     current_approach = None
     current_data: Approach = {}
@@ -55,9 +74,11 @@ def parse_file(filename: str) -> dict[str, Approach]:
         if any(stripped == f"# {header}" for header in approach_headers):
             # Save previous approach if any
             if current_approach:
+                current_data["question"] = " ".join(question_lines).strip()
                 current_data["intuition"] = " ".join(intuition_lines).strip()
                 current_data["code"] = "\n".join(code_lines).strip()
-                approaches[current_approach] = current_data
+                current_data["type"] = string_to_enum(current_approach).value
+                approaches.append(current_data)
 
             # Reset for new approach
             current_approach = stripped.replace("#", "").strip()
@@ -100,6 +121,7 @@ def parse_file(filename: str) -> dict[str, Approach]:
         current_data["question"] = " ".join(question_lines).strip()
         current_data["intuition"] = "\n".join(intuition_lines).strip()
         current_data["code"] = "\n".join(code_lines).strip()
-        approaches[current_approach] = current_data
+        current_data["type"] = string_to_enum(current_approach).value
+        approaches.append(current_data)
 
     return approaches
