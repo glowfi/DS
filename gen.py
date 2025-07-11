@@ -6,15 +6,35 @@ import glob
 import os
 from typing import TypedDict
 from parse import Approach, parse_file
+from enum import Enum
+
+
+# Difficulty
+class Difficulty(Enum):
+    Easy = "Easy"
+    Medium = "Medium"
+    Hard = "Hard"
+
+
+difficulty_map = {Difficulty.Easy: 1, Difficulty.Medium: 2, Difficulty.Hard: 3}
+
+
+def string_to_difficulty_enum(value: str) -> Difficulty:
+    for enum_member in Difficulty:
+        if enum_member.value == value:
+            return enum_member
+    raise Exception(f"{value} does not exist in Difficulty")
 
 
 # Question type
 class Question(TypedDict):
     id: int
     topic: str
+    question: str
     problem_name: str
     problem_link: str
     difficulty: str
+    difficulty_num: int
     solution_link: str
     language: str
     approaches: list[Approach]
@@ -123,12 +143,16 @@ for language in languages.keys():
                         continue
                     else:
                         problem_link, difficulty = data
-                        approaches = parse_file(file)
+                        problem_link = problem_link.strip()
+                        approaches, question = parse_file(file)
+                        difficulty = string_to_difficulty_enum(difficulty.strip(" "))
                         newQuestion: Question = {
                             "id": questionCount,
+                            "question": question,
                             "topic": topic.split("_")[1],
                             "language": languages[language]["name"],
-                            "difficulty": difficulty.strip(" "),
+                            "difficulty": difficulty.value,
+                            "difficulty_num": difficulty_map[difficulty],
                             "problem_name": getProblemName(filename),
                             "problem_link": problem_link,
                             "solution_link": buildSolutionLink(

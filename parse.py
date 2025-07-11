@@ -12,7 +12,7 @@ class ApproachType(Enum):
     SPACEOPTIMIZED = "Space Optimized"
 
 
-def string_to_enum(value: str) -> ApproachType:
+def string_to_approach_type_enum(value: str) -> ApproachType:
     for enum_member in ApproachType:
         if enum_member.value == value:
             return enum_member
@@ -21,14 +21,13 @@ def string_to_enum(value: str) -> ApproachType:
 
 class Approach(TypedDict):
     type: str
-    question: str
     tc: str
     sc: str
     intuition: str
     code: str
 
 
-def parse_file(filename: str) -> list[Approach]:
+def parse_file(filename: str) -> tuple[list[Approach], str]:
     with open(filename, "r") as file:
         lines = file.readlines()
 
@@ -74,10 +73,11 @@ def parse_file(filename: str) -> list[Approach]:
         if any(stripped == f"# {header}" for header in approach_headers):
             # Save previous approach if any
             if current_approach:
-                current_data["question"] = "\n".join(question_lines).strip()
                 current_data["intuition"] = " ".join(intuition_lines).strip()
                 current_data["code"] = "\n".join(code_lines).strip()
-                current_data["type"] = string_to_enum(current_approach).value
+                current_data["type"] = string_to_approach_type_enum(
+                    current_approach
+                ).value
                 approaches.append(current_data)
 
             # Reset for new approach
@@ -91,9 +91,9 @@ def parse_file(filename: str) -> list[Approach]:
 
         # Capture T.C. and S.C.
         if stripped.startswith("# T.C."):
-            current_data["tc"] = stripped.split("-")[-1].strip()
+            current_data["tc"] = stripped.split()[-1].strip()
         elif stripped.startswith("# S.C"):
-            current_data["sc"] = stripped.split("-")[-1].strip()
+            current_data["sc"] = stripped.split()[-1].strip()
 
         # Start capturing intuition
         elif stripped.startswith("# Intuition"):
@@ -102,8 +102,15 @@ def parse_file(filename: str) -> list[Approach]:
             continue
 
         # Switch from intuition to code when code starts
-        elif in_intuition and (
-            stripped.startswith("class ") or stripped.startswith("def ")
+        elif (
+            in_intuition
+            and not stripped.startswith("#")
+            and (
+                stripped.startswith("class ")
+                or stripped.startswith("def ")
+                or stripped.startswith("from ")
+                or stripped.find("import") != -1
+            )
         ):
             in_intuition = False
             in_code = True
@@ -118,10 +125,9 @@ def parse_file(filename: str) -> list[Approach]:
 
     # Save last approach
     if current_approach:
-        current_data["question"] = "\n".join(question_lines).strip()
         current_data["intuition"] = "\n".join(intuition_lines).strip()
         current_data["code"] = "\n".join(code_lines).strip()
-        current_data["type"] = string_to_enum(current_approach).value
+        current_data["type"] = string_to_approach_type_enum(current_approach).value
         approaches.append(current_data)
 
-    return approaches
+    return approaches, "\n".join(question_lines).strip()
