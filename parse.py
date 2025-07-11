@@ -74,7 +74,7 @@ def parse_file(filename: str) -> list[Approach]:
         if any(stripped == f"# {header}" for header in approach_headers):
             # Save previous approach if any
             if current_approach:
-                current_data["question"] = " ".join(question_lines).strip()
+                current_data["question"] = "\n".join(question_lines).strip()
                 current_data["intuition"] = " ".join(intuition_lines).strip()
                 current_data["code"] = "\n".join(code_lines).strip()
                 current_data["type"] = string_to_enum(current_approach).value
@@ -118,7 +118,7 @@ def parse_file(filename: str) -> list[Approach]:
 
     # Save last approach
     if current_approach:
-        current_data["question"] = " ".join(question_lines).strip()
+        current_data["question"] = "\n".join(question_lines).strip()
         current_data["intuition"] = "\n".join(intuition_lines).strip()
         current_data["code"] = "\n".join(code_lines).strip()
         current_data["type"] = string_to_enum(current_approach).value
