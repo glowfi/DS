@@ -130,7 +130,7 @@ interface TopicsProps {
     questions: Question[];
     selectedQuestion?: Question;
     modalOpen: boolean;
-    onSeeCode: (q: Question) => void;
+    onCodeView: (q: Question) => void;
     onModalClose: () => void;
 }
 
@@ -138,8 +138,8 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
     questions,
     selectedQuestion,
     modalOpen,
-    onSeeCode: handleSeeCode,
-    onModalClose: onClose
+    onCodeView,
+    onModalClose
 }) => {
     const [sortOrder, setSortOrder] = useState<number>(0);
 
@@ -230,7 +230,7 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
                                                         <TableCell>
                                                             <Button
                                                                 onClick={() => {
-                                                                    handleSeeCode(
+                                                                    onCodeView(
                                                                         q
                                                                     );
                                                                 }}
@@ -259,7 +259,7 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
                 <CodeModal
                     question={selectedQuestion}
                     modalOpen={modalOpen}
-                    onClose={onClose}
+                    onClose={onModalClose}
                 />
             )}
         </React.Fragment>

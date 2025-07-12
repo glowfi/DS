@@ -38,7 +38,7 @@ const mapApproachesToObject = (
         (acc, approach) => {
             if (seenTypes[approach.type]) {
                 seenTypes[approach.type]++;
-                acc[`${approach.type}_${seenTypes[approach.type]}`] = approach;
+                acc[`${approach.type}-${seenTypes[approach.type]}`] = approach;
             } else {
                 seenTypes[approach.type] = 1;
                 acc[approach.type] = approach;
