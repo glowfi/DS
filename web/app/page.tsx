@@ -7,7 +7,7 @@ import Topics from './features/topics/topics';
 import { Question } from './lib/types';
 
 const HomePage: React.FunctionComponent = () => {
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [questions, setQuestions] = useState<Question[]>([]);
 
