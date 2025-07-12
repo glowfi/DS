@@ -12,16 +12,16 @@ import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import SearchBar from './searchbar';
 
 interface SiteHeaderProps {
-    data: Question[];
-    handleSeeCode: (q: Question) => void;
+    questions: Question[];
+    onSeeCode: (q: Question) => void;
 }
 
 const SiteHeader: React.FunctionComponent<SiteHeaderProps> = ({
-    data,
-    handleSeeCode
+    questions: data,
+    onSeeCode: handleSeeCode
 }) => {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-14 max-w-screen-2xl items-center">
                 <div className="flex w-fit mr-2">
                     <Link href={'/'}>
@@ -45,7 +45,7 @@ const SiteHeader: React.FunctionComponent<SiteHeaderProps> = ({
                 </div>
                 <div className="flex flex-1 items-center space-x-2 justify-end">
                     <nav className="flex items-center justify-center">
-                        <SearchBar data={data} handleSeeCode={handleSeeCode} />
+                        <SearchBar questions={data} onSeeCode={handleSeeCode} />
                         <Link
                             href={process.env.NEXT_PUBLIC_GITHUB_LINK as string}
                             target="_blank"

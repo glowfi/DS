@@ -16,8 +16,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
 interface SearchBarProps {
-    data: Question[];
-    handleSeeCode: (q: Question) => void;
+    questions: Question[];
+    onSeeCode: (question: Question) => void;
 }
 
 const useDebouncedValue = (inputValue: string, delay: number) => {
@@ -37,73 +37,73 @@ const useDebouncedValue = (inputValue: string, delay: number) => {
 };
 
 const SearchBar: React.FunctionComponent<SearchBarProps> = ({
-    data,
-    handleSeeCode
+    questions,
+    onSeeCode
 }) => {
-    const [open, setOpen] = React.useState(false);
-    const [searchTerm, setSearchTerm] = useState('');
-    const debouncedSearchTerm = useDebouncedValue(searchTerm, 500);
-    const [filteredData, setFilteredData] = useState<Question[]>([]);
+    const [isOpen, setIsOpen] = React.useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const debouncedSearchQuery = useDebouncedValue(searchQuery, 500);
+    const [filteredQuestions, setFilteredQuestions] = useState<Question[]>([]);
 
     useEffect(() => {
-        setFilteredData(
-            searchTerm === ''
-                ? []
-                : data.filter((d) =>
-                      JSON.stringify(d)
-                          .toLowerCase()
-                          .includes(searchTerm.toLowerCase())
-                  )
-        );
-    }, [debouncedSearchTerm, data]); // eslint-disable-line react-hooks/exhaustive-deps
+        if (questions) {
+            setFilteredQuestions(
+                searchQuery === ''
+                    ? []
+                    : questions.filter((question) =>
+                          JSON.stringify(question)
+                              .toLowerCase()
+                              .includes(searchQuery.toLowerCase())
+                      )
+            );
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [debouncedSearchQuery, questions]);
 
     React.useEffect(() => {
-        const down = (e: KeyboardEvent) => {
-            if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
-                e.preventDefault();
-                setOpen((open) => !open);
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
+                event.preventDefault();
+                setIsOpen((prevIsOpen) => !prevIsOpen);
             }
         };
-        document.addEventListener('keydown', down);
-        return () => document.removeEventListener('keydown', down);
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
     }, []);
 
     return (
-        <>
-            <p
-                className="hidden md:block text-sm text-muted-foreground hover:opacity-70 hover:cursor-pointer"
-                onClick={() => {
-                    setOpen(true);
-                }}
-            >
-                Press to start searching{' '}
-                <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-                    <span className="text-xs">⌘</span>K
-                </kbd>
-            </p>
-            <p
-                className="md:hidden text-sm text-muted-foreground hover:opacity-70 hover:cursor-pointer"
-                onClick={() => {
-                    setOpen(true);
-                }}
-            >
-                Click to start searching
-            </p>
-            <CommandDialog open={open} onOpenChange={setOpen}>
+        <div className="w-full max-w-3xl mx-auto p-4">
+            <div className="flex justify-center md:justify-start mb-1">
+                <p
+                    className="text-sm text-muted-foreground hover:opacity-70 hover:cursor-pointer md:hidden"
+                    onClick={() => setIsOpen(true)}
+                >
+                    Search
+                </p>
+                <p
+                    className="hidden md:block text-sm text-muted-foreground hover:opacity-70 hover:cursor-pointer"
+                    onClick={() => setIsOpen(true)}
+                >
+                    Press to start searching{' '}
+                    <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+                        <span className="text-xs">⌘</span>K
+                    </kbd>
+                </p>
+            </div>
+            <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
                 <Input
-                    placeholder="Type a command or search..."
-                    value={searchTerm}
-                    className="focus-visible:ring-0"
-                    onChange={(e) => {
-                        setSearchTerm(e.target.value);
-                    }}
+                    placeholder="Search questions..."
+                    value={searchQuery}
+                    className="focus-visible:ring-0 w-full"
+                    onChange={(event) => setSearchQuery(event.target.value)}
                 />
-                <CommandList>
+                <CommandList className="max-h-96 overflow-y-auto">
                     <CommandEmpty>No results found.</CommandEmpty>
                     <CommandGroup heading="Suggestions">
-                        {filteredData.map((question, idx) => {
-                            return (
-                                <CommandItem key={idx} className="w-full">
+                        {filteredQuestions &&
+                            filteredQuestions.length > 0 &&
+                            filteredQuestions.map((question, index) => (
+                                <CommandItem key={index} className="w-full">
                                     <Link
                                         target="_blank"
                                         href={question.problem_link}
@@ -125,19 +125,17 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
                                         </Badge>
                                     </div>
                                     <Button
-                                        onClick={() => {
-                                            handleSeeCode(question);
-                                        }}
+                                        onClick={() => onSeeCode(question)}
+                                        className="ml-auto"
                                     >
                                         See Code
                                     </Button>
                                 </CommandItem>
-                            );
-                        })}
+                            ))}
                     </CommandGroup>
                 </CommandList>
             </CommandDialog>
-        </>
+        </div>
     );
 };
 

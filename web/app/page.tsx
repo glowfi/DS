@@ -19,7 +19,7 @@ export default function Home() {
         setSelectedQuestion(q);
     };
 
-    const onClose = (): void => {
+    const handleCloseModal = (): void => {
         setModalOpen(false);
     };
 
@@ -32,8 +32,14 @@ export default function Home() {
             }
             const json = await response.json();
             setData(json as Question[]);
-        } catch (error: any) {
-            setError(error.message);
+        } catch (error: unknown) {
+            // Type guard to check if error is an Error instance
+            if (error instanceof Error) {
+                setError(error.message);
+            } else {
+                // Fallback for unexpected error types
+                setError('An unknown error occurred');
+            }
         } finally {
             setLoading(false);
         }
@@ -82,13 +88,13 @@ export default function Home() {
 
     return (
         <div className="container flex-col w-full h-dvh flex items-center mx-auto p-12 md:p-6">
-            <Navbar data={data} handleSeeCode={handleSeeCode} />
+            <Navbar questions={data} onSeeCode={handleSeeCode} />
             <Topics
                 questions={data}
-                onClose={onClose}
                 modalOpen={modalOpen}
                 selectedQuestion={selectedQuestion}
-                handleSeeCode={handleSeeCode}
+                onModalClose={handleCloseModal}
+                onSeeCode={handleSeeCode}
             />
         </div>
     );

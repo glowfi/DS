@@ -43,7 +43,7 @@ const sortOrders: sortOrder[] = [
         idx: 0,
         order: 'ORIGINAL',
         icon: <FaSort />,
-        compare: (a, b) => 0
+        compare: () => 0
     },
     {
         idx: 1,
@@ -130,16 +130,16 @@ interface TopicsProps {
     questions: Question[];
     selectedQuestion?: Question;
     modalOpen: boolean;
-    handleSeeCode: (q: Question) => void;
-    onClose: () => void;
+    onSeeCode: (q: Question) => void;
+    onModalClose: () => void;
 }
 
 const Topics: React.FunctionComponent<TopicsProps> = ({
     questions,
     selectedQuestion,
     modalOpen,
-    handleSeeCode,
-    onClose
+    onSeeCode: handleSeeCode,
+    onModalClose: onClose
 }) => {
     const [sortOrder, setSortOrder] = useState<number>(0);
 
@@ -155,104 +155,114 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
     };
 
     return (
-        <Accordion
-            type="single"
-            collapsible
-            className="flex-col justify-center items-center w-full h-full"
-        >
-            {topics.map((topic, idx) => {
-                return (
-                    <AccordionItem value={`item-${idx}`} key={idx}>
-                        <AccordionTrigger>
-                            <div className="flex justify-between items-center w-full mr-6">
-                                <h6 className="scroll-m-20  font-semibold tracking-tight">
-                                    {topic}
-                                </h6>
-                                <Badge>
-                                    {topicWiseQuestions[topic].length}
-                                </Badge>
-                            </div>
-                        </AccordionTrigger>
-                        <AccordionContent className="flex flex-col gap-4 text-balance">
-                            <Table>
-                                <TableHeader>
-                                    <TableRow>
-                                        <TableHead>#</TableHead>
-                                        <TableHead>Problem</TableHead>
-                                        <TableHead
-                                            className="hover:cursor-pointer"
-                                            onClick={cycleSortOrder}
-                                        >
-                                            <div className="flex gap-3 justify-start items-center">
-                                                <p>Difficulty</p>
-                                                {sortOrders[sortOrder].icon}
-                                            </div>
-                                        </TableHead>
-                                        <TableHead>Solution</TableHead>
-                                    </TableRow>
-                                </TableHeader>
-                                <TableBody>
-                                    {topicWiseQuestions[topic].map((q, idx) => {
-                                        return (
-                                            <TableRow key={idx}>
-                                                <TableCell className="font-medium">
-                                                    {idx + 1}
-                                                </TableCell>
-                                                <TableCell>
-                                                    <Link
-                                                        target="_blank"
-                                                        href={q.problem_link}
-                                                        className="hover:underline"
-                                                    >
-                                                        <div className="flex-wrap md:flex items-center gap-1">
-                                                            <span>
-                                                                {q.problem_name}
-                                                            </span>
-                                                            <SquareArrowOutUpRight className="h-4 w-4" />
-                                                        </div>
-                                                    </Link>
-                                                </TableCell>
-                                                <TableCell>
-                                                    <Badge
-                                                        style={{
-                                                            backgroundColor: `${getColor(q.difficulty.trim())}`
-                                                        }}
-                                                    >
-                                                        {q.difficulty}
-                                                    </Badge>
-                                                </TableCell>
-                                                <TableCell>
-                                                    <Button
-                                                        onClick={() => {
-                                                            handleSeeCode(
-                                                                questions[idx]
-                                                            );
-                                                        }}
-                                                    >
-                                                        See Code
-                                                    </Button>
-                                                </TableCell>
-                                            </TableRow>
-                                        );
-                                    })}
-                                </TableBody>
-                            </Table>
-                        </AccordionContent>
-                    </AccordionItem>
-                );
-            })}
-            <div className="flex justify-between items-center mt-3 mr-13">
-                <h6 className="scroll-m-20  font-semibold tracking-tight">
-                    Total Code(s)
-                </h6>
-                <Badge>{questions.length}</Badge>
-            </div>
-            <CodeModal
-                question={selectedQuestion}
-                modalOpen={modalOpen}
-                onClose={onClose}
-            />
-        </Accordion>
+        <React.Fragment>
+            <Accordion
+                type="single"
+                collapsible
+                className="flex-col justify-center items-center w-full h-full"
+            >
+                {topics.map((topic, idx1) => {
+                    return (
+                        <AccordionItem value={`item-${idx1}`} key={idx1}>
+                            <AccordionTrigger>
+                                <div className="flex justify-between items-center w-full mr-6">
+                                    <h6 className="scroll-m-20  font-semibold tracking-tight">
+                                        {topic}
+                                    </h6>
+                                    <Badge>
+                                        {topicWiseQuestions[topic].length}
+                                    </Badge>
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="flex flex-col gap-4 text-balance">
+                                <Table>
+                                    <TableHeader>
+                                        <TableRow>
+                                            <TableHead>#</TableHead>
+                                            <TableHead>Problem</TableHead>
+                                            <TableHead
+                                                className="hover:cursor-pointer"
+                                                onClick={cycleSortOrder}
+                                            >
+                                                <div className="flex gap-3 justify-start items-center">
+                                                    <p>Difficulty</p>
+                                                    {sortOrders[sortOrder].icon}
+                                                </div>
+                                            </TableHead>
+                                            <TableHead>Solution</TableHead>
+                                        </TableRow>
+                                    </TableHeader>
+                                    <TableBody>
+                                        {topicWiseQuestions[topic].map(
+                                            (q, idx2) => {
+                                                return (
+                                                    <TableRow key={idx2}>
+                                                        <TableCell className="font-medium">
+                                                            {idx2 + 1}
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <Link
+                                                                target="_blank"
+                                                                href={
+                                                                    q.problem_link
+                                                                }
+                                                                className="hover:underline"
+                                                            >
+                                                                <div className="flex-wrap md:flex items-center gap-1">
+                                                                    <span>
+                                                                        {
+                                                                            q.problem_name
+                                                                        }
+                                                                    </span>
+                                                                    <SquareArrowOutUpRight className="h-4 w-4" />
+                                                                </div>
+                                                            </Link>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <Badge
+                                                                style={{
+                                                                    backgroundColor: `${getColor(q.difficulty.trim())}`
+                                                                }}
+                                                            >
+                                                                {q.difficulty}
+                                                            </Badge>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <Button
+                                                                onClick={() => {
+                                                                    handleSeeCode(
+                                                                        q
+                                                                    );
+                                                                }}
+                                                            >
+                                                                See Code
+                                                            </Button>
+                                                        </TableCell>
+                                                    </TableRow>
+                                                );
+                                            }
+                                        )}
+                                    </TableBody>
+                                </Table>
+                            </AccordionContent>
+                        </AccordionItem>
+                    );
+                })}
+                <div className="flex justify-between items-center mt-3 mr-13">
+                    <h6 className="scroll-m-20  font-semibold tracking-tight">
+                        Total Code(s)
+                    </h6>
+                    <Badge>{questions.length}</Badge>
+                </div>
+            </Accordion>
+            {selectedQuestion !== undefined && (
+                <CodeModal
+                    question={selectedQuestion}
+                    modalOpen={modalOpen}
+                    onClose={onClose}
+                />
+            )}
+        </React.Fragment>
     );
 };
 
