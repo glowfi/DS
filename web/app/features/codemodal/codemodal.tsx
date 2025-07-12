@@ -1,5 +1,4 @@
-'use client';
-
+import React, { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -15,7 +14,6 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
-import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import CodeThemeSelector from './codetheme';
 import {
@@ -27,12 +25,10 @@ import {
 import { Approach, Question } from '@/app/lib/types';
 import { getColor } from '../topics/topics';
 
-// Maps approaches to an object with unique keys
 const mapApproachesToObject = (
     approaches: Approach[]
 ): Record<string, Approach> => {
     const seenTypes: Record<string, number> = {};
-
     return approaches.reduce(
         (acc, approach) => {
             if (seenTypes[approach.type]) {
@@ -67,7 +63,6 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
     );
     const approachesMap = mapApproachesToObject(question.approaches);
 
-    // Handle theme change and update local storage
     const handleThemeChange = (selTheme: string) => {
         const theme = themes.find((t) => t.value === selTheme);
         if (theme) {
@@ -81,7 +76,7 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
             <SheetTrigger asChild className="hidden">
                 <Button variant="outline">See Code</Button>
             </SheetTrigger>
-            <SheetContent className="h-screen w-screen overflow-auto p-4 md:p-8">
+            <SheetContent className="h-screen w-screen overflow-hidden p-4 md:p-8 flex flex-col">
                 <SheetHeader>
                     <SheetTitle>
                         <Link
@@ -94,7 +89,7 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
                         </Link>
                     </SheetTitle>
                 </SheetHeader>
-                <div className="flex flex-col mt-6 overflow-auto gap-6">
+                <div className="flex flex-col mt-6 overflow-auto flex-grow gap-6">
                     <div className="flex flex-col gap-6">
                         <Badge
                             style={{
