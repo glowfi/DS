@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react';
 import {
     a11yDark,
     a11yLight,
@@ -197,10 +196,14 @@ export const _THEME = [
     zenburn
 ];
 
+type theme = {
+    [key: string]: React.CSSProperties;
+};
+
 export interface Theme {
     value: string;
     label: string;
-    theme: { [key: string]: CSSProperties };
+    theme: theme;
 }
 
 export const themes: Theme[] = [
@@ -410,13 +413,9 @@ export const themes: Theme[] = [
     { value: 'zenburn', label: 'zenburn', theme: zenburn }
 ];
 
-const DEFAULT_THEME: {
-    [key: string]: React.CSSProperties;
-} = gruvboxDark;
+const DEFAULT_THEME: theme = gruvboxDark;
 
-export function getThemeByValue(value: {
-    [key: string]: CSSProperties;
-}): string {
+export function getThemeByValue(value: theme): string {
     const t = themes.find((theme) => theme.theme === value);
     if (t) {
         return t.value;
@@ -424,9 +423,7 @@ export function getThemeByValue(value: {
     return '';
 }
 
-export function getThemeFromLocalStorage(): {
-    [key: string]: React.CSSProperties;
-} {
+export function getThemeFromLocalStorage(): theme {
     const strTheme = localStorage.getItem('code-theme');
     if (strTheme === null || strTheme === undefined) {
         return DEFAULT_THEME;

@@ -28,7 +28,7 @@ const SiteTitle = () => {
                 href="/"
                 className="mr-6 flex justify-center items-center space-x-2"
             >
-                <span className="hidden md:inline-block font-bold">
+                <span className="md:inline-block font-bold">
                     {process.env.NEXT_PUBLIC_SITE_NAME}
                 </span>
             </Link>
