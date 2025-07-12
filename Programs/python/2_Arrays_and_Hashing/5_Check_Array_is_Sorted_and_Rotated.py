@@ -102,7 +102,7 @@ class Solution:
         return True if nums[-1] <= nums[0] else False
 
 
-# Optimal2
+# Optimal
 # T.C. - O(N)
 # S.C  - O(1)
 
