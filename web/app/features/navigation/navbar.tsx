@@ -1,35 +1,15 @@
 'use client';
 
+import { ModeToggle } from '@/app/lib/mode-toggle';
+import { Question } from '@/app/lib/types';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import LogoIcon from '../icon.svg';
-import { cn } from '@/lib/utils';
-import { Question } from './types';
-import { buttonVariants } from '@/components/ui/button';
-import { ModeToggle } from './mode-toggle';
-import { GitHubLogoIcon } from '@radix-ui/react-icons';
+import LogoIcon from '../../icon.svg';
 import SearchBar from './searchbar';
-
-interface SiteHeaderProps {
-    questions: Question[];
-    onCodeView: (question: Question) => void;
-}
-
-const SiteHeader: React.FunctionComponent<SiteHeaderProps> = ({
-    questions,
-    onCodeView: onViewCode
-}) => {
-    return (
-        <header className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-14 max-w-screen-2xl items-center">
-                <LogoSection />
-                <SiteTitle />
-                <Navbar questions={questions} onViewCode={onViewCode} />
-            </div>
-        </header>
-    );
-};
 
 const LogoSection = () => {
     return (
@@ -83,7 +63,7 @@ interface NavbarProps {
     onViewCode: (question: Question) => void;
 }
 
-const Navbar: React.FunctionComponent<NavbarProps> = ({
+const Navigation: React.FunctionComponent<NavbarProps> = ({
     questions,
     onViewCode
 }) => {
@@ -95,6 +75,26 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
                 <ModeToggle />
             </nav>
         </div>
+    );
+};
+
+interface SiteHeaderProps {
+    questions: Question[];
+    onCodeView: (question: Question) => void;
+}
+
+const SiteHeader: React.FunctionComponent<SiteHeaderProps> = ({
+    questions,
+    onCodeView: onViewCode
+}) => {
+    return (
+        <header className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="container flex h-14 max-w-screen-2xl items-center">
+                <LogoSection />
+                <SiteTitle />
+                <Navigation questions={questions} onViewCode={onViewCode} />
+            </div>
+        </header>
     );
 };
 

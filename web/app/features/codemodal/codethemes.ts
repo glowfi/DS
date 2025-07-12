@@ -410,6 +410,10 @@ export const themes: Theme[] = [
     { value: 'zenburn', label: 'zenburn', theme: zenburn }
 ];
 
+const DEFAULT_THEME: {
+    [key: string]: React.CSSProperties;
+} = gruvboxDark;
+
 export function getThemeByValue(value: {
     [key: string]: CSSProperties;
 }): string {
@@ -418,4 +422,22 @@ export function getThemeByValue(value: {
         return t.value;
     }
     return '';
+}
+
+export function getThemeFromLocalStorage(): {
+    [key: string]: React.CSSProperties;
+} {
+    const strTheme = localStorage.getItem('code-theme');
+    if (strTheme === null || strTheme === undefined) {
+        return DEFAULT_THEME;
+    }
+    const t = themes.find((t) => t.value === strTheme);
+    if (t === undefined) {
+        return DEFAULT_THEME;
+    }
+
+    return t.theme;
+}
+export function setThemeToLocalStorage(theme: string): void {
+    localStorage.setItem('code-theme', theme);
 }

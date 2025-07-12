@@ -1,4 +1,7 @@
 'use client';
+import { Question } from '@/app/lib/types';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
     CommandDialog,
     CommandEmpty,
@@ -6,14 +9,11 @@ import {
     CommandItem,
     CommandList
 } from '@/components/ui/command';
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { SquareArrowOutUpRight } from 'lucide-react';
-import { Question } from './types';
 import { Input } from '@/components/ui/input';
-import { getColor } from './topics';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { SquareArrowOutUpRight } from 'lucide-react';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+import { getColor } from '../topics/topics';
 
 interface SearchBarProps {
     questions: Question[];

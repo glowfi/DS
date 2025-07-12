@@ -1,3 +1,4 @@
+import { Difficulty, Question } from '@/app/lib/types';
 import {
     Accordion,
     AccordionContent,
@@ -18,8 +19,7 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaSort, FaSortDown, FaSortUp } from 'react-icons/fa';
-import CodeModal from './codemodal';
-import { Difficulty, Question } from './types';
+import CodeModal from '../codemodal/codemodal';
 
 export const getColor = (difficulty: string) => {
     if (difficulty === 'Easy') {
@@ -258,8 +258,8 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
             {selectedQuestion !== undefined && (
                 <CodeModal
                     question={selectedQuestion}
-                    modalOpen={modalOpen}
-                    onClose={onModalClose}
+                    isModalOpen={modalOpen}
+                    onModalClose={onModalClose}
                 />
             )}
         </React.Fragment>

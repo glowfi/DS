@@ -2,9 +2,9 @@
 
 import LoadingSpinner from '@/components/ui/loadingspinner';
 import React, { useEffect, useState } from 'react';
-import Navbar from './app/navbar';
-import Topics from './app/topics';
-import { Question } from './app/types';
+import Navbar from './features/navigation/navbar';
+import Topics from './features/topics/topics';
+import { Question } from './lib/types';
 
 const HomePage: React.FunctionComponent = () => {
     const [isLoading, setIsLoading] = useState(false);

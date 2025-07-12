@@ -2,6 +2,7 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
 import {
     Sheet,
     SheetClose,
@@ -16,19 +17,17 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { gruvboxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import CodeThemeSelector from './codetheme';
-import { getThemeByValue, themes } from './codethemes';
-import { Approach, Question } from './types';
-import { getColor } from './topics';
-import { Label } from '@/components/ui/label';
+import {
+    getThemeByValue,
+    getThemeFromLocalStorage,
+    setThemeToLocalStorage,
+    themes
+} from './codethemes';
+import { Approach, Question } from '@/app/lib/types';
+import { getColor } from '../topics/topics';
 
-interface CodeModalProps {
-    question: Question;
-    modalOpen: boolean;
-    onClose: () => void;
-}
-
+// Maps approaches to an object with unique keys
 const mapApproachesToObject = (
     approaches: Approach[]
 ): Record<string, Approach> => {
@@ -49,32 +48,16 @@ const mapApproachesToObject = (
     );
 };
 
-const DEFAULT_THEME: {
-    [key: string]: React.CSSProperties;
-} = gruvboxDark;
-
-function getThemeFromLocalStorage(): {
-    [key: string]: React.CSSProperties;
-} {
-    const strTheme = localStorage.getItem('code-theme');
-    if (strTheme === null || strTheme === undefined) {
-        return DEFAULT_THEME;
-    }
-    const t = themes.find((t) => t.value === strTheme);
-    if (t === undefined) {
-        return DEFAULT_THEME;
-    }
-
-    return t.theme;
-}
-function setThemeToLocalStorage(theme: string): void {
-    localStorage.setItem('code-theme', theme);
+interface CodeModalProps {
+    question: Question;
+    isModalOpen: boolean;
+    onModalClose: () => void;
 }
 
 const CodeModal: React.FunctionComponent<CodeModalProps> = ({
     question,
-    modalOpen,
-    onClose
+    isModalOpen: modalOpen,
+    onModalClose
 }) => {
     const [selectedApproach, setSelectedApproach] = useState(
         question.approaches[0].type
@@ -83,8 +66,8 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
         getThemeFromLocalStorage()
     );
     const approachesMap = mapApproachesToObject(question.approaches);
-    console.log(approachesMap);
 
+    // Handle theme change and update local storage
     const handleThemeChange = (selTheme: string) => {
         const theme = themes.find((t) => t.value === selTheme);
         if (theme) {
@@ -94,7 +77,7 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
     };
 
     return (
-        <Sheet open={modalOpen} onOpenChange={onClose}>
+        <Sheet open={modalOpen} onOpenChange={onModalClose}>
             <SheetTrigger asChild className="hidden">
                 <Button variant="outline">See Code</Button>
             </SheetTrigger>
@@ -115,7 +98,7 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
                     <div className="flex flex-col gap-6">
                         <Badge
                             style={{
-                                backgroundColor: `${getColor(question.difficulty)}`
+                                backgroundColor: getColor(question.difficulty)
                             }}
                         >
                             {question.difficulty}
@@ -148,35 +131,33 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
 
                     <Tabs defaultValue={selectedApproach}>
                         <TabsList className="gap-3">
-                            {Object.keys(approachesMap).map((k, index) => {
-                                return (
-                                    <TabsTrigger
-                                        value={`${k}`}
-                                        key={index}
-                                        onClick={() =>
-                                            setSelectedApproach(
-                                                approachesMap[k].type
-                                            )
-                                        }
-                                    >
-                                        {k}
-                                    </TabsTrigger>
-                                );
-                            })}
+                            {Object.keys(approachesMap).map((key, index) => (
+                                <TabsTrigger
+                                    value={key}
+                                    key={index}
+                                    onClick={() =>
+                                        setSelectedApproach(
+                                            approachesMap[key].type
+                                        )
+                                    }
+                                >
+                                    {key}
+                                </TabsTrigger>
+                            ))}
                         </TabsList>
 
                         <div className="flex flex-col">
                             <h3 className="text-2xl font-semibold tracking-tight">
                                 Approaches
                             </h3>
-                            {Object.keys(approachesMap).map((k, index) => (
-                                <TabsContent value={k} key={index}>
+                            {Object.keys(approachesMap).map((key, index) => (
+                                <TabsContent value={key} key={index}>
                                     <SyntaxHighlighter
                                         wrapLines={true}
                                         language={question.language}
                                         style={selectedTheme}
                                     >
-                                        {approachesMap[k].code}
+                                        {approachesMap[key].code}
                                     </SyntaxHighlighter>
                                 </TabsContent>
                             ))}
@@ -202,7 +183,7 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
                 </div>
                 <SheetFooter className="mt-3">
                     <SheetClose asChild>
-                        <Button type="button" onClick={onClose}>
+                        <Button type="button" onClick={onModalClose}>
                             Close
                         </Button>
                     </SheetClose>
