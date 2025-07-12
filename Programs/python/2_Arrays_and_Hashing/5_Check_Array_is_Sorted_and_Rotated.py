@@ -64,7 +64,7 @@ class Solution:
         return False
 
 
-# Optimal
+# Optimal1
 # T.C. - O(N)
 # S.C  - O(1)
 
@@ -102,7 +102,7 @@ class Solution:
         return True if nums[-1] <= nums[0] else False
 
 
-# Optimal
+# Optimal2
 # T.C. - O(N)
 # S.C  - O(1)
 
