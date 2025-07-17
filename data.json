@@ -247,9 +247,16 @@
             {
                 "tc": "O(N)",
                 "sc": "O(1)",
-                "intuition": "keep rotating the array by one n times\nthen check if the current rotated array is sorted or not\nif in at any pass we see that the array becomes equal to its sorted state\nwe return true otherwise we return false\n\nSuppose ->  [3 4 5 1 2]\n----- ---\nR1    R2\nCheck for valid increasing order in region I\nCheck for valid increasing order in region II\nand also all elements in region II should be lesser than\nequal to first element in region I\nThink for [1,3,2] also for return case\n\nSuppose ->  [3 4 5 1 2]\nNumber of dips should be 0 or 1\nif more than 1 return False\nThink for [1,3,2] also for return case",
-                "code": "from typing import List\n\n\nclass Solution:\n    def rotateByOne(self, nums: list[int]):\n        for i in range(len(nums) - 1):\n            nums[i], nums[i + 1] = nums[i + 1], nums[i]\n\n    def check_array_sorted(self, nums: list[int]) -> bool:\n        for i in range(1, len(nums)):\n            if nums[i] < nums[i - 1]:\n                return False\n        return True\n\n    def check(self, nums: List[int]) -> bool:\n        for _ in range(len(nums)):\n            self.rotateByOne(nums)\n            if self.check_array_sorted(nums):\n                return True\n        return False\n\n\n# Optimal1\n# T.C. - O(N)\n# S.C  - O(1)\n\nfrom typing import List\n\n\nclass Solution:\n    def check(self, nums: List[int]) -> bool:\n        break_point = -1\n        for i in range(1, len(nums)):\n            if nums[i] < nums[i - 1]:\n                break_point = i\n                break\n\n        if break_point == -1:\n            return True\n\n        first_element = nums[0]\n        for j in range(break_point + 1, len(nums)):\n            if nums[j] > first_element:\n                return False\n            if nums[j] < nums[j - 1]:\n                return False\n\n        return True if nums[-1] <= nums[0] else False\n\n\n# Optimal2\n# T.C. - O(N)\n# S.C  - O(1)\n\nfrom typing import List\n\n\nclass Solution:\n    def check(self, nums: List[int]) -> bool:\n        dips = 0\n        for i in range(1, len(nums)):\n            if nums[i] < nums[i - 1]:\n                dips += 1\n\n            if dips > 1:\n                return False\n\n        if dips == 0:\n            return True\n\n        return nums[-1] <= nums[0] and dips == 1",
+                "intuition": "keep rotating the array by one n times then check if the current rotated array is sorted or not if in at any pass we see that the array becomes equal to its sorted state we return true otherwise we return false  Suppose ->  [3 4 5 1 2] ----- --- R1    R2 Check for valid increasing order in region I Check for valid increasing order in region II and also all elements in region II should be lesser than equal to first element in region I Think for [1,3,2] also for return case",
+                "code": "from typing import List\n\n\nclass Solution:\n    def rotateByOne(self, nums: list[int]):\n        for i in range(len(nums) - 1):\n            nums[i], nums[i + 1] = nums[i + 1], nums[i]\n\n    def check_array_sorted(self, nums: list[int]) -> bool:\n        for i in range(1, len(nums)):\n            if nums[i] < nums[i - 1]:\n                return False\n        return True\n\n    def check(self, nums: List[int]) -> bool:\n        for _ in range(len(nums)):\n            self.rotateByOne(nums)\n            if self.check_array_sorted(nums):\n                return True\n        return False\n\n\n# Optimal1\n# T.C. - O(N)\n# S.C  - O(1)\n\nfrom typing import List\n\n\nclass Solution:\n    def check(self, nums: List[int]) -> bool:\n        break_point = -1\n        for i in range(1, len(nums)):\n            if nums[i] < nums[i - 1]:\n                break_point = i\n                break\n\n        if break_point == -1:\n            return True\n\n        first_element = nums[0]\n        for j in range(break_point + 1, len(nums)):\n            if nums[j] > first_element:\n                return False\n            if nums[j] < nums[j - 1]:\n                return False\n\n        return True if nums[-1] <= nums[0] else False",
                 "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Suppose ->  [3 4 5 1 2]\nNumber of dips should be 0 or 1\nif more than 1 return False\nThink for [1,3,2] also for return case",
+                "code": "from typing import List\n\n\nclass Solution:\n    def check(self, nums: List[int]) -> bool:\n        dips = 0\n        for i in range(1, len(nums)):\n            if nums[i] < nums[i - 1]:\n                dips += 1\n\n            if dips > 1:\n                return False\n\n        if dips == 0:\n            return True\n\n        return nums[-1] <= nums[0] and dips == 1",
+                "type": "Optimal"
             }
         ]
     },
@@ -1760,6 +1767,538 @@
                 "sc": "-",
                 "intuition": "",
                 "code": "",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "question": "Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums.\nIf target exists, then return its index. Otherwise, return -1.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n\nExample 1:\n\nInput: nums = [-1,0,3,5,9,12], target = 9\nOutput: 4\nExplanation: 9 exists in nums and its index is 4\nExample 2:\n\nInput: nums = [-1,0,3,5,9,12], target = 2\nOutput: -1\nExplanation: 2 does not exist in nums so return -1\n\n\nConstraints:\n\n1 <= nums.length <= 10^4\n-10^4 < nums[i], target < 10^4\nAll the integers in nums are unique.\nnums is sorted in ascending order.",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Binary Search",
+        "problem_link": "https://leetcode.com/problems/binary-search",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/1_Binary_Search.py",
+        "approaches": [
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "Every time find the mid index\nif the element at the mid index is lesser than target ,\nthen move the start pointer to mid+1 as all the elements in\nthe left of mid will always be smaller no need to go in that direction\nif the element at the mid index is greater than target ,\nthen move the end pointer to mid-1 as all the elements in\nthe right of mid will always be greater no need to go in that direction",
+                "code": "from typing import List\n\n\nclass Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                return mid\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return -1",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "Given a sorted array arr[] and an integer x, find the index (0-based) of the largest element in arr[] that is less than or equal to x. This element is called the floor of x. If such an element does not exist, return -1.\n\nNote: In case of multiple occurrences of ceil of x, return the index of the last occurrence.\n\nExamples\n\nInput: arr[] = [1, 2, 8, 10, 10, 12, 19], x = 5\nOutput: 1\nExplanation: Largest number less than or equal to 5 is 2, whose index is 1.\n\nInput: arr[] = [1, 2, 8, 10, 10, 12, 19], x = 11\nOutput: 4\nExplanation: Largest Number less than or equal to 11 is 10, whose indices are 3 and 4. The index of last occurrence is 4.\n\nInput: arr[] = [1, 2, 8, 10, 10, 12, 19], x = 0\nOutput: -1\nExplanation: No element less than or equal to 0 is found. So, output is -1.\n\nConstraints:\n1 \u2264 arr.size() \u2264 10^6\n1 \u2264 arr[i] \u2264 10^6\n0 \u2264 x \u2264 arr[n-1]",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Lower Bound",
+        "problem_link": "https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/2_Lower_Bound.py",
+        "approaches": [
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "Do a binary search for floor\nsince we need to find the value lesser than equal to x but the largest\nwhen we encounter an element with that condition we store the index\nin an answer and move more towards right and if we find number greater\nthan target we move towards left",
+                "code": "class Solution:\n    def findFloor(self, arr: list[int], x: int) -> int:\n        st, en = 0, len(arr) - 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if arr[mid] <= x:\n                ans = mid\n                st = mid + 1\n            elif arr[mid] > x:\n                en = mid - 1\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "Given an unsorted array arr[] of integers and an integer x, find the floor and ceiling of x in arr[].\n\nFloor of x is the largest element which is smaller than or equal to x. Floor of x doesn\u2019t exist if x is smaller than smallest element of arr[].\nCeil of x is the smallest element which is greater than or equal to x. Ceil of x doesn\u2019t exist if x is greater than greatest element of arr[].\n\nReturn an array of integers denoting the [floor, ceil]. Return -1 for floor or ceiling if the floor or ceiling is not present.\n\nExamples:\n\nInput: x = 7 , arr[] = [5, 6, 8, 9, 6, 5, 5, 6]\nOutput: 6, 8\nExplanation: Floor of 7 is 6 and ceil of 7 is 8.\n\nInput: x = 10 , arr[] = [5, 6, 8, 8, 6, 5, 5, 6]\nOutput: 8, -1\nExplanation: Floor of 10 is 8 but ceil of 10 is not possible.\n\nExpected Time Complexity: O(n)\nExpected Auxiliary Space: O(1)\n\nConstraints :\n1 \u2264 arr.size \u2264 10^5\n1 \u2264 arr[i], x \u2264 10^6",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Upper Bound",
+        "problem_link": "https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/3_Upper_Bound.py",
+        "approaches": [
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "Do a binary search for floor\nsince we need to find the value lesser than equal to x but the largest\nwhen we encounter an element with that condition we store the index\nin an answer and move more towards right and if we find number greater\nthan target we move towards left\n\nDo a binary search for ceil\nsince we need to find the value greater than equal to x but the smallest\nwhen we encounter an element with that condition we store the index\nin an answer and move more towards left and if we find number lesser\nthan target we move towards right",
+                "code": "class Solution:\n    def floor(self, x: int, arr: list[int]):\n        st, en = 0, len(arr) - 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if arr[mid] <= x:\n                ans = arr[mid]\n                st = mid + 1\n            elif arr[mid] > x:\n                en = mid - 1\n\n        return ans\n\n    def ceil(self, x: int, arr: list[int]):\n        st, en = 0, len(arr) - 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if arr[mid] >= x:\n                ans = arr[mid]\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return ans\n\n    def getFloorAndCeil(self, x: int, arr: list[int]) -> list[int]:\n        arr.sort()\n        floor = self.floor(x, arr)\n        ceil = self.ceil(x, arr)\n\n        return [floor, ceil]",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Given a sorted array of distinct integers and a target value, return the index if the target is found. If not,\nreturn the index where it would be if it were inserted in order.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\nExample 1:\n\nInput: nums = [1,3,5,6], target = 5\nOutput: 2\nExample 2:\n\nInput: nums = [1,3,5,6], target = 2\nOutput: 1\nExample 3:\n\nInput: nums = [1,3,5,6], target = 7\nOutput: 4\n\n\nConstraints:\n\n1 <= nums.length <= 10^4\n-10^4 <= nums[i] <= 10^4\nnums contains distinct values sorted in ascending order.\n-10^4 <= target <= 10^4",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Search Insert Position",
+        "problem_link": "https://leetcode.com/problems/search-insert-position",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/4_Search_Insert_Position.py",
+        "approaches": [
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "Find the ceil and return",
+                "code": "from typing import List\n\n\nclass Solution:\n    def ceil(self, x: int, arr: list[int]):\n        st, en = 0, len(arr) - 1\n        ans = len(arr)\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if arr[mid] >= x:\n                ans = mid\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return ans\n\n    def searchInsert(self, nums: List[int], target: int) -> int:\n        return self.ceil(target, nums)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.\n\nIf target is not found in the array, return [-1, -1].\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n\nExample 1:\n\nInput: nums = [5,7,7,8,8,10], target = 8\nOutput: [3,4]\nExample 2:\n\nInput: nums = [5,7,7,8,8,10], target = 6\nOutput: [-1,-1]\nExample 3:\n\nInput: nums = [], target = 0\nOutput: [-1,-1]\n\n\nConstraints:\n\n0 <= nums.length <= 10^5\n-10^9 <= nums[i] <= 10^9\nnums is a non-decreasing array.\n-10^9 <= target <= 10^9",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Find First and Last Position of Element in Sorted Array",
+        "problem_link": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/5_Find_First_and_Last_Position_of_Element_in_Sorted_Array.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Traverse the array and if you find the target number first store it in a variable only if we have not see this in past and keep traversing forward keep track of the last index of the target in a variable called last only if we have seen in the past",
+                "code": "from typing import List\n\n\nclass Solution:\n    def searchRange(self, nums: List[int], target: int) -> List[int]:\n        first, last = -1, -1\n        hasSeenFirst = False\n\n        for idx, num in enumerate(nums):\n            if num == target and not hasSeenFirst:\n                hasSeenFirst = True\n                first = idx\n                last = idx\n\n            elif hasSeenFirst and num == target:\n                last = idx\n\n        return [first, last]",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "For finding first occurence do a bainry search\nkeep finding the mid and if we find the number\nthen keep going left as we want the first possible occurence\n\nFor finding last occurence do a bainry search\nkeep finding the mid and if we find the number\nthen keep going right as we want the last possible occurence",
+                "code": "from typing import List\n\n\nclass Solution:\n    def firstOccurence(self, nums: List[int], target: int) -> int:\n        ans = -1\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                ans = mid\n                en = mid - 1\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return ans\n\n    def lastOccurence(self, nums: List[int], target: int) -> int:\n        ans = -1\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                ans = mid\n                st = mid + 1\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return ans\n\n    def searchRange(self, nums: List[int], target: int) -> List[int]:\n        first = self.firstOccurence(nums, target)\n        last = self.lastOccurence(nums, target)\n\n        return [first, last]",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "question": "Given a sorted array, arr[] and a number target, you need to find the number of occurrences of target in arr[].\n\nExamples :\n\nInput: arr[] = [1, 1, 2, 2, 2, 2, 3], target = 2\nOutput: 4\nExplanation: target = 2 occurs 4 times in the given array so the output is 4.\n\nInput: arr[] = [1, 1, 2, 2, 2, 2, 3], target = 4\nOutput: 0\nExplanation: target = 4 is not present in the given array so the output is 0.\n\nInput: arr[] = [8, 9, 10, 12, 12, 12], target = 12\nOutput: 3\nExplanation: target = 12 occurs 3 times in the given array so the output is 3.\n\nConstraints:\n1 \u2264 arr.size() \u2264 10^6\n1 \u2264 arr[i] \u2264 10^6\n1 \u2264 target \u2264 10^6",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Number of occurrence",
+        "problem_link": "https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/6_Number_of_occurrence.py",
+        "approaches": [
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "Find first occurence (F)\nFind last occurence (L)\nreturn L-F+1",
+                "code": "from typing import List\n\n\nclass Solution:\n    def firstOccurence(self, nums: List[int], target: int) -> int:\n        ans = len(nums)\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                ans = mid\n                en = mid - 1\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return ans\n\n    def lastOccurence(self, nums: List[int], target: int) -> int:\n        ans = len(nums)\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                ans = mid\n                st = mid + 1\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return ans\n\n    def countFreq(self, arr: list[int], target: int):\n        lastOccurence = self.lastOccurence(arr, target)\n        firstOccurence = self.firstOccurence(arr, target)\n        if lastOccurence == len(arr) and firstOccurence == len(arr):\n            return 0\n        return (lastOccurence - firstOccurence) + 1",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "question": "There is an integer array nums sorted in ascending order (with distinct values).\n\nPrior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].\n\nGiven the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n\nExample 1:\n\nInput: nums = [4,5,6,7,0,1,2], target = 0\nOutput: 4\nExample 2:\n\nInput: nums = [4,5,6,7,0,1,2], target = 3\nOutput: -1\nExample 3:\n\nInput: nums = [1], target = 0\nOutput: -1\n\n\nConstraints:\n\n1 <= nums.length <= 5000\n-10^4 <= nums[i] <= 10^4\nAll values of nums are unique.\nnums is an ascending array that is possibly rotated.\n-10^4 <= target <= 10^4",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Search in Rotated Sorted Array I",
+        "problem_link": "https://leetcode.com/problems/search-in-rotated-sorted-array",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/7_Search_in_Rotated_Sorted_Array_I.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Do a linear search to find the target",
+                "code": "from typing import List\n\n\nclass Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        for i in range(len(nums)):\n            if nums[i] == target:\n                return i\n\n        return -1",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "Find which part is sorted\nCheck if target has possibility to be present in sorted part",
+                "code": "from typing import List\n\n\nclass Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                return mid\n\n            # Check which part is sorted\n\n            # if right is sorted\n            if nums[mid] <= nums[en]:\n                # target is definitely present in right\n                if nums[mid] <= target <= nums[en]:\n                    st = mid + 1\n                else:\n                    en = mid - 1\n            # if left is sorted\n            else:\n                # target is definitely present in left\n                if nums[st] <= target <= nums[mid]:\n                    en = mid - 1\n                else:\n                    st = mid + 1\n\n        return -1",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "question": "There is an integer array nums sorted in non-decreasing order (not necessarily with distinct values).\n\nBefore being passed to your function, nums is rotated at an unknown pivot index k (0 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,4,4,5,6,6,7] might be rotated at pivot index 5 and become [4,5,6,6,7,0,1,2,4,4].\n\nGiven the array nums after the rotation and an integer target, return true if target is in nums, or false if it is not in nums.\n\nYou must decrease the overall operation steps as much as possible.\n\n\nExample 1:\n\nInput: nums = [2,5,6,0,0,1,2], target = 0\nOutput: true\nExample 2:\n\nInput: nums = [2,5,6,0,0,1,2], target = 3\nOutput: false\n\n\nConstraints:\n\n1 <= nums.length <= 5000\n-10^4 <= nums[i] <= 10^4\nnums is guaranteed to be rotated at some pivot.\n-10^4 <= target <= 10^4\n\nFollow up: This problem is similar to Search in Rotated Sorted Array, but nums may contain duplicates. Would this affect the runtime complexity? How and why?",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Search in Rotated Sorted Array II",
+        "problem_link": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/8_Search_in_Rotated_Sorted_Array_II.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Do a linear search to find the target",
+                "code": "from typing import List\n\n\nclass Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        for i in range(len(nums)):\n            if nums[i] == target:\n                return True\n\n        return False",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "Find which part is sorted\nCheck if target has possibility to be present in sorted part\nAt any point we see that arr[mid],arr[st],arr[en] are equal we move\nstart ahead and end pointer backwards and reduce our search space\nas we will not be able to decide which part to go in order to\nreduce search space",
+                "code": "from typing import List\n\n\nclass Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                return True\n\n            # Remove duplicates\n            if nums[st] == nums[mid] and nums[mid] == nums[en]:\n                st += 1\n                en -= 1\n                continue\n\n            # Check which part is sorted\n\n            # if right is sorted\n            if nums[mid] <= nums[en]:\n                # target is definitely present in right\n                if nums[mid] <= target <= nums[en]:\n                    st = mid + 1\n                else:\n                    en = mid - 1\n            # if left is sorted\n            else:\n                # target is definitely present in left\n                if nums[st] <= target <= nums[mid]:\n                    en = mid - 1\n                else:\n                    st = mid + 1\n\n        return False",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "question": "Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:\n\n[4,5,6,7,0,1,2] if it was rotated 4 times.\n[0,1,2,4,5,6,7] if it was rotated 7 times.\nNotice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array [a[n-1], a[0], a[1], a[2], ..., a[n-2]].\n\nGiven the sorted rotated array nums of unique elements, return the minimum element of this array.\n\nYou must write an algorithm that runs in O(log n) time.\n\n\nExample 1:\n\nInput: nums = [3,4,5,1,2]\nOutput: 1\nExplanation: The original array was [1,2,3,4,5] rotated 3 times.\nExample 2:\n\nInput: nums = [4,5,6,7,0,1,2]\nOutput: 0\nExplanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times.\nExample 3:\n\nInput: nums = [11,13,15,17]\nOutput: 11\nExplanation: The original array was [11,13,15,17] and it was rotated 4 times.\n\n\nConstraints:\n\nn == nums.length\n1 <= n <= 5000\n-5000 <= nums[i] <= 5000\nAll the integers of nums are unique.\nnums is sorted and rotated between 1 and n times.",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Find Minimum Rotated Sorted Array",
+        "problem_link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/9_Find_Minimum_Rotated_Sorted_Array.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Just find the min element in the whole array by making a linear scan",
+                "code": "from typing import List\n\n\nclass Solution:\n    def findMin(self, nums: List[int]) -> int:\n        min_elem = nums[0]\n\n        for i in range(1, len(nums)):\n            min_elem = min(min_elem, nums[i])\n\n        return min_elem",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "One key observation is since array is rotated sorted,for\nevery index one half will be sorted and other will be unsorted\nwe will take the advantage of the sorted property and we are going\nto store the minimum from the sorted in a varaible and discard\nthe sorted half and move to the unsorted half as from sorted we\nhave already picked up the min element",
+                "code": "from typing import List\n\n\nclass Solution:\n    def findMin(self, nums: List[int]) -> int:\n        st, en = 0, len(nums) - 1\n        ans = 500\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            # if we cross the rotated point\n            if nums[st] <= nums[mid] and nums[mid] <= nums[en]:\n                ans = min(ans, nums[st])\n                break\n\n            # if left is sorted\n            if nums[st] <= nums[mid]:\n                # discard sorted half and move to unsorted\n                ans = min(ans, nums[st])\n                st = mid + 1\n\n            # right is sorted\n            else:\n                # discard sorted half and move to unsorted\n                ans = min(ans, nums[mid])\n                en = mid - 1\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "question": "Given an increasing sorted rotated array arr of distinct integers. The array is right-rotated k times. Find the value of k.\nLet's suppose we have an array arr = [2, 4, 6, 9], so if we rotate it by 2 times so that it will look like this:\nAfter 1st Rotation : [9, 2, 4, 6]\nAfter 2nd Rotation : [6, 9, 2, 4]\n\nExamples:\n\nInput: arr = [5, 1, 2, 3, 4]\nOutput: 1\nExplanation: The given array is 5 1 2 3 4. The original sorted array is 1 2 3 4 5. We can see that the array was rotated 1 times to the right.\n\nInput: arr = [1, 2, 3, 4, 5]\nOutput: 0\nExplanation: The given array is not rotated.\n\nConstraints:\n1 \u2264 arr.size() \u226410^5\n1 \u2264 arri \u2264 10^7",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Find out how many times has an array been rotated",
+        "problem_link": "https://www.geeksforgeeks.org/problems/rotation4723/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/10_Find_out_how_many_times_has_an_array_been_rotated.py",
+        "approaches": [
+            {
+                "tc": "O(N^2)+O(Nlog(N))",
+                "sc": "O(N)",
+                "intuition": "Keep left rotating the arr by 1 maintain count of rotatios if target array is reached then return",
+                "code": "from typing import List\n\n\nclass Solution:\n    def left_rotate(self, arr: List[int]) -> List[int]:\n        for i in range(len(arr) - 1):\n            arr[i], arr[i + 1] = arr[i + 1], arr[i]\n        return arr\n\n    def findKRotation(self, arr: List[int]):\n        c = 0\n        target_arr = sorted(arr)\n        if arr == target_arr:\n            return c\n\n        for i in range(len(arr)):\n            arr = self.left_rotate(arr)\n            c += 1\n            if arr == target_arr:\n                return c\n\n        return c",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "Find min element index",
+                "code": "from typing import List\n\n\nclass Solution:\n    def findMinIndex(self, nums: List[int]) -> int:\n        st, en = 0, len(nums) - 1\n        ans = float(\"inf\")\n        index = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            # if we cross the rotated point\n            if nums[st] <= nums[mid] and nums[mid] <= nums[en]:\n                if nums[st] < ans:\n                    index = st\n                    ans = nums[st]\n                break\n\n            # if left is sorted\n            if nums[st] <= nums[mid]:\n                # discard sorted half and move to unsorted\n                if nums[st] < ans:\n                    index = st\n                    ans = nums[st]\n                st = mid + 1\n\n            # right is sorted\n            else:\n                # discard sorted half and move to unsorted\n                if nums[mid] < ans:\n                    index = mid\n                    ans = nums[mid]\n                en = mid - 1\n\n        return index\n\n    def findKRotation(self, arr: list[int]):\n        return self.findMinIndex(arr)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "question": "You are given a sorted numsay consisting of only integers where every element appears exactly twice, except for one element which appears exactly once.\n\nReturn the single element that appears only once.\n\nYour solution must run in O(log n) time and O(1) space.\n\n\nExample 1:\n\nInput: nums = [1,1,2,3,3,4,4,8,8]\nOutput: 2\nExample 2:\n\nInput: nums = [3,3,7,7,10,11,11]\nOutput: 10\n\n\nConstraints:\n\n1 <= nums.length <= 10^5\n0 <= nums[i] <= 10^5",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Single Element in a Sorted Array",
+        "problem_link": "https://leetcode.com/problems/single-element-in-a-sorted-array",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/11_Single_Element_in_a_Sorted_Array.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "xor out every element and then return",
+                "code": "from typing import List\n\n\nclass Solution:\n    def singleNonDuplicate(self, nums: List[int]) -> int:\n        xor = 0\n\n        for num in nums:\n            xor ^= num\n\n        return xor",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "o e o e o e o e o e o\n0,0,1,1,2,3,3,4,4,8,8\n\no-> odd idx\ne-> even idx\n\nif i am at right of single element then if i am at even index\nand the next adjacent number is also same then i am at right side\nof the single element then i will move to left.\nif iam at left of single element then if i am at odd index and\nthe next adjacent number is also same the i am at left side of\nthe single element then i will move to the right.",
+                "code": "from typing import List\n\n\nclass Solution:\n    def singleNonDuplicate(self, nums: List[int]) -> int:\n        st, en = 1, len(nums) - 2\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid - 1] != nums[mid] and nums[mid] != nums[mid + 1]:\n                return nums[mid]\n\n            # if odd index\n            if mid % 2 == 1:\n                # If at right half\n                if (mid + 1) % 2 == 0 and nums[mid] == nums[mid + 1]:\n                    en = mid - 1\n                # If at left half\n                else:\n                    st = mid + 1\n\n            # if even index\n            else:\n                # If at left half\n                if (mid + 1) % 2 == 1 and nums[mid] == nums[mid + 1]:\n                    st = mid + 1\n                # If at right half\n                else:\n                    en = mid - 1\n\n        if len(nums) == 1:\n            return nums[0]\n\n        if nums[0] != nums[1]:\n            return nums[0]\n\n        if nums[-1] != nums[-2]:\n            return nums[-1]",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "question": "A peak element is an element that is strictly greater than its neighbors.\n\nGiven a 0-indexed integer numsay nums, find a peak element, and return its index. If the numsay contains multiple peaks, return the index to any of the peaks.\n\nYou may imagine that nums[-1] = nums[n] = -\u221e. In other words, an element is always considered to be strictly greater than a neighbor that is outside the numsay.\n\nYou must write an algorithm that runs in O(log n) time.\n\n\nExample 1:\n\nInput: nums = [1,2,3,1]\nOutput: 2\nExplanation: 3 is a peak element and your function should return the index number 2.\nExample 2:\n\nInput: nums = [1,2,1,3,5,6,4]\nOutput: 5\nExplanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.\n\n\nConstraints:\n\n1 <= nums.length <= 1000\n-2^31 <= nums[i] <= 2^31 - 1\nnums[i] != nums[i + 1] for all valid i.",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Find Peak Element",
+        "problem_link": "https://leetcode.com/problems/find-peak-element",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/12_Find_Peak_Element.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "just check which element is greater than 2 of its neighbour in single pass",
+                "code": "from typing import List\n\n\nclass Solution:\n    def findPeakElement(self, nums: List[int]) -> int:\n        if len(nums) == 1:\n            return 0\n\n        for i in range(len(nums)):\n            if i == 0 and nums[0] > nums[1]:\n                return 0\n            elif i == len(nums) - 1 and nums[len(nums) - 1] > nums[len(nums) - 2]:\n                return len(nums) - 1\n\n            elif nums[i] > nums[i - 1] and nums[i] > nums[i + 1]:\n                return i",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "By observation its clear that\nwe are at position mid then if we\nthat any of the 2 neighbours have\nvalues higher than current mid\nthen we can say that there is a high chance\nwe will find the peak there\nwalk through an example",
+                "code": "from typing import List\n\n\nclass Solution:\n    def findPeakElement(self, nums: List[int]) -> int:\n        st, en = 1, len(nums) - 2\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] > nums[mid - 1] and nums[mid] > nums[mid + 1]:\n                return mid\n\n            # Find promising canditate in which direction we can find peak\n\n            # if Right Neighbour is promising\n            if nums[mid + 1] > nums[mid] and nums[mid + 1] > nums[mid]:\n                st = mid + 1\n\n            else:\n                # if Left Neighbour is promising\n                en = mid - 1\n\n        if len(nums) == 1:\n            return 0\n\n        if nums[0] > nums[1]:\n            return 0\n\n        if nums[-1] > nums[-2]:\n            return len(nums) - 1",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "question": "Given an array of integers arr[] that is first strictly increasing and then maybe strictly decreasing, find the bitonic point, that is the maximum element in the array.\nBitonic Point is a point before which elements are strictly increasing and after which elements are strictly decreasing.\n\nNote: It is guaranteed that the array contains exactly one bitonic point.\n\nExamples:\n\nInput: arr[] = [1, 2, 4, 5, 7, 8, 3]\nOutput: 8\nExplanation: Elements before 8 are strictly increasing [1, 2, 4, 5, 7] and elements after 8 are strictly decreasing [3].\n\nInput: arr[] = [10, 20, 30, 40, 50]\nOutput: 50\nExplanation: Elements before 50 are strictly increasing [10, 20, 30 40] and there are no elements after 50.\n\nInput: arr[] = [120, 100, 80, 20, 0]\nOutput: 120\nExplanation: There are no elements before 120 and elements after 120 are strictly decreasing [100, 80, 20, 0].\n\nConstraints:\n3 \u2264 arr.size() \u2264 10^5\n1 \u2264 arr[i] \u2264 10^6",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Find Bitonic Point",
+        "problem_link": "https://www.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/13_Find_Bitonic_Point.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "just check which element is greater than 2 of its neighbour in single pass",
+                "code": "from typing import List\n\n\nclass Solution:\n    def findPeakElement(self, nums: List[int]) -> int:\n        if len(nums) == 1:\n            return 0\n\n        for i in range(len(nums)):\n            if i == 0 and nums[0] > nums[1]:\n                return nums[0]\n            elif i == len(nums) - 1 and nums[len(nums) - 1] > nums[len(nums) - 2]:\n                return nums[len(nums) - 1]\n\n            elif nums[i] > nums[i - 1] and nums[i] > nums[i + 1]:\n                return nums[i]\n\n    def findMaximum(self, arr: list[int]):\n        return self.findPeakElement(arr)",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "Find peak element using BS",
+                "code": "from typing import List\n\n\nclass Solution:\n    def findPeakElement(self, nums: List[int]) -> int:\n        st, en = 1, len(nums) - 2\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] > nums[mid - 1] and nums[mid] > nums[mid + 1]:\n                return nums[mid]\n\n            # Find promising canditate in which direction we can find peak\n\n            # if Right Neighbour is promising\n            if nums[mid + 1] > nums[mid] and nums[mid + 1] > nums[mid]:\n                st = mid + 1\n\n            else:\n                # if Left Neighbour is promising\n                en = mid - 1\n\n        if len(nums) == 1:\n            return nums[0]\n\n        if nums[0] > nums[1]:\n            return nums[0]\n\n        if nums[-1] > nums[-2]:\n            return nums[len(nums) - 1]\n\n    def findMaximum(self, arr: list[int]):\n        return self.findPeakElement(arr)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "question": "Given a positive integer n, find the square root of n. If n is not a perfect square, then return the floor value.\n\nFloor value of any number is the greatest Integer which is less than or equal to that number\n\nExamples:\n\nInput: n = 4\nOutput: 2\nExplanation: Since, 4 is a perfect square, so its square root is 2.\n\nInput: n = 11\nOutput: 3\nExplanation: Since, 11 is not a perfect square, floor of square root of 11 is 3.\n\nInput: n = 1\nOutput: 1\n\nConstraints:\n1 \u2264 n \u2264 3*10^4",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Square root",
+        "problem_link": "https://www.geeksforgeeks.org/problems/square-root/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/14_Square_root.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Just keep checking if we square the number starting from 1 to n and we get back the input number then return the i , if we exceed the number then we exit out of the loop Also keep track of the number as we iterate",
+                "code": "class Solution:\n    def floorSqrt(self, n: int) -> int:\n        ans = 1\n        for i in range(1, n + 1):\n            if i * i == n:\n                return i\n            if i * i > n:\n                break\n            ans = i\n\n        return ans",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "start a binary search with start\nas 1 and end as number just keep\nchecking if we square the number and\nexceed then we move more towards left\nand if we are less then number we move\ntowards right increasing our search space\nif we see the square of current mid equals\nthe original number we return",
+                "code": "class Solution:\n    def floorSqrt(self, n: int) -> int:\n        st, en = 1, n + 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if mid * mid == n:\n                return mid\n\n            if mid * mid < n:\n                st = mid + 1\n                ans = mid\n            else:\n                en = mid - 1\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "question": "You are given 2 numbers n and m, the task is to find n\u221am (nth root of m). If the root is not integer then returns -1.\n\nExamples :\n\nInput: n = 2, m = 9\nOutput: 3\nExplanation: 32 = 9\n\nInput: n = 3, m = 9\nOutput: -1\nExplanation: 3rd root of 9 is not integer.\n\nInput: n = 1, m = 14\nOutput: 14\n\nConstraints:\n1 <= n <= 30\n1 <= m <= 10^9",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "N th root",
+        "problem_link": "https://practice.geeksforgeeks.org/problems/find-nth-root-of-m5843/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/15_N_th_root.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Just keep checking if number to the pow n starting from 1 to n and we get back the input number then return the i , if we exceed the number then we exit out of the loop",
+                "code": "class Solution:\n    def nthRoot(self, n: int, m: int) -> int:\n        for i in range(1, m + 1):\n            if i**n == m:\n                return i\n\n        return -1",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "start a binary search with start\nas 1 and end as number just keep\nchecking if we number to the pow n and\nexceed then we move more towards left\nand if we are less then number we move\ntowards right increasing our search space\nif we see the number to the pow n of current mid equals\nthe original number we return",
+                "code": "class Solution:\n    def nthRoot(self, n: int, m: int) -> int:\n        st, en = 1, m + 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if mid**n == m:\n                return mid\n\n            if mid**n < m:\n                st = mid + 1\n            else:\n                en = mid - 1\n\n        return -1",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "question": "Koko loves to eat bananas. There are n piles of bananas, the ith pile has piles[i] bananas. The guards have gone and will come back in h hours.\n\nKoko can decide her bananas-per-hour eating speed of k. Each hour, she chooses some pile of bananas and eats k bananas from that pile. If the pile has less than k bananas, she eats all of them instead and will not eat any more bananas during this hour.\n\nKoko likes to eat slowly but still wants to finish eating all the bananas before the guards return.\n\nReturn the minimum integer k such that she can eat all the bananas within h hours.\n\n\nExample 1:\n\nInput: piles = [3,6,7,11], h = 8\nOutput: 4\nExample 2:\n\nInput: piles = [30,11,23,4,20], h = 5\nOutput: 30\nExample 3:\n\nInput: piles = [30,11,23,4,20], h = 6\nOutput: 23\n\n\nConstraints:\n\n1 <= piles.length <= 10^4\npiles.length <= h <= 10^9\n1 <= piles[i] <= 10^9",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Koko Eating Bananas",
+        "problem_link": "https://leetcode.com/problems/koko-eating-bananas",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/16_Koko_Eating_Bananas.py",
+        "approaches": [
+            {
+                "tc": "O(max(piles)*N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "We start a loop from start index as 1 and end index as the max number of bananas in the pile,the first time we encounter a speed with which we are able to eat all the bananas within given time h we return the speed",
+                "code": "import math\nfrom typing import List\n\n\nclass Solution:\n    def timeTakenToEat(self, piles: List[int], curr_speed: int) -> int:\n        time = 0\n\n        for pile in piles:\n            time += math.ceil(pile / curr_speed)\n\n        return time\n\n    def minEatingSpeed(self, piles: List[int], h: int) -> int:\n        for i in range(1, max(piles) + 1):\n            if self.timeTakenToEat(piles, i) <= h:\n                return i\n        return -1",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(max(piles))*N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "We choose a starting min speed from 1 and max speed\nwith max bananas in the pile,with the current speed\nwe check if its possible to eat all bananas within\nthe given time,if time taken in more than h we move\nmore towards right increasing our speed otherwise\nwe move more towards the left if we can eat bannana\nwith the curr_speed with motive being to minimize\nour speed and still able to eat all bananas",
+                "code": "import math\nfrom typing import List\n\n\nclass Solution:\n    def timeTakenToEat(self, piles: List[int], curr_speed: int) -> int:\n        time = 0\n\n        for pile in piles:\n            time += math.ceil(pile / curr_speed)\n\n        return time\n\n    def minEatingSpeed(self, piles: List[int], h: int) -> int:\n        st, en = min(piles), max(piles) + 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            t = self.timeTakenToEat(piles, mid)\n\n            if t <= h:\n                ans = mid\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "question": "You are given an integer array bloomDay, an integer m and an integer k.\n\nYou want to make m bouquets. To make a bouquet, you need to use k adjacent flowers from the garden.\n\nThe garden consists of n flowers, the ith flower will bloom in the bloomDay[i] and then can be used in exactly one bouquet.\n\nReturn the minimum number of days you need to wait to be able to make m bouquets from the garden. If it is impossible to make m bouquets return -1.\n\n\nExample 1:\n\nInput: bloomDay = [1,10,3,10,2], m = 3, k = 1\nOutput: 3\nExplanation: Let us see what happened in the first three days. x means flower bloomed and _ means flower did not bloom in the garden.\nWe need 3 bouquets each should contain 1 flower.\nAfter day 1: [x, _, _, _, _]   // we can only make one bouquet.\nAfter day 2: [x, _, _, _, x]   // we can only make two bouquets.\nAfter day 3: [x, _, x, _, x]   // we can make 3 bouquets. The answer is 3.\nExample 2:\n\nInput: bloomDay = [1,10,3,10,2], m = 3, k = 2\nOutput: -1\nExplanation: We need 3 bouquets each has 2 flowers, that means we need 6 flowers. We only have 5 flowers so it is impossible to get the needed bouquets and we return -1.\nExample 3:\n\nInput: bloomDay = [7,7,7,7,12,7,7], m = 2, k = 3\nOutput: 12\nExplanation: We need 2 bouquets each should have 3 flowers.\nHere is the garden after the 7 and 12 days:\nAfter day 7: [x, x, x, x, _, x, x]\nWe can make one bouquet of the first three flowers that bloomed. We cannot make another bouquet from the last three flowers that bloomed because they are not adjacent.\nAfter day 12: [x, x, x, x, x, x, x]\nIt is obvious that we can make two bouquets in different ways.\n\n\nConstraints:\n\nbloomDay.length == n\n1 <= n <= 10^5\n1 <= bloomDay[i] <= 10^9\n1 <= m <= 10^6\n1 <= k <= n",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Minimum Number of Days to Make m Bouquets",
+        "problem_link": "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/17_Minimum_Number_of_Days_to_Make_m_Bouquets.py",
+        "approaches": [
+            {
+                "tc": "O(max(bloomDay)*N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "we start with a day range starting from 1 and ending at max of days taken to bloom from given bloomDay array.We start a linear search, the first time we see that with our current day we are able to make m bouquet with k adjacent flowers we return the current day",
+                "code": "from typing import List\n\n\nclass Solution:\n    def canMakeBouquet(self, bloomDay: List[int], currDay: int, m: int, k: int) -> bool:\n        tmp = k\n        c = 0\n\n        for i in range(len(bloomDay)):\n            if tmp == 0:\n                c += 1\n                tmp = k\n\n            if bloomDay[i] > currDay:\n                tmp = k\n\n            if bloomDay[i] <= currDay:\n                tmp -= 1\n\n        if tmp == 0:\n            c += 1\n\n        return c >= m\n\n    def minDays(self, bloomDay: List[int], m: int, k: int) -> int:\n        for i in range(1, max(bloomDay) + 1):\n            if self.canMakeBouquet(bloomDay, i, m, k):\n                return i\n        return -1",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(max(bloomDay))*N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "we start with a day range starting from\n1 and ending at max of days taken to bloom\nfrom given bloomDay array.We start a binary\nsearch, if we are able to make m bouquet with\nk adjacent flowers with the current day we move\nto the left with our motive being to minimze the\nnumber of days, otherwise we move to the right",
+                "code": "from typing import List\n\n\nclass Solution:\n    def canMakeBouquet(self, bloomDay: List[int], currDay: int, m: int, k: int) -> bool:\n        tmp = k\n        c = 0\n\n        for i in range(len(bloomDay)):\n            if tmp == 0:\n                c += 1\n                tmp = k\n\n            if bloomDay[i] > currDay:\n                tmp = k\n\n            if bloomDay[i] <= currDay:\n                tmp -= 1\n\n        if tmp == 0:\n            c += 1\n\n        return c >= m\n\n    def minDays(self, bloomDay: List[int], m: int, k: int) -> int:\n        st, en = 1, max(bloomDay) + 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if self.canMakeBouquet(bloomDay, mid, m, k):\n                ans = mid\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "question": "Given an array of integers nums and an integer threshold, we will choose a positive integer divisor, divide all the array by it, and sum the division's result. Find the smallest divisor such that the result mentioned above is less than or equal to threshold.\n\nEach result of the division is rounded to the nearest integer greater than or equal to that element. (For example: 7/3 = 3 and 10/2 = 5).\n\nThe test cases are generated so that there will be an answer.\n\n\nExample 1:\n\nInput: nums = [1,2,5,9], threshold = 6\nOutput: 5\nExplanation: We can get a sum to 17 (1+2+5+9) if the divisor is 1.\nIf the divisor is 4 we can get a sum of 7 (1+1+2+3) and if the divisor is 5 the sum will be 5 (1+1+1+2).\nExample 2:\n\nInput: nums = [44,22,33,11,1], threshold = 5\nOutput: 44\n\n\nConstraints:\n\n1 <= nums.length <= 5 * 10^4\n1 <= nums[i] <= 10^6\nnums.length <= threshold <= 10^6",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Find the Smallest Divisor Given a Threshold",
+        "problem_link": "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/18_Find_the_Smallest_Divisor_Given_a_Threshold.py",
+        "approaches": [
+            {
+                "tc": "O(max(nums)*N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "we start a linear serch with start index as 1 and end index as max number in nums first time we encounter a number which is able to sum up within the given threshold we return the number",
+                "code": "import math\nfrom typing import List\n\n\nclass Solution:\n    def sumWithinThreshold(self, nums: List[int], threshold: int, divisor: int):\n        s = 0\n\n        for num in nums:\n            s += math.ceil(num / divisor)\n\n        return s <= threshold\n\n    def smallestDivisor(self, nums: List[int], threshold: int) -> int:\n        for i in range(1, max(nums) + 1):\n            if self.sumWithinThreshold(nums, threshold, i):\n                return i\n        return -1",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(max(nums))*N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "we start a binary search with start index\nand end index as 1 and max number among the\nthe given array,if we are able to find the\nsum that divides all number within threshold\nwe go left to minimize the number otherwise\nwe go to right",
+                "code": "import math\nfrom typing import List\n\n\nclass Solution:\n    def sumWithinThreshold(self, nums: List[int], threshold: int, divisor: int):\n        s = 0\n\n        for num in nums:\n            s += math.ceil(num / divisor)\n\n        return s <= threshold\n\n    def smallestDivisor(self, nums: List[int], threshold: int) -> int:\n        st, en = 1, max(nums) + 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if self.sumWithinThreshold(nums, threshold, mid):\n                en = mid - 1\n                ans = mid\n            else:\n                st = mid + 1\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "question": "A conveyor belt has packages that must be shipped from one port to another within days days.\n\nThe ith package on the conveyor belt has a weight of weights[i]. Each day, we load the ship with packages on the conveyor belt (in the order given by weights). We may not load more weight than the maximum weight capacity of the ship.\n\nReturn the least weight capacity of the ship that will result in all the packages on the conveyor belt being shipped within days days.\n\n\nExample 1:\n\nInput: weights = [1,2,3,4,5,6,7,8,9,10], days = 5\nOutput: 15\nExplanation: A ship capacity of 15 is the minimum to ship all the packages in 5 days like this:\n1st day: 1, 2, 3, 4, 5\n2nd day: 6, 7\n3rd day: 8\n4th day: 9\n5th day: 10\n\nNote that the cargo must be shipped in the order given, so using a ship of capacity 14 and splitting the packages into parts like (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) is not allowed.\nExample 2:\n\nInput: weights = [3,2,2,4,1,4], days = 3\nOutput: 6\nExplanation: A ship capacity of 6 is the minimum to ship all the packages in 3 days like this:\n1st day: 3, 2\n2nd day: 2, 4\n3rd day: 1, 4\nExample 3:\n\nInput: weights = [1,2,3,1,1], days = 4\nOutput: 3\nExplanation:\n1st day: 1\n2nd day: 2\n3rd day: 3\n4th day: 1, 1\n\n\nConstraints:\n\n1 <= days <= weights.length <= 5 * 10^4\n1 <= weights[i] <= 500",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Capacity To Ship Packages Within D Days",
+        "problem_link": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/19_Capacity_To_Ship_Packages_Within_D_Days.py",
+        "approaches": [
+            {
+                "tc": "O(sum(weights)*N)+O(N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "we start a linear search starting with starting weight as max in given weights array and ending weight as sum of all the weights,the first time we see we are able to ship within the given days d we return the current capacity",
+                "code": "from typing import List\n\n\nclass Solution:\n    def canShip(self, weights: List[int], days: int, maxCap: int) -> bool:\n        daysTaken = 0\n        currCap = maxCap\n\n        for i in range(len(weights)):\n            if currCap == 0:\n                daysTaken += 1\n                currCap = maxCap\n\n            if weights[i] <= currCap:\n                currCap -= weights[i]\n            else:\n                daysTaken += 1\n                currCap = maxCap\n                currCap -= weights[i]\n\n        if currCap <= maxCap:\n            daysTaken += 1\n\n        return daysTaken <= days\n\n    def shipWithinDays(self, weights: List[int], days: int) -> int:\n        for currCap in range(max(weights), sum(weights) + 1):\n            if self.canShip(weights, days, currCap):\n                return currCap\n        return -1",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(log(sum(weights))*N)+O(N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "We start a binary a binary search\nwith starting weight as max in given weights array and ending\nweight as sum of all the weights,we\ncheck if we are able to ship within\nthe given time d with the current weight\nmax capacity we move to left with the motive\nto minimize capacity,otherwise we go to right",
+                "code": "from typing import List\n\n\nclass Solution:\n    def canShip(self, weights: List[int], days: int, maxCap: int) -> bool:\n        daysTaken = 0\n        currCap = maxCap\n\n        for i in range(len(weights)):\n            if currCap == 0:\n                daysTaken += 1\n                currCap = maxCap\n\n            if weights[i] <= currCap:\n                currCap -= weights[i]\n            else:\n                daysTaken += 1\n                currCap = maxCap\n                currCap -= weights[i]\n\n        if currCap <= maxCap:\n            daysTaken += 1\n\n        return daysTaken <= days\n\n    def shipWithinDays(self, weights: List[int], days: int) -> int:\n        st, en = max(weights), sum(weights) + 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if self.canShip(weights, days, mid):\n                ans = mid\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "question": "Given an array arr of positive integers sorted in a strictly increasing order, and an integer k.\n\nReturn the kth positive integer that is missing from this array.\n\n\nExample 1:\n\nInput: arr = [2,3,4,7,11], k = 5\nOutput: 9\nExplanation: The missing positive integers are [1,5,6,8,9,10,12,13,...]. The 5th missing positive integer is 9.\nExample 2:\n\nInput: arr = [1,2,3,4], k = 2\nOutput: 6\nExplanation: The missing positive integers are [5,6,7,...]. The 2nd missing positive integer is 6.\n\n\nConstraints:\n\n1 <= arr.length <= 1000\n1 <= arr[i] <= 1000\n1 <= k <= 1000\narr[i] < arr[j] for 1 <= i < j <= arr.length",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Kth Missing Positive Number",
+        "problem_link": "https://leetcode.com/problems/kth-missing-positive-number",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/20_Kth_Missing_Positive_Number.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(max(nums)+k)",
+                "sc": "O(N)",
+                "intuition": "convert the given array to a set declare 2 var count and i start a loop until count becomes k,keep checking if i is present in set or not otherwise increment count if i not present,atlast return i-1",
+                "code": "from typing import List\n\n\nclass Solution:\n    def findKthPositive(self, arr: List[int], k: int) -> int:\n        count = 0\n        i = 1\n        seen_elem = set(arr)\n\n        while count < k:\n            if i not in seen_elem:\n                count += 1\n            i += 1\n\n        return i - 1",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "One thing to note,is that since array is sorted and we are asked to find kth missing element, what we will do is find the count of the missing elemnt at every index,if at any index we see more missing element than given k we stop Formula for ith index missing count is nothing we just ask ourself how many number are there just previous of me if 6 ->then 5 numbers are before 6 (1,2,3,4,5) and then ask how an numbers are present in original array , then we can make a formula of missing count: (arr[i]-1-i),atlast we calculate how many missing are left to explore with k-curr_missing_count then we add the number(prev number just before the count exceeded k)+k-curr_missing_count",
+                "code": "from typing import List\n\n\nclass Solution:\n    def get_missing_count(self, idx: int, arr: list[int]) -> int:\n        return arr[idx] - 1 - idx\n\n    def findKthPositive(self, arr: List[int], k: int) -> int:\n        prev_idx = -1\n\n        for i in range(len(arr)):\n            if self.get_missing_count(i, arr) >= k:\n                break\n            else:\n                prev_idx = i\n\n        left_missing = k - self.get_missing_count(prev_idx, arr)\n        return arr[prev_idx] + left_missing",
+                "type": "Better"
+            },
+            {
+                "tc": "O(log(N))",
+                "sc": "O(1)",
+                "intuition": "One thing to note,is that since array is sorted and we\nare asked to find kth missing element, what we will do is\nfind the count of the missing elemnt at every index,if at\nany index we see more missing element than given k we stop\nFormula for ith index missing count is nothing we just\nask ourself how many number are there just previous of me\nif 6 ->then 5 numbers are before 6 (1,2,3,4,5) and then ask\nhow an numbers are present in original array , then we can\nmake a formula of missing count: (arr[i]-1-i),atlast we calculate\nhow many missing are left to explore with k-curr_missing_count\nthen we add the number(prev number just before the count exceeded k)+k-curr_missing_count\nDo a binary search if at any index we see we are getting missing count\nmore then we move left otherwise we move right, we are doing a lower bound\nlinear search and biasing to the left direction,since we are biasing to left\ndirection and moving the right pointer to the left , then we will calculate\nour final answer based on the right index value",
+                "code": "from typing import List\n\n\nclass Solution:\n    def get_missing_count(self, idx: int, arr: list[int]) -> int:\n        return arr[idx] - 1 - idx\n\n    def findKthPositive(self, arr: List[int], k: int) -> int:\n        st, en = 0, len(arr) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            miss_count = self.get_missing_count(mid, arr)\n\n            if miss_count < k:\n                st = mid + 1\n            else:\n                en = mid - 1\n\n        left_missing = k - self.get_missing_count(en, arr)\n        return arr[en] + left_missing",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "question": "Given an array of integers sorted in ascending order, and a target value, find the element\nin the array that has minimum difference with the target value.\n\nExample 1:\n\nInput: a[] = [2, 5, 10, 12, 15], target = 6\nOutput: 5\nExplanation: The difference between the target value '6' and '5' is the minimum.\nExample 2:\n\nInput: a[] = [2, 5, 10, 12, 15], target = 5\nOutput: 5\nExample 3:\n\nInput: a[] = [2, 5, 10, 12, 15], target = 8\nOutput: 10\nExample 4:\n\nInput: a[] = [2, 5, 10, 12, 15], target = 11\nOutput: 10\nExample 5:\n\nInput: a[] = [2, 5, 10, 12, 15], target = 20\nOutput: 15",
+        "topic": "Binary",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Find the minimum difference element in a sorted array",
+        "problem_link": "NA",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/21_Find_the_minimum_difference_element_in_a_sorted_array.py",
+        "approaches": [
+            {
+                "tc": "O(log(N))+O(log(N))",
+                "sc": "O(1)",
+                "intuition": "Find the ceil and floor of the given target as the,\nmin diff will always be with them,also check if\ntarget is less than first element in array return the\nfirst element or if target is greater than last element\nin array return the last element",
+                "code": "class Solution:\n    def floor(self, x: int, arr: list[int]):\n        st, en = 0, len(arr) - 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if arr[mid] <= x:\n                ans = arr[mid]\n                st = mid + 1\n            elif arr[mid] > x:\n                en = mid - 1\n\n        return ans\n\n    def ceil(self, x: int, arr: list[int]):\n        st, en = 0, len(arr) - 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if arr[mid] >= x:\n                ans = arr[mid]\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return ans\n\n    def find_min_diff(self, arr: list[int], target: int) -> int:\n        if target < arr[0]:\n            return arr[0]\n\n        if target > arr[-1]:\n            return arr[-1]\n\n        ceil = self.ceil(target, arr)\n        floor = self.floor(target, arr)\n\n        diff_ceil = abs(ceil - target)\n        diff_floor = abs(floor - target)\n\n        if diff_ceil < diff_floor:\n            return ceil\n        return floor\n\n\nif __name__ == \"__main__\":\n    # Test cases\n    solution = Solution()\n    arr1 = [2, 5, 10, 12, 15]\n    target1 = 6\n    expected1 = 5\n    assert (\n        solution.find_min_diff(arr1, target1) == expected1\n    ), f\"Test case 1 failed: expected {expected1}, got {solution.find_min_diff(arr1, target1)}\"\n\n    arr2 = [2, 5, 10, 12, 15]\n    target2 = 5\n    expected2 = 5\n    assert (\n        solution.find_min_diff(arr2, target2) == expected2\n    ), f\"Test case 2 failed: expected {expected2}, got {solution.find_min_diff(arr2, target2)}\"\n\n    arr3 = [2, 5, 10, 12, 15]\n    target3 = 8\n    expected3 = 10\n    assert (\n        solution.find_min_diff(arr3, target3) == expected3\n    ), f\"Test case 3 failed: expected {expected3}, got {solution.find_min_diff(arr3, target3)}\"\n\n    arr4 = [2, 5, 10, 12, 15]\n    target4 = 11\n    expected4 = 10\n    assert (\n        solution.find_min_diff(arr4, target4) == expected4\n    ), f\"Test case 4 failed: expected {expected4}, got {solution.find_min_diff(arr4, target4)}\"\n\n    arr5 = [2, 5, 10, 12, 15]\n    target5 = 20\n    expected5 = 15\n    assert (\n        solution.find_min_diff(arr5, target5) == expected5\n    ), f\"Test case 5 failed: expected {expected5}, got {solution.find_min_diff(arr5, target5)}\"\n\n    print(\"All test cases passed!\")",
                 "type": "Optimal"
             }
         ]
