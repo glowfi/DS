@@ -142,7 +142,7 @@
     {
         "id": 1,
         "question": "Given an array arr[]. The task is to find the largest element and return it.\n\nExamples:\n\nInput: arr[] = [1, 8, 7, 56, 90]\nOutput: 90\nExplanation: The largest element of the given array is 90.\n\nInput: arr[] = [5, 5, 5, 5]\nOutput: 5\nExplanation: The largest element of the given array is 5.\n\nInput: arr[] = [10]\nOutput: 10\nExplanation: There is only one element which is the largest.\n\nConstraints:\n1 <= arr.size()<= 10^6\n0 <= arr[i] <= 10^6",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -169,7 +169,7 @@
     {
         "id": 2,
         "question": "Given an array of positive integers arr[], return the second largest element from the array. If the second largest element doesn't exist then return -1.\n\nNote: The second largest element should not be equal to the largest element.\n\nExamples:\n\nInput: arr[] = [12, 35, 1, 10, 34, 1]\nOutput: 34\nExplanation: The largest element of the array is 35 and the second largest element is 34.\n\nInput: arr[] = [10, 5, 10]\nOutput: 5\nExplanation: The largest element of the array is 10 and the second largest element is 5.\n\nInput: arr[] = [10, 10, 10]\nOutput: -1\nExplanation: The largest element of the array is 10 and the second largest element does not exist.\n\nConstraints:\n2 \u2264 arr.size() \u2264 10^5\n1 \u2264 arr[i] \u2264 10^5",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -196,7 +196,7 @@
     {
         "id": 3,
         "question": "Given an array of positive integers nums, return the maximum possible sum of an strictly increasing subarray in nums.\n\nA subarray is defined as a contiguous sequence of numbers in an array.\n\n\nExample 1:\n\nInput: nums = [10,20,30,5,10,50]\nOutput: 65\nExplanation: [5,10,50] is the ascending subarray with the maximum sum of 65.\nExample 2:\n\nInput: nums = [10,20,30,40,50]\nOutput: 150\nExplanation: [10,20,30,40,50] is the ascending subarray with the maximum sum of 150.\nExample 3:\n\nInput: nums = [12,17,15,13,10,11,12]\nOutput: 33\nExplanation: [10,11,12] is the ascending subarray with the maximum sum of 33.\n\n\nConstraints:\n\n1 <= nums.length <= 100\n1 <= nums[i] <= 100",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -216,7 +216,7 @@
     {
         "id": 4,
         "question": "Given an array arr[], check whether it is sorted in non-decreasing order. Return true if it is sorted otherwise false.\n\nExamples:\n\nInput: arr[] = [10, 20, 30, 40, 50]\nOutput: true\nExplanation: The given array is sorted.\n\nInput: arr[] = [90, 80, 100, 70, 40, 30]\nOutput: false\nExplanation: The given array is not sorted.\n\nConstraints:\n1 \u2264 arr.size \u2264 10^6\n- 10^9 \u2264 arr[i] \u2264 10^9",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -236,7 +236,7 @@
     {
         "id": 5,
         "question": "Given an array nums, return true if the array was originally sorted in non-decreasing order,\nthen rotated some number of positions (including zero). Otherwise, return false.\n\nThere may be duplicates in the original array.\n\nNote: An array A rotated by x positions results in an array B of the same length such that B[i] == A[(i+x) % A.length] for every valid index i.\n\n\nExample 1:\n\nInput: nums = [3,4,5,1,2]\nOutput: true\nExplanation: [1,2,3,4,5] is the original sorted array.\nYou can rotate the array by x = 3 positions to begin on the element of value 3: [3,4,5,1,2].\nExample 2:\n\nInput: nums = [2,1,3,4]\nOutput: false\nExplanation: There is no sorted array once rotated that can make nums.\nExample 3:\n\nInput: nums = [1,2,3]\nOutput: true\nExplanation: [1,2,3] is the original sorted array.\nYou can rotate the array by x = 0 positions (i.e. no rotation) to make nums.\n\nConstraints:\n\n1 <= nums.length <= 100\n1 <= nums[i] <= 100",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -263,7 +263,7 @@
     {
         "id": 6,
         "question": "Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once.\nThe relative order of the elements should be kept the same. Then return the number of unique elements in nums.\n\nConsider the number of unique elements of nums to be k, to get accepted, you need to do the following things:\n\nChange the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. The remaining elements of nums are not important as well as the size of nums.\nReturn k.\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i < k; i++) {\nassert nums[i] == expectedNums[i];\n}\nIf all assertions pass, then your solution will be accepted.\n\n\nExample 1:\n\nInput: nums = [1,1,2]\nOutput: 2, nums = [1,2,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\nExample 2:\n\nInput: nums = [0,0,1,1,1,2,2,3,3,4]\nOutput: 5, nums = [0,1,2,3,4,_,_,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n\nConstraints:\n\n1 <= nums.length <= 3 * 10^4\n-100 <= nums[i] <= 100\nnums is sorted in non-decreasing order.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -290,7 +290,7 @@
     {
         "id": 7,
         "question": "You are given an integer array arr of size n. You need to implement two functions to perform rotations on this array:\n\nLeft Rotate: Implement a function left_rotate(arr: List[int]) -> List[int] that rotates the array to the left by one position. The first\nelement of the array should move to the end.\n\nRight Rotate: Implement a function right_rotate(arr: List[int]) -> List[int] that rotates the array to the right by one position.\nThe last element of the array should move to the front.\n\nLeft Rotate Test Cases:\n\nExample 1:\n\nInput:\narr = [1, 2, 3, 4, 5]\n\nOutput:\n[2, 3, 4, 5, 1]\n\nExample 2:\n\nInput:\narr = [10, 20, 30, 40, 50]\n\nOutput:\n[20, 30, 40, 50, 10]\n\n--------------------------------\n\nRight Rotate Test Cases:\n\nExample 1:\n\nInput:\narr = [1, 2, 3, 4, 5]\n\nOutput:\n[5, 1, 2, 3, 4]\n\nExample 2:\n\nInput:\narr = [10, 20, 30, 40, 50]\n\nOutput:\n[50, 10, 20, 30, 40]\n\nConstraints:\n\nThe input array will contain at least one integer.\nThe array can contain both positive and negative integers.\n\n\nIntuition",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -310,7 +310,7 @@
     {
         "id": 8,
         "question": "Given an array arr[]. The task is to rotate the array by d elements where d \u2264 arr.size.\n\nExamples:\n\nInput: arr[] = [-1, -2, -3, 4, 5, 6, 7], d = 2\nOutput: [-3, 4, 5, 6, 7, -1, -2]\nExplanation:\nRotate by 1: [-2, -3, 4, 5, 6, 7, -1]\nRotate by 2: [-3, 4, 5, 6, 7, -1, -2]\n\nInput: arr[] = [1, 3, 4, 2], d = 3\nOutput: [2, 1, 3, 4]\nExplanation: After rotating the array three times, the first three elements shift one by one to the right.\n\nExpected Time Complexity: O(n)\nExpected Auxiliary Space: O(1)\n\nConstraints:\n1 \u2264 arr.size \u2264 10^6\n-10^9 \u2264 arr[i] \u2264 10^9\n0 \u2264 d \u2264 arr.size",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -337,7 +337,7 @@
     {
         "id": 9,
         "question": "Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.\n\n\nExample 1:\n\nInput: nums = [1,2,3,4,5,6,7], k = 3\nOutput: [5,6,7,1,2,3,4]\nExplanation:\nrotate 1 steps to the right: [7,1,2,3,4,5,6]\nrotate 2 steps to the right: [6,7,1,2,3,4,5]\nrotate 3 steps to the right: [5,6,7,1,2,3,4]\nExample 2:\n\nInput: nums = [-1,-100,3,99], k = 2\nOutput: [3,99,-1,-100]\nExplanation:\nrotate 1 steps to the right: [99,-1,-100,3]\nrotate 2 steps to the right: [3,99,-1,-100]\n\n\nConstraints:\n\n1 <= nums.length <= 10^5\n-2^31 <= nums[i] <= 2^31 - 1\n0 <= k <= 10^5",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -364,7 +364,7 @@
     {
         "id": 10,
         "question": "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.\n\nNote that you must do this in-place without making a copy of the array.\n\n\nExample 1:\n\nInput: nums = [0,1,0,3,12]\nOutput: [1,3,12,0,0]\nExample 2:\n\nInput: nums = [0]\nOutput: [0]\n\n\nConstraints:\n\n1 <= nums.length <= 10^4\n-^231 <= nums[i] <= 2^31 - 1",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -391,7 +391,7 @@
     {
         "id": 11,
         "question": "Given an array, arr[] sorted in ascending order and an integer k. Return true if k is present in the array, otherwise, false.\n\nExamples:\n\nInput: arr[] = [1, 2, 3, 4, 6], k = 6\nOutput: true\nExplanation: Since, 6 is present in the array at index 4 (0-based indexing), output is true.\n\nInput: arr[] = [1, 2, 4, 5, 6], k = 3\nOutput: false\nExplanation: Since, 3 is not present in the array, output is false.\n\nInput: arr[] = [2, 3, 5, 6], k = 1\nOutput: false\nConstraints:\n1 <= arr.size() <= 10^6\n1 <= k <= 10^6\n1 <= arr[i] <= 10^6",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -411,7 +411,7 @@
     {
         "id": 12,
         "question": "Given two sorted arrays a[] and b[], where each array may contain duplicate elements , the task is to return the elements in the union of the two arrays in sorted order.\n\nUnion of two arrays can be defined as the set containing distinct common elements that are present in either of the arrays.\nExamples:\n\nInput: a[] = [1, 2, 3, 4, 5], b[] = [1, 2, 3, 6, 7]\nOutput: 1 2 3 4 5 6 7\nExplanation: Distinct elements including both the arrays are: 1 2 3 4 5 6 7.\n\nInput: a[] = [2, 2, 3, 4, 5], b[] = [1, 1, 2, 3, 4]\nOutput: 1 2 3 4 5\nExplanation: Distinct elements including both the arrays are: 1 2 3 4 5.\n\nInput: a[] = [1, 1, 1, 1, 1], b[] = [2, 2, 2, 2, 2]\nOutput: 1 2\nExplanation: Distinct elements including both the arrays are: 1 2.\n\nConstraints:\n1  <=  a.size(), b.size()  <=  10^5\n-10^9  <=  a[i] , b[i]  <=  10^9",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -438,7 +438,7 @@
     {
         "id": 13,
         "question": "Given two sorted arrays arr1[] and arr2[]. Your task is to return the intersection of both arrays.\n\nIntersection of two arrays is said to be elements that are common in both arrays. The intersection should not count duplicate elements.\n\nNote: If there is no intersection then return an empty array.\n\nExamples:\n\nInput: arr1[] = [1, 2, 3, 4], arr2[] = [2, 4, 6, 7, 8]\nOutput: [2, 4]\nExplanation: 2 and 4 are only common elements in both the arrays.\n\nInput: arr1[] = [1, 2, 2, 3, 4], arr2[] = [2, 2, 4, 6, 7, 8]\nOutput: [2, 4]\nExplanation: 2 and 4 are the only common elements.\n\nInput: arr1[] = [1, 2], arr2[] = [3, 4]\nOutput: []\nExplanation: No common elements.\n\nExpected Time Complexity: O(n + m)\nExpected Auxiliary Space: O(min(n,m))\n\nConstraints:\n1 <= arr1.size(),arr2.size() <= 10^5\n1 <= arr1[i], arr2[i] <= 10^6",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -465,7 +465,7 @@
     {
         "id": 14,
         "question": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\n\nExample 1:\n\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\nExample 2:\n\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\nExample 3:\n\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n\n\nConstraints:\n\n2 <= nums.length <= 10^4\n-10^9 <= nums[i] <= 10^9\n-10^9 <= target <= 10^9\nOnly one valid answer exists.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -492,7 +492,7 @@
     {
         "id": 15,
         "question": "Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find\ntwo numbers such that they add up to a specific target number. Let these two numbers\nbe numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.\n\nReturn the indices of the two numbers, index1 and index2, added by one as an integer array [index1, index2] of length 2.\n\nThe tests are generated such that there is exactly one solution. You may not use the same element twice.\n\nYour solution must use only constant extra space.\n\n\nExample 1:\n\nInput: numbers = [2,7,11,15], target = 9\nOutput: [1,2]\nExplanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].\nExample 2:\n\nInput: numbers = [2,3,4], target = 6\nOutput: [1,3]\nExplanation: The sum of 2 and 4 is 6. Therefore index1 = 1, index2 = 3. We return [1, 3].\nExample 3:\n\nInput: numbers = [-1,0], target = -1\nOutput: [1,2]\nExplanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].\n\n\nConstraints:\n\n2 <= numbers.length <= 3 * 104\n-1000 <= numbers[i] <= 1000\nnumbers is sorted in non-decreasing order.\n-1000 <= target <= 1000\nThe tests are generated such that there is exactly one solution.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -519,7 +519,7 @@
     {
         "id": 16,
         "question": "Given an integer array nums, return all the\ntriplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.\n\n\nExample 1:\n\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation:\nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\nExample 2:\n\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\nExample 3:\n\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\n\nConstraints:\n\n3 <= nums.length <= 3000\n-10^5 <= nums[i] <= 10^5",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -553,7 +553,7 @@
     {
         "id": 17,
         "question": "Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:\n\n0 <= a, b, c, d < n\na, b, c, and d are distinct.\nnums[a] + nums[b] + nums[c] + nums[d] == target\nYou may return the answer in any order.\n\n\nExample 1:\n\nInput: nums = [1,0,-1,0,-2,2], target = 0\nOutput: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]\nExample 2:\n\nInput: nums = [2,2,2,2,2], target = 8\nOutput: [[2,2,2,2]]\n\n\nConstraints:\n\n1 <= nums.length <= 200\n-10^9 <= nums[i] <= 10^9\n-10^9 <= target <= 10^9",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -587,7 +587,7 @@
     {
         "id": 18,
         "question": "Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.\n\nExample 1:\n\nInput: nums = [3,0,1]\n\nOutput: 2\n\nExplanation:\n\nn = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.\n\nExample 2:\n\nInput: nums = [0,1]\n\nOutput: 2\n\nExplanation:\n\nn = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.\n\nExample 3:\n\nInput: nums = [9,6,4,2,3,5,7,0,1]\n\nOutput: 8\n\nExplanation:\n\nn = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.\n\n\nConstraints:\n\nn == nums.length\n1 <= n <= 10^4\n0 <= nums[i] <= n\nAll the numbers of nums are unique.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -614,7 +614,7 @@
     {
         "id": 19,
         "question": "Given an array nums of n integers where nums[i] is in the range [1, n], return an\narray of all the integers in the range [1, n] that do not appear in nums.\n\n\nExample 1:\n\nInput: nums = [4,3,2,7,8,2,3,1]\nOutput: [5,6]\nExample 2:\n\nInput: nums = [1,1]\nOutput: [2]\n\n\nConstraints:\n\nn == nums.length\n1 <= n <= 10^5\n1 <= nums[i] <= n\n\n\nFollow up: Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -641,7 +641,7 @@
     {
         "id": 20,
         "question": "Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.\n\nThere is only one repeated number in nums, return this repeated number.\n\nYou must solve the problem without modifying the array nums and using only constant extra space.\n\n\nExample 1:\n\nInput: nums = [1,3,4,2,2]\nOutput: 2\nExample 2:\n\nInput: nums = [3,1,3,4,2]\nOutput: 3\nExample 3:\n\nInput: nums = [3,3,3,3,3]\nOutput: 3\n\n\nConstraints:\n\n1 <= n <= 10^5\nnums.length == n + 1\n1 <= nums[i] <= n\nAll the integers in nums appear only once except for precisely one integer which appears two or more times.\n\n\nFollow up:\n\nHow can we prove that at least one duplicate number must exist in nums?\nCan you solve the problem in linear runtime complexity?",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -668,7 +668,7 @@
     {
         "id": 21,
         "question": "Given an integer array nums of length n where all the integers of nums are in the range [1, n] and each integer\nappears at most twice, return an array of all the integers that appears twice.\n\nYou must write an algorithm that runs in O(n) time and uses only constant auxiliary space, excluding the space needed to store the output\n\n\nExample 1:\n\nInput: nums = [4,3,2,7,8,2,3,1]\nOutput: [2,3]\nExample 2:\n\nInput: nums = [1,1,2]\nOutput: [1]\nExample 3:\n\nInput: nums = [1]\nOutput: []\n\n\nConstraints:\n\nn == nums.length\n1 <= n <= 10^5\n1 <= nums[i] <= n\nEach element in nums appears once or twice.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -695,7 +695,7 @@
     {
         "id": 22,
         "question": "You have a set of integers s, which originally contains all the numbers from 1 to n. Unfortunately, due to some error,\none of the numbers in s got duplicated to another number in the set, which results in repetition of one number and loss of another number.\n\nYou are given an integer array nums representing the data status of this set after the error.\n\nFind the number that occurs twice and the number that is missing and return them in the form of an array.\n\n\nExample 1:\n\nInput: nums = [1,2,2,4]\nOutput: [2,3]\nExample 2:\n\nInput: nums = [1,1]\nOutput: [1,2]\n\n\nConstraints:\n\n2 <= nums.length <= 10^4\n1 <= nums[i] <= 10^4",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -722,7 +722,7 @@
     {
         "id": 23,
         "question": "Given an unsorted integer array nums. Return the smallest positive integer that is not present in nums.\n\nYou must implement an algorithm that runs in O(n) time and uses O(1) auxiliary space.\n\n\nExample 1:\n\nInput: nums = [1,2,0]\nOutput: 3\nExplanation: The numbers in the range [1,2] are all in the array.\nExample 2:\n\nInput: nums = [3,4,-1,1]\nOutput: 2\nExplanation: 1 is in the array but 2 is missing.\nExample 3:\n\nInput: nums = [7,8,9,11,12]\nOutput: 1\nExplanation: The smallest positive integer 1 is missing.\n\n\nConstraints:\n\n1 <= nums.length <= 10^5\n-2^31 <= nums[i] <= 2^31 - 1",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Hard",
         "difficulty_num": 3,
@@ -756,7 +756,7 @@
     {
         "id": 24,
         "question": "You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once.\n\nReturn the single element that appears only once.\n\nYour solution must run in O(log n) time and O(1) space.\n\n\nExample 1:\n\nInput: nums = [1,1,2,3,3,4,4,8,8]\nOutput: 2\nExample 2:\n\nInput: nums = [3,3,7,7,10,11,11]\nOutput: 10\n\n\nConstraints:\n\n1 <= nums.length <= 10^5\n0 <= nums[i] <= 10^5",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -790,7 +790,7 @@
     {
         "id": 25,
         "question": "Given a binary array nums, return the maximum number of consecutive 1's in the array.\n\n\nExample 1:\n\nInput: nums = [1,1,0,1,1,1]\nOutput: 3\nExplanation: The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.\nExample 2:\n\nInput: nums = [1,0,1,1,0,1]\nOutput: 2\n\n\nConstraints:\n\n1 <= nums.length <= 10^5\nnums[i] is either 0 or 1.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -810,7 +810,7 @@
     {
         "id": 26,
         "question": "Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.\n\nWe will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.\n\nYou must solve this problem without using the library's sort function.\n\n\nExample 1:\n\nInput: nums = [2,0,2,1,1,0]\nOutput: [0,0,1,1,2,2]\nExample 2:\n\nInput: nums = [2,0,1]\nOutput: [0,1,2]\n\n\nConstraints:\n\nn == nums.length\n1 <= n <= 300\nnums[i] is either 0, 1, or 2.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -844,7 +844,7 @@
     {
         "id": 27,
         "question": "You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.\n\nYou should return the array of nums such that the the array follows the given conditions:\n\nEvery consecutive pair of integers have opposite signs.\nFor all integers with the same sign, the order in which they were present in nums is preserved.\nThe rearranged array begins with a positive integer.\nReturn the modified array after rearranging the elements to satisfy the aforementioned conditions.\n\n\nExample 1:\n\nInput: nums = [3,1,-2,-5,2,-4]\nOutput: [3,-2,1,-5,2,-4]\nExplanation:\nThe positive integers in nums are [3,1,2]. The negative integers are [-2,-5,-4].\nThe only possible way to rearrange them such that they satisfy all conditions is [3,-2,1,-5,2,-4].\nOther ways such as [1,-2,2,-5,3,-4], [3,1,2,-2,-5,-4], [-2,3,-5,1,-4,2] are incorrect because they do not satisfy one or more conditions.\nExample 2:\n\nInput: nums = [-1,1]\nOutput: [1,-1]\nExplanation:\n1 is the only positive integer and -1 the only negative integer in nums.\nSo nums is rearranged to [1,-1].\n\n\nConstraints:\n\n2 <= nums.length <= 2 * 10^5\nnums.length is even\n1 <= |nums[i]| <= 10^5\nnums consists of equal number of positive and negative integers.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -871,7 +871,7 @@
     {
         "id": 28,
         "question": "Given an unsorted array arr containing both positive and negative numbers. Your task is to rearrange the array and convert it\ninto an array of alternate positive and negative numbers without changing the relative order.\n\nNote:\n- Resulting array should start with a positive integer (0 will also be considered as a positive integer).\n- If any of the positive or negative integers are exhausted, then add the remaining integers in the answer\nas it is by maintaining the relative order.\n- The array may or may not have the equal number of positive and negative integers.\n\nExamples:\n\nInput: arr[] = [9, 4, -2, -1, 5, 0, -5, -3, 2]\nOutput: [9, -2, 4, -1, 5, -5, 0, -3, 2]\nExplanation: The positive numbers are [9, 4, 5, 0, 2] and the negative integers are [-2, -1, -5, -3]. Since, we need to start with the positive integer first and then negative integer and so on (by maintaining the relative order as well), hence we will take 9 from the positive set of elements and then -2 after that 4 and then -1 and so on.\n\nInput: arr[] = [-5, -2, 5, 2, 4, 7, 1, 8, 0, -8]\nOutput: [5, -5, 2, -2, 4, -8, 7, 1, 8, 0]\nExplanation : The positive numbers are [5, 2, 4, 7, 1, 8, 0] and the negative integers are [-5,-2,-8]. According to the given conditions we will start from the positive integer 5 and then -5 and so on. After reaching -8 there are no negative elements left, so according to the given rule, we will add the remaining elements (in this case positive elements are remaining) as it in by maintaining the relative order.\n\nInput: arr[] = [9, 5, -2, -1, 5, 0, -5, -3, 2]\nOutput: [9, -2, 5, -1, 5, -5, 0, -3, 2]\nExplanation: The positive numbers are [9, 5, 5, 0, 2] and the negative integers are [-2, -1, -5, -3]. Since, we need to start with the positive integer first and then negative integer and so on (by maintaining the relative order as well), hence we will take 9 from the positive set of elements and then -2 after that 5 and then -1 and so on.\n\nConstraints:\n1 \u2264 arr.size() \u2264 106\n-106 \u2264 arr[i] \u2264 106",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -898,7 +898,7 @@
     {
         "id": 29,
         "question": "You are given an array prices where prices[i] is the price of a given stock on the ith day.\n\nYou want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.\n\nReturn the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.\n\n\nExample 1:\n\nInput: prices = [7,1,5,3,6,4]\nOutput: 5\nExplanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.\nNote that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.\nExample 2:\n\nInput: prices = [7,6,4,3,1]\nOutput: 0\nExplanation: In this case, no transactions are done and the max profit = 0.\n\n\nConstraints:\n\n1 <= prices.length <= 10^5\n0 <= prices[i] <= 10^4",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -918,7 +918,7 @@
     {
         "id": 30,
         "question": "You are given an array arr of positive integers. Your task is to find all the leaders\nin the array. An element is considered a leader if it is greater than or equal\nto all elements to its right. The rightmost element is always a leader.\n\nExamples:\n\nInput: arr = [16, 17, 4, 3, 5, 2]\nOutput: [17, 5, 2]\nExplanation: Note that there is nothing greater on the right side of 17, 5 and, 2.\n\nInput: arr = [10, 4, 2, 4, 1]\nOutput: [10, 4, 4, 1]\nExplanation: Note that both of the 4s are in output, as to be a leader an equal element is also allowed on the right. side\n\nInput: arr = [5, 10, 20, 40]\nOutput: [40]\nExplanation: When an array is sorted in increasing order, only the rightmost element is leader.\n\nInput: arr = [30, 10, 10, 5]\nOutput: [30, 10, 10, 5]\nExplanation: When an array is sorted in non-increasing order, all elements are leaders.\n\nConstraints:\n1 <= arr.size() <= 106\n0 <= arr[i] <= 106",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -938,7 +938,7 @@
     {
         "id": 31,
         "question": "You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).\n\nYou have to rotate the image in-place, which means you have to modify the\ninput 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.\n\n\nExample 1:\n\nInput: matrix = [[1,2,3],[4,5,6],[7,8,9]]\nOutput: [[7,4,1],[8,5,2],[9,6,3]]\nExample 2:\n\n\nInput: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]\nOutput: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -958,7 +958,7 @@
     {
         "id": 32,
         "question": "Given an m x n matrix, return all elements of the matrix in spiral order.\n\nExample 1:\n\n\nInput: matrix = [[1,2,3],[4,5,6],[7,8,9]]\nOutput: [1,2,3,6,9,8,7,4,5]\nExample 2:\n\nInput: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]\nOutput: [1,2,3,4,8,12,11,10,9,5,6,7]",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -978,7 +978,7 @@
     {
         "id": 33,
         "question": "Given an array nums of size n, return the majority element.\n\nThe majority element is the element that appears more than \u230an / 2\u230b times. You may assume that the\nmajority element always exists in the array.\n\n\nExample 1:\n\nInput: nums = [3,2,3]\nOutput: 3\nExample 2:\n\nInput: nums = [2,2,1,1,1,2,2]\nOutput: 2\n\n\nConstraints:\n\nn == nums.length\n1 <= n <= 5 * 10^4\n-10^9 <= nums[i] <= 10^9",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -1012,7 +1012,7 @@
     {
         "id": 34,
         "question": "Given an integer array of size n, find all elements that appear more than \u230a n/3 \u230b times.\n\n\nExample 1:\n\nInput: nums = [3,2,3]\nOutput: [3]\nExample 2:\n\nInput: nums = [1]\nOutput: [1]\nExample 3:\n\nInput: nums = [1,2]\nOutput: [1,2]\n\n\nConstraints:\n\n1 <= nums.length <= 5 * 10^4\n-10^9 <= nums[i] <= 10^9",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1046,7 +1046,7 @@
     {
         "id": 35,
         "question": "Given an integer numRows, return the first numRows of Pascal's triangle.\n\nIn Pascal's triangle, each number is the sum of the two numbers directly above it as shown:\n\n\nExample 1:\n\nInput: numRows = 5\nOutput: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]\nExample 2:\n\nInput: numRows = 1\nOutput: [[1]]\n\n\nConstraints:\n\n1 <= numRows <= 30",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -1073,7 +1073,7 @@
     {
         "id": 36,
         "question": "Given an array arr containing both positive and negative integers, the task is to compute the length of the largest subarray that has a sum of 0.\n\nExamples:\n\nInput: arr[] = [15, -2, 2, -8, 1, 7, 10, 23]\nOutput: 5\nExplanation: The largest subarray with a sum of 0 is [-2, 2, -8, 1, 7].\n\nInput: arr[] = [2, 10, 4]\nOutput: 0\nExplanation: There is no subarray with a sum of 0.\n\nInput: arr[] = [1, 0, -4, 3, 1, 0]\nOutput: 5\nExplanation: The subarray is [0, -4, 3, 1, 0].\n\nConstraints:\n1 \u2264 arr.size() \u2264 10^6\n\u221210^3 \u2264 arr[i] \u2264 10^3, for each valid i",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1100,7 +1100,7 @@
     {
         "id": 37,
         "question": "Given an array arr[] containing integers and an integer k, your task is to find the\nlength of the longest subarray where the sum of its elements is equal to the given value k. If there is no subarray with sum equal to k, return 0.\n\nExamples:\n\nInput: arr[] = [10, 5, 2, 7, 1, -10], k = 15\nOutput: 6\nExplanation: Subarrays with sum = 15 are [5, 2, 7, 1], [10, 5] and [10, 5, 2, 7, 1, -10]. The length of the longest subarray with a sum of 15 is 6.\n\nInput: arr[] = [-5, 8, -14, 2, 4, 12], k = -5\nOutput: 5\nExplanation: Only subarray with sum = -5 is [-5, 8, -14, 2, 4] of length 5.\n\nInput: arr[] = [10, -10, 20, 30], k = 5\nOutput: 0\nExplanation: No subarray with sum = 5 is present in arr[].\n\nConstraints:\n1 \u2264 arr.size() \u2264 10^5\n-10^4 \u2264 arr[i] \u2264 10^4\n-10^9 \u2264 k \u2264 10^9",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1127,7 +1127,7 @@
     {
         "id": 38,
         "question": "Given an array arr[] and a positive integer k, find the length of the longest subarray with the sum of the elements divisible by k.\nNote: If there is no subarray with sum divisible by k, then return 0.\n\nExamples :\n\nInput: arr[] = [2, 7, 6, 1, 4, 5], k = 3\nOutput: 4\nExplanation: The subarray [7, 6, 1, 4] has sum = 18, which is divisible by 3.\n\nInput: arr[] = [-2, 2, -5, 12, -11, -1, 7], k = 3\nOutput: 5\nExplanation: The subarray [2, -5, 12, -11, -1] has sum = -3, which is divisible by 3.\n\nInput: arr[] = [1, 2, -2], k = 2\nOutput: 2\nExplanation: The subarray is [2, -2] has sum = 0, which is divisible by 2.\n\nConstraints:\n1 <= arr.size() <= 10^6\n1 <= k <= 10^6\n-10^6 <= arr[i] <= 10^6",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1154,7 +1154,7 @@
     {
         "id": 39,
         "question": "Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.\n\nA subarray is a contiguous non-empty sequence of elements within an array.\n\n\nExample 1:\n\nInput: nums = [1,1,1], k = 2\nOutput: 2\nExample 2:\n\nInput: nums = [1,2,3], k = 3\nOutput: 2\n\n\nConstraints:\n\n1 <= nums.length <= 2 * 10^4\n-1000 <= nums[i] <= 1000\n-10^7 <= k <= 10^7",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1181,7 +1181,7 @@
     {
         "id": 40,
         "question": "Given an integer array nums and an integer k, return the number of non-empty subarrays that have a sum divisible by k.\n\nA subarray is a contiguous part of an array.\n\n\nExample 1:\n\nInput: nums = [4,5,0,-2,-3,1], k = 5\nOutput: 7\nExplanation: There are 7 subarrays with a sum divisible by k = 5:\n[4, 5, 0, -2, -3, 1], [5], [5, 0], [5, 0, -2, -3], [0], [0, -2, -3], [-2, -3]\nExample 2:\n\nInput: nums = [5], k = 9\nOutput: 0\n\n\nConstraints:\n\n1 <= nums.length <= 3 * 10^4\n-10^4 <= nums[i] <= 10^4\n2 <= k <= 10^4",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1208,7 +1208,7 @@
     {
         "id": 41,
         "question": "Given an array of integers arr[] and a number k, count the number of subarrays having XOR of their elements as k.\n\nExamples:\n\nInput: arr[] = [4, 2, 2, 6, 4], k = 6\nOutput: 4\nExplanation: The subarrays having XOR of their elements as 6 are [4, 2], [4, 2, 2, 6, 4], [2, 2, 6], and [6]. Hence, the answer is 4.\n\nInput: arr[] = [5, 6, 7, 8, 9], k = 5\nOutput: 2\nExplanation: The subarrays having XOR of their elements as 5 are [5] and [5, 6, 7, 8, 9]. Hence, the answer is 2.\n\nInput: arr[] = [1, 1, 1, 1], k = 0\nOutput: 4\nExplanation: The subarrays are [1, 1], [1, 1], [1, 1] and [1, 1, 1, 1].\n\nConstraints:\n\n1 \u2264 arr.size() \u2264 10^5\n0 \u2264 arr[i] \u226410^5\n0 \u2264 k \u2264 10^5",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1235,7 +1235,7 @@
     {
         "id": 42,
         "question": "Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.\n\nYou must write an algorithm that runs in O(n) time.\n\n\nExample 1:\n\nInput: nums = [100,4,200,1,3,2]\nOutput: 4\nExplanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.\nExample 2:\n\nInput: nums = [0,3,7,2,5,8,4,6,0,1]\nOutput: 9\nExample 3:\n\nInput: nums = [1,0,1,2]\nOutput: 3\n\n\nConstraints:\n\n0 <= nums.length <= 10^5\n-10^9 <= nums[i] <= 10^9",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1262,7 +1262,7 @@
     {
         "id": 43,
         "question": "Given an integer array nums, find the subarray with the largest sum, and return its sum.\n\n\nExample 1:\n\nInput: nums = [-2,1,-3,4,-1,2,1,-5,4]\nOutput: 6\nExplanation: The subarray [4,-1,2,1] has the largest sum 6.\nExample 2:\n\nInput: nums = [1]\nOutput: 1\nExplanation: The subarray [1] has the largest sum 1.\nExample 3:\n\nInput: nums = [5,4,-1,7,8]\nOutput: 23\nExplanation: The subarray [5,4,-1,7,8] has the largest sum 23.\n\n\nConstraints:\n\n1 <= nums.length <= 10^5\n-10^4 <= nums[i] <= 10^4\n\n\nFollow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1296,7 +1296,7 @@
     {
         "id": 44,
         "question": "Given a circular integer array nums of length n, return the maximum possible sum of a non-empty subarray of nums.\n\nA circular array means the end of the array connects to the beginning of the array. Formally,\nthe next element of nums[i] is nums[(i + 1) % n] and the previous element of nums[i] is nums[(i - 1 + n) % n].\n\nA subarray may only include each element of the fixed buffer nums at most once. Formally, for a\nsubarray nums[i], nums[i + 1], ..., nums[j], there does not exist i <= k1, k2 <= j with k1 % n == k2 % n.\n\nExample 1:\n\nInput: nums = [1,-2,3,-2]\nOutput: 3\nExplanation: Subarray [3] has maximum sum 3.\nExample 2:\n\nInput: nums = [5,-3,5]\nOutput: 10\nExplanation: Subarray [5,5] has maximum sum 5 + 5 = 10.\nExample 3:\n\nInput: nums = [-3,-2,-3]\nOutput: -2\nExplanation: Subarray [-2] has maximum sum -2.\n\n\nConstraints:\n\nn == nums.length\n1 <= n <= 3 * 10^4\n-3 * 10^4 <= nums[i] <= 3 * 10^4",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1330,7 +1330,7 @@
     {
         "id": 45,
         "question": "Given an integer array nums, find a subarray that has the largest product, and return the product.\n\nThe test cases are generated so that the answer will fit in a 32-bit integer.\n\n\nExample 1:\n\nInput: nums = [2,3,-2,4]\nOutput: 6\nExplanation: [2,3] has the largest product 6.\nExample 2:\n\nInput: nums = [-2,0,-1]\nOutput: 0\nExplanation: The result cannot be 2, because [-2,-1] is not a subarray.\n\n\nConstraints:\n\n1 <= nums.length <= 2 * 10^4\n-10 <= nums[i] <= 10\nThe product of any subarray of nums is guaranteed to fit in a 32-bit integer.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1357,7 +1357,7 @@
     {
         "id": 46,
         "question": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].\n\nThe product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.\n\nYou must write an algorithm that runs in O(n) time and without using the division operation.\n\n\nExample 1:\n\nInput: nums = [1,2,3,4]\nOutput: [24,12,8,6]\nExample 2:\n\nInput: nums = [-1,1,0,-3,3]\nOutput: [0,0,9,0,0]\n\n\nConstraints:\n\n2 <= nums.length <= 10^5\n-30 <= nums[i] <= 30\nThe input is generated such that answer[i] is guaranteed to fit in a 32-bit integer.\n\n\nFollow up: Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.)",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1391,7 +1391,7 @@
     {
         "id": 47,
         "question": "Given two sorted arrays a[] and b[] of size n and m respectively, the task is to merge them in sorted order\nwithout using any extra space. Modify a[] so that it contains the first n elements and modify b[] so that it contains the last m elements.\n\nExamples:\n\nInput: a[] = [2, 4, 7, 10], b[] = [2, 3]\nOutput:\n2 2 3 4\n7 10\nExplanation: After merging the two non-decreasing arrays, we get, 2 2 3 4 7 10\n\nInput: a[] = [1, 5, 9, 10, 15, 20], b[] = [2, 3, 8, 13]\nOutput:\n1 2 3 5 8 9\n10 13 15 20\nExplanation: After merging two sorted arrays we get 1 2 3 5 8 9 10 13 15 20.\n\nInput: a[] = [0, 1], b[] = [2, 3]\nOutput:\n0 1\n2 3\nExplanation: After merging two sorted arrays we get 0 1 2 3.\n\nConstraints:\n1 <= a.size(), b.size() <= 10^5\n0 <= a[i], b[i] <= 10^7",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1411,7 +1411,7 @@
     {
         "id": 48,
         "question": "Given an array of integers arr[]. Find the Inversion Count in the array.\nTwo elements arr[i] and arr[j] form an inversion if arr[i] > arr[j] and i < j.\n\nInversion Count: For an array, inversion count indicates how far (or close) the array is from being sorted. If the array is already sorted then the inversion count is 0.\nIf an array is sorted in the reverse order then the inversion count is the maximum.\n\nExamples:\n\nInput: arr[] = [2, 4, 1, 3, 5]\nOutput: 3\nExplanation: The sequence 2, 4, 1, 3, 5 has three inversions (2, 1), (4, 1), (4, 3).\n\nInput: arr[] = [2, 3, 4, 5, 6]\nOutput: 0\nExplanation: As the sequence is already sorted so there is no inversion count.\n\nInput: arr[] = [10, 10, 10]\nOutput: 0\nExplanation: As all the elements of array are same, so there is no inversion count.\n\nConstraints:\n1 \u2264 arr.size() \u2264 10^5\n1 \u2264 arr[i] \u2264 10^4",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1438,7 +1438,7 @@
     {
         "id": 49,
         "question": "Given an integer array nums, return the number of reverse pairs in the array.\n\nA reverse pair is a pair (i, j) where:\n\n0 <= i < j < nums.length and\nnums[i] > 2 * nums[j].\n\n\nExample 1:\n\nInput: nums = [1,3,2,3,1]\nOutput: 2\nExplanation: The reverse pairs are:\n(1, 4) --> nums[1] = 3, nums[4] = 1, 3 > 2 * 1\n(3, 4) --> nums[3] = 3, nums[4] = 1, 3 > 2 * 1\nExample 2:\n\nInput: nums = [2,4,3,5,1]\nOutput: 3\nExplanation: The reverse pairs are:\n(1, 4) --> nums[1] = 4, nums[4] = 1, 4 > 2 * 1\n(2, 4) --> nums[2] = 3, nums[4] = 1, 3 > 2 * 1\n(3, 4) --> nums[3] = 5, nums[4] = 1, 5 > 2 * 1\n\n\nConstraints:\n\n1 <= nums.length <= 5 * 10^4\n-2^31 <= nums[i] <= 2^31 - 1",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Hard",
         "difficulty_num": 3,
@@ -1465,7 +1465,7 @@
     {
         "id": 50,
         "question": "According to Wikipedia's article: \"The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician\nJohn Horton Conway in 1970.\"\n\nThe board is made up of an m x n grid of cells, where each cell has an initial state: live (represented by a 1) or dead (represented by a 0).\nEach cell interacts with its eight neighbors (horizontal, vertical, diagonal) using the following four rules (taken from the above Wikipedia article):\n\nAny live cell with fewer than two live neighbors dies as if caused by under-population.\nAny live cell with two or three live neighbors lives on to the next generation.\nAny live cell with more than three live neighbors dies, as if by over-population.\nAny dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.\nThe next state of the board is determined by applying the above rules simultaneously to every cell in the current state of\nthe m x n grid board. In this process, births and deaths occur simultaneously.\n\nGiven the current state of the board, update the board to reflect its next state.\n\nNote that you do not need to return anything.\n\nInput: board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]\nOutput: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]\nExample 2:\n\n\nInput: board = [[1,1],[1,0]]\nOutput: [[1,1],[1,1]]\n\n\nConstraints:\n\nm == board.length\nn == board[i].length\n1 <= m, n <= 25\nboard[i][j] is 0 or 1.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1492,7 +1492,7 @@
     {
         "id": 51,
         "question": "Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper,\nreturn the researcher's h-index.\n\nAccording to the definition of h-index on Wikipedia: The h-index is defined as the\nmaximum value of h such that the given researcher has published at least h papers that have each been cited at least h times.\n\n\nExample 1:\n\nInput: citations = [3,0,6,1,5]\nOutput: 3\nExplanation: [3,0,6,1,5] means the researcher has 5 papers in total and each of them had received 3, 0, 6, 1, 5 citations respectively.\nSince the researcher has 3 papers with at least 3 citations each and the remaining two with no more than 3 citations each, their h-index is 3.\nExample 2:\n\nInput: citations = [1,3,1]\nOutput: 1\n\n\nConstraints:\n\nn == citations.length\n1 <= n <= 5000\n0 <= citations[i] <= 1000",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1519,7 +1519,7 @@
     {
         "id": 52,
         "question": "Implement the RandomizedSet class:\n\nRandomizedSet() Initializes the RandomizedSet object.\nbool insert(int val) Inserts an item val into the set if not present. Returns true if the item was not present, false otherwise.\nbool remove(int val) Removes an item val from the set if present. Returns true if the item was present, false otherwise.\nint getRandom() Returns a random element from the current set of elements (it's guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.\nYou must implement the functions of the class such that each function works in average O(1) time complexity.\n\n\nExample 1:\n\nInput\n[\"RandomizedSet\", \"insert\", \"remove\", \"insert\", \"getRandom\", \"remove\", \"insert\", \"getRandom\"]\n[[], [1], [2], [2], [], [1], [2], []]\nOutput\n[null, true, false, true, 2, true, false, 2]\n\nExplanation\nRandomizedSet randomizedSet = new RandomizedSet();\nrandomizedSet.insert(1); // Inserts 1 to the set. Returns true as 1 was inserted successfully.\nrandomizedSet.remove(2); // Returns false as 2 does not exist in the set.\nrandomizedSet.insert(2); // Inserts 2 to the set, returns true. Set now contains [1,2].\nrandomizedSet.getRandom(); // getRandom() should return either 1 or 2 randomly.\nrandomizedSet.remove(1); // Removes 1 from the set, returns true. Set now contains [2].\nrandomizedSet.insert(2); // 2 was already in the set, so return false.\nrandomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.\n\n\nConstraints:\n\n-2^31 <= val <= 2^31 - 1\nAt most 2 * 10^5 calls will be made to insert, remove, and getRandom.\nThere will be at least one element in the data structure when getRandom is called.",
-        "topic": "Arrays",
+        "topic": "ArraysandHashing",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1774,7 +1774,7 @@
     {
         "id": 1,
         "question": "Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums.\nIf target exists, then return its index. Otherwise, return -1.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n\nExample 1:\n\nInput: nums = [-1,0,3,5,9,12], target = 9\nOutput: 4\nExplanation: 9 exists in nums and its index is 4\nExample 2:\n\nInput: nums = [-1,0,3,5,9,12], target = 2\nOutput: -1\nExplanation: 2 does not exist in nums so return -1\n\n\nConstraints:\n\n1 <= nums.length <= 10^4\n-10^4 < nums[i], target < 10^4\nAll the integers in nums are unique.\nnums is sorted in ascending order.",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -1794,7 +1794,7 @@
     {
         "id": 2,
         "question": "Given a sorted array arr[] and an integer x, find the index (0-based) of the largest element in arr[] that is less than or equal to x. This element is called the floor of x. If such an element does not exist, return -1.\n\nNote: In case of multiple occurrences of ceil of x, return the index of the last occurrence.\n\nExamples\n\nInput: arr[] = [1, 2, 8, 10, 10, 12, 19], x = 5\nOutput: 1\nExplanation: Largest number less than or equal to 5 is 2, whose index is 1.\n\nInput: arr[] = [1, 2, 8, 10, 10, 12, 19], x = 11\nOutput: 4\nExplanation: Largest Number less than or equal to 11 is 10, whose indices are 3 and 4. The index of last occurrence is 4.\n\nInput: arr[] = [1, 2, 8, 10, 10, 12, 19], x = 0\nOutput: -1\nExplanation: No element less than or equal to 0 is found. So, output is -1.\n\nConstraints:\n1 \u2264 arr.size() \u2264 10^6\n1 \u2264 arr[i] \u2264 10^6\n0 \u2264 x \u2264 arr[n-1]",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -1814,7 +1814,7 @@
     {
         "id": 3,
         "question": "Given an unsorted array arr[] of integers and an integer x, find the floor and ceiling of x in arr[].\n\nFloor of x is the largest element which is smaller than or equal to x. Floor of x doesn\u2019t exist if x is smaller than smallest element of arr[].\nCeil of x is the smallest element which is greater than or equal to x. Ceil of x doesn\u2019t exist if x is greater than greatest element of arr[].\n\nReturn an array of integers denoting the [floor, ceil]. Return -1 for floor or ceiling if the floor or ceiling is not present.\n\nExamples:\n\nInput: x = 7 , arr[] = [5, 6, 8, 9, 6, 5, 5, 6]\nOutput: 6, 8\nExplanation: Floor of 7 is 6 and ceil of 7 is 8.\n\nInput: x = 10 , arr[] = [5, 6, 8, 8, 6, 5, 5, 6]\nOutput: 8, -1\nExplanation: Floor of 10 is 8 but ceil of 10 is not possible.\n\nExpected Time Complexity: O(n)\nExpected Auxiliary Space: O(1)\n\nConstraints :\n1 \u2264 arr.size \u2264 10^5\n1 \u2264 arr[i], x \u2264 10^6",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -1834,7 +1834,7 @@
     {
         "id": 4,
         "question": "Given a sorted array of distinct integers and a target value, return the index if the target is found. If not,\nreturn the index where it would be if it were inserted in order.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\nExample 1:\n\nInput: nums = [1,3,5,6], target = 5\nOutput: 2\nExample 2:\n\nInput: nums = [1,3,5,6], target = 2\nOutput: 1\nExample 3:\n\nInput: nums = [1,3,5,6], target = 7\nOutput: 4\n\n\nConstraints:\n\n1 <= nums.length <= 10^4\n-10^4 <= nums[i] <= 10^4\nnums contains distinct values sorted in ascending order.\n-10^4 <= target <= 10^4",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -1854,7 +1854,7 @@
     {
         "id": 5,
         "question": "Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.\n\nIf target is not found in the array, return [-1, -1].\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n\nExample 1:\n\nInput: nums = [5,7,7,8,8,10], target = 8\nOutput: [3,4]\nExample 2:\n\nInput: nums = [5,7,7,8,8,10], target = 6\nOutput: [-1,-1]\nExample 3:\n\nInput: nums = [], target = 0\nOutput: [-1,-1]\n\n\nConstraints:\n\n0 <= nums.length <= 10^5\n-10^9 <= nums[i] <= 10^9\nnums is a non-decreasing array.\n-10^9 <= target <= 10^9",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1881,7 +1881,7 @@
     {
         "id": 6,
         "question": "Given a sorted array, arr[] and a number target, you need to find the number of occurrences of target in arr[].\n\nExamples :\n\nInput: arr[] = [1, 1, 2, 2, 2, 2, 3], target = 2\nOutput: 4\nExplanation: target = 2 occurs 4 times in the given array so the output is 4.\n\nInput: arr[] = [1, 1, 2, 2, 2, 2, 3], target = 4\nOutput: 0\nExplanation: target = 4 is not present in the given array so the output is 0.\n\nInput: arr[] = [8, 9, 10, 12, 12, 12], target = 12\nOutput: 3\nExplanation: target = 12 occurs 3 times in the given array so the output is 3.\n\nConstraints:\n1 \u2264 arr.size() \u2264 10^6\n1 \u2264 arr[i] \u2264 10^6\n1 \u2264 target \u2264 10^6",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -1901,7 +1901,7 @@
     {
         "id": 7,
         "question": "There is an integer array nums sorted in ascending order (with distinct values).\n\nPrior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].\n\nGiven the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.\n\nYou must write an algorithm with O(log n) runtime complexity.\n\n\nExample 1:\n\nInput: nums = [4,5,6,7,0,1,2], target = 0\nOutput: 4\nExample 2:\n\nInput: nums = [4,5,6,7,0,1,2], target = 3\nOutput: -1\nExample 3:\n\nInput: nums = [1], target = 0\nOutput: -1\n\n\nConstraints:\n\n1 <= nums.length <= 5000\n-10^4 <= nums[i] <= 10^4\nAll values of nums are unique.\nnums is an ascending array that is possibly rotated.\n-10^4 <= target <= 10^4",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1928,7 +1928,7 @@
     {
         "id": 8,
         "question": "There is an integer array nums sorted in non-decreasing order (not necessarily with distinct values).\n\nBefore being passed to your function, nums is rotated at an unknown pivot index k (0 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,4,4,5,6,6,7] might be rotated at pivot index 5 and become [4,5,6,6,7,0,1,2,4,4].\n\nGiven the array nums after the rotation and an integer target, return true if target is in nums, or false if it is not in nums.\n\nYou must decrease the overall operation steps as much as possible.\n\n\nExample 1:\n\nInput: nums = [2,5,6,0,0,1,2], target = 0\nOutput: true\nExample 2:\n\nInput: nums = [2,5,6,0,0,1,2], target = 3\nOutput: false\n\n\nConstraints:\n\n1 <= nums.length <= 5000\n-10^4 <= nums[i] <= 10^4\nnums is guaranteed to be rotated at some pivot.\n-10^4 <= target <= 10^4\n\nFollow up: This problem is similar to Search in Rotated Sorted Array, but nums may contain duplicates. Would this affect the runtime complexity? How and why?",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1955,7 +1955,7 @@
     {
         "id": 9,
         "question": "Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:\n\n[4,5,6,7,0,1,2] if it was rotated 4 times.\n[0,1,2,4,5,6,7] if it was rotated 7 times.\nNotice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array [a[n-1], a[0], a[1], a[2], ..., a[n-2]].\n\nGiven the sorted rotated array nums of unique elements, return the minimum element of this array.\n\nYou must write an algorithm that runs in O(log n) time.\n\n\nExample 1:\n\nInput: nums = [3,4,5,1,2]\nOutput: 1\nExplanation: The original array was [1,2,3,4,5] rotated 3 times.\nExample 2:\n\nInput: nums = [4,5,6,7,0,1,2]\nOutput: 0\nExplanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times.\nExample 3:\n\nInput: nums = [11,13,15,17]\nOutput: 11\nExplanation: The original array was [11,13,15,17] and it was rotated 4 times.\n\n\nConstraints:\n\nn == nums.length\n1 <= n <= 5000\n-5000 <= nums[i] <= 5000\nAll the integers of nums are unique.\nnums is sorted and rotated between 1 and n times.",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -1982,7 +1982,7 @@
     {
         "id": 10,
         "question": "Given an increasing sorted rotated array arr of distinct integers. The array is right-rotated k times. Find the value of k.\nLet's suppose we have an array arr = [2, 4, 6, 9], so if we rotate it by 2 times so that it will look like this:\nAfter 1st Rotation : [9, 2, 4, 6]\nAfter 2nd Rotation : [6, 9, 2, 4]\n\nExamples:\n\nInput: arr = [5, 1, 2, 3, 4]\nOutput: 1\nExplanation: The given array is 5 1 2 3 4. The original sorted array is 1 2 3 4 5. We can see that the array was rotated 1 times to the right.\n\nInput: arr = [1, 2, 3, 4, 5]\nOutput: 0\nExplanation: The given array is not rotated.\n\nConstraints:\n1 \u2264 arr.size() \u226410^5\n1 \u2264 arri \u2264 10^7",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -2009,7 +2009,7 @@
     {
         "id": 11,
         "question": "You are given a sorted numsay consisting of only integers where every element appears exactly twice, except for one element which appears exactly once.\n\nReturn the single element that appears only once.\n\nYour solution must run in O(log n) time and O(1) space.\n\n\nExample 1:\n\nInput: nums = [1,1,2,3,3,4,4,8,8]\nOutput: 2\nExample 2:\n\nInput: nums = [3,3,7,7,10,11,11]\nOutput: 10\n\n\nConstraints:\n\n1 <= nums.length <= 10^5\n0 <= nums[i] <= 10^5",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -2036,7 +2036,7 @@
     {
         "id": 12,
         "question": "A peak element is an element that is strictly greater than its neighbors.\n\nGiven a 0-indexed integer numsay nums, find a peak element, and return its index. If the numsay contains multiple peaks, return the index to any of the peaks.\n\nYou may imagine that nums[-1] = nums[n] = -\u221e. In other words, an element is always considered to be strictly greater than a neighbor that is outside the numsay.\n\nYou must write an algorithm that runs in O(log n) time.\n\n\nExample 1:\n\nInput: nums = [1,2,3,1]\nOutput: 2\nExplanation: 3 is a peak element and your function should return the index number 2.\nExample 2:\n\nInput: nums = [1,2,1,3,5,6,4]\nOutput: 5\nExplanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.\n\n\nConstraints:\n\n1 <= nums.length <= 1000\n-2^31 <= nums[i] <= 2^31 - 1\nnums[i] != nums[i + 1] for all valid i.",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -2063,7 +2063,7 @@
     {
         "id": 13,
         "question": "Given an array of integers arr[] that is first strictly increasing and then maybe strictly decreasing, find the bitonic point, that is the maximum element in the array.\nBitonic Point is a point before which elements are strictly increasing and after which elements are strictly decreasing.\n\nNote: It is guaranteed that the array contains exactly one bitonic point.\n\nExamples:\n\nInput: arr[] = [1, 2, 4, 5, 7, 8, 3]\nOutput: 8\nExplanation: Elements before 8 are strictly increasing [1, 2, 4, 5, 7] and elements after 8 are strictly decreasing [3].\n\nInput: arr[] = [10, 20, 30, 40, 50]\nOutput: 50\nExplanation: Elements before 50 are strictly increasing [10, 20, 30 40] and there are no elements after 50.\n\nInput: arr[] = [120, 100, 80, 20, 0]\nOutput: 120\nExplanation: There are no elements before 120 and elements after 120 are strictly decreasing [100, 80, 20, 0].\n\nConstraints:\n3 \u2264 arr.size() \u2264 10^5\n1 \u2264 arr[i] \u2264 10^6",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -2090,7 +2090,7 @@
     {
         "id": 14,
         "question": "Given a positive integer n, find the square root of n. If n is not a perfect square, then return the floor value.\n\nFloor value of any number is the greatest Integer which is less than or equal to that number\n\nExamples:\n\nInput: n = 4\nOutput: 2\nExplanation: Since, 4 is a perfect square, so its square root is 2.\n\nInput: n = 11\nOutput: 3\nExplanation: Since, 11 is not a perfect square, floor of square root of 11 is 3.\n\nInput: n = 1\nOutput: 1\n\nConstraints:\n1 \u2264 n \u2264 3*10^4",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -2117,7 +2117,7 @@
     {
         "id": 15,
         "question": "You are given 2 numbers n and m, the task is to find n\u221am (nth root of m). If the root is not integer then returns -1.\n\nExamples :\n\nInput: n = 2, m = 9\nOutput: 3\nExplanation: 32 = 9\n\nInput: n = 3, m = 9\nOutput: -1\nExplanation: 3rd root of 9 is not integer.\n\nInput: n = 1, m = 14\nOutput: 14\n\nConstraints:\n1 <= n <= 30\n1 <= m <= 10^9",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -2144,7 +2144,7 @@
     {
         "id": 16,
         "question": "Koko loves to eat bananas. There are n piles of bananas, the ith pile has piles[i] bananas. The guards have gone and will come back in h hours.\n\nKoko can decide her bananas-per-hour eating speed of k. Each hour, she chooses some pile of bananas and eats k bananas from that pile. If the pile has less than k bananas, she eats all of them instead and will not eat any more bananas during this hour.\n\nKoko likes to eat slowly but still wants to finish eating all the bananas before the guards return.\n\nReturn the minimum integer k such that she can eat all the bananas within h hours.\n\n\nExample 1:\n\nInput: piles = [3,6,7,11], h = 8\nOutput: 4\nExample 2:\n\nInput: piles = [30,11,23,4,20], h = 5\nOutput: 30\nExample 3:\n\nInput: piles = [30,11,23,4,20], h = 6\nOutput: 23\n\n\nConstraints:\n\n1 <= piles.length <= 10^4\npiles.length <= h <= 10^9\n1 <= piles[i] <= 10^9",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -2171,7 +2171,7 @@
     {
         "id": 17,
         "question": "You are given an integer array bloomDay, an integer m and an integer k.\n\nYou want to make m bouquets. To make a bouquet, you need to use k adjacent flowers from the garden.\n\nThe garden consists of n flowers, the ith flower will bloom in the bloomDay[i] and then can be used in exactly one bouquet.\n\nReturn the minimum number of days you need to wait to be able to make m bouquets from the garden. If it is impossible to make m bouquets return -1.\n\n\nExample 1:\n\nInput: bloomDay = [1,10,3,10,2], m = 3, k = 1\nOutput: 3\nExplanation: Let us see what happened in the first three days. x means flower bloomed and _ means flower did not bloom in the garden.\nWe need 3 bouquets each should contain 1 flower.\nAfter day 1: [x, _, _, _, _]   // we can only make one bouquet.\nAfter day 2: [x, _, _, _, x]   // we can only make two bouquets.\nAfter day 3: [x, _, x, _, x]   // we can make 3 bouquets. The answer is 3.\nExample 2:\n\nInput: bloomDay = [1,10,3,10,2], m = 3, k = 2\nOutput: -1\nExplanation: We need 3 bouquets each has 2 flowers, that means we need 6 flowers. We only have 5 flowers so it is impossible to get the needed bouquets and we return -1.\nExample 3:\n\nInput: bloomDay = [7,7,7,7,12,7,7], m = 2, k = 3\nOutput: 12\nExplanation: We need 2 bouquets each should have 3 flowers.\nHere is the garden after the 7 and 12 days:\nAfter day 7: [x, x, x, x, _, x, x]\nWe can make one bouquet of the first three flowers that bloomed. We cannot make another bouquet from the last three flowers that bloomed because they are not adjacent.\nAfter day 12: [x, x, x, x, x, x, x]\nIt is obvious that we can make two bouquets in different ways.\n\n\nConstraints:\n\nbloomDay.length == n\n1 <= n <= 10^5\n1 <= bloomDay[i] <= 10^9\n1 <= m <= 10^6\n1 <= k <= n",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -2198,7 +2198,7 @@
     {
         "id": 18,
         "question": "Given an array of integers nums and an integer threshold, we will choose a positive integer divisor, divide all the array by it, and sum the division's result. Find the smallest divisor such that the result mentioned above is less than or equal to threshold.\n\nEach result of the division is rounded to the nearest integer greater than or equal to that element. (For example: 7/3 = 3 and 10/2 = 5).\n\nThe test cases are generated so that there will be an answer.\n\n\nExample 1:\n\nInput: nums = [1,2,5,9], threshold = 6\nOutput: 5\nExplanation: We can get a sum to 17 (1+2+5+9) if the divisor is 1.\nIf the divisor is 4 we can get a sum of 7 (1+1+2+3) and if the divisor is 5 the sum will be 5 (1+1+1+2).\nExample 2:\n\nInput: nums = [44,22,33,11,1], threshold = 5\nOutput: 44\n\n\nConstraints:\n\n1 <= nums.length <= 5 * 10^4\n1 <= nums[i] <= 10^6\nnums.length <= threshold <= 10^6",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -2225,7 +2225,7 @@
     {
         "id": 19,
         "question": "A conveyor belt has packages that must be shipped from one port to another within days days.\n\nThe ith package on the conveyor belt has a weight of weights[i]. Each day, we load the ship with packages on the conveyor belt (in the order given by weights). We may not load more weight than the maximum weight capacity of the ship.\n\nReturn the least weight capacity of the ship that will result in all the packages on the conveyor belt being shipped within days days.\n\n\nExample 1:\n\nInput: weights = [1,2,3,4,5,6,7,8,9,10], days = 5\nOutput: 15\nExplanation: A ship capacity of 15 is the minimum to ship all the packages in 5 days like this:\n1st day: 1, 2, 3, 4, 5\n2nd day: 6, 7\n3rd day: 8\n4th day: 9\n5th day: 10\n\nNote that the cargo must be shipped in the order given, so using a ship of capacity 14 and splitting the packages into parts like (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) is not allowed.\nExample 2:\n\nInput: weights = [3,2,2,4,1,4], days = 3\nOutput: 6\nExplanation: A ship capacity of 6 is the minimum to ship all the packages in 3 days like this:\n1st day: 3, 2\n2nd day: 2, 4\n3rd day: 1, 4\nExample 3:\n\nInput: weights = [1,2,3,1,1], days = 4\nOutput: 3\nExplanation:\n1st day: 1\n2nd day: 2\n3rd day: 3\n4th day: 1, 1\n\n\nConstraints:\n\n1 <= days <= weights.length <= 5 * 10^4\n1 <= weights[i] <= 500",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
@@ -2252,7 +2252,7 @@
     {
         "id": 20,
         "question": "Given an array arr of positive integers sorted in a strictly increasing order, and an integer k.\n\nReturn the kth positive integer that is missing from this array.\n\n\nExample 1:\n\nInput: arr = [2,3,4,7,11], k = 5\nOutput: 9\nExplanation: The missing positive integers are [1,5,6,8,9,10,12,13,...]. The 5th missing positive integer is 9.\nExample 2:\n\nInput: arr = [1,2,3,4], k = 2\nOutput: 6\nExplanation: The missing positive integers are [5,6,7,...]. The 2nd missing positive integer is 6.\n\n\nConstraints:\n\n1 <= arr.length <= 1000\n1 <= arr[i] <= 1000\n1 <= k <= 1000\narr[i] < arr[j] for 1 <= i < j <= arr.length",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -2286,7 +2286,7 @@
     {
         "id": 21,
         "question": "Given an array of integers sorted in ascending order, and a target value, find the element\nin the array that has minimum difference with the target value.\n\nExample 1:\n\nInput: a[] = [2, 5, 10, 12, 15], target = 6\nOutput: 5\nExplanation: The difference between the target value '6' and '5' is the minimum.\nExample 2:\n\nInput: a[] = [2, 5, 10, 12, 15], target = 5\nOutput: 5\nExample 3:\n\nInput: a[] = [2, 5, 10, 12, 15], target = 8\nOutput: 10\nExample 4:\n\nInput: a[] = [2, 5, 10, 12, 15], target = 11\nOutput: 10\nExample 5:\n\nInput: a[] = [2, 5, 10, 12, 15], target = 20\nOutput: 15",
-        "topic": "Binary",
+        "topic": "BinarySearch",
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,

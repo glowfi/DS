@@ -149,7 +149,7 @@ for language in languages.keys():
                         newQuestion: Question = {
                             "id": questionCount,
                             "question": question,
-                            "topic": topic.split("_")[1],
+                            "topic": "".join(topic.split("_")[1:]),
                             "language": languages[language]["name"],
                             "difficulty": difficulty.value,
                             "difficulty_num": difficulty_map[difficulty],
