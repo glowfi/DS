@@ -89,7 +89,7 @@ class Solution:
         return time
 
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        st, en = min(piles), max(piles) + 1
+        st, en = 1, max(piles) + 1
         ans = -1
 
         while st <= en:

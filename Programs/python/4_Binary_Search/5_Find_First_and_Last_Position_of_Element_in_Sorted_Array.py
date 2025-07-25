@@ -124,3 +124,8 @@ class Solution:
         last = self.lastOccurence(nums, target)
 
         return [first, last]
+
+
+ls = [1, 0, 0]
+obj = Solution()
+print(obj.searchRange(ls, 1))

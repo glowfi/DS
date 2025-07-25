@@ -1873,7 +1873,7 @@
                 "tc": "O(log(N))",
                 "sc": "O(1)",
                 "intuition": "For finding first occurence do a bainry search\nkeep finding the mid and if we find the number\nthen keep going left as we want the first possible occurence\n\nFor finding last occurence do a bainry search\nkeep finding the mid and if we find the number\nthen keep going right as we want the last possible occurence",
-                "code": "from typing import List\n\n\nclass Solution:\n    def firstOccurence(self, nums: List[int], target: int) -> int:\n        ans = -1\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                ans = mid\n                en = mid - 1\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return ans\n\n    def lastOccurence(self, nums: List[int], target: int) -> int:\n        ans = -1\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                ans = mid\n                st = mid + 1\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return ans\n\n    def searchRange(self, nums: List[int], target: int) -> List[int]:\n        first = self.firstOccurence(nums, target)\n        last = self.lastOccurence(nums, target)\n\n        return [first, last]",
+                "code": "from typing import List\n\n\nclass Solution:\n    def firstOccurence(self, nums: List[int], target: int) -> int:\n        ans = -1\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                ans = mid\n                en = mid - 1\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return ans\n\n    def lastOccurence(self, nums: List[int], target: int) -> int:\n        ans = -1\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                ans = mid\n                st = mid + 1\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return ans\n\n    def searchRange(self, nums: List[int], target: int) -> List[int]:\n        first = self.firstOccurence(nums, target)\n        last = self.lastOccurence(nums, target)\n\n        return [first, last]\n\n\nls = [1, 0, 0]\nobj = Solution()\nprint(obj.searchRange(ls, 1))",
                 "type": "Optimal"
             }
         ]
@@ -2163,7 +2163,7 @@
                 "tc": "O(log(max(piles))*N)+O(N)",
                 "sc": "O(1)",
                 "intuition": "We choose a starting min speed from 1 and max speed\nwith max bananas in the pile,with the current speed\nwe check if its possible to eat all bananas within\nthe given time,if time taken in more than h we move\nmore towards right increasing our speed otherwise\nwe move more towards the left if we can eat bannana\nwith the curr_speed with motive being to minimize\nour speed and still able to eat all bananas",
-                "code": "import math\nfrom typing import List\n\n\nclass Solution:\n    def timeTakenToEat(self, piles: List[int], curr_speed: int) -> int:\n        time = 0\n\n        for pile in piles:\n            time += math.ceil(pile / curr_speed)\n\n        return time\n\n    def minEatingSpeed(self, piles: List[int], h: int) -> int:\n        st, en = min(piles), max(piles) + 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            t = self.timeTakenToEat(piles, mid)\n\n            if t <= h:\n                ans = mid\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return ans",
+                "code": "import math\nfrom typing import List\n\n\nclass Solution:\n    def timeTakenToEat(self, piles: List[int], curr_speed: int) -> int:\n        time = 0\n\n        for pile in piles:\n            time += math.ceil(pile / curr_speed)\n\n        return time\n\n    def minEatingSpeed(self, piles: List[int], h: int) -> int:\n        st, en = 1, max(piles) + 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            t = self.timeTakenToEat(piles, mid)\n\n            if t <= h:\n                ans = mid\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return ans",
                 "type": "Optimal"
             }
         ]
@@ -2299,6 +2299,450 @@
                 "sc": "O(1)",
                 "intuition": "Find the ceil and floor of the given target as the,\nmin diff will always be with them,also check if\ntarget is less than first element in array return the\nfirst element or if target is greater than last element\nin array return the last element",
                 "code": "class Solution:\n    def floor(self, x: int, arr: list[int]):\n        st, en = 0, len(arr) - 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if arr[mid] <= x:\n                ans = arr[mid]\n                st = mid + 1\n            elif arr[mid] > x:\n                en = mid - 1\n\n        return ans\n\n    def ceil(self, x: int, arr: list[int]):\n        st, en = 0, len(arr) - 1\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if arr[mid] >= x:\n                ans = arr[mid]\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return ans\n\n    def find_min_diff(self, arr: list[int], target: int) -> int:\n        if target < arr[0]:\n            return arr[0]\n\n        if target > arr[-1]:\n            return arr[-1]\n\n        ceil = self.ceil(target, arr)\n        floor = self.floor(target, arr)\n\n        diff_ceil = abs(ceil - target)\n        diff_floor = abs(floor - target)\n\n        if diff_ceil < diff_floor:\n            return ceil\n        return floor\n\n\nif __name__ == \"__main__\":\n    # Test cases\n    solution = Solution()\n    arr1 = [2, 5, 10, 12, 15]\n    target1 = 6\n    expected1 = 5\n    assert (\n        solution.find_min_diff(arr1, target1) == expected1\n    ), f\"Test case 1 failed: expected {expected1}, got {solution.find_min_diff(arr1, target1)}\"\n\n    arr2 = [2, 5, 10, 12, 15]\n    target2 = 5\n    expected2 = 5\n    assert (\n        solution.find_min_diff(arr2, target2) == expected2\n    ), f\"Test case 2 failed: expected {expected2}, got {solution.find_min_diff(arr2, target2)}\"\n\n    arr3 = [2, 5, 10, 12, 15]\n    target3 = 8\n    expected3 = 10\n    assert (\n        solution.find_min_diff(arr3, target3) == expected3\n    ), f\"Test case 3 failed: expected {expected3}, got {solution.find_min_diff(arr3, target3)}\"\n\n    arr4 = [2, 5, 10, 12, 15]\n    target4 = 11\n    expected4 = 10\n    assert (\n        solution.find_min_diff(arr4, target4) == expected4\n    ), f\"Test case 4 failed: expected {expected4}, got {solution.find_min_diff(arr4, target4)}\"\n\n    arr5 = [2, 5, 10, 12, 15]\n    target5 = 20\n    expected5 = 15\n    assert (\n        solution.find_min_diff(arr5, target5) == expected5\n    ), f\"Test case 5 failed: expected {expected5}, got {solution.find_min_diff(arr5, target5)}\"\n\n    print(\"All test cases passed!\")",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "question": "You are given an array with unique elements of stalls[], which denote the position of a stall. You are also given an integer k\nwhich denotes the number of aggressive cows. Your task is to assign stalls to k cows such that\nthe minimum distance between any two of them is the maximum possible.\n\nExamples :\n\nInput: stalls[] = [1, 2, 4, 8, 9], k = 3\nOutput: 3\nExplanation: The first cow can be placed at stalls[0],\nthe second cow can be placed at stalls[2] and\nthe third cow can be placed at stalls[3].\nThe minimum distance between cows, in this case, is 3, which also is the largest among all possible ways.\n\nInput: stalls[] = [10, 1, 2, 7, 5], k = 3\nOutput: 4\nExplanation: The first cow can be placed at stalls[0],\nthe second cow can be placed at stalls[1] and\nthe third cow can be placed at stalls[4].\nThe minimum distance between cows, in this case, is 4, which also is the largest among all possible ways.\n\nInput: stalls[] = [2, 12, 11, 3, 26, 7], k = 5\nOutput: 1\nExplanation: Each cow can be placed in any of the stalls, as the no. of stalls are exactly equal to the number of cows.\nThe minimum distance between cows, in this case, is 1, which also is the largest among all possible ways.\n\nConstraints:\n2 <= stalls.size() <= 10^6\n0 <= stalls[i] <= 10^8\n2 <= k <= stalls.size()",
+        "topic": "BinarySearch",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Aggressive Cows",
+        "problem_link": "https://www.geeksforgeeks.org/problems/aggressive-cows/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/22_Aggressive_Cows.py",
+        "approaches": [
+            {
+                "tc": "O(N*max(stalls))+O(Nlog(N))",
+                "sc": "O(1)",
+                "intuition": "First sort the give array as sorting will make our placements deterministic otherwise we might place cows too close or too far, we may miss out on optimal placemnts Sorting gives a predictable structure \u2014 so we can place cows in a left-to-right greedy manner These are like points on a number line. If the stalls aren't sorted, there's no structure Placing the first cow at the first stall gives maximum room for future cows to be placed at a distance of at least minDistance Do a linear search and keep track of whether we can place the cows in an ans variable, as we want the max distance all the possiblities where we can place cows",
+                "code": "class Solution:\n    def canPlaceCows(self, stalls: list[int], minDistance: int, cows: int) -> bool:\n        placedCows = 1\n        prevIdx = 0\n\n        for i in range(1, len(stalls)):\n            if stalls[i] - stalls[prevIdx] >= minDistance:\n                prevIdx = i\n                placedCows += 1\n\n            if placedCows >= cows:\n                return True\n\n        return False\n\n    def aggressiveCows(self, stalls: list[int], k: int) -> int:\n        stalls.sort()\n        st, en = 1, stalls[-1] - stalls[0] + 1\n        ans = -1\n\n        for i in range(st, en):\n            if self.canPlaceCows(stalls, i, k):\n                ans = max(ans, i)\n        return ans",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N*log(max(stalls)))+O(Nlog(N))",
+                "sc": "O(1)",
+                "intuition": "First sort the give array as sorting will make our placements deterministic\notherwise we might place cows too close or too far, we may miss out on optimal placemnts\nSorting gives a predictable structure \u2014 so we can place cows in a left-to-right greedy manner\nThese are like points on a number line. If the stalls aren't sorted, there's no structure\nPlacing the first cow at the first stall gives maximum room for future cows to be placed at a distance of at least minDistance\nDo a binary search and keep going right as we want the max possible distance possible if we are able to place all cows\notherwise go to left",
+                "code": "class Solution:\n    def canPlaceCows(self, stalls: list[int], minDistance: int, cows: int) -> bool:\n        placedCows = 1\n        prevIdx = 0\n\n        for i in range(1, len(stalls)):\n            if stalls[i] - stalls[prevIdx] >= minDistance:\n                prevIdx = i\n                placedCows += 1\n\n            if placedCows >= cows:\n                return True\n\n        return False\n\n    def aggressiveCows(self, stalls: list[int], k: int) -> int:\n        stalls.sort()\n        st, en = 1, stalls[-1] - stalls[0]\n        ans = 0\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if self.canPlaceCows(stalls, mid, k):\n                ans = mid\n                st = mid + 1\n            else:\n                en = mid - 1\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "question": "You are given an array arr[] of integers, where each element arr[i] represents the number of\npages in the ith book. You also have an integer k representing the number of students. The task is to allocate books to each student such that:\n\nEach student receives atleast one book.\nEach student is assigned a contiguous sequence of books.\nNo book is assigned to more than one student.\nThe objective is to minimize the maximum number of pages assigned to any student. In other words, out of all possible allocations, find the arrangement where the student who receives the most pages still has the smallest possible maximum.\n\nNote: Return -1 if a valid assignment is not possible, and allotment should be in contiguous order (see the explanation for better understanding).\n\nExamples:\n\nInput: arr[] = [12, 34, 67, 90], k = 2\nOutput: 113\nExplanation: Allocation can be done in following ways:\n[12] and [34, 67, 90] Maximum Pages = 191\n[12, 34] and [67, 90] Maximum Pages = 157\n[12, 34, 67] and [90] Maximum Pages = 113.\nTherefore, the minimum of these cases is 113, which is selected as the output.\n\nInput: arr[] = [15, 17, 20], k = 5\nOutput: -1\nExplanation: Allocation can not be done.\n\nInput: arr[] = [22, 23, 67], k = 1\nOutput: 112\n\nConstraints:\n1 <=  arr.size() <= 10^6\n1 <= arr[i] <= 10^3\n1 <= k <= 10^3",
+        "topic": "BinarySearch",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Book Allocation",
+        "problem_link": "https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/23_Book_Allocation.py",
+        "approaches": [
+            {
+                "tc": "O(N*sum(books))",
+                "sc": "O(1)",
+                "intuition": "Do a linear search and the first time you see that we are able to allocate books to fewer than k students we return the current min page value",
+                "code": "class Solution:\n\n    def canAllocateBooks(self, books: list[int], minPage: int, k: int) -> int:\n        studentsAllocated = 0\n        currPages = minPage\n\n        for pages in books:\n            if pages <= currPages:\n                currPages -= pages\n            else:\n                studentsAllocated += 1\n                currPages = minPage\n                currPages -= pages\n\n        if currPages >= 0:\n            studentsAllocated += 1\n\n        return studentsAllocated <= k\n\n    def findPages(self, arr: list[int], k: int) -> int:\n        if len(arr) < k:\n            return -1\n\n        st, en = max(arr), sum(arr) + 1\n\n        for i in range(st, en):\n            if self.canAllocateBooks(arr, i, k):\n                return i\n\n        return -1",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N*log(sum(books)))",
+                "sc": "O(1)",
+                "intuition": "Do a binary search if book allocation is possible\ngo as left as possible to get min page otherwise\ngo right",
+                "code": "class Solution:\n\n    def canAllocateBooks(self, books: list[int], minPage: int, k: int) -> int:\n        studentsAllocated = 0\n        currPages = minPage\n\n        for pages in books:\n            if pages <= currPages:\n                currPages -= pages\n            else:\n                studentsAllocated += 1\n                currPages = minPage\n                currPages -= pages\n\n        if currPages >= 0:\n            studentsAllocated += 1\n\n        return studentsAllocated <= k\n\n    def findPages(self, arr: list[int], k: int) -> int:\n        if len(arr) < k:\n            return -1\n\n        st, en = max(arr), sum(arr)\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if self.canAllocateBooks(arr, mid, k):\n                ans = mid\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "question": "Ram wants to paint his dog's home that has n boards with different lengths. The length of ith board is given\nby arr[i] where arr[] is an array of n integers. He hired k painters for this work and each painter takes 1 unit time to paint 1 unit of the board.\n\nReturn the minimum time to get this job done if all painters start together with the constraint that any painter\nwill only paint continuous boards, say boards numbered [2,3,4] or only board [1] or nothing but not boards [2,4,5].\n\nExamples:\n\nInput: arr[] = [5, 10, 30, 20, 15], k = 3\nOutput: 35\nExplanation: The most optimal way will be: Painter 1 allocation : [5,10],\nPainter 2 allocation : [30], Painter 3 allocation : [20,15], Job will be done when all painters finish i.e. at time = max(5+10, 30, 20+15) = 35\n\nInput: arr[] = [10, 20, 30, 40], k = 2\nOutput: 60\nExplanation: The most optimal way to paint: Painter 1 allocation : [10,20,30], Painter 2 allocation : [40], Job will be complete at time = 60\n\nInput: arr[] = [100, 200, 300, 400], k = 1\nOutput: 1000\nExplanation: There is only one painter, so the painter must paint all boards sequentially. The total time taken will be the sum of all board lengths, i.e., 100 + 200 + 300 + 400 = 1000.\n\nConstraints:\n1 \u2264 arr.size() \u2264 10^5\n1 \u2264 arr[i] \u2264 10^5\n1 \u2264 k \u2264 10^5",
+        "topic": "BinarySearch",
+        "language": "python",
+        "difficulty": "Hard",
+        "difficulty_num": 3,
+        "problem_name": "Painters Partition",
+        "problem_link": "https://www.geeksforgeeks.org/problems/the-painters-partition-problem1535/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/24_Painters_Partition.py",
+        "approaches": [
+            {
+                "tc": "O(N*sum(books))",
+                "sc": "O(1)",
+                "intuition": "Do a linear search and the first time you see that we are able to allocate books to fewer than k a painters we return the current min page value",
+                "code": "class Solution:\n    def isPossible(self, maxTime: int, arr: list[int], k: int) -> bool:\n        paintersAllocated = 0\n        currBoardLength = maxTime\n\n        for val in arr:\n            if val <= currBoardLength:\n                currBoardLength -= val\n            else:\n                paintersAllocated += 1\n                currBoardLength = maxTime\n                currBoardLength -= val\n\n        if currBoardLength >= 0:\n            paintersAllocated += 1\n\n        return paintersAllocated <= k\n\n    def minTime(self, arr: list[int], k: int) -> int:\n        st, en = max(arr), sum(arr) + 1\n\n        for i in range(st, en):\n            if self.isPossible(i, arr, k):\n                return i\n        return -1",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N*log(sum(books)))",
+                "sc": "O(1)",
+                "intuition": "Do a binary search if painter allocation is possible\ngo as left as possible to get min page otherwise\ngo right",
+                "code": "class Solution:\n    def isPossible(self, maxTime: int, arr: list[int], k: int) -> bool:\n        paintersAllocated = 0\n        currBoardLength = maxTime\n\n        for val in arr:\n            if val <= currBoardLength:\n                currBoardLength -= val\n            else:\n                paintersAllocated += 1\n                currBoardLength = maxTime\n                currBoardLength -= val\n\n        if currBoardLength >= 0:\n            paintersAllocated += 1\n\n        return paintersAllocated <= k\n\n    def minTime(self, arr: list[int], k: int) -> int:\n        st, en = max(arr), sum(arr)\n        ans = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if self.isPossible(mid, arr, k):\n                ans = mid\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "question": "Given an integer array nums and an integer k, split nums into k non-empty subarrays such that the largest sum of any subarray is minimized.\n\nReturn the minimized largest sum of the split.\n\nA subarray is a contiguous part of the array.\n\n\nExample 1:\n\nInput: nums = [7,2,5,10,8], k = 2\nOutput: 18\nExplanation: There are four ways to split nums into two subarrays.\nThe best way is to split it into [7,2,5] and [10,8], where the largest sum among the two subarrays is only 18.\nExample 2:\n\nInput: nums = [1,2,3,4,5], k = 2\nOutput: 9\nExplanation: There are four ways to split nums into two subarrays.\nThe best way is to split it into [1,2,3] and [4,5], where the largest sum among the two subarrays is only 9.\n\n\nConstraints:\n\n1 <= nums.length <= 1000\n0 <= nums[i] <= 10^6\n1 <= k <= min(50, nums.length)",
+        "topic": "BinarySearch",
+        "language": "python",
+        "difficulty": "Hard",
+        "difficulty_num": 3,
+        "problem_name": "Split Largest Sum",
+        "problem_link": "https://leetcode.com/problems/split-array-largest-sum",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/25_Split_Largest_Sum.py",
+        "approaches": [
+            {
+                "tc": "O(N*sum(nums))",
+                "sc": "O(1)",
+                "intuition": "Do a linear search and the first time you see that we are able to split to fewer than k a splits we return the current min page value",
+                "code": "from typing import List\n\n\nclass Solution:\n    def isPossible(self, maxSum, arr, k):\n        splitsAllocated = 0\n        currVal = maxSum\n\n        for val in arr:\n            if val <= currVal:\n                currVal -= val\n            else:\n                splitsAllocated += 1\n                currVal = maxSum\n                currVal -= val\n\n        if currVal >= 0:\n            splitsAllocated += 1\n\n        return splitsAllocated <= k\n\n    def splitArray(self, nums: List[int], k: int) -> int:\n        st, en = max(nums), sum(nums) + 1\n\n        for i in range(st, en):\n            if self.isPossible(i, nums, k):\n                return i\n        return -1",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N*log(sum(books)))",
+                "sc": "O(1)",
+                "intuition": "Do a binary search if split allocation is possible\ngo as left as possible to get min page otherwise\ngo right",
+                "code": "from typing import List\n\n\nclass Solution:\n    def isPossible(self, maxSum, arr, k):\n        splitsAllocated = 0\n        currVal = maxSum\n\n        for val in arr:\n            if val <= currVal:\n                currVal -= val\n            else:\n                splitsAllocated += 1\n                currVal = maxSum\n                currVal -= val\n\n        if currVal >= 0:\n            splitsAllocated += 1\n\n        return splitsAllocated <= k\n\n    def splitArray(self, nums: List[int], k: int) -> int:\n        st, en = max(nums), sum(nums)\n        minSum = -1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if self.isPossible(mid, nums, k):\n                minSum = mid\n                en = mid - 1\n            else:\n                st = mid + 1\n\n        return minSum",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "question": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).\n\nExample 1:\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n\nExample 2:\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n\nConstraints:\n\nnums1.length == m\nnums2.length == n\n0 <= m <= 1000\n0 <= n <= 1000\n1 <= m + n <= 2000\n-10^6 <= nums1[i], nums2[i] <= 10^6",
+        "topic": "BinarySearch",
+        "language": "python",
+        "difficulty": "Hard",
+        "difficulty_num": 3,
+        "problem_name": "Median of 2 sorted array",
+        "problem_link": "https://leetcode.com/problems/median-of-two-sorted-arrays",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/27_Median_of_2_sorted_array.py",
+        "approaches": [
+            {
+                "tc": "O(Nlog(M))",
+                "sc": "O(N)",
+                "intuition": "Merge into a temporary array sort the temporary array find the median",
+                "code": "from typing import List\n\n\nclass Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        tmp = sorted([*nums1, *nums2])\n\n        mid = len(tmp) // 2\n        if len(tmp) % 2 == 1:\n            return tmp[mid]\n        return (tmp[mid] + tmp[mid - 1]) / 2",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)+O(M)",
+                "sc": "O(1)",
+                "intuition": "Use the merge sort algo to find the indexes as in merge sort algo we process the array in sorted order,pre calcuate uptill which index to process for even keep track of last and seclast and for odd keep track of last only",
+                "code": "from typing import List\n\n\nclass Solution:\n    def merge2SortedArray(\n        self, arr1: list[int], arr2: list[int], target: int\n    ) -> tuple[int, int]:\n        i, j = 0, 0\n        c = 0\n        last = -1\n        secLast = -1\n\n        while i < len(arr1) and j < len(arr2):\n            if arr1[i] <= arr2[j]:\n                secLast = last\n                last = arr1[i]\n                i += 1\n                c += 1\n            else:\n                secLast = last\n                last = arr2[j]\n                j += 1\n                c += 1\n\n            if c == target:\n                return last, secLast\n\n        while i < len(arr1):\n            secLast = last\n            last = arr1[i]\n            i += 1\n            c += 1\n\n            if c == target:\n                return last, secLast\n\n        while j < len(arr2):\n            secLast = last\n            last = arr2[j]\n            j += 1\n            c += 1\n\n            if c == target:\n                return last, secLast\n\n        return last, secLast\n\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        mid = (len(nums1) + len(nums2)) // 2\n        n = len(nums1) + len(nums2)\n        last, secLast = self.merge2SortedArray(nums1, nums2, mid + 1)\n\n        if n % 2 == 0:\n            return (last + secLast) / 2\n        return last",
+                "type": "Better"
+            },
+            {
+                "tc": "-",
+                "sc": "-",
+                "intuition": "",
+                "code": "",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "question": "Given a m x n binary matrix mat, find the 0-indexed position of the row that contains the maximum count of ones, and the number of ones in that row.\n\nIn case there are multiple rows that have the maximum count of ones, the row with the smallest row number should be selected.\n\nReturn an array containing the index of the row, and the number of ones in it.\n\n\nExample 1:\n\nInput: mat = [[0,1],[1,0]]\nOutput: [0,1]\nExplanation: Both rows have the same number of 1's. So we return the index of the smaller row, 0, and the maximum count of ones (1). So, the answer is [0,1].\nExample 2:\n\nInput: mat = [[0,0,0],[0,1,1]]\nOutput: [1,2]\nExplanation: The row indexed 1 has the maximum count of ones (2). So we return its index, 1, and the count. So, the answer is [1,2].\nExample 3:\n\nInput: mat = [[0,0],[1,1],[0,0]]\nOutput: [1,2]\nExplanation: The row indexed 1 has the maximum count of ones (2). So the answer is [1,2].\n\n\nConstraints:\n\nm == mat.length\nn == mat[i].length\n1 <= m, n <= 100\nmat[i][j] is either 0 or 1.",
+        "topic": "BinarySearch",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Row with max number of 1s",
+        "problem_link": "https://leetcode.com/problems/row-with-maximum-ones",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/29_Row_with_max_number_of_1s.py",
+        "approaches": [
+            {
+                "tc": "O(N*M)",
+                "sc": "O(1)",
+                "intuition": "Traverse the entire matrix and find the row with max ones , keeping track of max count of 1 till now for each row",
+                "code": "from typing import List\n\n\nclass Solution:\n    def rowAndMaximumOnes(self, mat: List[List[int]]) -> List[int]:\n        curr_max_row_index = 0\n        curr_max_row_count = 0\n\n        for i in range(len(mat)):\n            c = 0\n            for j in range(len(mat[0])):\n                if mat[i][j] == 1:\n                    c += 1\n            if c > curr_max_row_count:\n                curr_max_row_index = i\n                curr_max_row_count = c\n\n        return [curr_max_row_index, curr_max_row_count]",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N*log(m))",
+                "sc": "O(1)",
+                "intuition": "for each row find the last and first occurence\nof 1 and get the count of 1 in each row by doing\nsustraction of lastOccurence and firstOccurence\nand add 1, keep track of max ones in each row\nand max count",
+                "code": "from typing import List\n\n\nclass Solution:\n    def firstOccurence(self, nums: List[int], target: int) -> int:\n        ans = -1\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                ans = mid\n                en = mid - 1\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return ans\n\n    def lastOccurence(self, nums: List[int], target: int) -> int:\n        ans = -1\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                ans = mid\n                st = mid + 1\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return ans\n\n    def rowAndMaximumOnes(self, mat: List[List[int]]) -> List[int]:\n        curr_max_row_index = 0\n        curr_max_row_count = 0\n\n        for i in range(len(mat)):\n            first_occurence = self.firstOccurence(sorted(mat[i]), 1)\n            if first_occurence != -1:\n                last_occurence = self.lastOccurence(sorted(mat[i]), 1)\n                one_count = last_occurence - first_occurence + 1\n                if one_count > curr_max_row_count:\n                    curr_max_row_index = i\n                    curr_max_row_count = one_count\n\n        return [curr_max_row_index, curr_max_row_count]",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "question": "You are given an m x n integer matrix matrix with the following two properties:\n\nEach row is sorted in non-decreasing order.\nThe first integer of each row is greater than the last integer of the previous row.\nGiven an integer target, return true if target is in matrix or false otherwise.\n\nYou must write a solution in O(log(m * n)) time complexity.\nExample 1:\nInput: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3\nOutput: true\n\nExample 2:\nInput: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13\nOutput: false\n\n\nConstraints:\n\nm == matrix.length\nn == matrix[i].length\n1 <= m, n <= 100\n-10^4 <= matrix[i][j], target <= 10^4",
+        "topic": "BinarySearch",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Search in 2d matrix i",
+        "problem_link": "https://leetcode.com/problems/search-a-2d-matrix",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/30_Search_in_2d_matrix_i.py",
+        "approaches": [
+            {
+                "tc": "O(N*M)",
+                "sc": "O(1)",
+                "intuition": "Just do a linear search and check if target present",
+                "code": "from typing import List\n\n\nclass Solution:\n    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:\n        for i in range(len(matrix)):\n            for j in range(len(matrix[0])):\n                if matrix[i][j] == target:\n                    return True\n        return False",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)+O(log(M))",
+                "sc": "O(1)",
+                "intuition": "Traverse throgh each row and if a target falls into the row range start a binary search",
+                "code": "from typing import List\n\n\nclass Solution:\n    def search(self, nums: List[int], target: int) -> bool:\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                return True\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return False\n\n    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:\n        for i in range(len(matrix)):\n            if matrix[i][0] == target or matrix[i][-1] == target:\n                return True\n\n            if matrix[i][0] < target < matrix[i][-1]:\n                if self.search(matrix[i], target):\n                    return True\n\n        return False",
+                "type": "Better"
+            },
+            {
+                "tc": "O(log(N*M))",
+                "sc": "O(1)",
+                "intuition": "Just image you have a flattened 1D array\ndo a binary search\nfor converting 1d co-ordinate to 2d Just\nuse the below\nFor row -> mid // n\nFor col -> mid % n",
+                "code": "from typing import List\n\n\nclass Solution:\n    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:\n        rows = len(matrix)\n        cols = len(matrix[0])\n        st, en = 0, (rows * cols) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n            ro = mid // cols\n            co = mid % cols\n\n            if matrix[ro][co] == target:\n                return True\n\n            if matrix[ro][co] > target:\n                en = mid - 1\n\n            else:\n                st = mid + 1\n\n        return False",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "question": "Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the following properties:\n\nIntegers in each row are sorted in ascending from left to right.\nIntegers in each column are sorted in ascending from top to bottom.\n\n\nExample 1:\nInput: matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 5\nOutput: true\n\nExample 2:\nInput: matrix = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], target = 20\nOutput: false\n\n\nConstraints:\n\nm == matrix.length\nn == matrix[i].length\n1 <= n, m <= 300\n-10^9 <= matrix[i][j] <= 10^9\nAll the integers in each row are sorted in ascending order.\nAll the integers in each column are sorted in ascending order.\n-10^9 <= target <= 10^9",
+        "topic": "BinarySearch",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Search in 2d matrix ii",
+        "problem_link": "https://leetcode.com/problems/search-a-2d-matrix-ii",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Binary_Search/31_Search_in_2d_matrix_ii.py",
+        "approaches": [
+            {
+                "tc": "O(N*M)",
+                "sc": "O(1)",
+                "intuition": "Just do a linear search and check if target present",
+                "code": "from typing import List\n\n\nclass Solution:\n    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:\n        for i in range(len(matrix)):\n            for j in range(len(matrix[0])):\n                if matrix[i][j] == target:\n                    return True\n        return False",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N*log(M))",
+                "sc": "O(1)",
+                "intuition": "For each row do binary search to check if target present",
+                "code": "from typing import List\n\n\nclass Solution:\n    def search(self, nums: List[int], target: int) -> bool:\n        st, en = 0, len(nums) - 1\n\n        while st <= en:\n            mid = st + (en - st) // 2\n\n            if nums[mid] == target:\n                return True\n\n            elif nums[mid] < target:\n                st = mid + 1\n\n            elif nums[mid] > target:\n                en = mid - 1\n\n        return False\n\n    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:\n        for i in range(len(matrix)):\n            if self.search(matrix[i], target):\n                return True\n        return False",
+                "type": "Better"
+            },
+            {
+                "tc": "O(N+M)",
+                "sc": "O(1)",
+                "intuition": "Start from either bottom left or top right\nbased on the current value check which direction\nto go down or towards left,if far than target\nincrease column otherwise decrease row",
+                "code": "from typing import List\n\n\nclass Solution:\n    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:\n        ro, co = 0, len(matrix[0]) - 1\n\n        while co >= 0 and ro < len(matrix):\n            if matrix[ro][co] == target:\n                return True\n\n            if matrix[ro][co] > target:\n                co -= 1\n            else:\n                ro += 1\n\n        return False",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "question": "Given an array of integer arr. Your task is to construct the linked list from arr & return the head of the linked list.\n\nExamples:\n\nInput: arr = [1, 2, 3, 4, 5]\nOutput: LinkedList: 1->2->3->4->5\nExplanation: Linked list for the given array will be\n\nInput: arr = [2, 4, 6, 7, 5, 1, 0]\nOutput: LinkedList: 2->4->6->7->5->1->0\nExplanation: Linked list for the given array will be\n\nExpected Time Complexity: O(n)\nExpected Auxiliary Space: O(n)\n\nConstraints:\n1 <= arr.size() <= 10^6\n1 <= arr[i] <= 10^6",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Array to Linked List",
+        "problem_link": "https://www.geeksforgeeks.org/problems/introduction-to-linked-list/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/1_Array_to_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(N)",
+                "intuition": "initialize two vars head and curr\nhead will be returned as head of final linked list\ncreate a copy of the head in a curr var which will be used\nto assign the next node as we iterate over the array\nTraverse through the array and keep making the curr as next node\nto curr",
+                "code": "class Node:\n    def __init__(self, data: int) -> None:\n        self.data = data\n        self.next = None\n\n\nclass Solution:\n    def constructLL(self, arr: list[int]) -> Node:\n        head: Node = Node(-1)\n        curr: Node = head\n\n        for num in arr:\n            curr.next = Node(num)\n            curr = curr.next\n\n        return head.next",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "Given the head of a Singly Linked List and a value x, insert that value x at the end of the LinkedList and return the modified Linked List.\n\nExamples :\n\nInput: LinkedList: 1->2->3->4->5 , x = 6\nOutput: 1->2->3->4->5->6\nExplanation:\n\nWe can see that 6 is inserted at the end of the linkedlist.\nInput: LinkedList: 5->4 , x = 1\nOutput: 5->4->1\nExplanation:\n\nWe can see that 1 is inserted at the end of the linkedlist.\n\nExpected Time Complexity: O(n)\nExpected Auxiliary Space: O(1)\n\nConstraints:\n0 <= number of nodes <= 10^5\n1 <= node->data , x <= 10^3",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Linked List Insertion At End",
+        "problem_link": "https://www.geeksforgeeks.org/problems/linked-list-insertion-1587115620/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/2_Linked_List_Insertion_At_End.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Just keep traversing the link list\nand stop just at the last nodes reference\nnow we have last nodes reference and must\nmake the last node next point to the new\ncreated node",
+                "code": "class Node:\n    def __init__(self, data: int) -> None:\n        self.data = data\n        self.next = None\n\n\nclass Solution:\n    def insertAtEnd(self, head: Node, x: int) -> Node:\n        if head is None:\n            return Node(x)\n\n        ptr = head\n\n        while ptr.next:\n            ptr = ptr.next\n\n        ptr.next = Node(x)\n\n        return head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "There is a singly-linked list head and we want to delete a node node in it.\n\nYou are given the node to be deleted node. You will not be given access to the first node of head.\n\nAll the values of the linked list are unique, and it is guaranteed that the given node node is not the last node in the linked list.\n\nDelete the given node. Note that by deleting the node, we do not mean removing it from memory. We mean:\n\nThe value of the given node should not exist in the linked list.\nThe number of nodes in the linked list should decrease by one.\nAll the values before node should be in the same order.\nAll the values after node should be in the same order.\nCustom testing:\n\nFor the input, you should provide the entire linked list head and the node to be given node. node should not be the last node of the list and should be an actual node in the list.\nWe will build the linked list and pass the node to your function.\nThe output will be the entire list after calling your function.\n\n\nExample 1:\nInput: head = [4,5,1,9], node = 5\nOutput: [4,1,9]\nExplanation: You are given the second node with value 5, the linked list should become 4 -> 1 -> 9 after calling your function.\n\nExample 2:\nInput: head = [4,5,1,9], node = 1\nOutput: [4,5,9]\nExplanation: You are given the third node with value 1, the linked list should become 4 -> 5 -> 9 after calling your function.\n\nConstraints:\n\nThe number of the nodes in the given list is in the range [2, 1000].\n-1000 <= Node.val <= 1000\nThe value of each node in the list is unique.\nThe node to be deleted is in the list and is not a tail node.",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Delete Node in a Linked List",
+        "problem_link": "https://leetcode.com/problems/delete-node-in-a-linked-list",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/3_Delete_Node_in_a_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(1)",
+                "sc": "O(1)",
+                "intuition": "make the input node vals as its next nodes val\nmake the input node next point to next's next",
+                "code": "class ListNode:\n    def __init__(self, x) -> None:\n        self.val = x\n        self.next = None\n\n\nclass Solution:\n    def deleteNode(self, node: ListNode) -> None:\n        \"\"\"\n        :type node: ListNode\n        :rtype: void Do not return anything, modify node in-place instead.\n        \"\"\"\n        node.val = node.next.val\n        node.next = node.next.next",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Given a singly linked list. The task is to find the length of the linked list, where length is defined as the number of nodes in the linked list.\n\nExamples :\n\nInput: LinkedList : 1->2->3->4->5\n\nOutput: 5\nExplanation: Count of nodes in the linked list is 5, which is its length.\nInput: LinkedList : 2->4->6->7->5->1->0\n\nOutput: 7\nExplanation: Count of nodes in the linked list is 7. Hence, the output is 7.\n\nExpected Time Complexity: O(n)\nExpected Auxilliary Space: O(1)\n\nConstraints:\n1 <= number of nodes <= 10^5\n1 <= node->data <= 10^3",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Count Linked List Nodes",
+        "problem_link": "https://www.geeksforgeeks.org/problems/count-nodes-of-linked-list/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/4_Count_Linked_List_Nodes.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Keep traversing the linked list\nand keep counting the nodes till\nyou reach a null node",
+                "code": "class Node:\n    def __init__(self, data: int) -> None:\n        self.data = data\n        self.next = None\n\n\nclass Solution:\n    def getCount(self, head: Node) -> int:\n        ptr = head\n        c = 0\n\n        while ptr:\n            ptr = ptr.next\n            c += 1\n\n        return c",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "Given a linked list of n nodes and a key, the task is to check if the key is present in the linked list or not.\n\nExample:\n\nInput: n = 4, key = 3\n1->2->3->4\nOutput: true\nExplanation: 3 is present in Linked List, so the function returns true.\n\nConstraint:\n1 <= n <= 10^5\n1 <= key <= 10^5",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Search in Linked List",
+        "problem_link": "https://www.geeksforgeeks.org/problems/search-in-linked-list-1664434326/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/5_Search_in_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Keep traversing the linked list\nif the curr node's val is the key\nval return True\nelse if we have reached the end of\nlinked list return False",
+                "code": "class Node:\n    def __init__(self, data: int) -> None:\n        self.data = data\n        self.next = None\n\n\nclass Solution:\n    def searchKey(self, n: int, head: Node, key: int) -> bool:\n        ptr = head\n\n        while ptr:\n            if ptr.data == key:\n                return True\n            ptr = ptr.next\n\n        return False",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "question": "Geek is learning data structures and is familiar with linked lists, but he's curious about how to access the previous element in a linked list in the same way that we access the next element. His teacher explains doubly linked lists to him.\n\nGiven an integer array arr of size n. Construct the doubly linked list from arr and return the head of it.\n\nExample 1:\nInput:\nn = 5\narr = [1,2,3,4,5]\nOutput:\n1 2 3 4 5\nExplanation: Linked list for the given array will be 1<->2<->3<->4<->5.\n\nExample 2:\nInput:\nn = 1\narr = [1]\nOutput:\n1\nExplanation: Linked list for the given array will be 1.\n\nConstraints:\n1 <= n <= 10^5\n1 <= arr[i] <= 100\n\nYour Task:\nYou don't need to read input or print anything. Your task is to complete the function constructDLL() which takes arr[] as input parameters and returns the head of the Linked List.\n\nExpected Time Complexity: O(n)\nExpected Auxiliary Space: O(n)",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Array to Doubly Linked List",
+        "problem_link": "https://www.geeksforgeeks.org/problems/introduction-to-doubly-linked-list/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/6_Array_to_Doubly_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "initialize two vars head and curr\nhead will be returned as head of final linked list\ncreate a copy of the head in a curr var which will be used\nto assign the next node,prev node as we iterate over the array\nTraverse through the array and keep making the curr as next node\nto curr",
+                "code": "class Node:\n    def __init__(self, data: int) -> None:\n        self.data = data\n        self.next = None\n        self.prev = None\n\n\nclass Solution:\n    def constructDLL(self, arr: list[int]) -> Node:\n        if not arr:\n            return None\n\n        head = Node(arr[0])\n        curr = head\n\n        for num in arr[1:]:\n            new_node = Node(num)\n            new_node.prev = curr\n            curr.next = new_node\n            curr = curr.next\n\n        return head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "question": "Given a doubly-linked list, a position p, and an integer x. The task is to add a new node with value x at the position just after pth node in the doubly linked list and return the head of the updated list.\n\nExamples:\n\nInput: LinkedList: 2<->4<->5, p = 2, x = 6\nOutput: 2<->4<->5<->6\nExplanation: p = 2, and x = 6. So, 6 is inserted after p, i.e, at position 2 (0-based indexing).\n\nInput: LinkedList: 1<->2<->3<->4, p = 0, x = 44\nOutput: 1<->44<->2<->3<->4\nExplanation: p = 0, and x = 44 . So, 44 is inserted after p, i.e, at position 0 (0-based indexing).\n\nConstraints:\n0 <= p < size of doubly linked list <= 10^6\n1 <= x <= 10^6",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Doubly linked list Insertion at given position",
+        "problem_link": "https://www.geeksforgeeks.org/problems/insert-a-node-in-doubly-linked-list/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/7_Doubly_linked_list_Insertion_at_given_position.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Just stop at the given pth node\nthen insert the node after the pth node\nassign required links",
+                "code": "class Node:\n    def __init__(self, data: int) -> None:\n        self.data = data\n        self.next = None\n        self.prev = None\n\n\nclass Solution:\n    # Function to insert a new node at given position in doubly linked list.\n    def addNode(self, head: Node, p: int, x: int) -> Node:\n        ptr = head\n\n        while p:\n            p -= 1\n            ptr = ptr.next\n\n        new_node = Node(x)\n        new_node.prev = ptr\n        new_node.next = ptr.next\n\n        if ptr.next:\n            ptr.next.prev = new_node\n\n        if ptr:\n            ptr.next = new_node\n\n        return head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "question": "Given a Doubly Linked list and a position. The task is to delete a node from a given position (position starts from 1) in a doubly linked list and return the head of the doubly Linked list.\n\nExamples:\n\nInput: LinkedList = 1 <--> 3 <--> 4, x = 3\nOutput: 1 <--> 3\nExplanation: After deleting the node at position 3 (position starts from 1),the linked list will be now as 1 <--> 3.\n\nInput: LinkedList = 1 <--> 5 <--> 2 <--> 9, x = 1\nOutput: 5 <--> 2 <--> 9\nExplanation:\n\nConstraints:\n2 <= size of the linked list <= 10^6\n1 <= x <= size of the linked list\n1 <= node->data <= 10^4",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Delete in a Doubly Linked List",
+        "problem_link": "https://www.geeksforgeeks.org/problems/delete-node-in-doubly-linked-list/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/8_Delete_in_a_Doubly_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Stop at the node to delete and save its reference to a variable\nthen delete the following links:\n+ make the delete nodes prev nodes next point to deleted nodes next\n+ make the delete nodes next nodes prev point to deleted nodes prev",
+                "code": "class Node:\n    def __init__(self, data: int) -> None:\n        self.data = data\n        self.next = None\n        self.prev = None\n\n\nclass Solution:\n    def delete_node(self, head: Node, x: int) -> Node:\n        if x == 1:\n            if head.next:\n                head.next.prev = None\n            return head.next\n\n        ptr = head\n        for _ in range(x - 1):\n            ptr = ptr.next\n\n        if ptr and ptr.prev:\n            ptr.prev.next = ptr.next\n\n        if ptr and ptr.next:\n            ptr.next.prev = ptr.prev\n\n        return head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "question": "Given the head of a singly linked list, reverse the list, and return the reversed list.\n\nExample 1:\nInput: head = [1,2,3,4,5]\nOutput: [5,4,3,2,1]\n\nExample 2:\nInput: head = [1,2]\nOutput: [2,1]\n\nExample 3:\nInput: head = []\nOutput: []\n\n\nConstraints:\n\nThe number of nodes in the list is the range [0, 5000].\n-5000 <= Node.val <= 5000\n\nFollow up: A linked list can be reversed either iteratively or recursively. Could you implement both?",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Reverse a Linked List",
+        "problem_link": "https://leetcode.com/problems/reverse-linked-list/",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/8_Reverse_a_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "if you are at ith node make the curr nodes next point to prev node",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        prev = None\n        curr = head\n\n        while curr:\n            next_node = curr.next\n            curr.next = prev\n            prev = curr\n            curr = next_node\n\n        return prev",
+                "type": "Optimal"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(N)",
+                "intuition": "if you are at ith node make the curr nodes\nnext point to prev node",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        def rev_linked_list(curr: ListNode, prev: ListNode) -> Optional[ListNode]:\n            if curr is None:\n                return prev\n\n            next_node = curr.next\n            curr.next = prev\n            prev = curr\n            return rev_linked_list(next_node, prev)\n\n        return rev_linked_list(head, None)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "question": "Given a doubly linked list. Your task is to reverse the doubly linked list and return its head.\n\nExamples:\n\nInput: LinkedList: 3 <-> 4 <-> 5\nOutput: 5 <-> 4 <-> 3\n\nInput: LinkedList: 75 <-> 122 <-> 59 <-> 196\nOutput: 196 <-> 59 <-> 122 <-> 75\n\nExpected Time Complexity: O(n).\nExpected Auxiliary Space: O(1).\n\nConstraints:\n1 <= number of nodes <= 10^6\n0 <= node->data <= 10^4",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Reverse a Doubly Linked List",
+        "problem_link": "https://www.geeksforgeeks.org/problems/reverse-a-doubly-linked-list/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/9_Reverse_a_Doubly_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "if you are at ith node make curr nodes\nnext to prev and curr nodes prev to next node",
+                "code": "class DLLNode:\n    def __init__(self, val):\n        self.data = val\n        self.next = None\n        self.prev = None\n\n\nclass Solution:\n    def reverseDLL(self, head: DLLNode) -> DLLNode:\n        prev = None\n        ptr = head\n\n        while ptr:\n            next_node = ptr.next\n            ptr.next = prev\n            prev = ptr\n            ptr.prev = next_node\n            ptr = next_node\n\n        return prev",
                 "type": "Optimal"
             }
         ]
