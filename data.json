@@ -2746,5 +2746,489 @@
                 "type": "Optimal"
             }
         ]
+    },
+    {
+        "id": 11,
+        "question": "Given the head of a singly linked list, return the middle node of the linked list.\nIf there are two middle nodes, return the second middle node.\n\n\nExample 1:\nInput: head = [1,2,3,4,5]\nOutput: [3,4,5]\nExplanation: The middle node of the list is node 3.\n\nExample 2:\nInput: head = [1,2,3,4,5,6]\nOutput: [4,5,6]\nExplanation: Since the list has two middle nodes with values 3 and 4, we return the second one.\n\n\nConstraints:\n\nThe number of nodes in the list is in the range [1, 100].\n1 <= Node.val <= 100",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Find Middle of Linked List",
+        "problem_link": "https://leetcode.com/problems/middle-of-the-linked-list",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/10_Find_Middle_of_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Find the length of linked list We know for finding the midpoint is length//2 again traverse the linked list till length//2 times then the node at which we stop the traversal is the midpoint",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        length = 0\n        ptr = head\n\n        while ptr:\n            length += 1\n            ptr = ptr.next\n\n        stop_pos = length // 2\n        ptr = head\n\n        while stop_pos:\n            stop_pos -= 1\n            ptr = ptr.next\n\n        return ptr",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "We are going to use the floyds hare and tortoise algorithm\nWe take slow and fast pointer where slow moves one step\nand fast pointer moves 2 steps. One thing to observe for\nodd and even length linked list\nFor Odd length fast pointer will reach the last node before overshooting\na->b->c->d->e->\ns\nf\n\nFor even length fast pointer will overshoot\na->b->c->d->\ns\nf",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        slow, fast = head, head\n\n        while fast and fast.next:\n            slow = slow.next\n            fast = fast.next.next\n\n        return slow",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "question": "Given head, the head of a linked list, determine if the linked list has a cycle in it.\nThere is a cycle in a linked list if there is some node in the list that can be\nreached again by continuously following the next pointer. Internally, pos is\nused to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.\n\nReturn true if there is a cycle in the linked list. Otherwise, return false.\n\n\nExample 1:\nInput: head = [3,2,0,-4], pos = 1\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).\n\nExample 2:\nInput: head = [1,2], pos = 0\nOutput: true\nExplanation: There is a cycle in the linked list, where the tail connects to the 0th node.\n\nExample 3:\nInput: head = [1], pos = -1\nOutput: false\nExplanation: There is no cycle in the linked list.\n\n\nConstraints:\n\nThe number of the nodes in the list is in the range [0, 10^4].\n-10^5 <= Node.val <= 10^5\npos is -1 or a valid index in the linked-list.\n\nFollow up: Can you solve it using O(1) (i.e. constant) memory?",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Detect Cycle",
+        "problem_link": "https://leetcode.com/problems/linked-list-cycle",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/11_Detect_Cycle.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(N)",
+                "intuition": "Keep track of the nodes as you visit if there is a cycle then definitely we will visit a node twice",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, x):\n        self.val = x\n        self.next = None\n\n\nclass Solution:\n    def hasCycle(self, head: Optional[ListNode]) -> bool:\n        visited_nodes = set()\n        ptr = head\n\n        while ptr:\n            if ptr in visited_nodes:\n                return True\n            visited_nodes.add(ptr)\n            ptr = ptr.next\n\n        return False",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Use floyds hare and tortoise algorithm\nif there is a cycle then hare and tortoise are bound to meet\nat each turn the hare becomes closer to the tortoise by 1 unit\nof distance",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, x):\n        self.val = x\n        self.next = None\n\n\nclass Solution:\n    def hasCycle(self, head: Optional[ListNode]) -> bool:\n        slow, fast = head, head\n\n        while fast and fast.next:\n            fast = fast.next.next\n            slow = slow.next\n\n            if fast == slow:\n                return True\n\n        return False",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "question": "Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return null.\n\nThere is a cycle in a linked list if there is some node in the list that can be reached again by continuously\nfollowing the next pointer. Internally, pos is used to denote the index of the node that\ntail's next pointer is connected to (0-indexed). It is -1 if there is no cycle. Note that pos is not passed as a parameter.\n\nDo not modify the linked list.\n\n\nExample 1:\nInput: head = [3,2,0,-4], pos = 1\nOutput: tail connects to node index 1\nExplanation: There is a cycle in the linked list, where tail connects to the second node.\n\nExample 2:\nInput: head = [1,2], pos = 0\nOutput: tail connects to node index 0\nExplanation: There is a cycle in the linked list, where tail connects to the first node.\n\nExample 3:\nInput: head = [1], pos = -1\nOutput: no cycle\nExplanation: There is no cycle in the linked list.\n\n\nConstraints:\n\nThe number of the nodes in the list is in the range [0, 10^4].\n-10^5 <= Node.val <= 10^5\npos is -1 or a valid index in the linked-list.\n\n\nFollow up: Can you solve it using O(1) (i.e. constant) memory?",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Linked List Cycle II",
+        "problem_link": "https://leetcode.com/problems/linked-list-cycle-ii/",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/12_Linked_List_Cycle_II.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(N)",
+                "intuition": "Keep track of the nodes as you visit if we visit a node more than twice then that node is the start of cycle",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, x):\n        self.val = x\n        self.next = None\n\n\nclass Solution:\n    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        visited_nodes = set()\n        ptr = head\n\n        while ptr:\n            if ptr in visited_nodes:\n                return ptr\n            visited_nodes.add(ptr)\n            ptr = ptr.next\n\n        return None",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Use floyds hare and tortoise algo\nWait until they both meet\nafter they meet place hare at start\nand keep moving hare and tortoise one\nstep until the meet",
+                "code": "from typing import Optional\n\n\n# class ListNode:\n#     def __init__(self, x):\n#         self.val = x\n#         self.next = None\n\n\nclass Solution:\n    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        slow, fast = head, head\n\n        while fast and fast.next:\n            fast = fast.next.next\n            slow = slow.next\n\n            if fast == slow:\n                break\n\n        if not fast or not fast.next:  # No cycle\n            return None\n\n        fast = head\n\n        while fast != slow:\n            slow = slow.next\n            fast = fast.next\n\n        return slow",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "question": "Given the head of a linked list, determine whether the list contains a loop. If a loop is present,\nreturn the number of nodes in the loop, otherwise return 0.\n\nNote: 'c' is the position of the node which is the next pointer of the last node of the linkedlist. If c is 0, then there is no loop.\n\nExamples:\n\nInput: head: 1 \u2192 2 \u2192 3 \u2192 4 \u2192 5, c = 2\nOutput: 4\nExplanation: There exists a loop in the linked list and the length of the loop is 4.\n\nInput: head: 25 \u2192 14 \u2192 19 \u2192 33 \u2192 10 \u2192 21 \u2192 39 \u2192 90 \u2192 58 \u2192 45, c = 4\nOutput: 7\nExplanation: The loop is from 33 to 45. So length of loop is 33 \u2192 10 \u2192 21 \u2192 39 \u2192 90 \u2192 58 \u2192 45 = 7.\nThe number 33 is connected to the last node of the linkedlist to form the loop because according\nto the input the 4th node from the beginning(1 based indexing)\nwill be connected to the last node in the LinkedList.\n\nInput: head: 0 \u2192 1 \u2192 2 \u2192 3, c = 0\nOutput: 0\nExplanation: There is no loop.\n\nConstraints:\n1 \u2264 no. of nodes \u2264 10^6\n0 \u2264 node.data \u2264 10^6\n0 \u2264 c \u2264 n-1",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Find length of Loop",
+        "problem_link": "https://www.geeksforgeeks.org/problems/find-length-of-loop/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/13_Find_length_of_Loop.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(N)",
+                "intuition": "Keep track of index at which we visit node moment we find a node we already visit return curr_idx-visited_nodes[ptr]",
+                "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n\nclass Solution:\n    def countNodesInLoop(self, head: Node):\n        visited_nodes: dict[Node, int] = {}\n\n        ptr = head\n        curr_idx = 1\n\n        while ptr:\n            if ptr in visited_nodes:\n                return curr_idx - visited_nodes[ptr]\n\n            visited_nodes[ptr] = curr_idx\n            ptr = ptr.next\n            curr_idx += 1\n\n        return 0",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Use hare and floyds algorithm\nafter two pointers meet\nwe move again until we reach\nslow node again [can be modified for fast too]",
+                "code": "class Node:\n    def __init__(self, data):  # data -> value stored in node\n        self.data = data\n        self.next = None\n\n\nclass Solution:\n    def countNodesInLoop(self, head: Node):\n        slow, fast = head, head\n\n        while fast and fast.next:\n            fast = fast.next.next\n            slow = slow.next\n\n            if fast == slow:\n                ptr = slow.next\n                c = 1\n                while ptr != slow:\n                    c += 1\n                    ptr = ptr.next\n                return c\n\n        if not fast or not fast.next:  # No cycle\n            return 0",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "question": "Given the head of a singly linked list, return true if it is a palindrome or false otherwise.\n\nExample 1:\nInput: head = [1,2,2,1]\nOutput: true\n\nExample 2:\nInput: head = [1,2]\nOutput: false\n\n\nConstraints:\n\nThe number of nodes in the list is in the range [1, 105].\n0 <= Node.val <= 9\n\n\nFollow up: Could you do it in O(n) time and O(1) space?",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Palindrome Linked List",
+        "problem_link": "https://leetcode.com/problems/palindrome-linked-list",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/14_Palindrome_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(N)",
+                "sc": "O(N)",
+                "intuition": "Store the linked list in an array check if list is palindromic or not using 2 pointer technique",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def isPalindrome(self, head: Optional[ListNode]) -> bool:\n        arr = []\n\n        ptr = head\n        while ptr:\n            arr.append(ptr.val)\n            ptr = ptr.next\n\n        i, j = 0, len(arr) - 1\n\n        while i < j:\n            if arr[i] != arr[j]:\n                return False\n\n            i += 1\n            j -= 1\n\n        return True",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)+O(N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "Find the middle of linked list\nreverse from the mid to last and get last nodes head\nnow keep comparing last node and first node like this",
+                "code": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        slow, fast = head, head\n\n        while fast and fast.next:\n            slow = slow.next\n            fast = fast.next.next\n\n        if fast and not fast.next:  # Handle odd length\n            slow = slow.next\n\n        return slow\n\n    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        prev = None\n        curr = head\n\n        while curr:\n            next_node = curr.next\n            curr.next = prev\n            prev = curr\n            curr = next_node\n\n        return prev\n\n    def checkPalindrome(self, a: ListNode, b: ListNode) -> bool:\n        while a and b:\n            if a.val != b.val:\n                return False\n\n            a = a.next\n            b = b.next\n\n        return True\n\n    def isPalindrome(self, head: Optional[ListNode]) -> bool:\n        mid = self.middleNode(head)\n        last_node_head = self.reverseList(mid)\n        return self.checkPalindrome(head, last_node_head)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "question": "Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.\nThe first node is considered odd, and the second node is even, and so on.\nNote that the relative order inside both the even and odd groups should remain as it was in the input.\nYou must solve the problem in O(1) extra space complexity and O(n) time complexity.\n\n\nExample 1:\nInput: head = [1,2,3,4,5]\nOutput: [1,3,5,2,4]\n\nExample 2:\nInput: head = [2,1,3,5,6,4,7]\nOutput: [2,3,6,7,1,5,4]\n\n\nConstraints:\nThe number of nodes in the linked list is in the range [0, 10^4].\n-10^6 <= Node.val <= 10^6",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Odd Even Linked List",
+        "problem_link": "https://leetcode.com/problems/odd-even-linked-list",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/15_Odd_Even_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "keep a new_head traverse the given head and put the odd index to the new_head first traverse again in the given head and put the even index to the new_head second",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        new_head = ListNode()\n        curr_new_head = new_head\n        ptr = head\n        idx = 1\n\n        while ptr:\n            if idx % 2 == 1:\n                curr_new_head.next = ListNode(ptr.val)\n                curr_new_head = curr_new_head.next\n            ptr = ptr.next\n            idx += 1\n\n        ptr = head\n        idx = 1\n\n        while ptr:\n            if idx % 2 == 0:\n                curr_new_head.next = ListNode(ptr.val)\n                curr_new_head = curr_new_head.next\n            ptr = ptr.next\n            idx += 1\n\n        return new_head.next",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "take 2 nodes odd,even and even head\n1  2  3  4  5\na->b->c->d->e->\no  e\no  eh\ngoal is to make the current odd index node point to next odd index node\nand make the current event index node point to next even index node",
+                "code": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        if not head:\n            return head\n\n        odd, even = head, head.next\n        even_head = even\n\n        while even and even.next:\n            odd.next = even.next\n            odd = odd.next\n\n            even.next = even.next.next\n            even = even.next\n\n        odd.next = even_head\n\n        return head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "question": "Given the head of a linked list, remove the nth node from the end of the list and return its head.\n\n\nExample 1:\nInput: head = [1,2,3,4,5], n = 2\nOutput: [1,2,3,5]\n\nExample 2:\nInput: head = [1], n = 1\nOutput: []\n\nExample 3:\nInput: head = [1,2], n = 1\nOutput: [1]\n\n\nConstraints:\n\nThe number of nodes in the list is sz.\n1 <= sz <= 30\n0 <= Node.val <= 100\n1 <= n <= sz\n\n\nFollow up: Could you do this in one pass?",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Remove Nth Node From End of List",
+        "problem_link": "https://leetcode.com/problems/remove-nth-node-from-end-of-list",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/16_Remove_Nth_Node_From_End_of_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "Nth node from back is nothing but C-N from front where C is total length of list",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:\n        c = 0\n        ptr = head\n\n        while ptr:\n            ptr = ptr.next\n            c += 1\n\n        ptr = head\n        node_idx_to_delete = c - n\n        if (node_idx_to_delete) == 0:\n            return head.next\n\n        while node_idx_to_delete != 1:\n            ptr = ptr.next\n            node_idx_to_delete -= 1\n\n        if ptr and ptr.next:\n            ptr.next = ptr.next.next\n\n        return head",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Goal is to first move a fast pointer by given n steps\nif fast becomes null then we were aksed to delete the first node\nThen move a slow and fast pointer simultenously until fast reaches last node\nYou will see at the end the slow pointer will automatically reach the node\njust before the to be deleted node because we\nmaintained an offset of n",
+                "code": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:\n        fast = head\n\n        for _ in range(n):\n            fast = fast.next\n\n        # was aksed to delete the head\n        if not fast:\n            return head.next\n\n        slow = head\n\n        # just stop when fast reach the last node\n        while fast and fast.next:\n            fast = fast.next\n            slow = slow.next\n\n        slow.next = slow.next.next\n\n        return head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "question": "You are given the head of a linked list. Delete the middle node, and return the head of the modified linked list.\n\nThe middle node of a linked list of size n is the \u230an / 2\u230bth node from the start using 0-based indexing, where \u230ax\u230b denotes the largest integer less than or equal to x.\n\nFor n = 1, 2, 3, 4, and 5, the middle nodes are 0, 1, 1, 2, and 2, respectively.\n\n\nExample 1:\nInput: head = [1,3,4,7,1,2,6]\nOutput: [1,3,4,1,2,6]\nExplanation:\nThe above figure represents the given linked list. The indices of the nodes are written below.\nSince n = 7, node 3 with value 7 is the middle node, which is marked in red.\nWe return the new list after removing this node.\n\nExample 2:\nInput: head = [1,2,3,4]\nOutput: [1,2,4]\nExplanation:\nThe above figure represents the given linked list.\nFor n = 4, node 2 with value 3 is the middle node, which is marked in red.\n\nExample 3:\nInput: head = [2,1]\nOutput: [2]\nExplanation:\nThe above figure represents the given linked list.\nFor n = 2, node 1 with value 1 is the middle node, which is marked in red.\nNode 0 with value 2 is the only node remaining after removing node 1.\n\n\nConstraints:\n\nThe number of nodes in the list is in the range [1, 10^5].\n1 <= Node.val <= 10^5",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Delete the Middle Node of a Linked List",
+        "problem_link": "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/17_Delete_the_Middle_Node_of_a_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "Find length of linked list Just stop at the index before the midpoint then change links and delete mid node",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        ptr = head\n        n = 0\n\n        while ptr:\n            ptr = ptr.next\n            n += 1\n\n        node_idx_to_stop = n // 2\n        if node_idx_to_stop == 0:\n            return head.next\n\n        ptr = head\n        while node_idx_to_stop != 1:\n            ptr = ptr.next\n            node_idx_to_stop -= 1\n\n        if ptr and ptr.next:\n            ptr.next = ptr.next.next\n\n        return head",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Just do hares floyd and tortoies algos Intuition\njust keep track of also a slow prev as we want\nto stop just at the node before the deleted node",
+                "code": "from typing import Optional\n\n\n# Definition for singly-linked list.\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        slow, fast = head, head\n        slow_prev = head\n        while fast and fast.next:\n            slow_prev = slow\n            slow = slow.next\n            fast = fast.next.next\n\n        if slow_prev and slow_prev.next:\n            slow_prev.next = slow_prev.next.next\n        else:\n            return None\n\n        return head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "question": "Given the head of a linked list, return the list after sorting it in ascending order.\n\n\nExample 1:\n\n\nInput: head = [4,2,1,3]\nOutput: [1,2,3,4]\nExample 2:\n\n\nInput: head = [-1,5,3,4,0]\nOutput: [-1,0,3,4,5]\nExample 3:\n\nInput: head = []\nOutput: []\n\n\nConstraints:\n\nThe number of nodes in the list is in the range [0, 5 * 10^4].\n-10^5 <= Node.val <= 10^5\n\n\nFollow up: Can you sort the linked list in O(n logn) time and O(1) memory (i.e. constant space)?",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Sort Linked List",
+        "problem_link": "https://leetcode.com/problems/sort-list/",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/18_Sort_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(Nlog(N))",
+                "sc": "O(1)",
+                "intuition": "Use Merge Sort Algorithm\nPartitioning is done using the getMid function",
+                "code": "class Solution:\n    def getMid(self, head):\n        prev_slow = None\n        slow, fast = head, head\n\n        while fast and fast.next:\n            prev_slow = slow\n            fast = fast.next.next\n            slow = slow.next\n\n        return prev_slow\n\n    def mergeSort(self, head):\n        # We are at single node\n        if head is None or head.next is None:\n            return head\n\n        # Cut links only 2 parts from head to mid\n        # mid+1 to tail\n        mid = self.getMid(head)\n        tmp = mid.next\n        mid.next = None\n        mid = tmp\n\n        left = self.mergeSort(head)\n        right = self.mergeSort(mid)\n        return self.merge(left, right)\n\n    def merge(self, l1, l2):\n        d = cp = ListNode()\n        while l1 and l2:\n            if l1.val <= l2.val:\n                d.next = l1\n                l1 = l1.next\n            else:\n                d.next = l2\n                l2 = l2.next\n\n            d = d.next\n\n        if l1:\n            d.next = l1\n        if l2:\n            d.next = l2\n\n        return cp.next\n\n    def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        return self.mergeSort(head)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "question": "Given the head of a linked list where nodes can contain values 0s, 1s, and 2s only. Your task is to rearrange the list so that all 0s appear at the beginning, followed by all 1s, and all 2s are placed at the end.\n\nExamples:\n\nInput: head = 1 \u2192 2 \u2192 2 \u2192 1 \u2192 2 \u2192 0 \u2192 2 \u2192 2\n\nOutput: 0 \u2192 1 \u2192 1 \u2192 2 \u2192 2 \u2192 2 \u2192 2 \u2192 2\n\nExplanation: All the 0s are segregated to the left end of the linked list, 2s to the right end of the list, and 1s in between.\nInput: head = 2 \u2192 2 \u2192 0 \u2192 1\n\nOutput: 0 \u2192 1 \u2192 2 \u2192 2\n\nExplanation: After arranging all the 0s, 1s and 2s in the given format, the output will be 0 \u2192 1 \u2192 2 \u2192 2.\nConstraints:\n1 \u2264 no. of nodes \u2264 10^6\n0 \u2264 node->data \u2264 2",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Sort a linked list of 0s, 1s and 2s",
+        "problem_link": "https://www.geeksforgeeks.org/problems/given-a-linked-list-of-0s-1s-and-2s-sort-it/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/19_Sort_a_linked_list_of_0s,_1s_and_2s.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "Use count sort",
+                "code": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n\nclass Solution:\n    def segregate(self, head: Node) -> Node:\n        cnt0, cnt1, cnt2 = 0, 0, 0\n        ptr = head\n\n        while ptr:\n            if ptr.data == 0:\n                cnt0 += 1\n            if ptr.data == 1:\n                cnt1 += 1\n            if ptr.data == 2:\n                cnt2 += 1\n            ptr = ptr.next\n\n        ptr = head\n        for _ in range(cnt0):\n            ptr.data = 0\n            ptr = ptr.next\n\n        for _ in range(cnt1):\n            ptr.data = 1\n            ptr = ptr.next\n\n        for _ in range(cnt2):\n            ptr.data = 2\n            ptr = ptr.next\n\n        return head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "question": "Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.\n\nFor example, the following two linked lists begin to intersect at node c1:\n\n\nThe test cases are generated such that there are no cycles anywhere in the entire linked structure.\n\nNote that the linked lists must retain their original structure after the function returns.\n\nCustom Judge:\n\nThe inputs to the judge are given as follows (your program is not given these inputs):\n\nintersectVal - The value of the node where the intersection occurs. This is 0 if there is no intersected node.\nlistA - The first linked list.\nlistB - The second linked list.\nskipA - The number of nodes to skip ahead in listA (starting from the head) to get to the intersected node.\nskipB - The number of nodes to skip ahead in listB (starting from the head) to get to the intersected node.\nThe judge will then create the linked structure based on these inputs and pass the two heads, headA and headB to your program. If you correctly return the intersected node, then your solution will be accepted.\n\n\nExample 1:\nInput: intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3\nOutput: Intersected at '8'\nExplanation: The intersected node's value is 8 (note that this must not be 0 if the two lists intersect).\nFrom the head of A, it reads as [4,1,8,4,5]. From the head of B, it reads as [5,6,1,8,4,5]. There are 2 nodes before the intersected node in A; There are 3 nodes before the intersected node in B.\n- Note that the intersected node's value is not 1 because the nodes with value 1 in A and B (2nd node in A and 3rd node in B) are different node references. In other words, they point to two different locations in memory, while the nodes with value 8 in A and B (3rd node in A and 4th node in B) point to the same location in memory.\n\nExample 2:\nInput: intersectVal = 2, listA = [1,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1\nOutput: Intersected at '2'\nExplanation: The intersected node's value is 2 (note that this must not be 0 if the two lists intersect).\nFrom the head of A, it reads as [1,9,1,2,4]. From the head of B, it reads as [3,2,4]. There are 3 nodes before the intersected node in A; There are 1 node before the intersected node in B.\n\nExample 3:\nInput: intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2\nOutput: No intersection\nExplanation: From the head of A, it reads as [2,6,4]. From the head of B, it reads as [1,5]. Since the two lists do not intersect, intersectVal must be 0, while skipA and skipB can be arbitrary values.\nExplanation: The two lists do not intersect, so return null.\n\n\nConstraints:\n\nThe number of nodes of listA is in the m.\nThe number of nodes of listB is in the n.\n1 <= m, n <= 3 * 10^4\n1 <= Node.val <= 10^5\n0 <= skipA <= m\n0 <= skipB <= n\nintersectVal is 0 if listA and listB do not intersect.\nintersectVal == listA[skipA] == listB[skipB] if listA and listB intersect.\n\nFollow up: Could you write a solution that runs in O(m + n) time and use only O(1) memory?",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Intersection of Two Linked Lists",
+        "problem_link": "https://leetcode.com/problems/intersection-of-two-linked-lists",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/20_Intersection_of_Two_Linked_Lists.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(N)",
+                "sc": "O(N)",
+                "intuition": "traverse one list and store all the visited_nodes traverse the other list and if their is an intersection we will find a common node",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, x):\n        self.val = x\n        self.next = None\n\n\nclass Solution:\n    def getIntersectionNode(\n        self, headA: ListNode, headB: ListNode\n    ) -> Optional[ListNode]:\n        visited_nodes = set()\n\n        ptr = headA\n        while ptr:\n            visited_nodes.add(ptr)\n            ptr = ptr.next\n\n        ptr = headB\n        while ptr:\n            if ptr in visited_nodes:\n                return ptr\n            visited_nodes.add(ptr)\n            ptr = ptr.next\n\n        return None",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "find the length of both linked list\nfind the linked list which less length\ntravel the greater size linked list with the size diff steps",
+                "code": "class ListNode:\n    def __init__(self, x):\n        self.val = x\n        self.next = None\n\n\nclass Solution:\n    def getIntersectionNode(\n        self, headA: ListNode, headB: ListNode\n    ) -> Optional[ListNode]:\n\n        n1, n2 = 0, 0\n        p1, p2 = headA, headB\n\n        while p1:\n            n1 += 1\n            p1 = p1.next\n\n        while p2:\n            n2 += 1\n            p2 = p2.next\n\n        diff = abs(n1 - n2)\n        p1, p2 = headA, headB\n\n        if n1 < n2:\n            # Move p2 diff placess ahead\n            while diff:\n                p2 = p2.next\n                diff -= 1\n        else:\n            while diff:\n                p1 = p1.next\n                diff -= 1\n\n        while p1 and p2:\n            if p1 == p2:\n                return p1\n\n            p1 = p1.next\n            p2 = p2.next\n\n        return None",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "question": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.\n\nYou may assume the two numbers do not contain any leading zero, except the number 0 itself.\n\n\nExample 1:\n\n\nInput: l1 = [2,4,3], l2 = [5,6,4]\nOutput: [7,0,8]\nExplanation: 342 + 465 = 807.\nExample 2:\n\nInput: l1 = [0], l2 = [0]\nOutput: [0]\nExample 3:\n\nInput: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]\nOutput: [8,9,9,9,0,0,0,1]\n\n\nConstraints:\n\nThe number of nodes in each linked list is in the range [1, 100].\n0 <= Node.val <= 9\nIt is guaranteed that the list represents a number that does not have leading zeros.",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Add Two Numbers",
+        "problem_link": "https://leetcode.com/problems/add-two-numbers",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/21_Add_Two_Numbers.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Just follow pure maths",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def addTwoNumbers(\n        self, l1: Optional[ListNode], l2: Optional[ListNode]\n    ) -> Optional[ListNode]:\n        ptr1, ptr2 = l1, l2\n\n        new_head = ListNode()\n        curr = new_head\n        carry = 0\n\n        while ptr1 and ptr2:\n            sm = ptr1.val + ptr2.val + carry\n            carry = sm // 10\n            res = sm % 10\n            curr.next = ListNode(res)\n\n            curr = curr.next\n            ptr1 = ptr1.next\n            ptr2 = ptr2.next\n\n        while ptr1:\n            sm = ptr1.val + carry\n            carry = sm // 10\n            res = sm % 10\n            curr.next = ListNode(res)\n\n            curr = curr.next\n            ptr1 = ptr1.next\n\n        while ptr2:\n            sm = ptr2.val + carry\n            carry = sm // 10\n            res = sm % 10\n            curr.next = ListNode(res)\n\n            curr = curr.next\n            ptr2 = ptr2.next\n\n        if carry > 0:\n            curr.next = ListNode(carry)\n\n        return new_head.next",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "question": "You are given a linked list where each element in the list is a node and have an integer data. You need to add 1 to the number formed by concatinating all the list node numbers together and return the head of the modified linked list.\n\nNote: The head represents the first element of the given array.\n\nExamples :\n\nInput: LinkedList: 4->5->6\nOutput: 457\n\nExplanation: 4->5->6 represents 456 and when 1 is added it becomes 457.\nInput: LinkedList: 1->2->3\nOutput: 124\n\nExplanation:  1->2->3 represents 123 and when 1 is added it becomes 124.\n\nExpected Time Complexity: O(n)\nExpected Auxiliary Space: O(1)\n\nConstraints:\n1 <= len(list) <= 10^5\n0 <= list[i] <= 9",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Add 1 to a Linked List Number",
+        "problem_link": "https://www.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/22_Add_1_to_a_Linked_List_Number.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Reverse linked list\nAdd 1\nReverse linked list and return head",
+                "code": "from typing import Optional\n\n\nclass Node:\n    def __init__(self, data):  # data -> value stored in node\n        self.data = data\n        self.next = None\n\n\nclass Solution:\n    def reverseList(self, head: Optional[Node]) -> Optional[Node]:\n        prev = None\n        curr = head\n\n        while curr:\n            next_node = curr.next\n            curr.next = prev\n            prev = curr\n            curr = next_node\n\n        return prev\n\n    def addTwoNumbers(self, l1: Optional[Node], l2: Optional[Node]) -> Optional[Node]:\n        ptr1, ptr2 = l1, l2\n\n        new_head = Node(-1)\n        curr = new_head\n        carry = 0\n\n        while ptr1 and ptr2:\n            sm = ptr1.data + ptr2.data + carry\n            carry = sm // 10\n            res = sm % 10\n            curr.next = Node(res)\n\n            curr = curr.next\n            ptr1 = ptr1.next\n            ptr2 = ptr2.next\n\n        while ptr1:\n            sm = ptr1.data + carry\n            carry = sm // 10\n            res = sm % 10\n            curr.next = Node(res)\n\n            curr = curr.next\n            ptr1 = ptr1.next\n\n        while ptr2:\n            sm = ptr2.data + carry\n            carry = sm // 10\n            res = sm % 10\n            curr.next = Node(res)\n\n            curr = curr.next\n            ptr2 = ptr2.next\n\n        if carry > 0:\n            curr.next = Node(carry)\n\n        return new_head.next\n\n    def addOne(self, head: Node):\n        head = self.addTwoNumbers(Node(1), self.reverseList(head))\n        return self.reverseList(head)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "question": "You are given the head_ref of a doubly Linked List and a Key. Your task is to delete all occurrences of the given key if it is present and return the new DLL.\n\nExample1:\n\nInput:\n2<->2<->10<->8<->4<->2<->5<->2\n2\nOutput:\n10<->8<->4<->5\nExplanation:\nAll Occurences of 2 have been deleted.\n\nExample2:\n\nInput:\n9<->1<->3<->4<->5<->1<->8<->4\n9\nOutput:\n1<->3<->4<->5<->1<->8<->4\nExplanation:\nAll Occurences of 9 have been deleted.\nYour Task:\n\nComplete the function void deleteAllOccurOfX(struct Node** head_ref, int key), which takes the reference of the head pointer and an integer value key. Delete all occurrences of the key from the given DLL.\n\nExpected Time Complexity: O(N).\n\nExpected Auxiliary Space: O(1).\n\nConstraints:\n\n1<=Number of Nodes<=10^5\n\n0<=Node Value <=10^9",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Delete all occurrences of a given key in a doubly linked list",
+        "problem_link": "https://www.geeksforgeeks.org/problems/delete-all-occurrences-of-a-given-key-in-a-doubly-linked-list/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/23_Delete_all_occurrences_of_a_given_key_in_a_doubly_linked_list.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "First delete all starting nodes if have they have x\nthen keep deleting the nodes with x",
+                "code": "class Node:\n    def __init__(self, data: int) -> None:\n        self.data = data\n        self.next = None\n        self.prev = None\n\n\nclass Solution:\n    def deleteAllOccurOfX(self, head: Node, x: int) -> Node:\n        # Handle edge case where list is empty\n        if not head:\n            return head\n\n        # Traverse the list\n        ptr = head\n        while ptr.data == x:\n            ptr = ptr.next\n            head = ptr\n\n        while ptr:\n            savedNxt = ptr.next\n\n            # If the current node's data matches x\n            if ptr.data == x:\n                if ptr and ptr.prev:\n                    ptr.prev.next = ptr.next\n\n                if ptr and ptr.next:\n                    ptr.next.prev = ptr.prev\n\n            ptr = savedNxt\n\n        return head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "question": "Given a sorted doubly linked list of positive distinct elements, the task is to find pairs in a doubly-linked list whose sum is equal to given value target.\n\n\nExample 1:\n\nInput:\n1 <-> 2 <-> 4 <-> 5 <-> 6 <-> 8 <-> 9\ntarget = 7\nOutput: (1, 6), (2,5)\nExplanation: We can see that there are two pairs\n(1, 6) and (2,5) with sum 7.\n\n\nExample 2:\n\nInput:\n1 <-> 5 <-> 6\ntarget = 6\nOutput: (1,5)\nExplanation: We can see that there is one pairs  (1, 5) with sum 6.\n\n\nYour Task:\nYou don't need to read input or print anything. Your task is to complete the function findPairsWithGivenSum() which takes head node of the doubly linked list and an integer target as input parameter and returns an array of pairs. If there is no such pair return empty array.\n\nExpected Time Complexity: O(N)\nExpected Auxiliary Space: O(1)\nConstraints:\n1 <= N <= 10^5\n1 <= target <= 10^5",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Find pairs with given sum in doubly linked list",
+        "problem_link": "https://www.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/24_Find_pairs_with_given_sum_in_doubly_linked_list.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "Find tail\nuse 2 pointer approach to find pairs\nif we are far from target increase range\nif we are overshooting decrease range",
+                "code": "from typing import Optional\nfrom typing import List\n\n\nclass Node:\n    def __init__(self, x):\n        self.data = x\n        self.next = None\n        self.prev = None\n\n\nclass Solution:\n    def findPairsWithGivenSum(\n        self, target: int, head: Optional[\"Node\"]\n    ) -> List[List[int]]:\n        end = head\n\n        while end.next:\n            end = end.next\n\n        start = head\n        ans = []\n\n        while start.data < end.data:\n            if start.data + end.data > target:\n                end = end.prev\n            elif start.data + end.data < target:\n                start = start.next\n            else:\n                ans.append([start.data, end.data])\n                start = start.next\n                end = end.prev\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "question": "Given a doubly linked list of n nodes sorted by values, the task is to remove duplicate nodes present in the linked list.\n\nExample 1:\n\nInput:\nn = 6\n1<->1<->1<->2<->3<->4\nOutput:\n1<->2<->3<->4\nExplanation:\nOnly the first occurance of node with value 1 is\nretained, rest nodes with value = 1 are deleted.\nExample 2:\n\nInput:\nn = 7\n1<->2<->2<->3<->3<->4<->4\nOutput:\n1<->2<->3<->4\nExplanation:\nOnly the first occurance of nodes with values 2,3 and 4 are\nretained, rest repeating nodes are deleted.\nYour Task:\nYou have to complete the method removeDuplicates() which takes 1 argument: the head of the linked list.  Your function should return a pointer to a linked list with no duplicate element.\n\nConstraint:\n1 <= n <= 10^5\nExpected Time Complexity: O(n)\nExpected Space Complexity: O(1)",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Remove Duplicates From Sorted Doubly LinkedList",
+        "problem_link": "https://www.geeksforgeeks.org/problems/remove-duplicates-from-a-sorted-doubly-linked-list/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/25_Remove_Duplicates_From_Sorted_Doubly_LinkedList.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "if prev nodes value is same as current then delete node",
+                "code": "class Node:\n    def __init__(self, data):  # data -> value stored in node\n        self.data = data\n        self.next = None\n        self.prev = None\n\n\nclass Solution:\n    def removeDuplicates(self, head):\n        # Handle edge case where list is empty\n        if not head:\n            return head\n\n        ptr = head.next\n\n        while ptr:\n            savedNxt = ptr.next\n\n            # If the current node's data matches x\n            if ptr.data == ptr.prev.data:\n                if ptr and ptr.prev:\n                    ptr.prev.next = ptr.next\n\n                if ptr and ptr.next:\n                    ptr.next.prev = ptr.prev\n\n            ptr = savedNxt\n\n        return head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "question": "Given the head of a singly linked list and an integer k, split the linked list into k consecutive linked list parts.\n\nThe length of each part should be as equal as possible: no two parts should have a size differing by more than one. This may lead to some parts being null.\n\nThe parts should be in the order of occurrence in the input list, and parts occurring earlier should always have a size greater than or equal to parts occurring later.\n\nReturn an array of the k parts.\n\n\nExample 1:\nInput: head = [1,2,3], k = 5\nOutput: [[1],[2],[3],[],[]]\nExplanation:\nThe first element output[0] has output[0].val = 1, output[0].next = null.\nThe last element output[4] is null, but its string representation as a ListNode is [].\n\nExample 2:\nInput: head = [1,2,3,4,5,6,7,8,9,10], k = 3\nOutput: [[1,2,3,4],[5,6,7],[8,9,10]]\nExplanation:\nThe input has been split into consecutive parts with size difference at most 1, and earlier parts are a larger size than the later parts.\n\n\nConstraints:\n\nThe number of nodes in the list is in the range [0, 1000].\n0 <= Node.val <= 1000\n1 <= k <= 50",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Split Linked List in Parts",
+        "problem_link": "https://leetcode.com/problems/split-linked-list-in-parts",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/26_Split_Linked_List_in_Parts.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(K*N)",
+                "sc": "O(1)",
+                "intuition": "One thing we know if we have suppose n=10,k=5\nWe will have 5 partitions and each parition will\nhave atleast 2 nodes right, but suppose we have\nn=10,k=6 then we have 6 partitions and each partitions\nwill have atleast 1 node and we are left out with\n4 extra nodes, we can now assign these node to the\nleftmost partitions as possible",
+                "code": "from typing import List, Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def splitListToParts(\n        self, head: Optional[ListNode], k: int\n    ) -> List[Optional[ListNode]]:\n        n = 0\n        ptr = head\n\n        while ptr:\n            ptr = ptr.next\n            n += 1\n\n        nodes_in_each_part = n // k\n        extra_nodes = n % k\n\n        ans = [None] * k\n        ptr = head\n\n        for i in range(k):\n            curr_head = ptr\n            total_nodes = nodes_in_each_part\n            ans[i] = curr_head\n            if extra_nodes:\n                total_nodes += 1\n                extra_nodes -= 1\n\n            # Keep moving current head until we reach the last node\n            while curr_head and total_nodes != 1:\n                curr_head = curr_head.next\n                total_nodes -= 1\n\n            # delete link and move the pointer to head of next partition start\n            if curr_head:\n                ptr = curr_head.next\n                curr_head.next = None\n            else:\n                curr_head = None\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "question": "You have a browser of one tab where you start on the homepage and you can visit another url, get back in the history number of steps or move forward in the history number of steps.\n\nImplement the BrowserHistory class:\n\nBrowserHistory(string homepage) Initializes the object with the homepage of the browser.\nvoid visit(string url) Visits url from the current page. It clears up all the forward history.\nstring back(int steps) Move steps back in history. If you can only return x steps in the history and steps > x, you will return only x steps. Return the current url after moving back in history at most steps.\nstring forward(int steps) Move steps forward in history. If you can only forward x steps in the history and steps > x, you will forward only x steps. Return the current url after forwarding in history at most steps.\n\n\nExample:\n\nInput:\n[\"BrowserHistory\",\"visit\",\"visit\",\"visit\",\"back\",\"back\",\"forward\",\"visit\",\"forward\",\"back\",\"back\"]\n[[\"leetcode.com\"],[\"google.com\"],[\"facebook.com\"],[\"youtube.com\"],[1],[1],[1],[\"linkedin.com\"],[2],[2],[7]]\nOutput:\n[null,null,null,null,\"facebook.com\",\"google.com\",\"facebook.com\",null,\"linkedin.com\",\"google.com\",\"leetcode.com\"]\n\nExplanation:\nBrowserHistory browserHistory = new BrowserHistory(\"leetcode.com\");\nbrowserHistory.visit(\"google.com\");       // You are in \"leetcode.com\". Visit \"google.com\"\nbrowserHistory.visit(\"facebook.com\");     // You are in \"google.com\". Visit \"facebook.com\"\nbrowserHistory.visit(\"youtube.com\");      // You are in \"facebook.com\". Visit \"youtube.com\"\nbrowserHistory.back(1);                   // You are in \"youtube.com\", move back to \"facebook.com\" return \"facebook.com\"\nbrowserHistory.back(1);                   // You are in \"facebook.com\", move back to \"google.com\" return \"google.com\"\nbrowserHistory.forward(1);                // You are in \"google.com\", move forward to \"facebook.com\" return \"facebook.com\"\nbrowserHistory.visit(\"linkedin.com\");     // You are in \"facebook.com\". Visit \"linkedin.com\"\nbrowserHistory.forward(2);                // You are in \"linkedin.com\", you cannot move forward any steps.\nbrowserHistory.back(2);                   // You are in \"linkedin.com\", move back two steps to \"facebook.com\" then to \"google.com\". return \"google.com\"\nbrowserHistory.back(7);                   // You are in \"google.com\", you can move back only one step to \"leetcode.com\". return \"leetcode.com\"\n\n\nConstraints:\n\n1 <= homepage.length <= 20\n1 <= url.length <= 20\n1 <= steps <= 100\nhomepage and url consist of  '.' or lower case English letters.\nAt most 5000 calls will be made to visit, back, and forward.",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Design BrowserHistory",
+        "problem_link": "https://leetcode.com/problems/design-browser-history",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/27_Design_BrowserHistory.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Just Keep track of current index Move back k steps on back command but dont go out of bounds Move forward k steps on forward command but dont go out of bounds",
+                "code": "class Node:\n    def __init__(self, x: str) -> None:\n        self.prev: \"Node\" = None\n        self.next: \"Node\" = None\n        self.url: str = x\n\n\nclass BrowserHistory:\n\n    def __init__(self, homepage: str):\n        self.head = Node(homepage)\n\n    def visit(self, url: str) -> None:\n        if self.head.next:\n            self.head.next.prev = None\n            self.head.next = None\n\n        new_node = Node(url)\n        new_node.prev = self.head\n        self.head.next = new_node\n        self.head = self.head.next\n\n    def back(self, steps: int) -> str:\n        for i in range(steps):\n            if self.head.prev:\n                self.head = self.head.prev\n        return self.head.url\n\n    def forward(self, steps: int) -> str:\n        for i in range(steps):\n            if self.head.next:\n                self.head = self.head.next\n        return self.head.url",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(1)",
+                "sc": "O(N)",
+                "intuition": "Use a list to keep track of history",
+                "code": "class BrowserHistory:\n\n    def __init__(self, homepage: str):\n        self.hist: list[str] = [homepage]\n        self.curr_index: int = 0\n\n    def visit(self, url: str) -> None:\n        hasNextElems = self.curr_index + 1 < len(self.hist)\n        if hasNextElems:\n            self.hist = self.hist[: self.curr_index + 1]\n        self.hist.append(url)\n\n    def back(self, steps: int) -> str:\n        index = max(0, self.curr_index - steps)\n        return self.hist[index]\n\n    def forward(self, steps: int) -> str:\n        index = min(len(self.hist) - 1, self.curr_index + steps)\n        return self.hist[index]",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "question": "Design a HashSet without using any built-in hash table libraries.\n\nImplement MyHashSet class:\n\nvoid add(key) Inserts the value key into the HashSet.\nbool contains(key) Returns whether the value key exists in the HashSet or not.\nvoid remove(key) Removes the value key in the HashSet. If key does not exist in the HashSet, do nothing.\n\n\nExample 1:\n\nInput\n[\"MyHashSet\", \"add\", \"add\", \"contains\", \"contains\", \"add\", \"contains\", \"remove\", \"contains\"]\n[[], [1], [2], [1], [3], [2], [2], [2], [2]]\nOutput\n[null, null, null, true, false, null, true, null, false]\n\nExplanation\nMyHashSet myHashSet = new MyHashSet();\nmyHashSet.add(1);      // set = [1]\nmyHashSet.add(2);      // set = [1, 2]\nmyHashSet.contains(1); // return True\nmyHashSet.contains(3); // return False, (not found)\nmyHashSet.add(2);      // set = [1, 2]\nmyHashSet.contains(2); // return True\nmyHashSet.remove(2);   // set = [1]\nmyHashSet.contains(2); // return False, (already removed)\n\n\nConstraints:\n\n0 <= key <= 10^6\nAt most 10^4 calls will be made to add, remove, and contains.",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Design Hashset",
+        "problem_link": "https://leetcode.com/problems/design-hashset",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/28_Design_Hashset.py",
+        "approaches": [
+            {
+                "tc": "O(1)",
+                "sc": "O(10**6)",
+                "intuition": "Just use a list of size 10**6 and mark everything to false if aksed to add just mark the index as True if aksed to remove mark the index as False if aksed to check if it contains a value check at that index is True or not",
+                "code": "class MyHashSet:\n\n    def __init__(self):\n        self.set = [False] * ((10**6) + 1)\n\n    def add(self, key: int) -> None:\n        self.set[key] = True\n\n    def remove(self, key: int) -> None:\n        if self.set[key]:\n            self.set[key] = False\n\n    def contains(self, key: int) -> bool:\n        return self.set[key] == True",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(Dynamic_Size)",
+                "intuition": "Use the concept of chaining on collision\nResize on increase in load factor",
+                "code": "class Node:\n    def __init__(self, x: int) -> None:\n        self.data: int = x\n        self.next: Node = None\n\n\nclass MyHashSet:\n\n    def __init__(self):\n        self.set: list[Node] = [None] * 5\n        self.num_items = 0\n        self.load_factor = 0.75\n\n    def has_function(self, key: int, size: int) -> int:\n        return key % size\n\n    def _resize(self, set: list[Node]) -> list[Node]:\n        new_size = len(set) * 2\n        new_set: list[Node] = [None] * new_size\n\n        for node in set:\n            if node:\n                ptr = node\n                while ptr:\n                    new_set = self._add(ptr.data, new_set)\n                    ptr = ptr.next\n\n        return new_set\n\n    def _add(self, key: int, set: list[Node]) -> list[Node]:\n        idx = self.has_function(key, len(set))\n        head = set[idx]\n\n        if head is None:\n            set[idx] = Node(key)\n            return set\n\n        ptr = head\n        while ptr and ptr.next:\n            ptr = ptr.next\n\n        new_entry = Node(key)\n        ptr.next = new_entry\n\n        return set\n\n    def add(self, key: int) -> None:\n        curr_load_factor = self.num_items // len(self.set)\n\n        if curr_load_factor > self.load_factor:\n            self.set = self._resize(self.set)\n\n        if self.contains(key):\n            return\n\n        self.set = self._add(key, self.set)\n        self.num_items += 1\n\n    def remove(self, key: int) -> None:\n        if not self.contains(key):\n            return\n\n        idx = self.has_function(key, len(self.set))\n        head = self.set[idx]\n\n        if head.data == key:\n            self.set[idx] = head.next\n            self.num_items -= 1\n            return\n\n        ptr = head\n        while ptr:\n            if ptr.next.data == key:\n                ptr.next = ptr.next.next\n                self.num_items -= 1\n                return\n            ptr = ptr.next\n\n    def contains(self, key: int) -> bool:\n        idx = self.has_function(key, len(self.set))\n        head = self.set[idx]\n\n        if not head:\n            return False\n\n        ptr = head\n        while ptr:\n            if ptr.data == key:\n                return True\n            ptr = ptr.next\n\n        return False",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "question": "Design a HashMap without using any built-in hash table libraries.\n\nImplement the MyHashMap class:\n\nMyHashMap() initializes the object with an empty map.\nvoid put(int key, int value) inserts a (key, value) pair into the HashMap. If the key already exists in the map, update the corresponding value.\nint get(int key) returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key.\nvoid remove(key) removes the key and its corresponding value if the map contains the mapping for the key.\n\n\nExample 1:\n\nInput\n[\"MyHashMap\", \"put\", \"put\", \"get\", \"get\", \"put\", \"get\", \"remove\", \"get\"]\n[[], [1, 1], [2, 2], [1], [3], [2, 1], [2], [2], [2]]\nOutput\n[null, null, null, 1, -1, null, 1, null, -1]\n\nExplanation\nMyHashMap myHashMap = new MyHashMap();\nmyHashMap.put(1, 1); // The map is now [[1,1]]\nmyHashMap.put(2, 2); // The map is now [[1,1], [2,2]]\nmyHashMap.get(1);    // return 1, The map is now [[1,1], [2,2]]\nmyHashMap.get(3);    // return -1 (i.e., not found), The map is now [[1,1], [2,2]]\nmyHashMap.put(2, 1); // The map is now [[1,1], [2,1]] (i.e., update the existing value)\nmyHashMap.get(2);    // return 1, The map is now [[1,1], [2,1]]\nmyHashMap.remove(2); // remove the mapping for 2, The map is now [[1,1]]\nmyHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]\n\n\nConstraints:\n\n0 <= key, value <= 10^6\nAt most 10^4 calls will be made to put, get, and remove.",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Design Hashmap",
+        "problem_link": "https://leetcode.com/problems/design-hashmap",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/29_Design_Hashmap.py",
+        "approaches": [
+            {
+                "tc": "O(1)",
+                "sc": "O(10**6)",
+                "intuition": "Just use a list of size 10**6 and mark everything to -1 if aksed to add just at that index assign the value if aksed to remove at that index mark the value as -1 if aksed to check if at that index we have value or -1 (-1 signifies absence of value)",
+                "code": "class MyHashMap:\n\n    def __init__(self):\n        self.map = [-1] * 10**6\n\n    def put(self, key: int, value: int) -> None:\n        self.map[key] = value\n\n    def get(self, key: int) -> int:\n        return self.map[key]\n\n    def remove(self, key: int) -> None:\n        self.map[key] = -1",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(Dynamic_Size)",
+                "intuition": "Use the concept of chaining on collision\nResize on increase in load factor",
+                "code": "class Node:\n    def __init__(self, key: int, val: int) -> None:\n        self.key: int = key\n        self.val: int = val\n        self.next: Node = None\n\n\nclass MyHashMap:\n\n    def __init__(self):\n        self.map: list[Node] = [None] * 5\n        self.num_items = 0\n        self.load_factor = 0.75\n\n    def has_function(self, key: int, size: int) -> int:\n        return key % size\n\n    def _resize(self, map: list[Node]) -> list[Node]:\n        new_size = len(map) * 2\n        new_map: list[Node] = [None] * new_size\n\n        for node in map:\n            if node:\n                ptr = node\n                while ptr:\n                    new_map = self._put(ptr.key, ptr.val, new_map)\n                    ptr = ptr.next\n\n        return new_map\n\n    def _put(self, key: int, val: int, map: list[Node]) -> list[Node]:\n        idx = self.has_function(key, len(map))\n        head = map[idx]\n\n        if head is None:\n            map[idx] = Node(key, val)\n            return map\n\n        ptr = head\n        while ptr and ptr.next:\n            ptr = ptr.next\n\n        new_entry = Node(key, val)\n        ptr.next = new_entry\n\n        return map\n\n    def put(self, key: int, value: int) -> None:\n        curr_load_factor = self.num_items // len(self.map)\n\n        if curr_load_factor > self.load_factor:\n            self.map = self._resize(self.map)\n\n        contains, found_node = self._contains(key)\n        if contains and found_node:\n            found_node.val = value\n            return\n\n        self.map = self._put(key, value, self.map)\n\n    def get(self, key: int) -> int:\n        _, found_node = self._contains(key)\n        if found_node:\n            return found_node.val\n        return -1\n\n    def remove(self, key: int) -> None:\n        found, _ = self._contains(key)\n        if not found:\n            return\n\n        idx = self.has_function(key, len(self.map))\n        head = self.map[idx]\n\n        if head.key == key:\n            self.map[idx] = head.next\n            self.num_items -= 1\n            return\n\n        ptr = head\n        while ptr:\n            if ptr.next.key == key:\n                ptr.next = ptr.next.next\n                self.num_items -= 1\n                return\n            ptr = ptr.next\n\n    def _contains(self, key: int) -> tuple[bool, Node | None]:\n        idx = self.has_function(key, len(self.map))\n        head = self.map[idx]\n\n        if not head:\n            return False, None\n\n        ptr = head\n        while ptr:\n            if ptr.key == key:\n                return True, ptr\n            ptr = ptr.next\n\n        return False, None",
+                "type": "Optimal"
+            }
+        ]
     }
 ]
