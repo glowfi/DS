@@ -3137,9 +3137,9 @@
         "language": "python",
         "difficulty": "Medium",
         "difficulty_num": 2,
-        "problem_name": "Split Linked List in Parts",
+        "problem_name": "Split Linked List in K Parts",
         "problem_link": "https://leetcode.com/problems/split-linked-list-in-parts",
-        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/26_Split_Linked_List_in_Parts.py",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/26_Split_Linked_List_in_K_Parts.py",
         "approaches": [
             {
                 "tc": "O(N)+O(K*N)",
@@ -3227,6 +3227,154 @@
                 "sc": "O(Dynamic_Size)",
                 "intuition": "Use the concept of chaining on collision\nResize on increase in load factor",
                 "code": "class Node:\n    def __init__(self, key: int, val: int) -> None:\n        self.key: int = key\n        self.val: int = val\n        self.next: Node = None\n\n\nclass MyHashMap:\n\n    def __init__(self):\n        self.map: list[Node] = [None] * 5\n        self.num_items = 0\n        self.load_factor = 0.75\n\n    def has_function(self, key: int, size: int) -> int:\n        return key % size\n\n    def _resize(self, map: list[Node]) -> list[Node]:\n        new_size = len(map) * 2\n        new_map: list[Node] = [None] * new_size\n\n        for node in map:\n            if node:\n                ptr = node\n                while ptr:\n                    new_map = self._put(ptr.key, ptr.val, new_map)\n                    ptr = ptr.next\n\n        return new_map\n\n    def _put(self, key: int, val: int, map: list[Node]) -> list[Node]:\n        idx = self.has_function(key, len(map))\n        head = map[idx]\n\n        if head is None:\n            map[idx] = Node(key, val)\n            return map\n\n        ptr = head\n        while ptr and ptr.next:\n            ptr = ptr.next\n\n        new_entry = Node(key, val)\n        ptr.next = new_entry\n\n        return map\n\n    def put(self, key: int, value: int) -> None:\n        curr_load_factor = self.num_items // len(self.map)\n\n        if curr_load_factor > self.load_factor:\n            self.map = self._resize(self.map)\n\n        contains, found_node = self._contains(key)\n        if contains and found_node:\n            found_node.val = value\n            return\n\n        self.map = self._put(key, value, self.map)\n\n    def get(self, key: int) -> int:\n        _, found_node = self._contains(key)\n        if found_node:\n            return found_node.val\n        return -1\n\n    def remove(self, key: int) -> None:\n        found, _ = self._contains(key)\n        if not found:\n            return\n\n        idx = self.has_function(key, len(self.map))\n        head = self.map[idx]\n\n        if head.key == key:\n            self.map[idx] = head.next\n            self.num_items -= 1\n            return\n\n        ptr = head\n        while ptr:\n            if ptr.next.key == key:\n                ptr.next = ptr.next.next\n                self.num_items -= 1\n                return\n            ptr = ptr.next\n\n    def _contains(self, key: int) -> tuple[bool, Node | None]:\n        idx = self.has_function(key, len(self.map))\n        head = self.map[idx]\n\n        if not head:\n            return False, None\n\n        ptr = head\n        while ptr:\n            if ptr.key == key:\n                return True, ptr\n            ptr = ptr.next\n\n        return False, None",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "question": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.\n\nImplement the LRUCache class:\n\nLRUCache(int capacity) Initialize the LRU cache with positive size capacity.\nint get(int key) Return the value of the key if the key exists, otherwise return -1.\nvoid put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.\nThe functions get and put must each run in O(1) average time complexity.\n\n\nExample 1:\n\nInput\n[\"LRUCache\", \"put\", \"put\", \"get\", \"put\", \"get\", \"put\", \"get\", \"get\", \"get\"]\n[[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]\nOutput\n[null, null, null, 1, null, -1, null, -1, 3, 4]\n\nExplanation\nLRUCache lRUCache = new LRUCache(2);\nlRUCache.put(1, 1); // cache is {1=1}\nlRUCache.put(2, 2); // cache is {1=1, 2=2}\nlRUCache.get(1);    // return 1\nlRUCache.put(3, 3); // LRU key was 2, evicts key 2, cache is {1=1, 3=3}\nlRUCache.get(2);    // returns -1 (not found)\nlRUCache.put(4, 4); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}\nlRUCache.get(1);    // return -1 (not found)\nlRUCache.get(3);    // return 3\nlRUCache.get(4);    // return 4\n\n\nConstraints:\n\n1 <= capacity <= 3000\n0 <= key <= 10^4\n0 <= value <= 10^5\nAt most 2 * 105 calls will be made to get and put.",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Design LRU Cache",
+        "problem_link": "https://leetcode.com/problems/lru-cache",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/30_Design_LRU_Cache.py",
+        "approaches": [
+            {
+                "tc": "O(N^2)",
+                "sc": "O(N)",
+                "intuition": "Maintain a list to store the LRU cache Store the recently used in front When getting,push the element to get to the front and when pushing,push the element to the front,if max capacity reached delete the end node,if key already exists replace the existing value",
+                "code": "class LRUCache:\n\n    def __init__(self, capacity: int):\n        self.cache = []\n        self.max_cap = capacity\n\n    def get(self, key: int) -> int:\n        for i in range(len(self.cache)):\n            k, v = self.cache[i][0], self.cache[i][1]\n            if k == key:\n                self.cache = self.cache[:i] + self.cache[i + 1 :]\n                self.cache.insert(0, [k, v])\n                return v\n        return -1\n\n    def put(self, key: int, value: int) -> None:\n        # if key already exits\n        for i in range(len(self.cache)):\n            k = self.cache[i][0]\n            if k == key:\n                self.cache = self.cache[:i] + self.cache[i + 1 :]\n                break\n\n        # Evict if max cap reached\n        if len(self.cache) >= self.max_cap:\n            self.cache.pop()\n\n        self.cache.insert(0, [key, value])",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(1)",
+                "sc": "O(N)",
+                "intuition": "We will use a combination of a doubly linked list (DLL) and a hash map (dictionary) to implement the LRU Cache.\nThe DLL will allow us to maintain the order of usage, while the hash map will provide O(1) access to the nodes.\nWe will have a head and a tail node to facilitate easy insertion and deletion of nodes.",
+                "code": "class Node:\n    def __init__(self, k: int, v: int) -> None:\n        self.key = k  # The key of the node\n        self.val = v  # The value of the node\n        self.prev: Node | None = None  # Pointer to the previous node\n        self.next: Node | None = None  # Pointer to the next node\n\n\nclass DLL:\n    def __init__(self) -> None:\n        # Initialize the doubly linked list with a head and a tail node\n        self.head: Node = Node(-1, -1)  # Dummy head node\n        self.tail: Node = Node(-1, -1)  # Dummy tail node\n        self.head.next = self.tail  # Head points to tail\n        self.tail.prev = self.head  # Tail points back to head\n\n    def insert_after_head(self, node: \"Node|None\") -> None:\n        # Insert a node right after the head\n        if not node:\n            return\n\n        head_next = self.head.next  # Get the current first node after head\n\n        # Adjust pointers to insert the new node\n        head_next.prev = node\n        node.next = head_next\n        self.head.next = node\n        node.prev = self.head\n\n    def delete_node(self, node: \"Node|None\") -> None:\n        # Remove a node from the DLL\n        if not node:\n            return\n\n        next_node = node.next  # Get the next node\n        prev_node = node.prev  # Get the previous node\n\n        # Adjust pointers to bypass the node being deleted\n        next_node.prev = prev_node\n        prev_node.next = next_node\n\n        # Clear the pointers of the deleted node\n        node.next = None\n        node.prev = None\n\n    def get_tail(self) -> Node | None:\n        # Return the last node before the tail\n        return self.tail.prev\n\n    def get_head(self) -> Node | None:\n        # Return the first node after the head\n        return self.head.next\n\n\nclass LRUCache:\n    def __init__(self, capacity: int):\n        self.max_cap = capacity  # Maximum capacity of the cache\n        self.curr_cap = 0  # Current capacity of the cache\n        self.cache: dict[int, Node] = {}  # Hash map to store key-node pairs\n        self.dll = DLL()  # Initialize the doubly linked list\n\n    def make_recently_use(self, key: int):\n        # Move the accessed node to the front (after head) to mark it as recently used\n        node = self.cache[key]  # Get the node from the cache\n        self.dll.delete_node(node)  # Remove it from its current position\n        self.dll.insert_after_head(node)  # Insert it after the head\n\n    def get(self, key: int) -> int:\n        # Retrieve the value for the given key\n        if key not in self.cache:\n            return -1  # Return -1 if the key is not found\n\n        self.make_recently_use(key)  # Mark the node as recently used\n        return self.cache[key].val  # Return the value of the node\n\n    def put(self, key: int, value: int) -> None:\n        # Insert or update the value for the given key\n        if key in self.cache:\n            self.cache[key].val = value  # Update the value\n            self.make_recently_use(key)  # Mark it as recently used\n            return\n\n        if self.curr_cap >= self.max_cap:\n            # Evict the least recently used node if the cache is full\n            node = self.dll.get_tail()  # Get the last node before the tail\n            self.dll.delete_node(node)  # Remove it from the DLL\n            del self.cache[node.key]  # Remove it from the cache\n            self.curr_cap -= 1  # Decrement the current capacity\n\n        # Insert the new node\n        new_node = Node(key, value)  # Create a new node\n        self.cache[key] = new_node  # Add it to the cache\n        self.dll.insert_after_head(new_node)  # Insert it after the head\n        self.curr_cap += 1  # Increment the current capacity",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "question": "You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.\n\nMerge all the linked-lists into one sorted linked-list and return it.\n\n\nExample 1:\n\nInput: lists = [[1,4,5],[1,3,4],[2,6]]\nOutput: [1,1,2,3,4,4,5,6]\nExplanation: The linked-lists are:\n[\n1->4->5,\n1->3->4,\n2->6\n]\nmerging them into one sorted linked list:\n1->1->2->3->4->4->5->6\nExample 2:\n\nInput: lists = []\nOutput: []\nExample 3:\n\nInput: lists = [[]]\nOutput: []\n\n\nConstraints:\n\nk == lists.length\n0 <= k <= 104\n0 <= lists[i].length <= 500\n-10^4 <= lists[i][j] <= 10^4\n\nlists[i] is sorted in ascending order.\nThe sum of lists[i].length will not exceed 10^4.",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Hard",
+        "difficulty_num": 3,
+        "problem_name": "Merge k Sorted Lists",
+        "problem_link": "https://leetcode.com/problems/merge-k-sorted-lists",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/31_Merge_k_Sorted_Lists.py",
+        "approaches": [
+            {
+                "tc": "O(Nlog(N))",
+                "sc": "O(N)",
+                "intuition": "Use merge sort algo",
+                "code": "from typing import List, Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def merge2sortedList(self, l1: ListNode, l2: ListNode):\n        d = cp = ListNode()\n        while l1 and l2:\n            if l1.val <= l2.val:\n                d.next = l1\n                l1 = l1.next\n            else:\n                d.next = l2\n                l2 = l2.next\n\n            d = d.next\n\n        if l1:\n            d.next = l1\n        if l2:\n            d.next = l2\n\n        return cp.next\n\n    def mergeSort(self, lists: list[ListNode], st: int, en: int) -> ListNode:\n        if len(lists) == 0:\n            return None\n\n        if st == en:\n            return lists[st]\n\n        mid = (st + en) // 2\n\n        left = self.mergeSort(lists, st, mid)\n        right = self.mergeSort(lists, mid + 1, en)\n        return self.merge2sortedList(left, right)\n\n    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:\n        return self.mergeSort(lists, 0, len(lists) - 1)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "question": "Given the head of a linked list, rotate the list to the right by k places.\n\nExample 1:\nInput: head = [1,2,3,4,5], k = 2\nOutput: [4,5,1,2,3]\n\nExample 2:\nInput: head = [0,1,2], k = 4\nOutput: [2,0,1]\n\n\nConstraints:\n\nThe number of nodes in the list is in the range [0, 500].\n-100 <= Node.val <= 100\n0 <= k <= 2 * 109",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Rotate List",
+        "problem_link": "https://leetcode.com/problems/rotate-list",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/32_Rotate_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(N^2)",
+                "sc": "O(1)",
+                "intuition": "mod k with length of linked list Keep rotating the linked list by one until you have rotated k times",
+                "code": "from typing import Optional\n\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def rotateByOne(self, head) -> Optional[ListNode]:\n        ptr = head\n        while ptr:\n            if ptr.next and ptr.next.next is None:\n                break\n            ptr = ptr.next\n\n        nxt = ptr.next\n        ptr.next = None\n        new_head = nxt\n        new_head.next = head\n\n        return new_head\n\n    def get_length(self, head) -> int:\n        n = 0\n        ptr = head\n\n        while ptr:\n            ptr = ptr.next\n            n += 1\n\n        return n\n\n    def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:\n        if not head or head.next is None:\n            return head\n\n        k %= self.get_length(head)\n\n        while k:\n            head = self.rotateByOne(head)\n            k -= 1\n\n        return head",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "First find the length of linked list\nnow move at n-k pos and make the node at (n-k) pos next to None\nmake the tail point to head\nalso make the new head as the node just next to node at (n-k) pos",
+                "code": "from typing import Optional\n\n\n# Definition for singly-linked list.\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def getLen(self, head) -> tuple[ListNode, int]:\n        if not head:\n            return head, 0\n\n        n = 1\n        ptr = head\n\n        while ptr.next:\n            ptr = ptr.next\n            n += 1\n\n        return ptr, n\n\n    def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:\n        last_node, n = self.getLen(head)\n        if n == 0:\n            return head\n\n        k %= n\n        if k == 0:\n            return head\n\n        target_node_pos = n - k\n        c = 1\n        ptr = head\n\n        while ptr and c != target_node_pos:\n            ptr = ptr.next\n            c += 1\n\n        new_head = ptr.next\n        ptr.next = None\n        last_node.next = head\n\n        return new_head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "question": "A linked list of length n is given such that each node contains an additional random pointer, which could point to any node in the list, or null.\nConstruct a deep copy of the list. The deep copy should consist of exactly n brand new nodes, where each new node has its value set to the value of its corresponding original node. Both the next and random pointer of the new nodes should point to new nodes in the copied list such that the pointers in the original list and copied list represent the same list state. None of the pointers in the new list should point to nodes in the original list.\nFor example, if there are two nodes X and Y in the original list, where X.random --> Y, then for the corresponding two nodes x and y in the copied list, x.random --> y.\n\nReturn the head of the copied linked list.\nThe linked list is represented in the input/output as a list of n nodes. Each node is represented as a pair of [val, random_index] where:\n\nval: an integer representing Node.val\nrandom_index: the index of the node (range from 0 to n-1) that the random pointer points to, or null if it does not point to any node.\nYour code will only be given the head of the original linked list.\n\n\nExample 1:\nInput: head = [[7,null],[13,0],[11,4],[10,2],[1,0]]\nOutput: [[7,null],[13,0],[11,4],[10,2],[1,0]]\n\nExample 2:\nInput: head = [[1,1],[2,1]]\nOutput: [[1,1],[2,1]]\n\nExample 3:\nInput: head = [[3,null],[3,0],[3,null]]\nOutput: [[3,null],[3,0],[3,null]]\n\n\nConstraints:\n\n0 <= n <= 1000\n-10^4 <= Node.val <= 10^4\nNode.random is null or is pointing to some node in the linked list.",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Copy List With Random Pointer",
+        "problem_link": "https://leetcode.com/problems/copy-list-with-random-pointer",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/33_Copy_List_With_Random_Pointer.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(N)",
+                "sc": "O(N)",
+                "intuition": "First store the new node corresponding to the old node value in a hasmap now again iterate over the old node and assign the links for new node by doing lookups from the hasmap",
+                "code": "from typing import Optional\n\n\n# Definition for a Node.\nclass Node:\n    def __init__(self, x: int, next: \"Node\" = None, random: \"Node\" = None):\n        self.val = int(x)\n        self.next = next\n        self.random = random\n\n\nclass Solution:\n    def copyRandomList(self, head: \"Optional[Node]\") -> \"Optional[Node]\":\n        self.node_map: dict[Node, Node] = {None: None}\n        ptr = head\n\n        while ptr:\n            self.node_map[ptr] = Node(ptr.val)\n            ptr = ptr.next\n\n        ptr = head\n        while ptr:\n            new_node = self.node_map[ptr]\n\n            new_node.next = self.node_map[ptr.next]\n            new_node.random = self.node_map[ptr.random]\n\n            ptr = ptr.next\n\n        return self.node_map[head]",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)+O(N)+O(N)",
+                "sc": "O(1)",
+                "intuition": "First make the next links",
+                "code": "from typing import Optional\n\n\n# Definition for a Node.\nclass Node:\n    def __init__(self, x: int, next: \"Node\" = None, random: \"Node\" = None):\n        self.val = int(x)\n        self.next = next\n        self.random = random\n\n\nclass Solution:\n    def copyRandomList(self, head: \"Optional[Node]\") -> \"Optional[Node]\":\n        pass",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "question": "Given a linked list containing n head nodes where every node in the linked list contains two pointers:\n(i) next points to the next node in the list.\n(ii) bottom pointer to a sub-linked list where the current node is the head.\nEach of the sub-linked lists nodes and the head nodes are sorted in ascending order based on their data.\nYour task is to flatten the linked list such that all the nodes appear in a single level while maintaining the sorted order.\n\nNote:\n1. \u2193 represents the bottom pointer and -> represents the next pointer.\n2. The flattened list will be printed using the bottom pointer instead of the next pointer.\n\nExamples:\n\nInput:\n\nOutput: 5-> 7-> 8-> 10 -> 19-> 20-> 22-> 28-> 30-> 35-> 40-> 45-> 50.\nExplanation:\nBottom pointer of 5 is pointing to 7.\nBottom pointer of 7 is pointing to 8.\nBottom pointer of 8 is pointing to 10 and so on.\n\nInput:\n\nOutput: 5-> 7-> 8-> 10-> 19-> 22-> 28-> 30-> 50\nExplanation:\nBottom pointer of 5 is pointing to 7.\nBottom pointer of 7 is pointing to 8.\nBottom pointer of 8 is pointing to 10 and so on.\n\nConstraints:\n0 <= n <= 100\n1 <= number of nodes in sub-linked list(mi) <= 50\n1 <= node->data <= 10^4",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Flatten Linked List",
+        "problem_link": "https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/34_Flatten_Linked_List.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(N)",
+                "intuition": "",
+                "code": "class Node:\n    def __init__(self, d):\n        self.data = d\n        self.next = None\n        self.bottom = None\n\n\nclass Solution:\n    def merge_2_sorted_list(self, head1: Node, head2: Node) -> Node:\n        p1, p2 = head1, head2\n        tmp = Node(-1)\n        cp = tmp\n\n        while p1 and p2:\n            if p1.data <= p2.data:\n                tmp.bottom = p1\n                p1 = p1.bottom\n            else:\n                tmp.bottom = p2\n                p2 = p2.bottom\n\n            tmp = tmp.bottom\n\n        if p1:\n            tmp.bottom = p1\n\n        if p2:\n            tmp.bottom = p2\n\n        return cp.bottom\n\n    def flatten(self, root):\n        flattened_head = None\n        ptr = root\n\n        while ptr:\n            flattened_head = self.merge_2_sorted_list(flattened_head, ptr)\n            ptr = ptr.next\n\n        return flattened_head",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 36,
+        "question": "Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list.\n\nk is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.\n\nYou may not alter the values in the list's nodes, only nodes themselves may be changed.\n\n\nExample 1:\nInput: head = [1,2,3,4,5], k = 2\nOutput: [2,1,4,3,5]\n\nExample 2:\nInput: head = [1,2,3,4,5], k = 3\nOutput: [3,2,1,4,5]\n\n\nConstraints:\n\nThe number of nodes in the list is n.\n1 <= k <= n <= 5000\n0 <= Node.val <= 1000\n\n\nFollow-up: Can you solve the problem in O(1) extra memory space?",
+        "topic": "LinkedList",
+        "language": "python",
+        "difficulty": "Hard",
+        "difficulty_num": 3,
+        "problem_name": "Reverse Nodes in K Group",
+        "problem_link": "https://leetcode.com/problems/reverse-nodes-in-k-group",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/5_Linked_List/35_Reverse_Nodes_in_K_Group.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "O(K)",
+                "intuition": "first reach till k nodes keep a copy of current groups original head node then break link , take the last node in current group and make it point to None reverse the current linked list with original head node copy then make the original head node copy's next point to next K group reversed head Dont reverse if nodes are not equal to k or multiple of k",
+                "code": "from typing import Optional\n\n\n# Definition for singly-linked list.\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        prev = None\n        curr = head\n\n        while curr:\n            next_node = curr.next\n            curr.next = prev\n            prev = curr\n            curr = next_node\n\n        return prev\n\n    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:\n        if not head:\n            return head\n\n        start_node = head\n        c = 1\n        ptr = start_node\n        while True:\n            if not ptr.next or c == k:\n                break\n            c += 1\n            ptr = ptr.next\n\n        # Break Link\n        nxtNode = None\n        if ptr:\n            nxtNode = ptr.next\n            ptr.next = None\n\n        # Reverse List\n        if c % k == 0:\n            rev_head = self.reverseList(start_node)\n\n            # Recursively reverse next group\n            start_node.next = self.reverseKGroup(nxtNode, k)\n\n            return rev_head\n\n        return start_node",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "O(1)",
+                "intuition": "Dont use recursion",
+                "code": "from typing import Optional\n\n\n# Definition for singly-linked list.\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\n\nclass Solution:\n    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        prev = None\n        curr = head\n\n        while curr:\n            next_node = curr.next\n            curr.next = prev\n            prev = curr\n            curr = next_node\n\n        return prev\n\n    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:\n        pass",
                 "type": "Optimal"
             }
         ]
