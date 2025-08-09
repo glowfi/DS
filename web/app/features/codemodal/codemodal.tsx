@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { getDifficultyColor } from '@/app/lib/color-helper';
+import { Approach, Question } from '@/app/lib/types';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -14,6 +15,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
+import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import CodeThemeSelector from './codetheme';
 import {
@@ -22,8 +24,6 @@ import {
     setThemeToLocalStorage,
     themes
 } from './codethemes';
-import { Approach, Question } from '@/app/lib/types';
-import { getColor } from '../topics/topics';
 
 const mapApproachesToObject = (
     approaches: Approach[]
@@ -93,7 +93,9 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
                     <div className="flex flex-col gap-6">
                         <Badge
                             style={{
-                                backgroundColor: getColor(question.difficulty)
+                                backgroundColor: getDifficultyColor(
+                                    question.difficulty
+                                )
                             }}
                         >
                             {question.difficulty}

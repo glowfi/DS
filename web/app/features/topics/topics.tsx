@@ -1,3 +1,8 @@
+import {
+    getContrastColor,
+    getDifficultyColor,
+    getPatternWiseRandomHexColor
+} from '@/app/lib/color-helper';
 import { Difficulty, Question } from '@/app/lib/types';
 import {
     Accordion,
@@ -17,18 +22,49 @@ import {
 } from '@/components/ui/table';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { Fragment, FunctionComponent, useState } from 'react';
 import { FaSort, FaSortDown, FaSortUp } from 'react-icons/fa';
 import CodeModal from '../codemodal/codemodal';
 
-export const getColor = (difficulty: string) => {
-    if (difficulty === 'Easy') {
-        return 'green';
-    } else if (difficulty === 'Medium') {
-        return '#999900';
-    } else {
-        return 'red';
-    }
+interface PatternsProps {
+    q: Question;
+    patternString: string;
+    patternWiseColors: {
+        [pattern: string]: string;
+    };
+}
+
+const Patterns: FunctionComponent<PatternsProps> = ({
+    patternString,
+    patternWiseColors,
+    q
+}) => {
+    const patterns: string[] = patternString.trim().split('/');
+
+    return (
+        <div className="flex flex-col gap-3">
+            {patterns.map((pattern: string, idx: number) => {
+                return (
+                    <Badge
+                        key={idx}
+                        style={{
+                            backgroundColor: `${patternWiseColors[pattern]}`,
+                            border: '1px solid',
+                            borderColor: getContrastColor(
+                                patternWiseColors[pattern.trim()]
+                            ),
+                            color: getContrastColor(
+                                patternWiseColors[pattern.trim()]
+                            ),
+                            borderRadius: '4px'
+                        }}
+                    >
+                        {pattern}
+                    </Badge>
+                );
+            })}
+        </div>
+    );
 };
 
 interface sortOrder {
@@ -124,29 +160,6 @@ function getSortedQuestionsByTopic(
     });
 
     return sortedTopicWiseQuestions;
-}
-
-function getRandomHexColor(): string {
-    const hex: string = '0123456789ABCDEF';
-    let color: string = '#';
-    for (let i = 0; i < 6; i++) {
-        color += hex[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
-function getPatternWiseRandomHexColor(questions: Question[]): {
-    [pattern: string]: string;
-} {
-    const patternColors: { [pattern: string]: string } = {};
-
-    questions.forEach((question: Question) => {
-        if (!patternColors[question.pattern]) {
-            patternColors[question.pattern] = getRandomHexColor();
-        }
-    });
-
-    return patternColors;
 }
 
 interface TopicsProps {
@@ -246,20 +259,22 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
                                                         <TableCell>
                                                             <Badge
                                                                 style={{
-                                                                    backgroundColor: `${getColor(q.difficulty.trim())}`
+                                                                    backgroundColor: `${getDifficultyColor(q.difficulty.trim())}`
                                                                 }}
                                                             >
                                                                 {q.difficulty}
                                                             </Badge>
                                                         </TableCell>
                                                         <TableCell>
-                                                            <Badge
-                                                                style={{
-                                                                    backgroundColor: `${patternWiseColors[q.pattern.trim()]}`
-                                                                }}
-                                                            >
-                                                                {q.pattern}
-                                                            </Badge>
+                                                            <Patterns
+                                                                q={q}
+                                                                patternString={
+                                                                    q.pattern
+                                                                }
+                                                                patternWiseColors={
+                                                                    patternWiseColors
+                                                                }
+                                                            />
                                                         </TableCell>
                                                         <TableCell>
                                                             <Button
