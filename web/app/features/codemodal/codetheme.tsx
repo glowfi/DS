@@ -88,4 +88,4 @@ const CodeThemeSelector: React.FunctionComponent<CodeThemeSelectorProps> = ({
     );
 };
 
-export default CodeThemeSelector;
+export default React.memo(CodeThemeSelector);

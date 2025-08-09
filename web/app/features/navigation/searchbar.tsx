@@ -1,5 +1,8 @@
 'use client';
-import { getDifficultyColor } from '@/app/lib/color-helper';
+import {
+    getDifficultyColor,
+    getPatternWiseRandomHexColor
+} from '@/app/lib/color-helper';
 import { Question } from '@/app/lib/types';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -13,7 +16,8 @@ import {
 import { Input } from '@/components/ui/input';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Patterns } from '../topics/topics';
 
 interface SearchBarProps {
     questions: Question[];
@@ -44,6 +48,9 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
     const [searchQuery, setSearchQuery] = useState('');
     const debouncedSearchQuery = useDebouncedValue(searchQuery, 500);
     const [filteredQuestions, setFilteredQuestions] = useState<Question[]>([]);
+    const patternWiseColors = useMemo(() => {
+        return getPatternWiseRandomHexColor(questions);
+    }, [questions]);
 
     useEffect(() => {
         if (questions) {
@@ -123,6 +130,12 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
                                         >
                                             {question.difficulty}
                                         </Badge>
+                                        <Patterns
+                                            patternString={question.pattern}
+                                            patternWiseColors={
+                                                patternWiseColors
+                                            }
+                                        />
                                     </div>
                                     <Button
                                         onClick={() => onSeeCode(question)}
@@ -139,4 +152,4 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
     );
 };
 
-export default SearchBar;
+export default React.memo(SearchBar);

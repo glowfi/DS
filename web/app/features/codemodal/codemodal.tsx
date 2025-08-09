@@ -190,4 +190,4 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
     );
 };
 
-export default CodeModal;
+export default React.memo(CodeModal);

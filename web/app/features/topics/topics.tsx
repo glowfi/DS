@@ -22,7 +22,7 @@ import {
 } from '@/components/ui/table';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useMemo, useState } from 'react';
 import { FaSort, FaSortDown, FaSortUp } from 'react-icons/fa';
 import CodeModal from '../codemodal/codemodal';
 
@@ -33,7 +33,7 @@ interface PatternsProps {
     };
 }
 
-const Patterns: FunctionComponent<PatternsProps> = ({
+export const Patterns: FunctionComponent<PatternsProps> = ({
     patternString,
     patternWiseColors
 }) => {
@@ -179,7 +179,9 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
 
     const topics = getAllTopics(questions);
     const topicWiseQuestions = getSortedQuestionsByTopic(questions, sortOrder);
-    const patternWiseColors = getPatternWiseRandomHexColor(questions);
+    const patternWiseColors = useMemo(() => {
+        return getPatternWiseRandomHexColor(questions);
+    }, [questions]);
 
     const cycleSortOrder = () => {
         setSortOrder((oldstate) => {
@@ -312,4 +314,4 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
     );
 };
 
-export default Topics;
+export default React.memo(Topics);
