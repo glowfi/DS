@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/bubble-sort/1 , Easy
+# https://www.geeksforgeeks.org/problems/bubble-sort/1 , Easy, Basic
 
 # Question
 # Given an array, arr[]. Sort the array using bubble sort algorithm.

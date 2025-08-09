@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/pascals-triangle , Easy
+# https://leetcode.com/problems/pascals-triangle , Easy, Algo
 
 # Question
 # Given an integer numRows, return the first numRows of Pascal's triangle.

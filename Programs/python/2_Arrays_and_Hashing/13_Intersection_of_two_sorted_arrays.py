@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/intersection-of-two-sorted-array-1587115620/1 , Easy
+# https://www.geeksforgeeks.org/problems/intersection-of-two-sorted-array-1587115620/1 , Easy, MergeSort
 
 # Question
 # Given two sorted arrays arr1[] and arr2[]. Your task is to return the intersection of both arrays.

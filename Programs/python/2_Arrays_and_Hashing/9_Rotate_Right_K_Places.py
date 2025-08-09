@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/rotate-array , Medium
+# https://leetcode.com/problems/rotate-array , Medium, Rotation
 
 # Question
 # Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.

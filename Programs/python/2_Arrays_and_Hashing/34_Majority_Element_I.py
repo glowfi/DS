@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/majority-element , Easy
+# https://leetcode.com/problems/majority-element , Easy, Algo
 
 # Question
 # Given an array nums of size n, return the majority element.

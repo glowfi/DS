@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/aggressive-cows/1 , Medium
+# https://www.geeksforgeeks.org/problems/aggressive-cows/1 , Medium, BS-on-Ans
 
 # Question
 # You are given an array with unique elements of stalls[], which denote the position of a stall. You are also given an integer k

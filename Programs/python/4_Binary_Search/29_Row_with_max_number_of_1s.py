@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/row-with-maximum-ones , Easy
+# https://leetcode.com/problems/row-with-maximum-ones , Easy, Bs-on-2d-matrix
 
 # Question
 # Given a m x n binary matrix mat, find the 0-indexed position of the row that contains the maximum count of ones, and the number of ones in that row.

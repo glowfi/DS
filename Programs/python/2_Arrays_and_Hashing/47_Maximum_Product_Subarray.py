@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/maximum-sum-circular-subarray , Medium
+# https://leetcode.com/problems/maximum-sum-circular-subarray , Medium, Observation
 
 # Question
 # Given an integer array nums, find a subarray that has the largest product, and return the product.

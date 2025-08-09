@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/design-hashmap , Easy
+# https://leetcode.com/problems/design-hashmap , Easy, Design
 
 # Question
 # Design a HashMap without using any built-in hash table libraries.

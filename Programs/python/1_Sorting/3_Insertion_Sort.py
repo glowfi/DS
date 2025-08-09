@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/insertion-sort/0 , Easy
+# https://www.geeksforgeeks.org/problems/insertion-sort/0 , Easy, Basic
 
 # Question
 # The task is to complete the insertsort() function which is used to implement Insertion Sort.

@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1 , Easy
+# https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1 , Easy, lower-bound/floor
 
 # Question
 # Given a sorted array arr[] and an integer x, find the index (0-based) of the largest element in arr[] that is less than or equal to x. This element is called the floor of x. If such an element does not exist, return -1.

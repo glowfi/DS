@@ -1,4 +1,4 @@
-# NA , Easy
+# NA , Easy, Basic
 
 # Question
 # You are given an integer array nums containing n + 1 integers where each integer is in the

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/remove-outermost-parentheses , Easy
+# https://leetcode.com/problems/remove-outermost-parentheses , Easy, Parentheses
 
 # Question
 # A valid parentheses string is either empty "", "(" + A + ")", or A + B, where A and B are valid parentheses strings, and + represents string concatenation.

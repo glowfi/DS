@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/square-root/1 , Easy
+# https://www.geeksforgeeks.org/problems/square-root/1 , Easy, BS-on-Ans
 
 # Question
 # Given a positive integer n, find the square root of n. If n is not a perfect square, then return the floor value.

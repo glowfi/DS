@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/subarray-sums-divisible-by-k , Medium
+# https://leetcode.com/problems/subarray-sums-divisible-by-k , Medium, SubarraySumCount
 
 # Question
 # Given an integer array nums and an integer k, return the number of non-empty subarrays that have a sum divisible by k.

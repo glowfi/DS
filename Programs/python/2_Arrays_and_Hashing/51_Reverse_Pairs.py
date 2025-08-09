@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/reverse-pairs , Hard
+# https://leetcode.com/problems/reverse-pairs , Hard, MergeSort
 
 # Question
 # Given an integer array nums, return the number of reverse pairs in the array.

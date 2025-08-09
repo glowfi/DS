@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1 , Medium
+# https://www.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1 , Medium, MergeSort
 
 # Question
 # Given two sorted arrays a[] and b[] of size n and m respectively, the task is to merge them in sorted order

@@ -126,6 +126,29 @@ function getSortedQuestionsByTopic(
     return sortedTopicWiseQuestions;
 }
 
+function getRandomHexColor(): string {
+    const hex: string = '0123456789ABCDEF';
+    let color: string = '#';
+    for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function getPatternWiseRandomHexColor(questions: Question[]): {
+    [pattern: string]: string;
+} {
+    const patternColors: { [pattern: string]: string } = {};
+
+    questions.forEach((question: Question) => {
+        if (!patternColors[question.pattern]) {
+            patternColors[question.pattern] = getRandomHexColor();
+        }
+    });
+
+    return patternColors;
+}
+
 interface TopicsProps {
     questions: Question[];
     selectedQuestion?: Question;
@@ -145,6 +168,7 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
 
     const topics = getAllTopics(questions);
     const topicWiseQuestions = getSortedQuestionsByTopic(questions, sortOrder);
+    const patternWiseColors = getPatternWiseRandomHexColor(questions);
 
     const cycleSortOrder = () => {
         setSortOrder((oldstate) => {
@@ -189,6 +213,7 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
                                                     {sortOrders[sortOrder].icon}
                                                 </div>
                                             </TableHead>
+                                            <TableHead>Pattern</TableHead>
                                             <TableHead>Solution</TableHead>
                                         </TableRow>
                                     </TableHeader>
@@ -225,6 +250,15 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
                                                                 }}
                                                             >
                                                                 {q.difficulty}
+                                                            </Badge>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <Badge
+                                                                style={{
+                                                                    backgroundColor: `${patternWiseColors[q.pattern.trim()]}`
+                                                                }}
+                                                            >
+                                                                {q.pattern}
                                                             </Badge>
                                                         </TableCell>
                                                         <TableCell>

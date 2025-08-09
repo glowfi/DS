@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/game-of-life , Medium
+# https://leetcode.com/problems/game-of-life , Medium, Observation
 
 # Question
 # According to Wikipedia's article: "The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician

@@ -30,6 +30,7 @@ def string_to_difficulty_enum(value: str) -> Difficulty:
 class Question(TypedDict):
     id: int
     topic: str
+    pattern: str
     question: str
     problem_name: str
     problem_link: str
@@ -142,14 +143,16 @@ for language in languages.keys():
                         print(f"Skipping {file}")
                         continue
                     else:
-                        problem_link, difficulty = data
+                        problem_link, difficulty, pattern = data
                         problem_link = problem_link.strip()
+                        pattern = pattern.strip()
                         approaches, question = parse_file(file)
                         difficulty = string_to_difficulty_enum(difficulty.strip(" "))
                         newQuestion: Question = {
                             "id": questionCount,
                             "question": question,
                             "topic": "".join(topic.split("_")[1:]),
+                            "pattern": pattern,
                             "language": languages[language]["name"],
                             "difficulty": difficulty.value,
                             "difficulty_num": difficulty_map[difficulty],

@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/array-of-alternate-ve-and-ve-nos1401/1 , Easy
+# https://www.geeksforgeeks.org/problems/array-of-alternate-ve-and-ve-nos1401/1 , Easy, SignArrange
 
 # Question
 # Given an unsorted array arr containing both positive and negative numbers. Your task is to rearrange the array and convert it

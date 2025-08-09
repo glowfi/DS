@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/reverse-a-doubly-linked-list/1 , Easy
+# https://www.geeksforgeeks.org/problems/reverse-a-doubly-linked-list/1 , Easy, Basic
 
 # Question
 # Given a doubly linked list. Your task is to reverse the doubly linked list and return its head.

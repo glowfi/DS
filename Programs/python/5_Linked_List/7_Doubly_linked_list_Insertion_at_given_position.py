@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/insert-a-node-in-doubly-linked-list/1 , Easy
+# https://www.geeksforgeeks.org/problems/insert-a-node-in-doubly-linked-list/1 , Easy, Basic
 
 # Question
 # Given a doubly-linked list, a position p, and an integer x. The task is to add a new node with value x at the position just after pth node in the doubly linked list and return the head of the updated list.

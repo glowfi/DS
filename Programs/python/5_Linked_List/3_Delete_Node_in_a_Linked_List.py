@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/delete-node-in-a-linked-list , Medium
+# https://leetcode.com/problems/delete-node-in-a-linked-list , Medium, Basic
 
 # Question
 # There is a singly-linked list head and we want to delete a node node in it.

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/rotate-image , Medium
+# https://leetcode.com/problems/rotate-image , Medium, Matrix
 
 # Question
 # You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).

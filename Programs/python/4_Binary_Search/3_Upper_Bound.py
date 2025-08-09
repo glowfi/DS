@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1 , Easy
+# https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1 , Easy, upper-bound/ceil
 
 # Question
 # Given an unsorted array arr[] of integers and an integer x, find the floor and ceiling of x in arr[].

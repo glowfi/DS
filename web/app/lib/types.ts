@@ -25,6 +25,7 @@ export interface Approach {
 export interface Question {
     id: number;
     topic: string;
+    pattern: string;
     question: string;
     problem_name: string;
     problem_link: string;

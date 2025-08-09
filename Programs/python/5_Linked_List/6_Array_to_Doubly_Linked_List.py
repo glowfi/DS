@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/introduction-to-doubly-linked-list/1 , Easy
+# https://www.geeksforgeeks.org/problems/introduction-to-doubly-linked-list/1 , Easy, Basic
 
 # Question
 # Geek is learning data structures and is familiar with linked lists, but he's curious about how to access the previous element in a linked list in the same way that we access the next element. His teacher explains doubly linked lists to him.

@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1 , Medium
+# https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1 , Medium, MergeSort
 
 # Question
 # Given a linked list containing n head nodes where every node in the linked list contains two pointers:

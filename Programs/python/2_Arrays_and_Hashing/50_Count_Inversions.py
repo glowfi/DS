@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1 , Medium
+# https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1 , Medium, MergeSort
 
 # Question
 # Given an array of integers arr[]. Find the Inversion Count in the array.

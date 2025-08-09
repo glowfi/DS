@@ -1,4 +1,4 @@
-# NA , Easy
+# NA , Easy, Rotation
 
 # Question
 # You are given an integer array arr of size n. You need to implement two functions to perform rotations on this array:
