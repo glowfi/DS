@@ -22,12 +22,11 @@ import {
 } from '@/components/ui/table';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
-import React, { Fragment, FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { FaSort, FaSortDown, FaSortUp } from 'react-icons/fa';
 import CodeModal from '../codemodal/codemodal';
 
 interface PatternsProps {
-    q: Question;
     patternString: string;
     patternWiseColors: {
         [pattern: string]: string;
@@ -36,8 +35,7 @@ interface PatternsProps {
 
 const Patterns: FunctionComponent<PatternsProps> = ({
     patternString,
-    patternWiseColors,
-    q
+    patternWiseColors
 }) => {
     const patterns: string[] = patternString.trim().split('/');
 
@@ -267,7 +265,6 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
                                                         </TableCell>
                                                         <TableCell>
                                                             <Patterns
-                                                                q={q}
                                                                 patternString={
                                                                     q.pattern
                                                                 }
