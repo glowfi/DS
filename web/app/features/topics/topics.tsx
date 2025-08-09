@@ -303,7 +303,7 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
                     <Badge>{questions.length}</Badge>
                 </div>
             </Accordion>
-            {selectedQuestion !== undefined && (
+            {selectedQuestion && (
                 <CodeModal
                     question={selectedQuestion}
                     isModalOpen={modalOpen}

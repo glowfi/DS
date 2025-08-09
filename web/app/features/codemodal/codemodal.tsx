@@ -76,7 +76,7 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
             <SheetTrigger asChild className="hidden">
                 <Button variant="outline">See Code</Button>
             </SheetTrigger>
-            <SheetContent className="h-screen w-screen overflow-hidden p-4 md:p-8 flex flex-col">
+            <SheetContent className="h-screen w-screen overflow-y-auto p-4 md:p-8 flex flex-col">
                 <SheetHeader>
                     <SheetTitle>
                         <Link
@@ -89,9 +89,10 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
                         </Link>
                     </SheetTitle>
                 </SheetHeader>
-                <div className="flex flex-col mt-6 overflow-auto flex-grow gap-6">
+                <div className="flex flex-col mt-6 overflow-y-auto flex-grow gap-6">
                     <div className="flex flex-col gap-6">
                         <Badge
+                            className="font-bold"
                             style={{
                                 backgroundColor: getDifficultyColor(
                                     question.difficulty
@@ -112,7 +113,7 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
                         <h3 className="text-2xl font-semibold tracking-tight">
                             Problem Statement
                         </h3>
-                        <pre className="whitespace-pre-wrap">
+                        <pre className="whitespace-pre-wrap break-words">
                             {question.question}
                         </pre>
                     </div>
@@ -121,13 +122,13 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
                         <h3 className="text-2xl font-semibold tracking-tight">
                             Intuition
                         </h3>
-                        <pre className="whitespace-pre-wrap">
+                        <pre className="whitespace-pre-wrap break-words">
                             {approachesMap[selectedApproach].intuition}
                         </pre>
                     </div>
 
                     <Tabs defaultValue={selectedApproach}>
-                        <TabsList className="gap-3">
+                        <TabsList className="flex gap-3">
                             {Object.keys(approachesMap).map((key, index) => (
                                 <TabsTrigger
                                     value={key}
