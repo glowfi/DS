@@ -19,9 +19,22 @@ export function getRandomHexColor(): string {
     return color;
 }
 
-export function getContrastColor(bgColor: string): string {
-    const luminance = getRelativeLuminance(bgColor);
-    return luminance > 0.5 ? '#000' : '#fff';
+export function getPatternWiseRandomHexColor(questions: Question[]): {
+    [pattern: string]: string;
+} {
+    const patternColors: { [pattern: string]: string } = {};
+
+    questions.forEach((question: Question) => {
+        const patterns = question.pattern.trim().split('/');
+        patterns.forEach((pattern) => {
+            if (!patternColors[pattern.trim()]) {
+                // Trim each pattern
+                patternColors[pattern.trim()] = getRandomHexColor();
+            }
+        });
+    });
+
+    return patternColors;
 }
 
 export function getRelativeLuminance(color: string): number {
@@ -40,20 +53,44 @@ export function getRelativeLuminance(color: string): number {
     return 0.2126 * rLinear + 0.7152 * gLinear + 0.0722 * bLinear;
 }
 
-export function getPatternWiseRandomHexColor(questions: Question[]): {
-    [pattern: string]: string;
-} {
-    const patternColors: { [pattern: string]: string } = {};
+export function getReadableTextColor(
+    bgColor: string,
+    isDarkMode: boolean
+): string {
+    const luminance = getRelativeLuminance(bgColor);
+    const contrastRatio = isDarkMode ? 4.5 : 4.5; // Maintain a minimum contrast ratio for both modes
 
-    questions.forEach((question: Question) => {
-        const patterns = question.pattern.trim().split('/');
-        patterns.forEach((pattern) => {
-            if (!patternColors[pattern.trim()]) {
-                // Trim each pattern
-                patternColors[pattern.trim()] = getRandomHexColor();
-            }
-        });
-    });
+    let textColor: string;
 
-    return patternColors;
+    // Determine text color based on luminance
+    if (luminance < 0.5) {
+        textColor = '#fff'; // White text for dark backgrounds
+    } else {
+        textColor = '#000'; // Black text for light backgrounds
+    }
+
+    // Check if the selected text color meets the contrast ratio requirement
+    const contrastWithWhite = getContrastRatio(
+        luminance,
+        getRelativeLuminance('#fff')
+    );
+    const contrastWithBlack = getContrastRatio(
+        luminance,
+        getRelativeLuminance('#000')
+    );
+
+    if (contrastWithWhite >= contrastRatio) {
+        return '#fff'; // Use white if it meets the contrast requirement
+    } else if (contrastWithBlack >= contrastRatio) {
+        return '#000'; // Use black if it meets the contrast requirement
+    }
+
+    // Fallback to a default color if neither meets the requirement
+    return textColor;
+}
+
+function getContrastRatio(luminance1: number, luminance2: number): number {
+    const lighter = Math.max(luminance1, luminance2);
+    const darker = Math.min(luminance1, luminance2);
+    return (lighter + 0.05) / (darker + 0.05);
 }

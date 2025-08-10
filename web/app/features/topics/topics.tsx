@@ -1,7 +1,7 @@
 import {
-    getContrastColor,
     getDifficultyColor,
-    getPatternWiseRandomHexColor
+    getPatternWiseRandomHexColor,
+    getReadableTextColor
 } from '@/app/lib/color-helper';
 import { Difficulty, Question } from '@/app/lib/types';
 import {
@@ -25,6 +25,7 @@ import Link from 'next/link';
 import React, { FunctionComponent, useMemo, useState } from 'react';
 import { FaSort, FaSortDown, FaSortUp } from 'react-icons/fa';
 import CodeModal from '../codemodal/codemodal';
+import { useTheme } from 'next-themes';
 
 interface PatternsProps {
     patternString: string;
@@ -37,23 +38,28 @@ export const Patterns: FunctionComponent<PatternsProps> = ({
     patternString,
     patternWiseColors
 }) => {
+    const { theme } = useTheme();
+
     const patterns: string[] = patternString.trim().split('/');
 
     return (
         <div className="flex flex-col gap-3">
             {patterns.map((pattern: string, idx: number) => {
+                const backgroundColor = patternWiseColors[pattern.trim()];
+                const isDarkMode = theme === 'dark' ? true : false;
+                const textColor = getReadableTextColor(
+                    backgroundColor,
+                    isDarkMode
+                );
+
                 return (
                     <Badge
                         key={idx}
                         style={{
-                            backgroundColor: `${patternWiseColors[pattern]}`,
+                            backgroundColor: backgroundColor,
                             border: '1px solid',
-                            borderColor: getContrastColor(
-                                patternWiseColors[pattern.trim()]
-                            ),
-                            color: getContrastColor(
-                                patternWiseColors[pattern.trim()]
-                            ),
+                            borderColor: textColor,
+                            color: textColor,
                             borderRadius: '4px'
                         }}
                     >
