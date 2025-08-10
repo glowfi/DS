@@ -3512,5 +3512,250 @@
                 "type": "Optimal"
             }
         ]
+    },
+    {
+        "id": 1,
+        "question": "Given an positive integer n, print numbers from 1 to n without using loops.\n\nImplement the function printTillN() to print the numbers from 1 to n as space-separated integers.\n\nExamples\n\nInput: n = 5\nOutput: 1 2 3 4 5\nExplanation: We have to print numbers from 1 to 5.\n\nInput: n = 10\nOutput: 1 2 3 4 5 6 7 8 9 10\nExplanation: We have to print numbers from 1 to 10.\n\nConstraints:\n1 \u2264 n \u2264 1000",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Print 1 to N",
+        "problem_link": "https://www.geeksforgeeks.org/problems/print-1-to-n-without-using-loops3621/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/1_Print_1_to_N.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "space]",
+                "intuition": "Use the IBH method to solve this problem\nlets assume that printTillN will print from 1 to N as hypothesis\nassume N-1 will print from 1 to N-1 then in the induction step\nwe can just print N at last",
+                "code": "class Solution:\n    def printTillN(self, N: int) -> None:\n        # Base\n        if N == 0:\n            return\n\n        # Hypo\n        self.printTillN(N - 1)\n\n        # Induction\n        print(N, end=\" \")",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "Print numbers from N to 1 (space separated) without the help of loops.\n\nExample 1:\n\nInput:\nN = 10\nOutput: 10 9 8 7 6 5 4 3 2 1\nYour Task:\nThis is a function problem. You only need to complete\nthe function printNos() that takes N as parameter and prints number\nfrom N to 1 recursively. Don't print newline, it will be added by the driver code.\n\n\nExpected Time Complexity: O(N).\nExpected Auxiliary Space: O(N) (Recursive).\n\nConstraint\n1<=n<=1000",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Print N to 1",
+        "problem_link": "https://www.geeksforgeeks.org/problems/print-n-to-1-without-loop/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/2_Print_N_to_1.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "space]",
+                "intuition": "Use the IBH method to solve this problem\nlets assume that printTillN will print from 1 to N as hypothesis\nwe can just print N first\nassume N-1 will print from 1 to N-1 then in the induction step",
+                "code": "class Solution:\n    def printNos(self, n: int) -> None:\n        # Base\n        if n == 0:\n            return\n\n        # Induction\n        print(n, end=\" \")\n\n        # Hypo\n        self.printNos(n - 1)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "Given an integer n, your task is to compute the sum of all natural numbers from 1 to n (inclusive). If n is 0, the sum should be 0.\n\nExamples:\n\nInput: n = 3\nOutput: 6\nExplanation: For n = 3, the sum will be 6. 1 + 2 + 3 = 6.\n\nInput: n = 5\nOutput: 15\nExplanation: For n = 5, the sum will be 15. 1 + 2 + 3 + 4 + 5 = 15.\n\nConstraints:\n1 \u2264 n \u2264 10^4\n\nExpected Complexities\nTime Complexity: O(1)\nAuxiliary Space: O(1)",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Sum of Natural Numbers",
+        "problem_link": "https://www.geeksforgeeks.org/problems/sum-of-series2811/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/3_Sum_of_Natural_Numbers.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "space]",
+                "intuition": "Use the IBH method to solve this problem\nAs hypothesis assume that given n findSum function\nwill calulcate the sum of 1 to n,first calulcate the\nsum of n-1 numbers then we can just add the current number\nwith the result of n-1 sum (induction)",
+                "code": "class Solution:\n    def findSum(self, n: int) -> int:\n        # Base\n        if n == 0:\n            return 0\n\n        # Hypo\n        sum_till_prev_num = self.findSum(n - 1)\n\n        # Induction\n        return sum_till_prev_num + n",
+                "type": "Better"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "A number n is called a factorial number if it is the factorial of a positive integer. For example,\nthe first few factorial numbers are 1, 2, 6, 24, 120,\nGiven a number n, the task is to return the list/vector of the factorial numbers smaller than or equal to n.\n\nExamples:\n\nInput: n = 3\nOutput: 1 2\nExplanation: The first factorial number is 1 which is less than equal to n. The second number\nis 2 which is less than equal to n,but the third factorial number is 6 which is greater than n. So we print only 1 and 2.\n\nInput: n = 6\nOutput: 1 2 6\nExplanation: The first three factorial numbers are less than equal to n but the fourth factorial\nnumber 24 is greater than n. So we print only first three factorial numbers.\n\nConstraints:\n1<=n<=10^18",
+        "topic": "Recursion",
+        "pattern": "Recursive",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Factorials Less than or Equal to n",
+        "problem_link": "https://www.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/4_Factorials_Less_than_or_Equal_to_n.py",
+        "approaches": [
+            {
+                "tc": "O(N)+O(N)",
+                "sc": "space]",
+                "intuition": "Use Pure Recursion",
+                "code": "class Solution:\n    def factorialNumbers(self, n: int) -> list[int]:\n        def solve(idx: int, n: int) -> list[int]:\n            if idx > n:\n                return []\n\n            res = solve(idx + 1, n)\n\n            if idx < n:\n                res.append(idx)\n\n            return res\n\n        return solve(1, n)[::-1]",
+                "type": "Better"
+            },
+            {
+                "tc": "O(N)",
+                "sc": "space]",
+                "intuition": "Use Iterative method keeping track of the factorial",
+                "code": "class Solution:\n    def factorialNumbers(self, n: int) -> list[int]:\n        ans = []\n\n        p = 1\n        for i in range(1, n + 1):\n            p *= i\n\n            if p > n:\n                break\n            else:\n                ans.append(p)\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "Given a positive number n. Find the sum of all the digits of n.\n\nExamples:\n\nInput: n = 687\nOutput: 21\nExplanation: Sum of 687's digits: 6 + 8 + 7 = 21\n\nInput: n = 12\nOutput 3\nExplanation: Sum of 12's digits: 1 + 2 = 3\n\nConstraints:\n1 <= n <= 10^5",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Sum of Digits",
+        "problem_link": "https://www.geeksforgeeks.org/problems/sum-of-digits1742/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/5_Sum_of_Digits.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "space]",
+                "intuition": "Use IBH method to solve the problem\nAssum given n it will return the sum of the\nall digits in n (hypothesis),then recursively\nfind the sum of x-1 digits (if number is 3 digit)\nthen find sum of 2 digits and then add the last digit\nto the sum of x-1 digits and return this (induction)",
+                "code": "class Solution:\n    def sumOfDigits(self, n: int) -> int:\n        # Base\n        if n == 0:\n            return 0\n\n        # Hypo\n        s = self.sumOfDigits(n // 10)\n\n        # Induction\n        return s + n % 10",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "question": "You are given an integer n. Your task is to reverse the digits, ensuring that the reversed number has no leading zeroes.\n\nExamples:\n\nInput: n = 122\nOutput: 221\nExplanation: By reversing the digits of number, number will change into 221.\n\nInput : n = 200\nOutput: 2\nExplanation: By reversing the digits of number, number will change into 2.\n\nInput : n = 12345\nOutput: 54321\nExplanation: By reversing the digits of number, number will change into 54321.\n\nConstraints:\n1 <= n <= 10^6",
+        "topic": "Recursion",
+        "pattern": "Recursion",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Reverse digits",
+        "problem_link": "https://www.geeksforgeeks.org/problems/reverse-digit0316/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/6_Reverse_digits.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "space]",
+                "intuition": "Use Recursion and carry over the rev value in each recursive call",
+                "code": "class Solution:\n    def reverseDigits(self, n: int) -> int:\n        def helper(rev: int, n: int) -> int:\n            if n == 0:\n                return rev\n\n            d = n % 10\n            return helper((rev * 10) + d, n // 10)\n\n        return helper(0, n)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "question": "You are given an integer n. Your task is to determine whether it is a palindrome.\n\nA number is considered a palindrome if it reads the same backward as forward, like the string examples \"MADAM\" or \"MOM\".\n\nExamples:\n\nInput: n = 555\nOutput: true\nExplanation: The number 555 reads the same backward as forward, so it is a palindrome.\n\nInput: n = 123\nOutput: false\nExplanation: The number 123 reads differently backward (321), so it is not a palindrome.\n\nInput: n = 1221\nOutput: true\n\nConstraints:\n1 \u2264 n \u2264 109",
+        "topic": "Recursion",
+        "pattern": "Recursion",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Check Palindrom number",
+        "problem_link": "https://www.geeksforgeeks.org/problems/palindrome0746/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/7_Check_Palindrom_number.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "space]",
+                "intuition": "Use Recursion and carry over the rev value in each recursive call",
+                "code": "class Solution:\n    def reverseDigits(self, n: int) -> int:\n        def helper(rev: int, n: int) -> int:\n            if n == 0:\n                return rev\n\n            d = n % 10\n            return helper((rev * 10) + d, n // 10)\n\n        return helper(0, n)\n\n    def isPalindrome(self, n: int) -> bool:\n        return self.reverseDigits(n) == n",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "question": "Given an array arr[], check whether it is sorted in non-decreasing order. Return true if it is sorted otherwise false.\n\nExamples:\n\nInput: arr[] = [10, 20, 30, 40, 50]\nOutput: true\nExplanation: The given array is sorted.\n\nInput: arr[] = [90, 80, 100, 70, 40, 30]\nOutput: false\nExplanation: The given array is not sorted.\n\nConstraints:\n1 \u2264 arr.size \u2264 10^6\n- 10^9 \u2264 arr[i] \u2264 10^9",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Check if array is sorted",
+        "problem_link": "https://www.geeksforgeeks.org/problems/check-if-an-array-is-sorted0701/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/8_Check_if_array_is_sorted.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "space]",
+                "intuition": "Use IBH method to solve this problem\nAssum that the given function will tell you whether array is sorted or not from\ni+1 to nth position (hypothesis),if array is sorted from i+1 position then we just\nneed to check if the i+1 element is greater than current element or not",
+                "code": "class Solution:\n    def isSorted(self, arr: list[int]) -> bool:\n        def helper(idx: int, arr: list[int]) -> bool:\n            # Base Case\n            if idx == len(arr) - 1:\n                return True\n\n            # Hypo\n            isSorted = helper(idx + 1, arr)\n\n            # Induction\n            if not isSorted:\n                return False\n\n            if idx < len(arr) and arr[idx + 1] < arr[idx]:\n                return False\n\n            return True\n\n        return helper(0, arr)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "question": "The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,\n\nF(0) = 0, F(1) = 1\nF(n) = F(n - 1) + F(n - 2), for n > 1.\nGiven n, calculate F(n).\n\n\nExample 1:\n\nInput: n = 2\nOutput: 1\nExplanation: F(2) = F(1) + F(0) = 1 + 0 = 1.\nExample 2:\n\nInput: n = 3\nOutput: 2\nExplanation: F(3) = F(2) + F(1) = 1 + 1 = 2.\nExample 3:\n\nInput: n = 4\nOutput: 3\nExplanation: F(4) = F(3) + F(2) = 2 + 1 = 3.\n\n\nConstraints:\n0 <= n <= 30",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Fibonacci Number",
+        "problem_link": "https://leetcode.com/problems/fibonacci-number",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/9_Fibonacci_Number.py",
+        "approaches": [
+            {
+                "tc": "O(N)",
+                "sc": "space]",
+                "intuition": "Use IBH method to solve this problem\nAssume that the fib function gives us the\nthe nth fibonacci-number (hypothesis),then\nwe can easily find seclast and last number\nby recursion and in the induction step we\ncan return the summation of last and second\nlast fibonacci-number",
+                "code": "class Solution:\n    def fib(self, n: int) -> int:\n        # Base\n        if n <= 1:\n            return n\n\n        # Hypo\n        last = self.fib(n - 1)\n        sec_last = self.fib(n - 2)\n\n        # Induction\n        return last + sec_last",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "question": "Given an array of integers nums, sort the array in ascending order and return it.\n\nYou must solve the problem without using any built-in functions in O(nlog(n)) time complexity and with the smallest space complexity possible.\n\n\nExample 1:\n\nInput: nums = [5,2,3,1]\nOutput: [1,2,3,5]\nExplanation: After sorting the array, the positions of some numbers are not changed (for example, 2 and 3), while the positions of other numbers are changed (for example, 1 and 5).\nExample 2:\n\nInput: nums = [5,1,1,2,0,0]\nOutput: [0,0,1,1,2,5]\nExplanation: Note that the values of nums are not necessarily unique.\n\n\nConstraints:\n\n1 <= nums.length <= 5 * 10^4\n-5 * 10^4 <= nums[i] <= 5 * 10^4",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Sort Array",
+        "problem_link": "https://leetcode.com/problems/sort-an-array",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/10_Sort_Array.py",
+        "approaches": [
+            {
+                "tc": "O(N^2)",
+                "sc": "space]",
+                "intuition": "Use IBH method Assume the array will get sorted from idx+1 post to end Just insert the element at its correct place, the current elment",
+                "code": "from typing import List\nfrom bisect import bisect_right\n\n\nclass Solution:\n    def sortArray(self, nums: List[int]) -> List[int]:\n        # Base\n        if len(nums) == 0:\n            return nums\n\n        # Hypothesis\n        lastElem = nums.pop(-1)\n        self.sortArray(nums)\n\n        # Induction\n        idx = bisect_right(nums, lastElem)\n        nums.insert(idx, lastElem)\n        return nums",
+                "type": "Brute"
+            },
+            {
+                "tc": "O(Nlog(N))",
+                "sc": "space]",
+                "intuition": "Use Merge Sort [inplace]",
+                "code": "from typing import List\n\n\nclass Solution:\n    def merge2sortedArray(self, lo: int, mid: int, hi: int, arr: list[int]) -> None:\n        i, j = lo, mid + 1\n\n        tmp = []\n        while i <= mid and j <= hi:\n            if arr[i] <= arr[j]:\n                tmp.append(arr[i])\n                i += 1\n            else:\n                tmp.append(arr[j])\n                j += 1\n\n        while i <= mid:\n            tmp.append(arr[i])\n            i += 1\n\n        while j <= hi:\n            tmp.append(arr[j])\n            j += 1\n\n        k = 0\n        for i in range(lo, hi + 1):\n            arr[i] = tmp[k]\n            k += 1\n\n    def merge_sort(self, lo: int, hi: int, arr: list[int]):\n        # Base\n        if lo >= hi:\n            return\n\n        mid = (lo + hi) // 2\n\n        # Hypotheis\n        # Sort Left arr\n        self.merge_sort(lo, mid, arr)\n        # Sort Right arr\n        self.merge_sort(mid + 1, hi, arr)\n\n        # Induction\n        self.merge2sortedArray(lo, mid, hi, arr)\n\n    def sortArray(self, nums: List[int]) -> List[int]:\n        self.merge_sort(0, len(nums) - 1, nums)\n        return nums",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "question": "You are given a stack St. You have to reverse the stack using recursion.\n\nExample 1:\n\nInput: St = [3,2,1,7,6]\nOutput: [6,7,1,2,3]\nExplanation: Input stack after reversing will look like the stack in the output.\nExample 2:\n\nInput: St = [4,3,9,6]\nOutput: [6,9,3,4]\nExplanation: Input stack after reversing will look like the stack in the output.\n\nConstraints:\n1 \u2264 stack.size \u2264 10^4\n0 \u2264 stack.element \u2264 10^3",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Reverse a Stack",
+        "problem_link": "https://www.geeksforgeeks.org/problems/reverse-a-stack/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/11_Reverse_a_Stack.py",
+        "approaches": [
+            {
+                "tc": "O(N^2)",
+                "sc": "O(1)",
+                "intuition": "Use IBH method to solve this problem\nAssume that in tht reversal function will\nreverse any given array(hypothesis),try reversing\nthe entire array except the last element then at the\ninduction step we just need to insert the last element\nto the front",
+                "code": "class Solution:\n    def reverse(self, st: list[int]) -> list[int]:\n        # Base\n        if len(st) == 0:\n            return st\n\n        # Hypothesis\n        last_elem = st.pop(-1)\n        self.reverse(st)\n\n        # Induction\n        st.insert(0, last_elem)\n\n        return st",
+                "type": "Brute"
+            }
+        ]
     }
 ]
