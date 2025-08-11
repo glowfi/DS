@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/single-element-in-a-sorted-array , Medium, XOR
+# https://leetcode.com/problems/single-element-in-a-sorted-array, Medium, XOR
 
 # Question
 # You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once.

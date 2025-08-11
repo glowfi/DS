@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/1 , Easy, Recursive
+# https://www.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/1, Easy, Recursive
 
 # Question
 # A number n is called a factorial number if it is the factorial of a positive integer. For example,

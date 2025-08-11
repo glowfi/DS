@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets , Medium, BS-on-Ans
+# https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets, Medium, BS-on-Ans
 
 # Question
 # You are given an integer array bloomDay, an integer m and an integer k.

@@ -1,4 +1,4 @@
-# https://practice.geeksforgeeks.org/problems/who-will-win-1587115621/1 , Easy, Basic
+# https://practice.geeksforgeeks.org/problems/who-will-win-1587115621/1, Easy, Basic
 
 # Question
 # Given an array, arr[] sorted in ascending order and an integer k. Return true if k is present in the array, otherwise, false.

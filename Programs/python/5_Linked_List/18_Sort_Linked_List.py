@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/sort-list/ , Medium, MergeSort
+# https://leetcode.com/problems/sort-list, Medium, MergeSort
 
 # Question
 # Given the head of a linked list, return the list after sorting it in ascending order.

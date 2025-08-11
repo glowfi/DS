@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/insert-delete-getrandom-o1 , Medium, Observation
+# https://leetcode.com/problems/insert-delete-getrandom-o1, Medium, Observation
 
 # Question
 # Implement the RandomizedSet class:

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list , Medium, Task
+# https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list, Medium, Task
 
 # Question
 # You are given the head of a linked list. Delete the middle node, and return the head of the modified linked list.

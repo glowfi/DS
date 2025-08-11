@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/palindrome0746/1 , Easy, Recursion
+# https://www.geeksforgeeks.org/problems/palindrome0746/1, Easy, Recursion
 
 # Question
 # You are given an integer n. Your task is to determine whether it is a palindrome.

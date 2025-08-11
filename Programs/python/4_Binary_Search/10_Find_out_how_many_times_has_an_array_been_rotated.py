@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/rotation4723/1 , Easy, BS-In-Rotated-Sorted-Array
+# https://www.geeksforgeeks.org/problems/rotation4723/1, Easy, BS-In-Rotated-Sorted-Array
 
 # Question
 # Given an increasing sorted rotated array arr of distinct integers. The array is right-rotated k times. Find the value of k.

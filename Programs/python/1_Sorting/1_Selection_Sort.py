@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/selection-sort/1 , Easy , Basic
+# https://www.geeksforgeeks.org/problems/selection-sort/1, Easy, Basic
 
 # Question
 # Given an array arr, use selection sort to sort arr[] in increasing order.

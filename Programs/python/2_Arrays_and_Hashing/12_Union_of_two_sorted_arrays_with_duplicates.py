@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/union-of-two-sorted-arrays-1587115621/1 , Medium, MergeSort
+# https://www.geeksforgeeks.org/problems/union-of-two-sorted-arrays-1587115621/1, Medium, MergeSort
 
 # Question
 # Given two sorted arrays a[] and b[], where each array may contain duplicate elements , the task is to return the elements in the union of the two arrays in sorted order.

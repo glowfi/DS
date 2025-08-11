@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/find-length-of-loop/1 , Easy, FloydsAlgo
+# https://www.geeksforgeeks.org/problems/find-length-of-loop/1, Easy, FloydsAlgo
 
 # Question
 # Given the head of a linked list, determine whether the list contains a loop. If a loop is present,

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array , Easy, CyclicSort
+# https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array, Easy, CyclicSort
 
 # Question
 # Given an array nums of n integers where nums[i] is in the range [1, n], return an

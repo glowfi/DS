@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/print-1-to-n-without-using-loops3621/1 , Easy, IBH
+# https://www.geeksforgeeks.org/problems/print-1-to-n-without-using-loops3621/1, Easy, IBH
 
 # Question
 # Given an positive integer n, print numbers from 1 to n without using loops.

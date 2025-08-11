@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/capacity-to-ship-packages-within-d-days , Medium, BS-on-Ans
+# https://leetcode.com/problems/capacity-to-ship-packages-within-d-days, Medium, BS-on-Ans
 
 # Question
 # A conveyor belt has packages that must be shipped from one port to another within days days.

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/middle-of-the-linked-list , Easy, FloydsAlgo
+# https://leetcode.com/problems/middle-of-the-linked-list, Easy, FloydsAlgo
 
 # Question
 # Given the head of a singly linked list, return the middle node of the linked list.

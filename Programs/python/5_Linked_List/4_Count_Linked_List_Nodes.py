@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/count-nodes-of-linked-list/1 , Easy, Basic
+# https://www.geeksforgeeks.org/problems/count-nodes-of-linked-list/1, Easy, Basic
 
 # Question
 # Given a singly linked list. The task is to find the length of the linked list, where length is defined as the number of nodes in the linked list.

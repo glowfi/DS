@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/search-in-linked-list-1664434326/1 , Easy, Basic
+# https://www.geeksforgeeks.org/problems/search-in-linked-list-1664434326/1, Easy, Basic
 
 # Question
 # Given a linked list of n nodes and a key, the task is to check if the key is present in the linked list or not.

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/palindrome-linked-list , Easy, FloydsAlgo/Observation
+# https://leetcode.com/problems/palindrome-linked-list, Easy, FloydsAlgo/Observation
 
 # Question
 # Given the head of a singly linked list, return true if it is a palindrome or false otherwise.

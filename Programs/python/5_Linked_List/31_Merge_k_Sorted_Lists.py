@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/merge-k-sorted-lists , Hard, MergeSort
+# https://leetcode.com/problems/merge-k-sorted-lists, Hard, MergeSort
 
 # Question
 # You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.

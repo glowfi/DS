@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/search-in-rotated-sorted-array , Medium, BS-In-Rotated-Sorted-Array
+# https://leetcode.com/problems/search-in-rotated-sorted-array, Medium, BS-In-Rotated-Sorted-Array
 
 # Question
 # There is an integer array nums sorted in ascending order (with distinct values).

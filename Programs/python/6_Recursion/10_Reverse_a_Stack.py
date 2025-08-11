@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/reverse-a-stack/1 , Easy, IBH
+# https://www.geeksforgeeks.org/problems/reverse-a-stack/1, Easy, IBH
 
 # Question
 # You are given a stack St. You have to reverse the stack using recursion.

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/valid-anagram , Easy, SpecialString
+# https://leetcode.com/problems/valid-anagram, Easy, SpecialString
 
 # Question
 # Given two strings s and t, return true if t is an anagram of s, and false otherwise.

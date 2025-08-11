@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/count-subarray-with-given-xor/0 , Medium, SubarrayXORCount
+# https://www.geeksforgeeks.org/problems/count-subarray-with-given-xor/0, Medium, SubarrayXORCount
 
 # Question
 # Given an array of integers arr[] and a number k, count the number of subarrays having XOR of their elements as k.

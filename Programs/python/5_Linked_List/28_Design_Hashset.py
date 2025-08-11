@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/design-hashset , Easy, Design
+# https://leetcode.com/problems/design-hashset, Easy, Design
 
 # Question
 # Design a HashSet without using any built-in hash table libraries.

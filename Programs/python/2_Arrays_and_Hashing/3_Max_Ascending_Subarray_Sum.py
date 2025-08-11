@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/maximum-ascending-subarray-sum , Easy, Basic
+# https://leetcode.com/problems/maximum-ascending-subarray-sum, Easy, Basic
 
 # Question
 # Given an array of positive integers nums, return the maximum possible sum of an strictly increasing subarray in nums.

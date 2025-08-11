@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/find-peak-element , Medium, Observation
+# https://leetcode.com/problems/find-peak-element, Medium, Observation
 
 # Question
 # A peak element is an element that is strictly greater than its neighbors.

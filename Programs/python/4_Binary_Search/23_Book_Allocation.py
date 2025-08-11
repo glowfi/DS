@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1 , Medium, BS-on-Ans
+# https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1, Medium, BS-on-Ans
 
 # Question
 # You are given an array arr[] of integers, where each element arr[i] represents the number of

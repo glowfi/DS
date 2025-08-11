@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/h-index , Medium, CountSort
+# https://leetcode.com/problems/h-index, Medium, CountSort
 
 # Question
 # Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper,

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/rearrange-array-elements-by-sign , Medium, SignArrange
+# https://leetcode.com/problems/rearrange-array-elements-by-sign, Medium, SignArrange
 
 # Question
 # You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.

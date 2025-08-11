@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/remove-duplicates-from-sorted-array , Easy, Basic
+# https://leetcode.com/problems/remove-duplicates-from-sorted-array, Easy, Basic
 
 # Question
 # Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once.

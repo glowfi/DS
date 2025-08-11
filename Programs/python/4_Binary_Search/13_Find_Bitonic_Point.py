@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1 , Easy, Observation
+# https://www.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1, Easy, Observation
 
 # Question
 # Given an array of integers arr[] that is first strictly increasing and then maybe strictly decreasing, find the bitonic point, that is the maximum element in the array.

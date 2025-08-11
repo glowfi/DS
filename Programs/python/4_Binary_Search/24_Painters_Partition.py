@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/the-painters-partition-problem1535/1 , Hard, BS-on-Ans
+# https://www.geeksforgeeks.org/problems/the-painters-partition-problem1535/1, Hard, BS-on-Ans
 
 # Question
 # Ram wants to paint his dog's home that has n boards with different lengths. The length of ith board is given

@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/print-n-to-1-without-loop/1 , Easy, IBH
+# https://www.geeksforgeeks.org/problems/print-n-to-1-without-loop/1, Easy, IBH
 
 # Question
 # Print numbers from N to 1 (space separated) without the help of loops.

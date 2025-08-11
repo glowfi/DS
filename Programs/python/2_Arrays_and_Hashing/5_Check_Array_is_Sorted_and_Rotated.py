@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/check-if-array-is-sorted-and-rotated , Easy, Rotation
+# https://leetcode.com/problems/check-if-array-is-sorted-and-rotated, Easy, Rotation
 
 # Question
 # Given an array nums, return true if the array was originally sorted in non-decreasing order,

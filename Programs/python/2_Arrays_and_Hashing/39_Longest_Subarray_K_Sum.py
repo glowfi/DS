@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1 , Medium, LongestSubarraySum
+# https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1, Medium, LongestSubarraySum
 
 # Question
 # Given an array arr[] containing integers and an integer k, your task is to find the

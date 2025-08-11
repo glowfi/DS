@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/reverse-digit0316/1 , Easy, Recursion
+# https://www.geeksforgeeks.org/problems/reverse-digit0316/1, Easy, Recursion
 
 # Question
 # You are given an integer n. Your task is to reverse the digits, ensuring that the reversed number has no leading zeroes.

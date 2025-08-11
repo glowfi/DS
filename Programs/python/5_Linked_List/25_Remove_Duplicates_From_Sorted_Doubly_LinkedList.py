@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/remove-duplicates-from-a-sorted-doubly-linked-list/1 , Easy, Task
+# https://www.geeksforgeeks.org/problems/remove-duplicates-from-a-sorted-doubly-linked-list/1, Easy, Task
 
 # Question
 # Given a doubly linked list of n nodes sorted by values, the task is to remove duplicate nodes present in the linked list.

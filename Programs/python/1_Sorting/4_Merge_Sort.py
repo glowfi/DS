@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/sort-an-array , Medium, Basic
+# https://leetcode.com/problems/sort-an-array, Medium, Basic
 
 # Question
 # Given an array of integers nums, sort the array in ascending order and return it.

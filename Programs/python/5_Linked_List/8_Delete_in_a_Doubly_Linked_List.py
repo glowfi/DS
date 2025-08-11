@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/delete-node-in-doubly-linked-list/1 , Easy, Basic
+# https://www.geeksforgeeks.org/problems/delete-node-in-doubly-linked-list/1, Easy, Basic
 
 # Question
 # Given a Doubly Linked list and a position. The task is to delete a node from a given position (position starts from 1) in a doubly linked list and return the head of the doubly Linked list.

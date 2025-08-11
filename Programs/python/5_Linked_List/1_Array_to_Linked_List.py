@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/introduction-to-linked-list/1 , Easy, Basic
+# https://www.geeksforgeeks.org/problems/introduction-to-linked-list/1, Easy, Basic
 
 # Question
 # Given an array of integer arr. Your task is to construct the linked list from arr & return the head of the linked list.

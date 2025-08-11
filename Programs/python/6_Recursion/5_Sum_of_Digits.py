@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/sum-of-digits1742/1 , Easy, IBH
+# https://www.geeksforgeeks.org/problems/sum-of-digits1742/1, Easy, IBH
 
 # Question
 # Given a positive number n. Find the sum of all the digits of n.

@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/check-if-an-array-is-sorted0701/1 , Easy, IBH
+# https://www.geeksforgeeks.org/problems/check-if-an-array-is-sorted0701/1, Easy, IBH
 
 # Question
 # Given an array arr[], check whether it is sorted in non-decreasing order. Return true if it is sorted otherwise false.

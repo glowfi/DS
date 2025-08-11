@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/search-insert-position, Easy , upper-bound/ceil
+# https://leetcode.com/problems/search-insert-position, Easy, upper-bound/ceil
 
 # Question
 # Given a sorted array of distinct integers and a target value, return the index if the target is found. If not,

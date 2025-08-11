@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/reverse-linked-list/ , Easy, Basic
+# https://leetcode.com/problems/reverse-linked-list, Easy, Basic
 
 # Question
 # Given the head of a singly linked list, reverse the list, and return the reversed list.

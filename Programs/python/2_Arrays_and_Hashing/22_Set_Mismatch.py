@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/set-mismatch , Easy, CyclicSort
+# https://leetcode.com/problems/set-mismatch, Easy, CyclicSort
 
 # Question
 # You have a set of integers s, which originally contains all the numbers from 1 to n. Unfortunately, due to some error,

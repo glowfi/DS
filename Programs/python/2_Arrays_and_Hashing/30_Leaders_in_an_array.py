@@ -1,4 +1,4 @@
-# https://www.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1 , Easy, MaintainMinMaxSoFar
+# https://www.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1, Easy, MaintainMinMaxSoFar
 
 # Question
 # You are given an array arr of positive integers. Your task is to find all the leaders
