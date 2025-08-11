@@ -91,9 +91,9 @@ def parse_file(filename: str) -> tuple[list[Approach], str]:
 
         # Capture T.C. and S.C.
         if stripped.startswith("# T.C."):
-            current_data["tc"] = stripped.strip()
+            current_data["tc"] = stripped.replace("#", "").strip()
         elif stripped.startswith("# S.C"):
-            current_data["sc"] = stripped.strip()
+            current_data["sc"] = stripped.replace("#", "").strip()
 
         # Start capturing intuition
         elif stripped.startswith("# Intuition"):
