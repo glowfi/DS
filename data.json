@@ -3580,7 +3580,7 @@
         "id": 4,
         "question": "A number n is called a factorial number if it is the factorial of a positive integer. For example,\nthe first few factorial numbers are 1, 2, 6, 24, 120,\nGiven a number n, the task is to return the list/vector of the factorial numbers smaller than or equal to n.\n\nExamples:\n\nInput: n = 3\nOutput: 1 2\nExplanation: The first factorial number is 1 which is less than equal to n. The second number\nis 2 which is less than equal to n,but the third factorial number is 6 which is greater than n. So we print only 1 and 2.\n\nInput: n = 6\nOutput: 1 2 6\nExplanation: The first three factorial numbers are less than equal to n but the fourth factorial\nnumber 24 is greater than n. So we print only first three factorial numbers.\n\nConstraints:\n1<=n<=10^18",
         "topic": "Recursion",
-        "pattern": "Recursive",
+        "pattern": "Recursion",
         "language": "python",
         "difficulty": "Easy",
         "difficulty_num": 1,
@@ -3754,6 +3754,153 @@
                 "sc": "S.C  - O(N) [recursion stack space]",
                 "intuition": "Use Merge Sort [inplace]",
                 "code": "from typing import List\n\n\nclass Solution:\n    def merge2sortedArray(self, lo: int, mid: int, hi: int, arr: list[int]) -> None:\n        i, j = lo, mid + 1\n\n        tmp = []\n        while i <= mid and j <= hi:\n            if arr[i] <= arr[j]:\n                tmp.append(arr[i])\n                i += 1\n            else:\n                tmp.append(arr[j])\n                j += 1\n\n        while i <= mid:\n            tmp.append(arr[i])\n            i += 1\n\n        while j <= hi:\n            tmp.append(arr[j])\n            j += 1\n\n        k = 0\n        for i in range(lo, hi + 1):\n            arr[i] = tmp[k]\n            k += 1\n\n    def merge_sort(self, lo: int, hi: int, arr: list[int]):\n        # Base\n        if lo >= hi:\n            return\n\n        mid = (lo + hi) // 2\n\n        # Hypotheis\n        # Sort Left arr\n        self.merge_sort(lo, mid, arr)\n        # Sort Right arr\n        self.merge_sort(mid + 1, hi, arr)\n\n        # Induction\n        self.merge2sortedArray(lo, mid, hi, arr)\n\n    def sortArray(self, nums: List[int]) -> List[int]:\n        self.merge_sort(0, len(nums) - 1, nums)\n        return nums",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "question": "Given a stack s, delete the middle element of the stack without using any additional data structure.\n\nMiddle element:- floor((size_of_stack+1)/2) (1-based indexing) from the bottom of the stack.\n\nNote: The output shown by the compiler is the stack from top to bottom.\n\nExamples:\n\nInput: s = [10, 20, 30, 40, 50]\nOutput: [50, 40, 20, 10]\nExplanation: The bottom-most element will be 10 and the top-most element\nwill be 50. Middle element will be element at index 3 from bottom, which is 30. Deleting 30, stack will look like {10 20 40 50}.\n\nInput: s = [10, 20, 30, 40]\nOutput: [40, 30, 10]\nExplanation: The bottom-most element will be 10 and the top-most element will be 40.\nMiddle element will be element at index 2 from bottom, which is 20. Deleting 20, stack will look like {10 30 40}.\n\nInput: s = [5, 8, 6, 7, 6, 6, 5, 10, 12, 9]\nOutput: [9, 12, 10, 5, 6, 7, 6, 8, 5]\n\nConstraints:\n2 \u2264 element of stack \u2264 10^5\n2 \u2264 s.size() \u2264 10^4",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Delete Middle Element of Stack",
+        "problem_link": "https://www.geeksforgeeks.org/problems/delete-middle-element-of-a-stack/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/12_Delete_Middle_Element_of_Stack.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(N^2)",
+                "sc": "S.C  - O(N) [recursion stack space]",
+                "intuition": "Assume that the a function takes a stack s as input and the mid pos (k) to delete\nand it delets the mid element of the stack (hypothesis), Now try thinking for\nsmaller input run the same function for k-1, now we can say after the mid element\nhas been removed we are left to append the popped element at the back (Induction).\nThe base case can be thought of as what if we have k==1 only when we are at the\nmiddle element",
+                "code": "class Solution:\n    def deleteMid(self, stack: list[int]) -> list[int]:\n        def solve(stack: list[int], k: int) -> list[int]:\n            # Base\n            if k == 1:\n                stack.pop(-1)\n                return stack\n\n            # Hypo\n            topElement = stack.pop(-1)\n            stack = solve(stack, k - 1)\n\n            # Induction\n            stack.append(topElement)\n            return stack\n\n        return solve(stack, (len(stack) // 2) + 1)[::-1]",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "question": "Given an integer num, return the number of steps to reduce it to zero.\n\nIn one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.\n\nExample 1:\n\nInput: num = 14\nOutput: 6\nExplanation:\nStep 1) 14 is even; divide by 2 and obtain 7.\nStep 2) 7 is odd; subtract 1 and obtain 6.\nStep 3) 6 is even; divide by 2 and obtain 3.\nStep 4) 3 is odd; subtract 1 and obtain 2.\nStep 5) 2 is even; divide by 2 and obtain 1.\nStep 6) 1 is odd; subtract 1 and obtain 0.\n\nExample 2:\n\nInput: num = 8\nOutput: 4\nExplanation:\nStep 1) 8 is even; divide by 2 and obtain 4.\nStep 2) 4 is even; divide by 2 and obtain 2.\nStep 3) 2 is even; divide by 2 and obtain 1.\nStep 4) 1 is odd; subtract 1 and obtain 0.\n\nExample 3:\n\nInput: num = 123\nOutput: 12\n\nConstraints:\n0 <= num <= 10^6",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Number of Steps to reduce to zero",
+        "problem_link": "https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/13_Number_of_Steps_to_reduce_to_zero.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(N)",
+                "sc": "S.C  - O(N) [recursion stack space]",
+                "intuition": "Asume that a funcion fn given a num will return us the steps to reduce to zero (Hypo)\nnow run for smaller input for odd and even case and at the end dont forget\nto add 1 to include the current step too (Induction).If the number is already\nzero then no need to do anything return zero",
+                "code": "class Solution:\n    def numberOfSteps(self, num: int) -> int:\n        # Base\n        if num == 0:\n            return 0\n\n        if num % 2 == 0:\n            # Induction and Hypo\n            return 1 + self.numberOfSteps(num / 2)\n\n        # Induction and Hypo\n        return 1 + self.numberOfSteps(num - 1)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "question": "The count-and-say sequence is a sequence of digit strings defined by the recursive formula:\n\ncountAndSay(1) = \"1\"\ncountAndSay(n) is the run-length encoding of countAndSay(n - 1).\nRun-length encoding (RLE) is a string compression method that works by replacing consecutive\nidentical characters (repeated 2 or more times) with the concatenation of the character and\nthe number marking the count of the characters (length of the run). For example, to\ncompress the string \"3322251\" we replace \"33\" with \"23\", replace \"222\" with \"32\",\nreplace \"5\" with \"15\" and replace \"1\" with \"11\". Thus the compressed string becomes \"23321511\".\n\nGiven a positive integer n, return the nth element of the count-and-say sequence.\n\n\nExample 1:\nInput: n = 4\nOutput: \"1211\"\n\nExplanation:\n\ncountAndSay(1) = \"1\"\ncountAndSay(2) = RLE of \"1\" = \"11\"\ncountAndSay(3) = RLE of \"11\" = \"21\"\ncountAndSay(4) = RLE of \"21\" = \"1211\"\nExample 2:\n\nInput: n = 1\nOutput: \"1\"\nExplanation:\nThis is the base case.\n\n\nConstraints:\n1 <= n <= 30",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Count and Say",
+        "problem_link": "https://leetcode.com/problems/count-and-say",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/14_Count_and_Say.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(2^N)",
+                "sc": "S.C  - O(N)+O(2^N) [recursion stack space]",
+                "intuition": "Think that a function fn given a n will return its encoding,\ntry running the function for smaller n say n-1 (hypo)\nif we get the final result for n-1 then we are left to calculate\nthe encoding for n with the result of n-1 (induction).if n is 1\nwe can simpy return \"1\"",
+                "code": "class Solution:\n    def get_encoding(self, s: str) -> str:\n        res = \"\"\n\n        c = 1\n        for i in range(1, len(s)):\n            if s[i] == s[i - 1]:\n                c += 1\n            else:\n                res += f\"{c}{s[i-1]}\"\n                c = 1\n\n        # Account the last number\n        res += f\"{c}{s[-1]}\"\n\n        return res\n\n    def countAndSay(self, n: int) -> str:\n        # Base\n        if n == 1:\n            return \"1\"\n\n        # Hypo\n        res = self.countAndSay(n - 1)\n\n        # Induction\n        return self.get_encoding(res)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "question": "We build a table of n rows (1-indexed). We start by writing 0 in the 1st row. Now in every subsequent row, we look at the previous row and replace each occurrence of 0 with 01, and each occurrence of 1 with 10.\n\nFor example, for n = 3, the 1st row is 0, the 2nd row is 01, and the 3rd row is 0110.\nGiven two integer n and k, return the kth (1-indexed) symbol in the nth row of a table of n rows.\n\n\nExample 1:\n\nInput: n = 1, k = 1\nOutput: 0\nExplanation: row 1: 0\n\nExample 2:\n\nInput: n = 2, k = 1\nOutput: 0\nExplanation:\nrow 1: 0\nrow 2: 01\n\nExample 3:\n\nInput: n = 2, k = 2\nOutput: 1\nExplanation:\nrow 1: 0\nrow 2: 01\n\n\nConstraints:\n\n1 <= n <= 30\n1 <= k <= 2^(n - 1)",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Kth Grammar Symbol",
+        "problem_link": "https://leetcode.com/problems/k-th-symbol-in-grammar",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/15_Kth_Grammar_Symbol.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(2^N)",
+                "sc": "S.C  - O(N) [recursion stack space]",
+                "intuition": "Try using the IBH method Assume solve will return us the nth row given n Solve for smaller input of n-1, then use the result of n-1 to buidl the final nth row output",
+                "code": "class Solution:\n    def helper(self, num):\n        mp = {\"0\": \"01\", \"1\": \"10\"}\n        res = \"\"\n\n        for n in num:\n            res += mp[n]\n\n        return res\n\n    def kthGrammar(self, n: int, k: int) -> int:\n        def solve(n):\n            # Base\n            if n == 1:\n                return \"0\"\n\n            # Hypo\n            val = solve(n - 1)\n\n            # Induction\n            return self.helper(val)\n\n        return int(solve(n)[k - 1])",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(log(N))",
+                "sc": "S.C  - O(1)",
+                "intuition": "This question is completely observation based\nThere are some observation which are given below:\n+ if you are at nth row then it has 2**(n-1) elements\n+ if you are looking for kth element then if the k lies\nbefore mid then its the kth element from prev row otherwise\nif it lies after mid its the not of k-mid of prev row\nWe can use the concept of IBH and develop a hyp that\ngiven n and k kthGrammar function will return us the kth\nelement in nth row\n\nDemo of first 4 rows:\n0\n\n0 1\n- -\n\n0 1 1 0\n--- ---\n\n0 1 1 0 1 0 0 1\n------  ------",
+                "code": "class Solution:\n    def kthGrammar(self, n: int, k: int) -> int:\n        if n == 1 and k == 1:\n            return 0\n\n        total_elem = 2 ** (n - 1)\n        mid = total_elem // 2\n\n        if k <= mid:\n            return self.kthGrammar(n - 1, k)\n\n        return int(not self.kthGrammar(n - 1, abs(mid - k)))",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "question": "You are given n disks placed on a starting rod (from), with the smallest disk on top and the largest at the bottom. There are three rods:\nthe starting rod(from), the target rod (to), and an auxiliary rod (aux).\nYou have to calculate the total number of moves required to transfer all n disks from the starting rod to the target rod, following these rules:\n1. Only one disk can be moved at a time.\n2. A disk can only be placed on top of a larger disk or on an empty rod.\nReturn the number of moves needed to complete the task.\n\nExamples:\n\nInput: n = 2\nOutput: 3\nExplanation: For n =2 , steps will be as follows in the example and total 3 steps will be taken.\nmove disk 1 from rod 1 to rod 2\nmove disk 2 from rod 1 to rod 3\nmove disk 1 from rod 2 to rod 3\n\nInput: n = 3\nOutput: 7\nExplanation: For N=3 , steps will be as follows in the example and total 7 steps will be taken.\nmove disk 1 from rod 1 to rod 3\nmove disk 2 from rod 1 to rod 2\nmove disk 1 from rod 3 to rod 2\nmove disk 3 from rod 1 to rod 3\nmove disk 1 from rod 2 to rod 1\nmove disk 2 from rod 2 to rod 3\nmove disk 1 from rod 1 to rod 3\n\nInput: n = 0\nOutput: 0\nExplanation: Total 0 steps will be taken.\n\nConstraints:\n0 \u2264 n \u2264 20",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Tower of Hanoi",
+        "problem_link": "https://www.geeksforgeeks.org/problems/tower-of-hanoi-1587115621/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/16_Tower_of_Hanoi.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(2^N) [two possibilities for every disk]",
+                "sc": "S.C  - O(N) [recursion stack space]",
+                "intuition": "We can use the concept of IBH in this case very easily\nWe develop a hypo that given n,fromm,to,aux the function\nwill move all n plates from  src to destination.\nNow lets solve the problem for smaller input, now lets\nput the n-1 disk from rod1 to rod2 leaving the last plate\nthen our problem becomes easy right, in the induction step\nwe just have to move the leftover disk from rod1 to rod3\nand all the plates at rod2 to rod3 obeying all the conditions\ngiven to us",
+                "code": "class Solution:\n    def towerOfHanoi(self, n: int, fromm: int, to: int, aux: int) -> int:\n        # Base\n        if n == 1:\n            # print(\n            #     \"move disk \" + str(N) + \" from rod \" + str(fromm) + \" to rod \" + str(to)\n            # )\n            return 1\n\n        c = 0\n        # Hypo\n        # Move all the plates (n-1) rod leaving the last plate to rod 2\n        c += self.towerOfHanoi(n - 1, fromm, aux, to)\n\n        # Induction\n        # Move the leftover plate in rod1 to rod3\n        # print(\n        #         \"move disk \" + str(N) + \" from rod \" + str(fromm) + \" to rod \" + str(to)\n        #     )\n        c += 1\n\n        # Now move all the plates at rod2 to rod3\n        c += self.towerOfHanoi(n - 1, aux, to, fromm)\n\n        return c",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "question": "Implement pow(x, n), which calculates x raised to the power n (i.e., xn).\n\n\nExample 1:\n\nInput: x = 2.00000, n = 10\nOutput: 1024.00000\nExample 2:\n\nInput: x = 2.10000, n = 3\nOutput: 9.26100\nExample 3:\n\nInput: x = 2.00000, n = -2\nOutput: 0.25000\nExplanation: 2-2 = 1/22 = 1/4 = 0.25\n\n\nConstraints:\n\n-100.0 < x < 100.0\n-2^31 <= n <= 2^31-1\nn is an integer.\nEither x is not zero or n > 0.\n-10^4 <= xn <= 10^4",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Pow x n",
+        "problem_link": "https://leetcode.com/problems/powx-n/",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/17_Pow_x_n.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(N)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Just multiply the number n times and return",
+                "code": "class Solution:\n    def myPow(self, x: float, n: int) -> float:\n        p = 1\n\n        for i in range(n):\n            p *= x\n\n        return p",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(log(N))",
+                "sc": "S.C  - O(N) [recursion stack space]",
+                "intuition": "For even we know that 2**4 -> 2**2 * 2**2 For odd we know that 2**5 -> 2* 2**2 * 2**2 We just need to find the x**n//2 in each step and then multiply it with itself and if odd also multiply x",
+                "code": "class Solution:\n    def myPow(self, x: float, n: int) -> float:\n        def pow(x: float, n: int):\n            p = 1\n\n            for i in range(n // 2):\n                p *= x\n\n            if n % 2 == 0:\n                return p * p\n            return x * p * p\n\n        if n < 0:\n            return 1 / pow(x, -n)\n        return pow(x, n)",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. - O(log(N))",
+                "sc": "S.C  - O(1)",
+                "intuition": "",
+                "code": "class Solution:\n    def myPow(self, x: float, n: int) -> float:\n        def pow(x: float, n: int):\n            p = 1\n\n            for i in range(n // 2):\n                p *= x\n\n            if n % 2 == 0:\n                return p * p\n            return x * p * p\n\n        if n < 0:\n            return 1 / pow(x, -n)\n        return pow(x, n)",
                 "type": "Optimal"
             }
         ]
