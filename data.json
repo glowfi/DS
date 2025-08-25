@@ -3893,14 +3893,14 @@
                 "tc": "T.C. - O(log(N))",
                 "sc": "S.C  - O(N) [recursion stack space]",
                 "intuition": "For even we know that 2**4 -> 2**2 * 2**2 For odd we know that 2**5 -> 2* 2**2 * 2**2 We just need to find the x**n//2 in each step and then multiply it with itself and if odd also multiply x",
-                "code": "class Solution:\n    def myPow(self, x: float, n: int) -> float:\n        def pow(x: float, n: int):\n            p = 1\n\n            for i in range(n // 2):\n                p *= x\n\n            if n % 2 == 0:\n                return p * p\n            return x * p * p\n\n        if n < 0:\n            return 1 / pow(x, -n)\n        return pow(x, n)",
+                "code": "class Solution:\n    def myPow(self, x: float, n: int) -> float:\n        def pow(x: float, n: int) -> float:\n            if n == 0:\n                return 1\n\n            res = self.myPow(x, n // 2)\n            if n % 2 == 0:\n                return res * res\n\n            return x * res * res\n\n        if n < 0:\n            return 1 / pow(x, -n)\n        return pow(x, n)",
                 "type": "Better"
             },
             {
                 "tc": "T.C. - O(log(N))",
                 "sc": "S.C  - O(1)",
-                "intuition": "",
-                "code": "class Solution:\n    def myPow(self, x: float, n: int) -> float:\n        def pow(x: float, n: int):\n            p = 1\n\n            for i in range(n // 2):\n                p *= x\n\n            if n % 2 == 0:\n                return p * p\n            return x * p * p\n\n        if n < 0:\n            return 1 / pow(x, -n)\n        return pow(x, n)",
+                "intuition": "Square the base and half the exponent in each step\nFor example to find 2^8\n(4^2)^8/2\n(16^2)^4/2\n(256)^2/2",
+                "code": "class Solution:\n    def myPow(self, x: float, n: int) -> float:\n        def pow(x: float, n: int) -> float:\n            res = 1\n            while n > 0:\n                if n % 2 == 1:\n                    res *= x\n                x *= x\n                n = n // 2\n            return res\n\n        if n < 0:\n            return 1 / pow(x, -n)\n        return pow(x, n)",
                 "type": "Optimal"
             }
         ]

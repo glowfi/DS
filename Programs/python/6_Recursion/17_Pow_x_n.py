@@ -59,15 +59,15 @@ class Solution:
 
 class Solution:
     def myPow(self, x: float, n: int) -> float:
-        def pow(x: float, n: int):
-            p = 1
+        def pow(x: float, n: int) -> float:
+            if n == 0:
+                return 1
 
-            for i in range(n // 2):
-                p *= x
-
+            res = self.myPow(x, n // 2)
             if n % 2 == 0:
-                return p * p
-            return x * p * p
+                return res * res
+
+            return x * res * res
 
         if n < 0:
             return 1 / pow(x, -n)
@@ -79,19 +79,23 @@ class Solution:
 # S.C  - O(1)
 
 # Intuition
+# Square the base and half the exponent in each step
+# For example to find 2^8
+# (4^2)^8/2
+# (16^2)^4/2
+# (256)^2/2
 
 
 class Solution:
     def myPow(self, x: float, n: int) -> float:
-        def pow(x: float, n: int):
-            p = 1
-
-            for i in range(n // 2):
-                p *= x
-
-            if n % 2 == 0:
-                return p * p
-            return x * p * p
+        def pow(x: float, n: int) -> float:
+            res = 1
+            while n > 0:
+                if n % 2 == 1:
+                    res *= x
+                x *= x
+                n = n // 2
+            return res
 
         if n < 0:
             return 1 / pow(x, -n)
