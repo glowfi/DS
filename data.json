@@ -1,1 +1,632 @@
-[]
+[
+    {
+        "id": 1,
+        "question": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\n\nExample 1:\n\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\nExample 2:\n\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\nExample 3:\n\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n\n\nConstraints:\n\n2 <= nums.length <= 10^4\n-10^9 <= nums[i] <= 10^9\n-10^9 <= target <= 10^9\nOnly one valid answer exists.\n\n\nFollow-up: Can you come up with an algorithm that is less than O(n2) time complexity?",
+        "topic": "Hashing",
+        "pattern": "HashMap / Complement Lookup",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Two Sum",
+        "problem_link": "https://leetcode.com/problems/two-sum",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/1_Two_Sum.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Check all possible pairs and find out the pair that gives us the given target",
+                "code": "from typing import List\n\n\nclass Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        for i in range(len(nums)):\n            for j in range(i + 1, len(nums)):\n                if nums[i] + nums[j] == target:\n                    return [i, j]",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "We know that if x+y = target\nif are going to do a complement look up\nwe are going to mark all the visited elements using a map\nand Check if we have encounter target-y earlier or not",
+                "code": "from typing import List\n\n\nclass Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        visited = {}\n\n        for i in range(len(nums)):\n            diff = target - nums[i]\n            if diff in visited:\n                return [i, visited[diff]]\n\n            visited[nums[i]] = i",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "Given two strings s and t, return true if t is an anagram of s, and false otherwise.\n\n\nExample 1:\n\nInput: s = \"anagram\", t = \"nagaram\"\n\nOutput: true\n\nExample 2:\n\nInput: s = \"rat\", t = \"car\"\n\nOutput: false\n\n\nConstraints:\n\n1 <= s.length, t.length <= 5 * 10^4\ns and t consist of lowercase English letters.\n\n\nFollow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?",
+        "topic": "Hashing",
+        "pattern": "HashMap / Frequency Count",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Valid Anagram",
+        "problem_link": "https://leetcode.com/problems/valid-anagram",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/2_Valid_Anagram.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(s+t)",
+                "sc": "S.C  - O(s+t)",
+                "intuition": "Maintain a counter map\nstore the frequency of each character for string s\ndecrement the coresspoding character for string t in counter map\nvalidate couter map has all value as zero",
+                "code": "class Solution:\n    def isAnagram(self, s: str, t: str) -> bool:\n        if len(s) != len(t):\n            return False\n\n        counter_map = {}\n\n        for i in range(len(s)):\n            counter_map[s[i]] = 1 + counter_map.get(s[i], 0)\n\n        for j in range(len(t)):\n            ch = t[j]\n\n            if ch not in counter_map:\n                return False\n\n            counter_map[ch] -= 1\n\n        for _, val in counter_map.items():\n            if val != 0:\n                return False\n\n        return True",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "Given an array of strings strs, group the anagrams together. You can return the answer in any order.\n\n\nExample 1:\n\nInput: strs = [\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]\n\nOutput: [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]\n\nExplanation:\n\nThere is no string in strs that can be rearranged to form \"bat\".\nThe strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\nThe strings \"ate\", \"eat\", and \"tea\" are anagrams as they can be rearranged to form each other.\nExample 2:\n\nInput: strs = [\"\"]\n\nOutput: [[\"\"]]\n\nExample 3:\n\nInput: strs = [\"a\"]\n\nOutput: [[\"a\"]]\n\n\nConstraints:\n\n1 <= strs.length <= 10^4\n0 <= strs[i].length <= 100\nstrs[i] consists of lowercase English letters.",
+        "topic": "Hashing",
+        "pattern": "HashMap / Sorting Key",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Group Anagrams",
+        "problem_link": "https://leetcode.com/problems/group-anagrams",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/3_Group_Anagrams.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n*k)",
+                "sc": "S.C  -  O(n*k+m)",
+                "intuition": "Group all the words by their frequency count array",
+                "code": "from collections import defaultdict\nfrom typing import List\n\n\nclass Solution:\n    def get_freq_string(self, s: str) -> str:\n        counter_map = [0] * 26\n        for ch in s:\n            counter_map[ord(ch) - 97] += 1\n\n        res = \"\"\n        for i in range(len(counter_map)):\n            if counter_map[i] > 0:\n                res += f\"{chr(i+97)}{counter_map[i]}\"\n\n        return res\n\n    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:\n        groups = defaultdict(list)\n\n        for s in strs:\n            count = [0] * 26\n            for c in s:\n                count[ord(c) - 97] += 1\n            groups[tuple(count)].append(s)\n\n        return list(groups.values())",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].\n\nThe product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.\n\nYou must write an algorithm that runs in O(n) time and without using the division operation.\n\n\nExample 1:\n\nInput: nums = [1,2,3,4]\nOutput: [24,12,8,6]\nExample 2:\n\nInput: nums = [-1,1,0,-3,3]\nOutput: [0,0,9,0,0]\n\n\nConstraints:\n\n2 <= nums.length <= 10^5\n-30 <= nums[i] <= 30\nThe input is generated such that answer[i] is guaranteed to fit in a 32-bit integer.\n\n\nFollow up: Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.)",
+        "topic": "Hashing",
+        "pattern": "Prefix & Suffix Product / HashMap",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Product of Array Except Self",
+        "problem_link": "https://leetcode.com/problems/product-of-array-except-self",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/4_Product_of_Array_Except_Self.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Use two loop Outer loop fixes one element Inner loop traverse the entire array and skips the current fixed element Also we maintain the product",
+                "code": "from typing import List\n\n\nclass Solution:\n    def productExceptSelf(self, nums: List[int]) -> List[int]:\n        res = [0] * len(nums)\n\n        for i in range(len(nums)):\n            p = 1\n            for j in range(len(nums)):\n                if i == j:\n                    continue\n                p *= nums[j]\n            res[i] = p\n\n        return res",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)+O(n)+O(n) ~ O(n)",
+                "sc": "S.C  - O(n)+O(n) ~ O(n)",
+                "intuition": "Build a prefix product array Build a suffix product array for an elemen at pos i its product is nothing but multiplication og prefix[i]*suffix[i]",
+                "code": "from typing import List\n\n\nclass Solution:\n    def productExceptSelf(self, nums: List[int]) -> List[int]:\n        n = len(nums)\n\n        pref = [1] * n\n        for i in range(1, n):\n            pref[i] = pref[i - 1] * nums[i - 1]\n\n        suff = [1] * n\n        for i in range(n - 2, -1, -1):\n            suff[i] = suff[i + 1] * nums[i + 1]\n\n        ans = [1] * n\n        for i in range(n):\n            ans[i] = pref[i] * suff[i]\n\n        return ans",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. - O(n)+O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Maintain a prefix and suffix pointers\nKeep updating the prefix in result array from front\nKeep updating the suffix in result array from back",
+                "code": "from typing import List\n\n\nclass Solution:\n    def productExceptSelf(self, nums: List[int]) -> List[int]:\n        n = len(nums)\n        res = [0] * n\n\n        pref = 1\n        for i in range(len(nums)):\n            res[i] = pref\n            pref *= nums[i]\n\n        suff = 1\n        for j in range(len(nums) - 1, -1, -1):\n            res[j] *= suff\n            suff *= nums[j]\n\n        return res",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.\n\nEach letter in magazine can only be used once in ransomNote.\n\n\nExample 1:\n\nInput: ransomNote = \"a\", magazine = \"b\"\nOutput: false\nExample 2:\n\nInput: ransomNote = \"aa\", magazine = \"ab\"\nOutput: false\nExample 3:\n\nInput: ransomNote = \"aa\", magazine = \"aab\"\nOutput: true\n\n\nConstraints:\n\n1 <= ransomNote.length, magazine.length <= 10^5\nransomNote and magazine consist of lowercase English letters.",
+        "topic": "Hashing",
+        "pattern": "HashMap / Frequency Count",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Ransom note",
+        "problem_link": "https://leetcode.com/problems/ransom-note",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/5_Ransom_note.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)+O(n) ~ O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "First store the frequency map of each character for magazine\nNow iterate over the ransomNote string and decrement the coresponding\ncharacter by 1 and if at any point we say the current char is not present\nor no characters left we can return False",
+                "code": "class Solution:\n    def canConstruct(self, ransomNote: str, magazine: str) -> bool:\n        mp = {}\n        for i in range(len(magazine)):\n            mp[magazine[i]] = 1 + mp.get(magazine[i], 0)\n\n        for j in range(len(ransomNote)):\n            if ransomNote[j] not in mp:\n                return False\n\n            if mp[ransomNote[j]] == 0:\n                return False\n\n            mp[ransomNote[j]] -= 1\n\n        return True",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "question": "Given a pattern and a string s, find if s follows the same pattern.\n\nHere follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s. Specifically:\n\nEach letter in pattern maps to exactly one unique word in s.\nEach unique word in s maps to exactly one letter in pattern.\nNo two letters map to the same word, and no two words map to the same letter.\n\n\nExample 1:\n\nInput: pattern = \"abba\", s = \"dog cat cat dog\"\n\nOutput: true\n\nExplanation:\n\nThe bijection can be established as:\n\n'a' maps to \"dog\".\n'b' maps to \"cat\".\nExample 2:\n\nInput: pattern = \"abba\", s = \"dog cat cat fish\"\n\nOutput: false\n\nExample 3:\n\nInput: pattern = \"aaaa\", s = \"dog cat cat dog\"\n\nOutput: false\n\n\nConstraints:\n\n1 <= pattern.length <= 300\npattern contains only lower-case English letters.\n1 <= s.length <= 3000\ns contains only lowercase English letters and spaces ' '.\ns does not contain any leading or trailing spaces.\nAll the words in s are separated by a single space.",
+        "topic": "Hashing",
+        "pattern": "HashMap / Bijective Mapping",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Word Pattern",
+        "problem_link": "https://leetcode.com/problems/word-pattern",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/6_Word_Pattern.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(pattern)+O(words)",
+                "intuition": "all the characters mapped shoudl be consitent\nif a character say a was mapped to cat\nthen in the future it should stay as cat only",
+                "code": "class Solution:\n    def wordPattern(self, pattern: str, s: str) -> bool:\n        words = s.split()\n        if len(pattern) != len(words):\n            return False\n\n        char_to_word = {}\n        word_to_char = {}\n\n        for i in range(len(pattern)):\n            c = pattern[i]\n            w = words[i]\n\n            if c in char_to_word and w != char_to_word[c]:\n                return False\n\n            if w in word_to_char and c != word_to_char[w]:\n                return False\n\n            char_to_word[c] = w\n            word_to_char[w] = c\n\n        return True",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "question": "Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.\n\n\nExample 1:\n\nInput: nums = [1,2,3,1], k = 3\nOutput: true\nExample 2:\n\nInput: nums = [1,0,1,1], k = 1\nOutput: true\nExample 3:\n\nInput: nums = [1,2,3,1,2,3], k = 2\nOutput: false\n\n\nConstraints:\n\n1 <= nums.length <= 10^5\n-10^9 <= nums[i] <= 10^9\n0 <= k <= 10^5",
+        "topic": "Hashing",
+        "pattern": "HashMap / Sliding Window",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Contains Duplicate II",
+        "problem_link": "https://leetcode.com/problems/contains-duplicate-ii",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/7_Contains_Duplicate_II.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Try finding all the possible pairs which satisfies the condition if pair found return true return false",
+                "code": "from typing import List\n\n\nclass Solution:\n    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:\n        for i in range(len(nums)):\n            for j in range(i + 1, len(nums)):\n                if nums[i] == nums[j] and abs(i - j) <= k:\n                    return True\n\n        return False",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Store all the numbers as you visit them\nif we have already encountered current number before\nwe check whether its satisfies the given condition",
+                "code": "from typing import List\n\n\nclass Solution:\n    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:\n        visited = {}\n\n        for idx, num in enumerate(nums):\n            if num in visited and abs(idx - visited[num]) <= k:\n                return True\n            visited[num] = idx\n\n        return False",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "question": "Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.\n\nA subarray is a contiguous non-empty sequence of elements within an array.\n\n\nExample 1:\n\nInput: nums = [1,1,1], k = 2\nOutput: 2\nExample 2:\n\nInput: nums = [1,2,3], k = 3\nOutput: 2\n\n\nConstraints:\n\n1 <= nums.length <= 2 * 10^4\n-1000 <= nums[i] <= 1000\n-10^7 <= k <= 10^7",
+        "topic": "Hashing",
+        "pattern": "Prefix Sum + HashMap",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Subarray Sum Equals K",
+        "problem_link": "https://leetcode.com/problems/subarray-sum-equals-k",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/8_Subarray_Sum_Equals_K.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Generate all possible subarrays and check which subarrays gives us sum k",
+                "code": "from typing import List\n\n\nclass Solution:\n    def subarraySum(self, nums: List[int], k: int) -> int:\n        c = 0\n\n        for i in range(len(nums)):\n            sm = 0\n            for j in range(i, len(nums)):\n                sm += nums[j]\n\n                if sm == k:\n                    c += 1\n\n        return c",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "We are going to use the concept of prefix sum.\nwe need to observe that if there exists another\nsubarray ending at index i with sum k,\nthen the prefix sum of the rest of the subarray will be x-k.\nfor a subarray ending at index i with the prefix sum x,\nif we remove the part with the prefix sum x-k, we will\nbe left with the part whose sum is equal to k.\nNow, there may exist multiple subarrays with the prefix sum x-k.\nSo, the number of subarrays with sum k that we can generate\nfrom the entire subarray ending at index i, is exactly equal\nto the number of subarrays with the prefix sum x-k,\nthat we can remove from the entire subarray.\nWe carry the cumultaive sum(x) till now and at\nevery index i we are going to check if there\nexists a sum (x-k) we have encounterd before.\nif we have encounterd (x-k) then we can say\nthere exists a subarray of size k.",
+                "code": "from typing import List\n\n\nclass Solution:\n    def subarraySum(self, nums: List[int], k: int) -> int:\n        curr_pref_sum = 0\n        freq_mp = {0: 1}\n        c = 0\n\n        for num in nums:\n            curr_pref_sum += num\n            complement = curr_pref_sum - k\n\n            if complement in freq_mp:\n                c += freq_mp[complement]\n\n            freq_mp[curr_pref_sum] = freq_mp.get(curr_pref_sum, 0) + 1\n\n        return c",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "question": "Given an array of integers arr[] and a number k, count the number of subarrays having XOR of their elements as k.\n\nExamples:\n\nInput: arr[] = [4, 2, 2, 6, 4], k = 6\nOutput: 4\nExplanation: The subarrays having XOR of their elements as 6 are [4, 2], [4, 2, 2, 6, 4], [2, 2, 6], and [6]. Hence, the answer is 4.\n\nInput: arr[] = [5, 6, 7, 8, 9], k = 5\nOutput: 2\nExplanation: The subarrays having XOR of their elements as 5 are [5] and [5, 6, 7, 8, 9]. Hence, the answer is 2.\n\nInput: arr[] = [1, 1, 1, 1], k = 0\nOutput: 4\nExplanation: The subarrays are [1, 1], [1, 1], [1, 1] and [1, 1, 1, 1].\n\nConstraints:\n1 \u2264 arr.size() \u2264 10^5\n0 \u2264 arr[i] \u226410^5\n0 \u2264 k \u2264 10^5",
+        "topic": "Hashing",
+        "pattern": "Prefix XOR + HashMap",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Count Subarrays with given XOR",
+        "problem_link": "https://www.geeksforgeeks.org/problems/count-subarray-with-given-xor/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/9_Count_Subarrays_with_given_XOR.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Generate all possible subarrays and check which subarrays gives us xor k",
+                "code": "from typing import List\n\n\ndef countSubarraysXor_bruteforce(arr: List[int], k: int):\n    cnt = 0\n    n = len(arr)\n    for i in range(n):\n        cur_xor = 0\n        for j in range(i, n):\n            cur_xor ^= arr[j]\n            if cur_xor == k:\n                cnt += 1\n    return cnt",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "We are going to use the concept of prefix XOR.\nObserve that if a subarray ending at index\u202fi has XOR equal to k,\nthen the XOR of the part of the array before that subarray must be x\u202f\u2295\u202fk, where x is the current prefix XOR up to i.\nFor a subarray that ends at i with prefix XOR x, removing\nthe earlier segment whose prefix XOR is x\u202f\u2295\u202fk leaves exactly the segment whose XOR is k.\nThere can be many earlier positions whose prefix XOR equals x\u202f\u2295\u202fk.\nThe number of subarrays with XOR k that end at i is therefore exactly the number of times the value x\u202f\u2295\u202fk has already been seen.\nWe keep a running prefix XOR x while scanning the array, and at each index i\nwe check whether the value x\u202f\u2295\u202fk has been encountered before. Every\nprior occurrence of x\u202f\u2295\u202fk indicates a distinct subarray ending at i whose XOR is k.",
+                "code": "from typing import List\n\n\nclass Solution:\n    def subarrayXor(self, arr: List[int], k: int):\n        curr_pref_xor = 0\n        freq_mp = {0: 1}\n        c = 0\n\n        for _, num in enumerate(arr):\n            curr_pref_xor ^= num\n            complement = curr_pref_xor ^ k\n\n            if complement in freq_mp:\n                c += freq_mp[complement]\n\n            freq_mp[curr_pref_xor] = 1 + freq_mp.get(curr_pref_xor, 0)\n\n        return c",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "question": "Given an array arr[] containing integers and an integer k, your task is to find the length of the longest subarray where the sum of its elements is equal to the given value k. If there is no subarray with sum equal to k, return 0.\n\nExamples:\n\nInput: arr[] = [10, 5, 2, 7, 1, -10], k = 15\nOutput: 6\nExplanation: Subarrays with sum = 15 are [5, 2, 7, 1], [10, 5] and [10, 5, 2, 7, 1, -10]. The length of the longest subarray with a sum of 15 is 6.\n\nInput: arr[] = [-5, 8, -14, 2, 4, 12], k = -5\nOutput: 5\nExplanation: Only subarray with sum = -5 is [-5, 8, -14, 2, 4] of length 5.\n\nInput: arr[] = [10, -10, 20, 30], k = 5\nOutput: 0\nExplanation: No subarray with sum = 5 is present in arr[].\n\nConstraints:\n1 \u2264 arr.size() \u2264 10^5\n-10^4 \u2264 arr[i] \u2264 10^4\n-10^9 \u2264 k \u2264 10^9",
+        "topic": "Hashing",
+        "pattern": "Prefix Sum + HashMap",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Longest Subarray with Sum K",
+        "problem_link": "https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/10_Longest_Subarray_with_Sum_K.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Generate all pssible subarrays Find the longeest subarray with sum k",
+                "code": "from typing import List\n\n\nclass Solution:\n    def longestSubarray(self, arr: List[int], k: int):\n        longest = 0\n\n        for i in range(len(arr)):\n            sm = 0\n            for j in range(i, len(arr)):\n                sm += arr[j]\n                if sm == k:\n                    longest = max(longest, j - i + 1)\n\n        return longest",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "We use the concept of prefix sum but\nnow we store the index as close to left\nas possible to increase the subarray size",
+                "code": "from typing import List\n\n\nclass Solution:\n    def longestSubarray(self, arr: List[int], k: int):\n        curr_pref_sum = 0\n        idx_mp = {0: -1}\n        longest = 0\n\n        for idx, num in enumerate(arr):\n            curr_pref_sum += num\n            complement = curr_pref_sum - k\n\n            if complement in idx_mp:\n                longest = max(longest, idx - idx_mp[complement])\n\n            # store the index as left as possible as newer index will decrease our size\n            if curr_pref_sum not in idx_mp:\n                idx_mp[curr_pref_sum] = idx\n\n        return longest",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "question": "Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.\n\nYou must write an algorithm that runs in O(n) time.\n\n\nExample 1:\n\nInput: nums = [100,4,200,1,3,2]\nOutput: 4\nExplanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.\nExample 2:\n\nInput: nums = [0,3,7,2,5,8,4,6,0,1]\nOutput: 9\nExample 3:\n\nInput: nums = [1,0,1,2]\nOutput: 3\n\n\nConstraints:\n\n0 <= nums.length <= 10^5\n-10^9 <= nums[i] <= 10^9",
+        "topic": "Hashing",
+        "pattern": "HashSet / Union-Find",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Longest Consecutive Sequence",
+        "problem_link": "https://leetcode.com/problems/longest-consecutive-sequence",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/11_Longest_Consecutive_Sequence.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(1)",
+                "intuition": "For every value in array check whether its consecutive elements are present or not",
+                "code": "from typing import List\n\n\nclass Solution:\n    def linearSearch(self, arr: List[int], targetVal: int):\n        for i in range(len(arr)):\n            if arr[i] == targetVal:\n                return i\n        return -1\n\n    def longestConsecutive(self, nums: List[int]) -> int:\n        longest = 0\n\n        for i in range(len(nums)):\n            curr = nums[i]\n            length = 1\n            while self.linearSearch(nums, curr + length) != -1:\n                length += 1\n            longest = max(longest, length)\n\n        return longest",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(nlog(n))",
+                "sc": "S.C  - O(1)",
+                "intuition": "Sort the array Check whether the array follow the consecutive sequence pattern",
+                "code": "from typing import List\n\n\nclass Solution:\n    def longestConsecutive(self, nums: List[int]) -> int:\n        if len(nums) == 0:\n            return 0\n\n        longest = 1\n        curr_length = 1\n        nums.sort()\n\n        for i in range(1, len(nums)):\n            if nums[i - 1] == nums[i]:\n                continue\n\n            if nums[i - 1] == nums[i] - 1:\n                curr_length += 1\n            else:\n                curr_length = 1\n\n            longest = max(longest, curr_length)\n\n        return longest",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. - O(n)+O(2n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "The answer lies in visualization\nconsider the below array\n100 4 200 1 3 2\n\n1 2 3 4     100        200\n---------------------------\n\nconvert the given array to set\nstarting values of the sequence does not have left neightbour\nso whenever we find an element which does not have left neightbour\nwe will start a while loop incrementing it by 1 and check if that\nnumber exists and keep on building the sequence and atlast we can\ncheck if its the max length till now or not",
+                "code": "from typing import List\n\n\nclass Solution:\n    def longestConsecutive(self, nums: List[int]) -> int:\n        numSet = set(nums)\n        longest = 0\n\n        for num in numSet:\n            if (num - 1) not in numSet:\n                length = 1\n                while (num + length) in numSet:\n                    length += 1\n                longest = max(length, longest)\n        return longest",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "question": "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.\n\nMerge nums1 and nums2 into a single array sorted in non-decreasing order.\n\nThe final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.\n\n\nExample 1:\n\nInput: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3\nOutput: [1,2,2,3,5,6]\nExplanation: The arrays we are merging are [1,2,3] and [2,5,6].\nThe result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.\nExample 2:\n\nInput: nums1 = [1], m = 1, nums2 = [], n = 0\nOutput: [1]\nExplanation: The arrays we are merging are [1] and [].\nThe result of the merge is [1].\nExample 3:\n\nInput: nums1 = [0], m = 0, nums2 = [1], n = 1\nOutput: [1]\nExplanation: The arrays we are merging are [] and [1].\nThe result of the merge is [1].\nNote that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.\n\n\nConstraints:\n\nnums1.length == m + n\nnums2.length == n\n0 <= m, n <= 200\n1 <= m + n <= 200\n-10^9 <= nums1[i], nums2[j] <= 10^9\n\n\nFollow up: Can you come up with an algorithm that runs in O(m + n) time?",
+        "topic": "TwoPointers",
+        "pattern": "Two Pointers",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Merge Sorted Array",
+        "problem_link": "https://leetcode.com/problems/merge-sorted-array",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/1_Merge_Sorted_Array.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(m+n)+O(m+n)",
+                "sc": "S.C  - O(m+n)",
+                "intuition": "We apply the classic merge 2 sorted algorithm We store the data in a temporary array Then we copy the data from temporary array to nums1",
+                "code": "from typing import List\n\n\nclass Solution:\n    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:\n        \"\"\"\n        Do not return anything, modify nums1 in-place instead.\n        \"\"\"\n\n        tmp = [0] * (m + n)\n        p1, p2 = 0, 0\n        k = 0\n\n        while p1 < m and p2 < n:\n            if nums1[p1] < nums2[p2]:\n                tmp[k] = nums1[p1]\n                p1 += 1\n            else:\n                tmp[k] = nums2[p2]\n                p2 += 1\n            k += 1\n\n        while p1 < m:\n            tmp[k] = nums1[p1]\n            p1 += 1\n            k += 1\n\n        while p2 < n:\n            tmp[k] = nums2[p2]\n            p2 += 1\n            k += 1\n\n        for i in range(len(tmp)):\n            nums1[i] = tmp[i]",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(m+n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "nums1 = [7,8,9,0,0,0], m = 3, nums2 = [2,5,6], n = 3\nConsider the above example if we still try to use the\nclassic merge algo then we will see that nums2 becomes unsorted\nwhen 7 is swapped with 2.\nIf you start merging from the front, we\u2019ll overwrite numbers\nWe are going to traverse each array from the back\nOur target is to place the largest number first in nums1\nOnly if the nums1 get exhausted before nums2, then outside\nthe loop we handle taking all the elements from nums2 and\nput it in the nums1 array.Dont need to do anything if nums2\ngets exhausted before nums1 as nums1 is already in sorted order",
+                "code": "from typing import List\n\n\nclass Solution:\n    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:\n        \"\"\"\n        Do not return anything, modify nums1 in-place instead.\n        \"\"\"\n\n        p1, p2 = m - 1, n - 1\n        k = (m + n) - 1\n\n        while p1 >= 0 and p2 >= 0:\n            if nums1[p1] > nums2[p2]:\n                nums1[k] = nums1[p1]\n                p1 -= 1\n                k -= 1\n            else:\n                nums1[k] = nums2[p2]\n                p2 -= 1\n                k -= 1\n\n        while p2 >= 0:\n            nums1[k] = nums2[p2]\n            p2 -= 1\n            k -= 1",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.\n\nNote that you must do this in-place without making a copy of the array.\n\n\nExample 1:\n\nInput: nums = [0,1,0,3,12]\nOutput: [1,3,12,0,0]\nExample 2:\n\nInput: nums = [0]\nOutput: [0]\n\n\nConstraints:\n\n1 <= nums.length <= 10^4\n-23^1 <= nums[i] <= 2^31 - 1\n\nFollow up: Could you minimize the total number of operations done?",
+        "topic": "TwoPointers",
+        "pattern": "Two Pointers",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Move Zeroes",
+        "problem_link": "https://leetcode.com/problems/move-zeroes",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/2_Move_Zeroes.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Store the non zero elements in an temporary array then assign nums to temporary array",
+                "code": "from typing import List\n\n\nclass Solution:\n    def moveZeroes(self, nums: List[int]) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n        tmp = [0] * len(nums)\n\n        k = 0\n        for i in range(len(nums)):\n            if nums[i] != 0:\n                tmp[k] = nums[i]\n                k += 1\n\n        nums[:] = tmp",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "It is clear that all the non zero values are going to lie on left\nand all zero values are going to lie on the right.\nWe are going to take two pointers l and r. r will traverse the\nwhole array and l will store the index to put the non zero values.\nAs we discover non zero values we are going to put the non zero\nvalues to the l pointer.",
+                "code": "from typing import List\n\n\nclass Solution:\n    def moveZeroes(self, nums: List[int]) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n\n        l, r = 0, 0\n        while r < len(nums):\n            if nums[r] != 0:\n                nums[l], nums[r] = nums[r], nums[l]\n                l += 1\n            r += 1",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.\n\nConsider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:\n\nChange the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.\nReturn k.\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint val = ...; // Value to remove\nint[] expectedNums = [...]; // The expected answer with correct length.\n// It is sorted with no values equaling val.\n\nint k = removeElement(nums, val); // Calls your implementation\n\nassert k == expectedNums.length;\nsort(nums, 0, k); // Sort the first k elements of nums\nfor (int i = 0; i < actualLength; i++) {\nassert nums[i] == expectedNums[i];\n}\nIf all assertions pass, then your solution will be accepted.\n\n\nExample 1:\n\nInput: nums = [3,2,2,3], val = 3\nOutput: 2, nums = [2,2,_,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 2.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\nExample 2:\n\nInput: nums = [0,1,2,2,3,0,4,2], val = 2\nOutput: 5, nums = [0,1,4,0,3,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.\nNote that the five elements can be returned in any order.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n\nConstraints:\n\n0 <= nums.length <= 100\n0 <= nums[i] <= 50\n0 <= val <= 100",
+        "topic": "TwoPointers",
+        "pattern": "Two Pointers",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Remove Element",
+        "problem_link": "https://leetcode.com/problems/remove-element",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/3_Remove_Element.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "store all the non zero values in a temporary array assign nums to temporary array return the length of nums array",
+                "code": "from typing import List\n\n\nclass Solution:\n    def removeElement(self, nums: List[int], val: int) -> int:\n        ls = []\n\n        for i in nums:\n            if i != val:\n                ls.append(i)\n        nums[:] = ls[:]\n\n        return len(ls)",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "It is clear that all the values not equal to given \"val\" are going to lie on left\nand \"val\" are going to lie on the right.\nTake two pointer k which stores the index to put the values not equal to \"val\"\nand r which will traverse the entire array",
+                "code": "from typing import List\n\n\nclass Solution:\n    def removeElement(self, nums: List[int], val: int) -> int:\n\n        k = 0\n        r = 0\n\n        while r < len(nums):\n            if nums[r] != val:\n                nums[k] = nums[r]\n                k += 1\n            r += 1\n\n        return k",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.\n\nConsider the number of unique elements in nums to be k. After removing duplicates, return the number of unique elements k.\n\nThe first k elements of nums should contain the unique numbers in sorted order. The remaining elements beyond index k - 1 can be ignored.\n\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i < k; i++) {\nassert nums[i] == expectedNums[i];\n}\nIf all assertions pass, then your solution will be accepted.\n\n\nExample 1:\n\nInput: nums = [1,1,2]\nOutput: 2, nums = [1,2,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\nExample 2:\n\nInput: nums = [0,0,1,1,1,2,2,3,3,4]\nOutput: 5, nums = [0,1,2,3,4,_,_,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n\nConstraints:\n\n1 <= nums.length <= 3 * 10^4\n-100 <= nums[i] <= 100\nnums is sorted in non-decreasing order.",
+        "topic": "TwoPointers",
+        "pattern": "Two Pointers",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Remove Duplicates from Sorted Array",
+        "problem_link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/4_Remove_Duplicates_from_Sorted_Array.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "We use two pointers , k to keep track of the position to insert unique element and i to traverse the whole array, if we see an element that we have not seen before, we add it to the kth index and mark it as visited",
+                "code": "from typing import List\n\n\nclass Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        visited = {}\n        k = 0\n\n        for i in range(len(nums)):\n            if nums[i] not in visited:\n                nums[k] = nums[i]\n                k += 1\n            visited[nums[i]] = 1\n\n        return k",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Since array is sorted we are going to take use this property to our advantage\nwe take two pointers k and i , k stores the index to put the unique element to\nand i traverse the array.The moment we see the last element does not match our\ncurrent element we are sure that we are seeing this first time and we can move\nthis element to the kth index and also move the kth index by one after placing\nthe current element",
+                "code": "from typing import List\n\n\nclass Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        k = 1\n        for i in range(1, len(nums)):\n            if nums[i] != nums[i - 1]:\n                nums[k] = nums[i]\n                k += 1\n\n        return k",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "Given an integer array nums sorted in non-decreasing order, remove some duplicates in-place such that each unique element appears at most twice. The relative order of the elements should be kept the same.\n\nSince it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.\n\nReturn k after placing the final result in the first k slots of nums.\n\nDo not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.\n\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i < k; i++) {\nassert nums[i] == expectedNums[i];\n}\nIf all assertions pass, then your solution will be accepted.\n\n\nExample 1:\n\nInput: nums = [1,1,1,2,2,3]\nOutput: 5, nums = [1,1,2,2,3,_]\nExplanation: Your function should return k = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\nExample 2:\n\nInput: nums = [0,0,1,1,1,1,2,3,3]\nOutput: 7, nums = [0,0,1,1,2,3,3,_,_]\nExplanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n\nConstraints:\n\n1 <= nums.length <= 3 * 10^4\n-10^4 <= nums[i] <= 10^4\nnums is sorted in non-decreasing order.",
+        "topic": "TwoPointers",
+        "pattern": "Two Pointers",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Remove Duplicates from Sorted Array II",
+        "problem_link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/5_Remove_Duplicates_from_Sorted_Array_II.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "We use two pointers , k to keep track of the position to insert unique element and i to traverse the whole array, if we see an element that we have not seen before or if the element is visited but its visted count is less than 2, we add it to the kth index and mark it as visited",
+                "code": "from typing import List\n\n\nclass Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        visited = {}\n        k = 0\n\n        for i in range(len(nums)):\n            if nums[i] not in visited or (visited.get(nums[i], 0)) < 2:\n                nums[k] = nums[i]\n                k += 1\n\n            visited[nums[i]] = 1 + visited.get(nums[i], 0)\n\n        return k",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "We use three pointers max_occur_time to track how much times\nan element has occured,k to tell us the position of an element\nto insert an element to, i to traverse the whole array.\nThe entire alog can be summarized based on 2 below points:\n+ Only if we see a new element reset the max_occur_time\nand place the element at kth index\n+ if we are on the same element and max_occur_time is less than 2\nthen we can place the element at kth index",
+                "code": "from typing import List\n\n\nclass Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        max_occur_time = 1\n        k = 1\n\n        for i in range(1, len(nums)):\n            if nums[i] != nums[i - 1]:\n                nums[k] = nums[i]\n                max_occur_time = 1\n                k += 1\n            elif nums[i] == nums[i - 1] and max_occur_time < 2:\n                nums[k] = nums[i]\n                max_occur_time += 1\n                k += 1\n\n        return k",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "question": "Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.\n\n\nExample 1:\n\nInput: nums = [-4,-1,0,3,10]\nOutput: [0,1,9,16,100]\nExplanation: After squaring, the array becomes [16,1,0,9,100].\nAfter sorting, it becomes [0,1,9,16,100].\nExample 2:\n\nInput: nums = [-7,-3,2,3,11]\nOutput: [4,9,9,49,121]\n\n\nConstraints:\n\n1 <= nums.length <= 10^4\n-10^4 <= nums[i] <= 10^4\nnums is sorted in non-decreasing order.\n\n\nFollow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?",
+        "topic": "TwoPointers",
+        "pattern": "Two Pointers",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Squares of a Sorted Array",
+        "problem_link": "https://leetcode.com/problems/squares-of-a-sorted-array",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/6_Squares_of_a_Sorted_Array.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)+O(nlog(n))",
+                "sc": "S.C  - O(n)",
+                "intuition": "Square each number in the array sort the array",
+                "code": "from typing import List\n\n\nclass Solution:\n    def sortedSquares(self, nums: List[int]) -> List[int]:\n        return sorted([i * i for i in nums])",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Since the array is sorted in non-decreasing order we know\nthat the left side contains biggest negative numbers and\nright side contains biggest positive numbers. So when we\nare going to square the numbers every number is going to\nbecome positive.so out biggest square lies on the two\nends of the array.So we can start with the two ends of the\narray and then move in for smaller numbers.We use a two pointer\ntechnique to do this.We take 2 pointer p1 and p2 and check which\nvalue is greater and place the greater values at the end of the array\nA k pointer is also taken to store the postion to store the squared\nvalue",
+                "code": "from typing import List\n\n\nclass Solution:\n    def sortedSquares(self, nums: List[int]) -> List[int]:\n        res = [0] * len(nums)\n        p1, p2 = 0, len(nums) - 1\n        k = len(nums) - 1\n\n        while p1 <= p2:\n            if abs(nums[p1]) > abs(nums[p2]):\n                res[k] = nums[p1] ** 2\n                k -= 1\n                p1 += 1\n            else:\n                res[k] = nums[p2] ** 2\n                k -= 1\n                p2 -= 1\n\n        return res",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "question": "Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.\n\n\nExample 1:\n\nInput: nums1 = [1,2,2,1], nums2 = [2,2]\nOutput: [2]\nExample 2:\n\nInput: nums1 = [4,9,5], nums2 = [9,4,9,8,4]\nOutput: [9,4]\nExplanation: [4,9] is also accepted.\n\n\nConstraints:\n\n1 <= nums1.length, nums2.length <= 1000\n0 <= nums1[i], nums2[i] <= 1000",
+        "topic": "TwoPointers",
+        "pattern": "Two Pointers",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Intersection of Two Arrays",
+        "problem_link": "https://leetcode.com/problems/intersection-of-two-arrays",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/7_Intersection_of_Two_Arrays.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(mlog(m))+O(nlog(n))+O(m+n)",
+                "sc": "S.C  - O(m+n)+O(m+n)",
+                "intuition": "Sort the array Take 2 pointers p1 and p2 pointing to start indexes of 2 arrays If elements at p1 and p2 are equal add it to resultant set otherwise increment the pointer that points to the smaller integer value",
+                "code": "from typing import List\n\n\nclass Solution:\n    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        nums1.sort()\n        nums2.sort()\n\n        res = set()\n        p1, p2 = 0, 0\n\n        while p1 < len(nums1) and p2 < len(nums2):\n            if nums1[p1] == nums2[p2]:\n                res.add(nums1[p1])\n                p1 += 1\n                p2 += 1\n            else:\n                if nums1[p1] < nums2[p2]:\n                    p1 += 1\n                else:\n                    p2 += 1\n\n        return list(res)",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(m+n)",
+                "sc": "S.C  - O(m)+O(m+n)",
+                "intuition": "Take 2 visited maps for nums1 and nums2 Put all the elements of nums1 in a visited map 1 Traverse the second array nums2 only if it is present in first visted map and not in visited map 2 put it in the result array",
+                "code": "from typing import List\n\n\nclass Solution:\n    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        visited1 = {}\n        res = []\n\n        for num in nums1:\n            visited1[num] = 1\n\n        visited2 = {}\n        for num in nums2:\n            if num in visited1 and num not in visited2:\n                res.append(num)\n            visited2[num] = 1\n\n        return res",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. - O(m+n)",
+                "sc": "S.C  - O(m+n)",
+                "intuition": "Take 1 visited map for nums1.\nPut all the elements of nums1 in a visited map 1\nTraverse the second array nums2 only if it is\npresent in visited map 1 the put it in the result\narray and delete the record from visted map 1 as\nwe dont want to add duplicateson result array",
+                "code": "from typing import List\n\n\nclass Solution:\n    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        visited = {}\n        res = []\n\n        for num in nums1:\n            visited[num] = 1\n\n        for num in nums2:\n            if num in visited:\n                del visited[num]\n                res.append(num)\n\n        return res",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "question": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.\n\nGiven a string s, return true if it is a palindrome, or false otherwise.\n\n\nExample 1:\n\nInput: s = \"A man, a plan, a canal: Panama\"\nOutput: true\nExplanation: \"amanaplanacanalpanama\" is a palindrome.\nExample 2:\n\nInput: s = \"race a car\"\nOutput: false\nExplanation: \"raceacar\" is not a palindrome.\nExample 3:\n\nInput: s = \" \"\nOutput: true\nExplanation: s is an empty string \"\" after removing non-alphanumeric characters.\nSince an empty string reads the same forward and backward, it is a palindrome.",
+        "topic": "TwoPointers",
+        "pattern": "Two Pointers",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Valid Palindrome",
+        "problem_link": "https://leetcode.com/problems/valid-palindrome",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/8_Valid_Palindrome.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)+O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Create a new string considering only alpha numeric characters then reverse the new string and check whether it becomes the new string or not",
+                "code": "class Solution:\n    def isPalindrome(self, s: str) -> bool:\n        new_st = \"\"\n\n        for i in range(len(s)):\n            if s[i].isalnum():\n                new_st += s[i].lower()\n\n        return new_st[::-1] == new_st",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Fix 2 Pointers at the 2 ends of the given string\nSkip non alphanumeric from left and right\nif valid characters do not match return False",
+                "code": "class Solution:\n    def isPalindrome(self, s: str) -> bool:\n        p1, p2 = 0, len(s) - 1\n\n        while p1 < p2:\n            if not s[p1].isalnum():\n                p1 += 1\n                continue\n\n            if not s[p2].isalnum():\n                p2 -= 1\n                continue\n\n            if s[p1].lower() != s[p2].lower():\n                return False\n\n            p1 += 1\n            p2 -= 1\n\n        return True",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "question": "Given two strings s and t, return true if s is a subsequence of t, or false otherwise.\n\nA subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., \"ace\" is a subsequence of \"abcde\" while \"aec\" is not).\n\n\nExample 1:\n\nInput: s = \"abc\", t = \"ahbgdc\"\nOutput: true\nExample 2:\n\nInput: s = \"axc\", t = \"ahbgdc\"\nOutput: false\n\n\nConstraints:\n\n0 <= s.length <= 100\n0 <= t.length <= 10^4\ns and t consist only of lowercase English letters.\n\n\nFollow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 109,\nand you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?",
+        "topic": "TwoPointers",
+        "pattern": "Two Pointers",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Is Subsequence",
+        "problem_link": "https://leetcode.com/problems/is-subsequence",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/9_Is_Subsequence.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(t)+ O(|s| \u00d7 log(|t|))*k",
+                "sc": "S.C  - O(t)",
+                "intuition": "Use two pointers p1 and p2\np1 pointes to string s and p2 points to string t\nif a character at index p1 matches character at\np2 we move p1 by one.At the end we check whether\np1 reached its max length or not provind its a\nsubsequence of t.\n\n\nPre process all the results\nfor every string s map each character to t\ns such that they maintain relative order\nfor already mapped character from s keep track\nof the index choosen , such that when a new\ncharacter is going to me mapped we can verify\nthat an index just greater than previous index\nexist by doing an upper bound check.Also keep\nupdating the index at each step",
+                "code": "class Solution:\n    def isSubsequence(self, s: str, t: str) -> bool:\n        p1, p2 = 0, 0\n\n        while p1 < len(s) and p2 < len(t):\n            if t[p2] == s[p1]:\n                p1 += 1\n            p2 += 1\n\n        return p1 == len(s)\n\n\n# Optimal (Followup)\n# T.C. - O(t)+ O(|s| \u00d7 log(|t|))*k\n# S.C  - O(t)\n\nimport bisect\nfrom collections import defaultdict\n\n\nclass Solution:\n    def __init__(self) -> None:\n        self.char_map = defaultdict(list)\n\n    def pre_process(self, t: str):\n        for idx, st in enumerate(t):\n            self.char_map[st].append(idx)\n\n    def isSubsequence(self, s: str):\n        prev_idx = -1\n        for i in range(len(s)):\n            curr_char = s[i]\n\n            if curr_char not in self.char_map:\n                return False\n\n            idx = bisect.bisect_right(self.char_map[curr_char], prev_idx)\n            if idx == len(self.char_map[curr_char]):\n                return False\n\n            prev_idx = idx\n\n        return True",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "question": "Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.\n\nReturn the indices of the two numbers, index1 and index2, added by one as an integer array [index1, index2] of length 2.\n\nThe tests are generated such that there is exactly one solution. You may not use the same element twice.\n\nYour solution must use only constant extra space.\n\n\nExample 1:\n\nInput: numbers = [2,7,11,15], target = 9\nOutput: [1,2]\nExplanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].\nExample 2:\n\nInput: numbers = [2,3,4], target = 6\nOutput: [1,3]\nExplanation: The sum of 2 and 4 is 6. Therefore index1 = 1, index2 = 3. We return [1, 3].\nExample 3:\n\nInput: numbers = [-1,0], target = -1\nOutput: [1,2]\nExplanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].\n\n\nConstraints:\n\n2 <= numbers.length <= 3 * 10^4\n-1000 <= numbers[i] <= 1000\nnumbers is sorted in non-decreasing order.\n-1000 <= target <= 1000\nThe tests are generated such that there is exactly one solution.",
+        "topic": "TwoPointers",
+        "pattern": "Two Pointers",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Two Sum II Input Array Is Sorted",
+        "problem_link": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/10_Two_Sum_II_Input_Array_Is_Sorted.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Since array is sorted we take advatage of this property.\nWe take two pointers and fix it at the extreme ends.\nif their sum increases then we decrease the range by\nmoving the end pointer(p2) by one and if sum decreases\nwe try to increase the sum by moving the start pointer(p1)",
+                "code": "from typing import List\n\n\nclass Solution:\n    def twoSum(self, numbers: List[int], target: int) -> List[int]:\n        p1, p2 = 0, len(numbers) - 1\n\n        while p1 < p2:\n            if numbers[p1] + numbers[p2] == target:\n                return [p1 + 1, p2 + 1]\n            if numbers[p1] + numbers[p2] > target:\n                p2 -= 1\n            if numbers[p1] + numbers[p2] < target:\n                p1 += 1",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "question": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.\n\n\nExample 1:\n\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation:\nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\nExample 2:\n\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\nExample 3:\n\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\n\nConstraints:\n\n3 <= nums.length <= 3000\n-10^5 <= nums[i] <= 10^5",
+        "topic": "TwoPointers",
+        "pattern": "TwoPointers after Sorting",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "3 Sum",
+        "problem_link": "https://leetcode.com/problems/3sum",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/11_3_Sum.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^3)",
+                "sc": "S.C  - O(t)",
+                "intuition": "Sort the array,since in the question order does not matter sorting array will help us eliminate the duplicated when we insert it into the set data structure Just use 3 loops and pick 3 numbers from each iteration and check whether they sum up to zero if yes add them to the result",
+                "code": "from typing import List\n\n\nclass Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        res = set()\n        nums.sort()\n\n        for i in range(len(nums)):\n            for j in range(i + 1, len(nums)):\n                for k in range(j + 1, len(nums)):\n                    if nums[i] + nums[j] + nums[k] == 0:\n                        res.add(\n                            (\n                                nums[i],\n                                nums[j],\n                                nums[k],\n                            )\n                        )\n\n        return list(res)",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Sort the array Just use two loops basically our task is to check keep traversing the array and mark the number as visited since we want to find 3 numbers that sum up to target zero, we check if the diff=0-nums[i]-nums[j] exists in visted is present in map or not if that number is present we can definitely say we have a triplet",
+                "code": "from typing import List\n\n\nclass Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        res = set()\n        nums.sort()\n\n        for i in range(len(nums)):\n            visited = {}\n            for j in range(i + 1, len(nums)):\n                diff = 0 - nums[i] - nums[j]\n                if diff in visited:\n                    res.add((nums[i], nums[j], diff))\n                visited[nums[j]] = j\n\n        return list(res)",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(1)",
+                "intuition": "This is the modified version of Two Sum II\nWe avoid duplicates as each step",
+                "code": "from typing import List\n\n\nclass Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        nums.sort()\n        ans = set()\n\n        for i in range(len(nums)):\n            if i != 0 and nums[i] == nums[i - 1]:\n                # Avoid duplicates\n                continue\n\n            j, k = i + 1, len(nums) - 1\n\n            while j < k:\n                sm = nums[i] + nums[j] + nums[k]\n\n                if sm == 0:\n                    ans.add(\n                        (\n                            nums[i],\n                            nums[j],\n                            nums[k],\n                        )\n                    )\n                    j += 1\n                    k -= 1\n                    while nums[j] == nums[j - 1] and j < k:\n                        j += 1\n\n                    while nums[k] == nums[k + 1] and j < k:\n                        k -= 1\n\n                elif sm > 0:\n                    k -= 1\n\n                elif sm < 0:\n                    j += 1\n\n        return list(ans)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "question": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).\n\nFind two lines that together with the x-axis form a container, such that the container contains the most water.\n\nReturn the maximum amount of water a container can store.\n\nNotice that you may not slant the container.\n\n\nExample 1:\n\n\nInput: height = [1,8,6,2,5,4,8,3,7]\nOutput: 49\nExplanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.\nExample 2:\n\nInput: height = [1,1]\nOutput: 1\n\n\nConstraints:\n\nn == height.length\n2 <= n <= 10^5\n0 <= height[i] <= 10^4",
+        "topic": "TwoPointers",
+        "pattern": "TwoPointers / Greedy",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Container With Most Water",
+        "problem_link": "https://leetcode.com/problems/container-with-most-water",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/12_Container_With_Most_Water.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Find all the possble container's water storing capacity and take the max among them",
+                "code": "from typing import List\n\n\nclass Solution:\n    def maxArea(self, height: List[int]) -> int:\n        mx_area = float(\"-inf\")\n\n        for i in range(len(height)):\n            for j in range(i + 1, len(height)):\n                w = (j - i) + 1\n                h = min(height[i], height[j])\n                area = w * h\n                mx_area = max(mx_area, area)\n\n        return mx_area",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Now in this question we try to find the optimal\ntwo pairs of bars with which we get the max area.\nWe are going to take two pointers l and r and place\nthem at the 2 extreme ends of the array.Now we need\nto decide how we are going to move the pointers.\nOne thing we can see that the min height controls\nthe value of the area, so its better to move the\nbar with less area as no matter what bigger height\nwe get we wont get better area.Also as we move more\ntowards left the width decrease so its better to keep\nthe bar with greate height intact so that in future if\nwe get a greater height then it can compensate for the\nlesser width.",
+                "code": "from typing import List\n\n\nclass Solution:\n    def maxArea(self, height: List[int]) -> int:\n        l, r = 0, len(height) - 1\n        mx_area = float(\"-inf\")\n\n        while l < r:\n            w = r - l\n            h = min(height[l], height[r])\n            area = w * h\n            mx_area = max(area, mx_area)\n\n            if height[l] < height[r]:\n                l += 1\n            else:\n                r -= 1\n\n        return mx_area",
+                "type": "Optimal"
+            }
+        ]
+    }
+]
