@@ -526,7 +526,7 @@
     },
     {
         "id": 9,
-        "question": "Given two strings s and t, return true if s is a subsequence of t, or false otherwise.\n\nA subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., \"ace\" is a subsequence of \"abcde\" while \"aec\" is not).\n\n\nExample 1:\n\nInput: s = \"abc\", t = \"ahbgdc\"\nOutput: true\nExample 2:\n\nInput: s = \"axc\", t = \"ahbgdc\"\nOutput: false\n\n\nConstraints:\n\n0 <= s.length <= 100\n0 <= t.length <= 10^4\ns and t consist only of lowercase English letters.\n\n\nFollow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 109,\nand you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?",
+        "question": "Given two strings s and t, return true if s is a subsequence of t, or false otherwise.\nA subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., \"ace\" is a subsequence of \"abcde\" while \"aec\" is not).\n\nExample 1:\n\nInput: s = \"abc\", t = \"ahbgdc\"\nOutput: true\nExample 2:\n\nInput: s = \"axc\", t = \"ahbgdc\"\nOutput: false\n\n\nConstraints:\n0 <= s.length <= 100\n0 <= t.length <= 10^4\ns and t consist only of lowercase English letters.\n\nFollow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 109,\nand you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?",
         "topic": "TwoPointers",
         "pattern": "Two Pointers",
         "language": "python",
@@ -537,10 +537,17 @@
         "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/4_Two_Pointers/9_Is_Subsequence.py",
         "approaches": [
             {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Use two pointers p1 and p2 p1 pointes to string s and p2 points to string t if a character at index p1 matches character at p2 we move p1 by one.At the end we check whether p1 reached its max length or not provind its a subsequence of t.",
+                "code": "class Solution:\n    def isSubsequence(self, s: str, t: str) -> bool:\n        p1, p2 = 0, 0\n\n        while p1 < len(s) and p2 < len(t):\n            if t[p2] == s[p1]:\n                p1 += 1\n            p2 += 1\n\n        return p1 == len(s)",
+                "type": "Optimal"
+            },
+            {
                 "tc": "T.C. - O(t)+ O(|s| \u00d7 log(|t|))*k",
                 "sc": "S.C  - O(t)",
-                "intuition": "Use two pointers p1 and p2\np1 pointes to string s and p2 points to string t\nif a character at index p1 matches character at\np2 we move p1 by one.At the end we check whether\np1 reached its max length or not provind its a\nsubsequence of t.\n\n\nPre process all the results\nfor every string s map each character to t\ns such that they maintain relative order\nfor already mapped character from s keep track\nof the index choosen , such that when a new\ncharacter is going to me mapped we can verify\nthat an index just greater than previous index\nexist by doing an upper bound check.Also keep\nupdating the index at each step",
-                "code": "class Solution:\n    def isSubsequence(self, s: str, t: str) -> bool:\n        p1, p2 = 0, 0\n\n        while p1 < len(s) and p2 < len(t):\n            if t[p2] == s[p1]:\n                p1 += 1\n            p2 += 1\n\n        return p1 == len(s)\n\n\n# Optimal (Followup)\n# T.C. - O(t)+ O(|s| \u00d7 log(|t|))*k\n# S.C  - O(t)\n\nimport bisect\nfrom collections import defaultdict\n\n\nclass Solution:\n    def __init__(self) -> None:\n        self.char_map = defaultdict(list)\n\n    def pre_process(self, t: str):\n        for idx, st in enumerate(t):\n            self.char_map[st].append(idx)\n\n    def isSubsequence(self, s: str):\n        prev_idx = -1\n        for i in range(len(s)):\n            curr_char = s[i]\n\n            if curr_char not in self.char_map:\n                return False\n\n            idx = bisect.bisect_right(self.char_map[curr_char], prev_idx)\n            if idx == len(self.char_map[curr_char]):\n                return False\n\n            prev_idx = idx\n\n        return True",
+                "intuition": "Pre process all the results\nfor every string s map each character to t\ns such that they maintain relative order\nfor already mapped character from s keep track\nof the index choosen , such that when a new\ncharacter is going to me mapped we can verify\nthat an index just greater than previous index\nexist by doing an upper bound check.Also keep\nupdating the index at each step",
+                "code": "import bisect\nfrom collections import defaultdict\n\n\nclass Solution:\n    def __init__(self) -> None:\n        self.char_map = defaultdict(list)\n\n    def pre_process(self, t: str):\n        for idx, st in enumerate(t):\n            self.char_map[st].append(idx)\n\n    def isSubsequence(self, s: str):\n        prev_idx = -1\n        for i in range(len(s)):\n            curr_char = s[i]\n\n            if curr_char not in self.char_map:\n                return False\n\n            idx = bisect.bisect_right(self.char_map[curr_char], prev_idx)\n            if idx == len(self.char_map[curr_char]):\n                return False\n\n            prev_idx = idx\n\n        return True",
                 "type": "Optimal"
             }
         ]
