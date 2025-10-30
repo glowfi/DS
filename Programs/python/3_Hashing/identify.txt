@@ -1,0 +1,5 @@
++ track state
++ find duplicates
++ check seen
++ group or map elements
++ count frequencies

@@ -1,4 +1,4 @@
-import { getDifficultyColor } from '@/app/lib/color-helper';
+import { getDifficultyColor } from '@/app/lib/color';
 import { Approach, Question } from '@/app/lib/types';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';

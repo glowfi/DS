@@ -1,8 +1,5 @@
 'use client';
-import {
-    getDifficultyColor,
-    getPatternWiseRandomHexColor
-} from '@/app/lib/color-helper';
+import { getDifficultyColor } from '@/app/lib/color';
 import { Question } from '@/app/lib/types';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -16,7 +13,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Patterns } from '../topics/topics';
 
 interface SearchBarProps {
@@ -48,9 +45,6 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
     const [searchQuery, setSearchQuery] = useState('');
     const debouncedSearchQuery = useDebouncedValue(searchQuery, 500);
     const [filteredQuestions, setFilteredQuestions] = useState<Question[]>([]);
-    const patternWiseColors = useMemo(() => {
-        return getPatternWiseRandomHexColor(questions);
-    }, [questions]);
 
     useEffect(() => {
         if (questions) {
@@ -132,9 +126,6 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
                                         </Badge>
                                         <Patterns
                                             patternString={question.pattern}
-                                            patternWiseColors={
-                                                patternWiseColors
-                                            }
                                         />
                                     </div>
                                     <Button

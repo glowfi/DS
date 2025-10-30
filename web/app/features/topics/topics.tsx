@@ -1,8 +1,3 @@
-import {
-    getDifficultyColor,
-    getPatternWiseRandomHexColor,
-    getReadableTextColor
-} from '@/app/lib/color-helper';
 import { Difficulty, Question } from '@/app/lib/types';
 import {
     Accordion,
@@ -22,48 +17,26 @@ import {
 } from '@/components/ui/table';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
-import React, { FunctionComponent, useMemo, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { FaSort, FaSortDown, FaSortUp } from 'react-icons/fa';
 import CodeModal from '../codemodal/codemodal';
-import { useTheme } from 'next-themes';
+import { getDifficultyColor } from '@/app/lib/color';
 
 interface PatternsProps {
     patternString: string;
-    patternWiseColors: {
-        [pattern: string]: string;
-    };
 }
 
 export const Patterns: FunctionComponent<PatternsProps> = ({
-    patternString,
-    patternWiseColors
+    patternString
 }) => {
-    const { theme } = useTheme();
-
     const patterns: string[] = patternString.trim().split('/');
 
     return (
         <div className="flex flex-col gap-3">
             {patterns.map((pattern: string, idx: number) => {
-                const backgroundColor = patternWiseColors[pattern.trim()];
-                const isDarkMode = theme === 'dark' ? true : false;
-                const textColor = getReadableTextColor(
-                    backgroundColor,
-                    isDarkMode
-                );
-
                 return (
-                    <Badge
-                        key={idx}
-                        style={{
-                            backgroundColor: backgroundColor,
-                            border: '1px solid',
-                            borderColor: textColor,
-                            color: textColor,
-                            borderRadius: '4px'
-                        }}
-                    >
-                        {pattern}
+                    <Badge key={idx} variant="secondary">
+                        {pattern.trim()}
                     </Badge>
                 );
             })}
@@ -185,9 +158,6 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
 
     const topics = getAllTopics(questions);
     const topicWiseQuestions = getSortedQuestionsByTopic(questions, sortOrder);
-    const patternWiseColors = useMemo(() => {
-        return getPatternWiseRandomHexColor(questions);
-    }, [questions]);
 
     const cycleSortOrder = () => {
         setSortOrder((oldstate) => {
@@ -275,9 +245,6 @@ const Topics: React.FunctionComponent<TopicsProps> = ({
                                                             <Patterns
                                                                 patternString={
                                                                     q.pattern
-                                                                }
-                                                                patternWiseColors={
-                                                                    patternWiseColors
                                                                 }
                                                             />
                                                         </TableCell>
