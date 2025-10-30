@@ -118,7 +118,7 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
                         </pre>
                     </div>
 
-                    <div className="flex flex-col">
+                    <div className="flex flex-col gap-3">
                         <h3 className="text-2xl font-semibold tracking-tight">
                             Intuition
                         </h3>
@@ -127,57 +127,63 @@ const CodeModal: React.FunctionComponent<CodeModalProps> = ({
                         </pre>
                     </div>
 
-                    <Tabs defaultValue={selectedApproach}>
-                        <TabsList className="flex gap-3">
-                            {Object.keys(approachesMap).map((key, index) => (
-                                <TabsTrigger
-                                    value={key}
-                                    key={index}
-                                    onClick={() =>
-                                        setSelectedApproach(
-                                            approachesMap[key].type
-                                        )
-                                    }
-                                >
-                                    {key}
-                                </TabsTrigger>
-                            ))}
-                        </TabsList>
+                    <div className="flex flex-col gap-3">
+                        <h3 className="text-2xl font-semibold tracking-tight">
+                            Approaches
+                        </h3>
+                        <Tabs defaultValue={selectedApproach}>
+                            <TabsList className="flex gap-3">
+                                {Object.keys(approachesMap).map(
+                                    (key, index) => (
+                                        <TabsTrigger
+                                            value={key}
+                                            key={index}
+                                            onClick={() =>
+                                                setSelectedApproach(
+                                                    approachesMap[key].type
+                                                )
+                                            }
+                                        >
+                                            {key}
+                                        </TabsTrigger>
+                                    )
+                                )}
+                            </TabsList>
 
-                        <div className="flex flex-col">
-                            <h3 className="text-2xl font-semibold tracking-tight">
-                                Approaches
-                            </h3>
-                            {Object.keys(approachesMap).map((key, index) => (
-                                <TabsContent value={key} key={index}>
-                                    <SyntaxHighlighter
-                                        wrapLines={true}
-                                        language={question.language}
-                                        style={selectedTheme}
-                                    >
-                                        {approachesMap[key].code}
-                                    </SyntaxHighlighter>
-                                </TabsContent>
-                            ))}
-                        </div>
+                            <div className="flex flex-col gap-3">
+                                {Object.keys(approachesMap).map(
+                                    (key, index) => (
+                                        <TabsContent value={key} key={index}>
+                                            <SyntaxHighlighter
+                                                wrapLines={true}
+                                                language={question.language}
+                                                style={selectedTheme}
+                                            >
+                                                {approachesMap[key].code}
+                                            </SyntaxHighlighter>
+                                        </TabsContent>
+                                    )
+                                )}
+                            </div>
 
-                        <div className="flex flex-col">
-                            <h3 className="text-2xl font-semibold tracking-tight">
-                                Time Complexity
-                            </h3>
-                            <Badge className="font-bold">
-                                {approachesMap[selectedApproach].tc}
-                            </Badge>
-                        </div>
-                        <div className="flex flex-col">
-                            <h3 className="text-2xl font-semibold tracking-tight">
-                                Space Complexity
-                            </h3>
-                            <Badge className="font-bold">
-                                {approachesMap[selectedApproach].sc}
-                            </Badge>
-                        </div>
-                    </Tabs>
+                            <div className="flex flex-col gap-3">
+                                <h3 className="text-2xl font-semibold tracking-tight">
+                                    Time Complexity
+                                </h3>
+                                <Badge className="font-bold">
+                                    {approachesMap[selectedApproach].tc}
+                                </Badge>
+                            </div>
+                            <div className="flex flex-col gap-3">
+                                <h3 className="text-2xl font-semibold tracking-tight">
+                                    Space Complexity
+                                </h3>
+                                <Badge className="font-bold">
+                                    {approachesMap[selectedApproach].sc}
+                                </Badge>
+                            </div>
+                        </Tabs>
+                    </div>
                 </div>
                 <SheetFooter className="mt-3">
                     <SheetClose asChild>
