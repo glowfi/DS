@@ -1,7 +1,147 @@
 [
     {
         "id": 1,
-        "question": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\n\nExample 1:\n\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\nExample 2:\n\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\nExample 3:\n\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n\n\nConstraints:\n\n2 <= nums.length <= 10^4\n-10^9 <= nums[i] <= 10^9\n-10^9 <= target <= 10^9\nOnly one valid answer exists.\n\n\nFollow-up: Can you come up with an algorithm that is less than O(n2) time complexity?",
+        "question": "Given an m x n matrix, return all elements of the matrix in spiral order.\n\nExample 1:\nInput: matrix = [[1,2,3],[4,5,6],[7,8,9]]\nOutput: [1,2,3,6,9,8,7,4,5]\n\nExample 2:\nInput: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]\nOutput: [1,2,3,4,8,12,11,10,9,5,6,7]\n\nConstraints:\nm == matrix.length\nn == matrix[i].length\n1 <= m, n <= 10\n-100 <= matrix[i][j] <= 100",
+        "topic": "Matrix",
+        "pattern": "Simulation / Direction Vectors",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Spiral Matrix",
+        "problem_link": "https://leetcode.com/problems/spiral-matrix",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Matrix/1_Spiral_Matrix.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(m*n)",
+                "sc": "S.C  - O(m*n)",
+                "intuition": "As you travel in a spiral fashion mark the cells in a visited set only go ahead if its not in visited or else change direction",
+                "code": "from typing import List\n\n\nclass Solution:\n    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:\n        res: list[int] = []\n        m, n = len(matrix), len(matrix[0])\n        visited = set()\n        total_steps = m * n\n\n        row, col = 0, 0\n\n        while total_steps > 0:\n            # Left to Right\n            while col < n and (row, col) not in visited:\n                visited.add((row, col))\n                res.append(matrix[row][col])\n                col += 1\n                total_steps -= 1\n            row += 1\n            col -= 1\n\n            # Top to Bottom\n            while row < m and (row, col) not in visited:\n                visited.add((row, col))\n                res.append(matrix[row][col])\n                row += 1\n                total_steps -= 1\n            row -= 1\n            col -= 1\n\n            # Bottom Right to Bottom Left\n            while col >= 0 and (row, col) not in visited:\n                visited.add((row, col))\n                res.append(matrix[row][col])\n                col -= 1\n                total_steps -= 1\n            row -= 1\n            col += 1\n\n            # Bottom to Top\n            while row >= 0 and (row, col) not in visited:\n                visited.add((row, col))\n                res.append(matrix[row][col])\n                row -= 1\n                total_steps -= 1\n            row += 1\n            col += 1\n\n        return res",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(m*n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Take 4 pointers left,right,top,bottom\nleft,right will help us travel horizontally\ntop,bottom will help us travel vertically\nAlso suppose we have a matrix with one\nrow only, we only require to print the\nleft to right elements only",
+                "code": "from typing import List\n\n\nclass Solution:\n    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:\n        m, n = len(matrix), len(matrix[0])\n        left, right = 0, n - 1\n        top, bottom = 0, m - 1\n        res: list[int] = []\n\n        while top <= bottom and left <= right:\n            # Left to Right\n            for i in range(left, right + 1):\n                res.append(matrix[top][i])\n            top += 1\n\n            # Top to Bottom\n            for j in range(top, bottom + 1):\n                res.append(matrix[j][right])\n            right -= 1\n\n            # Right to Left\n            if top <= bottom:\n                for k in range(right, left - 1, -1):\n                    res.append(matrix[bottom][k])\n                bottom -= 1\n\n            # Bottom to Top\n            if left <= right:\n                for l in range(bottom, top - 1, -1):\n                    res.append(matrix[l][left])\n                left += 1\n\n        return res",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).\n\nYou have to rotate the image in-place, which means you have to modify the input 2D matrix directly.\nDO NOT allocate another 2D matrix and do the rotation.\n\nExample 1:\nInput: matrix = [[1,2,3],[4,5,6],[7,8,9]]\nOutput: [[7,4,1],[8,5,2],[9,6,3]]\n\nExample 2:\nInput: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]\nOutput: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]\n\nConstraints:\nn == matrix.length == matrix[i].length\n1 <= n <= 20\n-1000 <= matrix[i][j] <= 1000",
+        "topic": "Matrix",
+        "pattern": "Transpose + Reverse / Layer Rotation",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Rotate Image",
+        "problem_link": "https://leetcode.com/problems/rotate-image",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Matrix/2_Rotate_Image.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)+O(n^2)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Do Transpose of a matrix\nReverse every row in matrix",
+                "code": "from typing import List\n\n\nclass Solution:\n    def rotate(self, matrix: List[List[int]]) -> None:\n        \"\"\"\n        Do not return anything, modify matrix in-place instead.\n        \"\"\"\n        n = len(matrix)\n        for i in range(n):\n            for j in range(i + 1, n):\n                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]\n\n        for i in range(n):\n            l, r = 0, n - 1\n            while l < r:\n                matrix[i][l], matrix[i][r] = matrix[i][r], matrix[i][l]\n                l += 1\n                r -= 1",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "According to Wikipedia's article: \"The Game of Life, also known simply as Life,\nis a cellular automaton devised by the British mathematician John Horton Conway in 1970.\"\nThe board is made up of an m x n grid of cells, where each cell has an initial state:\nlive (represented by a 1) or dead (represented by a 0).\nEach cell interacts with its eight neighbors (horizontal, vertical, diagonal) using the following four rules (taken from the above Wikipedia article):\n\nAny live cell with fewer than two live neighbors dies as if caused by under-population.\nAny live cell with two or three live neighbors lives on to the next generation.\nAny live cell with more than three live neighbors dies, as if by over-population.\nAny dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.\nThe next state of the board is determined by applying the above rules simultaneously to every cell\nin the current state of the m x n grid board. In this process, births and deaths occur simultaneously.\n\nGiven the current state of the board, update the board to reflect its next state.\nNote that you do not need to return anything.\n\nExample 1:\nInput: board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]\nOutput: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]\n\nExample 2:\nInput: board = [[1,1],[1,0]]\nOutput: [[1,1],[1,1]]",
+        "topic": "Matrix",
+        "pattern": "Simulation / In-place State Encoding",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Game of Life",
+        "problem_link": "https://leetcode.com/problems/game-of-life",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Matrix/3_Game_of_Life.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(m*n*8)",
+                "sc": "S.C  - O(m*n)",
+                "intuition": "For each cell determine neighbour count and make it live or die based on the the conditions given",
+                "code": "from typing import List\n\n\nclass Solution:\n    def neightbourCount(self, board: List[List[int]], curr_pos: tuple[int, int]) -> int:\n        m, n = len(board), len(board[0])\n        dirs = [(0, 1), (1, 0), (-1, -1), (1, 1), (0, -1), (-1, 0), (1, -1), (-1, 1)]\n        x, y = curr_pos\n        c = 0\n\n        for dx, dy in dirs:\n            pos_x = x + dx\n            pos_y = y + dy\n\n            if pos_x < 0 or pos_x >= m:\n                continue\n\n            if pos_y < 0 or pos_y >= n:\n                continue\n\n            if board[pos_x][pos_y] == 1:\n                c += 1\n\n        return c\n\n    def gameOfLife(self, board: List[List[int]]) -> None:\n        \"\"\"\n        Do not return anything, modify board in-place instead.\n        \"\"\"\n        m, n = len(board), len(board[0])\n        res = [[0 for _ in range(n)] for _ in range(m)]\n\n        for i in range(m):\n            for j in range(n):\n                neightbourCount = self.neightbourCount(\n                    board,\n                    (\n                        i,\n                        j,\n                    ),\n                )\n                if board[i][j] == 1:\n                    if neightbourCount == 2 or neightbourCount == 3:\n                        res[i][j] = 1\n                    elif neightbourCount < 2:\n                        res[i][j] = 0\n                    elif neightbourCount > 3:\n                        res[i][j] = 0\n                else:\n                    if neightbourCount == 3:\n                        res[i][j] = 1\n\n        board[:] = res",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(m*n)+O(m*n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "We need to somehow store the previous state of our matrix\nFor each cell ge the neightbour count\nWhat we can do is mark the cell that will become living state to dead state with -2\nand cell that will become dead state to living with 2.\nAt last conver thr -2 to 0 and 2 to 1",
+                "code": "from typing import List\n\n\nclass Solution:\n    def neightbourCount(self, board: List[List[int]], curr_pos: tuple[int, int]) -> int:\n        m, n = len(board), len(board[0])\n        dirs = [(0, 1), (1, 0), (-1, -1), (1, 1), (0, -1), (-1, 0), (1, -1), (-1, 1)]\n        x, y = curr_pos\n        c = 0\n\n        for dx, dy in dirs:\n            pos_x = x + dx\n            pos_y = y + dy\n\n            if pos_x < 0 or pos_x >= m:\n                continue\n\n            if pos_y < 0 or pos_y >= n:\n                continue\n\n            if board[pos_x][pos_y] in [1, -2]:\n                c += 1\n\n        return c\n\n    def gameOfLife(self, board: List[List[int]]) -> None:\n        \"\"\"\n        Do not return anything, modify board in-place instead.\n        \"\"\"\n        m, n = len(board), len(board[0])\n\n        for i in range(m):\n            for j in range(n):\n                neightbourCount = self.neightbourCount(\n                    board,\n                    (\n                        i,\n                        j,\n                    ),\n                )\n                if board[i][j] == 1:\n                    if neightbourCount < 2:\n                        board[i][j] = -2\n                    elif neightbourCount > 3:\n                        board[i][j] = -2\n                else:\n                    if neightbourCount == 3:\n                        board[i][j] = 2\n\n        for i in range(m):\n            for j in range(n):\n                if board[i][j] == -2:\n                    board[i][j] = 0\n                elif board[i][j] == 2:\n                    board[i][j] = 1",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:\n\nEach row must contain the digits 1-9 without repetition.\nEach column must contain the digits 1-9 without repetition.\nEach of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.\nNote:\n\nA Sudoku board (partially filled) could be valid but is not necessarily solvable.\nOnly the filled cells need to be validated according to the mentioned rules.\n\n\nExample 1:\nInput: board =\n[[\"5\",\"3\",\".\",\".\",\"7\",\".\",\".\",\".\",\".\"]\n,[\"6\",\".\",\".\",\"1\",\"9\",\"5\",\".\",\".\",\".\"]\n,[\".\",\"9\",\"8\",\".\",\".\",\".\",\".\",\"6\",\".\"]\n,[\"8\",\".\",\".\",\".\",\"6\",\".\",\".\",\".\",\"3\"]\n,[\"4\",\".\",\".\",\"8\",\".\",\"3\",\".\",\".\",\"1\"]\n,[\"7\",\".\",\".\",\".\",\"2\",\".\",\".\",\".\",\"6\"]\n,[\".\",\"6\",\".\",\".\",\".\",\".\",\"2\",\"8\",\".\"]\n,[\".\",\".\",\".\",\"4\",\"1\",\"9\",\".\",\".\",\"5\"]\n,[\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]]\nOutput: true\n\nExample 2:\nInput: board =\n[[\"8\",\"3\",\".\",\".\",\"7\",\".\",\".\",\".\",\".\"]\n,[\"6\",\".\",\".\",\"1\",\"9\",\"5\",\".\",\".\",\".\"]\n,[\".\",\"9\",\"8\",\".\",\".\",\".\",\".\",\"6\",\".\"]\n,[\"8\",\".\",\".\",\".\",\"6\",\".\",\".\",\".\",\"3\"]\n,[\"4\",\".\",\".\",\"8\",\".\",\"3\",\".\",\".\",\"1\"]\n,[\"7\",\".\",\".\",\".\",\"2\",\".\",\".\",\".\",\"6\"]\n,[\".\",\"6\",\".\",\".\",\".\",\".\",\"2\",\"8\",\".\"]\n,[\".\",\".\",\".\",\"4\",\"1\",\"9\",\".\",\".\",\"5\"]\n,[\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]]\nOutput: false\nExplanation: Same as Example 1, except with the\n5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.\n\nConstraints:\nboard.length == 9\nboard[i].length == 9\nboard[i][j] is a digit 1-9 or '.'.",
+        "topic": "Matrix",
+        "pattern": "HashMap / Set / Row-Col-Box Tracking",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Valid Sudoku",
+        "problem_link": "https://leetcode.com/problems/valid-sudoku",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Matrix/4_Valid_Sudoku.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(m*n)+O(m*n)+O(m*n)",
+                "sc": "S.C  - O(m*n)+O(m*n)+O(m*n)",
+                "intuition": "Validate all rows,cols and 3x3 grid based on the given condition",
+                "code": "from typing import List\n\n\nclass Solution:\n    def isValidSudoku(self, board: List[List[str]]) -> bool:\n        m, n = len(board), len(board[0])\n\n        # Validate all rows\n        for i in range(m):\n            visited = set()\n            for j in range(n):\n                if board[i][j] == \".\":\n                    continue\n                curr_num = int(board[i][j])\n                if curr_num < 1 or curr_num > 9:\n                    return False\n                if curr_num in visited:\n                    return False\n                visited.add(curr_num)\n\n        # Validate all cols\n        for j in range(n):\n            visited = set()\n            for i in range(m):\n                if board[i][j] == \".\":\n                    continue\n                curr_num = int(board[i][j])\n                if curr_num < 1 or curr_num > 9:\n                    return False\n                if curr_num in visited:\n                    return False\n                visited.add(curr_num)\n\n        # Validate all 9 3x3 matrix\n        for br in range(0, 9, 3):\n            for bc in range(0, 9, 3):\n                visited = set()\n                for i in range(br, br + 3):\n                    for j in range(bc, bc + 3):\n                        if board[i][j] == \".\":\n                            continue\n                        curr_num = int(board[i][j])\n                        if curr_num < 1 or curr_num > 9:\n                            return False\n                        if curr_num in visited:\n                            return False\n                        visited.add(curr_num)\n\n        return True",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. -",
+                "sc": "S.C  -",
+                "intuition": "",
+                "code": "from typing import List\n\n\nclass Solution:\n    def isValidSudoku(self, board: List[List[str]]) -> bool:\n        pass",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.\nYou must do it in place.\n\nExample 1:\nInput: matrix = [[1,1,1],[1,0,1],[1,1,1]]\nOutput: [[1,0,1],[0,0,0],[1,0,1]]\n\nExample 2:\nInput: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]\nOutput: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]\n\nConstraints:\nm == matrix.length\nn == matrix[0].length\n1 <= m, n <= 200\n-2^31 <= matrix[i][j] <= 2^31 - 1\n\nFollow up:\nA straightforward solution using O(mn) space is probably a bad idea.\nA simple improvement uses O(m + n) space, but still not the best solution.\nCould you devise a constant space solution?",
+        "topic": "Matrix",
+        "pattern": "Marking Rows & Columns / In-place",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Set Matrix Zeroes",
+        "problem_link": "https://leetcode.com/problems/set-matrix-zeroes",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/2_Matrix/5_Set_Matrix_Zeroes.py",
+        "approaches": [
+            {
+                "tc": "T.C. -",
+                "sc": "S.C  -",
+                "intuition": "",
+                "code": "",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. -",
+                "sc": "S.C  -",
+                "intuition": "",
+                "code": "",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. -",
+                "sc": "S.C  -",
+                "intuition": "",
+                "code": "",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "question": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\nExample 1:\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\n\nExample 2:\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n\nExample 3:\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n\n\nConstraints:\n\n2 <= nums.length <= 10^4\n-10^9 <= nums[i] <= 10^9\n-10^9 <= target <= 10^9\nOnly one valid answer exists.\n\n\nFollow-up: Can you come up with an algorithm that is less than O(n2) time complexity?",
         "topic": "Hashing",
         "pattern": "HashMap / Complement Lookup",
         "language": "python",
@@ -29,7 +169,7 @@
     },
     {
         "id": 2,
-        "question": "Given two strings s and t, return true if t is an anagram of s, and false otherwise.\n\n\nExample 1:\n\nInput: s = \"anagram\", t = \"nagaram\"\n\nOutput: true\n\nExample 2:\n\nInput: s = \"rat\", t = \"car\"\n\nOutput: false\n\n\nConstraints:\n\n1 <= s.length, t.length <= 5 * 10^4\ns and t consist of lowercase English letters.\n\n\nFollow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?",
+        "question": "Given two strings s and t, return true if t is an anagram of s, and false otherwise.\n\nExample 1:\nInput: s = \"anagram\", t = \"nagaram\"\nOutput: true\n\nExample 2:\nInput: s = \"rat\", t = \"car\"\nOutput: false\n\n\nConstraints:\n1 <= s.length, t.length <= 5 * 10^4\ns and t consist of lowercase English letters.\n\nFollow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?",
         "topic": "Hashing",
         "pattern": "HashMap / Frequency Count",
         "language": "python",
@@ -50,7 +190,7 @@
     },
     {
         "id": 3,
-        "question": "Given an array of strings strs, group the anagrams together. You can return the answer in any order.\n\n\nExample 1:\n\nInput: strs = [\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]\n\nOutput: [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]\n\nExplanation:\n\nThere is no string in strs that can be rearranged to form \"bat\".\nThe strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\nThe strings \"ate\", \"eat\", and \"tea\" are anagrams as they can be rearranged to form each other.\nExample 2:\n\nInput: strs = [\"\"]\n\nOutput: [[\"\"]]\n\nExample 3:\n\nInput: strs = [\"a\"]\n\nOutput: [[\"a\"]]\n\n\nConstraints:\n\n1 <= strs.length <= 10^4\n0 <= strs[i].length <= 100\nstrs[i] consists of lowercase English letters.",
+        "question": "Given an array of strings strs, group the anagrams together. You can return the answer in any order.\n\nExample 1:\nInput: strs = [\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]\nOutput: [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]\n\nExplanation:\nThere is no string in strs that can be rearranged to form \"bat\".\nThe strings \"nat\" and \"tan\" are anagrams as they can be rearranged to form each other.\nThe strings \"ate\", \"eat\", and \"tea\" are anagrams as they can be rearranged to form each other.\n\nExample 2:\nInput: strs = [\"\"]\nOutput: [[\"\"]]\n\nExample 3:\nInput: strs = [\"a\"]\nOutput: [[\"a\"]]\n\n\nConstraints:\n\n1 <= strs.length <= 10^4\n0 <= strs[i].length <= 100\nstrs[i] consists of lowercase English letters.",
         "topic": "Hashing",
         "pattern": "HashMap / Sorting Key",
         "language": "python",
@@ -71,7 +211,7 @@
     },
     {
         "id": 4,
-        "question": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].\n\nThe product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.\n\nYou must write an algorithm that runs in O(n) time and without using the division operation.\n\n\nExample 1:\n\nInput: nums = [1,2,3,4]\nOutput: [24,12,8,6]\nExample 2:\n\nInput: nums = [-1,1,0,-3,3]\nOutput: [0,0,9,0,0]\n\n\nConstraints:\n\n2 <= nums.length <= 10^5\n-30 <= nums[i] <= 30\nThe input is generated such that answer[i] is guaranteed to fit in a 32-bit integer.\n\n\nFollow up: Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.)",
+        "question": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].\nThe product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.\nYou must write an algorithm that runs in O(n) time and without using the division operation.\n\nExample 1:\nInput: nums = [1,2,3,4]\nOutput: [24,12,8,6]\n\nExample 2:\nInput: nums = [-1,1,0,-3,3]\nOutput: [0,0,9,0,0]\n\nConstraints:\n2 <= nums.length <= 10^5\n-30 <= nums[i] <= 30\nThe input is generated such that answer[i] is guaranteed to fit in a 32-bit integer.\n\nFollow up: Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.)",
         "topic": "Hashing",
         "pattern": "Prefix & Suffix Product / HashMap",
         "language": "python",
@@ -106,7 +246,7 @@
     },
     {
         "id": 5,
-        "question": "Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.\n\nEach letter in magazine can only be used once in ransomNote.\n\n\nExample 1:\n\nInput: ransomNote = \"a\", magazine = \"b\"\nOutput: false\nExample 2:\n\nInput: ransomNote = \"aa\", magazine = \"ab\"\nOutput: false\nExample 3:\n\nInput: ransomNote = \"aa\", magazine = \"aab\"\nOutput: true\n\n\nConstraints:\n\n1 <= ransomNote.length, magazine.length <= 10^5\nransomNote and magazine consist of lowercase English letters.",
+        "question": "Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.\nEach letter in magazine can only be used once in ransomNote.\n\n\nExample 1:\nInput: ransomNote = \"a\", magazine = \"b\"\nOutput: false\n\nExample 2:\nInput: ransomNote = \"aa\", magazine = \"ab\"\nOutput: false\n\nExample 3:\nInput: ransomNote = \"aa\", magazine = \"aab\"\nOutput: true\n\nConstraints:\n1 <= ransomNote.length, magazine.length <= 10^5\nransomNote and magazine consist of lowercase English letters.",
         "topic": "Hashing",
         "pattern": "HashMap / Frequency Count",
         "language": "python",
@@ -127,7 +267,7 @@
     },
     {
         "id": 6,
-        "question": "Given a pattern and a string s, find if s follows the same pattern.\n\nHere follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s. Specifically:\n\nEach letter in pattern maps to exactly one unique word in s.\nEach unique word in s maps to exactly one letter in pattern.\nNo two letters map to the same word, and no two words map to the same letter.\n\n\nExample 1:\n\nInput: pattern = \"abba\", s = \"dog cat cat dog\"\n\nOutput: true\n\nExplanation:\n\nThe bijection can be established as:\n\n'a' maps to \"dog\".\n'b' maps to \"cat\".\nExample 2:\n\nInput: pattern = \"abba\", s = \"dog cat cat fish\"\n\nOutput: false\n\nExample 3:\n\nInput: pattern = \"aaaa\", s = \"dog cat cat dog\"\n\nOutput: false\n\n\nConstraints:\n\n1 <= pattern.length <= 300\npattern contains only lower-case English letters.\n1 <= s.length <= 3000\ns contains only lowercase English letters and spaces ' '.\ns does not contain any leading or trailing spaces.\nAll the words in s are separated by a single space.",
+        "question": "Given a pattern and a string s, find if s follows the same pattern.\nHere follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s. Specifically:\nEach letter in pattern maps to exactly one unique word in s.\nEach unique word in s maps to exactly one letter in pattern.\nNo two letters map to the same word, and no two words map to the same letter.\n\nExample 1:\nInput: pattern = \"abba\", s = \"dog cat cat dog\"\nOutput: true\n\nExplanation:\nThe bijection can be established as:\n'a' maps to \"dog\".\n'b' maps to \"cat\".\n\nExample 2:\nInput: pattern = \"abba\", s = \"dog cat cat fish\"\nOutput: false\n\nExample 3:\nInput: pattern = \"aaaa\", s = \"dog cat cat dog\"\nOutput: false\n\n\nConstraints:\n1 <= pattern.length <= 300\npattern contains only lower-case English letters.\n1 <= s.length <= 3000\ns contains only lowercase English letters and spaces ' '.\ns does not contain any leading or trailing spaces.\nAll the words in s are separated by a single space.",
         "topic": "Hashing",
         "pattern": "HashMap / Bijective Mapping",
         "language": "python",
@@ -148,7 +288,7 @@
     },
     {
         "id": 7,
-        "question": "Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.\n\n\nExample 1:\n\nInput: nums = [1,2,3,1], k = 3\nOutput: true\nExample 2:\n\nInput: nums = [1,0,1,1], k = 1\nOutput: true\nExample 3:\n\nInput: nums = [1,2,3,1,2,3], k = 2\nOutput: false\n\n\nConstraints:\n\n1 <= nums.length <= 10^5\n-10^9 <= nums[i] <= 10^9\n0 <= k <= 10^5",
+        "question": "Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.\n\nExample 1:\nInput: nums = [1,2,3,1], k = 3\nOutput: true\n\nExample 2:\nInput: nums = [1,0,1,1], k = 1\nOutput: true\n\nExample 3:\nInput: nums = [1,2,3,1,2,3], k = 2\nOutput: false\n\nConstraints:\n1 <= nums.length <= 10^5\n-10^9 <= nums[i] <= 10^9\n0 <= k <= 10^5",
         "topic": "Hashing",
         "pattern": "HashMap / Sliding Window",
         "language": "python",
@@ -176,7 +316,7 @@
     },
     {
         "id": 8,
-        "question": "Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.\n\nA subarray is a contiguous non-empty sequence of elements within an array.\n\n\nExample 1:\n\nInput: nums = [1,1,1], k = 2\nOutput: 2\nExample 2:\n\nInput: nums = [1,2,3], k = 3\nOutput: 2\n\n\nConstraints:\n\n1 <= nums.length <= 2 * 10^4\n-1000 <= nums[i] <= 1000\n-10^7 <= k <= 10^7",
+        "question": "Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.\n\nA subarray is a contiguous non-empty sequence of elements within an array.\n\n\nExample 1:\nInput: nums = [1,1,1], k = 2\nOutput: 2\n\nExample 2:\nInput: nums = [1,2,3], k = 3\nOutput: 2\n\nConstraints:\n1 <= nums.length <= 2 * 10^4\n-1000 <= nums[i] <= 1000\n-10^7 <= k <= 10^7",
         "topic": "Hashing",
         "pattern": "Prefix Sum + HashMap",
         "language": "python",
@@ -260,7 +400,7 @@
     },
     {
         "id": 11,
-        "question": "Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.\n\nYou must write an algorithm that runs in O(n) time.\n\n\nExample 1:\n\nInput: nums = [100,4,200,1,3,2]\nOutput: 4\nExplanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.\nExample 2:\n\nInput: nums = [0,3,7,2,5,8,4,6,0,1]\nOutput: 9\nExample 3:\n\nInput: nums = [1,0,1,2]\nOutput: 3\n\n\nConstraints:\n\n0 <= nums.length <= 10^5\n-10^9 <= nums[i] <= 10^9",
+        "question": "Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.\nYou must write an algorithm that runs in O(n) time.\n\nExample 1:\nInput: nums = [100,4,200,1,3,2]\nOutput: 4\nExplanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.\n\nExample 2:\nInput: nums = [0,3,7,2,5,8,4,6,0,1]\nOutput: 9\n\nExample 3:\nInput: nums = [1,0,1,2]\nOutput: 3\n\nConstraints:\n0 <= nums.length <= 10^5\n-10^9 <= nums[i] <= 10^9",
         "topic": "Hashing",
         "pattern": "HashSet / Union-Find",
         "language": "python",
@@ -295,7 +435,7 @@
     },
     {
         "id": 1,
-        "question": "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.\n\nMerge nums1 and nums2 into a single array sorted in non-decreasing order.\n\nThe final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.\n\n\nExample 1:\n\nInput: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3\nOutput: [1,2,2,3,5,6]\nExplanation: The arrays we are merging are [1,2,3] and [2,5,6].\nThe result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.\nExample 2:\n\nInput: nums1 = [1], m = 1, nums2 = [], n = 0\nOutput: [1]\nExplanation: The arrays we are merging are [1] and [].\nThe result of the merge is [1].\nExample 3:\n\nInput: nums1 = [0], m = 0, nums2 = [1], n = 1\nOutput: [1]\nExplanation: The arrays we are merging are [] and [1].\nThe result of the merge is [1].\nNote that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.\n\n\nConstraints:\n\nnums1.length == m + n\nnums2.length == n\n0 <= m, n <= 200\n1 <= m + n <= 200\n-10^9 <= nums1[i], nums2[j] <= 10^9\n\n\nFollow up: Can you come up with an algorithm that runs in O(m + n) time?",
+        "question": "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n,\nrepresenting the number of elements in nums1 and nums2 respectively.\nMerge nums1 and nums2 into a single array sorted in non-decreasing order.\nThe final sorted array should not be returned by the function, but instead be stored inside the array nums1.\nTo accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that\nshould be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.\n\n\nExample 1:\nInput: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3\nOutput: [1,2,2,3,5,6]\nExplanation: The arrays we are merging are [1,2,3] and [2,5,6].\nThe result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.\n\nExample 2:\nInput: nums1 = [1], m = 1, nums2 = [], n = 0\nOutput: [1]\nExplanation: The arrays we are merging are [1] and [].\nThe result of the merge is [1].\n\nExample 3:\nInput: nums1 = [0], m = 0, nums2 = [1], n = 1\nOutput: [1]\nExplanation: The arrays we are merging are [] and [1].\nThe result of the merge is [1].\nNote that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.\n\nConstraints:\nnums1.length == m + n\nnums2.length == n\n0 <= m, n <= 200\n1 <= m + n <= 200\n-10^9 <= nums1[i], nums2[j] <= 10^9\n\nFollow up: Can you come up with an algorithm that runs in O(m + n) time?",
         "topic": "TwoPointers",
         "pattern": "Two Pointers",
         "language": "python",
@@ -323,7 +463,7 @@
     },
     {
         "id": 2,
-        "question": "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.\n\nNote that you must do this in-place without making a copy of the array.\n\n\nExample 1:\n\nInput: nums = [0,1,0,3,12]\nOutput: [1,3,12,0,0]\nExample 2:\n\nInput: nums = [0]\nOutput: [0]\n\n\nConstraints:\n\n1 <= nums.length <= 10^4\n-23^1 <= nums[i] <= 2^31 - 1\n\nFollow up: Could you minimize the total number of operations done?",
+        "question": "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.\n\nNote that you must do this in-place without making a copy of the array.\n\n\nExample 1:\nInput: nums = [0,1,0,3,12]\nOutput: [1,3,12,0,0]\n\nExample 2:\nInput: nums = [0]\nOutput: [0]\n\nConstraints:\n1 <= nums.length <= 10^4\n-23^1 <= nums[i] <= 2^31 - 1\n\nFollow up: Could you minimize the total number of operations done?",
         "topic": "TwoPointers",
         "pattern": "Two Pointers",
         "language": "python",
@@ -351,7 +491,7 @@
     },
     {
         "id": 3,
-        "question": "Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.\n\nConsider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:\n\nChange the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.\nReturn k.\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint val = ...; // Value to remove\nint[] expectedNums = [...]; // The expected answer with correct length.\n// It is sorted with no values equaling val.\n\nint k = removeElement(nums, val); // Calls your implementation\n\nassert k == expectedNums.length;\nsort(nums, 0, k); // Sort the first k elements of nums\nfor (int i = 0; i < actualLength; i++) {\nassert nums[i] == expectedNums[i];\n}\nIf all assertions pass, then your solution will be accepted.\n\n\nExample 1:\n\nInput: nums = [3,2,2,3], val = 3\nOutput: 2, nums = [2,2,_,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 2.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\nExample 2:\n\nInput: nums = [0,1,2,2,3,0,4,2], val = 2\nOutput: 5, nums = [0,1,4,0,3,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.\nNote that the five elements can be returned in any order.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n\nConstraints:\n\n0 <= nums.length <= 100\n0 <= nums[i] <= 50\n0 <= val <= 100",
+        "question": "Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed.\nThen return the number of elements in nums which are not equal to val.\n\nConsider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:\n\nChange the array nums such that the first k elements of nums contain the elements which are not equal to val. The\nremaining elements of nums are not important as well as the size of nums.\nReturn k.\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint val = ...; // Value to remove\nint[] expectedNums = [...]; // The expected answer with correct length.\n// It is sorted with no values equaling val.\n\nint k = removeElement(nums, val); // Calls your implementation\n\nassert k == expectedNums.length;\nsort(nums, 0, k); // Sort the first k elements of nums\nfor (int i = 0; i < actualLength; i++) {\nassert nums[i] == expectedNums[i];\n}\nIf all assertions pass, then your solution will be accepted.\n\nExample 1:\nInput: nums = [3,2,2,3], val = 3\nOutput: 2, nums = [2,2,_,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 2.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\nExample 2:\nInput: nums = [0,1,2,2,3,0,4,2], val = 2\nOutput: 5, nums = [0,1,4,0,3,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.\nNote that the five elements can be returned in any order.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\nConstraints:\n0 <= nums.length <= 100\n0 <= nums[i] <= 50\n0 <= val <= 100",
         "topic": "TwoPointers",
         "pattern": "Two Pointers",
         "language": "python",
@@ -379,7 +519,7 @@
     },
     {
         "id": 4,
-        "question": "Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.\n\nConsider the number of unique elements in nums to be k. After removing duplicates, return the number of unique elements k.\n\nThe first k elements of nums should contain the unique numbers in sorted order. The remaining elements beyond index k - 1 can be ignored.\n\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i < k; i++) {\nassert nums[i] == expectedNums[i];\n}\nIf all assertions pass, then your solution will be accepted.\n\n\nExample 1:\n\nInput: nums = [1,1,2]\nOutput: 2, nums = [1,2,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\nExample 2:\n\nInput: nums = [0,0,1,1,1,2,2,3,3,4]\nOutput: 5, nums = [0,1,2,3,4,_,_,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n\nConstraints:\n\n1 <= nums.length <= 3 * 10^4\n-100 <= nums[i] <= 100\nnums is sorted in non-decreasing order.",
+        "question": "Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once.\nThe relative order of the elements should be kept the same.\nConsider the number of unique elements in nums to be k. After removing duplicates, return the number of unique elements k.\n\nThe first k elements of nums should contain the unique numbers in sorted order. The remaining elements beyond index k - 1 can be ignored.\n\nCustom Judge:\nThe judge will test your solution with the following code:\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\nint k = removeDuplicates(nums); // Calls your implementation\nassert k == expectedNums.length;\nfor (int i = 0; i < k; i++) {\nassert nums[i] == expectedNums[i];\n}\nIf all assertions pass, then your solution will be accepted.\n\n\nExample 1:\nInput: nums = [1,1,2]\nOutput: 2, nums = [1,2,_]\nExplanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\nExample 2:\nInput: nums = [0,0,1,1,1,2,2,3,3,4]\nOutput: 5, nums = [0,1,2,3,4,_,_,_,_,_]\nExplanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\nConstraints:\n1 <= nums.length <= 3 * 10^4\n-100 <= nums[i] <= 100\nnums is sorted in non-decreasing order.",
         "topic": "TwoPointers",
         "pattern": "Two Pointers",
         "language": "python",
@@ -407,7 +547,7 @@
     },
     {
         "id": 5,
-        "question": "Given an integer array nums sorted in non-decreasing order, remove some duplicates in-place such that each unique element appears at most twice. The relative order of the elements should be kept the same.\n\nSince it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.\n\nReturn k after placing the final result in the first k slots of nums.\n\nDo not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.\n\nCustom Judge:\n\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i < k; i++) {\nassert nums[i] == expectedNums[i];\n}\nIf all assertions pass, then your solution will be accepted.\n\n\nExample 1:\n\nInput: nums = [1,1,1,2,2,3]\nOutput: 5, nums = [1,1,2,2,3,_]\nExplanation: Your function should return k = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\nExample 2:\n\nInput: nums = [0,0,1,1,1,1,2,3,3]\nOutput: 7, nums = [0,0,1,1,2,3,3,_,_]\nExplanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n\nConstraints:\n\n1 <= nums.length <= 3 * 10^4\n-10^4 <= nums[i] <= 10^4\nnums is sorted in non-decreasing order.",
+        "question": "Given an integer array nums sorted in non-decreasing order, remove some duplicates in-place\nsuch that each unique element appears at most twice. The relative order of the elements should be kept the same.\nSince it is impossible to change the length of the array in some languages, you must instead\nhave the result be placed in the first part of the array nums. More formally, if there are k\nelements after removing the duplicates, then the first k elements of nums should hold the final result.\nIt does not matter what you leave beyond the first k elements.\nReturn k after placing the final result in the first k slots of nums.\n\nDo not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.\n\nCustom Judge:\nThe judge will test your solution with the following code:\n\nint[] nums = [...]; // Input array\nint[] expectedNums = [...]; // The expected answer with correct length\n\nint k = removeDuplicates(nums); // Calls your implementation\n\nassert k == expectedNums.length;\nfor (int i = 0; i < k; i++) {\nassert nums[i] == expectedNums[i];\n}\nIf all assertions pass, then your solution will be accepted.\n\n\nExample 1:\nInput: nums = [1,1,1,2,2,3]\nOutput: 5, nums = [1,1,2,2,3,_]\nExplanation: Your function should return k = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\nExample 2:\nInput: nums = [0,0,1,1,1,1,2,3,3]\nOutput: 7, nums = [0,0,1,1,2,3,3,_,_]\nExplanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.\nIt does not matter what you leave beyond the returned k (hence they are underscores).\n\n\nConstraints:\n1 <= nums.length <= 3 * 10^4\n-10^4 <= nums[i] <= 10^4\nnums is sorted in non-decreasing order.",
         "topic": "TwoPointers",
         "pattern": "Two Pointers",
         "language": "python",
@@ -435,7 +575,7 @@
     },
     {
         "id": 6,
-        "question": "Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.\n\n\nExample 1:\n\nInput: nums = [-4,-1,0,3,10]\nOutput: [0,1,9,16,100]\nExplanation: After squaring, the array becomes [16,1,0,9,100].\nAfter sorting, it becomes [0,1,9,16,100].\nExample 2:\n\nInput: nums = [-7,-3,2,3,11]\nOutput: [4,9,9,49,121]\n\n\nConstraints:\n\n1 <= nums.length <= 10^4\n-10^4 <= nums[i] <= 10^4\nnums is sorted in non-decreasing order.\n\n\nFollow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?",
+        "question": "Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.\n\nExample 1:\nInput: nums = [-4,-1,0,3,10]\nOutput: [0,1,9,16,100]\nExplanation: After squaring, the array becomes [16,1,0,9,100].\nAfter sorting, it becomes [0,1,9,16,100].\n\nExample 2:\nInput: nums = [-7,-3,2,3,11]\nOutput: [4,9,9,49,121]\n\nConstraints:\n1 <= nums.length <= 10^4\n-10^4 <= nums[i] <= 10^4\nnums is sorted in non-decreasing order.\n\nFollow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?",
         "topic": "TwoPointers",
         "pattern": "Two Pointers",
         "language": "python",
@@ -463,7 +603,7 @@
     },
     {
         "id": 7,
-        "question": "Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.\n\n\nExample 1:\n\nInput: nums1 = [1,2,2,1], nums2 = [2,2]\nOutput: [2]\nExample 2:\n\nInput: nums1 = [4,9,5], nums2 = [9,4,9,8,4]\nOutput: [9,4]\nExplanation: [4,9] is also accepted.\n\n\nConstraints:\n\n1 <= nums1.length, nums2.length <= 1000\n0 <= nums1[i], nums2[i] <= 1000",
+        "question": "Given two integer arrays nums1 and nums2, return an array of their intersection.\nEach element in the result must be unique and you may return the result in any order.\n\nExample 1:\nInput: nums1 = [1,2,2,1], nums2 = [2,2]\nOutput: [2]\n\nExample 2:\nInput: nums1 = [4,9,5], nums2 = [9,4,9,8,4]\nOutput: [9,4]\nExplanation: [4,9] is also accepted.\n\nConstraints:\n1 <= nums1.length, nums2.length <= 1000\n0 <= nums1[i], nums2[i] <= 1000",
         "topic": "TwoPointers",
         "pattern": "Two Pointers",
         "language": "python",
@@ -498,7 +638,7 @@
     },
     {
         "id": 8,
-        "question": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.\n\nGiven a string s, return true if it is a palindrome, or false otherwise.\n\n\nExample 1:\n\nInput: s = \"A man, a plan, a canal: Panama\"\nOutput: true\nExplanation: \"amanaplanacanalpanama\" is a palindrome.\nExample 2:\n\nInput: s = \"race a car\"\nOutput: false\nExplanation: \"raceacar\" is not a palindrome.\nExample 3:\n\nInput: s = \" \"\nOutput: true\nExplanation: s is an empty string \"\" after removing non-alphanumeric characters.\nSince an empty string reads the same forward and backward, it is a palindrome.",
+        "question": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and\nremoving all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.\nGiven a string s, return true if it is a palindrome, or false otherwise.\n\n\nExample 1:\nInput: s = \"A man, a plan, a canal: Panama\"\nOutput: true\nExplanation: \"amanaplanacanalpanama\" is a palindrome.\n\nExample 2:\nInput: s = \"race a car\"\nOutput: false\nExplanation: \"raceacar\" is not a palindrome.\n\nExample 3:\nInput: s = \" \"\nOutput: true\nExplanation: s is an empty string \"\" after removing non-alphanumeric characters.\nSince an empty string reads the same forward and backward, it is a palindrome.",
         "topic": "TwoPointers",
         "pattern": "Two Pointers",
         "language": "python",
@@ -526,7 +666,7 @@
     },
     {
         "id": 9,
-        "question": "Given two strings s and t, return true if s is a subsequence of t, or false otherwise.\nA subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., \"ace\" is a subsequence of \"abcde\" while \"aec\" is not).\n\nExample 1:\n\nInput: s = \"abc\", t = \"ahbgdc\"\nOutput: true\nExample 2:\n\nInput: s = \"axc\", t = \"ahbgdc\"\nOutput: false\n\n\nConstraints:\n0 <= s.length <= 100\n0 <= t.length <= 10^4\ns and t consist only of lowercase English letters.\n\nFollow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 109,\nand you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?",
+        "question": "Given two strings s and t, return true if s is a subsequence of t, or false otherwise.\nA subsequence of a string is a new string that is formed from the original string by deleting\nsome (can be none) of the characters without disturbing the relative positions of the\nremaining characters. (i.e., \"ace\" is a subsequence of \"abcde\" while \"aec\" is not).\n\nExample 1:\nInput: s = \"abc\", t = \"ahbgdc\"\nOutput: true\n\nExample 2:\nInput: s = \"axc\", t = \"ahbgdc\"\nOutput: false\n\nConstraints:\n0 <= s.length <= 100\n0 <= t.length <= 10^4\ns and t consist only of lowercase English letters.\n\nFollow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 109,\nand you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?",
         "topic": "TwoPointers",
         "pattern": "Two Pointers",
         "language": "python",
@@ -554,7 +694,7 @@
     },
     {
         "id": 10,
-        "question": "Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.\n\nReturn the indices of the two numbers, index1 and index2, added by one as an integer array [index1, index2] of length 2.\n\nThe tests are generated such that there is exactly one solution. You may not use the same element twice.\n\nYour solution must use only constant extra space.\n\n\nExample 1:\n\nInput: numbers = [2,7,11,15], target = 9\nOutput: [1,2]\nExplanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].\nExample 2:\n\nInput: numbers = [2,3,4], target = 6\nOutput: [1,3]\nExplanation: The sum of 2 and 4 is 6. Therefore index1 = 1, index2 = 3. We return [1, 3].\nExample 3:\n\nInput: numbers = [-1,0], target = -1\nOutput: [1,2]\nExplanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].\n\n\nConstraints:\n\n2 <= numbers.length <= 3 * 10^4\n-1000 <= numbers[i] <= 1000\nnumbers is sorted in non-decreasing order.\n-1000 <= target <= 1000\nThe tests are generated such that there is exactly one solution.",
+        "question": "Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.\n\nReturn the indices of the two numbers, index1 and index2, added by one as an integer array [index1, index2] of length 2.\n\nThe tests are generated such that there is exactly one solution. You may not use the same element twice.\n\nYour solution must use only constant extra space.\n\nExample 1:\nInput: numbers = [2,7,11,15], target = 9\nOutput: [1,2]\nExplanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].\n\nExample 2:\nInput: numbers = [2,3,4], target = 6\nOutput: [1,3]\nExplanation: The sum of 2 and 4 is 6. Therefore index1 = 1, index2 = 3. We return [1, 3].\n\nExample 3:\nInput: numbers = [-1,0], target = -1\nOutput: [1,2]\nExplanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].\n\nConstraints:\n2 <= numbers.length <= 3 * 10^4\n-1000 <= numbers[i] <= 1000\nnumbers is sorted in non-decreasing order.\n-1000 <= target <= 1000\nThe tests are generated such that there is exactly one solution.",
         "topic": "TwoPointers",
         "pattern": "Two Pointers",
         "language": "python",
@@ -575,7 +715,7 @@
     },
     {
         "id": 11,
-        "question": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.\n\n\nExample 1:\n\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation:\nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\nExample 2:\n\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\nExample 3:\n\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\n\nConstraints:\n\n3 <= nums.length <= 3000\n-10^5 <= nums[i] <= 10^5",
+        "question": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such\nthat i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\nNotice that the solution set must not contain duplicate triplets.\n\n\nExample 1:\nInput: nums = [-1,0,1,2,-1,-4]\nOutput: [[-1,-1,2],[-1,0,1]]\nExplanation:\nnums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.\nnums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.\nnums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.\nThe distinct triplets are [-1,0,1] and [-1,-1,2].\nNotice that the order of the output and the order of the triplets does not matter.\n\nExample 2:\nInput: nums = [0,1,1]\nOutput: []\nExplanation: The only possible triplet does not sum up to 0.\n\nExample 3:\nInput: nums = [0,0,0]\nOutput: [[0,0,0]]\nExplanation: The only possible triplet sums up to 0.\n\nConstraints:\n3 <= nums.length <= 3000\n-10^5 <= nums[i] <= 10^5",
         "topic": "TwoPointers",
         "pattern": "TwoPointers after Sorting",
         "language": "python",
@@ -610,7 +750,7 @@
     },
     {
         "id": 12,
-        "question": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).\n\nFind two lines that together with the x-axis form a container, such that the container contains the most water.\n\nReturn the maximum amount of water a container can store.\n\nNotice that you may not slant the container.\n\n\nExample 1:\n\n\nInput: height = [1,8,6,2,5,4,8,3,7]\nOutput: 49\nExplanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.\nExample 2:\n\nInput: height = [1,1]\nOutput: 1\n\n\nConstraints:\n\nn == height.length\n2 <= n <= 10^5\n0 <= height[i] <= 10^4",
+        "question": "You are given an integer array height of length n. There are n vertical lines drawn such that the\ntwo endpoints of the ith line are (i, 0) and (i, height[i]).\nFind two lines that together with the x-axis form a container, such that the container contains the most water.\nReturn the maximum amount of water a container can store.\nNotice that you may not slant the container.\n\n\nExample 1:\nInput: height = [1,8,6,2,5,4,8,3,7]\nOutput: 49\nExplanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7].\nIn this case, the max area of water (blue section) the container can contain is 49.\n\nExample 2:\nInput: height = [1,1]\nOutput: 1\n\n\nConstraints:\nn == height.length\n2 <= n <= 10^5\n0 <= height[i] <= 10^4",
         "topic": "TwoPointers",
         "pattern": "TwoPointers / Greedy",
         "language": "python",
