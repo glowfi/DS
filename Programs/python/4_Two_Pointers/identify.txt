@@ -1,6 +1,6 @@
 Applicable only on linear data structure array,string,linked list
 + Sorted array and a target condition
 + Comparing or merging two sequences
++ Partition or rearrange in-place
 + Detecting speeds or cycles
 + Subarray or substring with certain property
-+ Partition or rearrange in-place

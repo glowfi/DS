@@ -1,6 +1,167 @@
 [
     {
         "id": 1,
+        "question": "Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.\n\nExample 1:\nInput: nums = [1,2,3,4,5,6,7], k = 3\nOutput: [5,6,7,1,2,3,4]\nExplanation:\nrotate 1 steps to the right: [7,1,2,3,4,5,6]\nrotate 2 steps to the right: [6,7,1,2,3,4,5]\nrotate 3 steps to the right: [5,6,7,1,2,3,4]\n\nExample 2:\nInput: nums = [-1,-100,3,99], k = 2\nOutput: [3,99,-1,-100]\nExplanation:\nrotate 1 steps to the right: [99,-1,-100,3]\nrotate 2 steps to the right: [3,99,-1,-100]\n\n\nConstraints:\n1 <= nums.length <= 10^5\n-2^31 <= nums[i] <= 2^31 - 1\n0 <= k <= 10^5\n\n\nFollow up:\nTry to come up with as many solutions as you can. There are at least three different ways to solve this problem.\nCould you do it in-place with O(1) extra space?",
+        "topic": "Array",
+        "pattern": "Reverse / Cyclic Shift",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Rotate Array",
+        "problem_link": "https://leetcode.com/problems/rotate-array",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/1_Array/1_Rotate_Array.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n*k)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Right rotate the array k times",
+                "code": "from typing import List\n\n\nclass Solution:\n    def rotate(self, nums: List[int], k: int) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n        for _ in range(k):\n            for j in range(len(nums) - 1, 0, -1):\n                nums[j], nums[j - 1] = nums[j - 1], nums[j]",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)+O(n)+O(n) ~ O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "Reverse the entire array\nReverse the array from 0 to k-1\nReverse the array from k to n-1",
+                "code": "from typing import List\n\n\nclass Solution:\n    def rev_array(self, i: int, j: int, ls: list[int]):\n        while i < j:\n            ls[i], ls[j] = ls[j], ls[i]\n            i += 1\n            j -= 1\n\n    def rotate(self, nums: List[int], k: int) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n        n = len(nums)\n        k = k % n\n\n        self.rev_array(0, n - 1, nums)\n        self.rev_array(0, k - 1, nums)\n        self.rev_array(k, n - 1, nums)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "Given an array nums of size n, return the majority element.\nThe majority element is the element that appears more than \u230an / 2\u230b times. You may assume that the majority element always exists in the array.\n\n\nExample 1:\nInput: nums = [3,2,3]\nOutput: 3\n\nExample 2:\nInput: nums = [2,2,1,1,1,2,2]\nOutput: 2\n\n\nConstraints:\nn == nums.length\n1 <= n <= 5 * 10^4\n-10^9 <= nums[i] <= 10^9\n\nFollow-up: Could you solve the problem in linear time and in O(1) space?",
+        "topic": "Array",
+        "pattern": "Boyer\u2013Moore Majority Vote Algorithm",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Majority Element",
+        "problem_link": "https://leetcode.com/problems/majority-element",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/1_Array/2_Majority_Element.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(1)",
+                "intuition": "For each element try to find out the number of times it occur If its count is greater than n/2 , then its the majority element",
+                "code": "from typing import List\n\n\nclass Solution:\n    def majorityElement(self, nums: List[int]) -> int:\n        major_element = -1\n        n = len(nums)\n\n        for i in range(len(nums)):\n            c = 1\n            for j in range(len(nums)):\n                if i == j:\n                    continue\n\n                if nums[i] == nums[j]:\n                    c += 1\n\n            if c > n // 2:\n                major_element = nums[i]\n\n        return major_element",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Store the frequency of each number in a hashmap Identify the number with frequency more than n//2 Number with frequency n//2 is the majority element",
+                "code": "from typing import List\nfrom collections import defaultdict\n\n\nclass Solution:\n    def majorityElement(self, nums: List[int]) -> int:\n        freq_map = defaultdict(int)\n\n        for num in nums:\n            freq_map[num] += 1\n\n        major_element = -1\n        n = len(nums)\n        for num, val in freq_map.items():\n            if val > n // 2:\n                return num\n\n        return major_element",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "We can observe something suppose we have an array of size n=6.\nFor being majority element an element must occure atleast more\nthan floor(n/2) i.e. say atleast 4 times.\nExample array: [1,1,1,1,2,2] . Here 4 is the majority element.\nSimilary if we are supposed to fina an element occuring more\nthan floor(n/3) then it must appear atleast 3 times.\nExample array: [1,1,1,2,2,2] . Here 1,2 are the majority element.\nSo it is clear the max majority element we can have for n is k-1:\nn/2 -> 1\nn/3 -> 2\nn/4 -> 3\nThe intuition to solve this problem is to think of a cancelling\nmechanism,if we take the array [1,1,1,1,2,2] and suppose we were\naksed to find element occuring more than floor(n/2), what we can\ndo is that think like this if \"1\" gets 4 votes and \"2\" gets 2 votes\nthen 2 votes of \"1\" gets cancelled by 2 votes of \"2\".So \"1\" is in\nmajority by 2.\nWe start by assuming the first element is the major element\nwe maintain the count of current majority element\nif we encounter a different element we reduce the count\nif the count becomes zero then the current element becomes majority with count reset\nto 1",
+                "code": "from typing import List\n\n\nclass Solution:\n    def majorityElement(self, nums: List[int]) -> int:\n        c = 0\n        major_element = None\n\n        for i in range(len(nums)):\n            if c == 0:\n                c = 1\n                major_element = nums[i]\n            elif nums[i] == major_element:\n                c += 1\n            elif nums[i] != major_element:\n                c -= 1\n\n        return major_element",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "Given an integer array of size n, find all elements that appear more than \u230a n/3 \u230b times.\n\nExample 1:\nInput: nums = [3,2,3]\nOutput: [3]\n\nExample 2:\nInput: nums = [1]\nOutput: [1]\n\nExample 3:\nInput: nums = [1,2]\nOutput: [1,2]\n\n\nConstraints:\n1 <= nums.length <= 5 * 10^4\n-10^9 <= nums[i] <= 10^9",
+        "topic": "Array",
+        "pattern": "Boyer\u2013Moore Majority Vote Algorithm",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Majority Element II",
+        "problem_link": "https://leetcode.com/problems/majority-element-ii",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/1_Array/3_Majority_Element_II.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Store the frequency of each number in a hashmap Identify the number with frequency more than n//3 Numbers with frequency n//3 is the majority element",
+                "code": "from typing import List\nfrom collections import defaultdict\n\n\nclass Solution:\n    def majorityElement(self, nums: List[int]) -> List[int]:\n        freq_map = defaultdict(int)\n\n        for num in nums:\n            freq_map[num] += 1\n\n        ans = []\n\n        for num, freq in freq_map.items():\n            if freq > len(nums) // 3:\n                ans.append(num)\n\n        return ans",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "We can observe something suppose we have an array of size n=6.\nFor being majority element an element must occure atleast more\nthan floor(n/2) i.e. say atleast 4 times.\nExample array: [1,1,1,1,2,2] . Here 4 is the majority element.\nSimilary if we are supposed to fina an element occuring more\nthan floor(n/3) then it must appear atleast 3 times.\nExample array: [1,1,1,2,2,2] . Here 1,2 are the majority element.\nSo it is clear the max majority element we can have for n is k-1:\nn/2 -> 1\nn/3 -> 2\nn/4 -> 3\nThe intuition to solve this problem is to think of a cancelling\nmechanism,if we take the array [1,1,1,1,2,2] and suppose we were\naksed to find element occuring more than floor(n/3), what we can\ndo is that think like this if \"1\" gets 4 votes and \"2\" gets 2 votes\nthen 2 votes of \"1\" gets cancelled by 2 votes of \"2\".So \"1\" is in\nmajority by 2.\nSince there can be atmose 0,1 or 2 elements\nTake this example:\nn=10\n-------  -------\n[_ _ _  _ _ _  _ _ _  _ ]\n<n/3>  <n/3>   <n/3>\nNo space to accomodate another array elements.\nWe start by assuming there are 2 majority elements.\nwe maintain the count of current majority elements\nif we encounter a different element we reduce the count\nif the count becomes zero then the current element becomes majority with count reset\nto 1\nAfter all this we do verify if it appears more than floor(n/3) times",
+                "code": "from typing import List\n\n\nclass Solution:\n    def majorityElement(self, nums: List[int]) -> List[int]:\n        c1 = 0\n        major_element1 = None\n\n        c2 = 0\n        major_element2 = None\n\n        for i in range(len(nums)):\n            if nums[i] == major_element1:\n                c1 += 1\n            elif nums[i] == major_element2:\n                c2 += 1\n            elif c1 == 0:  # this must be done after\n                major_element1 = nums[i]\n                c1 = 1\n            elif c2 == 0:  # this must be done after\n                major_element2 = nums[i]\n                c2 = 1\n            else:\n                c1 -= 1\n                c2 -= 1\n\n        # Verification\n        ans = []\n        c1, c2 = 0, 0\n        n = len(nums)\n        for i in range(len(nums)):\n            if nums[i] == major_element1:\n                c1 += 1\n            if nums[i] == major_element2:\n                c2 += 1\n\n        if c1 > n // 3:\n            ans.append(major_element1)\n        if c2 > n // 3:\n            ans.append(major_element2)\n\n        return ans",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Given an integer array nums and an integer k, return the kth largest element in the array.\nNote that it is the kth largest element in the sorted order, not the kth distinct element.\nCan you solve it without sorting?\n\nExample 1:\nInput: nums = [3,2,1,5,6,4], k = 2\nOutput: 5\n\nExample 2:\nInput: nums = [3,2,3,1,2,4,5,5,6], k = 4\nOutput: 4\n\n\nConstraints:\n1 <= k <= nums.length <= 10^5\n-10^4 <= nums[i] <= 10^4",
+        "topic": "Array",
+        "pattern": "Heap / QuickSelect",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Kth Largest Element in an Array",
+        "problem_link": "https://leetcode.com/problems/kth-largest-element-in-an-array",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/1_Array/4_Kth_Largest_Element_in_an_Array.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(nlog(n))",
+                "sc": "S.C  - O(n)",
+                "intuition": "Sort the array in descending and return the kth element from first",
+                "code": "from typing import List\n\n\nclass Solution:\n    def findKthLargest(self, nums: List[int], k: int) -> int:\n        return sorted(nums, reverse=True)[k - 1]",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(nlog(k))",
+                "sc": "S.C  - O(k)",
+                "intuition": "Use a Min heap and keep maintaining a min heap of size k atlast at top will be your kth largest element",
+                "code": "from typing import List\nimport heapq\n\n\nclass Solution:\n    def findKthLargest(self, nums: List[int], k: int) -> int:\n        min_heap: list[int] = []\n\n        for i in range(len(nums)):\n            elem = nums[i]\n            heapq.heappush(min_heap, elem)\n            if len(min_heap) > k:\n                heapq.heappop(min_heap)\n\n        return min_heap[0]",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "We are going to use the quick select algo\nIn this algo we choose a pivot as first number\nThen we try to place all the numbers greater than\npivot at left and all smaller at right.We try to\nmimic a descending order sort.\nThe get pivot algo work as below:\n+ place two pointers at given l and r range\n+ only swap numbers at index l and r if they are not in correct place\n+ move i, j if nums[i]>=pivot or nums[j]<=pivot\natlast we just need to swap the jth and lth index\nYou will see by swapping the jth and lth index\nautmatically all the elements greater than pivot\ngets placed to left and smaller to left\nas the jth index will become pivot now",
+                "code": "from typing import List\n\n\nclass Solution:\n    def get_pivot(self, l, r, nums: List[int]) -> int:\n        i, j = l + 1, r\n        p = nums[l]\n\n        while i <= j:\n            if nums[i] < p and nums[j] > p:\n                nums[i], nums[j] = nums[j], nums[i]\n                i += 1\n                j -= 1\n\n            if nums[i] >= p:\n                i += 1\n\n            if nums[j] <= p:\n                j -= 1\n\n        nums[l], nums[j] = nums[j], nums[l]\n        return j\n\n    def findKthLargest(self, nums: List[int], k: int) -> int:\n        l = 0\n        r = len(nums) - 1\n        pivot_index = -1\n\n        while True:\n            pivot_index = self.get_pivot(l, r, nums)\n            if pivot_index == k - 1:\n                break\n            elif pivot_index > k - 1:\n                r = pivot_index - 1\n            else:\n                l = pivot_index + 1\n\n        return nums[pivot_index]",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper, return the researcher's h-index.\nAccording to the definition of h-index on Wikipedia: The h-index is defined as the maximum value of h such that the given researcher has published at least h papers that have each been cited at least h times.\n\nExample 1:\nInput: citations = [3,0,6,1,5]\nOutput: 3\nExplanation: [3,0,6,1,5] means the researcher has 5 papers in total and each of them had received 3, 0, 6, 1, 5 citations respectively.\nSince the researcher has 3 papers with at least 3 citations each and the remaining two with no more than 3 citations each, their h-index is 3.\n\nExample 2:\nInput: citations = [1,3,1]\nOutput: 1",
+        "topic": "Array",
+        "pattern": "Counting Sort",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "H Index",
+        "problem_link": "https://leetcode.com/problems/h-index",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/1_Array/5_H_Index.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(max(citations)*n)+O(nlog(n))",
+                "sc": "S.C  - O(1)",
+                "intuition": "For all possible values of citations check whether we can find alteast x papers with x no of citations",
+                "code": "from typing import List\n\n\nclass Solution:\n    def hasAtleast_H_Paper_With_H_Citation(self, h: int, citations: List[int]):\n        paper_with_h_citations = 0\n        for citation_val in citations:\n            if citation_val >= h:\n                paper_with_h_citations += 1\n\n        return True if paper_with_h_citations >= h else False\n\n    def hIndex(self, citations: List[int]) -> int:\n        h_idx = 0\n        citations.sort()\n\n        for h_index in range(max(citations) + 1):\n            if self.hasAtleast_H_Paper_With_H_Citation(h_index, citations):\n                h_idx = h_index\n\n        return h_idx",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(nlog(n))",
+                "sc": "S.C  - O(1)",
+                "intuition": "We are going to do a binary search in the range of 1 and max value of citaion if for current value of h_index we are able to find h paper with h citations we are going to go towards right otherwise to the left",
+                "code": "from typing import List\n\n\nclass Solution:\n    def hasAtleast_H_Paper_With_H_Citation(self, h: int, citations: List[int]):\n        paper_with_h_citations = 0\n        for citation_val in citations:\n            if citation_val >= h:\n                paper_with_h_citations += 1\n\n        return True if paper_with_h_citations >= h else False\n\n    def hIndex(self, citations: List[int]) -> int:\n        h_idx = 0\n        citations.sort()\n        st, en = 0, max(citations) + 1\n\n        while st <= en:\n            mid = (st + en) // 2\n\n            if self.hasAtleast_H_Paper_With_H_Citation(mid, citations):\n                h_idx = mid\n                st = mid + 1\n            else:\n                en = mid - 1\n\n        return h_idx",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "We are going to follow a counting sort appraoch\nWe are going to initialize a count array of size n+1\nIn that count array we are going to store how many\ntimes ith citations value has occured\nRememeber the count array stores the paper count with\nexactly i as the h-index not how many papers with atlest h-index\nThen we are going to traverse back from the array and maintain\npaper count we have seen so far. For every index we are going to\nask one question does we have atleast h paper with h citation\nif yes we return the first value we get",
+                "code": "from typing import List\n\n\nclass Solution:\n    def hIndex(self, citations: List[int]) -> int:\n        n = len(citations)\n        # count[i] = how many papers have exactly i citations (i from 0..n)\n        count = [0] * (n + 1)\n\n        for c in citations:\n            # citations larger than n are capped at n\n            count[min(c, n)] += 1\n\n        paper = 0  # number of papers with citations >= current i\n        for i in range(n, -1, -1):\n            paper += count[i]  # add papers that have i citations\n            if paper >= i:  # H\u2011index condition satisfied\n                return i\n        return 0",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 1,
         "question": "Given an m x n matrix, return all elements of the matrix in spiral order.\n\nExample 1:\nInput: matrix = [[1,2,3],[4,5,6],[7,8,9]]\nOutput: [1,2,3,6,9,8,7,4,5]\n\nExample 2:\nInput: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]\nOutput: [1,2,3,4,8,12,11,10,9,5,6,7]\n\nConstraints:\nm == matrix.length\nn == matrix[i].length\n1 <= m, n <= 10\n-100 <= matrix[i][j] <= 100",
         "topic": "Matrix",
         "pattern": "Simulation / Direction Vectors",
@@ -429,6 +590,27 @@
                 "sc": "S.C  - O(n)",
                 "intuition": "The answer lies in visualization\nconsider the below array\n100 4 200 1 3 2\n\n1 2 3 4     100        200\n---------------------------\n\nconvert the given array to set\nstarting values of the sequence does not have left neightbour\nso whenever we find an element which does not have left neightbour\nwe will start a while loop incrementing it by 1 and check if that\nnumber exists and keep on building the sequence and atlast we can\ncheck if its the max length till now or not",
                 "code": "from typing import List\n\n\nclass Solution:\n    def longestConsecutive(self, nums: List[int]) -> int:\n        numSet = set(nums)\n        longest = 0\n\n        for num in numSet:\n            if (num - 1) not in numSet:\n                length = 1\n                while (num + length) in numSet:\n                    length += 1\n                longest = max(length, longest)\n        return longest",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "question": "Implement the RandomizedSet class:\n\nRandomizedSet() Initializes the RandomizedSet object.\nbool insert(int val) Inserts an item val into the set if not present. Returns true if the item was not present, false otherwise.\nbool remove(int val) Removes an item val from the set if present. Returns true if the item was present, false otherwise.\nint getRandom() Returns a random element from the current set of elements (it's guaranteed that at least one\nelement exists when this method is called). Each element must have the same probability of being returned.\nYou must implement the functions of the class such that each function works in average O(1) time complexity.\n\nExample 1:\nInput\n[\"RandomizedSet\", \"insert\", \"remove\", \"insert\", \"getRandom\", \"remove\", \"insert\", \"getRandom\"]\n[[], [1], [2], [2], [], [1], [2], []]\nOutput\n[null, true, false, true, 2, true, false, 2]\n\nExplanation\nRandomizedSet randomizedSet = new RandomizedSet();\nrandomizedSet.insert(1); // Inserts 1 to the set. Returns true as 1 was inserted successfully.\nrandomizedSet.remove(2); // Returns false as 2 does not exist in the set.\nrandomizedSet.insert(2); // Inserts 2 to the set, returns true. Set now contains [1,2].\nrandomizedSet.getRandom(); // getRandom() should return either 1 or 2 randomly.\nrandomizedSet.remove(1); // Removes 1 from the set, returns true. Set now contains [2].\nrandomizedSet.insert(2); // 2 was already in the set, so return false.\nrandomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.\n\n\nConstraints:\n\n-2^31 <= val <= 2^31 - 1\nAt most 2 * 105 calls will be made to insert, remove, and getRandom.\nThere will be at least one element in the data structure when getRandom is called.",
+        "topic": "Hashing",
+        "pattern": "HashMap / Set",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Insert Delete GetRandom O(1)",
+        "problem_link": "https://leetcode.com/problems/insert-delete-getrandom-o1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/3_Hashing/12_Insert_Delete_GetRandom_O(1).py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(1)",
+                "sc": "S.C  - O(n)+O(n) ~ O(n)",
+                "intuition": "Use a map and store the val,index pair in it\nUse an array to store elements\nUse an index to track last inserted element index\n+ Every time a get request come return true if not found otherwise false by doing a lookup in map\n+ Every time a remove request come return false if\nfound and find the index of element to be deleted from the map\nand swap it with element at last index\nAlso update the index of the last element\nAlso remove the entry from map and list\nnot found otherwise true\n+ Every time getRandom request comes use random.choice library over the stored array",
+                "code": "import random\nfrom typing import Dict, List\n\n\nclass RandomizedSet:\n    def __init__(self) -> None:\n        self.mp: Dict[int, int] = {}\n        self.arr: List[int] = []\n\n    def insert(self, val: int) -> bool:\n        if val in self.mp:\n            return False\n        self.mp[val] = len(self.arr)\n        self.arr.append(val)\n        return True\n\n    def remove(self, val: int) -> bool:\n        if val not in self.mp:\n            return False\n\n        # Index of element to delete and index of last element\n        idx_to_delete = self.mp[val]\n        last_idx = len(self.arr) - 1\n        last_val = self.arr[last_idx]\n\n        # Move last element into the spot of the element to delete\n        self.arr[idx_to_delete], self.arr[last_idx] = (\n            self.arr[last_idx],\n            self.arr[idx_to_delete],\n        )\n        self.mp[last_val] = idx_to_delete\n\n        # Remove the last element from the list and delete the map entry\n        self.arr.pop(-1)\n        del self.mp[val]\n\n        return True\n\n    def getRandom(self) -> int:\n        return random.choice(self.arr)",
                 "type": "Optimal"
             }
         ]
