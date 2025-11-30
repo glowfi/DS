@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>DSA Tracker</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+              rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+    </head>
+    <body class="p-4">
+        <div class="container">
+            <h1>DSA Tracker</h1>
+            <p class="text-muted">Add topics, add questions, track completion, reorder topics, and import/export.</p>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for cat, msg in messages %}<div class="alert alert-{{ cat }} mt-2">{{ msg }}</div>{% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <h4>Add Topic</h4>
+                    <form method="post" action="{{ url_for("add_topic") }}">
+                        <div class="mb-2">
+                            <input name="name" class="form-control" placeholder="Topic name" />
+                        </div>
+                        <button class="btn btn-primary btn-sm">Add Topic</button>
+                    </form>
+                    <hr />
+                    <h4>Import</h4>
+                    <form method="post"
+                          action="{{ url_for("import_file") }}"
+                          enctype="multipart/form-data">
+                        <input type="file" name="file" class="form-control mb-2" />
+                        <button class="btn btn-secondary btn-sm">Upload</button>
+                    </form>
+                    <hr />
+                    <h4>Export</h4>
+                    <a href="{{ url_for('export', fmt='json') }}"
+                       class="btn btn-outline-secondary btn-sm">Download JSON</a>
+                    <a href="{{ url_for('export', fmt='csv') }}"
+                       class="btn btn-outline-secondary btn-sm">Download CSV</a>
+                    <a href="{{ url_for('export', fmt='excel') }}"
+                       class="btn btn-outline-secondary btn-sm">Download Excel</a>
+                </div>
+                <div class="col-md-8">
+                    <!-- Collapse / Expand all controls -->
+                    <div class="mb-3">
+                        <button id="expand-all" class="btn btn-outline-primary btn-sm me-2">Expand all</button>
+                        <button id="collapse-all" class="btn btn-outline-secondary btn-sm">Collapse all</button>
+                        <h4 class="my-3 d-flex align-items-center">
+                            Total Questions
+                            <span class="badge bg-success ms-2">{{ total_questions }}</span>
+                            <!-- Global left badge – note the id -->
+                            <span class="ms-auto text-muted" id="global-left-badge">{{ global_left }} left</span>
+                        </h4>
+                    </div>
+                    <!-- Batch Topic Actions -->
+                    <div class="mb-3 d-flex align-items-center">
+                        <!-- Select all topics checkbox -->
+                        <div class="form-check me-2">
+                            <input type="checkbox" id="select-all-topics" class="form-check-input" />
+                            <label class="form-check-label" for="select-all-topics">Select All Topics</label>
+                        </div>
+                        <!-- Delete button -->
+                        <button id="delete-selected-topics" class="btn btn-danger btn-sm">Delete Selected Topics</button>
+                    </div>
+                    <div class="mb-2">
+                        <button id="delete-selected-questions" class="btn btn-danger btn-sm">Delete Selected Questions</button>
+                        <select id="move-selected-questions"
+                                class="form-select form-select-sm d-inline w-auto">
+                            <option value="">Move to...</option>
+                            {% for t in topics_with_q %}<option value="{{ t[0].id }}">{{ t[0].name }}</option>{% endfor %}
+                        </select>
+                    </div>
+                    <!-- Accordion container -->
+                    <div class="accordion" id="topics-accordion">
+                        {% for t, qs, completed, total in topics_with_q %}
+                            <div class="accordion-item" data-id="{{ t.id }}">
+                                <div class="d-flex align-items-center mb-1">
+                                    <!-- Topic batch select checkbox -->
+                                    <input type="checkbox" class="topic-batch-select me-2" data-id="{{ t.id }}" />
+                                    <h2 class="accordion-header flex-grow-1" id="heading-{{ t.id }}">
+                                        <button class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse-{{ t.id }}"
+                                                aria-expanded="false"
+                                                aria-controls="collapse-{{ t.id }}">
+                                            <strong>{{ t.name }}</strong>
+                                            <span class="badge bg-primary ms-2">{{ qs|length }}</span>
+                                        </button>
+                                    </h2>
+                                    <!-- Rename button (placed right after the header) -->
+                                    <button class="btn btn-sm btn-outline-secondary ms-2 rename-topic-btn"
+                                            data-id="{{ t.id }}"
+                                            data-name="{{ t.name }}">Rename</button>
+                                </div>
+                                <div id="status-{{ t.id }}" class="text-end">
+                                    <small class="text-muted">{{ completed }} / {{ total }} completed ({{ total - completed }} left)</small>
+                                </div>
+                                <div id="collapse-{{ t.id }}"
+                                     class="accordion-collapse collapse"
+                                     aria-labelledby="heading-{{ t.id }}"
+                                     data-bs-parent="#topics-accordion">
+                                    <div class="accordion-body">
+                                        <!-- Add question form -->
+                                        <form class="row g-2 mb-3"
+                                              method="post"
+                                              action="{{ url_for("add_question") }}">
+                                            <input type="hidden" name="topic_id" value="{{ t.id }}" />
+                                            <div class="col-sm-5">
+                                                <input name="problem"
+                                                       class="form-control form-control-sm"
+                                                       placeholder="Problem title" />
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <input name="link"
+                                                       class="form-control form-control-sm"
+                                                       placeholder="Question Link" />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input name="pattern"
+                                                       class="form-control form-control-sm"
+                                                       placeholder="Pattern" />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <button class="btn btn-success btn-sm w-100">Add</button>
+                                            </div>
+                                        </form>
+                                        <!-- Questions table -->
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <input type="checkbox"
+                                                               class="select-all-questions"
+                                                               data-topic-id="{{ t.id }}" />
+                                                        Batch
+                                                    </th>
+                                                    <th>Done</th>
+                                                    <th>Problem</th>
+                                                    <th>Pattern</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <!-- NEW: sortable wrapper -->
+                                            <tbody id="questions-{{ t.id }}">
+                                                {% for q in qs %}
+                                                    <tr data-id="{{ q.id }}">
+                                                        <td>
+                                                            <input type="checkbox" class="q-batch-select" data-id="{{ q.id }}" />
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox"
+                                                                   class="q-toggle"
+                                                                   data-id="{{ q.id }}"
+                                                                   {% if q.completed %}checked{% endif %} />
+                                                        </td>
+                                                        <td>
+                                                            <span class="editable-problem" data-id="{{ q.id }}">{{ q.problem }}</span>
+                                                            <button class="btn btn-sm btn-outline-secondary copy-btn"
+                                                                    data-id="{{ q.id }}"
+                                                                    title="Copy problem">📋</button>
+                                                            <p>
+                                                                <a class="link-opacity-100 question-link"
+                                                                   href="{{ q.question_link }}"
+                                                                   target="_blank">Solve</a>
+                                                            </p>
+                                                        </td>
+                                                        <td>
+                                                            <span class="editable-pattern badge bg-secondary rounded-pill"
+                                                                  data-id="{{ q.id }}">{{ q.pattern }}</span>
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-sm btn-outline-primary edit-btn" data-id="{{ q.id }}">Edit</button>
+                                                            <button class="btn btn-sm btn-outline-danger delete-btn" data-id="{{ q.id }}">Delete</button>
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <!-- End accordion -->
+                </div>
+            </div>
+        </div>
+        <!-- Edit Question Modal -->
+        <div class="modal fade"
+             id="editQuestionModal"
+             tabindex="-1"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <form id="editQuestionForm" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Question</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="q_id" id="edit-q-id" />
+                        <div class="mb-2">
+                            <label>Problem</label>
+                            <input type="text" class="form-control" name="problem" id="edit-problem" />
+                        </div>
+                        <div class="mb-2">
+                            <label>Pattern</label>
+                            <input type="text" class="form-control" name="pattern" id="edit-pattern" />
+                        </div>
+                        <div class="mb-2">
+                            <label>Link</label>
+                            <input type="text" class="form-control" name="link" id="edit-link" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Rename Topic Modal -->
+        <div class="modal fade"
+             id="renameTopicModal"
+             tabindex="-1"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <form id="renameTopicForm" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Rename Topic</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="rename-topic-id">
+                        <div class="mb-2">
+                            <label class="form-label">New name</label>
+                            <input type="text" class="form-control" id="rename-topic-name" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Bootstrap JS (required for accordion) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
