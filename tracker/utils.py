@@ -17,27 +17,6 @@ def parse_markdown(md_text):
 
 def init_db():
     db.create_all()
-    # if Topic.query.count() == 0:
-    #     with open(DATA_PATH) as f:
-    #         rows = parse_markdown(f.read())
-    #     topic_names = []
-    #     for r in rows:
-    #         if r["topic"] not in topic_names:
-    #             t = Topic(name=r["topic"], sort_index=len(topic_names))
-    #             db.session.add(t)
-    #             db.session.flush()
-    #             topic_names.append(r["topic"])
-    #     db.session.commit()
-    #     tmap = {t.name: t.id for t in Topic.query.all()}
-    #     for r in rows:
-    #         db.session.add(
-    #             Question(
-    #                 topic_id=tmap[r["topic"]],
-    #                 problem=r["problem"],
-    #                 pattern=r["pattern"],
-    #             )
-    #         )
-    #     db.session.commit()
 
 
 def questions_to_json_rows():

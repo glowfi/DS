@@ -138,45 +138,6 @@ window.addEventListener('DOMContentLoaded', () => {
             if (data.ok) location.reload();
             else alert(data.error || 'Update failed');
         });
-    // document.querySelectorAll('.edit-btn').forEach((btn) => {
-    //     btn.addEventListener('click', () => {
-    //         const id = btn.dataset.id;
-    //         const row = btn.closest('tr');
-    //         const problem = row
-    //             .querySelector('.editable-problem')
-    //             .textContent.trim();
-    //         const pattern = row
-    //             .querySelector('.editable-pattern')
-    //             .textContent.trim();
-    //         const questionLink = row
-    //             .querySelector('.question-link')
-    //             .href.trim();
-
-    //         const newProblem = prompt('Edit problem:', problem);
-    //         if (newProblem === null) return;
-    //         const newPattern = prompt('Edit pattern:', pattern);
-    //         if (newPattern === null) return;
-    //         const newQuestionLink = prompt('Edit question link:', questionLink);
-    //         if (newQuestionLink === null) return;
-
-    //         fetch(`/question/edit/${id}`, {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/x-www-form-urlencoded'
-    //             },
-    //             body: new URLSearchParams({
-    //                 problem: newProblem,
-    //                 pattern: newPattern,
-    //                 link: newQuestionLink
-    //             })
-    //         })
-    //             .then((r) => r.json())
-    //             .then((data) => {
-    //                 if (data.ok) location.reload();
-    //                 else alert(data.error || 'Failed to update');
-    //             });
-    //     });
-    // });
 
     /* -------------------------------------------------
        6️⃣  Delete a question
