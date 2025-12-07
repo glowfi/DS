@@ -74,10 +74,13 @@ class Solution:
 # S.C  - O(1)
 
 # Intuition
-# It is clear that all the values not equal to given "val" are going to lie on left
-# and "val" are going to lie on the right.
-# Take two pointer k which stores the index to put the values not equal to "val"
-# and r which will traverse the entire array
+# All elements that are not equal to val should end up on the left side of the array,
+# and all occurrences of val can be pushed to the right (their positions don’t matter after removal).
+# We only care about how many non-val elements remain and that they occupy the first k positions.
+# To do this, think of one pointer k as the position where the next “kept” element (not equal to val) should go,
+# and another pointer idx that scans through the array. As we scan:
+# If nums[idx] is not val, we swap it into position k and move k forward.
+# If nums[idx] is val, we just skip it.
 
 
 from typing import List
@@ -85,14 +88,13 @@ from typing import List
 
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-
         k = 0
-        r = 0
+        idx = 0
 
-        while r < len(nums):
-            if nums[r] != val:
-                nums[k] = nums[r]
+        while idx < len(nums):
+            if nums[idx] != val:
+                nums[idx], nums[k] = nums[k], nums[idx]
                 k += 1
-            r += 1
+            idx += 1
 
         return k

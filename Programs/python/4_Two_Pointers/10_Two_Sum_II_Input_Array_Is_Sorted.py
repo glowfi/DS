@@ -37,11 +37,18 @@
 # S.C  - O(1)
 
 # Intuition
-# Since array is sorted we take advatage of this property.
-# We take two pointers and fix it at the extreme ends.
-# if their sum increases then we decrease the range by
-# moving the end pointer(p2) by one and if sum decreases
-# we try to increase the sum by moving the start pointer(p1)
+# The array is sorted in non-decreasing order, so we can use two pointers
+# to efficiently find a pair that sums to the target.
+#
+# Place one pointer p1 at the start and another p2 at the end:
+# - If numbers[p1] + numbers[p2] is exactly target, we are done.
+# - If the sum is greater than target, we need a smaller sum, so we move p2 left
+#   to reduce the value.
+# - If the sum is less than target, we need a larger sum, so we move p1 right
+#   to increase the value.
+#
+# Because the array is sorted, moving pointers this way systematically explores
+# all viable pairs without needing extra space or nested loops.
 
 from typing import List
 

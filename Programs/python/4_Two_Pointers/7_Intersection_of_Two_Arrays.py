@@ -89,13 +89,17 @@ class Solution:
 # S.C  - O(m+n)
 
 # Intuition
-# Take 1 visited map for nums1.
-# Put all the elements of nums1 in a visited map 1
-# Traverse the second array nums2 only if it is
-# present in visited map 1 the put it in the result
-# array and delete the record from visted map 1 as
-# we dont want to add duplicateson result array
-
+# We want the set of distinct numbers that appear in both arrays.
+# A simple way is to remember which numbers appear in nums1, then
+# check nums2 against that memory.
+#
+# We first record all elements of nums1 in a map (or set-like structure),
+# meaning “these values exist in nums1”. Then we scan nums2 and, for each
+# number, check if it was present in nums1.
+#
+# To avoid duplicates in the result, once we add a number from nums2 to
+# the result, we mark it as already used (or conceptually "remove" it
+# from availability), so if it appears again in nums2 we do not add it twice.
 
 from typing import List
 
@@ -106,11 +110,11 @@ class Solution:
         res = []
 
         for num in nums1:
-            visited[num] = 1
+            visited[num] = False
 
         for num in nums2:
-            if num in visited:
-                del visited[num]
+            if num in visited and not visited[num]:
+                visited[num] = True
                 res.append(num)
 
         return res

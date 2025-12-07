@@ -68,12 +68,16 @@ class Solution:
 # S.C  - O(1)
 
 # Intuition
-# Since array is sorted we are going to take use this property to our advantage
-# we take two pointers k and i , k stores the index to put the unique element to
-# and i traverse the array.The moment we see the last element does not match our
-# current element we are sure that we are seeing this first time and we can move
-# this element to the kth index and also move the kth index by one after placing
-# the current element
+# The array is sorted, so any duplicates appear next to each other.
+# We scan the array with an index i and keep another index k that tracks
+# the position where the next unique element should be written.
+#
+# Whenever nums[i] is different from the previous element, it means we are
+# seeing this value for the first time in sequence, so it is unique at this point.
+#
+# We then place nums[i] at index k and move k forward.
+# By the end, the first k positions of the array contain all unique elements
+# in sorted order, and k is the count of unique elements.
 
 from typing import List
 

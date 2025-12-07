@@ -48,9 +48,16 @@ class Solution:
 # S.C  - O(1)
 
 # Intuition
-# Fix 2 Pointers at the 2 ends of the given string
-# Skip non alphanumeric from left and right
-# if valid characters do not match return False
+# We want to check if the string reads the same forward and backward,
+# ignoring non-alphanumeric characters and case.
+#
+# Use two pointers: one starting from the left, one from the right.
+# Move both pointers inward:
+# - Skip any character that is not a letter or digit on either side.
+# - When both pointers point to valid characters, compare them in
+#   lowercase form.
+# If at any point the characters differ, it's not a palindrome.
+# If the pointers cross without a mismatch, the string is a valid palindrome.
 
 
 class Solution:

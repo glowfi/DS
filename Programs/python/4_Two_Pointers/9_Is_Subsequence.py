@@ -27,12 +27,19 @@
 # S.C  - O(1)
 
 # Intuition
-# Use two pointers p1 and p2
-# p1 pointes to string s and p2 points to string t
-# if a character at index p1 matches character at
-# p2 we move p1 by one.At the end we check whether
-# p1 reached its max length or not provind its a
-# subsequence of t.
+# We want to check if string s appears inside string t in the same order,
+# but not necessarily contiguously. This is the definition of a subsequence.
+#
+# Use two pointers:
+# - p1 for s
+# - p2 for t
+#
+# Move p2 through t. Whenever s[p1] == t[p2], we advance p1 to look for
+# the next character of s. p2 always moves forward.
+#
+# If by the end p1 has reached len(s), it means we successfully matched
+# every character of s in order within t, so s is a subsequence of t.
+# Otherwise, some character of s could not be matched and the answer is False.
 
 
 class Solution:
@@ -52,40 +59,50 @@ class Solution:
 # S.C  - O(t)
 
 # Intuition
-# Pre process all the results
-# for every string s map each character to t
-# s such that they maintain relative order
-# for already mapped character from s keep track
-# of the index choosen , such that when a new
-# character is going to me mapped we can verify
-# that an index just greater than previous index
-# exist by doing an upper bound check.Also keep
-# updating the index at each step
+# Since t is fixed we can do some pre-computation,
+# we are going to build a hashmap table where key
+# is the character in string t and value is the list
+# of indices of that character.
+# We are going to keep track of index mapped from
+# string t as we proceed
+# For each character of s we are going to check if it
+# is present in the table or not,if present we are
+# going to check if we are able to find an index
+# greater than last index.
+
 
 import bisect
 from collections import defaultdict
 
 
-class Solution:
-    def __init__(self) -> None:
-        self.char_map = defaultdict(list)
+class SubsequenceCheckerBinarySearch:
+    def __init__(self, t: str):
+        self.char_indices = defaultdict(list)
 
-    def pre_process(self, t: str):
-        for idx, st in enumerate(t):
-            self.char_map[st].append(idx)
+        for i, char in enumerate(t):
+            self.char_indices[char].append(i)
 
-    def isSubsequence(self, s: str):
-        prev_idx = -1
+    def isSubsequence(self, s: str) -> bool:
+        last_index = -1
+
         for i in range(len(s)):
-            curr_char = s[i]
-
-            if curr_char not in self.char_map:
+            chr = s[i]
+            if chr not in self.char_indices:
                 return False
 
-            idx = bisect.bisect_right(self.char_map[curr_char], prev_idx)
-            if idx == len(self.char_map[curr_char]):
+            next_index = bisect.bisect_right(self.char_indices[chr], last_index)
+            if next_index == len(self.char_indices[chr]):
                 return False
 
-            prev_idx = idx
+            last_index = self.char_indices[chr][next_index]
 
         return True
+
+
+t = "ahbgdc"
+checker = SubsequenceCheckerBinarySearch(t)
+
+print(checker.isSubsequence("abc"))  # True
+print(checker.isSubsequence("axc"))  # False
+print(checker.isSubsequence(""))  # True
+print(checker.isSubsequence("ahbgdc"))  # True

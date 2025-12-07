@@ -52,12 +52,20 @@ class Solution:
 # S.C  - O(1)
 
 # Intuition
-# It is clear that all the non zero values are going to lie on left
-# and all zero values are going to lie on the right.
-# We are going to take two pointers l and r. r will traverse the
-# whole array and l will store the index to put the non zero values.
-# As we discover non zero values we are going to put the non zero
-# values to the l pointer.
+# All non-zero elements should end up on the left side of the array, and all zeros on the right,
+# while keeping the relative order of non-zero elements the same.
+#
+# To do this, think of one pointer as a “write” pointer that marks the position where
+# the next non-zero element should go, and another pointer as a “scan” pointer that
+# moves through the array. As we scan, whenever we see a non-zero value, we swap it into
+# the position of the write pointer and move the write pointer forward. Zeros are simply skipped.
+#
+# For example, in [0, 1, 0, 3, 12]:
+#
+# Scan hits 1: swap with first position → [1, 0, 0, 3, 12]
+# Scan hits 3: put it next → [1, 3, 0, 0, 12]
+# Scan hits 12: put it next → [1, 3, 12, 0, 0]
+# By the end, all non-zeros are compacted at the front in their original order, and zeros naturally move to the back.
 
 
 from typing import List
@@ -69,9 +77,9 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
 
-        l, r = 0, 0
-        while r < len(nums):
-            if nums[r] != 0:
-                nums[l], nums[r] = nums[r], nums[l]
-                l += 1
-            r += 1
+        p1, p2 = 0, 0
+        while p2 < len(nums):
+            if nums[p2] != 0:
+                nums[p1], nums[p2] = nums[p2], nums[p1]
+                p1 += 1
+            p2 += 1

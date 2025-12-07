@@ -78,31 +78,42 @@ class Solution:
 # S.C  - O(1)
 
 # Intuition
-# We use three pointers max_occur_time to track how much times
-# an element has occured,k to tell us the position of an element
-# to insert an element to, i to traverse the whole array.
-# The entire alog can be summarized based on 2 below points:
-# + Only if we see a new element reset the max_occur_time
-#   and place the element at kth index
-# + if we are on the same element and max_occur_time is less than 2
-#   then we can place the element at kth index
+# The array is sorted, so equal elements are grouped together. We want each
+# element to appear at most twice in the final array.
+#
+# We use:
+# - i      : to traverse the array from left to right (starting at index 1)
+# - k      : to mark the position where the next allowed element should be placed
+# - count  : to track how many times the current value has appeared consecutively
+#
+# The logic follows two simple rules:
+# 1) If we see the *same* element as the previous one:
+#      - If count < 2, we are allowed to keep it, so we write it at index k
+#        and increase both k and count.
+#      - If count == 2, we skip it (do nothing), because we already kept two.
+#
+# 2) If we see a *new* element (different from the previous one):
+#      - We reset count to 1 (first occurrence of this new value),
+#        write it at index k, and move k forward.
+
 
 from typing import List
 
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        max_occur_time = 1
         k = 1
+        count = 1
 
         for i in range(1, len(nums)):
-            if nums[i] != nums[i - 1]:
+            if count < 2 and nums[i] == nums[i - 1]:
                 nums[k] = nums[i]
-                max_occur_time = 1
                 k += 1
-            elif nums[i] == nums[i - 1] and max_occur_time < 2:
+                count += 1
+
+            elif nums[i] != nums[i - 1]:
                 nums[k] = nums[i]
-                max_occur_time += 1
+                count = 1
                 k += 1
 
         return k

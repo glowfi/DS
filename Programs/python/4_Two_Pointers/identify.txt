@@ -1,6 +1,27 @@
-Applicable only on linear data structure array,string,linked list
-+ Sorted array and a target condition
-+ Comparing or merging two sequences
-+ Partition or rearrange in-place
-+ Detecting speeds or cycles
-+ Subarray or substring with certain property
+# When to think of Two Pointers
+
+# 1) Linear data structure
+#    - Works on arrays, strings, linked lists (anything you can traverse linearly).
+
+# 2) Sorted array + target condition
+#    - Array is sorted (or can be sorted).
+#    - Need to find pair/triple with target sum/diff, or maximize/minimize something.
+#    - Examples: Two Sum II, 3Sum, Container With Most Water, Sorted Squares.
+
+# 3) Comparing or merging two sequences
+#    - Two arrays/strings/lists to merge or compare in order.
+#    - Examples: Merge Sorted Arrays, Intersection, Is Subsequence, Merge two lists.
+
+# 4) Partition or rearrange in-place
+#    - Move certain elements to one side (zeros, a given value, negatives/positives).
+#    - Remove or compress elements without extra space.
+#    - Examples: Move Zeroes, Remove Element, Remove Duplicates in Sorted Array.
+
+# 5) Detecting speeds or cycles (fast & slow pointers)
+#    - Linked list cycle detection, middle of list, cycle length.
+#    - Example: Floyd’s cycle detection, find middle node.
+
+# 6) Subarray or substring with a property (sliding window)
+#    - Longest/shortest window satisfying a condition.
+#    - Count or check subarrays/substrings with some constraint.
+#    - Examples: Longest substring without repeat, min window substring, subarray sum constraints.

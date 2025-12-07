@@ -41,35 +41,41 @@ class Solution:
 # S.C  - O(1)
 
 # Intuition
-# Since the array is sorted in non-decreasing order we know
-# that the left side contains biggest negative numbers and
-# right side contains biggest positive numbers. So when we
-# are going to square the numbers every number is going to
-# become positive.so out biggest square lies on the two
-# ends of the array.So we can start with the two ends of the
-# array and then move in for smaller numbers.We use a two pointer
-# technique to do this.We take 2 pointer p1 and p2 and check which
-# value is greater and place the greater values at the end of the array
-# A k pointer is also taken to store the postion to store the squared
-# value
+# The array is sorted in non-decreasing order, so negative numbers (if any)
+# are on the left and positive numbers are on the right. When we square them,
+# both sides become non-negative, and the largest squares will come from the
+# values with the largest absolute magnitude, which are at the two ends.
+#
+# This means the biggest square is always at either the leftmost or rightmost
+# position of the current range. So we use two pointers:
+# - p1 at the start (left side, large negative numbers)
+# - p2 at the end (right side, large positive numbers)
+# and a pointer k at the end of the result array.
+#
+# At each step, we compare nums[p1]^2 and nums[p2]^2:
+# - Place the larger square at res[k].
+# - Move the corresponding pointer (p1 or p2) inward.
+# - Move k one step left to fill the next largest square.
 
 from typing import List
 
 
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        res = [0] * len(nums)
-        p1, p2 = 0, len(nums) - 1
         k = len(nums) - 1
+        p1, p2 = 0, len(nums) - 1
+        res = [0] * len(nums)
 
         while p1 <= p2:
-            if abs(nums[p1]) > abs(nums[p2]):
-                res[k] = nums[p1] ** 2
-                k -= 1
+            n1, n2 = nums[p1] ** 2, nums[p2] ** 2
+
+            if n1 > n2:
+                res[k] = n1
                 p1 += 1
             else:
-                res[k] = nums[p2] ** 2
-                k -= 1
+                res[k] = n2
                 p2 -= 1
+
+            k -= 1
 
         return res

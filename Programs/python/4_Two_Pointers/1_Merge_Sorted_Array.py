@@ -88,17 +88,28 @@ class Solution:
 # S.C  - O(1)
 
 # Intuition
-# nums1 = [7,8,9,0,0,0], m = 3, nums2 = [2,5,6], n = 3
-# Consider the above example if we still try to use the
-# classic merge algo then we will see that nums2 becomes unsorted
-# when 7 is swapped with 2.
-# If you start merging from the front, we’ll overwrite numbers
-# We are going to traverse each array from the back
-# Our target is to place the largest number first in nums1
-# Only if the nums1 get exhausted before nums2, then outside
-# the loop we handle taking all the elements from nums2 and
-# put it in the nums1 array.Dont need to do anything if nums2
-# gets exhausted before nums1 as nums1 is already in sorted order
+# When merging nums2 into nums1 in-place, starting from the front can destroy data you still need.
+#
+# Example:
+# nums1 = [2, 7, 0, 0], m = 2
+# nums2 = [1, 3], n = 2
+#
+# If you start filling from index 0 with the smallest element, you might put 1 at nums1[0] and
+# then 2 at nums1[1], but in the process you can overwrite 7 before you’ve compared it with 3.
+# This makes it hard to correctly merge while preserving all elements.
+#
+# To avoid overwriting useful values, we go from right to left. nums1 has enough space at
+# the end (the zeros) to hold all elements, so we fill from the last index:
+#
+# Compare the largest elements: 7 (from nums1) and 3 (from nums2); place 7 at the end.
+# Then compare 2 and 3; place 3.
+# Then compare 2 and 1; place 2.
+# Finally place 1.
+# This gives: [1, 2, 3, 7], and we never overwrite a needed element.
+#
+# If nums1’s initial part is exhausted before nums2 (for example, nums1 = [0,0,0], m = 0,
+# nums2 = [2,5,6], n = 3), we simply copy all remaining elements from nums2 into
+# nums1 from the back, which still results in a sorted array.
 
 from typing import List
 
@@ -110,19 +121,18 @@ class Solution:
         """
 
         p1, p2 = m - 1, n - 1
-        k = (m + n) - 1
+        k = m + n - 1
 
         while p1 >= 0 and p2 >= 0:
-            if nums1[p1] > nums2[p2]:
-                nums1[k] = nums1[p1]
-                p1 -= 1
-                k -= 1
-            else:
+            if nums2[p2] > nums1[p1]:
                 nums1[k] = nums2[p2]
                 p2 -= 1
-                k -= 1
+            else:
+                nums1[k] = nums1[p1]
+                p1 -= 1
+            k -= 1
 
-        while p2 >= 0:
+        while p2 >= 0 and p1 < 0:
             nums1[k] = nums2[p2]
             p2 -= 1
             k -= 1

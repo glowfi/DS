@@ -38,7 +38,6 @@ from typing import List
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         mx_area = float("-inf")
-
         for i in range(len(height)):
             for j in range(i + 1, len(height)):
                 w = (j - i) + 1
@@ -54,19 +53,23 @@ class Solution:
 # S.C  - O(1)
 
 # Intuition
-# Now in this question we try to find the optimal
-# two pairs of bars with which we get the max area.
-# We are going to take two pointers l and r and place
-# them at the 2 extreme ends of the array.Now we need
-# to decide how we are going to move the pointers.
-# One thing we can see that the min height controls
-# the value of the area, so its better to move the
-# bar with less area as no matter what bigger height
-# we get we wont get better area.Also as we move more
-# towards left the width decrease so its better to keep
-# the bar with greate height intact so that in future if
-# we get a greater height then it can compensate for the
-# lesser width.
+# Our goal is to maximize the area but maximizing width and height
+# We want two lines that form the container with the maximum area.
+# The area is determined by:
+#   area = (right_index - left_index) * min(height[left], height[right])
+#
+# We place two pointers at the extremes: left (l) at 0 and right (r) at n-1,
+# to maximize width
+# At each step, we compute the current area and update the maximum.
+#
+# The key decision is: which pointer to move?
+# - The height of the container is limited by the shorter line.
+# - If we move the taller line inward, the width shrinks, but the height
+#   cannot increase beyond the shorter line we kept, so area cannot improve
+#   because height is still bounded by the same or a smaller value.
+# - If instead we move the shorter line inward, there is a chance of
+#   finding a taller line that can compensate for the reduced width and
+#   give a larger area.
 
 from typing import List
 
@@ -79,8 +82,7 @@ class Solution:
         while l < r:
             w = r - l
             h = min(height[l], height[r])
-            area = w * h
-            mx_area = max(area, mx_area)
+            mx_area = max(mx_area, w * h)
 
             if height[l] < height[r]:
                 l += 1
