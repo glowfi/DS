@@ -1,0 +1,47 @@
+# Static Sliding Window template
+int left = 0;
+for (int right = 0; right < n; right++) {
+
+    // add nums[right] to window
+
+    if (right - left + 1 == k) {
+        // process window [left, right]
+
+        // slide window
+        // remove nums[left] from window
+        left++;
+    }
+}
+
+# Dynamic Sliding Window template (Used for maximum window type problems)
+int left = 0;
+for (int right = 0; right < n; right++) {
+
+    // add nums[right] to window
+
+    while (/* window is INVALID */) {
+        // shrink window
+        // remove nums[left] from window
+        left++;
+    }
+
+    // window is VALID → update max answer
+    // ans = max(ans, right - left + 1);
+}
+
+
+# Dynamic Sliding Window template (Used for minimum window type problems)
+int left = 0;
+for (int right = 0; right < n; right++) {
+
+    // add nums[right] to window
+
+    while (/* window is VALID */) {
+        // update min answer
+        // ans = min(ans, right - left + 1);
+
+        // shrink window
+        // remove nums[left] from window
+        left++;
+    }
+}
