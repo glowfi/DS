@@ -1,0 +1,9 @@
++ If we can understand decision -> Recursive Tree (Can you take decision)
++ IBH (Can you make Input smaller)
++ Choice Diagram (DP)
+
+IBH Method:
+
+B -> Smalled/Largest Valid/Invalid Input
+H -> Define what a function will do
+I -> Make the recursion work
