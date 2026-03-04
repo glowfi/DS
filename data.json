@@ -957,5 +957,271 @@
                 "type": "Optimal"
             }
         ]
+    },
+    {
+        "id": 1,
+        "question": "You are given an integer n. You have  to print all numbers from 1 to n.\nNote: You must use recursion only, and print all numbers from 1 to n in a single line, separated by spaces.\n\nExamples:\n\nInput: n = 10\nOutput: 1 2 3 4 5 6 7 8 9 10\n\nInput: n = 5\nOutput: 1 2 3 4 5\n\nInput: n = 1\nOutput: 1\n\nConstraints:\n1 \u2264 n \u2264 10^3",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Print 1 to N",
+        "problem_link": "https://www.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/1_Print_1_to_N.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Use the IBH method for recursion\nH -> define printNos will 1 to n for the given n\nB -> if n is less than 1 just return\nI -> make the function print 1 to n-1, we just print n",
+                "code": "class Solution:\n    def printNos(self, n):\n        # Base\n        if n < 1:\n            return\n\n        # Hypothesis\n        self.printNos(n - 1)\n\n        # Induction\n        print(n, end=\" \")",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "Print numbers from N to 1 (space separated) without the help of loops.\n\nExample 1:\n\nInput:\nN = 10\nOutput: 10 9 8 7 6 5 4 3 2 1\nYour Task:\nThis is a function problem. You only need to complete the function printNos() that\ntakes N as parameter and prints number from N to 1 recursively. Don't print newline, it will be added by the driver code.\n\nExpected Time Complexity: O(N).\nExpected Auxiliary Space: O(N) (Recursive).\n\nConstraint\n1<=n<=1000",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Print N to 1",
+        "problem_link": "https://www.geeksforgeeks.org/problems/print-n-to-1-without-loop/0",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/2_Print_N_to_1.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Use the IBH method for recursion\nH -> define printNos will n to 1 for the given n\nB -> if n is less than 1 just return\nI -> make the function print n-1 to n, we just print n",
+                "code": "class Solution:\n    def printNos(self, n):\n        # Base\n        if n < 1:\n            return\n\n        # Induction\n        print(n, end=\" \")\n\n        # Hypothesis\n        self.printNos(n - 1)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "Given an array of integers nums, sort the array in ascending order and return it.\n\nYou must solve the problem without using any built-in functions in O(nlog(n)) time complexity and with the smallest space complexity possible.\n\nExample 1:\n\nInput: nums = [5,2,3,1]\nOutput: [1,2,3,5]\nExplanation: After sorting the array, the positions of some numbers are not changed (for example, 2 and 3), while the positions of other numbers are changed (for example, 1 and 5).\nExample 2:\n\nInput: nums = [5,1,1,2,0,0]\nOutput: [0,0,1,1,2,5]\nExplanation: Note that the values of nums are not necessarily unique.\n\n\nConstraints:\n\n1 <= nums.length <= 5 * 10^4\n-5 * 10^4 <= nums[i] <= 5 * 10^4",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Sort an array",
+        "problem_link": "https://leetcode.com/problems/sort-an-array",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/3_Sort_an_array.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Use the IBH method for sorting recursion H -> define sortArray will sort the array given nums as the array to sort B -> if n is less than equal to 1 just return arr I -> we using Hypothesis sort the array from 1 to n-1 and then for the nth element we try to find its best insertion point using upper bound Use the IBH method for finding correct place of insertion of num in a sorted array H -> define insertElemToCorrectPlace will insert a given num n to a sorted_arr B -> if length of sorted_arr is equal to zero return the num I -> we using Hypothesis insert the given num n to the sorted_arr from 0 to n-1, and atlast insert the largest element at last as induction",
+                "code": "from typing import List\n\n\nclass Solution:\n    def insertElemToCorrectPlace(self, sorted_arr: list[int], num: int):\n        # Base\n        if len(sorted_arr) == 0 or sorted_arr[-1] <= num:\n            sorted_arr.append(num)\n            return\n\n        # Hypothesis\n        largest_elem = sorted_arr.pop(-1)\n        self.insertElemToCorrectPlace(sorted_arr, num)\n\n        # Induction\n        sorted_arr.append(largest_elem)\n\n    def sortArray(self, nums: List[int]) -> List[int]:\n        # Base\n        if len(nums) <= 1:\n            return nums\n\n        # Hypothesis\n        last_val = nums.pop(-1)\n        self.sortArray(nums)\n\n        # Induction\n        self.insertElemToCorrectPlace(nums, last_val)\n\n        return nums",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Use the IBH method for recursion\nH -> define sortArray will sort the array given nums as the array to sort\nB -> if n is less than equal to 1 just return arr\nI -> we using Hypothesis sort the array from 1 to n-1 and then for the nth element\nwe try to find its best insertion point using upper bound",
+                "code": "from typing import List\nfrom bisect import bisect_right\n\n\nclass Solution:\n    def sortArray(self, nums: List[int]) -> List[int]:\n        # Base\n        if len(nums) <= 1:\n            return nums\n\n        # Hypothesis\n        last_val = nums.pop(-1)\n        self.sortArray(nums)\n\n        # Induction\n        best_idx = bisect_right(nums, last_val)\n        nums.insert(best_idx, last_val)\n\n        return nums",
+                "type": "Brute"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "You are given an integer n. You have  to print all numbers from 1 to n.\nNote: You must use recursion only, and print all numbers from 1 to n in a single line, separated by spaces.\n\nExamples:\n\nInput: n = 10\nOutput: 1 2 3 4 5 6 7 8 9 10\n\nInput: n = 5\nOutput: 1 2 3 4 5\n\nInput: n = 1\nOutput: 1\n\nConstraints:\n1 \u2264 n \u2264 10^3",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Sort a stack",
+        "problem_link": "https://www.geeksforgeeks.org/problems/sort-a-stack/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/4_Sort_a_stack.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Use the IBH method for sorting recursion\nH -> define sortStack will sort the stack given nums as the stack to sort\nB -> if n is less than equal to 1 just return stack\nI -> we using Hypothesis sort the stack from 1 to n-1 and then for the nth element\nwe try to find its best insertion point using upper bound",
+                "code": "from typing import List\nfrom bisect import bisect_right\n\n\nclass Solution:\n    def sortStack(self, st: List[int]):\n        # Base\n        if len(st) <= 1:\n            return st\n\n        # Hypothesis\n        last_val = st.pop(-1)\n        self.sortStack(st)\n\n        # Induction\n        best_idx = bisect_right(st, last_val)\n        st.insert(best_idx, last_val)\n\n        return st",
+                "type": "Brute"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "Given a stack s, delete the middle element of the stack without using any additional data structure.\n\nMiddle element:- floor((size_of_stack+1)/2) (1-based indexing) from the bottom of the stack.\n\nNote: The output shown by the compiler is the stack from top to bottom.\n\nExamples:\n\nInput: s = [10, 20, 30, 40, 50]\nOutput: [50, 40, 20, 10]\nExplanation: The bottom-most element will be 10 and the top-most element will\nbe 50. Middle element will be element at index 3 from bottom, which is 30. Deleting 30, stack will look like {10 20 40 50}.\n\nInput: s = [10, 20, 30, 40]\nOutput: [40, 30, 10]\nExplanation: The bottom-most element will be 10 and the top-most element will be 40.\nMiddle element will be element at index 2 from bottom, which is 20. Deleting 20, stack will look like {10 30 40}.\n\nInput: s = [5, 8, 6, 7, 6, 6, 5, 10, 12, 9]\nOutput: [9, 12, 10, 5, 6, 7, 6, 8, 5]\nConstraints:\n2 \u2264 element of stack \u2264 10^5\n2 \u2264 s.size() \u2264 10^4",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Easy",
+        "difficulty_num": 1,
+        "problem_name": "Delete Mid of a Stack",
+        "problem_link": "https://www.geeksforgeeks.org/problems/delete-middle-element-of-a-stack/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/5_Delete_Mid_of_a_Stack.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Use the IBH method\nH -> define delete_k method which given a stack deletes the kth element from top\nB -> if k==1 then delete the top element\nI -> we using Hypothesis we make our input smaller by taking only 0 to n-1 and since\nwe eliminate one element our k becomes k-1 and we delete the k-1 th element now,at last\nwe append the eliminated element",
+                "code": "from typing import List\n\n\nclass Solution:\n    def deleteMid(self, stack: List[int]) -> List[int]:\n        def delete_k(stack: List[int], k: int) -> List[int]:\n            # Base\n            if k == 1:\n                stack.pop(-1)\n                return stack\n\n            # Hypothesis\n            last_elem = stack.pop(-1)\n            delete_k(stack, k - 1)\n\n            # Induction\n            stack.append(last_elem)\n            return stack\n\n        k = len(stack) // 2 + 1\n        return delete_k(stack, k)",
+                "type": "Brute"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "question": "You are given a stack st[]. You have to reverse the stack.\n\nNote: The input array represents the stack from bottom to top (last element is the top).\nThe output is displayed by printing elements from top to bottom after reversal.\n\nExamples:\nInput: st[] = [1, 2, 3, 4]\nOutput: [1, 2, 3, 4]\nExplanation: After reversing, the elements of stack are in opposite order.\n\nInput: st[] = [3, 2, 1]\nOutput: [3, 2, 1]\nExplanation: After reversing, the elements of stack are in opposite order.\n\nConstraints:\n1 \u2264 st.size() \u2264 100\n0 \u2264 stack element \u2264 100",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Reverse a stack",
+        "problem_link": "https://www.geeksforgeeks.org/problems/reverse-a-stack/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/6_Reverse_a_stack.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n^2)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Use the IBH method\nH -> define reverseStack will reverse any given stack\nB -> if stack empty we return stack\nI -> we using Hypothesis pop the top element and we reverse\nthe stack from 0 to n-1 then atlast the top is inserted at the\n0th index as on revesing it ends up as the bottom-most element",
+                "code": "from typing import List\n\n\nclass Solution:\n    def reverseStack(self, st: List[int]) -> List[int]:\n        # Base\n        if len(st) == 0:\n            return st\n\n        # Hypothesis\n        top_elem = st.pop(-1)\n        self.reverseStack(st)\n\n        # Induction\n        st.insert(0, top_elem)\n        return st",
+                "type": "Brute"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "question": "Implement pow(x, n), which calculates x raised to the power n (i.e., xn).\n\nExample 1:\n\nInput: x = 2.00000, n = 10\nOutput: 1024.00000\nExample 2:\n\nInput: x = 2.10000, n = 3\nOutput: 9.26100\nExample 3:\n\nInput: x = 2.00000, n = -2\nOutput: 0.25000\nExplanation: 2-2 = 1/22 = 1/4 = 0.25\n\nConstraints:\n\n-100.0 < x < 100.0\n-2^31 <= n <= 2^31-1\nn is an integer.\nEither x is not zero or n > 0.\n-10^4 <= xn <= 10^4",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Pow x n",
+        "problem_link": "https://leetcode.com/problems/powx-n",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/7_Pow_x_n.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(1)",
+                "sc": "S.C  - O(1)",
+                "intuition": "use inbuilt ** operator",
+                "code": "class Solution:\n    def myPow(self, x: float, n: int) -> float:\n        return x**n",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(log(n))",
+                "sc": "S.C  - O(log(n))",
+                "intuition": "Use IBH method to solve this\nOne pattern to notice that suppose we have an even power\nlets say 5**4 we just need to calculate 5**2 because to\nget the final 5**4 answer we just multiply result of 5**2\nby itself as 5^2 * 5^2 = 5^4.For odd power the same logic\nholds but we just need to add x to the final answer",
+                "code": "class Solution:\n    def solve(self, x: float, n: int) -> float:\n        # Base\n        if n == 0:\n            return 1\n\n        # Hypothesis\n        res = self.solve(x, n // 2)\n\n        # Induction\n        if n % 2 == 0:\n            return res * res\n\n        return res * res * x\n\n    def myPow(self, x: float, n: int) -> float:\n        if n < 0:\n            return 1 / self.solve(x, -n)\n\n        return self.solve(x, n)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "question": "The count-and-say sequence is a sequence of digit strings defined by the recursive formula:\n\ncountAndSay(1) = \"1\"\ncountAndSay(n) is the run-length encoding of countAndSay(n - 1).\nRun-length encoding (RLE) is a string compression method that works by replacing consecutive\nidentical characters (repeated 2 or more times) with the concatenation of the character\nand the number marking the count of the characters (length of the run). For example,\nto compress the string \"3322251\" we replace \"33\" with \"23\", replace \"222\" with \"32\",\nreplace \"5\" with \"15\" and replace \"1\" with \"11\". Thus the compressed string becomes \"23321511\".\n\nGiven a positive integer n, return the nth element of the count-and-say sequence.\n\nExample 1:\nInput: n = 4\nOutput: \"1211\"\n\nExplanation:\n\ncountAndSay(1) = \"1\"\ncountAndSay(2) = RLE of \"1\" = \"11\"\ncountAndSay(3) = RLE of \"11\" = \"21\"\ncountAndSay(4) = RLE of \"21\" = \"1211\"\nExample 2:\n\nInput: n = 1\nOutput: \"1\"\nExplanation:\nThis is the base case.\n\nConstraints:\n1 <= n <= 30",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Count and Say",
+        "problem_link": "https://leetcode.com/problems/count-and-say",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/8_Count_and_Say.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n*m)",
+                "sc": "S.C  - O(n)+O(m)",
+                "intuition": "Use IBH method to solve this problem. Create an get_encoding function that will give us the encoding. One thing to note to get current encoding we pass the result of previous to our function and we keep doing this n times.But we are going to use IBH method where in hypothesis step we try to find the previous value automatically and get the encoding from the previous value in the induction step",
+                "code": "class Solution:\n    def get_encoding(self, s: str) -> str:\n        c = 1\n        encoded = \"\"\n        n = len(s)\n        for i in range(1, len(s)):\n            if s[i] != s[i - 1]:\n                encoded += f\"{c}{s[i-1]}\"\n                c = 1\n            else:\n                c += 1\n\n        return encoded + f\"{c}{s[n-1]}\"\n\n    def countAndSay(self, n: int) -> str:\n        # Base\n        if n == 1:\n            return \"1\"\n\n        # Hypothesis\n        prev_res = self.countAndSay(n - 1)\n\n        # Induction\n        return self.get_encoding(prev_res)",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. - O(n*m)",
+                "sc": "S.C  - O(m)",
+                "intuition": "Create an get_encoding function that will give us the encoding.\nOne thing to note to get current encoding we pass the result of\nprevious to our function and we keep doing this n times iteratively",
+                "code": "class Solution:\n    def get_encoding(self, s: str) -> str:\n        c = 1\n        encoded = \"\"\n        n = len(s)\n        for i in range(1, len(s)):\n            if s[i] != s[i - 1]:\n                encoded += f\"{c}{s[i-1]}\"\n                c = 1\n            else:\n                c += 1\n\n        return encoded + f\"{c}{s[n-1]}\"\n\n    def countAndSay(self, n: int) -> str:\n        # Base\n        if n == 1:\n            return \"1\"\n\n        # Hypothesis\n        prev_res = self.countAndSay(n - 1)\n\n        # Induction\n        return self.get_encoding(prev_res)",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "question": "We build a table of n rows (1-indexed). We start by writing 0 in the 1st row. Now in every subsequent row,\nwe look at the previous row and replace each occurrence of 0 with 01, and each occurrence of 1 with 10.\n\nFor example, for n = 3, the 1st row is 0, the 2nd row is 01, and the 3rd row is 0110.\nGiven two integer n and k, return the kth (1-indexed) symbol in the nth row of a table of n rows.\n\nExample 1:\nInput: n = 1, k = 1\nOutput: 0\nExplanation: row 1: 0\n\nExample 2:\nInput: n = 2, k = 1\nOutput: 0\nExplanation:\nrow 1: 0\nrow 2: 01\n\nExample 3:\nInput: n = 2, k = 2\nOutput: 1\nExplanation:\nrow 1: 0\nrow 2: 01\n\nConstraints:\n\n1 <= n <= 30\n1 <= k <= 2^n - 1",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Kth Symbol in Grammer",
+        "problem_link": "https://leetcode.com/problems/k-th-symbol-in-grammar",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/9_Kth_Symbol_in_Grammer.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Use IBH method to solve this problem One pattern to observe is that the current row is the combination of previous row and inverted previous row. See example below: 0 0 1 0 1 1 0 0 1 1 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0 0 1 0 1 1 0 the nth row has 2**(n-1) elements and if the k is larger than the mid then we return the abs(mid-k) from previous row oyherwise the kth result from previous row",
+                "code": "class Solution:\n    def kthGrammar(self, n: int, k: int) -> int:\n        # Base\n        if n == 1:\n            return 0\n\n        # Hypothesis & Induction\n        total_elements = 2 ** (n - 1)\n        mid = total_elements // 2\n        if k <= mid:\n            return self.kthGrammar(n - 1, k)\n\n        return int(not (self.kthGrammar(n - 1, k - mid)))",
+                "type": "Better"
+            },
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "We start from backwards tracing upwards\nwe assume that the answer is 1 and try to\nflip the symbol n of times and atlast if we\nand at the known symbol of zero at first row\nthen we can say our assumption was right so\nwe can return 1 otherwise return zero.\nAt each iteration we move one row at a time\nbackwards,fliping the assumption n number of times",
+                "code": "class Solution:\n    def kthGrammar(self, n: int, k: int) -> int:\n        if n == 1:\n            return 0\n\n        symbol = 1\n\n        for _ in range(n, 1, -1):\n            total_elem = 2 ** (n - 1)\n            mid = total_elem // 2\n\n            if k > mid:\n                symbol = 1 - symbol\n                k = k - mid\n            n -= 1\n\n        if symbol != 0:\n            return 0\n\n        return 1",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "question": "A digit string is good if the digits (0-indexed) at even indices are even and the digits at odd indices are prime (2, 3, 5, or 7).\n\nFor example, \"2582\" is good because the digits (2 and 8) at even positions\nare even and the digits (5 and 2) at odd positions are prime. However,\n\"3245\" is not good because 3 is at an even index but is not even.\nGiven an integer n, return the total number of good digit strings of length n.\nSince the answer may be large, return it modulo 109 + 7.\n\nA digit string is a string consisting of digits 0 through 9 that may contain leading zeros.\n\nExample 1:\nInput: n = 1\nOutput: 5\nExplanation: The good numbers of length 1 are \"0\", \"2\", \"4\", \"6\", \"8\".\n\nExample 2:\nInput: n = 4\nOutput: 400\n\nExample 3:\nInput: n = 50\nOutput: 564908303\n\n\nConstraints:\n1 <= n <= 10^15",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Count Good Numbers",
+        "problem_link": "https://leetcode.com/problems/count-good-numbers",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/10_Count_Good_Numbers.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(n)",
+                "sc": "S.C  - O(1)",
+                "intuition": "One thing to notice suppose we have a number of size n=5 _ _ _ _ _ 0 1 2 3 4  So we for odd length number wew are going to have n//2 + 1 odd indices and n//2 even indices Fow even length number wew are going to have n//2 odd and even indices for every even index the possibilities are 0,2,4,6,8 (5) For even odd index the possibilities are 2,3,5,7 (4) so if we are able to find the total odd and even indices, we can easily find thw value of total good numbers",
+                "code": "class Solution:\n    def countGoodNumbers(self, n: int) -> int:\n        MOD = (10**9) + 7\n\n        if n % 2 == 0:\n            p = n // 2\n            return ((5**p) * (4**p)) % MOD\n\n        e = (n // 2) + 1\n        o = n // 2\n        return ((5**e) * (4**o)) % MOD",
+                "type": "Brute"
+            },
+            {
+                "tc": "T.C. - O(log(n))",
+                "sc": "S.C  - O(log(n))",
+                "intuition": "Use fast exponentiation to calculate powers",
+                "code": "class Solution:\n    def solve(self, x: int, n: int) -> int:\n        # Base\n        if n == 0:\n            return 1\n\n        # Hypothesis\n        res = self.solve(x, n // 2)\n\n        # Induction\n        MOD = (10**9) + 7\n        if n % 2 == 0:\n            return (res * res) % MOD\n\n        return (res * res * x) % MOD\n\n    def myPow(self, x: int, n: int) -> int:\n\n        return self.solve(x, n)\n\n    def countGoodNumbers(self, n: int) -> int:\n        MOD = (10**9) + 7\n        if n % 2 == 0:\n            p = n // 2\n            return (self.myPow(5, p) * self.myPow(4, p)) % MOD\n\n        e = (n // 2) + 1\n        o = n // 2\n        return (self.myPow(5, e) * self.myPow(4, o)) % MOD",
+                "type": "Optimal"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "question": "You are given n disks placed on a starting rod (from), with the smallest disk on top and the largest at the bottom. There are\nthree rods: the starting rod(from), the target rod (to), and an auxiliary rod (aux).\nYou have to calculate the minimum number of moves required to transfer all n disks from the starting rod to the target rod, following these rules:\n1. Only one disk can be moved at a time.\n2. A disk can only be placed on top of a larger disk or on an empty rod.\nReturn the minimum number of moves needed to complete the task.\n\nExamples:\n\nInput: n = 2\nOutput: 3\nExplanation: For n = 2, total 3 steps will be taken. Steps are as follows -\nmove disk 1 from rod 1 to rod 2\nmove disk 2 from rod 1 to rod 3\nmove disk 1 from rod 2 to rod 3\n\nInput: n = 3\nOutput: 7\nExplanation: For n = 3, total 7 steps will be taken.Steps are as follows -\nmove disk 1 from rod 1 to rod 3\nmove disk 2 from rod 1 to rod 2\nmove disk 1 from rod 3 to rod 2\nmove disk 3 from rod 1 to rod 3\nmove disk 1 from rod 2 to rod 1\nmove disk 2 from rod 2 to rod 3\nmove disk 1 from rod 1 to rod 3\n\nInput: n = 0\nOutput: 0\nExplanation: Total 0 steps will be taken.\n\nConstraints:\n0 \u2264 n \u2264 20",
+        "topic": "Recursion",
+        "pattern": "IBH",
+        "language": "python",
+        "difficulty": "Medium",
+        "difficulty_num": 2,
+        "problem_name": "Tower Of Hanoi",
+        "problem_link": "https://www.geeksforgeeks.org/problems/tower-of-hanoi-1587115621/1",
+        "solution_link": "https://raw.githubusercontent.com/glowfi/DS/main/Programs/python/6_Recursion/11_Tower_Of_Hanoi.py",
+        "approaches": [
+            {
+                "tc": "T.C. - O(2^n)",
+                "sc": "S.C  - O(n)",
+                "intuition": "Use the IBH method\nDefine hypothesis to that given towerOfHanoi function it will move all the n rods to desitnation\nwe will move n-1 rods to the auxiliary rods and atlast move the biggest rod in source to desitnation\nand all the rods in auxiliary to desitnation using source",
+                "code": "class Solution:\n    def towerOfHanoi(self, n: int, fromm: int, to: int, aux: int):\n        # Base\n        if n == 1:\n            # print(f\"move disk {n} from rod {fromm} to rod {to}\")\n            return 1\n\n        # Hypothesis\n        a = self.towerOfHanoi(n - 1, fromm, aux, to)  # Move all n-1 rods to auxiliary\n        # print(f\"move disk {n} from rod {fromm} to rod {to}\")\n        b = self.towerOfHanoi(n - 1, aux, to, fromm)  # Move the n-1 rods to desitnation\n\n        # Induction\n        return 1 + a + b\n\n\nobj = Solution()\nprint(obj.towerOfHanoi(3, 1, 2, 3))",
+                "type": "Optimal"
+            }
+        ]
     }
 ]
